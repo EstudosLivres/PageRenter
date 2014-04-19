@@ -1,24 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="Adição da pasta que estava em BackUp com as Modelagens de ideia e de BD. Alémd o do README que contempla boa parte do que o sistema representa">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Diagramas&amp;Algoritmos/DC-PageRenter.asta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/Fluxo-Anunciante.png.bak" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/Fluxo-Anunciante.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/Fluxo-Publisher.png.bak" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/Fluxo-Publisher.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/BD/MER-PageRenter.mwb.bak" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/BD/MER-PageRenter.mwb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/BD/MER-PageRenter.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/PR_Fluxo-Anunciante.asta.bak" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/PR_Fluxo-Anunciante.asta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/PR_Fluxo-Publisher.asta.bak" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/PR_Fluxo-Publisher.asta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/Ideias&amp;Fluxos/acoes-anunciante-publish.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modelagens/BD/anotacoes-mer.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,26 +25,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="795">
-              <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.84957266" vertical-offset="208" max-vertical-offset="795">
+              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="anotacoes-mer.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/modelagens/BD/anotacoes-mer.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4373178" vertical-offset="0" max-vertical-offset="343">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
@@ -373,9 +344,14 @@
       <created>1397916760132</created>
       <updated>1397916760132</updated>
     </task>
+    <task id="LOCAL-00001" summary="Adição da pasta que estava em BackUp com as Modelagens de ideia e de BD. Alémd o do README que contempla boa parte do que o sistema representa">
+      <created>1397918236332</created>
+      <updated>1397918236332</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="4">
+  <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -397,11 +373,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="731" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32626426" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -457,23 +434,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="795">
-          <caret line="34" column="61" selection-start-line="34" selection-start-column="61" selection-end-line="34" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modelagens/BD/anotacoes-mer.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4373178" vertical-offset="0" max-vertical-offset="343">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.41284403" vertical-offset="0" max-vertical-offset="545">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84957266" vertical-offset="208" max-vertical-offset="795">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
