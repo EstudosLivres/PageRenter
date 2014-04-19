@@ -28,17 +28,17 @@ Que tal lucrar com qualquer página na Web? Alugue seu Perfil com PageRenter!!
 
 ###### ANUNCIANTE
 ---------------
-![image] (https://github.com/TonGarcia/PageRenter/blob/master/modelagem/Ideias&Fluxos/Fluxo-Anunciante.png?raw=true "Fluxo de uso do ANUNCIANTE")
+![image] (https://github.com/TonGarcia/PageRenter/blob/master/modelagens/Ideias&Fluxos/Fluxo-Anunciante.png?raw=true "Fluxo de uso do ANUNCIANTE")
 
 * __ O ANUNCIANTE TEM A OBRIGAÇÃO DE CRIAR A PROPAGANDA E FAZER ELA OTIMIZADA PARA A REDE (TIPO FB E TW) __
 * __ O ANUNCIANTE PODE LEILOAR CLICKS (CADA UM DIZ QUANTO PAGA POR CLICK) __
 
 ###### PUBLISHER
 ---------------
-![image] (https://github.com/TonGarcia/PageRenter/blob/master/modelagem/Ideias&Fluxos/Fluxo-Publisher.png?raw=true "Fluxo de uso do PUBLISHER")
+![image] (https://github.com/TonGarcia/PageRenter/blob/master/modelagens/Ideias&Fluxos/Fluxo-Publisher.png?raw=true "Fluxo de uso do PUBLISHER")
 
 * __ O PUBLISHER TEM A OBRIGAÇÃO DE PESQUISAR A PROPAGANDA QUE MELHOR SE ADEQUA __
 
 ###### MER BD
 ---------------
-![image] (https://github.com/TonGarcia/PageRenter/blob/master/modelagem/BD/MER-PageRenter.png?raw=true "MER")
+![image] (https://github.com/TonGarcia/PageRenter/blob/master/modelagens/BD/MER-PageRenter.png?raw=true "MER")
