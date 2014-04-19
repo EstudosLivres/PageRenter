@@ -1,0 +1,2 @@
+anunciante = v btn: ALUGAR
+pubish = v btn: ANUNCIAR
