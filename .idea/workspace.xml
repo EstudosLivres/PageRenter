@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/MER-PageRenter.mwb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/MER-PageRenter.mwb.bak" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/MER-PageRenter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/anotacoes-mer.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/en_US/pt_MER-PageRenter.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/en_US/pt_MER-PageRenter.mwb.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/en_US/pt_MER-PageRenter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/en_US/pt_anotacoes-mer.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/pt_BR/pt_MER-PageRenter.mwb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/pt_BR/pt_MER-PageRenter.mwb.bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/modelagens/BD/pt_BR/pt_MER-PageRenter.png" afterPath="" />
     </list>
     <ignored path="PageRenter.iws" />
     <ignored path=".idea/workspace.xml" />
