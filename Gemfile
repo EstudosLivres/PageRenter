@@ -32,16 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# RSPec for BDD pratices
 gem "rspec-rails", "~> 2.14.1", groups: [:development, :test]
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+# Better Errors for fast debug from the view on the browser
+gem 'better_errors', '~> 1.1.0'
