@@ -1,6 +1,10 @@
 PageRenter
 ==========
 Que tal lucrar com qualquer página na Web? Alugue seu Perfil com PageRenter!!
+<br><br>
+__Pitch curto__: _Aluguel Social de Marketing Bilateral_ 
+<br>
+__Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazendo tudo que o Facebook faz, mas com o diferencial de que nosso público não é nosso produto, mas sim parceiros._
 
 ## Observações sobre o Projeto
 
@@ -11,7 +15,6 @@ Que tal lucrar com qualquer página na Web? Alugue seu Perfil com PageRenter!!
   * Feita em __PHP__;
   * Terá um código __Analytic próprio__;
   * hospedagem no Heroku;
-  * Feito com o __tema Windows 8__;
   * [Projeto separado](https://github.com/TonGarcia/LandPageRenter);
 * __Aplicação em si (App)__
   * Feita em __Rails__;
