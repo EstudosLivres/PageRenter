@@ -15,7 +15,6 @@ __Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazend
   * Feita em __PHP__;
   * Terá um código __Analytic próprio__;
   * hospedagem no Heroku;
-  * Feito com o __tema Windows 8__;
   * [Projeto separado](https://github.com/TonGarcia/LandPageRenter);
 * __Aplicação em si (App)__
   * Feita em __Rails__;
