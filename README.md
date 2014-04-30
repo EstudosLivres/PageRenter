@@ -1,7 +1,7 @@
 PageRenter
 ==========
 Que tal lucrar com qualquer página na Web? Alugue seu Perfil com PageRenter!!
-<br>
+<br><br>
 __Pitch curto__: _Aluguel Social de Marketing Bilateral_ 
 <br>
 __Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazendo tudo que o Facebook faz, mas com o diferencial de que nosso público não é nosso produto, mas sim parceiros._
