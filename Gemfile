@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.0'
 
 # Use mysql as the database for Active Record
 gem 'mysql2'
@@ -33,7 +33,7 @@ group :doc do
 end
 
 # RSPec for BDD pratices
-gem "rspec-rails", "~> 2.14.1", groups: [:development, :test]
+gem 'rspec-rails', '~> 2.14.1', groups: [:development, :test]
 
 # Better Errors for fast debug from the view on the browser
 gem 'better_errors', '~> 1.1.0'
