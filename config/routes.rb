@@ -1,4 +1,17 @@
 PageRenter::Application.routes.draw do
+  root 'errors#redirect'
+  match "*path", to: "errors#catch_404", via: :all
+  get 'errors/catch_404'
+
+  scope '/:idiom' do
+    get '' => 'publisher#index'
+    resources :publishers
+  end
+
+  namespace :api do
+
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
