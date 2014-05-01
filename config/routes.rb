@@ -4,8 +4,8 @@ PageRenter::Application.routes.draw do
   get 'errors/catch_404'
 
   scope '/:idiom' do
-    get '' => 'publisher#index'
-    resources :publishers
+    # get '' => 'publisher#index'
+    # resources :publishers
   end
 
   namespace :api do
