@@ -1,4 +1,5 @@
 PageRenter::Application.routes.draw do
+  # Threat errors: 404 & missing idiom on the URL
   root 'errors#redirect'
   match "*path", to: "errors#catch_404", via: :all
   get 'errors/catch_404'
