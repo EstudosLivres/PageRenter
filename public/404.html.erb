@@ -45,20 +45,37 @@
     box-shadow:0 3px 8px rgba(50, 50, 50, 0.17);
   }
   </style>
+
+  <script>
+    function redirecter() {
+        index_path = 'publishers';
+        redirect = document.URL;
+
+        // Validate if have any parameter (should have at least the idioma on URL, if not, it is putted there)
+        if(redirect.indexOf('/') < 0) redirect += navigator.language.substring(0,2);
+
+        // Validate if put the path to index
+        if(redirect[redirect.length-1] == '/') redirect += index_path;
+        else redirect += '/' + index_path;
+
+        return redirect;
+    }
+  </script>
 </head>
 
 <body>
     <%
-       index_path = 'publishers'
        param = params['path']
        if param.length == 2 && File.open(Rails.root.join('config', 'locales', "#{params['path']}.yml").to_s).is_a?(File)
     %>
-        <script> location.href = document.URL + '/' + "<%=index_path%>"; </script>
+        <script>
+            location.href =  redirecter();
+        </script>
     <%
        end
     %>
 
-  <!-- This file lives in public/404.html -->
+    <!-- This file lives in public/404.html -->
   <div class="dialog">
     <h1>The page you were looking for doesn't exist.</h1>
     <p>You may have mistyped the address or the page may have moved.</p>
