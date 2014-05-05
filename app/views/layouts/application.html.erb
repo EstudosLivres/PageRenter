@@ -20,13 +20,27 @@
   <!-- /Angular -->
 
   <!-- Meus scripts -->
-  <script src='/assets/app_angular/app_base.js'></script>
+  <script src='/assets/app_initialize.js'></script>
   <!-- /Meus -->
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+    <%
+       idiom = params['idiom']
+       if(idiom.nil? || idiom.length != 2)
+    %>
+        <script>
+            location.href =  redirecter();
+        </script>
+    <%
+       else
+         idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
+         idiom.is_a?(File)
+       end
+    %>
+
+    <%= yield %>
 
     <footer id="includes_js">
         <!-- Bootstrap -->
