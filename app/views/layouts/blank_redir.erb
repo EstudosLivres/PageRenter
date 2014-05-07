@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset='utf-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+      <script src='/assets/app_initialize.js'></script>
+      <title>PageRenter</title>
+    </head>
+    <body>
+        <%
+           # INIT TO REDIRECT WITH IDIOM IF IT IS NOT SETED ON THE URL
+           idiom = params['idiom']
+           if(idiom.nil? || idiom.length != 2)
+        %>
+            <script>
+                location.href =  redirecter();
+            </script>
+        <%
+           else
+             idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
+             idiom.is_a?(File)
+       %>
+            <script>
+                location.href =  document.URL + '/publisher';
+            </script>
+       <%
+           end
+           # /END REDIRECT WITH IDIOM
+        %>
+    </body>
+</html>
