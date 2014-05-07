@@ -1,16 +1,14 @@
 PageRenter::Application.routes.draw do
-  # Threat errors: 404 & missing idiom on the URL
-  root 'errors#redirect'
-  match "*path", to: "errors#catch_404", via: :all
-  get 'errors/catch_404'
+  root 'welcome#index'
 
   scope '/:idiom' do
-    # get '' => 'publisher#index'
-    # resources :publishers
+    get '' => 'welcome#index'
+    # Threat errors: 404 & missing idiom on the URL
+    match "*path", to: "errors#catch_404", via: :all
+    get 'errors/catch_404'
   end
 
   namespace :api do
-
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
