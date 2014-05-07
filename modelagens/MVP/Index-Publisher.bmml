@@ -33,99 +33,127 @@
     </control>
     <control controlID="28" controlTypeID="com.balsamiq.mockups::Webcam" x="1142" y="132" w="40" h="30" measuredW="177" measuredH="146" zOrder="11" locked="false" isInGroup="-1"/>
     <control controlID="29" controlTypeID="com.balsamiq.mockups::Webcam" x="1142" y="158" w="40" h="30" measuredW="177" measuredH="146" zOrder="12" locked="false" isInGroup="-1"/>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::ButtonBar" x="828" y="108" w="192" h="27" measuredW="192" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::ButtonBar" x="310" y="108" w="192" h="27" measuredW="192" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Func%201%2C%20Func%202%2C%20Func%203</text>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::Canvas" x="1037" y="185" w="145" h="29" measuredW="100" measuredH="70" zOrder="14" locked="false" isInGroup="-1"/>
-    <control controlID="32" controlTypeID="com.balsamiq.mockups::Label" x="1041" y="189" w="138" h="-1" measuredW="138" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Nova%20Sess%E3o%20%28Anuncie%29</text>
-      </controlProperties>
-    </control>
-    <control controlID="33" controlTypeID="com.balsamiq.mockups::CheckBox" x="514" y="162" w="-1" h="-1" measuredW="241" measuredH="22" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::CheckBox" x="514" y="162" w="-1" h="-1" measuredW="241" measuredH="22" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Permito%20Auto-Post%20na%20minha%20TimeLine</text>
       </controlProperties>
     </control>
-    <control controlID="34" controlTypeID="com.balsamiq.mockups::CheckBox" x="514" y="190" w="-1" h="-1" measuredW="351" measuredH="22" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::CheckBox" x="514" y="190" w="-1" h="-1" measuredW="351" measuredH="22" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Permito%20conte%FAdo%20adulto%20nos%20posts%20para%20minha%20TimeLine</text>
       </controlProperties>
     </control>
-    <control controlID="35" controlTypeID="com.balsamiq.mockups::Canvas" x="206" y="227" w="964" h="174" measuredW="100" measuredH="70" zOrder="18" locked="false" isInGroup="-1"/>
-    <control controlID="36" controlTypeID="com.balsamiq.mockups::Canvas" x="436" y="234" w="584" h="111" measuredW="100" measuredH="70" zOrder="19" locked="false" isInGroup="-1"/>
-    <control controlID="37" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1151" y="228" w="-1" h="173" measuredW="16" measuredH="100" zOrder="20" locked="false" isInGroup="-1"/>
-    <control controlID="38" controlTypeID="com.balsamiq.mockups::Button" x="934" y="239" w="-1" h="-1" measuredW="81" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::Canvas" x="206" y="227" w="964" h="174" measuredW="100" measuredH="70" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Canvas" x="436" y="234" w="584" h="111" measuredW="100" measuredH="70" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="1151" y="228" w="-1" h="173" measuredW="16" measuredH="100" zOrder="18" locked="false" isInGroup="-1"/>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Button" x="934" y="239" w="-1" h="-1" measuredW="81" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Copy%20Link</text>
       </controlProperties>
     </control>
-    <control controlID="39" controlTypeID="com.balsamiq.mockups::Button" x="811" y="238" w="-1" h="-1" measuredW="121" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Button" x="811" y="238" w="-1" h="-1" measuredW="121" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <text>f%20%7C%20TimeLine%20Post</text>
       </controlProperties>
     </control>
-    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="445" y="240" w="34" h="-1" measuredW="29" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Label" x="445" y="240" w="34" h="-1" measuredW="29" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Logo</text>
       </controlProperties>
     </control>
-    <control controlID="41" controlTypeID="com.balsamiq.mockups::Label" x="616" y="242" w="144" h="-1" measuredW="139" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Label" x="554" y="242" w="144" h="-1" measuredW="139" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%20-%20Nome%20da%20campanha%20-</text>
       </controlProperties>
     </control>
-    <control controlID="42" controlTypeID="com.balsamiq.mockups::Label" x="485" y="240" w="75" h="-1" measuredW="75" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::Label" x="479" y="240" w="75" h="-1" measuredW="75" measuredH="21" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Nome%20marca</text>
       </controlProperties>
     </control>
-    <control controlID="43" controlTypeID="com.balsamiq.mockups::Image" x="445" y="270" w="115" h="64" measuredW="77" measuredH="79" zOrder="26" locked="false" isInGroup="-1">
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Image" x="445" y="270" w="115" h="64" measuredW="77" measuredH="79" zOrder="24" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Img%20Campanha</text>
       </controlProperties>
     </control>
-    <control controlID="46" controlTypeID="com.balsamiq.mockups::HCurly" x="570" y="270" w="444" h="64" measuredW="200" measuredH="80" zOrder="27" locked="false" isInGroup="-1">
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::HCurly" x="570" y="270" w="444" h="64" measuredW="200" measuredH="80" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%28DESCRI%C7%C3O%20DA%20CAMPANHA%29%20%0AA%20paragraph%20of%20text.%0AA%20second%20row%20of%20text.</text>
       </controlProperties>
     </control>
-    <control controlID="47" controlTypeID="com.balsamiq.mockups::Canvas" x="436" y="354" w="584" h="47" measuredW="100" measuredH="70" zOrder="28" locked="false" isInGroup="-1"/>
-    <control controlID="48" controlTypeID="com.balsamiq.mockups::Button" x="934" y="359" w="-1" h="-1" measuredW="81" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Canvas" x="436" y="354" w="584" h="47" measuredW="100" measuredH="70" zOrder="26" locked="false" isInGroup="-1"/>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Button" x="934" y="359" w="-1" h="-1" measuredW="81" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Copy%20Link</text>
       </controlProperties>
     </control>
-    <control controlID="49" controlTypeID="com.balsamiq.mockups::Button" x="811" y="358" w="-1" h="-1" measuredW="121" measuredH="27" zOrder="30" locked="false" isInGroup="-1">
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::Button" x="811" y="358" w="-1" h="-1" measuredW="121" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
       <controlProperties>
         <text>f%20%7C%20TimeLine%20Post</text>
       </controlProperties>
     </control>
-    <control controlID="50" controlTypeID="com.balsamiq.mockups::Label" x="445" y="360" w="34" h="-1" measuredW="29" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Label" x="445" y="360" w="34" h="-1" measuredW="29" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Logo</text>
       </controlProperties>
     </control>
-    <control controlID="51" controlTypeID="com.balsamiq.mockups::Label" x="616" y="362" w="144" h="-1" measuredW="139" measuredH="21" zOrder="32" locked="false" isInGroup="-1">
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Label" x="554" y="362" w="144" h="-1" measuredW="139" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%20-%20Nome%20da%20campanha%20-</text>
       </controlProperties>
     </control>
-    <control controlID="52" controlTypeID="com.balsamiq.mockups::Label" x="485" y="360" w="75" h="-1" measuredW="75" measuredH="21" zOrder="33" locked="false" isInGroup="-1">
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Label" x="477" y="360" w="75" h="-1" measuredW="75" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Nome%20marca</text>
       </controlProperties>
     </control>
-    <control controlID="53" controlTypeID="com.balsamiq.mockups::Image" x="445" y="390" w="115" h="11" measuredW="77" measuredH="79" zOrder="34" locked="false" isInGroup="-1">
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Image" x="445" y="390" w="115" h="11" measuredW="77" measuredH="79" zOrder="32" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Img%20Campanha</text>
       </controlProperties>
     </control>
-    <control controlID="54" controlTypeID="com.balsamiq.mockups::HCurly" x="570" y="390" w="444" h="11" measuredW="200" measuredH="80" zOrder="35" locked="false" isInGroup="-1">
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::HCurly" x="570" y="390" w="444" h="11" measuredW="200" measuredH="80" zOrder="33" locked="false" isInGroup="-1">
       <controlProperties>
         <text>%28DESCRI%C7%C3O%20DA%20CAMPANHA%29%20%0AA%20paragraph%20of%20text.%0AA%20second%20row%20of%20text.</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="762" y="163" w="-1" h="-1" measuredW="114" measuredH="21" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>R%24%200%2C25%20por%20Clique</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Label" x="694" y="241" w="-1" h="-1" measuredW="114" measuredH="21" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>R%24%200%2C45%20por%20Clique</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::Label" x="698" y="361" w="-1" h="-1" measuredW="114" measuredH="21" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>R%24%200%2C45%20por%20Clique</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Canvas" x="1037" y="215" w="145" h="29" measuredW="100" measuredH="70" zOrder="37" locked="false" isInGroup="-1"/>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::Label" x="1041" y="215" w="138" h="-1" measuredW="138" measuredH="21" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nova%20Sess%E3o%20%28Anuncie%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::Canvas" x="1037" y="184" w="145" h="34" measuredW="100" measuredH="70" zOrder="39" locked="false" isInGroup="-1"/>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Webcam" x="1144" y="186" w="26" h="22" measuredW="177" measuredH="146" zOrder="40" locked="false" isInGroup="-1"/>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::Webcam" x="1164" y="190" w="17" h="24" measuredW="177" measuredH="146" zOrder="41" locked="false" isInGroup="-1"/>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::Label" x="1041" y="190" w="-1" h="-1" measuredW="81" measuredH="21" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Publish%20Group</text>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::PointyButton" x="912" y="174" w="-1" h="-1" measuredW="104" measuredH="27" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Invite%20a%20Friend</text>
       </controlProperties>
     </control>
   </controls>
