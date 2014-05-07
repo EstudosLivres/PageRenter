@@ -10,8 +10,7 @@
 
 /* BOOTSTRAP */
 @import "bootstrap/bootstrap.min.css";
-@import "bootstrap/bootstrap-responsive.min.css";
-@import "bootstrap/datepicker.css";
+@import "bootstrap/bootstrap-theme.min.css";
 
 /* jQuery */
 @import "jquery/jqu.min.css";
