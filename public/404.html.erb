@@ -46,32 +46,17 @@
   }
   </style>
 
-  <script>
-    function redirecter() {
-        index_path = 'publishers';
-        redirect = document.URL;
-
-        // Validate if have any parameter (should have at least the idioma on URL, if not, it is putted there)
-        if(redirect.indexOf('/') < 0) redirect += navigator.language.substring(0,2);
-
-        // Validate if put the path to index
-        if(redirect[redirect.length-1] == '/') redirect += index_path;
-        else redirect += '/' + index_path;
-
-        return redirect;
-    }
-  </script>
+  <!-- Meus scripts -->
+  <script src='/assets/app_initialize.js'></script>
+  <!-- /Meus -->
 </head>
 
 <body>
     <%
-       param = params['path']
-       if param.length == 2 && File.open(Rails.root.join('config', 'locales', "#{params['path']}.yml").to_s).is_a?(File)
-    %>
-        <script>
-            location.href =  redirecter();
-        </script>
-    <%
+       idiom = params['idiom']
+       unless(idiom.nil? || idiom.length != 2)
+         idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
+         idiom.is_a?(File)
        end
     %>
 
