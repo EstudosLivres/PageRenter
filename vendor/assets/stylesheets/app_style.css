@@ -82,12 +82,12 @@ body {
 .navbar .navbar-header #brand .second { color: #336d63;  }
 
 a {
-    color: #823d1e;
+    color: #124bca;
 }
 
 a:hover,
 a:focus {
-    color: #d57114;
+    color: #0096fd;
     text-decoration: underline;
 }
 
@@ -145,7 +145,6 @@ fieldset[disabled] .btn-primary.active {
     margin-bottom: 20px;
     background-color: #FFFFFF;
     border: 1px solid #ADC08D;
-    border: 1px solid yellow;
     border-radius: 4px;
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05)
@@ -197,4 +196,27 @@ td.day {
 
 td.disabled {
     font-weight: normal;
+}
+
+.navbar-toggle .icon-bar .fa-bars {
+    font-style: normal;
+    font-size: 1.4em;
+}
+
+.navbar-toggle .icon-bar {
+    height: 10px;
+}
+
+.navbar-toggle {
+    margin-top: 3px;
+}
+
+.navbar-right .dropdown-menu {
+    text-align: right;
+}
+
+.navbar-right .dropdown-menu a:hover,
+.navbar-right .dropdown-menu a:focus {
+    color: #00A223;
+    text-decoration: none;
 }
