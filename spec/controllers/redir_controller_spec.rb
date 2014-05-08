@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe ErrorsController do
+describe RedirController do
 
-  describe "GET 'catch_404'" do
+  describe "GET 'index'" do
     it "returns http success" do
-      get 'catch_404'
+      get 'index'
       response.should be_success
     end
   end
