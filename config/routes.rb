@@ -1,15 +1,19 @@
 PageRenter::Application.routes.draw do
   # In a near future put a helper to redirect to the user role session
-  root 'publisher#index'
+  root 'publishers#index'
+
+  scope '/users' do
+    get 'sign_out' => 'users#sign_out'
+  end
 
   # Actions Under/For Publisher
-  scope '/publisher' do
-    get '' => 'publisher#index'
+  scope '/publishers' do
+    get '' => 'publishers#index'
   end
 
   # Actions Under/For Advertiser
-  scope '/advertiser' do
-    get '' => 'advertiser#index'
+  scope '/advertisers' do
+    get '' => 'advertisers#index'
   end
 
   # Actions Under/For API (external requests)

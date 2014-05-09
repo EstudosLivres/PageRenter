@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PublisherController do
+describe AdvertisersController do
 
   describe "GET 'index'" do
     it "returns http success" do
