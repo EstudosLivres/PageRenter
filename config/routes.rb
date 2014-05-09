@@ -18,5 +18,9 @@ PageRenter::Application.routes.draw do
 
   # Actions Under/For API (external requests)
   namespace :api do
+    # API for Parent/Nested systems (not third systems)
+    scope '/system' do
+
+    end
   end
 end
