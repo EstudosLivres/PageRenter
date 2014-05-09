@@ -28,7 +28,7 @@ __Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazend
 * __PROGRAMAÇÃO__:
  * Uso __constante__ do __BDD__;
 * __DESIGN__:
- * Uso de cores por role ( verde = publisher; azul = advertiser );
+ * Uso de cores por role ( __verde__ = publisher; __azul__ = advertiser );
 
 
 ###### GEMS MUITO ÚTEIS
