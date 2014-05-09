@@ -37,6 +37,18 @@
               <span id='brand'> <span class="r_advertiser_brand">Page</span><span class="r_publisher_brand">Renter</span> </span>
             </div>
             <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <%
+                   role_actions.each do |action|
+                %>
+                    <li>
+                      <a class="r_<%= role_name %>" href="<%= action[:path] %>"> <%= action[:name] %> </a>
+                    </li>
+                <%
+                   end
+                %>
+              </ul>
+
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                   <a class="dropdown-toggle r_<%=role_name%>" data-toggle="dropdown" href="#"> <i class="fa <%=role_icon%>"></i> Raylen Jorge <b class="caret"></b></a>
