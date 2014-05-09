@@ -1,51 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset='utf-8'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+    <head>
+      <meta charset='utf-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
 
-  <title>PageRenter</title>
-  <link rel="stylesheet" href="/assets/style.css"/>
+      <title>PageRenter</title>
+      <link rel="stylesheet" href="/assets/style.css"/>
 
-  <script src='/assets/modernizr.min.js'></script>
+      <script src='/assets/modernizr.min.js'></script>
 
-  <!-- jQuery -->
-  <script src='/assets/jq/jq.min.js'></script>
-  <!-- /jQuery -->
+      <!-- jQuery -->
+      <script src='/assets/jq/jq.min.js'></script>
+      <!-- /jQuery -->
 
-  <!-- Angular -->
-  <script src="/assets/angular/angular.min.js"></script>
-  <script src='/assets/angular/angular-touch.min.js'></script>
-  <script src="/assets/angular/angular-sanitize.min.js"></script>
-  <!-- /Angular -->
+      <!-- Angular -->
+      <script src="/assets/angular/angular.min.js"></script>
+      <script src='/assets/angular/angular-touch.min.js'></script>
+      <script src="/assets/angular/angular-sanitize.min.js"></script>
+      <!-- /Angular -->
 
-  <!-- Meus scripts -->
-  <script src='/assets/app_initialize.js'></script>
-  <!-- /Meus -->
-  <%= csrf_meta_tags %>
-</head>
-<body>
+      <!-- Meus scripts -->
+      <script src='/assets/app_initialize.js'></script>
+      <!-- /Meus -->
+      <%= csrf_meta_tags %>
+    </head>
+    <body>
 
-    <%
-       idiom = params['idiom']
-       if(idiom.nil? || idiom.length != 2)
-    %>
-        <script>
-            location.href =  redirecter();
-        </script>
-    <%
-       else
-         idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
-         idiom.is_a?(File)
-       end
-    %>
+        <!-- NavBar -->
+        <div class="navbar navbar-custom navbar-static-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
+                <span class="icon-bar"> <i class="fa-bars"></i> </span>
+              </button>
 
-    <%= yield %>
+              <span id='brand'> <span class="first">Page</span><span class="second">Renter</span> </span>
+            </div>
+            <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Raylen Jorge (Publisher) <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/users/edit">Create Company (Advertiser)</a></li>
+                    <li class="divider"></li>
+                    <li><a data-method="delete" href="/users/sign_out" rel="nofollow">Sair</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <footer id="includes_js">
-        <!-- Bootstrap -->
+        <%
+           # INIT TO REDIRECT WITH IDIOM IF IT IS NOT SETED ON THE URL
+           idiom = params['idiom']
+           if(idiom.nil? || (idiom.length != 2 && idiom != 'assets'))
+        %>
+            <script>
+                location.href =  redirecter();
+            </script>
+        <%
+           elsif idiom != 'assets'
+             idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
+             idiom.is_a?(File)
+           end
+           # /END REDIRECT WITH IDIOM
+        %>
+
+        <div class="container box">
+            <%= yield %>
+        </div>
+
+        <footer id="includes_js">
+            <!-- Bootstrap -->
             <script src='/assets/bootstrap/bootstrap.min.js'></script>
-        <!-- /Bootstrap -->
-    </footer>
-</body>
+            <!-- /Bootstrap -->
+        </footer>
+    </body>
 </html>
