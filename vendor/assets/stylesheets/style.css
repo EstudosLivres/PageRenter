@@ -13,7 +13,7 @@
 
 /* BOOTSTRAP */
 @import "bootstrap/bootstrap.min.css";
-@import "bootstrap/bootstrap-theme.min.css";
+/*@import "bootstrap/bootstrap-theme.min.css";*/
 
 /* jQuery */
 @import "jquery/jqu.min.css";
