@@ -252,3 +252,10 @@ td.disabled {
 .navbar-right .dropdown i {
     margin-right: 10px;
 }
+
+.container.box > header > h1 {
+    cursor: default;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
