@@ -22,6 +22,15 @@ __Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazend
   * __hospedagem ainda não definida__;
   * Feito com o __tema Bootstrap 2.3.2__;
 
+###### PADRONIZAÇÕES
+---------------
+
+* __PROGRAMAÇÃO__:
+ * Uso __constante__ do __BDD__;
+* __DESIGN__:
+ * Uso de cores por role ( verde = publisher; azul = advertiser );
+
+
 ###### GEMS MUITO ÚTEIS
 ---------------
 * RAILS-ERD + GraphViz (precisa instalar a Lib dele no Brew);
