@@ -1,19 +1,18 @@
 PageRenter::Application.routes.draw do
-  root 'redir#index'
+  # In a near future put a helper to redirect to the user role session
+  root 'publisher#index'
 
-  scope '/:idiom' do
-    # Blank page with the redir with idiom
-    get '' => 'redir#index'
-
-    scope '/publisher' do
-      get '' => 'publisher#index'
-    end
-
-    scope '/advertiser' do
-      get '' => 'advertiser#index'
-    end
+  # Actions Under/For Publisher
+  scope '/publisher' do
+    get '' => 'publisher#index'
   end
 
+  # Actions Under/For Advertiser
+  scope '/advertiser' do
+    get '' => 'advertiser#index'
+  end
+
+  # Actions Under/For API (external requests)
   namespace :api do
   end
 end

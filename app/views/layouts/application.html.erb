@@ -51,22 +51,6 @@
           </div>
         </div>
 
-        <%
-           # INIT TO REDIRECT WITH IDIOM IF IT IS NOT SETED ON THE URL
-           idiom = params['idiom']
-           if(idiom.nil? || (idiom.length != 2 && idiom != 'assets'))
-        %>
-            <script>
-                location.href =  redirecter();
-            </script>
-        <%
-           elsif idiom != 'assets'
-             idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
-             idiom.is_a?(File)
-           end
-           # /END REDIRECT WITH IDIOM
-        %>
-
         <div class="container box">
             <%= yield %>
         </div>
