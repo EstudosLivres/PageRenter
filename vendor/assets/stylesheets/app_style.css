@@ -223,7 +223,7 @@ td.disabled {
     color: #336d63;
 }
 
-.r_publisher:hover,
+a.r_publisher:hover,
 .dropdown-menu>li>.r_publisher:hover,
 .r_publisher:focus {
     color: #339D63;
@@ -235,7 +235,7 @@ td.disabled {
     color: #2A3AAA;
 }
 
-.r_advertiser:hover,
+a.r_advertiser:hover,
 .dropdown-menu>li>.r_advertiser:hover,
 .r_advertiser:focus {
     color: #0096fd;
