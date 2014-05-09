@@ -220,3 +220,7 @@ td.disabled {
     color: #00A223;
     text-decoration: none;
 }
+
+.navbar-right .dropdown i {
+    margin-right: 10px;
+}
