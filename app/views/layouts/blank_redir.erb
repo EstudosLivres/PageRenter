@@ -10,18 +10,21 @@
         <%
            # INIT TO REDIRECT WITH IDIOM IF IT IS NOT SETED ON THE URL
            idiom = params['idiom']
-           if(idiom.nil? || idiom.length != 2)
+           if(idiom.nil? || (idiom.length != 2 && idiom != 'assets'))
         %>
             <script>
                 location.href =  redirecter();
             </script>
         <%
-           else
+           elsif idiom != 'assets'
              idiom = File.open(Rails.root.join('config', 'locales', "#{idiom}.yml").to_s)
              idiom.is_a?(File)
        %>
             <script>
-                location.href =  document.URL + '/publisher';
+                current_url = document.URL;
+                if(current_url[current_url.length-1] == '/') current_url = current_url.substring(0, current_url.length-1)
+
+                location.href =  current_url + '/publisher';
             </script>
        <%
            end
