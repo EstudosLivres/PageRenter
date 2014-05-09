@@ -78,9 +78,6 @@ body {
     font-size: 2.2em;
 }
 
-.navbar .navbar-header #brand .first { color: #2A3A8A; }
-.navbar .navbar-header #brand .second { color: #336d63;  }
-
 a {
     color: #124bca;
 }
@@ -217,8 +214,39 @@ td.disabled {
 
 .navbar-right .dropdown-menu a:hover,
 .navbar-right .dropdown-menu a:focus {
-    color: #00A223;
     text-decoration: none;
+}
+
+/* R means Role, because advertiser is reserved */
+.r_publisher_brand,
+.r_publisher {
+    color: #336d63;
+}
+
+.r_publisher:hover,
+.dropdown-menu>li>.r_publisher:hover,
+.r_publisher:focus {
+    color: #339D63;
+}
+
+.r_advertiser_brand,
+.dropdown-menu>li>.r_advertiser,
+.r_advertiser {
+    color: #2A3AAA;
+}
+
+.r_advertiser:hover,
+.dropdown-menu>li>.r_advertiser:hover,
+.r_advertiser:focus {
+    color: #0096fd;
+}
+
+.dropdown-menu>li>.error_txt {
+    color: #a94442;
+}
+
+.dropdown-menu>li>.error_txt:hover {
+    color: #D94442;
 }
 
 .navbar-right .dropdown i {
