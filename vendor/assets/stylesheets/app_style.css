@@ -260,3 +260,16 @@ a.r_advertiser:hover,
     text-align: center;
     text-transform: uppercase;
 }
+
+.toggle_up_down_rotate {
+    /* Safari & Chrome */
+    -webkit-transform: rotate(-180deg);
+    /* Firefox */
+    -moz-transform: rotate(-180deg);
+    /* IE */
+    -ms-transform: rotate(-180deg);
+    /* Opera */
+    -o-transform: rotate(-180deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
