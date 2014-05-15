@@ -5,7 +5,8 @@ module ApplicationHelper
   end
 
   def role_name
-    params_role = params['controller'][0...-1]
+    # Remove the pluralize
+    params['controller'][0...-1]
   end
 
   def role_icon
