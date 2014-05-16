@@ -274,3 +274,7 @@ a.r_advertiser:hover,
     /* Internet Explorer */
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
+
+#user_action.navbar-nav a {
+    text-align: left;
+}
