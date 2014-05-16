@@ -220,6 +220,7 @@ td.disabled {
 
 /* R means Role, because advertiser is reserved */
 .r_publisher_brand,
+.dropdown-menu>li>.r_publisher,
 .r_publisher {
     color: #336d63;
 }
