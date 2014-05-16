@@ -15,9 +15,9 @@ module ApplicationHelper
 
   def role_actions
     if role_name == 'publisher'
-      return [{ :name => 'InviteFriends', :path => 'publishers/invite', :icon => 'fa fa-paper-plane' }]
+      return [{ :name => t(:publisher_action)[:invite], :path => 'publishers/invite', :icon => 'fa fa-paper-plane' }]
     else
-      return [{ :name => 'Recommend', :path => 'advertisers/recommend', :icon => 'fa fa-paper-plane' }]
+      return [{ :name => t(:advertiser_action)[:invite], :path => 'advertisers/recommend', :icon => 'fa fa-paper-plane' }]
     end
   end
 end
