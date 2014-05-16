@@ -42,7 +42,7 @@
                    role_actions.each do |action|
                 %>
                     <li>
-                      <a class="r_<%= role_name %>" href="<%= action[:path] %>"> <%= action[:name] %> </a>
+                      <a class="r_<%= role_name %>" href="<%= action[:path] %>"> <i class="<%= action[:icon] %>"></i> <%= action[:name] %> </a>
                     </li>
                 <%
                    end
@@ -53,7 +53,7 @@
                 <li class="dropdown">
                   <a class="dropdown-toggle r_<%=role_name%>" data-toggle="dropdown" href="#"> <i class="fa <%=role_icon%>"></i> Raylen Jorge <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                        <li><a class="r_publisher" href="/users/edit"> <i class="fa <%=role_icon%>"></i> Raylen Jorge </a></li>
+                        <li><a class="r_publisher" href="/users/edit"> <i class="fa fa-rocket"></i> Raylen Jorge </a></li>
                         <li><a class="r_advertiser" href="/users/edit"> <i class="fa fa-bullhorn"></i> ZeroPaper </a></li>
                     <li class="divider"></li>
                         <li><a class="r_publisher" href="/users/edit"> <i class="fa fa-rocket"></i> Manage Publisher </a></li>
