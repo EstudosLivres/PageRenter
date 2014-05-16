@@ -4,7 +4,7 @@ PageRenter::Application.routes.draw do
 
   scope '/users' do
     post 'sign_up' => 'users#sign_up'
-    post 'login' => 'users#sign_up'
+    post 'login' => 'users#login'
     get 'sign_out' => 'users#sign_out'
   end
 
