@@ -3,6 +3,8 @@ PageRenter::Application.routes.draw do
   root 'publishers#index'
 
   scope '/users' do
+    post 'sign_up' => 'users#sign_up'
+    post 'login' => 'users#sign_up'
     get 'sign_out' => 'users#sign_out'
   end
 
