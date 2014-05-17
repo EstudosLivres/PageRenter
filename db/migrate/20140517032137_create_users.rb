@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.column :locale, "char(5)", null: false
       t.column :pass_salt, "char(29)", null: true
       t.column :password, "char(60)", null: true
+      t.string :access_token, null: true
 
       t.timestamps
     end
