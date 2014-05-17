@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :nick, limit: 30, null: false
       t.string :email, limit: 55, null: false
       t.column :locale, "char(5)", null: false
+      t.column :pass_salt, "char(29)", null: true
       t.column :password, "char(60)", null: true
 
       t.timestamps
