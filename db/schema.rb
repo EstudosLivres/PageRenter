@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20140517032137) do
     t.string   "nick",       limit: 30, null: false
     t.string   "email",      limit: 55, null: false
     t.string   "locale",     limit: 5,  null: false
+    t.string   "pass_salt",  limit: 29
     t.string   "password",   limit: 60
     t.datetime "created_at"
     t.datetime "updated_at"
