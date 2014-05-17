@@ -40,3 +40,6 @@ gem 'better_errors', '~> 1.1.0'
 
 # Gem for encrypt Password
 gem 'bcrypt-ruby', :require => 'bcrypt'
+
+# Color to the prints on console (PUTS)
+gem 'colorize', '~> 0.7.1'
