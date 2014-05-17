@@ -4,8 +4,13 @@ class User < ActiveRecord::Base
   # Encrypt the pasword using BCrypt
   def encrypt_password
     if password.present?
-      password_salt = BCrypt::Engine.generate_salt
-      self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+      self.password_hash = BCrypt::Engine.hash_secret(password, self.email)
     end
+  end
+
+  # Auth user
+  def self.authenticate(email, password)
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.email) then user else nil end
   end
 end
