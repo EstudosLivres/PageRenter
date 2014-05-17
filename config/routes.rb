@@ -22,7 +22,10 @@ PageRenter::Application.routes.draw do
   namespace :api do
     # API for Parent/Nested systems (not third systems)
     scope '/system' do
-
+      post '/signup_signin' => 'users#system_signup_signin'
     end
+
+    # API for Thirds
+    post '/signup_signin' => 'users#api_signup_signin'
   end
 end
