@@ -31,11 +31,11 @@ module API::Concerns
       # Try/Catch para ver se o Usuário foi encontrado no BD
       begin
         return @token = token_erro if @password.nil? || @email.nil?
-        @usuario_corrente = User.where(email: @email).take!
+        @usuario_corrente = User.where(email: @email, password: @password).take!
         @user_hash = @usuario_corrente.attributes
         @user_id = @user_hash['id']
-        return @token = token_erro if !password_ok?
-        return @token = { 'erro'=>'Você não tem permissão de Vistoriador' } if @usuario_corrente.role_id != 4
+        return @token = token_erro if @user_id.nil?
+        # SE SEM PERMISSAO: return @token = { 'erro'=>'Você não tem permissão de Vistoriador' } if @usuario_corrente.role_id != 4
         @token = { 'access_token'=> @user_hash['access_token'] }
       rescue
         @token = token_erro
@@ -57,10 +57,6 @@ module API::Concerns
 
     def visita_recorrente?
       !@token['access_token'].nil?
-    end
-
-    def password_ok?
-      User.find(@user_id).valid_password?(@password)
     end
 
     def encripta_token
