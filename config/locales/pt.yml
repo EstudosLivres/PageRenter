@@ -23,9 +23,16 @@ pt:
   msgs:
     welcome: "Bem-vindo!"
     login_success: "Logado com sucesso."
+
+
   publisher_action:
     invite: "ConvidarAmigos"
+
+
   advertiser_action:
     invite: "Recomendar"
+
+
   user_action:
     feedback: "Contate-Nos"
+

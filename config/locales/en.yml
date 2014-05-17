@@ -23,9 +23,16 @@ en:
   msgs:
     welcome: "Welcome!"
     login_success: "Logged in successfully."
+
+
   publisher_action:
     invite: "InviteFriends"
+
+
   advertiser_action:
     invite: "Recommend"
+
+
   user_action:
     feeedback: "ContactUs"
+
