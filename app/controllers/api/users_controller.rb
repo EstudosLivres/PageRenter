@@ -5,9 +5,26 @@ class API::UsersController < API::BaseAPIController
     json_received = JSON.parse(params['user'])
     user_hash = json_received.except!('role')
     user_role = json_received['role']
-    user = User.new(user_hash)
+    user = User.find_by_email(user_hash['email'])
 
-    if user.save then render json: { msg: 'ok' } else render json:  { msg: user.errors.messages.to_json } end
+    # SignUp
+    if user.nil?
+      user = User.new(user_hash)
+      if user.save
+        response = { msg: 'registered' }
+        # Manage the Token
+        API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
+      else
+        response =  { msg: user.errors.messages.to_json }
+      end
+
+    # SignIn
+    else
+      User.authenticate(user_hash['email'], user_hash['password'])
+      response = { msg: 'logged_in' }
+    end
+
+    render json: response
   end
 
   # Login user By API request (third dependences)
