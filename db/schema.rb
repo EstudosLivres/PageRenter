@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20140517032137) do
 
   create_table "users", force: true do |t|
-    t.string   "name",          limit: 55, null: false
-    t.string   "nick",          limit: 30, null: false
-    t.string   "email",         limit: 55, null: false
-    t.string   "locale",        limit: 5,  null: false
-    t.string   "password_hash", limit: 60
+    t.string   "name",       limit: 55, null: false
+    t.string   "nick",       limit: 30, null: false
+    t.string   "email",      limit: 55, null: false
+    t.string   "locale",     limit: 5,  null: false
+    t.string   "password",   limit: 60
     t.datetime "created_at"
     t.datetime "updated_at"
   end
