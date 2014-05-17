@@ -27,3 +27,5 @@ en:
     invite: "InviteFriends"
   advertiser_action:
     invite: "Recommend"
+  user_action:
+    feeedback: "ContactUs"
