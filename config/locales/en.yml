@@ -20,6 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  msgs:
+    welcome: "Welcome!"
+    login_success: "Logged in successfully."
   publisher_action:
     invite: "InviteFriends"
   advertiser_action:
