@@ -37,3 +37,6 @@ gem 'rspec-rails', '~> 2.14.1', groups: [:development, :test]
 
 # Better Errors for fast debug from the view on the browser
 gem 'better_errors', '~> 1.1.0'
+
+# Gem for encrypt Password
+gem 'bcrypt', '~> 3.1.7'
