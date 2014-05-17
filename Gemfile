@@ -39,4 +39,4 @@ gem 'rspec-rails', '~> 2.14.1', groups: [:development, :test]
 gem 'better_errors', '~> 1.1.0'
 
 # Gem for encrypt Password
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt-ruby', :require => 'bcrypt'
