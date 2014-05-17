@@ -7,10 +7,7 @@ class API::UsersController < API::BaseAPIController
     user_role = json_received['role']
     user = User.new(user_hash)
 
-    unless user.save
-     render json:  user.errors.messages.to_json
-    end
-
+    if user.save then render json: { msg: 'ok' } else render json:  { msg: user.errors.messages.to_json } end
   end
 
   # Login user By API request (third dependences)
