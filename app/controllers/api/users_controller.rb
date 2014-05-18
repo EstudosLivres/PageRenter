@@ -2,14 +2,12 @@ class API::UsersController < API::BaseAPIController
   # Login user By System request (internal dependences)
   def system_signup_signin
     # Except to eliminate the Attr from the Hash (it is a attr to another Model)
-    json_received = JSON.parse(params['user'])
-    user_hash = json_received.except!('role')
-    user_role = json_received['role']
+    user_hash = JSON.parse(params['user'])
     user = User.find_by_email(user_hash['email'])
 
     # SignUp
     if user.nil?
-      user = User.new(user_hash)
+      user = User.create_one_user(user_hash)
       if user.save
         response = { status: 'ok', msg: 'registered' }
         # Manage the Token
