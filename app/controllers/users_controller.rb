@@ -3,7 +3,12 @@ class UsersController < ApplicationController
 
   def login
     user_params = params['user']
-    User.authenticate(user_params['email'], user_params['password'])
+    user = User.authenticate(user_params['email'], user_params['password'])
+    if user
+      session[:user_id] = user.id
+      redirect_to :controller =>  user.get_default_profile.pluralize
+    else
+    end
   end
 
   def sign_out
