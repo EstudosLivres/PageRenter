@@ -13,17 +13,17 @@
 
 ActiveRecord::Schema.define(version: 20140518031559) do
 
-  create_table "roles", force: true do |t|
-    t.string   "name",       limit: 15, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "user_profile_per_roles", force: true do |t|
+  create_table "profiles", force: true do |t|
     t.string   "name",         limit: 55
     t.boolean  "default_role",            null: false
     t.integer  "role_id"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string   "name",       limit: 15, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
