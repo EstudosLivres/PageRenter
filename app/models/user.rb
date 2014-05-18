@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   # Relations
   has_many :user_account_per_roles
-  has_many :roles, through: :user_account_per_roles
 
   # Custom validations
   validate :solve_locale
@@ -35,6 +34,15 @@ class User < ActiveRecord::Base
     if self.locale == 'pt' then self.locale = 'pt'+'_BR'
     elsif self.locale == 'en' then self.locale = 'en'+'_US'
     elsif self.locale.length != 5 then self.locale = 'en'+'_US' end
+  end
+
+  # Method that encapsulate the User creation rule
+  def self.create_one_user user_hash
+    user_hash_full = user_hash
+    return_user = User.new(user_hash_full.except('role'))
+    return_user.user_account_per_roles = [].append UserAccountPerRole.new({ name: '', default_role: true, role_id: Role.find_by_name(user_hash['role']).id })
+
+    return_user
   end
 
   # Return the name per role (Adv/Pub) or User name if the current is not named
