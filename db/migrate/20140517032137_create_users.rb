@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.column :pass_salt, "char(29)", null: true
       t.column :password, "char(60)", null: true
       t.string :access_token, unique: true, null: true
+      t.integer :default_role_id, null: false
 
       t.timestamps
     end
