@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   # Return the User default Account
   def get_default_profile
     self.user_profile_per_roles.each do |profile|
-      return profile.role.name if profile.default_role == true
+      return profile if profile.default_role == true
     end
   end
 

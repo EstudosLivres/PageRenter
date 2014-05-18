@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     user = User.authenticate(user_params['email'], user_params['password'])
     if user
       session[:user_id] = user.id
-      redirect_to :controller =>  user.get_default_profile.pluralize
+      redirect_to :controller =>  user.get_default_profile.role.name.pluralize
     else
     end
   end
