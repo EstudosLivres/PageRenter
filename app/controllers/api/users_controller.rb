@@ -11,17 +11,17 @@ class API::UsersController < API::BaseAPIController
     if user.nil?
       user = User.new(user_hash)
       if user.save
-        response = { msg: 'registered' }
+        response = { status: 'ok', msg: 'registered' }
         # Manage the Token
         API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
       else
-        response =  { msg: user.errors.messages.to_json }
+        response =  { status: 'error', msg: user.errors.messages.to_json }
       end
 
     # SignIn
     else
       User.authenticate(user_hash['email'], user_hash['password'])
-      response = { msg: 'logged_in' }
+      response = { status: 'ok', msg: 'logged_in' }
     end
 
     render json: response
