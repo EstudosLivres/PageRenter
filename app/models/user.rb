@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # Relations
-  has_many :user_account_per_roles
+  has_many :user_profile_per_roles
 
   # Custom validations
   validate :solve_locale
@@ -40,9 +40,16 @@ class User < ActiveRecord::Base
   def self.create_one_user user_hash
     user_hash_full = user_hash
     return_user = User.new(user_hash_full.except('role'))
-    return_user.user_account_per_roles = [].append UserAccountPerRole.new({ name: '', default_role: true, role_id: Role.find_by_name(user_hash['role']).id })
+    return_user.user_profile_per_roles = [].append UserProfilePerRole.new({ name: '', default_role: true, role_id: Role.find_by_name(user_hash['role']).id })
 
     return_user
+  end
+
+  # Return the User default Account
+  def get_default_profile
+    self.user_profile_per_roles.each do |profile|
+      return profile.role.name if profile.default_role == true
+    end
   end
 
   # Return the name per role (Adv/Pub) or User name if the current is not named
