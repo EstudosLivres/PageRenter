@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  # Relations
+  has_many :roles
+
   # Custom validations
   validate :solve_locale
   validate :encrypt_password
