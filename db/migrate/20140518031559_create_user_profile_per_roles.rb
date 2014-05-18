@@ -1,6 +1,6 @@
-class CreateUserAccountPerRoles < ActiveRecord::Migration
+class CreateUserProfilePerRoles < ActiveRecord::Migration
   def change
-    create_table :user_account_per_roles do |t|
+    create_table :user_profile_per_roles do |t|
       t.string :name, limit: 55, null: true
       t.boolean :default_role, null: false
       t.belongs_to :role
