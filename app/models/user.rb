@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Relations
-  has_many :roles
+  has_many :user_account_per_roles
+  has_many :roles, through: :user_account_per_roles
 
   # Custom validations
   validate :solve_locale
@@ -34,5 +35,10 @@ class User < ActiveRecord::Base
     if self.locale == 'pt' then self.locale = 'pt'+'_BR'
     elsif self.locale == 'en' then self.locale = 'en'+'_US'
     elsif self.locale.length != 5 then self.locale = 'en'+'_US' end
+  end
+
+  # Return the name per role (Adv/Pub) or User name if the current is not named
+  def get_current_name
+    # TODO
   end
 end

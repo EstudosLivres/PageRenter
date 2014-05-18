@@ -1,5 +1,6 @@
 class Role < ActiveRecord::Base
   # Relations
-  belongs_to :user
+  has_many :user_account_per_roles
+  has_many :users, through: :user_account_per_roles
 
 end
