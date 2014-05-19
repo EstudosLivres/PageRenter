@@ -4,8 +4,6 @@
     <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/social_network_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/social_session_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/tasks/insertions.rake" afterPath="$PROJECT_DIR$/lib/tasks/insertions.rake" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -1160,7 +1158,11 @@
       <created>1400474731826</created>
       <updated>1400474731826</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Base inserts moved from insertions rake to seeds (group inserts must be done in the seed) STARTUP inserts">
+      <created>1400509835103</created>
+      <updated>1400509835104</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1245,7 +1247,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Schema update ACCOUNT -&gt; PROFILE" />
     <MESSAGE value="++ Pluralize method" />
     <MESSAGE value="Login, if success, redirect to the page which the user has default role" />
     <MESSAGE value="Refect: ACCOUNT -&gt; PROFILE &amp; creation of = get_default_profile, which says which controller render on login, for example" />
@@ -1270,7 +1271,8 @@
     <MESSAGE value="Login if SessionNetwork exists" />
     <MESSAGE value="Page added to the hash to persist" />
     <MESSAGE value="Page Added:&#10;- Persisting;&#10;- Refect has_and_belongs_to_many;&#10;- Logging and Registering." />
-    <option name="LAST_COMMIT_MESSAGE" value="Page Added:&#10;- Persisting;&#10;- Refect has_and_belongs_to_many;&#10;- Logging and Registering." />
+    <MESSAGE value="Base inserts moved from insertions rake to seeds (group inserts must be done in the seed) STARTUP inserts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base inserts moved from insertions rake to seeds (group inserts must be done in the seed) STARTUP inserts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
