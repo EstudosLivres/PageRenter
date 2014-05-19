@@ -6,7 +6,8 @@ describe "User Registration & LogIn" do
     @controller = API::UsersController
   end
 
-  describe "SignUp user BY #INVALID FORM" do
+  # Submit an user empty hash as param for SignUp_SignIn
+  describe "SignUp user BY #INVALID user FORM" do
     subject(:invalid_form_resp) { http_helper.post('/system/signup_signin', {'user' => ''}) }
 
     it "Should be accessible" do invalid_form_resp.code.to_i.should == 200 end
