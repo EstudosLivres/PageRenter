@@ -220,10 +220,13 @@
     <orderEntry type="library" scope="PROVIDED" name="railties (v4.1.0, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.3.1, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rdoc (v4.1.1, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rest-client (v1.6.7, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec (v2.14.1, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-core (v2.14.8, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v2.14.5, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v2.14.6, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-rails (v2.14.2, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rspec_api_test (v0.0.2, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass (v3.2.19, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sass-rails (v4.0.3, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="sdoc (v0.4.0, RVM: ruby-2.1.1 [page]) [gem]" level="application" />
