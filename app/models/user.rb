@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   validates :nick, presence: true, length: { in: 2..30 }, uniqueness: true, on: :create
   validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: :create
   validates :locale, presence: true, length: { is: 5 }, on: :create
-  validates :pass_salt, presence: true, length: { is: 29 }, on: :create
-  validates :password, presence: true, length: { is: 60 }, on: :create
 
   # Encrypt the pasword using BCrypt
   def encrypt_password
@@ -40,8 +38,8 @@ class User < ActiveRecord::Base
   # Method that encapsulate the User creation rule
   def self.create_one_user user_hash
     user_hash_full = user_hash
-    return_user = User.new(user_hash_full.except('role'))
-    return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: Role.find_by_name(user_hash['role']).id })
+    return_user = User.new(user_hash.except('role'))
+    return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: Role.find_by_name(user_hash_full['role']).id })
 
     return_user
   end
@@ -64,8 +62,8 @@ class User < ActiveRecord::Base
 
     hash_return = {:user => {}, :social_session => {}}
 
-    hash_return[:user] = {name: user['name'], nick: user['username'], email: user['email'], locale: user['locale']}
-    hash_return[:social_session] = {id_on_social: user['id'], name: user['name'], username: user['username'], email: user['email'], gender: user['gender'], locale: user['locale'], gender: user['gender']}
+    hash_return[:user] = {name: user['name'], nick: user['username'], email: user['email'], locale: user['locale'], 'role' => 'publisher'}
+    hash_return[:social_session] = {id_on_social: user['id'], name: user['name'], username: user['username'], email: user['email'], gender: user['gender'], locale: user['locale'], gender: user['gender'], count_friends: user['count_friends'], user_id: user['id'], social_network_id: user['network_id']}
 
     hash_return
   end

@@ -2,14 +2,34 @@ class API::UsersController < API::BaseAPIController
   # Login user By System request (internal dependences)
   def system_signup_signin
     # Except to eliminate the Attr from the Hash (it is a attr to another Model)
-    user_hash = JSON.parse(params['user'])
+    input_hash = params['user']
+    # Parse JSON String to Hash, if it is a String
+    input_hash = JSON.parse(input_hash) if input_hash.is_a?String
+
+    # user_hash depends if it was by form or by Social Login (input_hash.has_key?(social_key)=true ->SocialLogin else Form)
+    social_key = 'social_session'
+    is_social_login = input_hash.has_key?(social_key)
+    if is_social_login
+      temp_hash = User.create_user_hash_from_social(input_hash[social_key])
+      social_hash = temp_hash[:social_session]
+      user_hash = temp_hash[:user]
+    else user_hash = input_hash end
+
     user = User.find_by_email(user_hash['email'])
 
     # SignUp
     if user.nil?
       user = User.create_one_user(user_hash)
+
+      # User save
       if user.save
+        # More insertions if SocialLogin
+        unless social_hash.nil? then social_hash['user_id'] = user.id end
+        if is_social_login then SocialSession.new(social_hash).save end
+
+        # Prepair the response
         response = { status: 'ok', msg: 'registered' }
+
         # Manage the Token
         API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
       else
@@ -22,6 +42,7 @@ class API::UsersController < API::BaseAPIController
       response = { status: 'ok', msg: 'logged_in' }
     end
 
+    # Send the response
     render json: response
   end
 
