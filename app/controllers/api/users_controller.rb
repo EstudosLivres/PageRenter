@@ -3,7 +3,8 @@ class API::UsersController < API::BaseAPIController
   def system_signup_signin
     # Except to eliminate the Attr from the Hash (it is a attr to another Model)
     input_hash = params['user']
-    # Parse JSON String to Hash, if it is a String
+    # Parse JSON String to Hash, if it is a String and abort if no user hash received
+    if(input_hash.is_a?(String) && input_hash.length <= 1) then return render json: { status: 'error', msg: 'No user Data received!' } end
     input_hash = JSON.parse(input_hash) if input_hash.is_a?String
 
     # user_hash depends if it was by form or by Social Login (input_hash.has_key?(social_key)=true ->SocialLogin else Form)
