@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20140519011916) do
 
+  create_table "page_accounts", force: true do |t|
+    t.string   "id_on_social", limit: 45, null: false
+    t.string   "name",         limit: 75, null: false
+    t.string   "category",     limit: 25, null: false
+    t.string   "access_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profiles", force: true do |t|
     t.string   "name",         limit: 55
     t.boolean  "default_role",            null: false
@@ -48,6 +57,11 @@ ActiveRecord::Schema.define(version: 20140519011916) do
     t.integer  "social_network_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "social_sessions_page_accounts", id: false, force: true do |t|
+    t.integer "social_sessions_id"
+    t.integer "page_accounts_id"
   end
 
   create_table "users", force: true do |t|
