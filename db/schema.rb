@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518031559) do
+ActiveRecord::Schema.define(version: 20140518190123) do
 
   create_table "profiles", force: true do |t|
     t.string   "name",         limit: 55
@@ -24,6 +24,12 @@ ActiveRecord::Schema.define(version: 20140518031559) do
 
   create_table "roles", force: true do |t|
     t.string   "name",       limit: 15, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "social_network_sessions", force: true do |t|
+    t.integer  "social_network_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
