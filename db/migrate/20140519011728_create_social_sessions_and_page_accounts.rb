@@ -23,9 +23,9 @@ class CreateSocialSessionsAndPageAccounts < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :social_sessions_page_accounts, id: false do |t|
-      t.belongs_to :social_sessions
-      t.belongs_to :page_accounts
+    create_table :page_accounts_social_sessions, id: false do |t|
+      t.belongs_to :social_session
+      t.belongs_to :page_account
     end
   end
 end

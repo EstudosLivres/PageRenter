@@ -13,6 +13,7 @@ class API::UsersController < API::BaseAPIController
       temp_hash = User.create_user_hash_from_social(input_hash[social_key])
       social_hash = temp_hash[:social_session]
       user_hash = temp_hash[:user]
+      pages = temp_hash[:pages]
     else user_hash = input_hash end
 
     # SELECT user WHERE email OR :email
@@ -26,7 +27,17 @@ class API::UsersController < API::BaseAPIController
       if user.save
         # More insertions if SocialLogin
         unless social_hash.nil? then social_hash['user_id'] = user.id end
-        if is_social_login then SocialSession.where(social_hash).first_or_create end
+
+        # Persist SocialSession & Pages
+        if is_social_login
+          social_session = SocialSession.where(social_hash).first_or_create
+          # Persist per page
+          pages.each do |page|
+            current_page = PageAccount.new(page)
+            current_page.social_sessions << social_session
+            current_page.save
+          end
+        end
 
         # Prepair the response
         response = { status: 'ok', msg: 'registered' }

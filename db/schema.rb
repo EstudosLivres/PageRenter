@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 20140519011916) do
     t.datetime "updated_at"
   end
 
+  create_table "page_accounts_social_sessions", id: false, force: true do |t|
+    t.integer "social_session_id"
+    t.integer "page_account_id"
+  end
+
   create_table "profiles", force: true do |t|
     t.string   "name",         limit: 55
     t.boolean  "default_role",            null: false
@@ -57,11 +62,6 @@ ActiveRecord::Schema.define(version: 20140519011916) do
     t.integer  "social_network_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "social_sessions_page_accounts", id: false, force: true do |t|
-    t.integer "social_sessions_id"
-    t.integer "page_accounts_id"
   end
 
   create_table "users", force: true do |t|
