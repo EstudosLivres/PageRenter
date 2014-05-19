@@ -43,3 +43,6 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Color to the prints on console (PUTS)
 gem 'colorize', '~> 0.7.1'
+
+# RSpec Plugin for API test
+gem 'rspec_api_test', '~> 0.0.2'
