@@ -44,5 +44,8 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # Color to the prints on console (PUTS)
 gem 'colorize', '~> 0.7.1'
 
-# RSpec Plugin for API test
-gem 'rspec_api_test', '~> 0.0.2'
+# Option to not use Fixtures (FactoryGirl)
+gem 'factory_girl', '~> 4.4.0'
+
+# RSPec Plugin for testing Views
+gem 'capybara', '~> 2.2.1'
