@@ -15,7 +15,8 @@ class API::UsersController < API::BaseAPIController
       user_hash = temp_hash[:user]
     else user_hash = input_hash end
 
-    user = User.find_by_email(user_hash['email'])
+    # SELECT user WHERE email OR :email
+    user = User.find_by_email([user_hash['email'],user_hash[:email]])
 
     # SignUp
     if user.nil?
@@ -25,7 +26,7 @@ class API::UsersController < API::BaseAPIController
       if user.save
         # More insertions if SocialLogin
         unless social_hash.nil? then social_hash['user_id'] = user.id end
-        if is_social_login then SocialSession.new(social_hash).save end
+        if is_social_login then SocialSession.where(social_hash).first_or_create end
 
         # Prepair the response
         response = { status: 'ok', msg: 'registered' }
