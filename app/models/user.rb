@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Relations
   has_many :profiles
+  has_many :social_sessions
 
   # Custom validations
   validate :solve_locale
@@ -55,5 +56,17 @@ class User < ActiveRecord::Base
   # Return the name per role (Adv/Pub) or User name if the current is not named
   def get_current_name
     # TODO
+  end
+
+  # Create an user_hash (instanciable) from a social_hash RETURNS: [:user] & [:social_session]
+  def self.create_user_hash_from_social social_hash
+    user = social_hash['login']
+
+    hash_return = {:user => {}, :social_session => {}}
+
+    hash_return[:user] = {name: user['name'], nick: user['username'], email: user['email'], locale: user['locale']}
+    hash_return[:social_session] = {id_on_social: user['id'], name: user['name'], username: user['username'], email: user['email'], gender: user['gender'], locale: user['locale'], gender: user['gender']}
+
+    hash_return
   end
 end
