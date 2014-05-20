@@ -1,0 +1,10 @@
+Publisher AutoPub:
+    ** Pessoas que aderiram ao AutoPub:
+        Ao abrirem uma aba com o PageRenter o JS vai mandar um AutoPub dos anúncios pré-aprovados pelos usuários.
+
+Advertiser AutoPub:
+    Marca no anúncio o AutoPub.
+
+AutoPub em eventos:
+    O Advertiser abre o Analytics, eu abro Analytics, vejo a quantidade de usuários ON.
+    Mando um código promocional que envia e-mail avisando aos Pubs que eu não terei lucro nos próximos X mins.
