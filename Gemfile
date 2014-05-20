@@ -49,3 +49,6 @@ gem 'factory_girl', '~> 4.4.0'
 
 # RSPec Plugin for testing Views
 gem 'capybara', '~> 2.2.1'
+
+# RSPec Plugin for code-coverage
+gem 'simplecov', '~> 0.7.1'
