@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
     user_hash_full = user_hash
     return_user = User.new(user_hash.except('role'))
 
+    # Prevent the user with no role to be created
     role = Role.find_by_name(user_hash_full['role'])
     if role.nil? then role_id = nil else role_id = role.id end
 
