@@ -39,7 +39,11 @@ class User < ActiveRecord::Base
   def self.create_one_user user_hash
     user_hash_full = user_hash
     return_user = User.new(user_hash.except('role'))
-    return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: Role.find_by_name(user_hash_full['role']).id })
+
+    role = Role.find_by_name(user_hash_full['role'])
+    if role.nil? then role_id = nil else role_id = role.id end
+
+    return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: role_id })
 
     return_user
   end
