@@ -4,7 +4,7 @@ class API::UsersController < API::BaseAPIController
     # Except to eliminate the Attr from the Hash (it is a attr to another Model)
     input_hash = params['user']
     # Parse JSON String to Hash, if it is a String and abort if no user hash received
-    if(input_hash.is_a?(String) && input_hash.length <= 1) then return render json: { status: 'error', msg: 'No user Data received!' } end
+    if(input_hash.is_a?(String) && input_hash.length <= 1) then return render json: { status: 'error', type: :no_user_data, msg: 'No user Data received!' } end
     input_hash = JSON.parse(input_hash) if input_hash.is_a?String
 
     # user_hash depends if it was by form or by Social Login (input_hash.has_key?(social_key)=true ->SocialLogin else Form)
@@ -46,7 +46,7 @@ class API::UsersController < API::BaseAPIController
         # Manage the Token
         API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
       else
-        response =  { status: 'error', msg: user.errors.messages.to_json }
+        response =  { status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json }
       end
 
     # SignIn
