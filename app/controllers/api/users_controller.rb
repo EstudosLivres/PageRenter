@@ -15,6 +15,11 @@ class API::UsersController < API::BaseAPIController
       social_hash = temp_hash[:social_session]
       user_hash = temp_hash[:user]
       pages = temp_hash[:pages]
+      social_session = SocialSession.new(temp_hash.except(:pages)[:social_session]) if SocialSession.where(social_hash).take.nil?
+
+      unless social_session.save
+        return render json: { status: 'error', type: :invalid_attr_value, msg: social_session.errors.messages.to_json }
+      end
     else user_hash = input_hash end
 
     # SELECT user WHERE email OR :email
