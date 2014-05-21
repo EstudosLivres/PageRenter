@@ -15,8 +15,26 @@ class API::UsersController < API::BaseAPIController
       social_hash = temp_hash[:social_session]
       user_hash = temp_hash[:user]
       pages = temp_hash[:pages]
-      social_session = SocialSession.new(temp_hash.except(:pages)[:social_session]) if SocialSession.where(social_hash).take.nil?
 
+      # Pages validates
+      if pages.is_a?(Array) && !pages.empty?
+        pages.each do |page|
+          # Just create if it doesn't exist
+          page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
+          begin
+            unless page_acc.save
+              return render json: { status: 'error', type: :invalid_attr_value, msg: page_acc.errors.messages.to_json }
+            end
+          rescue
+            return render json: { status: 'error', type: :invalid_attr_value, msg: page_acc.errors.messages.to_json }
+          end
+        end
+      end
+
+      # Session validates
+      session_no_page = temp_hash.except(:pages)[:social_session]
+      # Just create if it doesn't exist
+      social_session = SocialSession.new(session_no_page) if SocialSession.where(id_on_social: social_hash[:id_on_social]).take.nil?
       unless social_session.save
         return render json: { status: 'error', type: :invalid_attr_value, msg: social_session.errors.messages.to_json }
       end
