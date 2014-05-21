@@ -42,7 +42,7 @@ describe "User Registration & LogIn" do
                                                    }]
                                            }
                                        }
-                                  }.to_json} }
+  }.to_json} }
 
   before(:each) do
     @controller = API::UsersController
