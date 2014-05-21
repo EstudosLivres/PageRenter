@@ -69,7 +69,7 @@ class User < ActiveRecord::Base
     hash_return = {:user => {}, :social_session => {}}
 
     hash_return[:user] = {name: user['name'], nick: user['username'], email: user['email'], locale: user['locale'], 'role' => 'publisher'}
-    hash_return[:social_session] = {id_on_social: user['id'], name: user['name'], username: user['username'], email: user['email'], gender: user['gender'], locale: user['locale'], gender: user['gender'], count_friends: user['count_friends'], user_id: user['id'], social_network_id: user['network_id']}
+    hash_return[:social_session] = {id_on_social: user['id'], name: user['name'], username: user['username'], email: user['email'], gender: user['gender'], locale: user['locale'], gender: user['gender'], count_friends: user['count_friends'], social_network_id: user['network_id']}
     hash_return[:pages] = []
 
     # Append the pages
