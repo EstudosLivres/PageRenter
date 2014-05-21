@@ -3,8 +3,47 @@ require 'spec_helper'
 describe "User Registration & LogIn" do
   subject(:http_helper) { API::Concerns::HttpTestHelper.new }
   subject(:empty_user) { {'user' => ''} }
-  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '11@1.1', password: '123'}.to_json} }
   subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
+  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '11@1.1', password: '123'}.to_json} }
+  subject(:fb_user) { {'user' => { 'social_session' =>
+                                       {
+                                           'login' => {
+                                               'count_friends' => '423', 'email' => 'ilton_junior_91@hotmail.com', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1, 'username' => 'ilton.garcia'
+                                           },
+                                           'pages' => {
+                                               'data' => [
+                                                   {
+                                                       'access_token' => 'CAADRLUro74ABAMwTepZCYppffNLXXJvp0aIhxIcVzLIdOZCbU4v3ZClc2xxZBGZB1tVcGYo9nlxWZBMKzfJarBC2sslXRxkwap2ZCZCW6crVn9ZA0QcZAoXPzwwFoHBBKoUswiQxp50ZB5FouUutmR0oYKnZCiAVVuuNF84ZCwAdKNCg69fRs9oSBokENNZCt0LaL2AMUZD',
+                                                       'category' => 'Community',
+                                                       'id' => '211020152393246',
+                                                       'name' => 'The Web Wall',
+                                                       'perms' => [
+                                                                    'ADMINISTER',
+                                                                    'EDIT_PROFILE',
+                                                                    'CREATE_CONTENT',
+                                                                    'MODERATE_CONTENT',
+                                                                    'CREATE_ADS',
+                                                                    'BASIC_ADMIN'
+                                                        ]
+                                                   },
+                                                   {
+                                                       'access_token' => 'CAADRLUro74ABAGKxeU9vKAoqxrc0xMK6XDaWib6f7pg3ZCN1c2pldn09YOZCJUmijn9EuZCSTg13cJW3evdB0ZAfLJDZBkZCZA4kS24u1wZCcL5iRU9ZCwxy2GLiqMu9bKk17htZBhpW1bRoIIqeIYMvZB1AwZApnSXZC9uc5kt4GQyCFA2OKAluvDizXhPVnoARROQ8ZD',
+                                                       'category' => 'Just for fun',
+                                                       'id' => '418351588290310',
+                                                       'name' => 'Tah Foda',
+                                                       'perms' => [
+                                                           'ADMINISTER',
+                                                           'EDIT_PROFILE',
+                                                           'CREATE_CONTENT',
+                                                           'MODERATE_CONTENT',
+                                                           'CREATE_ADS',
+                                                           'BASIC_ADMIN'
+                                                       ]
+                                                   }],
+                                            'paging' => { 'next' => 'https://graph.facebook.com/v1.0/100001939359300/accounts?access_token=CAADR…aayfH2iPern47nqrieVVwjaN3PebrYbeM_HKc-rXVMWCgw6-D6VcdlMSfvwf2B-1jj3y4mBod7' }
+                                           }
+                                       }
+                                  }.to_json} }
 
   before(:each) do
     @controller = API::UsersController
@@ -46,7 +85,8 @@ describe "User Registration & LogIn" do
     it "Should be #:invalid_attr_value type message" do form_resp_body.should_not have_key('type') end
   end
 
-  it "SigIn user BY SocialSession JSON" do
+  # Facebook login
+  describe "SigIn user BY SocialSession JSON" do
 
   end
 end
