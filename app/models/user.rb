@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
 
     # Append the pages
     pages.each do |page|
-      page = page[1]
+      page = page[1] if page.is_a?Array
       hash_return[:pages].append({ id_on_social: page['id'], name: page['name'], category: page['category'], access_token: page['access_token'] })
     end
 
