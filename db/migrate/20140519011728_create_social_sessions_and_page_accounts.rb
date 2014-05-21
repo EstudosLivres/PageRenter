@@ -5,7 +5,7 @@ class CreateSocialSessionsAndPageAccounts < ActiveRecord::Migration
       t.string :name, limit: 65, null: false
       t.string :username, limit: 45, null: false
       t.string :email, limit: 55, null: false
-      t.string :gender, limit: 10, null: false
+      t.string :gender, limit: 10, null: true
       t.column :locale, "char(5)", null: false
       t.column :count_friends, "BIGINT", null: false
       t.belongs_to :user
