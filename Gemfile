@@ -52,3 +52,6 @@ gem 'capybara', '~> 2.2.1'
 
 # RSPec Plugin for code-coverage
 gem 'simplecov', '~> 0.7.1'
+
+# RSPec Plugin for params on its
+gem 'its', groups: [:development, :test]
