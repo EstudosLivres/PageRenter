@@ -1,0 +1,117 @@
+{ "user" : { "social_session" : { "login" : { "count_friends" : "423",
+              "email" : "ilton_junior_91@hotmail.com",
+              "first_name" : "Ilton",
+              "gender" : "male",
+              "id" : "100001939359300",
+              "languages" : [ { "id" : "108071965888469",
+                    "name" : "English"
+                  },
+                  { "id" : "108177092548456",
+                    "name" : "Español"
+                  },
+                  { "id" : "108083115891989",
+                    "name" : "Português"
+                  }
+                ],
+              "last_name" : "Garcia",
+              "link" : "https://www.facebook.com/ilton.garcia",
+              "locale" : "pt_BR",
+              "name" : "Ilton Garcia",
+              "network_id" : 1,
+              "timezone" : -3,
+              "updated_time" : "2014-03-01T18:59:02+0000",
+              "username" : "ilton.garcia",
+              "verified" : true
+            },
+          "pages" : {
+              "data" : [ { "access_token" : "CAADRLUro74ABAMwTepZCYppffNLXXJvp0aIhxIcVzLIdOZCbU4v3ZClc2xxZBGZB1tVcGYo9nlxWZBMKzfJarBC2sslXRxkwap2ZCZCW6crVn9ZA0QcZAoXPzwwFoHBBKoUswiQxp50ZB5FouUutmR0oYKnZCiAVVuuNF84ZCwAdKNCg69fRs9oSBokENNZCt0LaL2AMUZD",
+                    "category" : "Community",
+                    "id" : "211020152393246",
+                    "name" : "The Web Wall",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  },
+                  { "access_token" : "CAADRLUro74ABAGKxeU9vKAoqxrc0xMK6XDaWib6f7pg3ZCN1c2pldn09YOZCJUmijn9EuZCSTg13cJW3evdB0ZAfLJDZBkZCZA4kS24u1wZCcL5iRU9ZCwxy2GLiqMu9bKk17htZBhpW1bRoIIqeIYMvZB1AwZApnSXZC9uc5kt4GQyCFA2OKAluvDizXhPVnoARROQ8ZD",
+                    "category" : "Just for fun",
+                    "id" : "418351588290310",
+                    "name" : "Tah Foda",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  },
+                  { "access_token" : "CAADRLUro74ABAJS1ZAkakAj05gXRpnII3H5DqLhdA8BSBbH8mmLE7OQ0VWUmWTUyjTZBKZCZCdrSRC0Gg4LZCKPZB9qZA21JCeoMqk4TfZBkoVHvZBig5xYP6V55xZCbgZAutiBd4Ir4yZAnrrYwLwTBCdOVFkmsA2IJUNbQ4wqMCD6X8nctSBkTfNUuTPLFwwZAjfLIZD",
+                    "category" : "Software",
+                    "id" : "280522178764966",
+                    "name" : "PageRenter",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  },
+                  { "access_token" : "CAADRLUro74ABAET719fe117rAVD9BZCwe7jnhcfI1PuQUyg4pYz71A12RZCeeZBH6uMmZAEZBs1egsH8BpzbTWgOKjnfOhFvogCbIgkQ6huKhQ9KSpbV9NHcaZB8eBqx1n3E3sQpWtB3TGaq4httRqN88iu5Q8M1OtJ8sZAGRLCccd6qbpypDpWZAl9zsC6wifgZD",
+                    "category" : "Internet/software",
+                    "category_list" : [ { "id" : "2256",
+                          "name" : "Internet/Software"
+                        } ],
+                    "id" : "661075283953601",
+                    "name" : "Proumo",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  },
+                  { "access_token" : "CAADRLUro74ABAIGt9YlcT1HvZBxZADAiqQYk6T8G4ETZCvv8RjfLKdpl2nmRYuu8d7kSjHPCEih358tE0U8usZCeHzPaZCckXqSwZBtopxJ6PRP8DRB9Y0rDYtu0s6M9GKKBlWaNQLohEVvsjUt4jwsU3IDNxqpMS0V7xwsdFzezkouPUm7cKQEWPBN8nZC4GAZD",
+                    "category" : "Software",
+                    "id" : "166764260154253",
+                    "name" : "Proumo Events",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  },
+                  { "access_token" : "CAADRLUro74ABANLn7xXv7jzR2VgfM9ZBVt0KgptxHtrPwWEVrYGgyQfdlgSRbo13RWZBvZB7w9FGcsZAIsROMUbskZAchHiOGDTIcM3EdJSyg5O9JDr7ZB4GvBSACHT9JjTiX4Ikpm9bsiEEnrJZBl1WKhUcchYis2S4KAYtB2ybvKCa3ZAQqY6p97tRK2FNeSwZD",
+                    "category" : "Software",
+                    "id" : "467642780024391",
+                    "name" : "Gerência Pública",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  },
+                  { "access_token" : "CAADRLUro74ABAGQtXmfWCB4LZCZBRI6a3lpIqtp4YkoOOyD0bIUSq387mwjwuLxp8L5mZAq1P9HEsSRkNcwRhthlHZC7CThpDwazEZB8mLN17WKu2n4BUvFdPJINEmBhqCdO9pOb3jO6j7BjbjNQZCKTiC5RqYFdf9L2TFQqQ0tVOFXQM6iyXo8prOD1IpeHUZD",
+                    "category" : "Software",
+                    "id" : "435747736520755",
+                    "name" : "GetFreelUS",
+                    "perms" : [ "ADMINISTER",
+                        "EDIT_PROFILE",
+                        "CREATE_CONTENT",
+                        "MODERATE_CONTENT",
+                        "CREATE_ADS",
+                        "BASIC_ADMIN"
+                      ]
+                  }
+                ],
+              "paging" : { "next" : "https://graph.facebook.com/v1.0/100001939359300/accounts?access_token=CAADR…aayfH2iPern47nqrieVVwjaN3PebrYbeM_HKc-rXVMWCgw6-D6VcdlMSfvwf2B-1jj3y4mBod7" }
+            }
+        } } }
