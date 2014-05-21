@@ -39,8 +39,7 @@ describe "User Registration & LogIn" do
                                                            'CREATE_ADS',
                                                            'BASIC_ADMIN'
                                                        ]
-                                                   }],
-                                            'paging' => { 'next' => 'https://graph.facebook.com/v1.0/100001939359300/accounts?access_token=CAADR…aayfH2iPern47nqrieVVwjaN3PebrYbeM_HKc-rXVMWCgw6-D6VcdlMSfvwf2B-1jj3y4mBod7' }
+                                                   }]
                                            }
                                        }
                                   }.to_json} }
@@ -87,6 +86,9 @@ describe "User Registration & LogIn" do
 
   # Facebook login
   describe "SigIn user BY SocialSession JSON" do
+    subject(:valid_fb_user) { JSON.parse(http_helper.post('/system/signup_signin', fb_user).body) }
 
+    it "Should be accessible" do valid_fb_user['status'].should == 'ok' end
+    it "Should be logged" do valid_fb_user['msg'].should == 'logged_in' end
   end
 end
