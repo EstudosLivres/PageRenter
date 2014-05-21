@@ -16,28 +16,10 @@ class API::UsersController < API::BaseAPIController
       user_hash = temp_hash[:user]
       pages = temp_hash[:pages]
 
-      # Pages validates
-      if pages.is_a?(Array) && !pages.empty?
-        pages.each do |page|
-          # Just create if it doesn't exist
-          page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
-          begin
-            unless page_acc.save
-              return render json: { status: 'error', type: :invalid_attr_value, msg: page_acc.errors.messages.to_json }
-            end
-          rescue
-            return render json: { status: 'error', type: :invalid_attr_value, msg: page_acc.errors.messages.to_json }
-          end
-        end
-      end
-
       # Session validates
       session_no_page = temp_hash.except(:pages)[:social_session]
       # Just create if it doesn't exist
       social_session = SocialSession.new(session_no_page) if SocialSession.where(id_on_social: social_hash[:id_on_social]).take.nil?
-      unless social_session.save
-        return render json: { status: 'error', type: :invalid_attr_value, msg: social_session.errors.messages.to_json }
-      end
     else user_hash = input_hash end
 
     # SELECT user WHERE email OR :email
@@ -46,6 +28,15 @@ class API::UsersController < API::BaseAPIController
     # SignUp
     if user.nil?
       user = User.create_one_user(user_hash)
+      user.social_sessions = [social_session] unless social_session.nil?
+
+      # Pages validates
+      if pages.is_a?(Array) && !pages.empty?
+        pages.each do |page|
+          page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
+          user.social_sessions.first.page_accounts.append(page_acc)
+        end
+      end
 
       # User save
       if user.save
