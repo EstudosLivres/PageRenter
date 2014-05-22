@@ -6,7 +6,7 @@ include API
 describe API::UsersController do
   subject(:controller) { API::UsersController.new }
   let!(:api_publisher) { FactoryGirl.create(:publisher) }
-  subject(:valid_api_pub){{ 'email' => '55@5.5', 'password' => '123' }}
+  subject(:valid_api_pub){{ 'email' => '11@1.1', 'password' => '123' }}
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
   subject(:empty_user) { {'user' => ''} }
   subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
