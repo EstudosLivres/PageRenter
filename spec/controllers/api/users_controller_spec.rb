@@ -1,16 +1,21 @@
 require 'spec_helper'
 require 'its'
+require 'factory_girl_rails'
 include API
 
 describe API::UsersController do
   subject(:controller) { API::UsersController.new }
+  let!(:api_publisher) { FactoryGirl.create(:publisher) }
+  subject(:valid_api_pub){{ 'email' => '55@5.5', 'password' => '123' }}
+  subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
+  subject(:api_pub_access) {{ 'access_token' => 'c37234a97430b86716f75d0c0d4b74b8' }}
   subject(:empty_user) { {'user' => ''} }
   subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
   subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '11@1.1', password: '123'}.to_json} }
   subject(:invalid_fb_user) { {'user' => { 'social_session' =>
                                        {
                                            'login' => {
-                                               'count_friends' => '423', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1, 'username' => 'ilton.garcia'
+                                               'count_friends' => '423', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1
                                            },
                                            'pages' => {
                                                'data' => [
@@ -46,7 +51,7 @@ describe API::UsersController do
   subject(:valid_fb_user) { {'user' => { 'social_session' =>
                                                {
                                                    'login' => {
-                                                       'count_friends' => '423', 'email' => 'ilton_junior_91@hotmail.com', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1, 'username' => 'ilton.garcia', 'gender' => 'male'
+                                                       'count_friends' => '423', 'email' => 'ilton_junior_91@hotmail.com', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1, 'username' => 'ton.garcia', 'gender' => 'male'
                                                    },
                                                    'pages' => {
                                                        'data' => [
@@ -138,5 +143,33 @@ describe API::UsersController do
 
     it "Should be accessible" do response.should be_success end
     it "Should be registered" do resp_body['msg'].should == 'registered' end
+  end
+
+  # Mob Login
+  describe "API Mob" do
+    context "Login/SignUp valid user" do
+      before { post :mob_login, valid_api_pub }
+      subject(:valid_resp_hash) { JSON.parse(response.body) }
+
+      it "Should be accessible" do response.should be_success end
+      it "Should have an access_token now" do valid_resp_hash['access_token'].length.should > 0 end
+    end
+
+    context "Login without SignUp valid user" do
+      before { post :mob_login, api_pub_access }
+      subject(:users_access) { User.where(access_token: api_pub_access['access_token']).take!.access_token }
+      subject(:valid_resp_hash) { JSON.parse(response.body) }
+
+      it "Should be accessible" do response.should be_success end
+      it "Should not persist" do users_access.should == api_pub_access['access_token'] end
+    end
+
+    context "Login/SignUp invalid user" do
+      before { post :mob_login, invalid_api_pub }
+      subject(:invalid_resp_hash) { JSON.parse(response.body) }
+
+      it "Should be accessible" do response.should be_success end
+      it "Should respond with a message" do invalid_resp_hash.should have_key('erro') end
+    end
   end
 end
