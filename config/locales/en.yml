@@ -23,6 +23,7 @@ en:
   msgs:
     welcome: "Welcome!"
     login_success: "Logged in successfully."
+    login_error: "Inválido E-mail or Password."
 
 
   publisher_action:

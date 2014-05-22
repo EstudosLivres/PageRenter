@@ -23,6 +23,7 @@ pt:
   msgs:
     welcome: "Bem-vindo!"
     login_success: "Logado com sucesso."
+    login_error: "E-mail ou Senha inválido."
 
 
   publisher_action:
