@@ -28,7 +28,7 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
-        { :name => t(:user_action)[:feeedback], :path => 'publishers/invite', :icon => 'fa fa-comments' }
+        { :name => t(:user_action)[:feeedback], :path => 'users/feedback', :icon => 'fa fa-comments' }
     ]
 
     users_actions.each do |action|
