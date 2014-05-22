@@ -68,5 +68,9 @@ module API::Concerns
       @token = @token + @crypt_count
       registra_acesso
     end
+
+    def current_user
+      @usuario_corrente
+    end
   end
 end
