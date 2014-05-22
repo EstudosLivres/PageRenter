@@ -24,7 +24,10 @@ PageRenter::Application.routes.draw do
       post '/signup_signin' => 'users#system_signup_signin'
     end
 
-    # API for Thirds
-    post '/signup_signin' => 'users#api_signup_signin'
+    # All the actions for Thrid and System for MobileApp
+    scope '/users' do
+      get 'login' => 'users#mob_login'
+      post 'login' => 'users#mob_login'
+    end
   end
 end
