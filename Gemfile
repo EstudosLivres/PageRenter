@@ -32,26 +32,28 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# RSPec for BDD pratices
-gem 'rspec-rails', '~> 2.14.1', groups: [:development, :test]
+group :development, :test do
+  # RSPec for BDD pratices
+  gem 'rspec-rails', '~> 2.14.1'
 
-# Better Errors for fast debug from the view on the browser
-gem 'better_errors', '~> 1.1.0'
+  # Better Errors for fast debug from the view on the browser
+  gem 'better_errors', '~> 1.1.0'
 
-# Gem for encrypt Password
-gem 'bcrypt-ruby', :require => 'bcrypt'
+  # Gem for encrypt Password
+  gem 'bcrypt-ruby', :require => 'bcrypt'
 
-# Color to the prints on console (PUTS)
-gem 'colorize', '~> 0.7.1'
+  # Color to the prints on console (PUTS)
+  gem 'colorize', '~> 0.7.1'
 
-# Option to not use Fixtures (FactoryGirl)
-gem 'factory_girl_rails', '~> 4.0'
+  # Option to not use Fixtures (FactoryGirl)
+  gem 'factory_girl_rails', '~> 4.0'
 
-# RSPec Plugin for testing Views
-gem 'capybara', '~> 2.2.1'
+  # RSPec Plugin for testing Views
+  gem 'capybara', '~> 2.2.1'
 
-# RSPec Plugin for code-coverage
-gem 'simplecov', '~> 0.7.1'
+  # RSPec Plugin for code-coverage
+  gem 'simplecov', '~> 0.7.1'
 
-# RSPec Plugin for params on its
-gem 'its', groups: [:development, :test]
+  # RSPec Plugin for params on its
+  gem 'its'
+end
