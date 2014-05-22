@@ -45,7 +45,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'colorize', '~> 0.7.1'
 
 # Option to not use Fixtures (FactoryGirl)
-gem 'factory_girl', '~> 4.4.0'
+gem 'factory_girl_rails', '~> 4.0'
 
 # RSPec Plugin for testing Views
 gem 'capybara', '~> 2.2.1'
