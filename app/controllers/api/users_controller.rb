@@ -73,8 +73,8 @@ class API::UsersController < API::BaseAPIController
     render json: response
   end
 
-  # Login user By API request (third dependences)
-  def api_signup_signin
+  # Login by token, without session
+  def mob_login
     token_manager = API::Concerns::TokenManager.new(params[:email], params[:password], params[:access_token])
     render json: token_manager.token.to_json
   end
