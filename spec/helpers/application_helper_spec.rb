@@ -27,7 +27,7 @@ describe ApplicationHelper do
       subject! { controller.params = { 'controller' => 'publishers' } }
       pub_icon = 'fa-rocket'
 
-      it "Role should be Publisher" do helper.role_name.should == 'publisher'end
+      it "Role should be Publisher" do helper.role_name.should == 'publisher' end
 
       it "Publisher icon should be #{ pub_icon }" do helper.role_icon.should == pub_icon end
 
@@ -39,6 +39,14 @@ describe ApplicationHelper do
          it "Should route to publishers/invite" do helper.role_actions[1][:path].should == 'users/feedback' end
         end
       end
+    end
+
+    # Admin (not implemented yet)
+    context "Role #Admin" do
+      subject! { controller.params = { 'controller' => 'admins' } }
+
+      it "Role should be Admin" do helper.role_name.should == 'admin' end
+      it "Role should have empty role_actions" do helper.role_actions.length.should == 1 end
     end
   end
 
