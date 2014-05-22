@@ -31,7 +31,7 @@ module API::Concerns
       # Try/Catch para ver se o Usuário foi encontrado no BD
       begin
         return @token = token_erro if @password.nil? || @email.nil?
-        @usuario_corrente = User.where(email: @email, password: @password).take!
+        @usuario_corrente = User.authenticate(@email, @password)
         @user_hash = @usuario_corrente.attributes
         @user_id = @user_hash['id']
         return @token = token_erro if @user_id.nil?
