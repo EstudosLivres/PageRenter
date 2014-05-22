@@ -5,7 +5,7 @@ include API
 
 describe API::UsersController do
   subject(:controller) { API::UsersController.new }
-  let!(:api_publisher) { FactoryGirl.create(:publisher) }
+  let!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }
   subject(:valid_api_pub){{ 'email' => '11@1.1', 'password' => '123' }}
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
   subject(:empty_user) { {'user' => ''} }
@@ -157,14 +157,13 @@ describe API::UsersController do
     context "Login without SignUp #VALID user" do
       before { post :mob_login, valid_api_pub }
       subject(:valid_resp_hash) { JSON.parse(response.body) }
-      subject(:api_pub_access) { valid_resp_hash['access_token'] }
       subject(:request_api_mob_user) { post :mob_login, { 'access_token' => valid_resp_hash['access_token']} }
       subject(:api_mob_user) { JSON.parse(request_api_mob_user.body) }
-      subject(:users_access) { User.where(access_token: api_pub_access).take!.access_token }
+      subject(:users_access) { User.where(access_token: valid_resp_hash['access_token']).take!.access_token }
 
 
       it "Should be accessible" do response.should be_success end
-      it "Should not persist" do users_access.should == api_pub_access end
+      it "Should not persist" do users_access.should == User.find(publisher_profile.user.id).access_token end
       it "Should be a full user" do User.new(api_mob_user).is_a?(User).should be_true end
     end
 
