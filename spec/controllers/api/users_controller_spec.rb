@@ -8,7 +8,6 @@ describe API::UsersController do
   let!(:api_publisher) { FactoryGirl.create(:publisher) }
   subject(:valid_api_pub){{ 'email' => '55@5.5', 'password' => '123' }}
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
-  subject(:api_pub_access) {{ 'access_token' => 'c37234a97430b86716f75d0c0d4b74b8' }}
   subject(:empty_user) { {'user' => ''} }
   subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
   subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '11@1.1', password: '123'}.to_json} }
@@ -155,16 +154,18 @@ describe API::UsersController do
       it "Should have an access_token now" do valid_resp_hash['access_token'].length.should > 0 end
     end
 
-    context "Login without SignUp valid user" do
-      before { post :mob_login, api_pub_access }
-      subject(:users_access) { User.where(access_token: api_pub_access['access_token']).take!.access_token }
+    context "Login without SignUp #VALID user" do
+      before { post :mob_login, valid_api_pub }
       subject(:valid_resp_hash) { JSON.parse(response.body) }
+      subject(:api_pub_access) { valid_resp_hash['access_token'] }
+      subject(:users_access) { User.where(access_token: api_pub_access).take!.access_token }
+
 
       it "Should be accessible" do response.should be_success end
-      it "Should not persist" do users_access.should == api_pub_access['access_token'] end
+      it "Should not persist" do users_access.should == api_pub_access end
     end
 
-    context "Login/SignUp invalid user" do
+    context "Login/SignUp #INVALID user" do
       before { post :mob_login, invalid_api_pub }
       subject(:invalid_resp_hash) { JSON.parse(response.body) }
 
