@@ -12,7 +12,8 @@ module API::Concerns
     def initialize email, password, access_token
       @email = email
       @password = password
-      !access_token.nil? ? @token = access_token : generate_token
+      unless access_token.nil? then @token = access_token end
+      generate_token
     end
 
     def token
@@ -30,8 +31,8 @@ module API::Concerns
 
       # Try/Catch para ver se o Usuário foi encontrado no BD
       begin
-        return @token = token_erro if @password.nil? || @email.nil?
-        @usuario_corrente = User.authenticate(@email, @password)
+        return @token = token_erro if  (@token.nil? && (@password.nil? || @email.nil?))
+        if @token.nil? then @usuario_corrente = User.authenticate(@email, @password) else @usuario_corrente = User.where(access_token: @token).take! end
         @user_hash = @usuario_corrente.attributes
         @user_id = @user_hash['id']
         return @token = token_erro if @user_id.nil?
