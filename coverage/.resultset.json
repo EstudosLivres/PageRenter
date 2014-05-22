@@ -261,7 +261,7 @@
         null,
         1,
         null,
-        10,
+        13,
         null,
         null,
         1,
@@ -269,7 +269,7 @@
         null,
         null,
         1,
-        4,
+        5,
         2,
         null,
         null,
@@ -278,19 +278,19 @@
         null,
         null,
         null,
-        0,
+        1,
         null,
         null,
         null,
-        4,
+        5,
         null,
         null,
         null,
-        4,
-        4,
+        5,
+        5,
         null,
         null,
-        4,
+        5,
         null,
         null
       ],
@@ -790,6 +790,14 @@
         null,
         null,
         null,
+        1,
+        3,
+        null,
+        2,
+        2,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/TonGarcia/Documents/projs/rails/PageRenter/spec/helpers/publishers_helper_spec.rb": [
@@ -1095,6 +1103,6 @@
         null
       ]
     },
-    "timestamp": 1400735657
+    "timestamp": 1400736610
   }
 }
