@@ -76,6 +76,6 @@ class API::UsersController < API::BaseAPIController
   # Login by token, without session
   def mob_login
     token_manager = API::Concerns::TokenManager.new(params[:email], params[:password], params[:access_token])
-    render json: token_manager.token.to_json
+    render json: JSON.parse(token_manager.current_user.to_json).except('id', 'password', 'pass_salt', 'updated_at')
   end
 end
