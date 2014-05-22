@@ -1,24 +1,19 @@
 # This will guess the User class
 FactoryGirl.define do
-  factory :user, aliases: [:publisher] do
+  factory :user, aliases: [:publisher_user] do
     name        'Ilton Garcia'
     nick        'ilton.garcia'
-    email       '55@5.5'
+    email       '11@1.1'
     locale      'pt_BR'
     password    '123'
     created_at  { 2.months.ago }
   end
 
-  factory :profile do
-    user
+  factory :profile, aliases: [:publisher_profile] do
     default_role 1
     user_id 1
-    role
-  end
-
-  factory :role do
-    association :profile
-    name 'publisher'
+    role_id 1
+    user
   end
 
 =begin
