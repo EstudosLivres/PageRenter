@@ -5,8 +5,7 @@ FactoryGirl.define do
     nick        'ilton.garcia'
     email       '55@5.5'
     locale      'pt_BR'
-    pass_salt   '$2a$10$9A3qM2mjS1/akUoDjTWdy.'
-    password    '$2a$10$9A3qM2mjS1/akUoDjTWdy.zjfQP/K8PbsH1NZhMTkmLlI/QqHk25i'
+    password    '123'
     created_at  { 2.months.ago }
   end
 
