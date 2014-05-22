@@ -160,7 +160,7 @@ DEPENDENCIES
   capybara (~> 2.2.1)
   coffee-rails (~> 4.0.0)
   colorize (~> 0.7.1)
-  factory_girl_rails (~> 4.0)
+  factory_girl_rails (~> 4.4)
   its
   jbuilder (~> 1.2)
   jquery-rails
