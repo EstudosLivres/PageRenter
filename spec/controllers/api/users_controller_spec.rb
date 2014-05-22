@@ -10,7 +10,7 @@ describe API::UsersController do
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
   subject(:empty_user) { {'user' => ''} }
   subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
-  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '11@1.1', password: '123'}.to_json} }
+  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '33@3.3', password: '123'}.to_json} }
   subject(:invalid_fb_user) { {'user' => { 'social_session' =>
                                        {
                                            'login' => {
