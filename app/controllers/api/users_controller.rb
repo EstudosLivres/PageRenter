@@ -80,7 +80,7 @@ class API::UsersController < API::BaseAPIController
     if !current_user.nil?
       render json: JSON.parse(current_user.to_json).except('id', 'password', 'pass_salt', 'updated_at')
     else
-      render json: JSON.parse(token_manager.token.to_json).except('id', 'password', 'pass_salt', 'updated_at')
+      render json: JSON.parse(token_manager.token.to_json)
     end
   end
 end
