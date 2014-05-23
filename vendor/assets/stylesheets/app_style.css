@@ -149,6 +149,11 @@ fieldset[disabled] .btn-primary.active {
     color: #f5f5f5;
 }
 
+.btn.btn-facebook:focus {
+    /* whitesmoke */
+    color: #f5f5f5;
+}
+
 .box {
     min-height: 20px;
     padding: 19px;
@@ -308,7 +313,11 @@ a.r_advertiser:hover,
 }
 
 .modal-body .modal_body_left {
-    width: 45%;
-    padding-right: 50%;
+    width: 50%;
+    padding-right: 5%;
     border-right: solid 1px #eee;
+}
+
+.modal-body .modal_body_left .btn-facebook {
+    margin: 0 auto 15% 17%;
 }
