@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-23T01:12:19-03:00">2014-05-23T01:12:19-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-23T01:31:51-03:00">2014-05-23T01:31:51-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">99.61%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.09
+         2.1
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>51</b> files in total.
-    <b>508</b> relevant lines. 
-    <span class="green"><b>508</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>512</b> relevant lines. 
+    <span class="green"><b>510</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -103,11 +103,11 @@
       <tr>
         <td class="strong"><a href="#8cfad17831365edd78091c23da6d2c2710031727" class="src_link" title="app/controllers/application_controller.rb">app/controllers/application_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>5</td>
-        <td>2</td>
-        <td>2</td>
+        <td>9</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -132,12 +132,12 @@
       
       <tr>
         <td class="strong"><a href="#b30f66b94f5707d6919627c74854c6ad5d45f562" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>17</td>
+        <td class="yellow strong">83.33 %</td>
+        <td>19</td>
+        <td>12</td>
         <td>10</td>
-        <td>10</td>
-        <td>0</td>
-        <td>1.3</td>
+        <td>2</td>
+        <td>1.1</td>
       </tr>
       
       <tr>
@@ -1871,8 +1871,8 @@
     <h3>app/controllers/application_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1905,6 +1905,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.land_url</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="7">
+          <span class="hits">4</span>
+          
+          <code class="ruby">    &#39;http://pagerenter.com.br&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">end</code>
@@ -2027,7 +2051,7 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to &#39;http://pagerenter.com.br&#39;</code>
+          <code class="ruby">      redirect_to ApplicationController.land_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -2055,11 +2079,11 @@
         <div class="source_table" id="b30f66b94f5707d6919627c74854c6ad5d45f562">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
     <div>
-      <b>10</b> relevant lines. 
+      <b>12</b> relevant lines. 
       <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -2129,7 +2153,7 @@
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to &#39;http://pagerenter.com.br&#39;</code>
+          <code class="ruby">      redirect_to ApplicationController.land_url</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -2156,13 +2180,25 @@
           <code class="ruby">  def sign_out</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">    session.delete(&#39;user_id&#39;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    redirect_to ApplicationController.land_url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -6695,7 +6731,7 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(response).to redirect_to(&#39;http://pagerenter.com.br&#39;)</code>
+          <code class="ruby">        expect(response).to redirect_to(ApplicationController.land_url)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -6839,7 +6875,7 @@
         <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(response).to redirect_to(&#39;http://pagerenter.com.br&#39;)</code>
+          <code class="ruby">      expect(response).to redirect_to(ApplicationController.land_url)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">

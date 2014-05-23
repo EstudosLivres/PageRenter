@@ -14,7 +14,7 @@ describe UsersController do
     subject!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }
     it "Redirect to it role url" do
       post :login, { 'user' => { :password => '', :email => '11@1.1' } }
-      expect(response).to redirect_to('http://pagerenter.com.br')
+      expect(response).to redirect_to(ApplicationController.land_url)
     end
   end
 end

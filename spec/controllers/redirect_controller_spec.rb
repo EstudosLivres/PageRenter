@@ -34,7 +34,7 @@ describe RedirectController do
       subject!(:user) { FactoryGirl.create(:user) }
       it "should responde #/advertisers INDEX" do
         get :index
-        expect(response).to redirect_to('http://pagerenter.com.br')
+        expect(response).to redirect_to(ApplicationController.land_url)
       end
     end
   end

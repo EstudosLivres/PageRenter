@@ -7,7 +7,7 @@ class RedirectController < ApplicationController
       redirect_to :controller => "#{default_role}s", :action => 'index'
     else
       # Redirect to the land
-      redirect_to 'http://pagerenter.com.br'
+      redirect_to ApplicationController.land_url
     end
   end
 end
