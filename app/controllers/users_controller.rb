@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def sign_out
     session.delete('user_id')
+    session.delete('user_idiom')
     redirect_to ApplicationController.land_url
   end
 end
