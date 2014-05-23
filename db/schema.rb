@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140519011916) do
     t.string   "name",              limit: 65, null: false
     t.string   "username",          limit: 45, null: false
     t.string   "email",             limit: 55, null: false
-    t.string   "gender",            limit: 10, null: false
+    t.string   "gender",            limit: 10
     t.string   "locale",            limit: 5,  null: false
     t.integer  "count_friends",     limit: 8,  null: false
     t.integer  "user_id"
