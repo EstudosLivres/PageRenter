@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-22T21:56:00-03:00">2014-05-22T21:56:00-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-22T23:38:04-03:00">2014-05-22T23:38:04-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.32%</span></span>
+    (<span class="covered_percent"><span class="green">98.72%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.01
+         2.05
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>448</b> relevant lines. 
-    <span class="green"><b>436</b> lines covered</span> and
-    <span class="red"><b>12</b> lines missed </span>
+    <b>470</b> relevant lines. 
+    <span class="green"><b>464</b> lines covered</span> and
+    <span class="red"><b>6</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -122,12 +122,12 @@
       
       <tr>
         <td class="strong"><a href="#305e0bf248094be75765581cb29ff44cf5fce5fb" class="src_link" title="app/controllers/redirect_controller.rb">app/controllers/redirect_controller.rb</a></td>
-        <td class="red strong">28.57 %</td>
+        <td class="yellow strong">85.71 %</td>
         <td>13</td>
         <td>7</td>
-        <td>2</td>
-        <td>5</td>
-        <td>0.3</td>
+        <td>6</td>
+        <td>1</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -182,12 +182,12 @@
       
       <tr>
         <td class="strong"><a href="#e207f5eac74136f4ff34a5b165bf90045d9d25a9" class="src_link" title="app/models/profile.rb">app/models/profile.rb</a></td>
-        <td class="red strong">66.67 %</td>
+        <td class="green strong">100.0 %</td>
         <td>12</td>
         <td>6</td>
-        <td>4</td>
-        <td>2</td>
-        <td>0.7</td>
+        <td>6</td>
+        <td>0</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -227,7 +227,7 @@
         <td>40</td>
         <td>40</td>
         <td>0</td>
-        <td>12.2</td>
+        <td>12.5</td>
       </tr>
       
       <tr>
@@ -393,11 +393,11 @@
       <tr>
         <td class="strong"><a href="#d27c6c78f73563a2f3d9e45f97894aa4dbc857fa" class="src_link" title="spec/controllers/redirect_controller_spec.rb">spec/controllers/redirect_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>2</td>
-        <td>2</td>
+        <td>24</td>
+        <td>16</td>
+        <td>16</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -413,11 +413,11 @@
       <tr>
         <td class="strong"><a href="#5c214ed64a84f98b23ee94be80b3ce0294052e62" class="src_link" title="spec/factories/users.rb">spec/factories/users.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>44</td>
-        <td>13</td>
-        <td>13</td>
+        <td>39</td>
+        <td>21</td>
+        <td>21</td>
         <td>0</td>
-        <td>3.2</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -1937,11 +1937,11 @@
         <div class="source_table" id="305e0bf248094be75765581cb29ff44cf5fce5fb">
   <div class="header">
     <h3>app/controllers/redirect_controller.rb</h3>
-    <h4><span class="red">28.57 %</span> covered</h4>
+    <h4><span class="yellow">85.71 %</span> covered</h4>
     <div>
       <b>7</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -1960,8 +1960,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
+        <li class="covered" data-hits="2" data-linenumber="3">
+          <span class="hits">2</span>
           
           <code class="ruby">    loged_user = User.find(session[&#39;user_id&#39;])</code>
         </li>
@@ -1972,20 +1972,20 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
           
           <code class="ruby">    if !loged_user.nil?</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
-          
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
           <code class="ruby">      default_role = Profile.get_default_role(loged_user.profiles)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">      redirect_to :controller =&gt; &quot;#{default_role}s&quot;, :action =&gt; &#39;index&#39;</code>
         </li>
@@ -2423,11 +2423,11 @@
         <div class="source_table" id="e207f5eac74136f4ff34a5b165bf90045d9d25a9">
   <div class="header">
     <h3>app/models/profile.rb</h3>
-    <h4><span class="red">66.67 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>6</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2470,14 +2470,14 @@
           <code class="ruby">  def self.get_default_role profiles</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
           <code class="ruby">    profiles.each do |profile|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
-          
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
           <code class="ruby">      if profile.default_role then return profile.role.name end</code>
         </li>
@@ -2824,20 +2824,20 @@
           <code class="ruby">  def encrypt_password</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="18">
-          <span class="hits">51</span>
+        <li class="covered" data-hits="53" data-linenumber="18">
+          <span class="hits">53</span>
           
           <code class="ruby">    if password.present? &amp;&amp; !pass_salt.present?</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="19">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="36" data-linenumber="19">
+          <span class="hits">36</span>
           
           <code class="ruby">      self.pass_salt = BCrypt::Engine.generate_salt</code>
         </li>
       
-        <li class="covered" data-hits="34" data-linenumber="20">
-          <span class="hits">34</span>
+        <li class="covered" data-hits="36" data-linenumber="20">
+          <span class="hits">36</span>
           
           <code class="ruby">      self.password = BCrypt::Engine.hash_secret(password, pass_salt)</code>
         </li>
@@ -2914,20 +2914,20 @@
           <code class="ruby">    # Refect locale for optimized Locale (pt_PT != pt_BR)</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="33">
-          <span class="hits">51</span>
+        <li class="covered" data-hits="53" data-linenumber="33">
+          <span class="hits">53</span>
           
           <code class="ruby">    if self.locale == &#39;pt&#39; then self.locale = &#39;pt&#39;+&#39;_BR&#39;</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="34">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="48" data-linenumber="34">
+          <span class="hits">48</span>
           
           <code class="ruby">    elsif self.locale == &#39;en&#39; then self.locale = &#39;en&#39;+&#39;_US&#39;</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="35">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="48" data-linenumber="35">
+          <span class="hits">48</span>
           
           <code class="ruby">    elsif self.locale.length != 5 then self.locale = &#39;en&#39;+&#39;_US&#39; end</code>
         </li>
@@ -6301,8 +6301,8 @@
     <h3>spec/controllers/redirect_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>16</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6316,103 +6316,139 @@
           <code class="ruby">require &#39;spec_helper&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;factory_girl_rails&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
           <code class="ruby">describe RedirectController do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">  # TODO Create an Adv User &amp; a Pub User --&gt; Factory</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">=begin</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
           <code class="ruby">  describe &quot;Root aplication should respond the role URL&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
-          
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
           <code class="ruby">    context &quot;#Publisher&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">      session[&#39;user_id&#39;]</code>
+          <code class="ruby">      subject!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">      subject(:req_resp) { get :index }</code>
+          <code class="ruby">      subject!(:publisher_profile_session) { session[&#39;user_id&#39;] = publisher_profile.user.id }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      it &quot;should responde #/publishers&quot; do  end</code>
+          <code class="ruby">      it &quot;should responde #/publishers INDEX&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
+          <code class="ruby">        get :index</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
-          <code class="ruby">    end</code>
+          <code class="ruby">        expect(response).to redirect_to(&#39;/publishers&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">    context &quot;#Advertiser&quot; do</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">      it &quot;should responde #/advertisers&quot; do  end</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    context &quot;#Advertiser&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="16">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      subject!(:advertiser_profile) { FactoryGirl.create(:advertiser_profile) }</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      subject!(:advertiser_profile_session) { session[&#39;user_id&#39;] = advertiser_profile.user.id }</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &quot;should responde #/advertisers INDEX&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        get :index</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(response).to redirect_to(&#39;/advertisers&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">=end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">end</code>
@@ -6517,8 +6553,8 @@
     <h3>spec/factories/users.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>13</b> relevant lines. 
-      <span class="green"><b>13</b> lines covered</span> and
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6538,166 +6574,166 @@
           <code class="ruby">FactoryGirl.define do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">  factory :user, aliases: [:publisher_user] do</code>
+          
+          <code class="ruby">  # Users</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    name        &#39;Ilton Garcia&#39;</code>
+          <code class="ruby">  factory :user do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    nick        &#39;ilton.garcia&#39;</code>
+          <code class="ruby">    locale      &#39;pt_BR&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    email       &#39;11@1.1&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    locale      &#39;pt_BR&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
-          
           <code class="ruby">    password    &#39;123&#39;</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="9">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="32" data-linenumber="7">
+          <span class="hits">32</span>
           
           <code class="ruby">    created_at  { 2.months.ago }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    trait :publisher_user do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      name        &#39;Ilton Garcia&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      nick        &#39;ilton.garcia&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">  factory :profile, aliases: [:publisher_profile] do</code>
+          <code class="ruby">      email       &#39;11@1.1&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="13">
           
-          <code class="ruby">    default_role 1</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">    user_id 1</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">    role_id 1</code>
+          <code class="ruby">    trait :advertiser_user do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">    user</code>
+          <code class="ruby">      name        &#39;Page Renter&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      nick        &#39;page.renter&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      email       &#39;22@2.2&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">=begin</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">  factory :user, aliases: [:publishers] do</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    sequence(:name) { |i| &#39;Ash#{i}&#39; }</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">    sequence(:nick) { |i| &#39;Ash.#{i}&#39; }</code>
+          <code class="ruby">  # Profiles</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    sequence(:email) { |i| &#39;Ash@#{i}.#{i}&#39; }</code>
+          <code class="ruby">  factory :profile do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    locale &#39;pt_BR&#39;</code>
+          <code class="ruby">    default_role 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">    pass_salt &#39;$2a$10$9A3qM2mjS1/akUoDjTWdy.&#39;</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    password &#39;$2a$10$9A3qM2mjS1/akUoDjTWdy.zjfQP/K8PbsH1NZhMTkmLlI/QqHk25i&#39;</code>
+          <code class="ruby">    factory :publisher_profile do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    created_at   { 2.months.ago }</code>
+          <code class="ruby">      role_id 1</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      association :user, factory: [:user, :publisher_user], name: &#39;Ilton Garcia&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="29">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -6706,85 +6742,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    # Profiles</code>
+          <code class="ruby">    factory :advertiser_profile do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    factory :user_with_profile do</code>
+          <code class="ruby">      role_id 2</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="33">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      # profiles_count is declared as an ignored attribute and available in</code>
+          <code class="ruby">      association :user, factory: [:user, :publisher_user], name: &#39;Page Renter&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">      # attributes on the factory, as well as the callback via the evaluator</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby">      ignore do</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">        profiles_count 1</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # TODO advertisers should be write using Sequences</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby">      after(:create) do |user, evaluator|</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">        create_list(:profile, evaluator.profiles_count, user: user)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby">=end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby">end</code>
