@@ -51,9 +51,11 @@ class User < ActiveRecord::Base
 
   # Return the User default Account
   def get_default_profile
+=begin TODO at this time the Profile is not important (impossible to have more than 2), get the role is enough
     self.profiles.each do |profile|
       return profile if profile.default_role == true
     end
+=end
   end
 
   # Return the name per role (Adv/Pub) or User name if the current is not named
