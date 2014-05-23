@@ -45,7 +45,7 @@ describe "User Registration & LogIn" do
   }.to_json} }
 
   before(:each) do
-    @controller = API::UsersController
+    @controller = API::RemoteUsersController
   end
 
   # Submit an empty user hash as param for SignUp_SignIn
