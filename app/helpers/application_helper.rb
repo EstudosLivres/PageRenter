@@ -13,6 +13,7 @@ module ApplicationHelper
     if role_name == 'publisher' then return 'fa-rocket' else return 'fa-bullhorn' end
   end
 
+  # Dynamic choose 'default' button: (primary for adv & success for publisher).
   def current_button
     if role_name == 'publisher' then return 'btn-success' else return 'btn-primary' end
   end
