@@ -5,7 +5,12 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   def set_locale
-    session['user_idiom'] = JSON.parse(params['user'])['locale']
+    user_params = params['user']
+    if user_params.is_a?String
+      user_hash = JSON.parse(params['user'])
+      if user_hash.has_key?'locale' then session['user_idiom'] = user_hash['locale'] end
+    end
+
     if session['user_idiom'].nil? then session['user_idiom'] = User.find(session['user_id']).locale[0..1] end
     I18n.locale = session['user_idiom'] || I18n.default_locale
   end
