@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to :controller =>  user.get_default_profile.role.name.pluralize
     else
+      redirect_to 'http://pagerenter.com.br'
     end
   end
 
