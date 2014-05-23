@@ -13,6 +13,10 @@ module ApplicationHelper
     if role_name == 'publisher' then return 'fa-rocket' else return 'fa-bullhorn' end
   end
 
+  def current_button
+    if role_name == 'publisher' then return 'btn-success' else return 'btn-primary' end
+  end
+
   def role_actions
     if role_name == 'publisher'
       actions = [
