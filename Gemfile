@@ -32,18 +32,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Gem for encrypt Password
+gem 'bcrypt-ruby', :require => 'bcrypt'
+
+# Color to the prints on console (PUTS)
+gem 'colorize', '~> 0.7.1'
+
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
 
   # Better Errors for fast debug from the view on the browser
   gem 'better_errors', '~> 1.1.0'
-
-  # Gem for encrypt Password
-  gem 'bcrypt-ruby', :require => 'bcrypt'
-
-  # Color to the prints on console (PUTS)
-  gem 'colorize', '~> 0.7.1'
 
   # Option to not use Fixtures (FactoryGirl)
   gem 'factory_girl_rails', '~> 4.4'
