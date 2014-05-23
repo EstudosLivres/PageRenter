@@ -33,7 +33,7 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
-        { :name => t(:user_action)[:feeedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
+        { :name => t(:user_action)[:feedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
     ]
 
     users_actions.each do |action|
