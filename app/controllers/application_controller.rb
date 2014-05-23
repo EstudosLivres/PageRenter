@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def self.land_url
-    'http://pagerenter.com.br'
+    # 'http://pagerenter.com.br'
+    'http://localhost/LandPageRenter/LandPageRenter/'
   end
 end
