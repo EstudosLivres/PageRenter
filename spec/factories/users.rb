@@ -1,44 +1,39 @@
 # This will guess the User class
 FactoryGirl.define do
-  factory :user, aliases: [:publisher_user] do
-    name        'Ilton Garcia'
-    nick        'ilton.garcia'
-    email       '11@1.1'
+  # Users
+  factory :user do
     locale      'pt_BR'
     password    '123'
     created_at  { 2.months.ago }
-  end
 
-  factory :profile, aliases: [:publisher_profile] do
-    default_role 1
-    user_id 1
-    role_id 1
-    user
-  end
-
-=begin
-  factory :user, aliases: [:publishers] do
-    sequence(:name) { |i| 'Ash#{i}' }
-    sequence(:nick) { |i| 'Ash.#{i}' }
-    sequence(:email) { |i| 'Ash@#{i}.#{i}' }
-    locale 'pt_BR'
-    pass_salt '$2a$10$9A3qM2mjS1/akUoDjTWdy.'
-    password '$2a$10$9A3qM2mjS1/akUoDjTWdy.zjfQP/K8PbsH1NZhMTkmLlI/QqHk25i'
-    created_at   { 2.months.ago }
-  end
-
-
-    # Profiles
-    factory :user_with_profile do
-      # profiles_count is declared as an ignored attribute and available in
-      # attributes on the factory, as well as the callback via the evaluator
-      ignore do
-        profiles_count 1
-      end
-
-      after(:create) do |user, evaluator|
-        create_list(:profile, evaluator.profiles_count, user: user)
-      end
+    trait :publisher_user do
+      name        'Ilton Garcia'
+      nick        'ilton.garcia'
+      email       '11@1.1'
     end
-=end
+
+    trait :advertiser_user do
+      name        'Page Renter'
+      nick        'page.renter'
+      email       '22@2.2'
+    end
+  end
+
+  # Profiles
+  factory :profile do
+    default_role 1
+
+    factory :publisher_profile do
+      role_id 1
+      association :user, factory: [:user, :publisher_user], name: 'Ilton Garcia'
+    end
+
+    factory :advertiser_profile do
+      role_id 2
+      association :user, factory: [:user, :publisher_user], name: 'Page Renter'
+    end
+  end
+
+
+  # TODO advertisers should be write using Sequences
 end
