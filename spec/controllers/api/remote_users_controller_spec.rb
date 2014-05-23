@@ -3,8 +3,8 @@ require 'its'
 require 'factory_girl_rails'
 include API
 
-describe API::UsersController do
-  subject(:controller) { API::UsersController.new }
+describe API::RemoteUsersController do
+  subject(:controller) { API::RemoteUsersController.new }
   let!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }
   subject(:valid_api_pub){{ 'email' => '11@1.1', 'password' => '123' }}
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}

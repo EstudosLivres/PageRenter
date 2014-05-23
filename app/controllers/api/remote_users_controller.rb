@@ -1,4 +1,4 @@
-class API::UsersController < API::BaseAPIController
+class API::RemoteUsersController < API::BaseAPIController
   # Login user By System request (internal dependences)
   def system_signup_signin
     # Except to eliminate the Attr from the Hash (it is a attr to another Model)

@@ -23,13 +23,13 @@ PageRenter::Application.routes.draw do
   namespace :api do
     # API for Parent/Nested systems (not third systems)
     scope '/system' do
-      post '/signup_signin' => 'users#system_signup_signin'
+      post '/signup_signin' => 'remote_users#system_signup_signin'
     end
 
     # All the actions for Thrid and System for MobileApp
     scope '/users' do
-      get 'login' => 'users#mob_login'
-      post 'login' => 'users#mob_login'
+      get 'login' => 'remote_users#mob_login'
+      post 'login' => 'remote_users#mob_login'
     end
   end
 end
