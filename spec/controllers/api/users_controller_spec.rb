@@ -174,5 +174,11 @@ describe API::UsersController do
       it "Should be accessible" do response.should be_success end
       it "Should respond with a message" do invalid_resp_hash.should have_key('erro') end
     end
+
+    context "API Login without SignUp" do
+      before { post :system_signup_signin, {'user'=>valid_api_pub} }
+      subject(:resp_hash) { JSON.parse(response.body) }
+      it "Should respond with a logged_in message" do resp_hash['msg'].should == 'logged_in' end
+    end
   end
 end
