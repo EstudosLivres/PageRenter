@@ -26,14 +26,26 @@ en:
     login_error: "Inválido E-mail or Password."
 
 
+
+  # Publisher texts
   publisher_action:
     invite: "InviteFriends"
 
+  publisher_modal_invite:
+    title: "InviteFriends & increase your profits!"
 
+
+
+  # Advertiser texts
   advertiser_action:
     invite: "Recommend"
 
+  advertiser_modal_recommend:
+      title: "Recommend & earn bonus"
 
+
+
+  # Commum texts
   user_action:
     feeedback: "ContactUs"
 

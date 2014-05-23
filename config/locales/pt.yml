@@ -26,12 +26,23 @@ pt:
     login_error: "E-mail ou Senha inválido."
 
 
+
+  # Publisher texts
   publisher_action:
     invite: "ConvidarAmigos"
 
+  publisher_modal_invite:
+    title: "Invite your friends and increase profits together"
 
+
+
+  # Advertiser texts
   advertiser_action:
     invite: "Recomendar"
+
+  advertiser_modal_recommend:
+    title: "Invite your friends and increase profits together"
+
 
 
   user_action:
