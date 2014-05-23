@@ -16,11 +16,11 @@ module ApplicationHelper
   def role_actions
     if role_name == 'publisher'
       actions = [
-          { :name => t(:publisher_action)[:invite], :path => 'publishers/invite', :icon => 'fa fa-paper-plane' }
+          { :name => t(:publisher_action)[:invite], :path => '#invite', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
       ]
     elsif role_name == 'advertiser'
       actions = [
-          { :name => t(:advertiser_action)[:invite], :path => 'advertisers/recommend', :icon => 'fa fa-paper-plane' }
+          { :name => t(:advertiser_action)[:invite], :path => '#recommend', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
       ]
     else
       actions = []
@@ -28,7 +28,7 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
-        { :name => t(:user_action)[:feeedback], :path => 'users/feedback', :icon => 'fa fa-comments' }
+        { :name => t(:user_action)[:feeedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
     ]
 
     users_actions.each do |action|
