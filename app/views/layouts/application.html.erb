@@ -24,7 +24,7 @@
       <!-- /Meus -->
       <%= csrf_meta_tags %>
     </head>
-    <body>
+    <body class="r_<%=role_name%>">
 
         <!-- NavBar -->
         <div class="navbar navbar-custom navbar-static-top" role="navigation">
@@ -34,7 +34,7 @@
                 <span class="icon-bar"> <i class="fa-bars"></i> </span>
               </button>
 
-              <span id='brand'> <span class="r_advertiser_brand">Page</span><span class="r_publisher_brand">Renter</span> </span>
+              <a id="brand" href="/"><span> <span class="r_advertiser_brand">Page</span><span class="r_publisher_brand">Renter</span> </span></a>
             </div>
             <div class="collapse navbar-collapse">
               <ul id="role_action" class="nav navbar-nav">
@@ -42,7 +42,7 @@
                    role_actions.each do |action|
                 %>
                     <li>
-                      <a class="r_<%= role_name %>" href="<%= action[:path] %>"> <i class="<%= action[:icon] %>"></i> <%= action[:name] %> </a>
+                      <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>"> <i class="<%= action[:icon] %>"></i> <%= action[:name] %> </a>
                     </li>
                 <%
                    end
@@ -80,6 +80,46 @@
 
             <%= yield %>
         </div>
+
+        <!-- InviteModal-->
+        <div class="modal fade" id="invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h2 class="modal-title" id="myModalLabel"> <%= t(:publisher_modal_invite)[:title] %> </h2>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn <%= current_button %>">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /InviteModal -->
+
+        <!-- RecommendModal -->
+        <div class="modal fade" id="recommend" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="modal-title" id="myModalLabel"> <%= t(:publisher_modal_invite)[:title] %> </h2>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn <%= current_button %>">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /RecommendModal -->
 
         <footer id="includes_js">
             <!-- Bootstrap -->
