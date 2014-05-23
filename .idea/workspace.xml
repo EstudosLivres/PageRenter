@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="Coverage 97%">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PageRenter.iml" afterPath="$PROJECT_DIR$/.idea/PageRenter.iml" />
+    <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -1573,7 +1572,11 @@
       <created>1400812820848</created>
       <updated>1400812820849</updated>
     </task>
-    <option name="localTasksCounter" value="211" />
+    <task id="LOCAL-00211" summary="proj update">
+      <created>1400812836831</created>
+      <updated>1400812836832</updated>
+    </task>
+    <option name="localTasksCounter" value="212" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1637,7 +1640,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="REFECT: render the User if there is one if not render the error message" />
     <MESSAGE value="Removed the remotion of keys from string (bug)" />
     <MESSAGE value="add factory girl config" />
     <MESSAGE value="factory UPDATE" />
@@ -1662,7 +1664,8 @@
     <MESSAGE value="Coverage 98.72%" />
     <MESSAGE value="UPDATED" />
     <MESSAGE value="SPec test if the root redirect depending on the current user role" />
-    <option name="LAST_COMMIT_MESSAGE" value="SPec test if the root redirect depending on the current user role" />
+    <MESSAGE value="proj update" />
+    <option name="LAST_COMMIT_MESSAGE" value="proj update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
