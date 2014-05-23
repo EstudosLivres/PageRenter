@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def sign_out
+    # Do not delete all the sessions because we need to storage the link clicked
     session.delete('user_id')
     session.delete('user_idiom')
     redirect_to ApplicationController.land_url
