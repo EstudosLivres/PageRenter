@@ -2,6 +2,9 @@
 FactoryGirl.define do
   # Users
   factory :user do
+    name        'Invalid User'
+    nick        'invalid.user'
+    email       '33@3.3'
     locale      'pt_BR'
     password    '123'
     created_at  { 2.months.ago }
