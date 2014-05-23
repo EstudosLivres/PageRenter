@@ -65,9 +65,11 @@ module API::Concerns
     end
 
     def reencripta_token
+=begin
       @crypt_count = @crypt_count + 1
       @token = @token + @crypt_count
       registra_acesso
+=end
     end
 
     def current_user
