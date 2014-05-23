@@ -278,3 +278,19 @@ a.r_advertiser:hover,
 #user_action.navbar-nav a {
     text-align: left;
 }
+
+.manage i {
+    font-size: 11px;
+}
+
+.manage i.fa {
+    margin-left: 9px;
+}
+
+.manage i.fa.fa-gears {
+    margin-left: -39px;
+}
+
+.manage span {
+    margin-left: 7px;
+}
