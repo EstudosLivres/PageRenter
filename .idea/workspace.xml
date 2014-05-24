@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -1585,7 +1584,11 @@
       <created>1400952757189</created>
       <updated>1400952757189</updated>
     </task>
-    <option name="localTasksCounter" value="262" />
+    <task id="LOCAL-00262" summary="Image centralized &amp; 15% to better render">
+      <created>1400952815339</created>
+      <updated>1400952815339</updated>
+    </task>
+    <option name="localTasksCounter" value="263" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1670,7 +1673,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="current _button (a helper to dynamic print the button (primary for adv &amp; success for publisher)." />
     <MESSAGE value="white smok on hover btn fb &amp; base style for left-side from the modal" />
     <MESSAGE value="Body_Left modal Style &amp; FBButton align" />
     <MESSAGE value="Translate based on the user locale on DB" />
@@ -1695,7 +1697,8 @@
     <MESSAGE value="Coverage 100%&#10;- Button, based on the role, tested" />
     <MESSAGE value="Comments with the TODOs for the modals" />
     <MESSAGE value="The modal divide 50-50 working and img well rendered" />
-    <option name="LAST_COMMIT_MESSAGE" value="The modal divide 50-50 working and img well rendered" />
+    <MESSAGE value="Image centralized &amp; 15% to better render" />
+    <option name="LAST_COMMIT_MESSAGE" value="Image centralized &amp; 15% to better render" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
