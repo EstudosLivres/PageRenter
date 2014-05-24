@@ -313,9 +313,18 @@ a.r_advertiser:hover,
 }
 
 .modal-body .modal_body_left {
+    float: left;
     width: 50%;
     padding-right: 5%;
     border-right: solid 1px #eee;
+}
+
+.modal-body .modal_body_right {
+    min-height: 270px;
+}
+
+.modal-body .modal_body_right img {
+    width: 15%;
 }
 
 .modal-body .modal_body_left .btn-facebook {
