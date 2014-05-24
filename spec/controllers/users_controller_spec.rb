@@ -17,4 +17,13 @@ describe UsersController do
       expect(response).to redirect_to(ApplicationController.land_url)
     end
   end
+
+  context "GET #SIGNOUT" do
+    it "Should delete the session" do
+      get :sign_out
+
+      session[:user_id].should be_nil
+      session[:user_idiom].should be_nil
+    end
+  end
 end
