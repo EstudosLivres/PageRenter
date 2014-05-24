@@ -47,12 +47,14 @@ pt:
   advertiser_action:
     invite: "Recomendar"
 
-  advertiser_modal_recommend:
+  advertiser_recommend:
     title: "Invite your friends and increase profits together"
 
 
 
-  # Commum texts
+  # User texts
   user_action:
     feedback: "ContateNos"
 
+  user_feedback:
+    title: "ConteNos sua experiência PageRenter"
