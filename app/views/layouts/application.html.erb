@@ -90,29 +90,28 @@
                     <h2 class="modal-title" id="myModalLabel"> <%= t(:publisher_invite)[:title] %> </h2>
               </div>
               <div class="modal-body">
-                <div>
-                    <aside class="modal_body_left">
-                      <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | <%= t(:publisher_invite)[:invite_form][:fb_btn_text] %> </button>
+                <aside class="modal_body_left">
+                  <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | <%= t(:publisher_invite)[:invite_form][:fb_btn_text] %> </button>
 
-                      <form>
-                        <div class="form-group">
-                          <label for="email"> <%= t(:publisher_invite)[:invite_form][:email_label] %>: </label>
-                          <input id="email" type="text" name="email" class="form-control" placeholder="<%= t(:publisher_invite)[:invite_form][:email_placeholder] %>"/>
-                        </div>
+                  <form>
+                    <div class="form-group">
+                      <label for="email"> <%= t(:publisher_invite)[:invite_form][:email_label] %>: </label>
+                      <input id="email" type="text" name="email" class="form-control" placeholder="<%= t(:publisher_invite)[:invite_form][:email_placeholder] %>"/>
+                    </div>
 
-                        <div class="form-group">
-                          <label for="msg"> <%= t(:publisher_invite)[:invite_form][:message_label] %>: </label>
-                          <textarea name="msg" id="msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
-                        </div>
-                      </form>
+                    <div class="form-group">
+                      <label for="invitation_msg"> <%= t(:publisher_invite)[:invite_form][:message_label] %>: </label>
+                      <textarea name="invitation_msg" id="invitation_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
+                    </div>
+                  </form>
 
-                      <strong><%= t(:publisher_invite)[:invite_form][:invitation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
-                    </aside>
+                  <strong><%= t(:publisher_invite)[:invite_form][:invitation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
+                </aside>
 
-                    <aside class="modal_body_right">
-
-                    </aside>
-                </div>
+                <aside class="modal_body_right">
+                    <!-- TODO IMG de amigos cumprimentando e uma seta pra cima com o $ indicando ganhar $$ juntos -->
+                    <!-- TODO TXT explicando sobre os grupos e como funciona, como ganha, q eh só grupo de 2 pessoas -->
+                </aside>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -132,7 +131,14 @@
                 <h2 class="modal-title" id="myModalLabel"> <%= t(:advertiser_recommend)[:title] %> </h2>
               </div>
               <div class="modal-body">
-                ...
+                <aside class="modal_body_left">
+
+                </aside>
+
+                <aside class="modal_body_right">
+                  <!-- TODO IMG que lembre parcerias (B2B) -->
+                  <!-- TODO TXT explicando sobre: parcerias de advertisers no sistem -->
+                </aside>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -152,7 +158,15 @@
                 <h2 class="modal-title" id="myModalLabel"> <%= t(:user_feedback)[:title] %> </h2>
               </div>
               <div class="modal-body">
-                ...
+                <aside class="modal_body_left">
+                  <label for="feedback_msg">Conte-nos sua experiência de uso do PageRenter. Dúvidas? Críticas? Sugestões? Elogios? Basta digitar aqui!</label>
+                  <textarea name="feedback_msg" id="feedback_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
+                </aside>
+
+                <aside class="modal_body_right">
+                  <!-- TODO IMG que lembre melhorias e outra com parcerias -->
+                  <!-- TODO TXT explicando sobre: Melhorias com o advento do FeedBack; Parceirias que estamos dispostos a fechar... -->
+                </aside>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
