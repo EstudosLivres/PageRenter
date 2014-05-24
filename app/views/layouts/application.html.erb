@@ -129,7 +129,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h2 class="modal-title" id="myModalLabel"> <%= t(:advertiser_modal_recommend)[:title] %> </h2>
+                <h2 class="modal-title" id="myModalLabel"> <%= t(:advertiser_recommend)[:title] %> </h2>
               </div>
               <div class="modal-body">
                 ...
@@ -142,6 +142,26 @@
           </div>
         </div>
         <!-- /RecommendModal -->
+
+        <!-- Feedback/ContactUs -->
+        <div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h2 class="modal-title" id="myModalLabel"> <%= t(:user_feedback)[:title] %> </h2>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn <%= current_button %>">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Feedback/ContactUs -->
 
         <footer id="includes_js">
             <!-- Bootstrap -->
