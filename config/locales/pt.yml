@@ -31,7 +31,7 @@ pt:
   publisher_action:
     invite: "ConvidarAmigos"
 
-  publisher_modal_invite:
+  publisher_invite:
     title: "ConvideAmigos & aumente os ganhos!"
     invite_form:
       fb_btn_text: "Convide via Facebook"
