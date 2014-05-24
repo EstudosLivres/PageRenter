@@ -20,6 +20,12 @@ describe ApplicationHelper do
           it "Should route to publishers/invite" do helper.role_actions[1][:path].should == '#feedback' end
         end
       end
+
+      context "Default button for #Advertiser" do
+        it "Should be success btn" do
+          helper.current_button.should == 'btn-primary'
+        end
+      end
     end
 
     # Publisher
@@ -37,6 +43,12 @@ describe ApplicationHelper do
         end
         context "Act: #contact -> contact us (feedback)" do
          it "Should route to publishers/invite" do helper.role_actions[1][:path].should == '#feedback' end
+        end
+      end
+
+      context "Default button for #Publisher" do
+        it "Should be success btn" do
+          helper.current_button.should == 'btn-success'
         end
       end
     end
