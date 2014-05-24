@@ -315,6 +315,7 @@ a.r_advertiser:hover,
 .modal-body .modal_body_left {
     float: left;
     width: 50%;
+    margin-right: 15px;
     padding-right: 5%;
     border-right: solid 1px #eee;
 }
@@ -329,4 +330,8 @@ a.r_advertiser:hover,
 
 .modal-body .modal_body_left .btn-facebook {
     margin: 0 auto 15% 17%;
+}
+
+.modal_body_right .explanations {
+    margin-top: 17px;
 }
