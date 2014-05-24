@@ -14,10 +14,10 @@ describe ApplicationHelper do
 
       context "RoleActions for #Advertiser" do
         context "Act: #recommend -> recommend to another company/advertiser" do
-          it "Should route to advertisers/recommend" do helper.role_actions[0][:path].should == 'advertisers/recommend' end
+          it "Should route to advertisers/recommend" do helper.role_actions[0][:path].should == '#recommend' end
         end
         context "Act: #contact -> contact us (feedback)" do
-          it "Should route to publishers/invite" do helper.role_actions[1][:path].should == 'users/feedback' end
+          it "Should route to publishers/invite" do helper.role_actions[1][:path].should == '#feedback' end
         end
       end
     end
@@ -33,10 +33,10 @@ describe ApplicationHelper do
 
       context "RoleActions for #Publisher" do
         context "Act: #invite -> invite a friend" do
-          it "Should route to publishers/invite" do helper.role_actions[0][:path].should == 'publishers/invite' end
+          it "Should route to publishers/invite" do helper.role_actions[0][:path].should == '#invite' end
         end
         context "Act: #contact -> contact us (feedback)" do
-         it "Should route to publishers/invite" do helper.role_actions[1][:path].should == 'users/feedback' end
+         it "Should route to publishers/invite" do helper.role_actions[1][:path].should == '#feedback' end
         end
       end
     end
