@@ -92,21 +92,21 @@
               <div class="modal-body">
                 <div>
                     <aside class="modal_body_left">
-                      <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | Invite using facebook </button>
+                      <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | <%= t(:publisher_modal_invite)[:invite_form][:fb_btn_text] %> </button>
 
                       <form>
                         <div class="form-group">
-                          <label for="email">E-mail:</label>
-                          <input id="email" type="text" name="email" class="form-control" placeholder="Friend e-mail"/>
+                          <label for="email"> <%= t(:publisher_modal_invite)[:invite_form][:email_label] %>: </label>
+                          <input id="email" type="text" name="email" class="form-control" placeholder="<%= t(:publisher_modal_invite)[:invite_form][:email_placeholder] %>"/>
                         </div>
 
                         <div class="form-group">
-                          <label for="msg">Message:</label>
-                          <textarea name="msg" id="msg" class="form-control" rows="3" placeholder="Message to your friend"></textarea>
+                          <label for="msg"> <%= t(:publisher_modal_invite)[:invite_form][:message_label] %>: </label>
+                          <textarea name="msg" id="msg" class="form-control" rows="3" placeholder="<%= t(:publisher_modal_invite)[:invite_form][:message_placeholder] %>"></textarea>
                         </div>
                       </form>
 
-                      <strong>Invitation code: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
+                      <strong><%= t(:publisher_modal_invite)[:invite_form][:invitation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
                     </aside>
 
                     <aside class="modal_body_right">
