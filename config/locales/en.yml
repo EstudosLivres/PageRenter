@@ -33,6 +33,13 @@ en:
 
   publisher_modal_invite:
     title: "InviteFriends & increase your profits!"
+    invite_form:
+      fb_btn_text: "Invite using Facebook"
+      email_label: "E-mail"
+      email_placeholder: "Friend's e-mail"
+      message_label: "Invitation message"
+      message_placeholder: "Message to invite your friend"
+      invitation_code_label: "Invitation code"
 
 
 
