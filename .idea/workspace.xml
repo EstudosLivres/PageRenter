@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_recommend.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_recommend.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/en.yml" afterPath="$PROJECT_DIR$/config/locales/en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/pt.yml" afterPath="$PROJECT_DIR$/config/locales/pt.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -1749,7 +1746,11 @@
       <created>1401021422628</created>
       <updated>1401021422628</updated>
     </task>
-    <option name="localTasksCounter" value="278" />
+    <task id="LOCAL-00278" summary="Advertiser recommend form translated">
+      <created>1401022173171</created>
+      <updated>1401022173171</updated>
+    </task>
+    <option name="localTasksCounter" value="279" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1834,7 +1835,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Title for ContactUs" />
     <MESSAGE value="REFECT: Verify the param received if it has the locale" />
     <MESSAGE value="SPec if the session was removed" />
     <MESSAGE value="REFECT: the links changed from role/act to just # (using modal)" />
@@ -1859,7 +1859,8 @@
     <MESSAGE value="better pluralize" />
     <MESSAGE value="Method that humanize (upcase just the first letter)" />
     <MESSAGE value="Parenteses removidos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parenteses removidos" />
+    <MESSAGE value="Advertiser recommend form translated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Advertiser recommend form translated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
