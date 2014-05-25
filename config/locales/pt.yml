@@ -60,7 +60,15 @@ pt:
     invite: "Recomendar"
 
   advertiser_recommend:
-    title: "Recomende & Ganhe bonus"
+    title: "Recomende & Ganhe bônus"
+    recommend_form:
+      email_label: "E-mails de seus Parceiros"
+      email_placeholder: "E-mails de seus Parceiros"
+      msg_label: "Mensagem de recomendação"
+      msg_placeholder: "Messagem para recomendar os seus  para que se associem a você"
+      recommendation_code_label: "Código de recomendação"
+    recommend_explanation:
+      subtitle: ""
 
 
 

@@ -8,17 +8,37 @@
       </div>
       <div class="modal-body">
         <aside class="modal_body_left">
+          <form>
+            <div class="form-group">
+              <label for="recommend_email"> <%= t(:advertiser_recommend)[:recommend_form][:email_label] %>: </label>
+              <input id="recommend_email" type="text" name="email" class="form-control" placeholder="<%= t(:advertiser_recommend)[:recommend_form][:email_placeholder] %>"/>
+            </div>
 
+            <div class="form-group">
+              <label for="recommendation_msg"> <%= t(:advertiser_recommend)[:recommend_form][:msg_label] %>: </label>
+              <textarea name="recommendation_msg" id="invitation_msg" class="form-control" rows="3" placeholder="<%= t(:advertiser_recommend)[:recommend_form][:msg_placeholder] %>"></textarea>
+            </div>
+          </form>
+
+          <strong><%= t(:advertiser_recommend)[:recommend_form][:recommendation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
         </aside>
 
         <aside class="modal_body_right">
-          <!-- TODO IMG que lembre parcerias (B2B) -->
-          <!-- TODO TXT explicando sobre: parcerias de advertisers no sistem -->
+          <center> <img src="assets/friends_shake_hands.gif" alt="friend_invite" class=""/> </center>
+          <div class="explanations">
+            <center><strong> <%= t(:publisher_invite)[:invite_explanation][:subtitle] %> </strong> <%=role_actions[0][:name]%></center>
+            <ul class="benefits">
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_1] %>;</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_2] %>;</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_3] %>;</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_4] %>;</li>
+            </ul>
+          </div>
         </aside>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn <%= current_button %>">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <%= t(:btn_modal_close) %> </button>
+        <button type="button" class="btn <%= current_button %>"> <%= t(:btn_modal_okay) %> </button>
       </div>
     </div>
   </div>

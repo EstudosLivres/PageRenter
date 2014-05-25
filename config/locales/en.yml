@@ -61,6 +61,14 @@ en:
 
   advertiser_recommend:
     title: "Recommend & Earn bonus"
+    recommend_form:
+      email_label: "Partners's E-mails"
+      email_placeholder: "Partners's e-mails"
+      msg_label: "Recommend message"
+      msg_placeholder: "Message to recommend your partners to associate with you"
+      recommendation_code_label: "Recommendation code"
+    recommend_explanation:
+      subtitle: ""
 
 
 
