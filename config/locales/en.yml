@@ -27,6 +27,12 @@ en:
 
 
 
+  # Default messages for actions
+  btn_modal_okay: "Send"
+  btn_modal_close: "Close"
+
+
+
   # Publisher texts
   publisher_action:
     invite: "InviteFriends"

@@ -27,6 +27,12 @@ pt:
 
 
 
+  # Default messages for actions
+  btn_modal_okay: "Enviar"
+  btn_modal_close: "Fechar"
+
+
+
   # Publisher texts
   publisher_action:
     invite: "ConvidarAmigos"
