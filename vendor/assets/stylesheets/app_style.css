@@ -342,7 +342,7 @@ a.r_advertiser:hover,
 }
 
 .modal_body_right .sub_benefits {
-    margin-left: -23px;
+    margin-left: -32px;
 }
 
 #feedback_msg {
@@ -363,4 +363,9 @@ a.r_advertiser:hover,
 
 .modal-body {
     padding-bottom: 0;
+}
+
+.important_text {
+    font-weight: bold;
+    color: #e0ad4e;
 }

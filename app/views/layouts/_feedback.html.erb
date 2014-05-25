@@ -8,39 +8,39 @@
       </div>
       <div class="modal-body">
         <aside class="modal_body_left">
-          <label for="feedback_msg">Conte-nos sua experiência de uso do PageRenter. Dúvidas? Críticas? Sugestões? Elogios? Basta digitar aqui!</label>
+          <label for="feedback_msg"> <%= t(:user_feedback)[:feedback_msg_label] %> </label>
           <textarea name="feedback_msg" id="feedback_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
         </aside>
 
         <aside class="modal_body_right">
-          <center><h4>Como melhoramos com</h4></center>
+          <center><h4> <%= t(:user_feedback)[:title_explanation] %> </h4></center>
           <ul id="feedback_types" class="benefits">
             <li>
-              <strong>?</strong> Dúvidas:
+              <strong>?</strong> <%= t(:user_feedback)[:subtitle_explanation_1] %>:
               <ul class="sub_benefits">
-                <li>Respondemos suas dúvidas</li>
-                <li>Respondemos suas dúvidas</li>
+                <li class="important_text"> <%= t(:user_feedback)[:improve_question_1] %>; </li>
+                <li> <%= t(:user_feedback)[:improve_question_2] %>; </strong> </li>
               </ul>
             </li>
             <li>
-              <strong> <i class="fa fa-bolt"></i> </strong> Críticas:
+              <strong> <i class="fa fa-bolt"></i> </strong> <%= t(:user_feedback)[:subtitle_explanation_2] %>:
               <ul class="sub_benefits">
-                <li>Respondemos suas dúvidas</li>
-                <li>Respondemos suas dúvidas</li>
+                <li class="important_text"> <%= t(:user_feedback)[:improve_criticism_1] %>; </li>
+                <li> <%= t(:user_feedback)[:improve_criticism_2] %>; </li>
               </ul>
             </li>
             <li>
-              <strong> <i class="fa fa-lightbulb-o"></i> </strong> Sugestões:
+              <strong> <i class="fa fa-lightbulb-o"></i> </strong> <%= t(:user_feedback)[:subtitle_explanation_3] %>:
               <ul class="sub_benefits">
-                <li>Respondemos suas dúvidas</li>
-                <li>Respondemos suas dúvidas</li>
+                <li class="important_text"> <%= t(:user_feedback)[:improve_suggestion_1] %>; </li>
+                <li> <%= t(:user_feedback)[:improve_suggestion_2] %>; </li>
               </ul>
             </li>
             <li>
-              <strong> <i class="fa fa-thumbs-o-up"></i> </strong> Elogios:
+              <strong> <i class="fa fa-thumbs-o-up"></i> </strong> <%= t(:user_feedback)[:subtitle_explanation_4] %>:
               <ul class="sub_benefits">
-                <li>Respondemos suas dúvidas</li>
-                <li>Respondemos suas dúvidas</li>
+                <li class="important_text"> <%= t(:user_feedback)[:improve_cheer_1] %>; </li>
+                <li> <%= t(:user_feedback)[:improve_cheer_2] %>; </li>
               </ul>
             </li>
           </ul>
@@ -50,8 +50,8 @@
         </aside>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn <%= current_button %>">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"> <%= t(:btn_modal_close) %> </button>
+        <button type="button" class="btn <%= current_button %>"> <%= t(:btn_modal_okay) %> </button>
       </div>
     </div>
   </div>

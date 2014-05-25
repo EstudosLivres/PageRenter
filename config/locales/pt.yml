@@ -70,3 +70,17 @@ pt:
 
   user_feedback:
     title: "ConteNos sua experiência PageRenter"
+    feedback_msg_label: "Conte-nos sua experiência de uso do PageRenter. Dúvidas? Críticas? Sugestões? Elogios? Basta digitar aqui!"
+    title_explanation: "Como melhoramos com"
+    subtitle_explanation_1: "Dúvidas"
+    improve_question_1: "Dialogando somos mais próximos"
+    improve_question_2: "Tornar mais fácil, simples e limpo"
+    subtitle_explanation_2: "Críticas"
+    improve_criticism_1: "Consertamos o que lhe aborrece"
+    improve_criticism_2: "Redesenhamos nossos processos"
+    subtitle_explanation_3: "Sugestões"
+    improve_suggestion_1: "Nós criamos parcerias"
+    improve_suggestion_2: "Nós repensamos focado em você"
+    subtitle_explanation_4: "Elogios"
+    improve_cheer_1: "O que amas na experiência Page"
+    improve_cheer_2: "Motiva a sempre entregar o melhor"
