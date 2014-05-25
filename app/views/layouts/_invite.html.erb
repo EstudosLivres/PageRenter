@@ -1,0 +1,54 @@
+<!-- InviteModal-->
+<div class="modal fade" id="invite" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title" id="myModalLabel"> <%= t(:publisher_invite)[:title] %> </h2>
+      </div>
+      <div class="modal-body">
+        <aside class="modal_body_left">
+          <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | <%= t(:publisher_invite)[:invite_form][:fb_btn_text] %> </button>
+
+          <form>
+            <div class="form-group">
+              <label for="email"> <%= t(:publisher_invite)[:invite_form][:email_label] %>: </label>
+              <input id="email" type="text" name="email" class="form-control" placeholder="<%= t(:publisher_invite)[:invite_form][:email_placeholder] %>"/>
+            </div>
+
+            <div class="form-group">
+              <label for="invitation_msg"> <%= t(:publisher_invite)[:invite_form][:message_label] %>: </label>
+              <textarea name="invitation_msg" id="invitation_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
+            </div>
+          </form>
+
+          <strong><%= t(:publisher_invite)[:invite_form][:invitation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
+        </aside>
+
+        <aside class="modal_body_right">
+          <center> <img src="assets/friends_shake_hands.gif" alt="friend_invite" class=""/> </center>
+          <div class="explanations">
+            <center><strong>Benefícios</strong> <%=role_actions[0][:name]%></center>
+            <ul class="benefits">
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li>Lorem ipsum dolor sit amet, conser.</li>
+            </ul>
+          </div>
+
+          <!-- TODO IMG de amigos cumprimentando e uma seta pra cima com o $ indicando ganhar $$ juntos -->
+          <!-- TODO TXT explicando sobre os grupos e como funciona, como ganha, q eh só grupo de 2 pessoas -->
+        </aside>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn <%= current_button %>">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /InviteModal -->

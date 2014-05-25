@@ -1,0 +1,26 @@
+<!-- RecommendModal -->
+<div class="modal fade" id="recommend" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title" id="myModalLabel"> <%= t(:advertiser_recommend)[:title] %> </h2>
+      </div>
+      <div class="modal-body">
+        <aside class="modal_body_left">
+
+        </aside>
+
+        <aside class="modal_body_right">
+          <!-- TODO IMG que lembre parcerias (B2B) -->
+          <!-- TODO TXT explicando sobre: parcerias de advertisers no sistem -->
+        </aside>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn <%= current_button %>">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /RecommendModal -->

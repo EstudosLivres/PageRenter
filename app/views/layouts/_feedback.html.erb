@@ -1,0 +1,59 @@
+<!-- Feedback/ContactUs -->
+<div class="modal fade" id="feedback" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 class="modal-title" id="myModalLabel"> <%= t(:user_feedback)[:title] %> </h2>
+      </div>
+      <div class="modal-body">
+        <aside class="modal_body_left">
+          <label for="feedback_msg">Conte-nos sua experiência de uso do PageRenter. Dúvidas? Críticas? Sugestões? Elogios? Basta digitar aqui!</label>
+          <textarea name="feedback_msg" id="feedback_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
+        </aside>
+
+        <aside class="modal_body_right">
+          <center><h4>Como melhoramos com</h4></center>
+          <ul class="benefits">
+            <li>
+              <strong>?</strong> Dúvidas:
+              <ul class="sub_benefits">
+                <li>Respondemos suas dúvidas</li>
+                <li>Respondemos suas dúvidas</li>
+              </ul>
+            </li>
+            <li>
+              <strong> <i class="fa fa-bolt"></i> </strong> Críticas:
+              <ul class="sub_benefits">
+                <li>Respondemos suas dúvidas</li>
+                <li>Respondemos suas dúvidas</li>
+              </ul>
+            </li>
+            <li>
+              <strong> <i class="fa fa-lightbulb-o"></i> </strong> Sugestões:
+              <ul class="sub_benefits">
+                <li>Respondemos suas dúvidas</li>
+                <li>Respondemos suas dúvidas</li>
+              </ul>
+            </li>
+            <li>
+              <strong> <i class="fa fa-thumbs-o-up"></i> </strong> Elogios:
+              <ul class="sub_benefits">
+                <li>Respondemos suas dúvidas</li>
+                <li>Respondemos suas dúvidas</li>
+              </ul>
+            </li>
+          </ul>
+
+          <!-- TODO IMG que lembre melhorias e outra com parcerias -->
+          <!-- TODO TXT explicando sobre: Melhorias com o advento do FeedBack; Parceirias que estamos dispostos a fechar... -->
+        </aside>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn <%= current_button %>">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Feedback/ContactUs -->
