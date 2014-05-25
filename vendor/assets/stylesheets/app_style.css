@@ -335,3 +335,24 @@ a.r_advertiser:hover,
 .modal_body_right .explanations {
     margin-top: 17px;
 }
+
+.modal_body_right .benefits {
+    margin-top: 17px;
+    margin-left: 270px;
+}
+
+.modal_body_right .sub_benefits {
+    margin-left: -23px;
+}
+
+#feedback_msg {
+    height: 260px;
+}
+
+.benefits>li {
+    margin-top: 5px;
+}
+
+.benefits>li>strong {
+    font-size: 17px;
+}
