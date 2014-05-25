@@ -40,6 +40,12 @@ pt:
       message_label: "Mensagem de convite"
       message_placeholder: "Mensagem para convidar seu amigo"
       invitation_code_label: "Código de convite"
+    invite_explanation:
+      subtitle: "Benefícios"
+      benefit_1: "Maior repasse por clique"
+      benefit_2: "Aumento no número de alcance"
+      benefit_3: "Recebe repasse por cliques do amigo"
+      benefit_4: "Ganhos de amigos diretos (2a2), quanto mais convites melhor"
 
 
 

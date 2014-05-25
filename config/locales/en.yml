@@ -40,6 +40,12 @@ en:
       message_label: "Invitation message"
       message_placeholder: "Message to invite your friend"
       invitation_code_label: "Invitation code"
+    invite_explanation:
+      subtitle: "Benefit"
+      benefit_1: "Better pay per click"
+      benefit_2: "Increase you people's range per click"
+      benefit_3: "Earn per friend invited's click"
+      benefit_4: "Earn just for direct friends (2a2), the more you invite more you earn"
 
 
 

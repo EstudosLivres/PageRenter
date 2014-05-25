@@ -28,19 +28,14 @@
         <aside class="modal_body_right">
           <center> <img src="assets/friends_shake_hands.gif" alt="friend_invite" class=""/> </center>
           <div class="explanations">
-            <center><strong>Benefícios</strong> <%=role_actions[0][:name]%></center>
+            <center><strong> <%= t(:publisher_invite)[:invite_explanation][:subtitle] %> </strong> <%=role_actions[0][:name]%></center>
             <ul class="benefits">
-              <li>Lorem ipsum dolor sit amet, conser.</li>
-              <li>Lorem ipsum dolor sit amet, conser.</li>
-              <li>Lorem ipsum dolor sit amet, conser.</li>
-              <li>Lorem ipsum dolor sit amet, conser.</li>
-              <li>Lorem ipsum dolor sit amet, conser.</li>
-              <li>Lorem ipsum dolor sit amet, conser.</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_1] %>;</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_2] %>;</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_3] %>;</li>
+              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_4] %>;</li>
             </ul>
           </div>
-
-          <!-- TODO IMG de amigos cumprimentando e uma seta pra cima com o $ indicando ganhar $$ juntos -->
-          <!-- TODO TXT explicando sobre os grupos e como funciona, como ganha, q eh só grupo de 2 pessoas -->
         </aside>
       </div>
       <div class="modal-footer">
