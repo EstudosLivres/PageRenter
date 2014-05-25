@@ -41,8 +41,8 @@ pt:
     title: "ConvideAmigos & aumente os ganhos!"
     invite_form:
       fb_btn_text: "Convide via Facebook"
-      email_label: "E-mail"
-      email_placeholder: "E-mail do amigo"
+      email_label: "E-mail(s) do(s) amigo(s)"
+      email_placeholder: "E-mail(s) do(s) amigo(s)"
       message_label: "Mensagem de convite"
       message_placeholder: "Mensagem para convidar seu amigo"
       invitation_code_label: "Código de convite"
@@ -60,7 +60,7 @@ pt:
     invite: "Recomendar"
 
   advertiser_recommend:
-    title: "Invite your friends and increase profits together"
+    title: "Recomende & Ganhe bonus"
 
 
 

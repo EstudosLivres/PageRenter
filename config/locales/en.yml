@@ -41,8 +41,8 @@ en:
     title: "InviteFriends & increase your profits!"
     invite_form:
       fb_btn_text: "Invite using Facebook"
-      email_label: "E-mail"
-      email_placeholder: "Friend's e-mail"
+      email_label: "Friend(s)'s E-mail(s)"
+      email_placeholder: "Friend(s)'s e-mail(s)"
       message_label: "Invitation message"
       message_placeholder: "Message to invite your friend"
       invitation_code_label: "Invitation code"
@@ -60,7 +60,7 @@ en:
     invite: "Recommend"
 
   advertiser_recommend:
-      title: "Recommend & earn bonus"
+    title: "Recommend & Earn bonus"
 
 
 
