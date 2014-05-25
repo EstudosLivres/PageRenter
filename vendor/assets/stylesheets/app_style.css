@@ -356,3 +356,11 @@ a.r_advertiser:hover,
 .benefits>li>strong {
     font-size: 17px;
 }
+
+#feedback_types.benefits>li {
+    margin-top: 14px;
+}
+
+.modal-body {
+    padding-bottom: 0;
+}
