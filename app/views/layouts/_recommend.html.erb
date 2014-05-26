@@ -8,6 +8,8 @@
       </div>
       <div class="modal-body">
         <aside class="modal_body_left">
+          <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | <%= t(:advertiser_recommend)[:recommend_form][:fb_btn_text] %> </button>
+
           <form>
             <div class="form-group">
               <label for="recommend_email"> <%= t(:advertiser_recommend)[:recommend_form][:email_label] %>: </label>
@@ -24,11 +26,11 @@
         </aside>
 
         <aside class="modal_body_right">
-          <center> <img src="assets/friends_shake_hands.gif" alt="friend_invite" class=""/> </center>
+          <center> <img class="recommend" src="assets/partners_shaking_hands.jpeg" alt="friend_invite" class=""/> </center>
           <div class="explanations">
-            <center><strong> <%= t(:publisher_invite)[:invite_explanation][:subtitle] %> </strong> <%=role_actions[0][:name]%></center>
+            <center><strong> <%= t(:publisher_invite)[:invite_explanation][:subtitle] %> </strong></center>
             <ul class="benefits">
-              <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_1] %>;</li>
+              <li> <%= t(:advertiser_recommend)[:recommend_explanation][:benefit_1] %>;</li>
               <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_2] %>;</li>
               <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_3] %>;</li>
               <li> <%= t(:publisher_invite)[:invite_explanation][:benefit_4] %>;</li>
