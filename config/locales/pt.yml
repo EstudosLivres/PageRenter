@@ -49,7 +49,7 @@ pt:
     invite_explanation:
       subtitle: "Benefícios"
       benefit_1: "Maior repasse por clique"
-      benefit_2: "Aumento no número de alcance"
+      benefit_2: "Aumento no alcance de pessoas por click (seus clicks + clicks dos amigos)"
       benefit_3: "Recebe repasse por cliques do amigo"
       benefit_4: "Ganhos de amigos diretos (2a2), quanto mais convites melhor"
 
@@ -69,10 +69,9 @@ pt:
       msg_placeholder: "Messagem para recomendar os seus  para que se associem a você"
       recommendation_code_label: "Código de recomendação"
     recommend_explanation:
-      benefit_1: "O Parceiro Recomendador ganha uma quantia sobre o primeiro investimento do parceiro Recomendado"
-      benefit_2: "Aumento no número de alcance"
-      benefit_3: "Recebe repasse por cliques do amigo"
-      benefit_4: "Ganhos de amigos diretos (2a2), quanto mais convites melhor"
+      benefit_1: "O Parceiro Recomendador ganha uma parte do primeiro investimento do parceiro Recomendado"
+      benefit_2: "Aumento no alcance de pessoas por campanhas vinculadas"
+
 
 
   # User texts
