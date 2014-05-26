@@ -328,8 +328,16 @@ a.r_advertiser:hover,
     width: 15%;
 }
 
+.modal-body .modal_body_right img.recommend {
+    width: 22%;
+}
+
 .modal-body .modal_body_left .btn-facebook {
     margin: 0 auto 15% 17%;
+}
+
+#recommend .modal-body .modal_body_left .btn-facebook {
+    margin: 0 auto 15% 8%;
 }
 
 .modal_body_right .explanations {
