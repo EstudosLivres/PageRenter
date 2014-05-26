@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="">
+    <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="Advertiser recommend form translated">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_recommend.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_recommend.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -49,7 +52,7 @@
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersControllerController_API_system_signup_signin__PageRenter.coverage" NAME="API::UsersControllerController#API/system/signup_signin: PageRenter Coverage Results" MODIFIED="1400522429048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SigIn_user_BY_SocialSession_JSON_Should_be_logged__PageRenter.coverage" NAME="API::UsersController SigIn user BY SocialSession JSON Should be logged: PageRenter Coverage Results" MODIFIED="1400672236419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@PublisherController_GET__index___PageRenter.coverage" NAME="PublisherController GET 'index': PageRenter Coverage Results" MODIFIED="1399550109392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
-    <SUITE FILE_PATH="coverage/PageRenter@All_specs_in_spec__PageRenter.coverage" NAME="All specs in spec: PageRenter Coverage Results" MODIFIED="1400946873867" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
+    <SUITE FILE_PATH="coverage/PageRenter@All_specs_in_spec__PageRenter.coverage" NAME="All specs in spec: PageRenter Coverage Results" MODIFIED="1401022245052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SigIn__VALID_user_BY_SocialSession_JSON__PageRenter.coverage" NAME="API::UsersController SigIn #VALID user BY SocialSession JSON: PageRenter Coverage Results" MODIFIED="1400676475684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_API_Mob__PageRenter.coverage" NAME="API::UsersController API Mob: PageRenter Coverage Results" MODIFIED="1400733913021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SignUp__VALID_user_BY_FORM_Should_be_accessible__PageRenter.coverage" NAME="API::UsersController SignUp #VALID user BY FORM Should be accessible: PageRenter Coverage Results" MODIFIED="1400698692585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
@@ -96,11 +99,9 @@
       <file leaf-file-name="_recommend.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_recommend.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36253777" vertical-offset="0" max-vertical-offset="662">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding>
-                <element signature="tag#aside#1;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="0.5468278" vertical-offset="103" max-vertical-offset="765">
+              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,11 +109,9 @@
       <file leaf-file-name="_invite.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_invite.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="630">
-              <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-              <folding>
-                <element signature="tag#aside#1;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-13.208333" vertical-offset="133" max-vertical-offset="795">
+              <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,8 +119,8 @@
       <file leaf-file-name="app_style.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/assets/stylesheets/app_style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4941" max-vertical-offset="5640">
-              <caret line="369" column="11" selection-start-line="369" selection-start-column="11" selection-end-line="369" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="5121" max-vertical-offset="5820">
+              <caret line="369" column="1" selection-start-line="369" selection-start-column="1" selection-end-line="369" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -130,18 +129,8 @@
       <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1485">
-              <caret line="68" column="31" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/string.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="786" max-vertical-offset="1515">
+              <caret line="71" column="68" selection-start-line="71" selection-start-column="68" selection-end-line="71" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -150,8 +139,8 @@
       <file leaf-file-name="pt.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/pt.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1485">
-              <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1515">
+              <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -217,13 +206,13 @@
         <option value="$PROJECT_DIR$/spec/controllers/users_controller_spec.rb" />
         <option value="$PROJECT_DIR$/spec/helpers/application_helper_spec.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/vendor/assets/stylesheets/app_style.css" />
         <option value="$PROJECT_DIR$/app/views/layouts/_feedback.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/_invite.html.erb" />
         <option value="$PROJECT_DIR$/app/models/string.rb" />
-        <option value="$PROJECT_DIR$/config/locales/en.yml" />
-        <option value="$PROJECT_DIR$/config/locales/pt.yml" />
+        <option value="$PROJECT_DIR$/vendor/assets/stylesheets/app_style.css" />
+        <option value="$PROJECT_DIR$/app/views/layouts/_invite.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_recommend.html.erb" />
+        <option value="$PROJECT_DIR$/config/locales/pt.yml" />
+        <option value="$PROJECT_DIR$/config/locales/en.yml" />
       </list>
     </option>
   </component>
@@ -1750,7 +1739,39 @@
       <created>1401022173171</created>
       <updated>1401022173171</updated>
     </task>
-    <option name="localTasksCounter" value="279" />
+    <task id="LOCAL-00279" summary="fb btn function">
+      <created>1401069155925</created>
+      <updated>1401069155925</updated>
+    </task>
+    <task id="LOCAL-00280" summary="recommend BtnFB diferent style against the btnfb invite">
+      <created>1401069743314</created>
+      <updated>1401069743314</updated>
+    </task>
+    <task id="LOCAL-00281" summary="First benefit">
+      <created>1401071860421</created>
+      <updated>1401071860421</updated>
+    </task>
+    <task id="LOCAL-00282" summary="uppercase the subtitle">
+      <created>1401071875666</created>
+      <updated>1401071875666</updated>
+    </task>
+    <task id="LOCAL-00283" summary="FBBtn for recommendation added &amp; first benefit">
+      <created>1401107268837</created>
+      <updated>1401107268837</updated>
+    </task>
+    <task id="LOCAL-00284" summary="The action name removed from the subtitle because the words order is different between PT &amp;&amp; EN">
+      <created>1401109659706</created>
+      <updated>1401109659707</updated>
+    </task>
+    <task id="LOCAL-00285" summary="Publisher benefit updated:  explain how to share click&#10;Adv benefit updated: second benefit (range increased)">
+      <created>1401111327985</created>
+      <updated>1401111327985</updated>
+    </task>
+    <task id="LOCAL-00286" summary="Added campaign linked explanation">
+      <created>1401111386599</created>
+      <updated>1401111386599</updated>
+    </task>
+    <option name="localTasksCounter" value="287" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1835,14 +1856,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="REFECT: Verify the param received if it has the locale" />
-    <MESSAGE value="SPec if the session was removed" />
-    <MESSAGE value="REFECT: the links changed from role/act to just # (using modal)" />
-    <MESSAGE value="SPec to test the button based on the role" />
-    <MESSAGE value="Modal ContactUs created working &amp; translated" />
-    <MESSAGE value="Coverage 100%&#10;- Button, based on the role, tested" />
-    <MESSAGE value="Comments with the TODOs for the modals" />
-    <MESSAGE value="The modal divide 50-50 working and img well rendered" />
     <MESSAGE value="Image centralized &amp; 15% to better render" />
     <MESSAGE value="Margin adjustment to separate the word from the border" />
     <MESSAGE value="Styles for the contactus modal" />
@@ -1860,7 +1873,15 @@
     <MESSAGE value="Method that humanize (upcase just the first letter)" />
     <MESSAGE value="Parenteses removidos" />
     <MESSAGE value="Advertiser recommend form translated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Advertiser recommend form translated" />
+    <MESSAGE value="fb btn function" />
+    <MESSAGE value="recommend BtnFB diferent style against the btnfb invite" />
+    <MESSAGE value="First benefit" />
+    <MESSAGE value="uppercase the subtitle" />
+    <MESSAGE value="FBBtn for recommendation added &amp; first benefit" />
+    <MESSAGE value="The action name removed from the subtitle because the words order is different between PT &amp;&amp; EN" />
+    <MESSAGE value="Publisher benefit updated:  explain how to share click&#10;Adv benefit updated: second benefit (range increased)" />
+    <MESSAGE value="Added campaign linked explanation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added campaign linked explanation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2204,55 +2225,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/string.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17167382" vertical-offset="0" max-vertical-offset="699">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/assets/stylesheets/app_style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4941" max-vertical-offset="5640">
-          <caret line="369" column="11" selection-start-line="369" selection-start-column="11" selection-end-line="369" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="5121" max-vertical-offset="5820">
+          <caret line="369" column="1" selection-start-line="369" selection-start-column="1" selection-end-line="369" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_invite.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="630">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-          <folding>
-            <element signature="tag#aside#1;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/string.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state vertical-scroll-proportion="-13.208333" vertical-offset="133" max-vertical-offset="795">
+          <caret line="30" column="55" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/pt.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1485">
-          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="651" max-vertical-offset="1515">
+          <caret line="62" column="36" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="666" max-vertical-offset="1485">
-          <caret line="68" column="31" selection-start-line="68" selection-start-column="6" selection-end-line="68" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="786" max-vertical-offset="1515">
+          <caret line="71" column="68" selection-start-line="71" selection-start-column="68" selection-end-line="71" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_recommend.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36253777" vertical-offset="0" max-vertical-offset="662">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-          <folding>
-            <element signature="tag#aside#1;tag#div#1;tag#div#0;tag#div#0;tag#div#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.5468278" vertical-offset="103" max-vertical-offset="765">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
