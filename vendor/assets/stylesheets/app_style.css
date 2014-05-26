@@ -377,3 +377,7 @@ a.r_advertiser:hover,
     font-weight: bold;
     color: #e0ad4e;
 }
+
+.explanations > center > strong {
+    text-transform: uppercase;
+}
