@@ -62,6 +62,7 @@ en:
   advertiser_recommend:
     title: "Recommend & Earn bonus"
     recommend_form:
+      fb_btn_text: "Recommend using Facebook"
       email_label: "Partners's E-mails"
       email_placeholder: "Partners's e-mails"
       msg_label: "Recommend message"
