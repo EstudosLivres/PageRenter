@@ -47,10 +47,10 @@ en:
       message_placeholder: "Message to invite your friends"
       invitation_code_label: "Invitation code"
     invite_explanation:
-      subtitle: "Benefit"
+      subtitle: "Benefits"
       benefit_1: "Better pay per click"
       benefit_2: "Increase you people's range per click"
-      benefit_3: "Earn per friend invited's click"
+      benefit_3: "Earn per invited friend's click"
       benefit_4: "Earn just for direct friends (2a2), the more you invite more you earn"
 
 
@@ -69,7 +69,10 @@ en:
       msg_placeholder: "Message to recommend your partners to associate with you"
       recommendation_code_label: "Recommendation code"
     recommend_explanation:
-      subtitle: ""
+      benefit_1: "The Recommender Partner earn an amount about the first Recommended Partner's investment"
+      benefit_2: "Increase you people's range per click"
+      benefit_3: "Earn per friend invited's click"
+      benefit_4: "Earn just for direct friends (2a2), the more you invite more you earn"
 
 
 
