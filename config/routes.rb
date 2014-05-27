@@ -12,11 +12,13 @@ PageRenter::Application.routes.draw do
   # Actions Under/For Publisher
   scope '/publishers' do
     get '' => 'publishers#index'
+    get '/edit' => 'publishers#edit'
   end
 
   # Actions Under/For Advertiser
   scope '/advertisers' do
     get '' => 'advertisers#index'
+    get '/edit' => 'advertisers#edit'
   end
 
   # Actions Under/For API (external requests)
