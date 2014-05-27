@@ -33,7 +33,7 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
-        { :name => t(:user_action)[:config_acc], :path => '/users/profiles/', :icon => 'fa fa-gears' },
+        { :name => t(:user_action)[:config_acc], :path => '/users/profiles/'+role_name, :icon => 'fa fa-gears' },
         { :name => t(:user_action)[:feedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
     ]
 
