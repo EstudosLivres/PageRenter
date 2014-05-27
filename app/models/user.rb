@@ -56,9 +56,12 @@ class User < ActiveRecord::Base
     end
   end
 
-  # Return the name per role (Adv/Pub) or User name if the current is not named
-  def get_current_name
-    # TODO
+  # Set the current actived (rendered) profile as default
+  def set_default_profile role_name
+    profiles.each do |profile|
+      if profile.role.name != role_name then default = false else default = true end
+      profile.update(default_role: default)
+    end
   end
 
   # Create an user_hash (instanciable) from a social_hash RETURNS: [:user] & [:social_session]
