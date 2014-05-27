@@ -5,8 +5,16 @@ module ApplicationHelper
   end
 
   def role_icon role_param=''
-    if role_param == 'publisher' then return 'fa-rocket' elsif role_param == 'advertiser' then return 'fa-bullhorn' end
-    if role_name == 'publisher' then return 'fa-rocket' else return 'fa-bullhorn' end
+    if role_param.length >= 1 then return role_param end
+
+    case role_name
+      when 'publisher'
+        return 'fa-rocket'
+      when 'advertiser'
+        return 'fa-bullhorn'
+      else
+        return 'fa-error'
+    end
   end
 
   # Dynamic choose 'default' button: (primary for adv & success for publisher).
