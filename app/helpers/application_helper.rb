@@ -1,9 +1,4 @@
 module ApplicationHelper
-  # Redirect the user to anoter URL depending on his session default/main role
-  def session_role_redir
-
-  end
-
   def role_name
     # Remove the pluralize
     params['controller'][0...-1]
