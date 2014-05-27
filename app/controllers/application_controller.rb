@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:user_idiom] || I18n.default_locale
   end
 
+  def setup_user
+    if @current_user.nil? then @current_user = User.find(session['user_id']) end
+  end
+
   def self.land_url
     # 'http://pagerenter.com.br'
     'http://localhost/LandPageRenter/LandPageRenter/'
