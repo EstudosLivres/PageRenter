@@ -12,4 +12,8 @@ class Profile < ActiveRecord::Base
     end
   end
 
+  # diferent GetName
+  def name
+    if(!self.name.nil? && self.name.length >= 1) then return self.name else return self.user.name end
+  end
 end
