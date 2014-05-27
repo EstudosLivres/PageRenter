@@ -17,7 +17,7 @@ describe ApplicationHelper do
           it "Should route to advertisers/recommend" do helper.role_actions[0][:path].should == '#recommend' end
         end
         context "Act: #contact -> contact us (feedback)" do
-          it "Should route to publishers/invite" do helper.role_actions[1][:path].should == '#feedback' end
+          it "Should route to publishers/invite" do helper.role_actions[2][:path].should == '#feedback' end
         end
       end
 
@@ -42,7 +42,7 @@ describe ApplicationHelper do
           it "Should route to publishers/invite" do helper.role_actions[0][:path].should == '#invite' end
         end
         context "Act: #contact -> contact us (feedback)" do
-         it "Should route to publishers/invite" do helper.role_actions[1][:path].should == '#feedback' end
+         it "Should route to publishers/invite" do helper.role_actions[2][:path].should == '#feedback' end
         end
       end
 
@@ -58,7 +58,7 @@ describe ApplicationHelper do
       subject! { controller.params = { 'controller' => 'admins' } }
 
       it "Role should be Admin" do helper.role_name.should == 'admin' end
-      it "Role should have empty role_actions" do helper.role_actions.length.should == 1 end
+      it "Role should have empty role_actions" do helper.role_actions.length.should == 0 end
     end
   end
 
