@@ -12,8 +12,9 @@ class Profile < ActiveRecord::Base
     end
   end
 
-  # diferent GetName
+  # Return its name if exists, else return the user owner name
   def name
-    if(!self.name.nil? && self.name.length >= 1) then return self.name else return self.user.name end
+    attr_name = self.attributes['name']
+    if(!attr_name.nil? && attr_name.length >= 1) then return attr_name.name else return self.user.name end
   end
 end
