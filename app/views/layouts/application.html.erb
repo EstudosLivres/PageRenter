@@ -56,7 +56,7 @@
                     <%
                         @current_user.profiles.each do |profile|
                     %>
-                        <li><a class="r_<%=role_name%>" href="/users/edit"> <i class="fa <%=role_icon%>"></i> <%= profile.name %> </a></li>
+                        <li><a class="r_<%=role_name%>" href="/<%= profile.role.name.pluralize %>"> <i class="fa <%=role_icon%>"></i> <%= profile.name %> </a></li>
                     <%
                         end
                     %>
