@@ -78,6 +78,9 @@ pt:
   user_action:
     feedback: "ContateNos"
     config_acc: "ConfigConta"
+    dropdown:
+      config_pub: "Config Publisher"
+      config_adv: "Config Compania"
 
   user_feedback:
     title: "ConteNos sua experiência PageRenter"

@@ -78,6 +78,9 @@ en:
   user_action:
     feedback: "ContactUs"
     config_acc: "ConfigAccount"
+    dropdown:
+      config_pub: "Config Publisher"
+      config_adv: "Config Company"
 
   user_feedback:
     title: "TellUs your PageRenter's experience"
