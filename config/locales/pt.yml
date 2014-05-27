@@ -77,6 +77,7 @@ pt:
   # User texts
   user_action:
     feedback: "ContateNos"
+    config_acc: "ConfigConta"
 
   user_feedback:
     title: "ConteNos sua experiência PageRenter"
