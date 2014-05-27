@@ -18,7 +18,12 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_user
+    # SetUp the user to prevent finds on BD
     if @current_user.nil? then @current_user = User.find(session['user_id']) end
+
+    # SetUp the current/default user profile
+    single_role_name = params['controller'][0...-1]
+    @current_user.set_default_profile(single_role_name)
   end
 
   def self.land_url
