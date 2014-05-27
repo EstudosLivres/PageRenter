@@ -34,8 +34,10 @@ module ApplicationHelper
         { :name => t(:user_action)[:feedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
     ]
 
-    users_actions.each do |action|
-      actions.append(action)
+    unless actions.empty?
+      users_actions.each do |action|
+        actions.append(action)
+      end
     end
 
     actions
