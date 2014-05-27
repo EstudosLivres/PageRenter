@@ -4,7 +4,8 @@ module ApplicationHelper
     params['controller'][0...-1]
   end
 
-  def role_icon
+  def role_icon role_param=''
+    if role_param == 'publisher' then return 'fa-rocket' elsif role_param == 'advertiser' then return 'fa-bullhorn' end
     if role_name == 'publisher' then return 'fa-rocket' else return 'fa-bullhorn' end
   end
 
