@@ -19,14 +19,15 @@ module ApplicationHelper
   end
 
   def role_actions
-    if role_name == 'publisher'
-      actions = [
-          { :name => t(:publisher_action)[:invite], :path => '#invite', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
-      ]
-    elsif role_name == 'advertiser'
-      actions = [
-          { :name => t(:advertiser_action)[:invite], :path => '#recommend', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
-      ]
+    case role_name
+      when 'publisher'
+        actions = [
+            { :name => t(:publisher_action)[:invite], :path => '#invite', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
+        ]
+      when 'advertiser'
+        actions = [
+            { :name => t(:advertiser_action)[:invite], :path => '#recommend', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
+        ]
     else
       actions = []
     end
