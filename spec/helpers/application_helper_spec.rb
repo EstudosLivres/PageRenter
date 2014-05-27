@@ -66,8 +66,8 @@ describe ApplicationHelper do
 
       it "Role should be Global" do helper.role_name.should == 'global' end
       it "Role should be what passed" do helper.role_icon('fa-globe').should == 'fa-globe' end
-      it "Role should be error if nothing passed and no role name" do helper.role_icon().should == 'fa-error' end
       it "Role should have empty role_actions" do helper.role_actions.length.should == 0 end
+      it "Role should be error if nothing passed and no role name" do helper.role_icon().should == 'fa-error' end
     end
   end
 

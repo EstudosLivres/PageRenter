@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-27T15:12:13-03:00">2014-05-27T15:12:13-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-27T15:35:43-03:00">2014-05-27T15:35:43-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">100.0%</span></span>
+    (<span class="covered_percent"><span class="green">99.65%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.34
+         2.33
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>51</b> files in total.
-    <b>563</b> relevant lines. 
-    <span class="green"><b>563</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed </span>
+    <b>566</b> relevant lines. 
+    <span class="green"><b>564</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -152,12 +152,12 @@
       
       <tr>
         <td class="strong"><a href="#04e22ce72a830067bd98ca0c4f683369f1351eb6" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>53</td>
-        <td>21</td>
-        <td>21</td>
-        <td>0</td>
-        <td>3.8</td>
+        <td class="green strong">91.67 %</td>
+        <td>59</td>
+        <td>24</td>
+        <td>22</td>
+        <td>2</td>
+        <td>3.5</td>
       </tr>
       
       <tr>
@@ -2469,11 +2469,11 @@
         <div class="source_table" id="04e22ce72a830067bd98ca0c4f683369f1351eb6">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="green">91.67 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>21</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>24</b> relevant lines. 
+      <span class="green"><b>22</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -2498,8 +2498,8 @@
           <code class="ruby">    # Remove the pluralize</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="4">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="4">
+          <span class="hits">22</span>
           
           <code class="ruby">    params[&#39;controller&#39;][0...-1]</code>
         </li>
@@ -2525,217 +2525,217 @@
         <li class="covered" data-hits="4" data-linenumber="8">
           <span class="hits">4</span>
           
-          <code class="ruby">    if role_param.length &gt;= 1 then return role_param end</code>
+          <code class="ruby">    case role_param</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      when &#39;publisher&#39;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="missed" data-hits="0" data-linenumber="10">
           
-          <code class="ruby">    case role_name</code>
+          
+          <code class="ruby">        return &#39;fa-rocket&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">      when &#39;publisher&#39;</code>
+          <code class="ruby">      when &#39;advertiser&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="12">
           
-          <code class="ruby">        return &#39;fa-rocket&#39;</code>
+          
+          <code class="ruby">        return &#39;fa-bullhorn&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">      when &#39;advertiser&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        return &#39;fa-bullhorn&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">        return &#39;fa-error&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
-          
-          
-          <code class="ruby">  # Dynamic choose &#39;default&#39; button: (primary for adv &amp; success for publisher).</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def current_button</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="22">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    if role_name == &#39;publisher&#39; then return &#39;btn-success&#39; else return &#39;btn-primary&#39; end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="23">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def role_actions</code>
-        </li>
-      
-        <li class="covered" data-hits="6" data-linenumber="26">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="4" data-linenumber="15">
+          <span class="hits">4</span>
           
           <code class="ruby">    case role_name</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">      when &#39;publisher&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="28">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
           
-          <code class="ruby">        actions = [</code>
+          <code class="ruby">        return &#39;fa-rocket&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby">            { :name =&gt; t(:publisher_action)[:invite], :path =&gt; &#39;#invite&#39;, :icon =&gt; &#39;fa fa-paper-plane&#39;, :toggle =&gt; &#39;modal&#39; }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">        ]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">      when &#39;advertiser&#39;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="32">
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        return &#39;fa-bullhorn&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
-          <code class="ruby">        actions = [</code>
+          <code class="ruby">        if role_param.length &gt;= 3 then return role_param end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">            { :name =&gt; t(:advertiser_action)[:invite], :path =&gt; &#39;#recommend&#39;, :icon =&gt; &#39;fa fa-paper-plane&#39;, :toggle =&gt; &#39;modal&#39; }</code>
+          <code class="ruby">        return &#39;fa-error&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
-          
-          
-          <code class="ruby">        ]</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="36">
-          <span class="hits">2</span>
-          
-          <code class="ruby">      actions = []</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby">  # Dynamic choose &#39;default&#39; button: (primary for adv &amp; success for publisher).</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def current_button</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="28">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    if role_name == &#39;publisher&#39; then return &#39;btn-success&#39; else return &#39;btn-primary&#39; end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="31">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def role_actions</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="32">
+          <span class="hits">6</span>
+          
+          <code class="ruby">    case role_name</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">      when &#39;publisher&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="34">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        actions = [</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby">            { :name =&gt; t(:publisher_action)[:invite], :path =&gt; &#39;#invite&#39;, :icon =&gt; &#39;fa fa-paper-plane&#39;, :toggle =&gt; &#39;modal&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">        ]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">      when &#39;advertiser&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="38">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        actions = [</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="39">
           
           
-          <code class="ruby">    # Commum actions</code>
+          <code class="ruby">            { :name =&gt; t(:advertiser_action)[:invite], :path =&gt; &#39;#recommend&#39;, :icon =&gt; &#39;fa fa-paper-plane&#39;, :toggle =&gt; &#39;modal&#39; }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="40">
-          <span class="hits">6</span>
+        <li class="never" data-hits="" data-linenumber="40">
           
-          <code class="ruby">    users_actions = [</code>
+          
+          <code class="ruby">        ]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">        { :name =&gt; t(:user_action)[:config_acc], :path =&gt; &quot;/#{role_name.pluralize}/edit&quot;, :icon =&gt; &#39;fa fa-gears&#39; },</code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="42">
+        <li class="covered" data-hits="2" data-linenumber="42">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">        { :name =&gt; t(:user_action)[:feedback], :path =&gt; &#39;#feedback&#39;, :icon =&gt; &#39;fa fa-comments&#39;, :toggle =&gt; &#39;modal&#39; }</code>
+          <code class="ruby">      actions = []</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
           
           
-          <code class="ruby">    ]</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="44">
@@ -2744,34 +2744,34 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="45">
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    # Commum actions</code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="46">
           <span class="hits">6</span>
           
-          <code class="ruby">    unless actions.empty?</code>
+          <code class="ruby">    users_actions = [</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="46">
-          <span class="hits">4</span>
+        <li class="never" data-hits="" data-linenumber="47">
           
-          <code class="ruby">      users_actions.each do |action|</code>
-        </li>
-      
-        <li class="covered" data-hits="8" data-linenumber="47">
-          <span class="hits">8</span>
           
-          <code class="ruby">        actions.append(action)</code>
+          <code class="ruby">        { :name =&gt; t(:user_action)[:config_acc], :path =&gt; &quot;/#{role_name.pluralize}/edit&quot;, :icon =&gt; &#39;fa fa-gears&#39; },</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        { :name =&gt; t(:user_action)[:feedback], :path =&gt; &#39;#feedback&#39;, :icon =&gt; &#39;fa fa-comments&#39;, :toggle =&gt; &#39;modal&#39; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    ]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
@@ -2783,16 +2783,52 @@
         <li class="covered" data-hits="6" data-linenumber="51">
           <span class="hits">6</span>
           
+          <code class="ruby">    unless actions.empty?</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="52">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      users_actions.each do |action|</code>
+        </li>
+      
+        <li class="covered" data-hits="8" data-linenumber="53">
+          <span class="hits">8</span>
+          
+          <code class="ruby">        actions.append(action)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="6" data-linenumber="57">
+          <span class="hits">6</span>
+          
           <code class="ruby">    actions</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="never" data-hits="" data-linenumber="59">
           
           
           <code class="ruby">end</code>
@@ -8153,13 +8189,13 @@
         <li class="covered" data-hits="2" data-linenumber="69">
           <span class="hits">2</span>
           
-          <code class="ruby">      it &quot;Role should be error if nothing passed and no role name&quot; do helper.role_icon().should == &#39;fa-error&#39; end</code>
+          <code class="ruby">      it &quot;Role should have empty role_actions&quot; do helper.role_actions.length.should == 0 end</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="70">
           <span class="hits">2</span>
           
-          <code class="ruby">      it &quot;Role should have empty role_actions&quot; do helper.role_actions.length.should == 0 end</code>
+          <code class="ruby">      it &quot;Role should be error if nothing passed and no role name&quot; do helper.role_icon().should == &#39;fa-error&#39; end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">

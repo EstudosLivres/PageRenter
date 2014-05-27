@@ -5,7 +5,12 @@ module ApplicationHelper
   end
 
   def role_icon role_param=''
-    if role_param.length >= 1 then return role_param end
+    case role_param
+      when 'publisher'
+        return 'fa-rocket'
+      when 'advertiser'
+        return 'fa-bullhorn'
+    end
 
     case role_name
       when 'publisher'
@@ -13,6 +18,7 @@ module ApplicationHelper
       when 'advertiser'
         return 'fa-bullhorn'
       else
+        if role_param.length >= 3 then return role_param end
         return 'fa-error'
     end
   end

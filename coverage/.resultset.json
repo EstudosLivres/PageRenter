@@ -252,18 +252,24 @@
         1,
         1,
         null,
-        21,
+        22,
         null,
         null,
         1,
         4,
         null,
-        3,
+        0,
+        null,
+        0,
+        null,
+        null,
+        4,
         null,
         1,
         null,
         1,
         null,
+        2,
         1,
         null,
         null,
@@ -1221,12 +1227,6 @@
         1,
         null
       ],
-      "/Users/TonGarcia/Documents/projs/rails/PageRenter/app/models/page_account.rb": [
-        1,
-        null,
-        1,
-        null
-      ],
       "/Users/TonGarcia/Documents/projs/rails/PageRenter/app/controllers/api/concerns/token_manager.rb": [
         1,
         1,
@@ -1308,6 +1308,12 @@
         null,
         null
       ],
+      "/Users/TonGarcia/Documents/projs/rails/PageRenter/app/models/page_account.rb": [
+        1,
+        null,
+        1,
+        null
+      ],
       "/Users/TonGarcia/Documents/projs/rails/PageRenter/app/controllers/api/concerns/http_test_helper.rb": [
         1,
         1,
@@ -1329,6 +1335,6 @@
         null
       ]
     },
-    "timestamp": 1401214333
+    "timestamp": 1401215742
   }
 }
