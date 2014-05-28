@@ -3,7 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_locale
-  before_action :validate_session
+  before_action :validate_session, :except => :mob_login
+  before_action :validate_session, :except => :system_signup_signin
+  before_action :validate_session, :except => :redirect_index
 
   def set_locale
     user_params = params['user']
@@ -19,7 +21,8 @@ class ApplicationController < ActionController::Base
   end
 
   def validate_session
-    if session[:user_id].nil? then redirect_to ApplicationController.land_url end
+    action = params['action']
+    if session[:user_id].nil? && action != 'system_signup_signin' && action != 'login' then redirect_to ApplicationController.land_url end
   end
 
   def setup_user
