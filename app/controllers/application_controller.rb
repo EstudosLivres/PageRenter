@@ -22,7 +22,9 @@ class ApplicationController < ActionController::Base
 
   def validate_session
     action = params['action']
-    if session[:user_id].nil? && action != 'system_signup_signin' && action != 'login' then redirect_to ApplicationController.land_url end
+    if session[:user_id].nil? && action != 'system_signup_signin' && action != 'login' && action != 'mob_login'
+      redirect_to ApplicationController.land_url
+    end
   end
 
   def setup_user
