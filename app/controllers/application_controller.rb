@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_locale
+  before_action :validate_session
 
   def set_locale
     user_params = params['user']
@@ -15,6 +16,10 @@ class ApplicationController < ActionController::Base
     # Idiom setted by the session just if necessary to find the user on BD, if the locale cames with the browser, it is scaped
     if !session[:user_id].nil? & session[:user_idiom].nil? then session[:user_idiom] = User.find(session[:user_id]).locale[0..1] end
     I18n.locale = session[:user_idiom] || I18n.default_locale
+  end
+
+  def validate_session
+    if session[:user_id].nil? then redirect_to ApplicationController.land_url end
   end
 
   def setup_user
