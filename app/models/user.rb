@@ -46,6 +46,14 @@ class User < ActiveRecord::Base
 
     return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: role_id })
 
+    case role_id
+      when 1
+        second_role = 2
+      when 2
+        second_role = 1
+    end
+
+    return_user.profiles.append(Profile.new({ name: '', default_role: true, role_id: second_role }))
     return_user
   end
 
