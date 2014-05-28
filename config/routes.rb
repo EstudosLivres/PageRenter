@@ -2,7 +2,7 @@ PageRenter::Application.routes.draw do
   get 'redirect/index'
 
   # In a near future put a helper to redirect to the user role session
-  root 'redirect#index'
+  root 'redirect#redirect_index'
 
   scope '/users' do
     post 'login' => 'users#login'
