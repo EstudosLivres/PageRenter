@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140519011916) do
   create_table "profiles", force: true do |t|
     t.string   "name",         limit: 55
     t.boolean  "default_role",            null: false
-    t.integer  "role_id"
+    t.integer  "role_id",                 null: false
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
