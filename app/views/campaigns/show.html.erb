@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @campaign.name %>
+</p>
+
+<p>
+  <strong>Redirect link:</strong>
+  <%= @campaign.redirect_link %>
+</p>
+
+<p>
+  <strong>Slogan:</strong>
+  <%= @campaign.slogan %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @campaign.description %>
+</p>
+
+<p>
+  <strong>Social phrase:</strong>
+  <%= @campaign.social_phrase %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>
