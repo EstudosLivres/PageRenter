@@ -58,6 +58,7 @@ pt:
   # Advertiser texts
   advertiser_action:
     invite: "Recomendar"
+    new_campaign: "NovaCampanha"
 
   advertiser_recommend:
     title: "Recomende & Ganhe bônus"

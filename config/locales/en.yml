@@ -58,6 +58,7 @@ en:
   # Advertiser texts
   advertiser_action:
     invite: "Recommend"
+    new_campaign: "NewCampaign"
 
   advertiser_recommend:
     title: "Recommend & Earn bonus"
