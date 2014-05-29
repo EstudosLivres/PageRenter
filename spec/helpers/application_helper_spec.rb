@@ -3,18 +3,16 @@ require 'spec_helper'
 describe ApplicationHelper do
 
   describe 'roles' do
-    subject!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }
-    subject!(:advertiser_profile) { FactoryGirl.create(:advertiser_profile) }
-
     # Advertiser
     context "Role #Advertiser" do
-      subject! { controller.params = { 'controller' => 'advertisers' } }
-      subject! { session['user_id'] = advertiser_profile.user.id }
-      subject! { @current_user = advertiser_profile.user }
+      before :each do
+        controller.request.path = '/advertisers'
+      end
 
       adv_icon = 'fa-bullhorn'
 
-      it "Role should be Advertiser" do helper.role_name.should == 'advertiser' end
+      it "Role should be Advertiser" do
+        helper.role_name.should == 'advertiser' end
 
       it "Advertiser icon should be #{ adv_icon }" do helper.role_icon.should == adv_icon end
 
@@ -36,9 +34,9 @@ describe ApplicationHelper do
 
     # Publisher
     context "Role #Publisher" do
-      subject! { controller.params = { 'controller' => 'publishers' } }
-      subject! { session['user_id'] = publisher_profile.user.id }
-      subject! { @current_user = publisher_profile.user }
+      before :each do
+        controller.request.path = '/publishers'
+      end
 
       pub_icon = 'fa-rocket'
 
@@ -64,33 +62,23 @@ describe ApplicationHelper do
 
     # Admin (not implemented yet)
     context "Role #Admin" do
-      subject! { controller.params = { 'controller' => 'admins' } }
-      subject! {
-        @current_user = publisher_profile.user
-        @current_user.get_default_profile.role.name = 'admin'
-        @current_user = publisher_profile.user
-      }
+      before :each do
+        controller.request.path = '/admins'
+      end
 
       it "Role should be Admin" do helper.role_name.should == 'admin' end
       it "Role should have empty role_actions" do helper.role_actions.length.should == 0 end
     end
 
     context "Global Role" do
-      subject! { controller.params = { 'controller' => 'globals' } }
-      subject! {
-        @current_user = publisher_profile.user
-        @current_user.get_default_profile.role.name = 'global'
-        @current_user = publisher_profile.user
-      }
+      before :each do
+        controller.request.path = '/globals'
+      end
 
-      it "Role should be Global" do
-        helper.role_name.should == 'global' end
-      it "Role should be what passed" do
-        helper.role_icon('fa-globe').should == 'fa-globe' end
-      it "Role should have empty role_actions" do
-        helper.role_actions.length.should == 0 end
-      it "Role should be error if nothing passed and no role name" do
-        helper.role_icon().should == 'fa-error' end
+      it "Role should be Global" do helper.role_name.should == 'global' end
+      it "Role should be what passed" do helper.role_icon('fa-globe').should == 'fa-globe' end
+      it "Role should have empty role_actions" do helper.role_actions.length.should == 0 end
+      it "Role should be error if nothing passed and no role name" do helper.role_icon().should == 'fa-error' end
       it "Without a Role should be the role passed as param" do
         helper.role_icon('publisher').should == 'fa-rocket'
         helper.role_icon('advertiser').should == 'fa-bullhorn'
