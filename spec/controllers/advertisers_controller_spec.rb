@@ -11,4 +11,13 @@ describe AdvertisersController do
     end
   end
 
+  describe "Access without session" do
+    it "should redirect to the land_url" do
+      session[:user_id] = nil
+      get :edit
+
+      expect(response).to redirect_to(ApplicationController.land_url)
+    end
+  end
+
 end
