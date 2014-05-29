@@ -19,6 +19,7 @@ PageRenter::Application.routes.draw do
   scope '/advertisers' do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
+    resources :campaigns
   end
 
   # Actions Under/For API (external requests)
