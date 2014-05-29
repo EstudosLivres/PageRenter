@@ -14,14 +14,14 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-29T12:44:41-03:00">2014-05-29T12:44:41-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-05-29T12:49:03-03:00">2014-05-29T12:49:03-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.31%</span></span>
+    (<span class="covered_percent"><span class="green">99.66%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>51</b> files in total.
-    <b>583</b> relevant lines. 
-    <span class="green"><b>579</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed </span>
+    <b>586</b> relevant lines. 
+    <span class="green"><b>584</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -152,12 +152,12 @@
       
       <tr>
         <td class="strong"><a href="#04e22ce72a830067bd98ca0c4f683369f1351eb6" class="src_link" title="app/helpers/application_helper.rb">app/helpers/application_helper.rb</a></td>
-        <td class="green strong">91.67 %</td>
+        <td class="green strong">100.0 %</td>
         <td>59</td>
         <td>24</td>
-        <td>22</td>
-        <td>2</td>
-        <td>3.5</td>
+        <td>24</td>
+        <td>0</td>
+        <td>3.7</td>
       </tr>
       
       <tr>
@@ -443,11 +443,11 @@
       <tr>
         <td class="strong"><a href="#5dd906a88bab322c359e7d929641c60b1f208777" class="src_link" title="spec/helpers/application_helper_spec.rb">spec/helpers/application_helper_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>74</td>
-        <td>39</td>
-        <td>39</td>
+        <td>78</td>
+        <td>42</td>
+        <td>42</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -2529,11 +2529,11 @@
         <div class="source_table" id="04e22ce72a830067bd98ca0c4f683369f1351eb6">
   <div class="header">
     <h3>app/helpers/application_helper.rb</h3>
-    <h4><span class="green">91.67 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>24</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>24</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2582,8 +2582,8 @@
           <code class="ruby">  def role_icon role_param=&#39;&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="8">
+          <span class="hits">6</span>
           
           <code class="ruby">    case role_param</code>
         </li>
@@ -2594,8 +2594,8 @@
           <code class="ruby">      when &#39;publisher&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
-          
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
           <code class="ruby">        return &#39;fa-rocket&#39;</code>
         </li>
@@ -2606,8 +2606,8 @@
           <code class="ruby">      when &#39;advertiser&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="12">
-          
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
           <code class="ruby">        return &#39;fa-bullhorn&#39;</code>
         </li>
@@ -7919,8 +7919,8 @@
     <h3>spec/helpers/application_helper_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>39</b> relevant lines. 
-      <span class="green"><b>39</b> lines covered</span> and
+      <b>42</b> relevant lines. 
+      <span class="green"><b>42</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -8312,8 +8312,8 @@
           <code class="ruby">    context &quot;Global Role&quot; do</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="65">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="6" data-linenumber="65">
+          <span class="hits">6</span>
           
           <code class="ruby">      subject! { controller.params = { &#39;controller&#39; =&gt; &#39;globals&#39; } }</code>
         </li>
@@ -8348,25 +8348,49 @@
           <code class="ruby">      it &quot;Role should be error if nothing passed and no role name&quot; do helper.role_icon().should == &#39;fa-error&#39; end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="71">
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      it &quot;Without a Role should be the role passed as param&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        helper.role_icon(&#39;publisher&#39;).should == &#39;fa-rocket&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        helper.role_icon(&#39;advertiser&#39;).should == &#39;fa-bullhorn&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="72">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="73">
+        <li class="never" data-hits="" data-linenumber="77">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="74">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby">end</code>
