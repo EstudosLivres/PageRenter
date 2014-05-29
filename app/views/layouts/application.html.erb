@@ -51,7 +51,11 @@
 
               <ul id="user_action" class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a class="dropdown-toggle r_<%=role_name%>" data-toggle="dropdown" href="#"> <i class="fa <%=role_icon%>"></i> <%= @current_user.get_default_profile.name %> <b class="caret"></b></a>
+                  <a class="dropdown-toggle r_<%=role_name%>" data-toggle="dropdown" href="#">
+                    <i class="fa <%=role_icon%>"></i>
+                    <%= @current_user.get_default_profile.name %>
+                    <b class="caret"></b>
+                  </a>
                   <ul class="dropdown-menu">
                     <%
                         @current_user.profiles.each do |profile|
