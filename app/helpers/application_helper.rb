@@ -1,6 +1,8 @@
 module ApplicationHelper
   def role_name
-    @current_user.get_default_profile.role.name
+    # Remove the pluralize
+    url_role = request.fullpath.split(/\//)[1]
+    url_role[0...-1]
   end
 
   def role_icon role_param=''
