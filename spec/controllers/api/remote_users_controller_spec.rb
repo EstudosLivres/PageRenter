@@ -114,7 +114,7 @@ describe API::RemoteUsersController do
     it "Should be #:invalid_attr_value type message" do resp_body['type'].should == 'invalid_attr_value' end
   end
 
-  # Submit an valid user hash as param for SignUp_SignIn (Log if exists or Register if not exist)
+  # Submit a valid user hash as param for SignUp_SignIn (Log if exists or Register if not exist)
   describe "SignUp #VALID user BY FORM" do
     before { post :system_signup_signin, valid_pub_user }
     subject(:resp_body) { JSON.parse(response.body) }
@@ -124,6 +124,52 @@ describe API::RemoteUsersController do
     it "Should has an message" do resp_body.should have_key('msg') end
     it "Message should respond per invalid attribute" do resp_body['msg'].should be_a String end
     it "Should be #:invalid_attr_value type message" do resp_body.should_not have_key('type') end
+    it "Should have a Publisher & an Advertiser profile" do
+      profiles = User.last!.profiles.to_a
+      profiles.length.should == 2
+
+      count_pub = 0
+      count_adv = 0
+      profiles.each do |profile|
+        if profile.role.id == 1
+          count_pub = count_pub+1
+        elsif profile.role.id == 2
+          count_adv = count_adv+1
+        end
+      end
+
+      count_pub.should == 1
+      count_adv.should == 1
+    end
+  end
+
+  # Submit a valid user hash (ADV) as param for SignUp_SignIn (Log if exists or Register if not exist)
+  describe "SignUp #VALID user BY FORM" do
+    before { post :system_signup_signin, valid_adv_user }
+    subject(:resp_body) { JSON.parse(response.body) }
+
+    it "Should be accessible" do response.should be_success end
+    it "Should has an error" do resp_body['status'].should == 'ok' end
+    it "Should has an message" do resp_body.should have_key('msg') end
+    it "Message should respond per invalid attribute" do resp_body['msg'].should be_a String end
+    it "Should be #:invalid_attr_value type message" do resp_body.should_not have_key('type') end
+    it "Should have a Publisher & an Advertiser profile" do
+      profiles = User.last!.profiles.to_a
+      profiles.length.should == 2
+
+      count_pub = 0
+      count_adv = 0
+      profiles.each do |profile|
+        if profile.role.id == 1
+          count_pub = count_pub+1
+        elsif profile.role.id == 2
+          count_adv = count_adv+1
+        end
+      end
+
+      count_pub.should == 1
+      count_adv.should == 1
+    end
   end
 
   # Facebook login
