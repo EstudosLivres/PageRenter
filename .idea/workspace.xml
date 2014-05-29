@@ -2,26 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98aefbe1-3b74-47fc-961d-8bff47ae5b8f" name="Default" comment="Base structure of the campaign BD Table">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/campaign.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/models/campaign_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/factories/campaigns.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/campaigns_controller.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/controllers/campaigns_controller_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/campaigns_helper.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/helpers/campaigns_helper_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/routing/campaigns_routing_spec.rb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/requests/campaigns_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/edit.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/campaigns/edit.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/index.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/campaigns/index.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/index.json.jbuilder" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/new.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/campaigns/new.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/show.html.erb" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spec/views/campaigns/show.html.erb_spec.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/campaigns/show.json.jbuilder" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -1899,7 +1889,11 @@
       <created>1401387747835</created>
       <updated>1401387747835</updated>
     </task>
-    <option name="localTasksCounter" value="343" />
+    <task id="LOCAL-00343" summary="Base scaffold generated for the campaigns">
+      <created>1401387808020</created>
+      <updated>1401387808020</updated>
+    </task>
+    <option name="localTasksCounter" value="344" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -1984,7 +1978,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="REFECT: converted the ifelse into switch case (case when)" />
     <MESSAGE value="REFECT: return what passed if didn't catch anything else" />
     <MESSAGE value="prevent to persist Profile withou a role" />
     <MESSAGE value="Create by DEFAULT the both possible user Roles (advertiser &amp; publisher)" />
@@ -2009,7 +2002,8 @@
     <MESSAGE value="refect: SAS into CSS" />
     <MESSAGE value="SetUp user before every action &amp; using the helper to know the controller/role" />
     <MESSAGE value="changed the user button FROM online code TO codes for better debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the user button FROM online code TO codes for better debug" />
+    <MESSAGE value="Base scaffold generated for the campaigns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base scaffold generated for the campaigns" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
