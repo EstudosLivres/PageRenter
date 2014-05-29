@@ -6,8 +6,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/.resultset.json" afterPath="$PROJECT_DIR$/coverage/.resultset.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PageRenter.iml" afterPath="$PROJECT_DIR$/.idea/PageRenter.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverage/index.html" afterPath="$PROJECT_DIR$/coverage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/api/remote_users_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/api/remote_users_controller_spec.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/factories/users.rb" afterPath="$PROJECT_DIR$/spec/factories/users.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="PageRenter.iws" />
@@ -45,6 +43,7 @@
     <SUITE FILE_PATH="coverage/PageRenter@RedirectController__PageRenter.coverage" NAME="RedirectController: PageRenter Coverage Results" MODIFIED="1400813040483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SignUp__EMPTY_user_BY_FORM_Works__PageRenter.coverage" NAME="API::UsersController SignUp #EMPTY user BY FORM Works: PageRenter Coverage Results" MODIFIED="1400668611427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@User_Registration___LogIn_SigIn_user_BY_SocialSession_JSON__PageRenter.coverage" NAME="User Registration &amp; LogIn SigIn user BY SocialSession JSON: PageRenter Coverage Results" MODIFIED="1400672645807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
+    <SUITE FILE_PATH="coverage/PageRenter@API__RemoteUsersController_SignUp__VALID_user_BY_FORM__PageRenter.coverage" NAME="API::RemoteUsersController SignUp #VALID user BY FORM: PageRenter Coverage Results" MODIFIED="1401380497162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersControllerController__PageRenter.coverage" NAME="API::UsersControllerController: PageRenter Coverage Results" MODIFIED="1400522484228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@RedirectController_Root_aplication_should_respond_the_role_URL__Publisher__PageRenter.coverage" NAME="RedirectController Root aplication should respond the role URL #Publisher: PageRenter Coverage Results" MODIFIED="1400812364168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SignUp__EMPTY_user_BY_FORM_asdsad__PageRenter.coverage" NAME="API::UsersController SignUp #EMPTY user BY FORM asdsad: PageRenter Coverage Results" MODIFIED="1400643413386" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
@@ -56,7 +55,7 @@
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersControllerController_API_system_signup_signin__PageRenter.coverage" NAME="API::UsersControllerController#API/system/signup_signin: PageRenter Coverage Results" MODIFIED="1400522429048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SigIn_user_BY_SocialSession_JSON_Should_be_logged__PageRenter.coverage" NAME="API::UsersController SigIn user BY SocialSession JSON Should be logged: PageRenter Coverage Results" MODIFIED="1400672236419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@PublisherController_GET__index___PageRenter.coverage" NAME="PublisherController GET 'index': PageRenter Coverage Results" MODIFIED="1399550109392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
-    <SUITE FILE_PATH="coverage/PageRenter@All_specs_in_spec__PageRenter.coverage" NAME="All specs in spec: PageRenter Coverage Results" MODIFIED="1401379255093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
+    <SUITE FILE_PATH="coverage/PageRenter@All_specs_in_spec__PageRenter.coverage" NAME="All specs in spec: PageRenter Coverage Results" MODIFIED="1401380537927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SigIn__VALID_user_BY_SocialSession_JSON__PageRenter.coverage" NAME="API::UsersController SigIn #VALID user BY SocialSession JSON: PageRenter Coverage Results" MODIFIED="1400676475684" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_API_Mob__PageRenter.coverage" NAME="API::UsersController API Mob: PageRenter Coverage Results" MODIFIED="1400733913021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
     <SUITE FILE_PATH="coverage/PageRenter@API__UsersController_SignUp__VALID_user_BY_FORM_Should_be_accessible__PageRenter.coverage" NAME="API::UsersController SignUp #VALID user BY FORM Should be accessible: PageRenter Coverage Results" MODIFIED="1400698692585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="PageRenter" />
@@ -105,11 +104,9 @@
       <file leaf-file-name="remote_users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/api/remote_users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="1215">
+            <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1365">
               <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding>
-                <element signature="e#783#1293#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -127,8 +124,8 @@
       <file leaf-file-name="remote_users_controller_spec.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spec/controllers/api/remote_users_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66560507" vertical-offset="16" max-vertical-offset="2895">
-              <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.7611465" vertical-offset="1801" max-vertical-offset="3585">
+              <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -426,7 +423,7 @@
       <recent name="$PROJECT_DIR$/app/controllers/api" />
     </key>
   </component>
-  <component name="RunManager" selected="RSpec.API::RemoteUsersController: PageRenter">
+  <component name="RunManager" selected="RSpec.All specs in spec: PageRenter">
     <configuration default="false" name="All specs in spec: PageRenter" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="PageRenter" />
@@ -489,6 +486,43 @@
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="API::RemoteUsersController" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <RunnerSettings RunnerId="RubyDebugRunner" />
+      <ConfigurationWrapper RunnerId="RubyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="API::RemoteUsersController SignUp #VALID user BY FORM: PageRenter" type="RSpecRunConfigurationType" factoryName="RSpec" temporary="true">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="PageRenter" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/spec/controllers/api/remote_users_controller_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="API::RemoteUsersController SignUp #VALID user BY FORM" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
       <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
@@ -634,7 +668,7 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
       <method />
     </configuration>
-    <list size="7">
+    <list size="8">
       <item index="0" class="java.lang.String" itemvalue="RSpec.ApplicationHelper: PageRenter" />
       <item index="1" class="java.lang.String" itemvalue="Rails.Production: PageRenter" />
       <item index="2" class="java.lang.String" itemvalue="Rails.Development: PageRenter" />
@@ -642,11 +676,13 @@
       <item index="4" class="java.lang.String" itemvalue="Rake.spec: PageRenter" />
       <item index="5" class="java.lang.String" itemvalue="RSpec.All specs in spec: PageRenter" />
       <item index="6" class="java.lang.String" itemvalue="RSpec.API::RemoteUsersController: PageRenter" />
+      <item index="7" class="java.lang.String" itemvalue="RSpec.API::RemoteUsersController SignUp #VALID user BY FORM: PageRenter" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="RSpec.API::RemoteUsersController: PageRenter" />
-        <item index="1" class="java.lang.String" itemvalue="RSpec.All specs in spec: PageRenter" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="RSpec.All specs in spec: PageRenter" />
+        <item index="1" class="java.lang.String" itemvalue="RSpec.API::RemoteUsersController SignUp #VALID user BY FORM: PageRenter" />
+        <item index="2" class="java.lang.String" itemvalue="RSpec.API::RemoteUsersController: PageRenter" />
       </list>
     </recent_temporary>
   </component>
@@ -1984,7 +2020,15 @@
       <created>1401379310797</created>
       <updated>1401379310797</updated>
     </task>
-    <option name="localTasksCounter" value="332" />
+    <task id="LOCAL-00332" summary="REFECT: Adv user added to the test and the factory">
+      <created>1401379911338</created>
+      <updated>1401379911338</updated>
+    </task>
+    <task id="LOCAL-00333" summary="tested if there is the both profiles per user &amp; if its all the profiles (not anymore)">
+      <created>1401380606851</created>
+      <updated>1401380606851</updated>
+    </task>
+    <option name="localTasksCounter" value="334" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -2009,20 +2053,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32599726" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.59559834" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956383" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3232462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.51169187" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.51169187" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.51169187" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3314993" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952693" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32737276" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17851374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17851374" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32737276" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2069,8 +2113,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="href to the role/session selected" />
-    <MESSAGE value="dynamic profile icon &amp; path" />
     <MESSAGE value="SetUp the user default based on the last controller accessed by the user" />
     <MESSAGE value="SetDefaultProfile (updating database) depending on the controller accessed (navigation)" />
     <MESSAGE value="Prevent the role_icon based just on the controller (received params too)" />
@@ -2094,14 +2136,16 @@
     <MESSAGE value="SignOut tested" />
     <MESSAGE value="Role icon with the role passed as param tested" />
     <MESSAGE value="Redirect to the land, if there is no session user. tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="Redirect to the land, if there is no session user. tested" />
+    <MESSAGE value="REFECT: Adv user added to the test and the factory" />
+    <MESSAGE value="tested if there is the both profiles per user &amp; if its all the profiles (not anymore)" />
+    <option name="LAST_COMMIT_MESSAGE" value="tested if there is the both profiles per user &amp; if its all the profiles (not anymore)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="446" />
+      <option name="time" value="450" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -2457,16 +2501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api/remote_users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="1215">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding>
-            <element signature="e#783#1293#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="616" max-vertical-offset="1500">
@@ -2483,10 +2517,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api/remote_users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="976" max-vertical-offset="1365">
+          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spec/controllers/api/remote_users_controller_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66560507" vertical-offset="16" max-vertical-offset="2895">
-          <caret line="15" column="61" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.7611465" vertical-offset="1801" max-vertical-offset="3585">
+          <caret line="136" column="33" selection-start-line="136" selection-start-column="33" selection-end-line="136" selection-end-column="33" />
           <folding />
         </state>
       </provider>
