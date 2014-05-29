@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519011916) do
+ActiveRecord::Schema.define(version: 20140529173151) do
+
+  create_table "campaigns", force: true do |t|
+    t.string   "name",          limit: 50,  null: false
+    t.string   "redirect_link", limit: 200, null: false
+    t.string   "slogan",        limit: 65
+    t.string   "description",   limit: 140
+    t.string   "social_phrase", limit: 140
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "page_accounts", force: true do |t|
     t.string   "id_on_social", limit: 45, null: false
