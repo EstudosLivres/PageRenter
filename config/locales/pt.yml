@@ -77,10 +77,10 @@ pt:
   # User texts
   user_action:
     feedback: "ContateNos"
-    manage_acc: "ConfigConta"
+    manage_acc: "GerenciarConta"
     dropdown:
-      manage_pub: "Config Publisher"
-      manage_adv: "Config Compania"
+      manage_pub: "Gerenciar Publisher"
+      manage_adv: "Gerenciar Compania"
 
   user_feedback:
     title: "ConteNos sua experiência PageRenter"

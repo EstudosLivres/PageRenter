@@ -77,10 +77,10 @@ en:
   # User texts
   user_action:
     feedback: "ContactUs"
-    manage_acc: "ConfigAccount"
+    manage_acc: "ManageAccount"
     dropdown:
-      manage_pub: "Config Publisher"
-      manage_adv: "Config Company"
+      manage_pub: "Manage Publisher"
+      manage_adv: "Manage Company"
 
   user_feedback:
     title: "TellUs your PageRenter's experience"
