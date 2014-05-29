@@ -1,7 +1,10 @@
 module ApplicationHelper
   def role_name
     # Remove the pluralize
-    params['controller'][0...-1]
+    nohttp = request.original_url.split(/\/\//)[1]
+    url_role = nohttp.split(/\//)[1]
+
+    url_role[0...-1]
   end
 
   def role_icon role_param=''
