@@ -6,11 +6,14 @@ include API
 describe API::RemoteUsersController do
   subject(:controller) { API::RemoteUsersController.new }
   let!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }
+  let!(:advertiser_profile) { FactoryGirl.create(:advertiser_profile) }
   subject(:valid_api_pub){{ 'email' => '11@1.1', 'password' => '123' }}
+  subject(:valid_api_adv){{ 'email' => '22@2.2', 'password' => '123' }}
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
   subject(:empty_user) { {'user' => ''} }
-  subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
-  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '33@3.3', password: '123'}.to_json} }
+  subject(:invalid_pub_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
+  subject(:valid_pub_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '33@3.3', password: '123'}.to_json} }
+  subject(:valid_adv_user) { {'user' => {role: 'advertiser', locale: 'en', name: 'PageRenter', nick: 'page', email: '55@5.5', password: '123'}.to_json} }
   subject(:invalid_fb_user) { {'user' => { 'social_session' =>
                                        {
                                            'login' => {
@@ -101,7 +104,7 @@ describe API::RemoteUsersController do
 
   # Submit an invalid user hash as param for SignUp_SignIn
   describe "SignUp #INVALID user BY FORM" do
-    before { post :system_signup_signin, invalid_user }
+    before { post :system_signup_signin, invalid_pub_user }
     subject(:resp_body) { JSON.parse(response.body) }
 
     it "Should be accessible" do response.should be_success end
@@ -113,7 +116,7 @@ describe API::RemoteUsersController do
 
   # Submit an valid user hash as param for SignUp_SignIn (Log if exists or Register if not exist)
   describe "SignUp #VALID user BY FORM" do
-    before { post :system_signup_signin, valid_user }
+    before { post :system_signup_signin, valid_pub_user }
     subject(:resp_body) { JSON.parse(response.body) }
 
     it "Should be accessible" do response.should be_success end
@@ -176,7 +179,7 @@ describe API::RemoteUsersController do
     end
 
     context "API Login without SignUp" do
-      before { post :system_signup_signin, {'user'=>valid_api_pub} }
+      before { post :system_signup_signin, {'user' => valid_api_pub} }
       subject(:resp_hash) { JSON.parse(response.body) }
       it "Should respond with a logged_in message" do resp_hash['msg'].should == 'logged_in' end
     end

@@ -33,7 +33,7 @@ FactoryGirl.define do
 
     factory :advertiser_profile do
       role_id 2
-      association :user, factory: [:user, :publisher_user], name: 'Page Renter'
+      association :user, factory: [:user, :advertiser_user], name: 'Page Renter'
     end
   end
 
