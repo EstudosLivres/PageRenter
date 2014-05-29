@@ -44,7 +44,7 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
-        { :name => t(:user_action)[:config_acc], :path => "/#{role_name.pluralize}/edit", :icon => 'fa fa-gears' },
+        { :name => t(:user_action)[:manage_acc], :path => "/#{role_name.pluralize}/edit", :icon => 'fa fa-gears' },
         { :name => t(:user_action)[:feedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
     ]
 
