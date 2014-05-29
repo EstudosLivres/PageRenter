@@ -19,7 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe CampaignsController do
-
+=begin
   # This should return the minimal set of attributes required to create a valid
   # Campaign. As you add validations to Campaign, be sure to
   # adjust the attributes here as well.
@@ -156,5 +156,5 @@ describe CampaignsController do
       response.should redirect_to(campaigns_url)
     end
   end
-
+=end
 end
