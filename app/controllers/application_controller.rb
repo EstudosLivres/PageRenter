@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -6,6 +8,9 @@ class ApplicationController < ActionController::Base
   before_action :validate_session, :except => :mob_login
   before_action :validate_session, :except => :system_signup_signin
   before_action :validate_session, :except => :redirect_index
+  before_action :setup_user, :except => :mob_login
+  before_action :setup_user, :except => :system_signup_signin
+  before_action :setup_user, :except => :redirect_index
 
   def set_locale
     user_params = params['user']
@@ -32,7 +37,7 @@ class ApplicationController < ActionController::Base
     if @current_user.nil? then @current_user = User.find(session['user_id']) end
 
     # SetUp the current/default user profile
-    single_role_name = params['controller'][0...-1]
+    single_role_name = role_name
     @current_user.set_default_profile(single_role_name)
   end
 
