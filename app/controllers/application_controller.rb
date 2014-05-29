@@ -5,9 +5,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :set_locale
+
+  # Validate the session
   before_action :validate_session, :except => :mob_login
   before_action :validate_session, :except => :system_signup_signin
   before_action :validate_session, :except => :redirect_index
+
+  # SetUp user
   before_action :setup_user, :except => :mob_login
   before_action :setup_user, :except => :system_signup_signin
   before_action :setup_user, :except => :redirect_index
@@ -34,6 +38,7 @@ class ApplicationController < ActionController::Base
 
   def setup_user
     # SetUp the user to prevent finds on BD
+    if session['user_id'].nil? || params['action'] == 'sign_out' then return end
     if @current_user.nil? then @current_user = User.find(session['user_id']) end
 
     # SetUp the current/default user profile
