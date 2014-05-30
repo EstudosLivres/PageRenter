@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   # Relations
   has_many :profiles
+  has_many :campaigns
   has_many :social_sessions
 
   # Custom validations
