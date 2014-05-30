@@ -37,6 +37,7 @@ module ApplicationHelper
         ]
       when 'advertiser'
         actions = [
+            { :name => t(:advertiser_action)[:new_campaign], :path => new_campaign_url, :icon => 'fa fa-plus', :toggle => 'modal' },
             { :name => t(:advertiser_action)[:invite], :path => '#recommend', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
         ]
     else
