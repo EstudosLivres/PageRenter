@@ -26,10 +26,11 @@ class CampaignsController < ApplicationController
   # POST /campaigns.json
   def create
     @campaign = Campaign.new(campaign_params)
+    @campaign.user_id = session[:user_id]
 
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to @campaign, notice: 'Campaign was successfully created.' }
+        format.html { redirect_to @campaign, flash: {success: 'Campaign was successfully created.'} }
         format.json { render action: 'show', status: :created, location: @campaign }
       else
         format.html { render action: 'new' }
