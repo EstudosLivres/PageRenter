@@ -17,11 +17,31 @@ describe ApplicationHelper do
       it "Advertiser icon should be #{ adv_icon }" do helper.role_icon.should == adv_icon end
 
       context "RoleActions for #Advertiser" do
+        subject!(:actions) { helper.role_actions }
+
         context "Act: #recommend -> recommend to another company/advertiser" do
-          it "Should route to advertisers/recommend" do helper.role_actions[0][:path].should == '#recommend' end
+          it "Should route to advertisers/recommend" do
+            expected_action = '#recommend'
+            was_found_on_action = false
+            actions.each do |action|
+              if(action[:path] == expected_action)
+                was_found_on_action = true
+              end
+            end
+            was_found_on_action.should be_true
+          end
         end
         context "Act: #contact -> contact us (feedback)" do
-          it "Should route to publishers/invite" do helper.role_actions[2][:path].should == '#feedback' end
+          it "Should route to publishers/invite" do
+            expected_action = '#feedback'
+            was_found_on_action = false
+            actions.each do |action|
+              if(action[:path] == expected_action)
+                was_found_on_action = true
+              end
+            end
+            was_found_on_action.should be_true
+          end
         end
       end
 
