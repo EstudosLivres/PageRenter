@@ -30,7 +30,7 @@ class CampaignsController < ApplicationController
 
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to @campaign, flash: {success: 'Campaign was successfully created.'} }
+        format.html { redirect_to @campaign, flash: {type: :success, strong: 'Congratulations!', msg: 'Your first campaign was successfully created.'} }
         format.json { render action: 'show', status: :created, location: @campaign }
       else
         format.html { render action: 'new' }
