@@ -8,4 +8,5 @@ class Campaign < ActiveRecord::Base
   validates :slogan, presence: false, length: { in: 5..65 }
   validates :description, presence: false, length: { in: 5..140 }
   validates :social_phrase, presence: false, length: { in: 5..140 }
+  validates :user_id, presence: true
 end
