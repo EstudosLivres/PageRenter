@@ -8,21 +8,21 @@
       </div>
       <div class="modal-body">
         <aside class="modal_body_left">
-          <button class="btn btn-facebook"> <i class="fa fa-facebook"></i> | <%= t(:publisher_invite)[:invite_form][:fb_btn_text] %> </button>
+            <%= render 'layouts/socialbuttons' %>
 
-          <form>
-            <div class="form-group">
-              <label for="invite_email"> <%= t(:publisher_invite)[:invite_form][:email_label] %>: </label>
-              <input id="invite_email" type="text" name="email" class="form-control" placeholder="<%= t(:publisher_invite)[:invite_form][:email_placeholder] %>"/>
-            </div>
+            <form>
+                <div class="form-group">
+                    <label for="invite_email"> <%= t(:publisher_invite)[:invite_form][:email_label] %>: </label>
+                    <input id="invite_email" type="text" name="email" class="form-control" placeholder="<%= t(:publisher_invite)[:invite_form][:email_placeholder] %>"/>
+                </div>
 
-            <div class="form-group">
-              <label for="invitation_msg"> <%= t(:publisher_invite)[:invite_form][:message_label] %>: </label>
-              <textarea name="invitation_msg" id="invitation_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
-            </div>
-          </form>
+                <div class="form-group">
+                    <label for="invitation_msg"> <%= t(:publisher_invite)[:invite_form][:message_label] %>: </label>
+                    <textarea name="invitation_msg" id="invitation_msg" class="form-control" rows="3" placeholder="<%= t(:publisher_invite)[:invite_form][:message_placeholder] %>"></textarea>
+                </div>
+            </form>
 
-          <strong><%= t(:publisher_invite)[:invite_form][:invitation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
+            <strong><%= t(:publisher_invite)[:invite_form][:invitation_code_label] %>: </strong> <span> 5f5a3806eadc5fdb50310a631c3cf610 </span>
         </aside>
 
         <aside class="modal_body_right">
