@@ -332,12 +332,12 @@ a.r_advertiser:hover,
     width: 22%;
 }
 
-.modal-body .modal_body_left .btn-facebook {
-    margin: 0 auto 15% 17%;
+.modal-body .social_invite {
+    margin: 0 auto 15px auto;
 }
 
-#recommend .modal-body .modal_body_left .btn-facebook {
-    margin: 0 auto 15% 8%;
+.modal-body .social_invite .btn:hover {
+    color: #f5f5f5;
 }
 
 .modal_body_right .explanations {
