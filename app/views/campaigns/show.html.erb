@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @campaign.advertising_piece.url %>
+<%= image_tag @campaign.advertising_piece.url(:medium) %>
+<%= image_tag @campaign.advertising_piece.url(:thumb) %>
+
 <p>
   <strong>Name:</strong>
   <%= @campaign.name %>
