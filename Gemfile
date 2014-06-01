@@ -38,6 +38,9 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # Color to the prints on console (PUTS)
 gem 'colorize', '~> 0.7.1'
 
+# Gem for UPLOAD functionalities
+gem 'paperclip', '~> 4.1'
+
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
