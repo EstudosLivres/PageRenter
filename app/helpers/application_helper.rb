@@ -33,6 +33,7 @@ module ApplicationHelper
     case role_name
       when 'publisher'
         actions = [
+            { :name => t(:publisher_action)[:new_social_session], :path => '#new_social_session', :icon => 'fa fa-plus', :toggle => 'modal' },
             { :name => t(:publisher_action)[:invite], :path => '#invite', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
         ]
       when 'advertiser'

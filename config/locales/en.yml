@@ -36,6 +36,7 @@ en:
 
   # Publisher texts
   publisher_action:
+    new_social_session: "NewSocialLogin"
     invite: "InviteFriends"
 
   publisher_invite:
