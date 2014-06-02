@@ -33,17 +33,16 @@
               <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse" type="button">
                 <span class="icon-bar"> <i class="fa-bars"></i> </span>
               </button>
-
-              <a id="brand" href="/"><span> <span class="r_advertiser_brand">Page</span><span class="r_publisher_brand">Renter</span> </span></a>
-            </div>
-            <div class="collapse navbar-collapse">
-              <ul id="role_action" class="nav navbar-nav">
+              <ul id="mob_role_action" class="visible-xs nav navbar-nav">
                 <%
                    role_actions.each do |action|
                 %>
                     <li>
                       <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
-                        <i class="<%= action[:icon] %>"></i> <%= action[:name] %>
+                        <i class="<%= action[:icon] %>"></i>
+                        <span class="visible-lg">
+                          <%= action[:name] %>
+                        </span>
                       </a>
                     </li>
                 <%
@@ -51,6 +50,27 @@
                 %>
               </ul>
 
+              <a id="brand" href="/"><span> <span class="r_advertiser_brand">Page</span><span class="r_publisher_brand">Renter</span> </span></a>
+            </div>
+
+            <ul id="role_action" class="hidden-xs nav navbar-nav">
+              <%
+                 role_actions.each do |action|
+              %>
+                  <li>
+                    <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
+                      <i class="<%= action[:icon] %>"></i>
+                        <span class="visible-lg">
+                          <%= action[:name] %>
+                        </span>
+                    </a>
+                  </li>
+              <%
+                 end
+              %>
+            </ul>
+
+            <div class="collapse navbar-collapse">
               <ul id="user_action" class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                   <a class="dropdown-toggle r_<%=role_name%>" data-toggle="dropdown" href="#">
