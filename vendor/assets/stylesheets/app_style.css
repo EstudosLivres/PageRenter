@@ -393,11 +393,26 @@ a.r_advertiser:hover,
 }
 
 @media (max-width: 800px) {
-    ul#role_action.nav.navbar-nav {
+    ul#mob_role_action.nav.navbar-nav {
+        margin: 0 -8px 0 0;
+        float: right;
         display: inline-block!important;
     }
 
+    ul#mob_role_action.nav.navbar-nav li {
+        display: inline;
+    }
+
+    ul#mob_role_action.nav.navbar-nav li a {
+        padding: 12px 16px;
+        display: inline-block;
+    }
+
+    ul#mob_role_action.nav.navbar-nav li i.fa {
+        font-size: 1.2em;
+    }
+
     .navbar .navbar-header #brand span {
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
 }
