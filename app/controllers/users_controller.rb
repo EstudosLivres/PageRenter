@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     user = User.authenticate(user_params['email'], user_params['password'])
     if user
       # Create the LogIn Flash
-      flash[:notice] = { type: :success, strong: 'Congratulations!', msg: 'Your first campaign was successfully created.' }
+      flash[:notice] = { type: :success, strong: t(:msgs)[:login_success_strong], msg: t(:msgs)[:login_success] }
       flash.keep
 
       session[:user_id] = user.id
