@@ -385,3 +385,19 @@ a.r_advertiser:hover,
 .alert .fa {
     font-weight: bold;
 }
+
+@media (min-width: 1200px) {
+    #role_action .visible-lg {
+        display: inline!important;
+    }
+}
+
+@media (max-width: 800px) {
+    ul#role_action.nav.navbar-nav {
+        display: inline-block!important;
+    }
+
+    .navbar .navbar-header #brand span {
+        font-size: 0.9em;
+    }
+}
