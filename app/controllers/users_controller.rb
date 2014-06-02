@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     user_params = params['user']
     user = User.authenticate(user_params['email'], user_params['password'])
     if user
+      # Create the LogIn Flash
+      flash[:notice] = { type: :success, strong: 'Congratulations!', msg: 'Your first campaign was successfully created.' }
+      flash.keep
+
       session[:user_id] = user.id
       redirect_to :controller =>  user.get_default_profile.role.name.pluralize
     else
