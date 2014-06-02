@@ -22,8 +22,9 @@
 en:
   msgs:
     welcome: "Welcome!"
-    login_success: "Logged in successfully."
-    login_error: "Inválido E-mail or Password."
+    login_success_strong: "Welcome!"
+    login_success: "So nice to see you here, again. We are so proud & happy to be with you! Yaya"
+    login_error: "Invalid E-mail or Password."
 
 
 

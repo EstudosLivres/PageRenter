@@ -22,7 +22,8 @@
 pt:
   msgs:
     welcome: "Bem-vindo!"
-    login_success: "Logado com sucesso."
+    login_success_strong: "Bem-vindo!"
+    login_success: "Tão bom te ver por aqui, de novo. Nós estamos orgulhosos & felizes de estar com você! Ieie"
     login_error: "E-mail ou Senha inválido."
 
 
