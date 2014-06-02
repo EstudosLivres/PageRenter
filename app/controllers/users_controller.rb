@@ -5,11 +5,14 @@ class UsersController < ApplicationController
     user_params = params['user']
     user = User.authenticate(user_params['email'], user_params['password'])
     if user
+      # Set the locale (API skiping AppController before actions)
+      session[:user_id] = user.id
+      set_locale
+
       # Create the LogIn Flash
       flash[:notice] = { type: :success, strong: t(:msgs)[:login_success_strong], msg: t(:msgs)[:login_success] }
       flash.keep
 
-      session[:user_id] = user.id
       redirect_to :controller =>  user.get_default_profile.role.name.pluralize
     else
       redirect_to ApplicationController.land_url
