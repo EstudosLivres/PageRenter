@@ -42,7 +42,9 @@
                    role_actions.each do |action|
                 %>
                     <li>
-                      <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>"> <i class="<%= action[:icon] %>"></i> <%= action[:name] %> </a>
+                      <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
+                        <i class="<%= action[:icon] %>"></i> <%= action[:name] %>
+                      </a>
                     </li>
                 <%
                    end
@@ -86,7 +88,7 @@
             <% unless flash[:notice].nil? %>
                 <div class="alert alert-<%=flash[:notice][:type]%>">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                  <strong><%= flash[:notice][:strong] %></strong> <%=flash[:notice][:msg]%>
+                  <strong><%= flash[:notice][:strong] %></strong> <%=flash[:notice][:msg]%> <i class="fa fa-smile-o"></i>
                 </div>
             <% end -%>
 
