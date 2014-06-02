@@ -26,7 +26,7 @@ PageRenter::Application.routes.draw do
   namespace :api do
     # Documentation and easy edition for the Developer usage
     scope 'console' do
-      get '' => 'console#index'
+      get '' => 'console#dashboard'
       get 'docs' => 'console#documentation'
     end
 
