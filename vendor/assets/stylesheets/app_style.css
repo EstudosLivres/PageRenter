@@ -381,3 +381,7 @@ a.r_advertiser:hover,
 .explanations > center > strong {
     text-transform: uppercase;
 }
+
+.alert .fa {
+    font-weight: bold;
+}
