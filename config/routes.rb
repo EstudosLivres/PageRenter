@@ -24,6 +24,12 @@ PageRenter::Application.routes.draw do
 
   # Actions Under/For API (external requests)
   namespace :api do
+    # Documentation and easy edition for the Developer usage
+    scope 'console' do
+      get '' => 'console#index'
+      get 'docs' => 'console#documentation'
+    end
+
     # API for Parent/Nested systems (not third systems)
     scope '/system' do
       post '/signup_signin' => 'remote_users#system_signup_signin'
