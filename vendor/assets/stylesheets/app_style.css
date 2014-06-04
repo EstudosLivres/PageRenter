@@ -392,7 +392,7 @@ a.r_advertiser:hover,
     }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 764px) {
     ul#mob_role_action.nav.navbar-nav {
         margin: 0 -8px 0 0;
         float: right;
@@ -412,6 +412,12 @@ a.r_advertiser:hover,
         font-size: 1.2em;
     }
 
+    .navbar .navbar-header #brand span {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 500px) {
     .navbar .navbar-header #brand span {
         font-size: 0.7em;
     }
