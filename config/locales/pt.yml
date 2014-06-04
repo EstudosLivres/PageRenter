@@ -23,7 +23,8 @@ pt:
   msgs:
     welcome: "Bem-vindo!"
     login_success_strong: "Bem-vindo!"
-    login_success: "Tão bom te ver por aqui, de novo. Nós estamos orgulhosos & felizes de estar com você! Ieie"
+    login_success_publisher: "Juntos, vamos fazer muito dinheiro neste exato momento!"
+    login_success_advertiser: "Juntos, vamos trazer uma legião de clientes famintos por seus produtos e serviços!"
     login_error: "E-mail ou Senha inválido."
 
 
@@ -69,7 +70,7 @@ pt:
       email_label: "E-mails de seus Parceiros"
       email_placeholder: "E-mails de seus Parceiros"
       msg_label: "Mensagem de recomendação"
-      msg_placeholder: "Messagem para recomendar os seus  para que se associem a você"
+      msg_placeholder: "Menssagem para recomendar os seus  para que se associem a você"
       recommendation_code_label: "Código de recomendação"
     recommend_explanation:
       benefit_1: "O Parceiro Recomendador ganha uma parte do primeiro investimento do parceiro Recomendado"
