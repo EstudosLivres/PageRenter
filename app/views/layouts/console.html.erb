@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset='utf-8'>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" />
+
+      <title>PageRenter API</title>
+      <script src='/assets/modernizr.min.js'></script>
+
+      <!-- jQuery -->
+      <script src='/assets/jq/jq.min.js'></script>
+      <!-- /jQuery -->
+
+      <!-- Angular -->
+      <script src="/assets/angular/angular.min.js"></script>
+      <script src='/assets/angular/angular-touch.min.js'></script>
+      <script src="/assets/angular/angular-sanitize.min.js"></script>
+      <!-- /Angular -->
+
+      <!-- Meus scripts -->
+      <script src='/assets/app_initialize.js'></script>
+      <!-- /Meus -->
+      <%= csrf_meta_tags %>
+    </head>
+    <body>
+
+        <%= yield %>
+
+    </body>
+</html>
