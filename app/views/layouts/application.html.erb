@@ -82,7 +82,12 @@
                     <%
                         @current_user.profiles.each do |profile|
                     %>
-                        <li><a class="r_<%=profile.role.name%>" href="/<%= profile.role.name.pluralize %>"> <i class="fa <%=role_icon(profile.role.name)%>"></i> <%= profile.name %> </a></li>
+                        <li>
+                          <a class="r_<%=profile.role.name%>" href="/<%= profile.role.name.pluralize %>">
+                            <i class="fa <%=role_icon(profile.role.name)%>"></i>
+                            <%= profile.name %>
+                          </a>
+                        </li>
                     <%
                         end
                     %>
@@ -108,7 +113,7 @@
             <% unless flash[:notice].nil? %>
                 <div class="alert alert-<%=flash[:notice][:type]%>">
                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                  <strong><%= flash[:notice][:strong] %></strong> <%=flash[:notice][:msg]%> <i class="fa fa-smile-o"></i>
+                  <strong><%= @current_user.first_name %>, <%= flash[:notice][:strong] %> </strong> <%=flash[:notice][:msg]%> <i class="fa fa-smile-o"></i>
                 </div>
             <% end -%>
 
