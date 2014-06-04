@@ -1,3 +1,4 @@
+<script src="/assets/campaigns.js"></script>
 <%= form_for(@campaign) do |f| %>
     <% if @campaign.errors.any? %>
         <div id="error_explanation">
@@ -11,7 +12,8 @@
         </div>
     <% end %>
 
-    <%= f.file_field :advertising_piece %>
+    <%= f.file_field :advertising_piece, :onchange => 'show_campaign_image(this)' %>
+    <img id="new_campaign_image" />
 
     <div class="field">
         <%= f.label :name %><br>
