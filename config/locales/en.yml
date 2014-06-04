@@ -23,8 +23,8 @@ en:
   msgs:
     welcome: "Welcome!"
     login_success_strong: "Welcome!"
-    login_success_publisher: "Together, let's do some money right now, my friend!"
-    login_success_advertiser: "Together, let's bring a legion of hungry costumers for your products & services!"
+    login_success_publisher: "Me (PageRenter), you and your friends are going to make a lot of money together!"
+    login_success_advertiser: "Me (PageRenter) and the publishers will to bring a legion of hungry costumers for your products & services!"
     login_error: "Invalid E-mail or Password."
 
 

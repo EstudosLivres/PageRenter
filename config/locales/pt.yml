@@ -23,8 +23,8 @@ pt:
   msgs:
     welcome: "Bem-vindo!"
     login_success_strong: "Bem-vindo!"
-    login_success_publisher: "Juntos, vamos fazer muito dinheiro neste exato momento!"
-    login_success_advertiser: "Juntos, vamos trazer uma legião de clientes famintos por seus produtos e serviços!"
+    login_success_publisher: "Eu (PageRenter), você e seus amigos vamos fazer muito dinheiro juntos!"
+    login_success_advertiser: "Eu (PageRenter) e os publishers vamos trazer uma legião de clientes famintos por seus produtos e serviços!"
     login_error: "E-mail ou Senha inválido."
 
 
