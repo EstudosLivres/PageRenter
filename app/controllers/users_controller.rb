@@ -10,7 +10,14 @@ class UsersController < ApplicationController
       set_locale
 
       # Create the LogIn Flash
-      flash[:notice] = { type: :success, strong: t(:msgs)[:login_success_strong], msg: t(:msgs)[:login_success] }
+      case user.get_default_profile.role.name
+        when 'publisher'
+          login_msg_role = :login_success_publisher
+        when 'advertiser'
+          login_msg_role = :login_success_advertiser
+      end
+
+      flash[:notice] = { type: :success, strong: t(:msgs)[:login_success_strong], msg: t(:msgs)[login_msg_role] }
       flash.keep
 
       redirect_to :controller =>  user.get_default_profile.role.name.pluralize
