@@ -36,6 +36,12 @@ class User < ActiveRecord::Base
     elsif self.locale.length != 5 then self.locale = 'en'+'_US' end
   end
 
+  # Return it first name
+  def first_name
+    # Regex, return the first word (split the name based on the spaces)
+    self.name.split(/ /)[0]
+  end
+
   # Method that encapsulate the User creation rule
   def self.create_one_user user_hash
     user_hash_full = user_hash
