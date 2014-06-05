@@ -1,5 +1,5 @@
 <script src="/assets/campaigns.js"></script>
-<%= form_for(@campaign) do |f| %>
+<%= form_for(@campaign, :html=>{id: 'new_campaign_left', class: 'form-horizontal col-md-6'}) do |f| %>
     <% if @campaign.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
@@ -12,31 +12,38 @@
         </div>
     <% end %>
 
-    <%= f.file_field :advertising_piece, :onchange => 'show_campaign_image(this)' %>
-    <img id="new_campaign_image" />
+    <center id="choose_file_section">
+        <%= f.file_field :advertising_piece, :onchange => 'show_campaign_image(this)' %>
+    </center>
 
-    <div class="field">
+    <div class="field form-group">
         <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Nome/Título da campanha' %>
     </div>
-    <div class="field">
+    <div class="field form-group">
         <%= f.label :redirect_link %><br>
-        <%= f.text_field :redirect_link %>
+        <%= f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com ou http://algum_e-commerce.com/produto' %>
     </div>
-    <div class="field">
+    <div class="field form-group">
         <%= f.label :slogan %><br>
-        <%= f.text_field :slogan %>
+        <%= f.text_field :slogan, class: 'form-control', placeholder: 'Frase curta de impacto' %>
     </div>
-    <div class="field">
+    <div class="field form-group">
         <%= f.label :description %><br>
-        <%= f.text_field :description %>
+        <%= f.text_field :description, class: 'form-control', placeholder: 'Descrição geral da campanha' %>
     </div>
-    <div class="field">
+    <div class="field form-group">
         <%= f.label :social_phrase %><br>
-        <%= f.text_field :social_phrase %>
+        <%= f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para as Redes Sociais' %>
     </div>
 
     <div class="actions">
     <%= f.submit %>
     </div>
 <% end %>
+
+<aside id="new_campaign_right" class="col-md-6">
+  <p>Peça publicitária (Tamanho otimizado: 470 × 245)</p>
+  <img id="new_campaign_image" class="col-md-6" />
+</aside>
+
