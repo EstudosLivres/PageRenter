@@ -386,6 +386,11 @@ a.r_advertiser:hover,
     font-weight: bold;
 }
 
+#new_campaign_right img {
+    width: 105%;
+    margin: -10px 0 0 -14px;
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
