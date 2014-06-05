@@ -5,4 +5,7 @@ class Receipt < ActiveRecord::Base
   validates :id_on_operator, presence: true, length: { in: 3..45 }, on: create
   validates :url_access, presence: true, length: { in: 15..45 }, on: create
   validates :transaction_id, presence: true, on: create
+
+  # Validates Associations
+  validates :transaction_id, presence: true, on: [:create, :update]
 end

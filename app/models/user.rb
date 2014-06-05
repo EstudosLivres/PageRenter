@@ -14,6 +14,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: :create
   validates :locale, presence: true, length: { is: 5 }, on: :create
 
+  # Validates Associations
+
   # Encrypt the pasword using BCrypt
   def encrypt_password
     if password.present? && !pass_salt.present?

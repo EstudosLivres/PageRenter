@@ -3,4 +3,6 @@ class PaymentMethods < ActiveRecord::Base
 
   validates :name, presence: true, length: { in: 3..45 }, on: create
   validates :method_type, presence: true, length: { in: 3..45 }, on: create
+
+  # Validates Associations
 end

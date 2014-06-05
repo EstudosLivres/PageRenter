@@ -13,6 +13,9 @@ class Campaign < ActiveRecord::Base
   validates :user_id, presence: true
   validates_attachment_content_type :advertising_piece, :content_type => /\Aimage\/.*\Z/
 
+  # Validates Associations
+  validates :user_id, presence: true, on: [:create, :update]
+
 =begin
   def update_it
     # current_value_on_bd =

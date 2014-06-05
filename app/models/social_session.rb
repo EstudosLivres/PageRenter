@@ -12,4 +12,8 @@ class SocialSession < ActiveRecord::Base
   validates :gender, presence: false, length: { maximum: 10 }
   validates :locale, presence: true, length: { maximum: 5 }
   validates :count_friends, presence: true
+
+  # Validates Associations
+  validates :user_id, presence: true, on: [:create, :update]
+  validates :social_network_id, presence: true, on: [:create, :update]
 end

@@ -3,6 +3,10 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :role
 
+  # Validates Associations
+  validates :user_id, presence: true, on: [:create, :update]
+  validates :role_id, presence: true, on: [:create, :update]
+
   # Constants
   enum role_name: { publisher: 1, advertiser: 2, admin: 3 }
 
