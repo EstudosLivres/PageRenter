@@ -6,7 +6,7 @@ class CreateCampaigns < ActiveRecord::Migration
       t.string :slogan, limit: 65, null: true
       t.string :description, limit: 140, null: true
       t.string :social_phrase, limit: 140, null: true
-      t.belongs_to :user
+      t.references :advertiser, index: true
 
       t.timestamps
     end

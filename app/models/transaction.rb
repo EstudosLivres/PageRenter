@@ -1,8 +1,8 @@
 class Transaction < ActiveRecord::Base
   has_one :receipt
   belongs_to :payment_method
-  belongs_to :payer, :class_name => 'Campaigns'
-  belongs_to :receiver, :class_name => 'User'
+  belongs_to :payer, :class_name => 'Campaigns', foreign_key: :payer_id
+  belongs_to :receiver, :class_name => 'User', foreign_key: :receiver_id
 
   # Validates Attrs
   validates :value, presence: true, on: [:create, :update]
