@@ -4,10 +4,11 @@ class Transaction < ActiveRecord::Base
   belongs_to :payer, :class_name => 'Campaigns'
   belongs_to :receiver, :class_name => 'User'
 
-  validates :value, presence: true, on: create
-  validates :currency, presence: true, length: { in: 3..45 }, on: create
-  validates :banking, presence: true, on: create
-  validates :payment_method_id, presence: true, on: create
+  # Validates Attrs
+  validates :value, presence: true, on: [:create, :update]
+  validates :currency, presence: true, length: { in: 3..45 }, on: [:create, :update]
+  validates :banking, presence: true, on: [:create, :update]
+  validates :payment_method_id, presence: true, on: [:create, :update]
 
   # Validates Associations
   validates :payer_id , presence: true, on: [:create, :update]

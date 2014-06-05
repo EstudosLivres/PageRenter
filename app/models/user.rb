@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
   validate :encrypt_password
 
   # Rails validations
-  validates :name, presence: true, length: { in: 3..55 }, on: :create
-  validates :nick, presence: true, length: { in: 2..30 }, uniqueness: true, on: :create
-  validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: :create
-  validates :locale, presence: true, length: { is: 5 }, on: :create
+  validates :name, presence: true, length: { in: 3..55 }, on: [:create, :update]
+  validates :nick, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]
+  validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: [:create, :update]
+  validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
 
   # Validates Associations
 
