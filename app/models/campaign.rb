@@ -1,6 +1,7 @@
 class Campaign < ActiveRecord::Base
   # Relations
   belongs_to :user
+  has_many :transactions
   has_attached_file :advertising_piece, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
 
   # Rails validations
@@ -11,4 +12,12 @@ class Campaign < ActiveRecord::Base
   validates :social_phrase, presence: false # Social phrase is not required
   validates :user_id, presence: true
   validates_attachment_content_type :advertising_piece, :content_type => /\Aimage\/.*\Z/
+
+=begin
+  def update_it
+    # current_value_on_bd =
+    # current_value_on_memory =
+    # if != insert new clickvalue
+  end
+=end
 end
