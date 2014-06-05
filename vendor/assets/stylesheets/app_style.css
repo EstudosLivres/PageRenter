@@ -391,6 +391,14 @@ a.r_advertiser:hover,
     margin: -10px 0 0 -14px;
 }
 
+form#new_campaign_left .form-group .form-control {
+    width: 45%;
+}
+
+center#choose_file_section {
+    margin-bottom: 15px;
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
