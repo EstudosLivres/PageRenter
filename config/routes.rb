@@ -20,6 +20,10 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
     resources :campaigns
+
+    namespace :campaigns do
+      resources :transactions
+    end
   end
 
   # Actions Under/For API (external requests)
