@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @transaction.value %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @transaction.currency %>
+</p>
+
+<p>
+  <strong>Banking:</strong>
+  <%= @transaction.banking %>
+</p>
+
+<p>
+  <strong>Payment method:</strong>
+  <%= @transaction.payment_method %>
+</p>
+
+<p>
+  <strong>Payer:</strong>
+  <%= @transaction.payer %>
+</p>
+
+<p>
+  <strong>Receiver:</strong>
+  <%= @transaction.receiver %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>
