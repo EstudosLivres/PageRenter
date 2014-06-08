@@ -387,12 +387,12 @@ a.r_advertiser:hover,
 }
 
 #new_campaign_right img {
-    width: 105%;
+    width: 110%;
     margin: -10px 0 0 -14px;
 }
 
 form#new_campaign_left .form-group .form-control {
-    width: 45%;
+    width: 75%;
 }
 
 center#choose_file_section {
@@ -427,6 +427,16 @@ center#choose_file_section {
 
     .navbar .navbar-header #brand span {
         font-size: 1em;
+    }
+
+    form#new_campaign_left .form-group .form-control {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    form#new_campaign_left .form-group .form-control {
+        width: 100%;
     }
 }
 
