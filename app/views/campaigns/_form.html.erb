@@ -21,20 +21,20 @@
         <%= f.text_field :name, class: 'form-control', placeholder: 'Nome/Título da campanha' %>
     </div>
     <div class="field form-group">
-        <%= f.label :redirect_link %><br>
-        <%= f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com ou http://algum_e-commerce.com/produto' %>
+        <%= f.label :redirect_link %> <br>
+        <%= f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com   ...   http://ebay.com/produto ' %>
     </div>
     <div class="field form-group">
         <%= f.label :slogan %><br>
         <%= f.text_field :slogan, class: 'form-control', placeholder: 'Frase curta de impacto' %>
     </div>
     <div class="field form-group">
-        <%= f.label :description %><br>
-        <%= f.text_field :description, class: 'form-control', placeholder: 'Descrição geral da campanha' %>
-    </div>
-    <div class="field form-group">
         <%= f.label :social_phrase %><br>
         <%= f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para as Redes Sociais' %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição geral da campanha' %>
     </div>
 
     <div class="actions">
