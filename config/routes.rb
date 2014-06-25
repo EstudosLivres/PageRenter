@@ -22,7 +22,7 @@ PageRenter::Application.routes.draw do
     resources :campaigns # TODO remember: campaigns index show the current user campaigns, only.
 
     namespace :campaigns do
-      resources :transactions
+      # TODO resources :financial_transaction
     end
   end
 
