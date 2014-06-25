@@ -28,20 +28,22 @@ class API::RemoteUsersController < API::BaseAPIController
     # SignUp
     if user.nil?
       user = User.create_one_user(user_hash)
-      user.social_sessions = [social_session] unless social_session.nil?
-
-      # Pages validates
-      if pages.is_a?(Array) && !pages.empty?
-        pages.each do |page|
-          page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
-          user.social_sessions.first.page_accounts.append(page_acc)
-        end
-      end
 
       # User save
       if user.save
         # More insertions if SocialLogin
-        unless social_hash.nil? then social_hash['user_id'] = user.id end
+        unless social_hash.nil?
+          social_hash['user_id'] = user.id
+          user.social_sessions << social_session unless social_session.nil?
+
+          # Pages validates
+          if pages.is_a?(Array) && !pages.empty?
+            pages.each do |page|
+              page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
+              user.social_sessions.first.page_accounts.append(page_acc)
+            end
+          end
+        end
 
         # Persist SocialSession & Pages
         if is_social_login
