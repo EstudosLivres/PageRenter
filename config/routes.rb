@@ -19,7 +19,7 @@ PageRenter::Application.routes.draw do
   scope '/advertisers' do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
-    resources :campaigns, except: :index
+    resources :campaigns # TODO remember: campaigns index show the current user campaigns, only.
 
     namespace :campaigns do
       resources :transactions
