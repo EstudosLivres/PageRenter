@@ -60,16 +60,20 @@ describe ApplicationHelper do
 
       pub_icon = 'fa-rocket'
 
-      it "Role should be Publisher" do helper.role_name.should == 'publisher' end
+      it "Role should be Publisher" do
+        helper.role_name.should == 'publisher' end
 
       it "Publisher icon should be #{ pub_icon }" do helper.role_icon.should == pub_icon end
 
       context "RoleActions for #Publisher" do
+        context "Act: #new_social_session -> new social network session to pub" do
+          it "Should route to publishers#new_social_session" do helper.role_actions[0][:path].should == '#new_social_session' end
+        end
         context "Act: #invite -> invite a friend" do
-          it "Should route to publishers/invite" do helper.role_actions[0][:path].should == '#invite' end
+          it "Should route to publishers#invite" do helper.role_actions[1][:path].should == '#invite' end
         end
         context "Act: #contact -> contact us (feedback)" do
-         it "Should route to publishers/invite" do helper.role_actions[2][:path].should == '#feedback' end
+         it "Should route to publishers#contact" do helper.role_actions[4][:path].should == '#feedback' end
         end
       end
 
