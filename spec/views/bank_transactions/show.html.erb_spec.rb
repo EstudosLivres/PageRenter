@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "transactions/show" do
+describe "bank_transactions/show" do
   before(:each) do
-    @transaction = assign(:transaction, stub_model(Transaction,
+    @bank_transaction = assign(:bank_transaction, stub_model(BankTransaction,
       :value => "9.99",
       :currency => "Currency",
       :banking => false,
