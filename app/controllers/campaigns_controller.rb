@@ -10,7 +10,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1
   # GET /campaigns/1.json
   def show
-    unless(@current_user.id == @campaign.user.id) then redirect_to root_url end
+    unless(@current_user.id == @campaign.advertiser.id) then redirect_to root_url end
   end
 
   # GET /campaigns/new
