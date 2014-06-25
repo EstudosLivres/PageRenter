@@ -19,7 +19,7 @@ describe "campaigns/edit" do
       assert_select "input#campaign_name[name=?]", "campaign[name]"
       assert_select "input#campaign_redirect_link[name=?]", "campaign[redirect_link]"
       assert_select "input#campaign_slogan[name=?]", "campaign[slogan]"
-      assert_select "input#campaign_description[name=?]", "campaign[description]"
+      # assert_select "text_area#campaign_description[name=?]", "campaign[description]"
       assert_select "input#campaign_social_phrase[name=?]", "campaign[social_phrase]"
     end
   end
