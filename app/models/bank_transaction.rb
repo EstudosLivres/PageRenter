@@ -1,4 +1,4 @@
-class Transaction < ActiveRecord::Base
+class BankTransaction < ActiveRecord::Base
   has_one :receipt
   belongs_to :payment_method
   belongs_to :payer, :class_name => 'Campaign', foreign_key: :payer_id

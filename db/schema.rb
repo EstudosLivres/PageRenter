@@ -13,6 +13,22 @@
 
 ActiveRecord::Schema.define(version: 20140605024546) do
 
+  create_table "bank_transactions", force: true do |t|
+    t.decimal  "value",                        precision: 9, scale: 2, null: false
+    t.decimal  "decimal",                      precision: 9, scale: 2, null: false
+    t.string   "currency",          limit: 30,                         null: false
+    t.boolean  "banking",                                              null: false
+    t.integer  "payment_method_id"
+    t.integer  "payer_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bank_transactions", ["payer_id"], name: "index_bank_transactions_on_payer_id", using: :btree
+  add_index "bank_transactions", ["payment_method_id"], name: "index_bank_transactions_on_payment_method_id", using: :btree
+  add_index "bank_transactions", ["receiver_id"], name: "index_bank_transactions_on_receiver_id", using: :btree
+
   create_table "campaigns", force: true do |t|
     t.string   "name",                           limit: 50,  null: false
     t.string   "redirect_link",                  limit: 200, null: false
@@ -62,16 +78,16 @@ ActiveRecord::Schema.define(version: 20140605024546) do
   end
 
   create_table "receipts", force: true do |t|
-    t.string   "token",          limit: 50,  null: false
-    t.string   "id_on_operator", limit: 45,  null: false
-    t.string   "url_access",     limit: 140, null: false
-    t.string   "tid",            limit: 45
-    t.integer  "transaction_id"
+    t.string   "token",               limit: 50,  null: false
+    t.string   "id_on_operator",      limit: 45,  null: false
+    t.string   "url_access",          limit: 140, null: false
+    t.string   "tid",                 limit: 45
+    t.integer  "bank_transaction_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "receipts", ["transaction_id"], name: "index_receipts_on_transaction_id", using: :btree
+  add_index "receipts", ["bank_transaction_id"], name: "index_receipts_on_bank_transaction_id", using: :btree
 
   create_table "roles", force: true do |t|
     t.string   "name",       limit: 15, null: false
@@ -100,22 +116,6 @@ ActiveRecord::Schema.define(version: 20140605024546) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "transactions", force: true do |t|
-    t.decimal  "value",                        precision: 9, scale: 2, null: false
-    t.decimal  "decimal",                      precision: 9, scale: 2, null: false
-    t.string   "currency",          limit: 30,                         null: false
-    t.boolean  "banking",                                              null: false
-    t.integer  "payment_method_id"
-    t.integer  "payer_id"
-    t.integer  "receiver_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "transactions", ["payer_id"], name: "index_transactions_on_payer_id", using: :btree
-  add_index "transactions", ["payment_method_id"], name: "index_transactions_on_payment_method_id", using: :btree
-  add_index "transactions", ["receiver_id"], name: "index_transactions_on_receiver_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",         limit: 55, null: false

@@ -1,6 +1,6 @@
-class CreateTransactions < ActiveRecord::Migration
+class CreateBankTransactions < ActiveRecord::Migration
   def change
-    create_table :transactions do |t|
+    create_table :bank_transactions do |t|
       t.decimal :value, :decimal, precision: 9, scale: 2, null: false
       t.string :currency, limit: 30, null: false
       t.boolean :banking, null: false

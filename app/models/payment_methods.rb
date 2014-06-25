@@ -1,5 +1,5 @@
 class PaymentMethods < ActiveRecord::Base
-  has_many :transactions
+  has_many :bank_transactions
 
   # Attrs Validations
   validates :name, presence: true, length: { in: 3..45 }, on: [:create, :update]

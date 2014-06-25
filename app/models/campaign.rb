@@ -1,7 +1,7 @@
 class Campaign < ActiveRecord::Base
   # Relations
   belongs_to :advertiser, class_name: 'User', foreign_key: :advertiser_id
-  has_many :transactions
+  has_many :bank_transactions
   has_attached_file :advertising_piece, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
 
   # Rails validations
