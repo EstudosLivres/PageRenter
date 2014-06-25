@@ -19,7 +19,7 @@ PageRenter::Application.routes.draw do
   scope '/advertisers' do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
-    resources :campaigns
+    resources :campaigns, except: :index
 
     namespace :campaigns do
       resources :transactions
