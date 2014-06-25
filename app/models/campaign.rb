@@ -10,11 +10,11 @@ class Campaign < ActiveRecord::Base
   validates :slogan, presence: false # Slogan is not required
   validates :description, presence: true, length: { in: 5..140 }
   validates :social_phrase, presence: false # Social phrase is not required
-  validates :user_id, presence: true
+  validates :advertiser_id, presence: true
   validates_attachment_content_type :advertising_piece, :content_type => /\Aimage\/.*\Z/
 
   # Validates Associations
-  validates :user_id, presence: true, on: [:create, :update]
+  validates :advertiser_id, presence: true, on: [:create, :update]
 
 =begin
   def update_it
