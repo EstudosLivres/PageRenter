@@ -1,5 +1,5 @@
 class Receipt < ActiveRecord::Base
-  belongs_to :bank_transaction
+  belongs_to :financial_transaction
 
   # Attrs validations
   validates :token, presence: true, length: { in: 3..50 }, on: [:create, :update]
