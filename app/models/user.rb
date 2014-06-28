@@ -73,11 +73,15 @@ class User < ActiveRecord::Base
     return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: role_id })
 
     # The second role is the disabled one (not the current)
+    pub_id = Role.where(name: 'publisher').take.id
+    adv_id = Role.where(name: 'advertiser').take.id
+
+    # SetUp the second_role (!default_role)
     case role_id
-      when 1
-        second_role = 2
-      when 2
-        second_role = 1
+      when pub_id
+        second_role = adv_id
+      when adv_id
+        second_role = pub_id
     end
 
     return_user.profiles << Profile.new({ name: '', default_role: false, role_id: second_role })
