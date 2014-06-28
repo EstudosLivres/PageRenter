@@ -44,8 +44,25 @@ class User < ActiveRecord::Base
     self.name.split(/ /)[0]
   end
 
+  # Set the current actived (rendered) profile as default
+  def set_default_profile role_name
+    profiles.each do |profile|
+      if profile.role.name != role_name then default = false else default = true end
+      profile.update(default_role: default)
+    end
+  end
+
+  # Return the User default Account
+  def get_default_profile
+    self.profiles.each do |profile|
+      return profile if profile.default_role == true
+    end
+  end
+
+  # ----- STATICs AUX METHODs TO CREATE USERs -----
+
   # Method that encapsulate the User creation rule
-  def self.create_one_user user_hash
+  def self.new_user_with_it_role user_hash
     user_hash_full = user_hash
     return_user = User.new(user_hash.except('role'))
 
@@ -55,6 +72,7 @@ class User < ActiveRecord::Base
 
     return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: role_id })
 
+    # The second role is the disabled one (not the current)
     case role_id
       when 1
         second_role = 2
@@ -66,38 +84,42 @@ class User < ActiveRecord::Base
     return_user
   end
 
-  # Return the User default Account
-  def get_default_profile
-    self.profiles.each do |profile|
-      return profile if profile.default_role == true
+  # Persist the user by it previous hash
+  def self.persist_it(user_hash)
+    user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)
+    user = User.new_user_with_it_role(user_hash)
+
+    # User save
+    if user.save
+      # More insertions if SocialLogin
+      unless social_hash.nil?
+        social_hash['user_id'] = user.id
+        user.social_sessions << social_session unless social_session.nil?
+
+        # Pages validates
+        if pages.is_a?(Array) && !pages.empty?
+          pages.each do |page|
+            page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
+            user.social_sessions.first.page_accounts.append(page_acc)
+          end
+        end
+      end
+
+      # Persist SocialSession & Pages
+      if is_social_login
+        social_session = SocialSession.where(social_hash).first_or_create
+        # Persist per page
+        pages.each do |page|
+          current_page = PageAccount.new(page)
+          current_page.social_sessions << social_session
+          current_page.save
+        end
+      end
+
+      # Prepair the response
+      return {status: 'ok', msg: 'registered'}
+    else
+      return {status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json}
     end
-  end
-
-  # Set the current actived (rendered) profile as default
-  def set_default_profile role_name
-    profiles.each do |profile|
-      if profile.role.name != role_name then default = false else default = true end
-      profile.update(default_role: default)
-    end
-  end
-
-  # Create an user_hash (instanciable) from a social_hash RETURNS: [:user] & [:social_session]
-  def self.create_user_hash_from_social social_hash
-    user = social_hash['login']
-    pages = social_hash['pages']['data']
-
-    hash_return = {:user => {}, :social_session => {}}
-
-    hash_return[:user] = {name: user['name'], nick: user['username'], email: user['email'], locale: user['locale'], 'role' => 'publisher'}
-    hash_return[:social_session] = {id_on_social: user['id'], name: user['name'], username: user['username'], email: user['email'], gender: user['gender'], locale: user['locale'], gender: user['gender'], count_friends: user['count_friends'], social_network_id: user['network_id']}
-    hash_return[:pages] = []
-
-    # Append the pages
-    pages.each do |page|
-      page = page[1] if page.is_a?Array
-      hash_return[:pages].append({ id_on_social: page['id'], name: page['name'], category: page['category'], access_token: page['access_token'] })
-    end
-
-    hash_return
   end
 end
