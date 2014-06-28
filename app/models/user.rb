@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role user_hash
     user_hash_full = user_hash
-    return_user = User.new(user_hash.except('role'))
+    return_user = User.new(user_hash.except('role', 'social_session'))
 
     # Prevent the user with no role to be created
     role = Role.find_by_name(user_hash_full['role'])
