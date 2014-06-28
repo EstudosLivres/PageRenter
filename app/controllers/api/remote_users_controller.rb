@@ -12,8 +12,6 @@ class API::RemoteUsersController < API::BaseAPIController
 
     # SignUp
     if user.nil?
-      # Manage the Token
-      API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
       user = User.persist_it(user_hash)
 
       if user.errors.messages.empty?
@@ -21,6 +19,9 @@ class API::RemoteUsersController < API::BaseAPIController
       else
         response = {status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json}
       end
+
+      # End the user registration generating it API Token
+      API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
 
     # SignIn
     else
