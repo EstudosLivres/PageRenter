@@ -5,19 +5,22 @@ class API::RemoteUsersController < API::BaseAPIController
     input_hash = params['user']
     # Parse JSON String to Hash, if it is a String and abort if no user hash received
     if(input_hash.is_a?(String) && input_hash.length <= 1) then return render json: { status: 'error', type: :no_user_data, msg: 'No user Data received!' } end
-    input_hash = JSON.parse(input_hash) if input_hash.is_a?String
-    user_hash = User.convert_into_user_hash_the(input_hash)
+    if input_hash.is_a?String then user_hash = JSON.parse(input_hash) else user_hash = input_hash end
 
     # SELECT user WHERE email OR :email
     user = User.find_by_email([user_hash['email'],user_hash[:email]])
 
     # SignUp
     if user.nil?
-      user = User.create_one_user(user_hash)
-      response = User.persist_it_by_hash(user, pages, social_session, social_hash, is_social_login)
-
       # Manage the Token
       API::Concerns::TokenManager.new(user.email, user.password, params[:access_token])
+      user = User.persist_it(user_hash)
+
+      if user.errors.messages.empty?
+        response = {status: 'ok', msg: 'registered'}
+      else
+        response = {status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json}
+      end
 
     # SignIn
     else
