@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
     end
   end
 
+
   # ----- STATICs AUX METHODs TO CREATE USERs -----
 
   # Auth user
@@ -64,10 +65,11 @@ class User < ActiveRecord::Base
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role user_hash
     user_hash_full = user_hash
+    if user_hash_full.has_key?('social_session') then user_hash = SocialSession.to_user(user_hash_full) end
     return_user = User.new(user_hash.except('role', 'social_session'))
 
     # Prevent the user with no role to be created
-    role = Role.find_by_name(user_hash_full['role'])
+    role = Role.find_by_name(user_hash['role'])
     if role.nil? then role_id = nil else role_id = role.id end
 
     return_user.profiles = [].append Profile.new({ name: '', default_role: true, role_id: role_id })
