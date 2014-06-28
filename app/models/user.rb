@@ -118,8 +118,8 @@ class User < ActiveRecord::Base
         end
 
         # Persist SocialSession & Pages
-        if is_social_login
-          social_session = SocialSession.where(social_hash).first_or_create
+        if pages.is_a?(Array)
+          social_session = SocialSession.where(social_session).first_or_create
           # Persist per page
           pages.each do |page|
             current_page = PageAccount.new(page)
@@ -130,9 +130,9 @@ class User < ActiveRecord::Base
       end
 
       # Prepair the response
-      return {status: 'ok', msg: 'registered'}
+      return user
     else
-      return {status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json}
+      return user
     end
   end
 end
