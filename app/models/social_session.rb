@@ -16,4 +16,10 @@ class SocialSession < ActiveRecord::Base
   # Validates Associations
   validates :user_id, presence: true, on: [:create, :update]
   validates :social_network_id, presence: true, on: [:create, :update]
+
+  def self.to_user social_hash
+    user_hash = social_hash['social_session']['login']
+    user_hash['nick'] = user_hash['username']
+    user_hash.except('count_friends', 'id', 'network_id', 'username')
+  end
 end
