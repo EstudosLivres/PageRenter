@@ -80,39 +80,52 @@ class User < ActiveRecord::Base
         second_role = 1
     end
 
-    return_user.profiles.append(Profile.new({ name: '', default_role: true, role_id: second_role }))
+    return_user.profiles << Profile.new({ name: '', default_role: false, role_id: second_role })
     return_user
+  end
+
+  # Method that encapsulate the SocialUser creation rule by receiving the user_hash (called social_hash here)
+  def self.new_social_user(social_hash)
+    return nil if social_hash.has_key?('login')
   end
 
   # Persist the user by it previous hash
   def self.persist_it(user_hash)
     user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)
+
+    # Prevent the process if the user is already registered (just return it to the controller log him)
+    user = User.authenticate(user_hash['email'], user_hash['password'])
+    return user unless user.nil?
+
+    # Prepair the user with it default role for registration
     user = User.new_user_with_it_role(user_hash)
 
     # User save
     if user.save
       # More insertions if SocialLogin
-      unless social_hash.nil?
-        social_hash['user_id'] = user.id
+      social_session = User.new_social_user(user_hash)
+      unless social_session.nil?
+        social_session['user_id'] = user.id
         user.social_sessions << social_session unless social_session.nil?
 
         # Pages validates
+        pages = social_session['pages']
         if pages.is_a?(Array) && !pages.empty?
           pages.each do |page|
             page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
             user.social_sessions.first.page_accounts.append(page_acc)
           end
         end
-      end
 
-      # Persist SocialSession & Pages
-      if is_social_login
-        social_session = SocialSession.where(social_hash).first_or_create
-        # Persist per page
-        pages.each do |page|
-          current_page = PageAccount.new(page)
-          current_page.social_sessions << social_session
-          current_page.save
+        # Persist SocialSession & Pages
+        if is_social_login
+          social_session = SocialSession.where(social_hash).first_or_create
+          # Persist per page
+          pages.each do |page|
+            current_page = PageAccount.new(page)
+            current_page.social_sessions << social_session
+            current_page.save
+          end
         end
       end
 
