@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
     # SetUp the second_role (!default_role)
     case role_id
       when pub_id
-        second_role = adv_id-
+        second_role = adv_id
       when adv_id
         second_role = pub_id
     end
