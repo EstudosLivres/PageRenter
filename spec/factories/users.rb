@@ -27,12 +27,12 @@ FactoryGirl.define do
     default_role 1
 
     factory :publisher_profile do
-      role_id 1
+      role_id 2
       association :user, factory: [:user, :publisher_user], name: 'Ilton Garcia'
     end
 
     factory :advertiser_profile do
-      role_id 2
+      role_id 3
       association :user, factory: [:user, :advertiser_user], name: 'Page Renter'
     end
   end
