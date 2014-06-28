@@ -24,12 +24,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  # Auth user
-  def self.authenticate(email, password)
-    user = find_by_email(email)
-    if user && user.password == BCrypt::Engine.hash_secret(password, user.pass_salt) then user else nil end
-  end
-
   # Solve the idiom issues
   def solve_locale
     # Refect locale for optimized Locale (pt_PT != pt_BR)
@@ -61,6 +55,12 @@ class User < ActiveRecord::Base
 
   # ----- STATICs AUX METHODs TO CREATE USERs -----
 
+  # Auth user
+  def self.authenticate(email, password)
+    user = find_by_email(email)
+    if user && user.password == BCrypt::Engine.hash_secret(password, user.pass_salt) then user else nil end
+  end
+
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role user_hash
     user_hash_full = user_hash
@@ -79,7 +79,7 @@ class User < ActiveRecord::Base
     # SetUp the second_role (!default_role)
     case role_id
       when pub_id
-        second_role = adv_id
+        second_role = adv_id-
       when adv_id
         second_role = pub_id
     end
