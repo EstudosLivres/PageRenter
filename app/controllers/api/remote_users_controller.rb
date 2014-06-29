@@ -6,9 +6,10 @@ class API::RemoteUsersController < API::BaseAPIController
     # Parse JSON String to Hash, if it is a String and abort if no user hash received
     if(input_hash.is_a?(String) && input_hash.length <= 1) then return render json: { status: 'error', type: :no_user_data, msg: 'No user Data received!' } end
     if input_hash.is_a?String then user_hash = JSON.parse(input_hash) else user_hash = input_hash end
+    if user_hash.has_key?('social_session') then social_session_email = user_hash['social_session']['login']['email'] end
 
     # SELECT user WHERE email OR :email
-    user = User.find_by_email([user_hash['email'],user_hash[:email]])
+    user = User.find_by_email([user_hash['email'],user_hash[:email], social_session_email])
 
     # SignUp
     if user.nil?
