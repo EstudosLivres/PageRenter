@@ -177,8 +177,7 @@ describe API::RemoteUsersController do
     before { post :system_signup_signin, invalid_fb_user }
     subject(:resp_body) { JSON.parse(response.body) }
 
-    it "Should be accessible" do
-      response.should be_success end
+    it "Should be accessible" do response.should be_success end
     it "Should has an error message" do resp_body['status'].should == 'error' end
     it "Should be invaalid_attr_value type" do resp_body['type'].should == 'invalid_attr_value' end
     it "User should_not be registered" do  end # expect { User.all.length }.from(0).to(0)
