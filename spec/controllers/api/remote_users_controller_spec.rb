@@ -125,15 +125,15 @@ describe API::RemoteUsersController do
     it "Message should respond per invalid attribute" do resp_body['msg'].should be_a String end
     it "Should be #:invalid_attr_value type message" do resp_body.should_not have_key('type') end
     it "Should have a Publisher & an Advertiser profile" do
-      profiles = User.last!.profiles.to_a
+      profiles = User.where(email: 'pp@p.p').take!.profiles
       profiles.length.should == 2
 
       count_pub = 0
       count_adv = 0
       profiles.each do |profile|
-        if profile.role.id == 1
+        if profile.role.id == 2
           count_pub = count_pub+1
-        elsif profile.role.id == 2
+        elsif profile.role.id == 3
           count_adv = count_adv+1
         end
       end
@@ -160,9 +160,9 @@ describe API::RemoteUsersController do
       count_pub = 0
       count_adv = 0
       profiles.each do |profile|
-        if profile.role.id == 1
+        if profile.role.id == 2
           count_pub = count_pub+1
-        elsif profile.role.id == 2
+        elsif profile.role.id == 3
           count_adv = count_adv+1
         end
       end
