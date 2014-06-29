@@ -391,6 +391,18 @@ a.r_advertiser:hover,
     margin: -10px 0 0 -14px;
 }
 
+#invitation_counter {
+    position: absolute;
+    font-size: 9px;
+    left: 7px;
+    top: 8px;
+}
+
+#invitation_counter.alert-danger {
+    background: red;
+    color: white;
+}
+
 form#new_campaign_left .form-group .form-control {
     width: 75%;
 }
