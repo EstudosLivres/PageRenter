@@ -40,6 +40,9 @@
                 %>
                     <li>
                       <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
+                        <% if action[:path] == '#invite' || action[:path] == '#recommend' %>
+                            <span id="invitation_counter" class="badge alert-danger">0</span>
+                        <% end %>
                         <i class="<%= action[:icon] %>"></i>
                         <span class="visible-lg">
                           <%= action[:name] %>
@@ -60,6 +63,9 @@
               %>
                   <li>
                     <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
+                      <% if action[:path] == '#invite' || action[:path] == '#recommend' %>
+                          <span id="invitation_counter" class="badge alert-danger">0</span>
+                      <% end %>
                       <i class="<%= action[:icon] %>"></i>
                         <span class="visible-lg">
                           <%= action[:name] %>
