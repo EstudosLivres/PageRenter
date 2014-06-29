@@ -444,6 +444,13 @@ center#choose_file_section {
     form#new_campaign_left .form-group .form-control {
         width: 100%;
     }
+
+    #invitation_counter {
+        position: absolute;
+        font-size: 9px;
+        left: 7px;
+        top: 4px;
+    }
 }
 
 @media (max-width: 1000px) {
