@@ -71,7 +71,7 @@ class User < ActiveRecord::Base
     begin
       return_user = User.new(user_hash.except('role', 'social_session'))
     rescue Exception => e
-      return e
+      return e.to_s
     end
 
     # Prevent the user with no role to be created
@@ -111,7 +111,11 @@ class User < ActiveRecord::Base
 
     # Prepair the user with it default role for registration
     user = User.new_user_with_it_role(user_hash)
-    if !user.is_a?(User) then return {error: 'Invalid attrs for user instantiation'} end
+    if !user.is_a?(User)
+      simple_user = User.new
+      simple_user.errors.messages[:invalid_user_attrs] = 'Invalid attrs to instantiate an User'
+      return simple_user
+    end
 
     # User save
     if user.save
