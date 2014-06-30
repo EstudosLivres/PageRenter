@@ -5,6 +5,8 @@ include API
 
 describe API::RemoteUsersController do
   subject(:controller) { API::RemoteUsersController.new }
+  subject(:role_pub_id) { Role.where(name: 'publisher').take.id }
+  subject(:role_adv_id) { Role.where(name: 'advertiser').take.id }
   let!(:publisher_profile) { FactoryGirl.create(:publisher_profile) }
   let!(:advertiser_profile) { FactoryGirl.create(:advertiser_profile) }
   subject(:valid_api_pub){{ 'email' => '11@1.1', 'password' => '123' }}
@@ -131,9 +133,9 @@ describe API::RemoteUsersController do
       count_pub = 0
       count_adv = 0
       profiles.each do |profile|
-        if profile.role.id == 2
+        if profile.role.id == role_pub_id
           count_pub = count_pub+1
-        elsif profile.role.id == 3
+        elsif profile.role.id == role_adv_id
           count_adv = count_adv+1
         end
       end
@@ -160,9 +162,9 @@ describe API::RemoteUsersController do
       count_pub = 0
       count_adv = 0
       profiles.each do |profile|
-        if profile.role.id == 2
+        if profile.role.id == role_pub_id
           count_pub = count_pub+1
-        elsif profile.role.id == 3
+        elsif profile.role.id == role_adv_id
           count_adv = count_adv+1
         end
       end
