@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   # Custom validations
   validate :solve_locale
   validate :encrypt_password
+  validate :prevent_no_password_without_social
 
   # Rails validations
   validates :name, presence: true, length: { in: 3..55 }, on: [:create, :update]
@@ -39,7 +40,7 @@ class User < ActiveRecord::Base
   end
 
   # Set the current actived (rendered) profile as default
-  def set_default_profile role_name
+  def set_default_profile(role_name)
     profiles.each do |profile|
       if profile.role.name != role_name then default = false else default = true end
       profile.update(default_role: default)
@@ -53,6 +54,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  # If there is no password & there is no SocialSession, do no persist it
+  def prevent_no_password_without_social
+    errors.add('Invalid SocialLogin: ', 'Bad SocialSession User, contact us.')
+    raise ActiveRecord::Rollback
+    return
+  end
 
   # ----- STATICs AUX METHODs TO CREATE USERs -----
 
@@ -63,7 +70,8 @@ class User < ActiveRecord::Base
   end
 
   # Method that encapsulate the User creation rule
-  def self.new_user_with_it_role user_hash
+  def self.new_user_with_it_role(user_hash)
+    user_hash = SocialSession.to_user(user_hash) if user_hash.has_key?('social_session')
     user_hash_full = user_hash
     if user_hash_full.has_key?('social_session') then user_hash = SocialSession.to_user(user_hash_full) end
 
@@ -109,9 +117,10 @@ class User < ActiveRecord::Base
   # Persist the user by it previous hash
   def self.persist_it(user_hash)
     user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)
+    social_hash = User.new_social_user(user_hash)
 
     # Validate the authentication based if the user is social session
-    if User.new_social_user(user_hash).nil?
+    if social_hash.nil?
       # Prevent the process if the user is already registered (just return it to the controller log him)
       user = User.authenticate(user_hash['email'], user_hash['password'])
       return user unless user.nil?
@@ -121,13 +130,17 @@ class User < ActiveRecord::Base
       return user unless user.nil?
     end
 
-
-    # Prepair the user with it default role for registration
+    # Prepare the user with it default role for registration
     user = User.new_user_with_it_role(user_hash)
-    if !user.is_a?(User)
+    unless user.is_a?(User)
       simple_user = User.new
       simple_user.errors.messages[:invalid_user_attrs] = 'Invalid attrs to instantiate an User'
       return simple_user
+    end
+
+    # Add the SocialSession to the user, if it is needed
+    if !social_hash.nil?
+
     end
 
     # User save
