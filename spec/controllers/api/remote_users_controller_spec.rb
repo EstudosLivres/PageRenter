@@ -127,7 +127,7 @@ describe API::RemoteUsersController do
     it "Message should respond per invalid attribute" do resp_body['msg'].should be_a String end
     it "Should be #:invalid_attr_value type message" do resp_body.should_not have_key('type') end
     it "Should have a Publisher & an Advertiser profile" do
-      profiles = User.where(email: 'pp@p.p').take!.profiles
+      profiles = User.where(email: 'pp@pt.pt').take!.profiles
       profiles.length.should == 2
 
       count_pub = 0
