@@ -103,16 +103,24 @@ class User < ActiveRecord::Base
 
   # Method that encapsulate the SocialUser creation rule by receiving the user_hash (called social_hash here)
   def self.new_social_user(social_hash)
-    return nil if social_hash.has_key?('login')
+    if social_hash.has_key?('social_session') then return social_hash else return nil end
   end
 
   # Persist the user by it previous hash
   def self.persist_it(user_hash)
     user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)
 
-    # Prevent the process if the user is already registered (just return it to the controller log him)
-    user = User.authenticate(user_hash['email'], user_hash['password'])
-    return user unless user.nil?
+    # Validate the authentication based if the user is social session
+    if User.new_social_user(user_hash).nil?
+      # Prevent the process if the user is already registered (just return it to the controller log him)
+      user = User.authenticate(user_hash['email'], user_hash['password'])
+      return user unless user.nil?
+    else
+      # Prevent the process if social session registered
+      user = SocialSession.authenticate(user_hash)
+      return user unless user.nil?
+    end
+
 
     # Prepair the user with it default role for registration
     user = User.new_user_with_it_role(user_hash)
