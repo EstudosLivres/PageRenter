@@ -17,10 +17,17 @@ class SocialSession < ActiveRecord::Base
   validates :user_id, presence: true, on: [:create, :update]
   validates :social_network_id, presence: true, on: [:create, :update]
 
-  def self.to_user social_hash
+  # Convert social_hash into user_hash
+  def self.to_user(social_hash)
     user_hash = social_hash['social_session']['login']
     user_hash['role'] = 'publisher'
     user_hash['nick'] = user_hash['username']
     user_hash.except('count_friends', 'id', 'network_id', 'username')
+  end
+
+  # Authenticate the social session based on it specific rules
+  def self.authenticate(social_hash)
+    user_hash = SocialSession.to_user(social_hash)
+
   end
 end
