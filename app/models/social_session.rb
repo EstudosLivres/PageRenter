@@ -28,6 +28,6 @@ class SocialSession < ActiveRecord::Base
   # Authenticate the social session based on it specific rules
   def self.authenticate(social_hash)
     user_hash = SocialSession.to_user(social_hash)
-
+    return User.where(email: user_hash['email']).take
   end
 end
