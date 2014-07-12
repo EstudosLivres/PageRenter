@@ -3,12 +3,12 @@ require 'spec_helper'
 describe "User Registration & LogIn" do
   subject(:http_helper) { API::Concerns::HttpTestHelper.new }
   subject(:empty_user) { {'user' => ''} }
-  subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
-  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '11@1.1', password: '123'}.to_json} }
+  subject(:invalid_user) { {'user' => {role: '', locale: '', name: '', username: '', email: '', password: ''}.to_json} }
+  subject(:valid_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', username: 'ton', email: '11@1.1', password: '123'}.to_json} }
   subject(:fb_user) { {'user' => { 'social_session' =>
                                        {
                                            'login' => {
-                                               'count_friends' => '423', 'email' => 'ilton_junior_91@hotmail.com', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1, 'username' => 'ilton.garcia'
+                                               'count_friends' => '423', 'email' => 'ilton_junior_91@hotmail.com', 'id' => '100001939359300', 'locale' => 'pt_BR', 'name' => 'Ilton Garcia', 'network_id' => 1, 'username' => 'ilton.garcia', 'gender' => 'male'
                                            },
                                            'pages' => {
                                                'data' => [

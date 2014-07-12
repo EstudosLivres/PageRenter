@@ -13,9 +13,9 @@ describe API::RemoteUsersController do
   subject(:valid_api_adv){{ 'email' => '22@2.2', 'password' => '123' }}
   subject(:invalid_api_pub){{ 'email' => '44@4.4', 'password' => '321' }}
   subject(:empty_user) { {'user' => ''} }
-  subject(:invalid_pub_user) { {'user' => {role: '', locale: '', name: '', nick: '', email: '', password: ''}.to_json} }
-  subject(:valid_pub_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', nick: 'ton', email: '33@3.3', password: '123'}.to_json} }
-  subject(:valid_adv_user) { {'user' => {role: 'advertiser', locale: 'en', name: 'PageRenter', nick: 'page', email: '55@5.5', password: '123'}.to_json} }
+  subject(:invalid_pub_user) { {'user' => {role: '', locale: '', name: '', username: '', email: '', password: ''}.to_json} }
+  subject(:valid_pub_user) { {'user' => {role: 'publisher', locale: 'pt', name: 'Ilton Garcia', username: 'ton', email: '33@3.3', password: '123'}.to_json} }
+  subject(:valid_adv_user) { {'user' => {role: 'advertiser', locale: 'en', name: 'PageRenter', username: 'page', email: '55@5.5', password: '123'}.to_json} }
   subject(:invalid_fb_user) { {'user' => { 'social_session' =>
                                        {
                                            'login' => {

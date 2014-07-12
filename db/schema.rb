@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20140605024546) do
 
   create_table "users", force: true do |t|
     t.string   "name",         limit: 55, null: false
-    t.string   "nick",         limit: 30, null: false
+    t.string   "username",     limit: 30, null: false
     t.string   "email",        limit: 55, null: false
     t.string   "locale",       limit: 5,  null: false
     t.string   "pass_salt",    limit: 29
@@ -130,6 +130,6 @@ ActiveRecord::Schema.define(version: 20140605024546) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["nick"], name: "index_users_on_nick", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

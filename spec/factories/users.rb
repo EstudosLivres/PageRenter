@@ -3,7 +3,7 @@ FactoryGirl.define do
   # Users
   factory :user do
     name        'Invalid User'
-    nick        'invalid.user'
+    username        'invalid.user'
     email       '33@3.3'
     locale      'pt_BR'
     password    '123'
@@ -11,13 +11,13 @@ FactoryGirl.define do
 
     trait :publisher_user do
       name        'Ilton Garcia'
-      nick        'ilton.garcia'
+      username        'ilton.garcia'
       email       '11@1.1'
     end
 
     trait :advertiser_user do
       name        'Page Renter'
-      nick        'page.renter'
+      username        'page.renter'
       email       '22@2.2'
     end
   end

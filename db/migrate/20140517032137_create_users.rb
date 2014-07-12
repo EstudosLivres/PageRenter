@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :name, limit: 55, null: false
-      t.string :nick, limit: 30, null: false
+      t.string :username, limit: 30, null: false
       t.string :email, limit: 55, unique: true, null: false
       t.column :locale, "char(5)", null: false
       t.column :pass_salt, "char(29)", null: true
@@ -13,6 +13,6 @@ class CreateUsers < ActiveRecord::Migration
     end
 
     add_index :users, :email, unique: true
-    add_index :users, :nick, unique: true
+    add_index :users, :username, unique: true
   end
 end
