@@ -26,12 +26,12 @@ puts '...SocialNetworks inserteds.'.colorize(:light_blue)
 
 # Users
 puts 'Inserting Publishers...'.colorize(:green)
-  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Pub Testador', 'nick' => 'tst', 'email' => 'pp@pt.pt', 'password' => '123'})}"
-  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'en', 'name' => 'Pub Tester', 'nick' => 'tster', 'email' => 'pp@en.en', 'password' => '123'})}"
+  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Pub Testador', 'username' => 'tst', 'email' => 'pp@pt.pt', 'password' => '123'})}"
+  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'en', 'name' => 'Pub Tester', 'username' => 'tster', 'email' => 'pp@en.en', 'password' => '123'})}"
 puts '...Publishers inserteds.'.colorize(:light_blue)
 
 puts 'Inserting Advertisers...'.colorize(:green)
-  puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'pt', 'name' => 'Adv Testador', 'nick' => 'adv', 'email' => 'aa@pt.pt', 'password' => '123'})}"
-  puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'pt', 'name' => 'Adv Testador', 'nick' => 'advr', 'email' => 'aa@en.en', 'password' => '123'})}"
+  puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'pt', 'name' => 'Adv Testador', 'username' => 'adv', 'email' => 'aa@pt.pt', 'password' => '123'})}"
+  puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'pt', 'name' => 'Adv Testador', 'username' => 'advr', 'email' => 'aa@en.en', 'password' => '123'})}"
 puts '...Advertisers inserteds.'.colorize(:light_blue)
 # /Users
