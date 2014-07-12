@@ -82,7 +82,7 @@ class User < ActiveRecord::Base
         user_hash = {name:user_hash[:name], nick:user_hash[:nick], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
       end
 
-      return_user = User.new(user_hash.except('role', :role))
+      return_user = User.new(user_hash.except('role', :role, 'gender'))
     rescue Exception => e
       return e.to_s
     end
@@ -131,7 +131,7 @@ class User < ActiveRecord::Base
     end
 
     # Prepare the user with it default role for registration
-    user = User.new_user_with_it_role(user_hash)
+    user = User.new_user_with_it_role(user_hash.except('gender'))
     unless user.is_a?(User)
       simple_user = User.new
       simple_user.errors.messages[:invalid_user_attrs] = 'Invalid attrs to instantiate an User'
@@ -140,7 +140,8 @@ class User < ActiveRecord::Base
 
     # Add the SocialSession to the user, if it is needed
     if !social_hash.nil?
-
+      social_session = SocialSession.setup(social_hash)
+      social_session
     end
 
     # User save
