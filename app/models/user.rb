@@ -7,11 +7,10 @@ class User < ActiveRecord::Base
   # Custom validations
   validate :solve_locale
   validate :encrypt_password
-  validate :prevent_no_password_without_social
 
   # Rails validations
   validates :name, presence: true, length: { in: 3..55 }, on: [:create, :update]
-  validates :nick, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]
+  validates :username, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]
   validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: [:create, :update]
   validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
 
@@ -54,13 +53,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  # If there is no password & there is no SocialSession, do no persist it
-  def prevent_no_password_without_social
-    errors.add('Invalid SocialLogin: ', 'Bad SocialSession User, contact us.')
-    raise ActiveRecord::Rollback
-    return
-  end
-
   # ----- STATICs AUX METHODs TO CREATE USERs -----
 
   # Auth user
@@ -79,7 +71,7 @@ class User < ActiveRecord::Base
     begin
       # Create a specific user_hash for social entries
       if user_hash_full.has_key?('social_session')
-        user_hash = {name:user_hash[:name], nick:user_hash[:nick], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
+        user_hash = {name:user_hash[:name], username:user_hash[:username], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
       end
 
       return_user = User.new(user_hash.except('role', :role, 'gender'))
@@ -141,39 +133,11 @@ class User < ActiveRecord::Base
     # Add the SocialSession to the user, if it is needed
     if !social_hash.nil?
       social_session = SocialSession.setup(social_hash)
-      social_session
     end
 
     # User save
     if user.save
-      # More insertions if SocialLogin
-      social_session = User.new_social_user(user_hash)
-      unless social_session.nil?
-        social_session['user_id'] = user.id
-        user.social_sessions << social_session unless social_session.nil?
-
-        # Pages validates
-        pages = social_session['pages']
-        if pages.is_a?(Array) && !pages.empty?
-          pages.each do |page|
-            page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?
-            user.social_sessions.first.page_accounts.append(page_acc)
-          end
-        end
-
-        # Persist SocialSession & Pages
-        if pages.is_a?(Array)
-          social_session = SocialSession.where(social_session).first_or_create
-          # Persist per page
-          pages.each do |page|
-            current_page = PageAccount.new(page)
-            current_page.social_sessions << social_session
-            current_page.save
-          end
-        end
-      end
-
-      # Prepair the response
+      social_session.add_it_to(user)
       return user
     else
       return user
