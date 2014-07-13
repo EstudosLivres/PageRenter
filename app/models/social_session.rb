@@ -24,28 +24,29 @@ class SocialSession < ActiveRecord::Base
 
   # Convert social_hash into social session instance
   def self.setup(social_hash)
-    social_for_instantiation = social_hash['social_session']
+    social_for_instantiation = social_hash[:social_session]
+    social_for_instantiation = RailsFixes::Util.action_controller_to_hash(social_for_instantiation)
 
     # Prevent bug by passing wrong social_hash structure
     return nil if !social_for_instantiation.is_a?(Hash)
-    return nil if !social_for_instantiation.has_key?('login') || !social_for_instantiation.has_key?('pages')
+    return nil if !social_for_instantiation.has_key?(:login) || !social_for_instantiation.has_key?(:pages)
 
     # Aux hashes
-    login = social_for_instantiation['login']
-    pages = social_for_instantiation['pages']['data']
+    login = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:login])
+    pages = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:pages])[:data]
 
     # Prepare social session hash
-    login['id_on_social'] = login['id']
-    login['social_network_id'] = login['network_id']
-    login.delete('network_id')
-    login.delete('id')
-    social_session = SocialSession.new(Concerns::Util.action_controller_to_hash(login).except(:role))
+    login[:id_on_social] = login[:id]
+    login[:social_network_id] = login[:network_id]
+    login.delete(:network_id)
+    login.delete(:id)
+    social_session = SocialSession.new(RailsFixes::Util.action_controller_to_hash(login).except(:role))
 
     # Prepare page account hash
     pages.each do |page|
       # Change page attrs social to our DB
-      page['id_on_social'] = page['id']
-      page.delete('id')
+      page[:id_on_social] = page[:id]
+      page.delete(:id)
 
       social_session.page_accounts << PageAccount.new(page.except('perms'))
     end
