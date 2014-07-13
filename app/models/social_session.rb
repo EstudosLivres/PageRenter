@@ -25,6 +25,12 @@ class SocialSession < ActiveRecord::Base
   # Convert social_hash into social session instance
   def self.setup(social_hash)
     social_for_instantiation = social_hash['social_session']
+
+    # Prevent bug by passing wrong social_hash structure
+    return nil if !social_for_instantiation.is_a?(Hash)
+    return nil if !social_for_instantiation.has_key?('login') || !social_for_instantiation.has_key?('pages')
+
+    # Aux hashes
     login = social_for_instantiation['login']
     pages = social_for_instantiation['pages']['data']
 
@@ -33,7 +39,7 @@ class SocialSession < ActiveRecord::Base
     login['social_network_id'] = login['network_id']
     login.delete('network_id')
     login.delete('id')
-    social_session = SocialSession.new(login.except('role'))
+    social_session = SocialSession.new(Concerns::Util.action_controller_to_hash(login).except(:role))
 
     # Prepare page account hash
     pages.each do |page|
