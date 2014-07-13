@@ -1,9 +1,9 @@
-module Model::Concerns
+module RailsFixes
   class Util
     extend ActiveSupport::Concern
 
     # Convert action controller into hash
-    def self.action_controller_to_hash action_controller
+    def self.action_controller_to_hash(action_controller)
       return nil if action_controller.nil?
       return_hash = {}
 
