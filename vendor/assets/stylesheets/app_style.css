@@ -91,6 +91,51 @@ body {
     text-decoration: none;
 }
 
+.float_right {
+    float: right;
+}
+
+/* BRAND CAMPAIGN STYLE (AUTO PROMO) */
+#brand_campaign .badge.alert-danger {
+    color: white;
+    background: red;
+}
+
+.campaign_link a {
+    text-decoration: underline;
+}
+
+.campaign_link .fa-copy {
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+div.campaign_attr {
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+#brand_campaign .brand {
+    font-size: 1.5em;
+}
+
+#brand_campaign header {
+    padding-bottom: 10px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #C6DBCE;
+}
+
+#brand_campaign header .social_invite .btn:hover,
+#brand_campaign header .social_invite .btn:visited,
+#brand_campaign header .social_invite .btn:focus {
+    color: whitesmoke;
+}
+
+/* CAMPAIGN STYLES */
+.campaign_content img {
+    width: 100%;
+}
+
 a {
     color: #124bca;
 }
