@@ -14,27 +14,27 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2014-06-29T23:11:33-03:00">2014-06-29T23:11:33-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2014-07-14T01:21:32-03:00">2014-07-14T01:21:32-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">95.04%</span></span>
+    (<span class="covered_percent"><span class="green">96.17%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.32
+         3.11
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>72</b> files in total.
-    <b>846</b> relevant lines. 
-    <span class="green"><b>804</b> lines covered</span> and
-    <span class="red"><b>42</b> lines missed </span>
+    <b>74</b> files in total.
+    <b>887</b> relevant lines. 
+    <span class="green"><b>853</b> lines covered</span> and
+    <span class="red"><b>34</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -211,11 +211,31 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#fa6ba87e419908cfc49ebce4cb87ea3111d79130" class="src_link" title="app/models/concerns/rails_fixes/util.rb">app/models/concerns/rails_fixes/util.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>16</td>
+        <td>8</td>
+        <td>8</td>
+        <td>0</td>
+        <td>57.0</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#beaca1559a3b15ddf4f94bdb0ad6b587ea0aac2b" class="src_link" title="app/models/financial_transaction.rb">app/models/financial_transaction.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>17</td>
         <td>12</td>
         <td>12</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#79c7465bd3953aa6bcbcbca264bfd74e50ad142b" class="src_link" title="app/models/page_account.rb">app/models/page_account.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>12</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -273,21 +293,21 @@
       <tr>
         <td class="strong"><a href="#20693f6ffefc48e8fa1e71b24105e3e7c28fad77" class="src_link" title="app/models/social_session.rb">app/models/social_session.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>26</td>
-        <td>18</td>
-        <td>18</td>
+        <td>74</td>
+        <td>43</td>
+        <td>43</td>
         <td>0</td>
-        <td>2.3</td>
+        <td>6.0</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#f08f42adf87d3597c49aef070d70717d5eef6af3" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
-        <td class="red strong">76.62 %</td>
-        <td>160</td>
-        <td>77</td>
-        <td>59</td>
-        <td>18</td>
-        <td>16.9</td>
+        <td class="yellow strong">87.5 %</td>
+        <td>163</td>
+        <td>80</td>
+        <td>70</td>
+        <td>10</td>
+        <td>18.4</td>
       </tr>
       
       <tr>
@@ -3858,6 +3878,120 @@
   </pre>
 </div>
       
+        <div class="source_table" id="fa6ba87e419908cfc49ebce4cb87ea3111d79130">
+  <div class="header">
+    <h3>app/models/concerns/rails_fixes/util.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">module RailsFixes</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  class Util</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    extend ActiveSupport::Concern</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">    # Convert action controller into hash</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    def self.action_controller_to_hash(action_controller)</code>
+        </li>
+      
+        <li class="covered" data-hits="73" data-linenumber="7">
+          <span class="hits">73</span>
+          
+          <code class="ruby">      return nil if action_controller.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="56" data-linenumber="8">
+          <span class="hits">56</span>
+          
+          <code class="ruby">      return_hash = {}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">      # Foreach the Actionc ontroller keys (converting to symbol &amp; saving each value)</code>
+        </li>
+      
+        <li class="covered" data-hits="267" data-linenumber="11">
+          <span class="hits">267</span>
+          
+          <code class="ruby">      action_controller.each {|key, value| return_hash[key.to_sym] = value}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="56" data-linenumber="13">
+          <span class="hits">56</span>
+          
+          <code class="ruby">      return_hash</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="beaca1559a3b15ddf4f94bdb0ad6b587ea0aac2b">
   <div class="header">
     <h3>app/models/financial_transaction.rb</h3>
@@ -3969,6 +4103,96 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="79c7465bd3953aa6bcbcbca264bfd74e50ad142b">
+  <div class="header">
+    <h3>app/models/page_account.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class PageAccount &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">  # Relations</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_and_belongs_to_many :social_sessions</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby">  # Attrs Validations</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :id_on_social, presence: true, length: { in: 3..45 }, on: [:create, :update]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :name, presence: true, length: { in: 3..75 }, on: [:create, :update]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :category, presence: true, length: { in: 3..25 }, on: [:create, :update]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  # Validates Associations</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
@@ -4457,8 +4681,8 @@
     <h3>app/models/social_session.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>18</b> relevant lines. 
-      <span class="green"><b>18</b> lines covered</span> and
+      <b>43</b> relevant lines. 
+      <span class="green"><b>43</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4580,43 +4804,331 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  # Add the current SocialSession to the passed user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.to_user social_hash</code>
+          <code class="ruby">  def add_it_to(user)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="21">
-          <span class="hits">7</span>
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
           
-          <code class="ruby">    user_hash = social_hash[&#39;social_session&#39;][&#39;login&#39;]</code>
+          <code class="ruby">    user.social_sessions &lt;&lt; self</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="22">
-          <span class="hits">7</span>
-          
-          <code class="ruby">    user_hash[&#39;role&#39;] = &#39;publisher&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="23">
-          <span class="hits">7</span>
-          
-          <code class="ruby">    user_hash[&#39;nick&#39;] = user_hash[&#39;username&#39;]</code>
-        </li>
-      
-        <li class="covered" data-hits="7" data-linenumber="24">
-          <span class="hits">7</span>
-          
-          <code class="ruby">    user_hash.except(&#39;count_friends&#39;, &#39;id&#39;, &#39;network_id&#39;, &#39;username&#39;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  # Convert social_hash into social session instance</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.setup(social_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="27">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    social_for_instantiation = social_hash[:social_session]</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="28">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    social_for_instantiation = RailsFixes::Util.action_controller_to_hash(social_for_instantiation)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    # Prevent bug by passing wrong social_hash structure</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="31">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    return nil if !social_for_instantiation.is_a?(Hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="32">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    return nil if !social_for_instantiation.has_key?(:login) &amp;&amp; !social_for_instantiation.has_key?(:pages)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">    # Aux hashes</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="35">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    login = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:login])</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="36">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    pages = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:pages])[:data]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    # Prepare social session hash</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="39">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    login[:id_on_social] = login[:id]</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="40">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    login[:social_network_id] = login[:network_id]</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="41">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    login.delete(:network_id)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="42">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    login.delete(:id)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="43">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    social_session = SocialSession.new(RailsFixes::Util.action_controller_to_hash(login).except(:role))</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="44">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="45">
+          
+          
+          <code class="ruby">    # Prepare page account hash</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="46">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    if pages.is_a?(Array)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="47">
+          <span class="hits">7</span>
+          
+          <code class="ruby">      pages.each do |page|</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">        # Change page attrs social to our DB</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="49">
+          <span class="hits">14</span>
+          
+          <code class="ruby">        page = RailsFixes::Util.action_controller_to_hash(page)</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="50">
+          <span class="hits">14</span>
+          
+          <code class="ruby">        page[:id_on_social] = page[:id]</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="51">
+          <span class="hits">14</span>
+          
+          <code class="ruby">        page.delete(:id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="52">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="53">
+          <span class="hits">14</span>
+          
+          <code class="ruby">        page_persisted = PageAccount.new(page.except(:perms))</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="54">
+          <span class="hits">14</span>
+          
+          <code class="ruby">        page_persisted.save</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="55">
+          <span class="hits">14</span>
+          
+          <code class="ruby">        social_session.page_accounts &lt;&lt; page_persisted</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="58">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="59">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    social_session</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="61">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  # Convert social_hash into user_hash</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.to_user(social_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="64">
+          <span class="hits">14</span>
+          
+          <code class="ruby">    user_hash = social_hash[&#39;social_session&#39;][&#39;login&#39;]</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="65">
+          <span class="hits">14</span>
+          
+          <code class="ruby">    user_hash[&#39;role&#39;] = &#39;publisher&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="66">
+          <span class="hits">14</span>
+          
+          <code class="ruby">    user_hash.except(&#39;count_friends&#39;, &#39;id&#39;, &#39;network_id&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  # Authenticate the social session based on it specific rules</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.authenticate(social_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="71">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    user_hash = SocialSession.to_user(social_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="7" data-linenumber="72">
+          <span class="hits">7</span>
+          
+          <code class="ruby">    return User.where(email: user_hash[&#39;email&#39;]).take</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
           
           
           <code class="ruby">end</code>
@@ -4629,11 +5141,11 @@
         <div class="source_table" id="f08f42adf87d3597c49aef070d70717d5eef6af3">
   <div class="header">
     <h3>app/models/user.rb</h3>
-    <h4><span class="red">76.62 %</span> covered</h4>
+    <h4><span class="yellow">87.5 %</span> covered</h4>
     <div>
-      <b>77</b> relevant lines. 
-      <span class="green"><b>59</b> lines covered</span> and
-      <span class="red"><b>18</b> lines missed.</span>
+      <b>80</b> relevant lines. 
+      <span class="green"><b>70</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
     </div>
   </div>
   
@@ -4715,7 +5227,7 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">  validates :nick, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]</code>
+          <code class="ruby">  validates :username, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
@@ -4889,7 +5401,7 @@
         <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">  def set_default_profile role_name</code>
+          <code class="ruby">  def set_default_profile(role_name)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="43">
@@ -4973,67 +5485,67 @@
         <li class="never" data-hits="" data-linenumber="56">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  # ----- STATICs AUX METHODs TO CREATE USERs -----</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby">  # ----- STATICs AUX METHODs TO CREATE USERs -----</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
-          
-          
           <code class="ruby">  # Auth user</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.authenticate(email, password)</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="61">
-          <span class="hits">51</span>
+        <li class="covered" data-hits="44" data-linenumber="60">
+          <span class="hits">44</span>
           
           <code class="ruby">    user = find_by_email(email)</code>
         </li>
       
-        <li class="covered" data-hits="51" data-linenumber="62">
-          <span class="hits">51</span>
+        <li class="covered" data-hits="44" data-linenumber="61">
+          <span class="hits">44</span>
           
           <code class="ruby">    if user &amp;&amp; user.password == BCrypt::Engine.hash_secret(password, user.pass_salt) then user else nil end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="63">
+        <li class="never" data-hits="" data-linenumber="62">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">  # Method that encapsulate the User creation rule</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.new_user_with_it_role user_hash</code>
+          <code class="ruby">  def self.new_user_with_it_role(user_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="66">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    user_hash = SocialSession.to_user(user_hash) if user_hash.has_key?(&#39;social_session&#39;)</code>
         </li>
       
         <li class="covered" data-hits="24" data-linenumber="67">
@@ -5078,10 +5590,10 @@
           <code class="ruby">      if user_hash_full.has_key?(&#39;social_session&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="74">
-          <span class="hits">7</span>
+        <li class="missed" data-hits="0" data-linenumber="74">
           
-          <code class="ruby">        user_hash = {name:user_hash[:name], nick:user_hash[:nick], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}</code>
+          
+          <code class="ruby">        user_hash = {name:user_hash[:name], username:user_hash[:username], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="75">
@@ -5099,7 +5611,7 @@
         <li class="covered" data-hits="24" data-linenumber="77">
           <span class="hits">24</span>
           
-          <code class="ruby">      return_user = User.new(user_hash.except(&#39;role&#39;, :role))</code>
+          <code class="ruby">      return_user = User.new(user_hash.except(&#39;role&#39;, :role, &#39;gender&#39;))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="78">
@@ -5108,172 +5620,172 @@
           <code class="ruby">    rescue Exception =&gt; e</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="79">
+        <li class="covered" data-hits="7" data-linenumber="79">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby">      return e.to_s</code>
+          <code class="ruby">      if e.to_s == &#39;ActiveModel::ForbiddenAttributesError&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="covered" data-hits="7" data-linenumber="80">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">        new_user_hash = RailsFixes::Util.action_controller_to_hash(user_hash)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="covered" data-hits="7" data-linenumber="81">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">        return_user = User.new(new_user_hash.except(:gender,:role))</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">    # Prevent the user with no role to be created</code>
+          <code class="ruby">      else</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="83">
-          <span class="hits">24</span>
+        <li class="missed" data-hits="0" data-linenumber="83">
           
-          <code class="ruby">    role = Role.where(name: [user_hash[&#39;role&#39;],user_hash[:role]]).take</code>
+          
+          <code class="ruby">        return User.throw_user_with_error</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="84">
-          <span class="hits">24</span>
+        <li class="never" data-hits="" data-linenumber="84">
           
-          <code class="ruby">    if role.nil? then role_id = nil else role_id = role.id end</code>
+          
+          <code class="ruby">      end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="86">
-          <span class="hits">24</span>
+        <li class="never" data-hits="" data-linenumber="86">
           
-          <code class="ruby">    return_user.profiles = [].append Profile.new({ name: &#39;&#39;, default_role: true, role_id: role_id })</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    # Prevent the user with no role to be created</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="covered" data-hits="24" data-linenumber="88">
+          <span class="hits">24</span>
           
-          
-          <code class="ruby">    # The second role is the disabled one (not the current)</code>
+          <code class="ruby">    role = Role.where(name: [user_hash[&#39;role&#39;],user_hash[:role]]).take</code>
         </li>
       
         <li class="covered" data-hits="24" data-linenumber="89">
           <span class="hits">24</span>
           
-          <code class="ruby">    pub_id = Role.where(name: &#39;publisher&#39;).take.id</code>
+          <code class="ruby">    if role.nil? then role_id = nil else role_id = role.id end</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="90">
-          <span class="hits">24</span>
-          
-          <code class="ruby">    adv_id = Role.where(name: &#39;advertiser&#39;).take.id</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="91">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="91">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    return_user.profiles = [].append Profile.new({ name: &#39;&#39;, default_role: true, role_id: role_id })</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="92">
           
           
-          <code class="ruby">    # SetUp the second_role (!default_role)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="93">
+        <li class="never" data-hits="" data-linenumber="93">
+          
+          
+          <code class="ruby">    # The second role is the disabled one (not the current)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="94">
           <span class="hits">24</span>
           
-          <code class="ruby">    case role_id</code>
+          <code class="ruby">    pub_id = Role.where(name: &#39;publisher&#39;).take.id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="94">
+        <li class="covered" data-hits="24" data-linenumber="95">
+          <span class="hits">24</span>
           
-          
-          <code class="ruby">      when pub_id</code>
-        </li>
-      
-        <li class="covered" data-hits="13" data-linenumber="95">
-          <span class="hits">13</span>
-          
-          <code class="ruby">        second_role = adv_id</code>
+          <code class="ruby">    adv_id = Role.where(name: &#39;advertiser&#39;).take.id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="96">
           
           
-          <code class="ruby">      when adv_id</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="97">
-          <span class="hits">6</span>
+        <li class="never" data-hits="" data-linenumber="97">
           
-          <code class="ruby">        second_role = pub_id</code>
+          
+          <code class="ruby">    # SetUp the second_role (!default_role)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="98">
+        <li class="covered" data-hits="24" data-linenumber="98">
+          <span class="hits">24</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">    case role_id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="99">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      when pub_id</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="100">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="13" data-linenumber="100">
+          <span class="hits">13</span>
           
-          <code class="ruby">    return_user.profiles &lt;&lt; Profile.new({ name: &#39;&#39;, default_role: false, role_id: second_role })</code>
+          <code class="ruby">        second_role = adv_id</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="101">
-          <span class="hits">24</span>
+        <li class="never" data-hits="" data-linenumber="101">
           
-          <code class="ruby">    return_user</code>
+          
+          <code class="ruby">      when adv_id</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="102">
+        <li class="covered" data-hits="6" data-linenumber="102">
+          <span class="hits">6</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">        second_role = pub_id</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="104">
           
           
-          <code class="ruby">  # Method that encapsulate the SocialUser creation rule by receiving the user_hash (called social_hash here)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="24" data-linenumber="105">
+          <span class="hits">24</span>
           
-          <code class="ruby">  def self.new_social_user(social_hash)</code>
+          <code class="ruby">    return_user.profiles &lt;&lt; Profile.new({ name: &#39;&#39;, default_role: false, role_id: second_role })</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="106">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="24" data-linenumber="106">
+          <span class="hits">24</span>
           
-          <code class="ruby">    return nil if social_hash.has_key?(&#39;login&#39;)</code>
+          <code class="ruby">    return_user</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="107">
@@ -5291,310 +5803,328 @@
         <li class="never" data-hits="" data-linenumber="109">
           
           
-          <code class="ruby">  # Persist the user by it previous hash</code>
+          <code class="ruby">  # Method that encapsulate the SocialUser creation rule by receiving the user_hash (called social_hash here)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="110">
           <span class="hits">1</span>
           
-          <code class="ruby">  def self.persist_it(user_hash)</code>
+          <code class="ruby">  def self.new_social_user(social_hash)</code>
         </li>
       
         <li class="covered" data-hits="24" data-linenumber="111">
           <span class="hits">24</span>
           
-          <code class="ruby">    user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)</code>
+          <code class="ruby">    if social_hash.has_key?(&#39;social_session&#39;) then return social_hash else return nil end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="113">
           
           
-          <code class="ruby">    # Prevent the process if the user is already registered (just return it to the controller log him)</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="114">
+        <li class="never" data-hits="" data-linenumber="114">
+          
+          
+          <code class="ruby">  # Persist the user by it previous hash</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="115">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.persist_it(user_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="116">
           <span class="hits">24</span>
           
-          <code class="ruby">    user = User.authenticate(user_hash[&#39;email&#39;], user_hash[&#39;password&#39;])</code>
+          <code class="ruby">    user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="115">
+        <li class="covered" data-hits="24" data-linenumber="117">
           <span class="hits">24</span>
           
-          <code class="ruby">    return user unless user.nil?</code>
+          <code class="ruby">    social_hash = User.new_social_user(user_hash)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="116">
+        <li class="never" data-hits="" data-linenumber="118">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="117">
+        <li class="never" data-hits="" data-linenumber="119">
           
           
-          <code class="ruby">    # Prepair the user with it default role for registration</code>
+          <code class="ruby">    # Validate the authentication based if the user is social session</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="118">
+        <li class="covered" data-hits="24" data-linenumber="120">
           <span class="hits">24</span>
           
-          <code class="ruby">    user = User.new_user_with_it_role(user_hash)</code>
+          <code class="ruby">    if social_hash.nil?</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="119">
-          <span class="hits">24</span>
+        <li class="never" data-hits="" data-linenumber="121">
           
-          <code class="ruby">    if !user.is_a?(User)</code>
+          
+          <code class="ruby">      # Prevent the process if the user is already registered (just return it to the controller log him)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="120">
+        <li class="covered" data-hits="17" data-linenumber="122">
+          <span class="hits">17</span>
           
-          
-          <code class="ruby">      simple_user = User.new</code>
+          <code class="ruby">      user = User.authenticate(user_hash[&#39;email&#39;], user_hash[&#39;password&#39;])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="121">
+        <li class="covered" data-hits="17" data-linenumber="123">
+          <span class="hits">17</span>
           
-          
-          <code class="ruby">      simple_user.errors.messages[:invalid_user_attrs] = &#39;Invalid attrs to instantiate an User&#39;</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="122">
-          
-          
-          <code class="ruby">      return simple_user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="123">
-          
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      return user unless user.nil?</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="124">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    else</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="125">
           
           
-          <code class="ruby">    # User save</code>
+          <code class="ruby">      # Prevent the process if social session registered</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="126">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="7" data-linenumber="126">
+          <span class="hits">7</span>
           
-          <code class="ruby">    if user.save</code>
+          <code class="ruby">      user = SocialSession.authenticate(user_hash)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="covered" data-hits="7" data-linenumber="127">
+          <span class="hits">7</span>
           
-          
-          <code class="ruby">      # More insertions if SocialLogin</code>
+          <code class="ruby">      return user unless user.nil?</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="128">
-          <span class="hits">14</span>
-          
-          <code class="ruby">      social_session = User.new_social_user(user_hash)</code>
-        </li>
-      
-        <li class="covered" data-hits="14" data-linenumber="129">
-          <span class="hits">14</span>
-          
-          <code class="ruby">      unless social_session.nil?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="130">
-          
-          
-          <code class="ruby">        social_session[&#39;user_id&#39;] = user.id</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="131">
-          
-          
-          <code class="ruby">        user.social_sessions &lt;&lt; social_session unless social_session.nil?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="132">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="133">
-          
-          
-          <code class="ruby">        # Pages validates</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="134">
-          
-          
-          <code class="ruby">        pages = social_session[&#39;pages&#39;]</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="135">
-          
-          
-          <code class="ruby">        if pages.is_a?(Array) &amp;&amp; !pages.empty?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="136">
-          
-          
-          <code class="ruby">          pages.each do |page|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="137">
-          
-          
-          <code class="ruby">            page_acc = PageAccount.new(page) if PageAccount.where(id_on_social: page[:id_on_social]).take.nil?</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="138">
-          
-          
-          <code class="ruby">            user.social_sessions.first.page_accounts.append(page_acc)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="139">
-          
-          
-          <code class="ruby">          end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="140">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="141">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="142">
-          
-          
-          <code class="ruby">        # Persist SocialSession &amp; Pages</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="143">
-          
-          
-          <code class="ruby">        if pages.is_a?(Array)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="144">
-          
-          
-          <code class="ruby">          social_session = SocialSession.where(social_session).first_or_create</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="145">
-          
-          
-          <code class="ruby">          # Persist per page</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="146">
-          
-          
-          <code class="ruby">          pages.each do |page|</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="147">
-          
-          
-          <code class="ruby">            current_page = PageAccount.new(page)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="148">
-          
-          
-          <code class="ruby">            current_page.social_sessions &lt;&lt; social_session</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="149">
-          
-          
-          <code class="ruby">            current_page.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="150">
-          
-          
-          <code class="ruby">          end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="151">
-          
-          
-          <code class="ruby">        end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="152">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="153">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="154">
-          
-          
-          <code class="ruby">      # Prepair the response</code>
-        </li>
-      
-        <li class="covered" data-hits="14" data-linenumber="155">
-          <span class="hits">14</span>
-          
-          <code class="ruby">      return user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="156">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="157">
-          <span class="hits">10</span>
-          
-          <code class="ruby">      return user</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="158">
+        <li class="never" data-hits="" data-linenumber="128">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="159">
+        <li class="never" data-hits="" data-linenumber="129">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="130">
+          
+          
+          <code class="ruby">    # Prepare the user with it default role for registration</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="131">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    user = User.new_user_with_it_role(user_hash) unless user_hash.has_key?(&#39;social_session&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="132">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    user = User.new_user_with_it_role(SocialSession.to_user(user_hash)) if user_hash.has_key?(&#39;social_session&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="133">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    return User.throw_user_with_error unless user.is_a?(User)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="135">
+          
+          
+          <code class="ruby">    # Add the SocialSession to the user, if it is needed</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="136">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    begin</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="137">
+          <span class="hits">24</span>
+          
+          <code class="ruby">      social_hash = RailsFixes::Util.action_controller_to_hash(social_hash)</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="138">
+          <span class="hits">24</span>
+          
+          <code class="ruby">      social_session = SocialSession.setup(social_hash) unless social_hash.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby">    rescue Exception =&gt; e</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="140">
+          
+          
+          <code class="ruby">      if e.to_s == &#39;ActiveModel::ForbiddenAttributesError&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="141">
+          
+          
+          <code class="ruby">        social_session = SocialSession.setup(social_hash)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="142">
+          
+          
+          <code class="ruby">        return User.throw_user_with_error if social_session.nil?</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="143">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="144">
+          
+          
+          <code class="ruby">        return User.throw_user_with_error</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="145">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="146">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="147">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="148">
+          
+          
+          <code class="ruby">    # User save</code>
+        </li>
+      
+        <li class="covered" data-hits="24" data-linenumber="149">
+          <span class="hits">24</span>
+          
+          <code class="ruby">    if user.save</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="150">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      social_session.add_it_to(user) unless social_session.nil?</code>
+        </li>
+      
+        <li class="covered" data-hits="14" data-linenumber="151">
+          <span class="hits">14</span>
+          
+          <code class="ruby">      return user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="152">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="153">
+          <span class="hits">10</span>
+          
+          <code class="ruby">      return user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="154">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="155">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="160">
+        <li class="never" data-hits="" data-linenumber="156">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="157">
+          
+          
+          <code class="ruby">  # Throws an user with errors</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="158">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.throw_user_with_error</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="159">
+          
+          
+          <code class="ruby">    simple_user = User.new</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="160">
+          
+          
+          <code class="ruby">    simple_user.errors.messages[:invalid_user_attrs] = &#39;Invalid attrs to instantiate an User&#39;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="161">
+          
+          
+          <code class="ruby">    return simple_user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="162">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="163">
           
           
           <code class="ruby">end</code>
@@ -7043,19 +7573,19 @@
         <li class="covered" data-hits="6" data-linenumber="16">
           <span class="hits">6</span>
           
-          <code class="ruby">  subject(:invalid_pub_user) { {&#39;user&#39; =&gt; {role: &#39;&#39;, locale: &#39;&#39;, name: &#39;&#39;, nick: &#39;&#39;, email: &#39;&#39;, password: &#39;&#39;}.to_json} }</code>
+          <code class="ruby">  subject(:invalid_pub_user) { {&#39;user&#39; =&gt; {role: &#39;&#39;, locale: &#39;&#39;, name: &#39;&#39;, username: &#39;&#39;, email: &#39;&#39;, password: &#39;&#39;}.to_json} }</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="17">
           <span class="hits">7</span>
           
-          <code class="ruby">  subject(:valid_pub_user) { {&#39;user&#39; =&gt; {role: &#39;publisher&#39;, locale: &#39;pt&#39;, name: &#39;Ilton Garcia&#39;, nick: &#39;ton&#39;, email: &#39;33@3.3&#39;, password: &#39;123&#39;}.to_json} }</code>
+          <code class="ruby">  subject(:valid_pub_user) { {&#39;user&#39; =&gt; {role: &#39;publisher&#39;, locale: &#39;pt&#39;, name: &#39;Ilton Garcia&#39;, username: &#39;ton&#39;, email: &#39;33@3.3&#39;, password: &#39;123&#39;}.to_json} }</code>
         </li>
       
         <li class="covered" data-hits="7" data-linenumber="18">
           <span class="hits">7</span>
           
-          <code class="ruby">  subject(:valid_adv_user) { {&#39;user&#39; =&gt; {role: &#39;advertiser&#39;, locale: &#39;en&#39;, name: &#39;PageRenter&#39;, nick: &#39;page&#39;, email: &#39;55@5.5&#39;, password: &#39;123&#39;}.to_json} }</code>
+          <code class="ruby">  subject(:valid_adv_user) { {&#39;user&#39; =&gt; {role: &#39;advertiser&#39;, locale: &#39;en&#39;, name: &#39;PageRenter&#39;, username: &#39;page&#39;, email: &#39;55@5.5&#39;, password: &#39;123&#39;}.to_json} }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
@@ -7727,7 +8257,7 @@
         <li class="covered" data-hits="1" data-linenumber="130">
           <span class="hits">1</span>
           
-          <code class="ruby">      profiles = User.where(email: &#39;pp@p.p&#39;).take!.profiles</code>
+          <code class="ruby">      profiles = User.where(email: &#39;pp@pt.pt&#39;).take!.profiles</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="131">
@@ -8405,13 +8935,13 @@
         <li class="covered" data-hits="6" data-linenumber="6">
           <span class="hits">6</span>
           
-          <code class="ruby">  subject(:invalid_user) { {&#39;user&#39; =&gt; {role: &#39;&#39;, locale: &#39;&#39;, name: &#39;&#39;, nick: &#39;&#39;, email: &#39;&#39;, password: &#39;&#39;}.to_json} }</code>
+          <code class="ruby">  subject(:invalid_user) { {&#39;user&#39; =&gt; {role: &#39;&#39;, locale: &#39;&#39;, name: &#39;&#39;, username: &#39;&#39;, email: &#39;&#39;, password: &#39;&#39;}.to_json} }</code>
         </li>
       
         <li class="covered" data-hits="6" data-linenumber="7">
           <span class="hits">6</span>
           
-          <code class="ruby">  subject(:valid_user) { {&#39;user&#39; =&gt; {role: &#39;publisher&#39;, locale: &#39;pt&#39;, name: &#39;Ilton Garcia&#39;, nick: &#39;ton&#39;, email: &#39;11@1.1&#39;, password: &#39;123&#39;}.to_json} }</code>
+          <code class="ruby">  subject(:valid_user) { {&#39;user&#39; =&gt; {role: &#39;publisher&#39;, locale: &#39;pt&#39;, name: &#39;Ilton Garcia&#39;, username: &#39;ton&#39;, email: &#39;11@1.1&#39;, password: &#39;123&#39;}.to_json} }</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
@@ -8435,7 +8965,7 @@
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">                                               &#39;count_friends&#39; =&gt; &#39;423&#39;, &#39;email&#39; =&gt; &#39;ilton_junior_91@hotmail.com&#39;, &#39;id&#39; =&gt; &#39;100001939359300&#39;, &#39;locale&#39; =&gt; &#39;pt_BR&#39;, &#39;name&#39; =&gt; &#39;Ilton Garcia&#39;, &#39;network_id&#39; =&gt; 1, &#39;username&#39; =&gt; &#39;ilton.garcia&#39;</code>
+          <code class="ruby">                                               &#39;count_friends&#39; =&gt; &#39;423&#39;, &#39;email&#39; =&gt; &#39;ilton_junior_91@hotmail.com&#39;, &#39;id&#39; =&gt; &#39;100001939359300&#39;, &#39;locale&#39; =&gt; &#39;pt_BR&#39;, &#39;name&#39; =&gt; &#39;Ilton Garcia&#39;, &#39;network_id&#39; =&gt; 1, &#39;username&#39; =&gt; &#39;ilton.garcia&#39;, &#39;gender&#39; =&gt; &#39;male&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -8495,43 +9025,43 @@
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">                                                                    &#39;ADMINISTER&#39;,</code>
+          <code class="ruby">                                                           &#39;ADMINISTER&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">                                                                    &#39;EDIT_PROFILE&#39;,</code>
+          <code class="ruby">                                                           &#39;EDIT_PROFILE&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">                                                                    &#39;CREATE_CONTENT&#39;,</code>
+          <code class="ruby">                                                           &#39;CREATE_CONTENT&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="24">
           
           
-          <code class="ruby">                                                                    &#39;MODERATE_CONTENT&#39;,</code>
+          <code class="ruby">                                                           &#39;MODERATE_CONTENT&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="25">
           
           
-          <code class="ruby">                                                                    &#39;CREATE_ADS&#39;,</code>
+          <code class="ruby">                                                           &#39;CREATE_ADS&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">                                                                    &#39;BASIC_ADMIN&#39;</code>
+          <code class="ruby">                                                           &#39;BASIC_ADMIN&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
           
           
-          <code class="ruby">                                                        ]</code>
+          <code class="ruby">                                                       ]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -8921,7 +9451,7 @@
         <li class="covered" data-hits="2" data-linenumber="92">
           <span class="hits">2</span>
           
-          <code class="ruby">    it &quot;Should be logged&quot; do valid_fb_user[&#39;msg&#39;].should == &#39;logged_in&#39; end</code>
+          <code class="ruby">    it &quot;Should be logged&quot; do valid_fb_user.should_not be_nil end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
@@ -10961,7 +11491,7 @@
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    nick        &#39;invalid.user&#39;</code>
+          <code class="ruby">    username        &#39;invalid.user&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
@@ -11009,7 +11539,7 @@
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
-          <code class="ruby">      nick        &#39;ilton.garcia&#39;</code>
+          <code class="ruby">      username        &#39;ilton.garcia&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
@@ -11045,7 +11575,7 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      nick        &#39;page.renter&#39;</code>
+          <code class="ruby">      username        &#39;page.renter&#39;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="21">

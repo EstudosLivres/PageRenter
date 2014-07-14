@@ -87,9 +87,8 @@ describe "User Registration & LogIn" do
   # Facebook login
   describe "SigIn user BY SocialSession JSON" do
     subject(:valid_fb_user) { JSON.parse(http_helper.post('/system/signup_signin', fb_user).body) }
-    subject(:social_user) { User.where(email: 'ilton_junior_91@hotmail.com').take! }
 
     it "Should be accessible" do valid_fb_user['status'].should == 'ok' end
-    it "Should be logged" do social_user.should_not be_nil end
+    it "Should be logged" do valid_fb_user.should_not be_nil end
   end
 end
