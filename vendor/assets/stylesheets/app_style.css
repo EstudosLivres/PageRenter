@@ -12,7 +12,16 @@ body {
 
     background: radial-gradient(circle, #E3E9CB, #DBE1C1, #B9C093, #848D43);
 
+    /* New design (Orange + Green) something more BR
     position: relative;
+    background: -moz-linear-gradient(45deg, #F5A82E 0%, #336d63 100%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#F5A82E), color-stop(100%,#336d63 ));
+    background: -webkit-linear-gradient(45deg, #F5A82E 0%,#336d63 100%);
+    background: -o-linear-gradient(45deg, #F5A82E 0%,#336d63 100%);
+    background: -ms-linear-gradient(45deg, #F5A82E 0%,#336d63 100%);
+    background: linear-gradient(45deg, #F5A82E 0%,#336d63 100%);
+    */
+
     background: -moz-linear-gradient(45deg, #020031 0%, #336d63 100%);
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#336d63 ));
     background: -webkit-linear-gradient(45deg, #020031 0%,#336d63 100%);
@@ -239,7 +248,7 @@ td.disabled {
 .r_publisher_brand,
 .dropdown-menu>li>.r_publisher,
 .r_publisher {
-    color: #336d63;
+    color: #336D63;
 }
 
 a.r_publisher:hover,
@@ -252,12 +261,14 @@ a.r_publisher:hover,
 .dropdown-menu>li>.r_advertiser,
 .r_advertiser {
     color: #2A3AAA;
+    /*color: #F58B00;*/ /* New design (Orange + Green) something more BR */
 }
 
 a.r_advertiser:hover,
 .dropdown-menu>li>.r_advertiser:hover,
 .r_advertiser:focus {
-    color: #0096fd;
+    color: #0096FD;
+    /*color: #FF5B00;*/ /* New design (Orange + Green) something more BR */
 }
 
 .dropdown-menu>li>.error_txt {
