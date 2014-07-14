@@ -1,4 +1,6 @@
 PageRenter::Application.routes.draw do
+  get 'profile/edit'
+
   get 'redirect/index'
 
   # In a near future put a helper to redirect to the user role session
@@ -13,6 +15,7 @@ PageRenter::Application.routes.draw do
   scope '/publishers' do
     get '' => 'publishers#index'
     get '/edit' => 'publishers#edit'
+    resource :profile, only: [:edit, :update]
   end
 
   # Actions Under/For Advertiser
@@ -20,6 +23,7 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
     resources :campaigns # TODO remember: campaigns index show the current user campaigns, only.
+    resource :profile, only: [:edit, :update]
 
     namespace :campaigns do
       # TODO resources :financial_transaction
