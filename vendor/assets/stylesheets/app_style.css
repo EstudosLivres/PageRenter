@@ -80,14 +80,14 @@ body {
     padding: 10px;
 }
 
-.navbar .navbar-header .brand {
+.navbar .navbar-header .brand, .brand {
     font-family: 'Oleo Script', cursive;
     font-weight: bold;
     font-size: 2.2em;
     margin-right: 12px;
 }
 
-.navbar .navbar-header .brand:hover {
+.navbar .navbar-header .brand:hover, .brand:hover {
     text-decoration: none;
 }
 
@@ -448,7 +448,7 @@ center#choose_file_section {
         font-size: 1.2em;
     }
 
-    .navbar .navbar-header .brand span {
+    .navbar .navbar-header .brand span, .brand span {
         font-size: 1em;
     }
 
