@@ -60,10 +60,10 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
+        feedback,
         manage_acc,
-        api,
-        feedback
-    ]
+        api
+    ] # Modals first because user can click without redirect if click accidentally
 
     unless actions.empty?
       users_actions.each do |action|
