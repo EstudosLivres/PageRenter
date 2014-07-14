@@ -4,14 +4,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h2 class="modal-title" id="myModalLabel"> <%= t(:publisher_invite)[:title] %> </h2>
+        <h2 class="modal-title" id="myModalLabel"> <%= t(:publisher_add_social_session)[:title] %> </h2>
       </div>
       <div class="modal-body">
-        XPTO
+        <center>
+            <%= render 'action_menu/socialbuttons' %>
+        </center>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal"> <%= t(:btn_modal_close) %> </button>
-        <button type="button" class="btn <%= current_button %>"> <%= t(:btn_modal_okay) %> </button>
       </div>
     </div>
   </div>
