@@ -3,6 +3,7 @@ class PublishersController < ApplicationController
   before_action :setup_user
 
   def index
+    @campaigns = Campaign.all
   end
 
   def edit
