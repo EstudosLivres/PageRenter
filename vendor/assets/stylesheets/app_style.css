@@ -136,6 +136,14 @@ div.campaign_attr {
     width: 100%;
 }
 
+#campaigns_accordion .float_right{
+    margin: -9px 0 0;
+}
+
+#campaigns_accordion .campaign_brand {
+    width: 100px;
+}
+
 a {
     color: #124bca;
 }
