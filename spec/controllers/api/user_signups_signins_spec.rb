@@ -91,7 +91,5 @@ describe "User Registration & LogIn" do
 
     it "Should be accessible" do valid_fb_user['status'].should == 'ok' end
     it "Should be logged" do social_user.should_not be_nil end
-    it "Should have an social session" do social_user.social_sessions.to_a.length.should == 1 end
-    it "Should have at least one page" do social_user.social_sessions.first.page_accounts.length >= 1 end
   end
 end
