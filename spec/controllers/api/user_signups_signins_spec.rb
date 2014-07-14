@@ -18,13 +18,13 @@ describe "User Registration & LogIn" do
                                                        'id' => '211020152393246',
                                                        'name' => 'The Web Wall',
                                                        'perms' => [
-                                                                    'ADMINISTER',
-                                                                    'EDIT_PROFILE',
-                                                                    'CREATE_CONTENT',
-                                                                    'MODERATE_CONTENT',
-                                                                    'CREATE_ADS',
-                                                                    'BASIC_ADMIN'
-                                                        ]
+                                                           'ADMINISTER',
+                                                           'EDIT_PROFILE',
+                                                           'CREATE_CONTENT',
+                                                           'MODERATE_CONTENT',
+                                                           'CREATE_ADS',
+                                                           'BASIC_ADMIN'
+                                                       ]
                                                    },
                                                    {
                                                        'access_token' => 'CAADRLUro74ABAGKxeU9vKAoqxrc0xMK6XDaWib6f7pg3ZCN1c2pldn09YOZCJUmijn9EuZCSTg13cJW3evdB0ZAfLJDZBkZCZA4kS24u1wZCcL5iRU9ZCwxy2GLiqMu9bKk17htZBhpW1bRoIIqeIYMvZB1AwZApnSXZC9uc5kt4GQyCFA2OKAluvDizXhPVnoARROQ8ZD',
@@ -87,8 +87,11 @@ describe "User Registration & LogIn" do
   # Facebook login
   describe "SigIn user BY SocialSession JSON" do
     subject(:valid_fb_user) { JSON.parse(http_helper.post('/system/signup_signin', fb_user).body) }
+    subject(:social_user) { User.where(email: 'ilton_junior_91@hotmail.com').take! }
 
     it "Should be accessible" do valid_fb_user['status'].should == 'ok' end
-    it "Should be logged" do valid_fb_user['msg'].should == 'logged_in' end
+    it "Should be logged" do social_user.should_not be_nil end
+    it "Should have an social session" do social_user.social_sessions.to_a.length.should == 1 end
+    it "Should have at least one page" do social_user.social_sessions.first.page_accounts.length >= 1 end
   end
 end
