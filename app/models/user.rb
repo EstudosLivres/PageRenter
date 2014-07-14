@@ -76,7 +76,12 @@ class User < ActiveRecord::Base
 
       return_user = User.new(user_hash.except('role', :role, 'gender'))
     rescue Exception => e
-      return e.to_s
+      if e.to_s == 'ActiveModel::ForbiddenAttributesError'
+        new_user_hash = RailsFixes::Util.action_controller_to_hash(user_hash)
+        return_user = User.new(new_user_hash.except(:gender,:role))
+      else
+        return User.throw_user_with_error
+      end
     end
 
     # Prevent the user with no role to be created
@@ -123,24 +128,36 @@ class User < ActiveRecord::Base
     end
 
     # Prepare the user with it default role for registration
-    user = User.new_user_with_it_role(user_hash.except('gender'))
-    unless user.is_a?(User)
-      simple_user = User.new
-      simple_user.errors.messages[:invalid_user_attrs] = 'Invalid attrs to instantiate an User'
-      return simple_user
-    end
+    user = User.new_user_with_it_role(user_hash) unless user_hash.has_key?('social_session')
+    user = User.new_user_with_it_role(SocialSession.to_user(user_hash)) if user_hash.has_key?('social_session')
+    return User.throw_user_with_error unless user.is_a?(User)
 
     # Add the SocialSession to the user, if it is needed
-    if !social_hash.nil?
-      social_session = SocialSession.setup(social_hash)
+    begin
+      social_hash = RailsFixes::Util.action_controller_to_hash(social_hash)
+      social_session = SocialSession.setup(social_hash) unless social_hash.nil?
+    rescue Exception => e
+      if e.to_s == 'ActiveModel::ForbiddenAttributesError'
+        social_session = SocialSession.setup(social_hash)
+        return User.throw_user_with_error if social_session.nil?
+      else
+        return User.throw_user_with_error
+      end
     end
 
     # User save
     if user.save
-      social_session.add_it_to(user)
+      social_session.add_it_to(user) unless social_session.nil?
       return user
     else
       return user
     end
+  end
+
+  # Throws an user with errors
+  def self.throw_user_with_error
+    simple_user = User.new
+    simple_user.errors.messages[:invalid_user_attrs] = 'Invalid attrs to instantiate an User'
+    return simple_user
   end
 end
