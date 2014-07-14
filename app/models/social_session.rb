@@ -29,7 +29,7 @@ class SocialSession < ActiveRecord::Base
 
     # Prevent bug by passing wrong social_hash structure
     return nil if !social_for_instantiation.is_a?(Hash)
-    return nil if !social_for_instantiation.has_key?(:login) || !social_for_instantiation.has_key?(:pages)
+    return nil if !social_for_instantiation.has_key?(:login) && !social_for_instantiation.has_key?(:pages)
 
     # Aux hashes
     login = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:login])
@@ -43,12 +43,17 @@ class SocialSession < ActiveRecord::Base
     social_session = SocialSession.new(RailsFixes::Util.action_controller_to_hash(login).except(:role))
 
     # Prepare page account hash
-    pages.each do |page|
-      # Change page attrs social to our DB
-      page[:id_on_social] = page[:id]
-      page.delete(:id)
+    if pages.is_a?(Array)
+      pages.each do |page|
+        # Change page attrs social to our DB
+        page = RailsFixes::Util.action_controller_to_hash(page)
+        page[:id_on_social] = page[:id]
+        page.delete(:id)
 
-      social_session.page_accounts << PageAccount.new(page.except('perms'))
+        page_persisted = PageAccount.new(page.except(:perms))
+        page_persisted.save
+        social_session.page_accounts << page_persisted
+      end
     end
 
     social_session
