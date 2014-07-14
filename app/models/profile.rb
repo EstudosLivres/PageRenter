@@ -2,10 +2,12 @@ class Profile < ActiveRecord::Base
   # Relations
   belongs_to :user
   belongs_to :role
+  has_attached_file :avatar, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
 
   # Validates Associations
   validates :user_id, presence: true, on: :update
   validates :role_id, presence: true, on: :update
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Constants
   enum role_name: { publisher: 1, advertiser: 2, admin: 3 }
