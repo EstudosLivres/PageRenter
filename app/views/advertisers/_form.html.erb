@@ -1,37 +1,26 @@
 <script src="/assets/campaigns.js"></script>
 <div id="advertiser_update">
-    <%= form_for(@advertiser, :html=>{id: '', class: 'form-horizontal col-md-6'}) do |f| %>
-        <% if @advertiser.errors.any? %>
-            <div id="error_explanation">
-              <h2><%= pluralize(@advertiser.errors.count, "error") %> prohibited this advertiser from being saved:</h2>
-
-              <ul>
-                <% @advertiser.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-              </ul>
-            </div>
-        <% end %>
-
+    <form accept-charset="UTF-8" action="/advertisers/update" class="form-horizontal col-md-6" enctype="multipart/form-data" id="" method="post">
+        <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="PnkY9nBbmtzRT18XBXzswvshOqlhuRXpv+y5tBkBbEI="></div>
         <center id="choose_file_section">
-          <%= f.file_field :avatar, :onchange => 'show_campaign_image(this)' %>
+            <input id="profile_avatar" name="profile[avatar]" onchange="show_campaign_image(this)" type="file" value="<%=@advertiser.name%>">
         </center>
 
         <div class="field form-group">
-          <%= f.label :name %><br>
-          <%= f.text_field :name, class: 'form-control', placeholder: 'Nome/Título para esta sessão' %>
+            <label for="profile_name">Name</label><br>
+            <input class="form-control" id="profile_name" name="profile[name]" placeholder="Nome/Título para esta sessão" type="text" value="">
         </div>
 
         <div class="actions">
-          <%= f.submit :update, class: "btn #{current_button}" %>
+            <input class="btn btn-primary" name="commit" type="submit" value="update">
         </div>
-    <% end %>
+    </form>
 
     <aside id="new_campaign_right" class="col-md-6">
       <p>Logo (Tamanhos permitidos: 100×15 ou 300x75. <strong>Otimizado para: 100x15</strong>)</p>
       <div id="adv_image_content">
         <center>
-            <img id="new_campaign_image"/>
+            <img id="new_campaign_image" src="<%= @advertiser.avatar.url(:thumb) %>"/>
         </center>
       </div>
     </aside>
