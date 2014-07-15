@@ -3,12 +3,12 @@
     <form accept-charset="UTF-8" action="/advertisers/update" class="form-horizontal col-md-6" enctype="multipart/form-data" id="" method="post">
         <div style="display:none"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="patch"><input name="authenticity_token" type="hidden" value="PnkY9nBbmtzRT18XBXzswvshOqlhuRXpv+y5tBkBbEI="></div>
         <center id="choose_file_section">
-            <input id="profile_avatar" name="profile[avatar]" onchange="show_campaign_image(this)" type="file" value="<%=@advertiser.name%>">
+            <input id="advertiser_avatar" name="advertiser[avatar]" onchange="show_campaign_image(this)" type="file" value="<%=@advertiser.name%>">
         </center>
 
         <div class="field form-group">
-            <label for="profile_name">Name</label><br>
-            <input class="form-control" id="profile_name" name="profile[name]" placeholder="Nome/Título para esta sessão" type="text" value="">
+            <label for="advertiser_name">Name</label><br>
+            <input class="form-control" id="advertiser_name" name="advertiser[name]" placeholder="Nome/Título para esta sessão" type="text" value="<%= @advertiser.name_if_updated %>">
         </div>
 
         <div class="actions">
