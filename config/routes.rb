@@ -1,8 +1,4 @@
 PageRenter::Application.routes.draw do
-  get 'profile/edit'
-
-  get 'redirect/index'
-
   # In a near future put a helper to redirect to the user role session
   root 'redirect#redirect_index'
 
