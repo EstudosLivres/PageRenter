@@ -1,0 +1,38 @@
+<script src="/assets/campaigns.js"></script>
+<div id="advertiser_update">
+    <%= form_for(@advertiser, :html=>{id: '', class: 'form-horizontal col-md-6'}) do |f| %>
+        <% if @advertiser.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@advertiser.errors.count, "error") %> prohibited this advertiser from being saved:</h2>
+
+              <ul>
+                <% @advertiser.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+
+        <center id="choose_file_section">
+          <%= f.file_field :avatar, :onchange => 'show_campaign_image(this)' %>
+        </center>
+
+        <div class="field form-group">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, class: 'form-control', placeholder: 'Nome/Título para esta sessão' %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit :update, class: "btn #{current_button}" %>
+        </div>
+    <% end %>
+
+    <aside id="new_campaign_right" class="col-md-6">
+      <p>Logo (Tamanhos permitidos: 100×15 ou 300x75. <strong>Otimizado para: 100x15</strong>)</p>
+      <div id="adv_image_content">
+        <center>
+            <img id="new_campaign_image"/>
+        </center>
+      </div>
+    </aside>
+</div>
