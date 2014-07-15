@@ -73,7 +73,7 @@ describe ApplicationHelper do
           it "Should route to publishers#invite" do helper.role_actions[1][:path].should == '#invite' end
         end
         context "Act: #contact -> contact us (feedback)" do
-         it "Should route to publishers#contact" do helper.role_actions[4][:path].should == '/api/console/docs' end
+         it "Should route to publishers#contact" do helper.role_actions[2][:path].should == '#feedback' end
         end
       end
 
