@@ -38,6 +38,24 @@ class User < ActiveRecord::Base
     self.name.split(/ /)[0]
   end
 
+  # Return the user advertiser profile
+  def advertiser
+    return get_profile('advertiser')
+  end
+
+  # Return the user publisher profile
+  def publisher
+    return get_profile('publisher')
+  end
+
+  def get_profile(profile_name)
+    self.profiles.each do |profile|
+      return profile if profile.role.name == profile_name
+    end
+
+    return nil
+  end
+
   # Set the current actived (rendered) profile as default
   def set_default_profile(role_name)
     profiles.each do |profile|
