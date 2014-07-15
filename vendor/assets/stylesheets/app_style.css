@@ -455,6 +455,14 @@ a.r_advertiser:hover,
     margin: -10px 0 0 -14px;
 }
 
+#advertiser_update #new_campaign_right img {
+    width: auto;
+}
+
+#adv_image_content {
+    margin-top: 45px;
+}
+
 #invitation_counter {
     position: absolute;
     font-size: 9px;
