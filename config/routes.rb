@@ -11,7 +11,6 @@ PageRenter::Application.routes.draw do
   scope '/publishers' do
     get '' => 'publishers#index'
     get '/edit' => 'publishers#edit'
-    resources :profiles, only: [:edit, :update]
   end
 
   # Actions Under/For Advertiser
@@ -19,7 +18,6 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
     resources :campaigns # TODO remember: campaigns index show the current user campaigns, only.
-    resources :profiles, only: [:edit, :update]
 
     namespace :campaigns do
       # TODO resources :financial_transaction
