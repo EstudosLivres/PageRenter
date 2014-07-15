@@ -16,7 +16,7 @@ class AdvertisersController < ApplicationController
   def update
     respond_to do |format|
       if @advertiser.update(advertiser_params)
-        format.html { redirect_to @advertiser, notice: 'Advertiser was successfully updated.' }
+        format.html { redirect_to '/advertisers/edit' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
