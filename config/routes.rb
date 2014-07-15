@@ -17,6 +17,7 @@ PageRenter::Application.routes.draw do
   scope '/advertisers' do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
+    patch '/update' => 'advertisers#update'
     resources :campaigns # TODO remember: campaigns index show the current user campaigns, only.
 
     namespace :campaigns do
