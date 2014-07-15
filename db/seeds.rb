@@ -32,6 +32,6 @@ puts '...Publishers inserteds.'.colorize(:light_blue)
 
 puts 'Inserting Advertisers...'.colorize(:green)
   puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'pt', 'name' => 'Adv Testador', 'username' => 'adv', 'email' => 'aa@pt.pt', 'password' => '123'})}"
-  puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'pt', 'name' => 'Adv Testador', 'username' => 'advr', 'email' => 'aa@en.en', 'password' => '123'})}"
+  puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'en', 'name' => 'Adv Tester', 'username' => 'advr', 'email' => 'aa@en.en', 'password' => '123'})}"
 puts '...Advertisers inserteds.'.colorize(:light_blue)
 # /Users
