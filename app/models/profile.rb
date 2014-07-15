@@ -2,7 +2,7 @@ class Profile < ActiveRecord::Base
   # Relations
   belongs_to :user
   belongs_to :role
-  has_attached_file :avatar, :styles => { :medium => '300x75>', :thumb => '100x15>' }, :default_url => '/images/:style/missing.png'
+  has_attached_file :avatar, :styles => { :medium => '300x75>', :thumb => '100x15>' }, :default_url => '/assets/:style/missing_logo.jpg'
 
   # Validates Associations
   validates :user_id, presence: true, on: :update
