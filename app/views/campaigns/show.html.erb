@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @campaign.advertising_piece.url %>
-<%= image_tag @campaign.advertising_piece.url(:medium) %>
-<%= image_tag @campaign.advertising_piece.url(:thumb) %>
-
 <p>
   <strong>Name:</strong>
   <%= @campaign.name %>
@@ -20,14 +16,18 @@
 </p>
 
 <p>
+  <strong>Social phrase:</strong>
+  <%= @campaign.social_phrase %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @campaign.description %>
 </p>
 
-<p>
-  <strong>Social phrase:</strong>
-  <%= @campaign.social_phrase %>
-</p>
+<img src="<%= @campaign.avatar.url %>" />
+<%= image_tag @campaign.avatar.url(:medium) %>
+<%= image_tag @campaign.avatar.url(:thumb) %>
 
 <%= link_to 'Edit', edit_campaign_path(@campaign) %> |
 <%= link_to 'Back', campaigns_path %>

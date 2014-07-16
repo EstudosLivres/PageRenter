@@ -2,7 +2,7 @@ class Campaign < ActiveRecord::Base
   # Relations
   belongs_to :advertiser, class_name: 'User', foreign_key: :advertiser_id
   has_many :bank_transactions
-  has_attached_file :advertising_piece, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
+  has_attached_file :avatar, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
 
   # Rails validations
   validates :name, presence: true, length: { in: 3..50 }, on: [:create, :update]
@@ -11,7 +11,7 @@ class Campaign < ActiveRecord::Base
   validates :description, presence: true, length: { in: 5..140 }
   validates :social_phrase, presence: false # Social phrase is not required
   validates :advertiser_id, presence: true
-  validates_attachment_content_type :advertising_piece, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Validates Associations
   validates :advertiser_id, presence: true, on: [:create, :update]

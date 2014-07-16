@@ -14,16 +14,16 @@
 ActiveRecord::Schema.define(version: 20140714221751) do
 
   create_table "campaigns", force: true do |t|
-    t.string   "name",                           limit: 50,  null: false
-    t.string   "redirect_link",                  limit: 200, null: false
-    t.string   "slogan",                         limit: 65
-    t.string   "description",                    limit: 140
-    t.string   "social_phrase",                  limit: 140
+    t.string   "name",                limit: 50,  null: false
+    t.string   "redirect_link",       limit: 200, null: false
+    t.string   "slogan",              limit: 65
+    t.string   "description",         limit: 140
+    t.string   "social_phrase",       limit: 140
     t.integer  "advertiser_id"
-    t.string   "advertising_piece_file_name"
-    t.string   "advertising_piece_content_type"
-    t.integer  "advertising_piece_file_size"
-    t.datetime "advertising_piece_updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
