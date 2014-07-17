@@ -5,6 +5,7 @@ class AdvertisersController < ApplicationController
 
   # Root for Advertiser user
   def index
+    @campaigns = @current_user.campaigns
   end
 
   # Configuration for Advertiser user
