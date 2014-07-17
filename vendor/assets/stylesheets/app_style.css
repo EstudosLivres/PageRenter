@@ -140,7 +140,7 @@ div.campaign_attr {
     margin: -9px 0 0;
 }
 
-#pub_campaigns_accordion .campaign_brand {
+.campaign_brand {
     width: 100px;
     height: 15px;
 }
