@@ -4,7 +4,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = @current_user.campaigns
   end
 
   # GET /campaigns/1
@@ -67,6 +67,7 @@ class CampaignsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_campaign
       @campaign = Campaign.find(params[:id])
+      redirect_to '/advertisers', :flash => {notice: {type: 'danger', strong: 'acesso negado', msg: 'Você não tem acesso à essa opção'}}
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
