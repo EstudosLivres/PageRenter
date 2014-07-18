@@ -1,4 +1,4 @@
-<script src="/assets/campaigns.js"></script>
+<%= javascript_include_tag 'campaigns' %>
 <%= form_for(@campaign, :html=>{id: 'new_campaign_left', class: 'form-horizontal col-md-6'}) do |f| %>
     <% if @campaign.errors.any? %>
         <div id="error_explanation">

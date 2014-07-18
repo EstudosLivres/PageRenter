@@ -6,22 +6,22 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
       <title>PageRenter</title>
-      <link rel="stylesheet" href="/assets/style.css"/>
+      <%= stylesheet_link_tag 'style' %>
 
-      <script src='/assets/modernizr.min.js'></script>
+      <%= javascript_include_tag 'modernizr.min' %>
 
       <!-- jQuery -->
-      <script src='/assets/jq/jq.min.js'></script>
+      <%= javascript_include_tag 'jq/jq.min' %>
       <!-- /jQuery -->
 
       <!-- Angular -->
-      <script src="/assets/angular/angular.min.js"></script>
-      <script src='/assets/angular/angular-touch.min.js'></script>
-      <script src="/assets/angular/angular-sanitize.min.js"></script>
+      <%= javascript_include_tag 'angular/angular.min' %>
+      <%= javascript_include_tag 'angular/angular-touch.min' %>
+      <%= javascript_include_tag 'angular/angular-sanitize.min' %>
       <!-- /Angular -->
 
       <!-- Meus scripts -->
-      <script src='/assets/app_initialize.js'></script>
+      <%= javascript_include_tag 'app_initialize' %>
       <!-- /Meus -->
       <%= csrf_meta_tags %>
     </head>
@@ -136,7 +136,7 @@
 
         <footer id="includes_js">
             <!-- Bootstrap -->
-            <script src='/assets/bootstrap/bootstrap.min.js'></script>
+            <%= javascript_include_tag 'bootstrap/bootstrap.min' %>
             <!-- /Bootstrap -->
         </footer>
     </body>
