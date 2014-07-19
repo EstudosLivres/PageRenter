@@ -3,6 +3,7 @@ class CreateCampaigns < ActiveRecord::Migration
     create_table :campaigns do |t|
       t.string :name, limit: 50, null: false
       t.string :title, limit: 50, null: false
+      t.string :launch_date, limit: 10, null: false
       t.string :description, limit: 140, null: false
       t.string :social_phrase, limit: 140, null: true
       t.string :redirect_link, limit: 200, null: false
