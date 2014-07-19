@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714221751) do
+ActiveRecord::Schema.define(version: 20140719030033) do
+
+  create_table "campaign_history_states", force: true do |t|
+    t.integer  "campaign_state_id"
+    t.integer  "campaign_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "campaign_states", force: true do |t|
+    t.string   "name",        limit: 40,  null: false
+    t.string   "description", limit: 140
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "campaigns", force: true do |t|
     t.string   "name",                limit: 50,  null: false
