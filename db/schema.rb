@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20140719030033) do
   create_table "campaigns", force: true do |t|
     t.string   "name",                limit: 50,  null: false
     t.string   "title",               limit: 50,  null: false
+    t.string   "launch_date",         limit: 10,  null: false
     t.string   "description",         limit: 140, null: false
     t.string   "social_phrase",       limit: 140
     t.string   "redirect_link",       limit: 200, null: false
