@@ -145,6 +145,11 @@ div.campaign_attr {
     height: 15px;
 }
 
+form div.field.form-group span {
+    color: #AAA;
+    font-weight: normal;
+}
+
 a {
     color: #124bca;
 }
