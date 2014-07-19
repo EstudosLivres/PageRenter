@@ -41,6 +41,9 @@ gem 'colorize', '~> 0.7.1'
 # Gem for UPLOAD functionalities
 gem 'paperclip', '~> 4.1'
 
+# Gem for control the object states (workflow)
+gem 'workflow', '~> 1.1.0'
+
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
