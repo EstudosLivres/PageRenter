@@ -14,4 +14,6 @@ class FinancialTransaction < ActiveRecord::Base
   validates :payer_id , presence: true, on: [:create, :update]
   validates :receiver_id, presence: true, on: [:create, :update]
   validates :payment_method_id, presence: true, on: [:create, :update]
+
+  # TODO enum banking_or_online (TRUE is banking & FALSE if online/system)
 end

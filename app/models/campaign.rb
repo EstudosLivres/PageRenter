@@ -19,6 +19,8 @@ class Campaign < ActiveRecord::Base
   # Validates Associations
   validates :advertiser_id, presence: true, on: [:create, :update]
 
+  # TODO def budget: return the transactions without receiver which means paid to the system
+
 =begin
   def update_it
     # current_value_on_bd =
