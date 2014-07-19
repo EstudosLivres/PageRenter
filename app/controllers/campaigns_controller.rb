@@ -30,7 +30,7 @@ class CampaignsController < ApplicationController
 
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to @campaign, flash: {type: :success, strong: 'Congratulations!', msg: 'Your first campaign was successfully created.'} }
+        format.html { redirect_to @campaign, flash: {type: :success, strong: 'Congratulations!', msg: 'Your campaign was successfully created.'} }
         format.json { render action: 'show', status: :created, location: @campaign }
       else
         format.html { render action: 'new' }
@@ -67,7 +67,8 @@ class CampaignsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_campaign
       @campaign = Campaign.find(params[:id])
-      redirect_to '/advertisers', :flash => {notice: {type: 'danger', strong: 'acesso negado', msg: 'Você não tem acesso à essa opção'}}
+      forbidden = {notice: {type: 'danger', strong: 'acesso negado', msg: 'Você não tem acesso à essa opção'}}
+      redirect_to '/advertisers', :flash => forbidden if @campaign.advertiser.id != @current_user.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
