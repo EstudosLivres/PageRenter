@@ -17,11 +17,11 @@
     </center>
 
     <div class="field form-group">
-        <%= f.label :name %> <span>máximo de caracteres: <strong>50</strong></span><br>
+        <%= f.label :name %> (para seu controle interno) <span>máximo de caracteres: <strong>50</strong></span><br>
         <%= f.text_field :name, class: 'form-control', placeholder: 'Nome/Título da campanha' %>
     </div>
     <div class="field form-group">
-      <%= f.label :title %> <span>máximo de caracteres: <strong>50</strong></span><br>
+      <%= f.label :title %> (convença os publishers) <span>máximo de caracteres: <strong>50</strong></span><br>
       <%= f.text_field :title, class: 'form-control', placeholder: 'Frase curta de impacto' %>
     </div>
     <div class="field form-group">
@@ -29,15 +29,15 @@
         <%= f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com   ...   http://ebay.com/produto ' %>
     </div>
     <div class="field form-group">
-        <%= f.label :social_phrase %> <span><strong>opcional</strong> & máximo de caracteres: <strong>140</strong></span><br>
+        <%= f.label :social_phrase %> (inspire o publisher) <span><strong>opcional</strong> & máximo de caracteres: <strong>140</strong></span><br>
         <%= f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para as Redes Sociais' %>
     </div>
     <div class="field form-group">
-      <%= f.label :launch_date %> <span><strong>somente datas futuras</strong></span><br>
+      <%= f.label :launch_date %> (data de início da campanha) <span><strong>somente datas futuras</strong></span><br>
       <%= f.text_field :launch_date, 'data-behaviour'=>'datepicker', class: 'form-control', placeholder: 'Data de início da campanha' %>
     </div>
     <div class="field form-group">
-      <%= f.label :description %> <span>máximo de caracteres: <strong>140</strong></span><br>
+      <%= f.label :description %> (explique melhor ao publisher) <span>máximo de caracteres: <strong>140</strong></span><br>
       <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição geral do produto da campanha (faça o publisher entender seu produto)' %>
     </div>
 
