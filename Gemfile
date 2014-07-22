@@ -39,7 +39,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'colorize', '~> 0.7.1'
 
 # Gem for UPLOAD functionalities
-gem 'paperclip', '~> 4.1'
+# TODO gem 'paperclip', '~> 4.1'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
