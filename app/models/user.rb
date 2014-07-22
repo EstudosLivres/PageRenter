@@ -67,7 +67,14 @@ class User < ActiveRecord::Base
   # Return the User default Account
   def get_default_profile
     self.profiles.each do |profile|
-      return profile if profile.default_role == true
+      return profile if profile.default_role
+    end
+
+    # If passed here is because there is no default role, so setup based on user app usage
+    amount_campaigns = self.campaigns.length
+    self.profiles.each do |profile|
+      return profile if profile.role.name == 'advertiser' && amount_campaigns >= 1
+      return profile if profile.role.name == 'publisher' && amount_campaigns == 0
     end
   end
 
