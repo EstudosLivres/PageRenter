@@ -5,6 +5,7 @@ PageRenter::Application.routes.draw do
   scope '/users' do
     post 'login' => 'users#login'
     get 'sign_out' => 'users#sign_out'
+    delete 'sign_out' => 'users#sign_out'
   end
 
   # Actions Under/For Publisher
