@@ -10,7 +10,12 @@
                   <div class="float_right">
                     <%= render 'action_menu/socialbuttons' %>
                   </div>
-                  <img src="<%= campaign.advertiser.advertiser.avatar.url(:thumb) %>" class="campaign_brand" />
+                  <!--
+                  <%
+                   # TODO campaign.advertiser.advertiser.avatar.url(:thumb)
+                  %>
+                  <img src="" class="campaign_brand" />
+                  -->
                   <a data-toggle="collapse" data-parent="#accordion" href="#campaign_<%=index%>">
                     <%= campaign.name %>
                   </a>
