@@ -1,7 +1,7 @@
-class CampaignHistoryState < ActiveRecord::Base
+class AdHistoryState < ActiveRecord::Base
   # Relations
-  belongs_to :campaign
-  belongs_to :campaign_state
+  belongs_to :ad
+  belongs_to :ad_state
 
   # Validates Associations
   validates :campaign_id, presence: true, on: [:create, :update]

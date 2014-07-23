@@ -11,23 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719030033) do
+ActiveRecord::Schema.define(version: 20140723050358) do
 
-  create_table "campaign_history_states", force: true do |t|
+  create_table "ad_history_states", force: true do |t|
     t.integer  "campaign_state_id"
     t.integer  "campaign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "campaign_states", force: true do |t|
+  create_table "ad_states", force: true do |t|
     t.string   "name",        limit: 40,  null: false
     t.string   "description", limit: 140
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "campaigns", force: true do |t|
+  create_table "ads", force: true do |t|
     t.string   "name",                limit: 50,  null: false
     t.string   "title",               limit: 50,  null: false
     t.string   "launch_date",         limit: 10,  null: false
@@ -43,7 +43,13 @@ ActiveRecord::Schema.define(version: 20140719030033) do
     t.datetime "updated_at"
   end
 
-  add_index "campaigns", ["advertiser_id"], name: "index_campaigns_on_advertiser_id", using: :btree
+  add_index "ads", ["advertiser_id"], name: "index_ads_on_advertiser_id", using: :btree
+
+  create_table "campaigns", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "financial_transactions", force: true do |t|
     t.decimal  "value",                        precision: 9, scale: 2, null: false

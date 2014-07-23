@@ -6,13 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# CampaignStates
-puts 'Inserting CampaignStates...'.colorize(:green)
-puts "\t #{CampaignState.find_or_create_by(name: 'stopped')}"
-puts "\t #{CampaignState.find_or_create_by(name: 'running')}"
-puts "\t #{CampaignState.find_or_create_by(name: 'cancelled')}"
-puts '...CampaignStates inserted.'.colorize(:light_blue)
-# /CampaignStates
+# AdStates
+puts 'Inserting AdStates...'.colorize(:green)
+puts "\t #{AdState.find_or_create_by(name: 'stopped')}"
+puts "\t #{AdState.find_or_create_by(name: 'running')}"
+puts "\t #{AdState.find_or_create_by(name: 'pending')}"
+puts "\t #{AdState.find_or_create_by(name: 'checked')}"
+puts "\t #{AdState.find_or_create_by(name: 'suspended')}"
+puts '...AdStates inserted.'.colorize(:light_blue)
+# /AdStates
 
 # Roles
 puts 'Inserting Roles...'.colorize(:green)

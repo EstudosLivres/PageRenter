@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ad.name %>
+</p>
+
+<p>
+  <strong>Redirect link:</strong>
+  <%= @ad.redirect_link %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @ad.title %>
+</p>
+
+<p>
+  <strong>Social phrase:</strong>
+  <%= @ad.social_phrase %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @ad.description %>
+</p>
+
+<img src="<%= @ad.avatar.url %>" />
+<%= image_tag @ad.avatar.url(:medium) %>
+<%= image_tag @ad.avatar.url(:thumb) %>
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ad_path %>

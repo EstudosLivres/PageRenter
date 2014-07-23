@@ -3,17 +3,17 @@
     <%= render 'campaigns/pagerenter_campaign' %>
 
     <div class="panel-group" id="campaigns_accordion">
-      <% @campaigns.each_with_index do |campaign, index| %>
+      <% @ads.each_with_index do |ad, index| %>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <div class="float_right">
                   Saldo:
-                  Criada em: <%= campaign.created_at.strftime('%d/%m/%Y') %>
+                  Criada em: <%= ad.created_at.strftime('%d/%m/%Y') %>
                 </div>
-                <img src="<%=campaign.advertiser.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
+                <img src="<%=ad.advertiser.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
                 <a data-toggle="collapse" data-parent="#accordion" href="#campaign_<%=index%>">
-                  <%= campaign.name %>
+                  <%= ad.name %>
                 </a>
               </h4>
             </div>
@@ -24,7 +24,7 @@
             </div>
           </div>
       <% end %>
-
     </div>
+
   </div>
 </div>

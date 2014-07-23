@@ -19,6 +19,7 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index'
     get '/edit' => 'advertisers#edit'
     patch '/update' => 'advertisers#update'
+    resources :ads, except: [:destroy]
     resources :campaigns, except: [:destroy]
 
     namespace :campaigns do

@@ -470,6 +470,11 @@ a.r_advertiser:hover,
     width: auto;
 }
 
+
+#new_ad_image {
+    width: 106%;
+}
+
 #adv_image_content {
     margin-top: 45px;
 }
