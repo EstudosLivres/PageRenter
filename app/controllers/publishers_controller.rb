@@ -5,7 +5,7 @@ class PublishersController < ApplicationController
 
   # Root for Publisher user
   def index
-    @campaigns = Campaign.all
+    @ads = Ad.all
   end
 
   # Configuration for Publisher user

@@ -1,22 +1,22 @@
 <div class="row">
-    <div id="campaigns" class="col-md-12">
-      <%= render 'campaigns/pagerenter_campaign' %>
+    <div id="ads" class="col-md-12">
+      <%= render 'ads/pagerenter_ad' %>
 
-      <div class="panel-group" id="pub_campaigns_accordion">
-        <% @campaigns.each_with_index do |campaign, index| %>
+      <div class="panel-group" id="pub_ads_accordion">
+        <% @ads.each_with_index do |ad, index| %>
             <div class="panel panel-default">
               <div class="panel-heading">
                 <h4 class="panel-title">
                   <div class="float_right">
                     <%= render 'action_menu/socialbuttons' %>
                   </div>
-                  <img src="<%= campaign.advertiser.advertiser.avatar.url(:thumb) %>" class="campaign_brand" />
-                  <a data-toggle="collapse" data-parent="#accordion" href="#campaign_<%=index%>">
-                    <%= campaign.name %>
+                  <img src="<%= ad.advertiser.advertiser.avatar.url(:thumb) %>" class="ad_brand" />
+                  <a data-toggle="collapse" data-parent="#accordion" href="#ad_<%=index%>">
+                    <%= ad.name %>
                   </a>
                 </h4>
               </div>
-              <div id="campaign_<%=index%>" class="panel-collapse collapse">
+              <div id="ad_<%=index%>" class="panel-collapse collapse">
                 <div class="panel-body">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
                 </div>
