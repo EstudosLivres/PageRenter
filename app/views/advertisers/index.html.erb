@@ -11,8 +11,7 @@
                   Saldo:
                   Criada em: <%= campaign.created_at.strftime('%d/%m/%Y') %>
                 </div>
-                <% # TODO campaign.advertiser.advertiser.avatar.url(:thumb) %>
-                <!-- TODO <img src="" class="campaign_brand" /> -->
+                <img src="<%=campaign.advertiser.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
                 <a data-toggle="collapse" data-parent="#accordion" href="#campaign_<%=index%>">
                   <%= campaign.name %>
                 </a>
