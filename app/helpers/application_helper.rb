@@ -60,9 +60,9 @@ module ApplicationHelper
 
     # Commum actions
     users_actions = [
-        feedback,
-        manage_acc,
-        api
+        feedback
+        # manage_acc,
+        # api TODO volta quando tiver a parte de Marketplace e Blogs
     ] # Modals first because user can click without redirect if click accidentally
 
     unless actions.empty?
