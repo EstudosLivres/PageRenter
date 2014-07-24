@@ -1,5 +1,4 @@
-<%= javascript_include_tag 'campaigns' %>
-<%= form_for(@campaign, :html=>{id: 'new_campaign_left', class: 'form-horizontal col-md-6'}) do |f| %>
+<%= form_for(@campaign, :html=>{class: 'form-horizontal'}) do |f| %>
     <% if @campaign.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@campaign.errors.count, "error") %> prohibited this campaign from being saved:</h2>
@@ -12,33 +11,14 @@
         </div>
     <% end %>
 
-    <center id="choose_file_section">
-        <%= f.file_field :avatar, :onchange => 'show_campaign_image(this)' %>
-    </center>
-
-    <div class="field form-group">
+    <div class="field form-group col-md-6">
         <%= f.label :name %> (para seu controle interno) <span>máximo de caracteres: <strong>50</strong></span><br>
         <%= f.text_field :name, class: 'form-control', placeholder: 'Nome/Título da campanha' %>
     </div>
-    <div class="field form-group">
-      <%= f.label :title %> (convença os publishers) <span>máximo de caracteres: <strong>50</strong></span><br>
-      <%= f.text_field :title, class: 'form-control', placeholder: 'Frase curta de impacto' %>
-    </div>
-    <div class="field form-group">
-        <%= f.label :redirect_link %> <span>máximo de caracteres: <strong>200</strong></span><br>
-        <%= f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com   ...   http://ebay.com/produto ' %>
-    </div>
-    <div class="field form-group">
-        <%= f.label :social_phrase %> (inspire o publisher) <span><strong>opcional</strong> & máximo de caracteres: <strong>140</strong></span><br>
-        <%= f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para as Redes Sociais' %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :launch_date %> (data de início da campanha) <span><strong>somente datas futuras</strong></span><br>
-      <%= f.text_field :launch_date, 'data-behaviour'=>'datepicker', class: 'form-control', placeholder: 'Data de início da campanha' %>
-    </div>
-    <div class="field form-group">
-      <%= f.label :description %> (explique melhor ao publisher) <span>máximo de caracteres: <strong>140</strong></span><br>
-      <%= f.text_area :description, class: 'form-control', placeholder: 'Descrição geral do produto da campanha (faça o publisher entender seu produto)' %>
+
+    <div class="field form-group col-md-offset-2 col-md5">
+      <label for="budget">Orçamento</label>
+      <input id="budget" class="form-control" type="text" placeholder="Valor a ser depositado para a campanha" data-behaviour="datepicker"/>
     </div>
 
     <div class="actions">
@@ -53,6 +33,11 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#campaign_launch_date').datepicker();
+        $('[data-behaviour~="datepicker"]').datepicker({
+            autoclose: true,
+            format: 'dd/mm/yyyy',
+            language: 'pt-BR',
+            startDate: 'today'
+        });
     })
 </script>
