@@ -19,8 +19,8 @@ puts '...AdStates inserted.'.colorize(:light_blue)
 # Currencies
 puts 'Inserting Currencies...'.colorize(:green)
 puts "\t #{Currency.find_or_create_by(name: 'Real', acronym: 'R$')}"
-puts "\t #{Currency.find_or_create_by(name: 'Dólar Americano', acronym: 'US$')}"
 puts "\t #{Currency.find_or_create_by(name: 'Euro', acronym: '€')}"
+puts "\t #{Currency.find_or_create_by(name: 'Dólar Americano', acronym: 'US$')}"
 puts '...Currencies inserted.'.colorize(:light_blue)
 # /Currencies
 
