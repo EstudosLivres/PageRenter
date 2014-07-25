@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725201026) do
+ActiveRecord::Schema.define(version: 20140725202130) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "campaign_state_id"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20140725201026) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ad_pricings", force: true do |t|
+    t.float    "value_paid_per_visitation", limit: 24
+    t.integer  "campaign_id"
+    t.integer  "currency_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ad_pricings", ["campaign_id"], name: "index_ad_pricings_on_campaign_id", using: :btree
+  add_index "ad_pricings", ["currency_id"], name: "index_ad_pricings_on_currency_id", using: :btree
 
   create_table "ad_states", force: true do |t|
     t.string   "name",        limit: 40,  null: false
