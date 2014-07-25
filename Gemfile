@@ -54,6 +54,9 @@ group :development, :test do
   # Option to not use Fixtures (FactoryGirl)
   gem 'factory_girl_rails', '~> 4.4'
 
+  # Create readable attrs values
+  gem 'faker', '~> 1.4.2'
+
   # RSPec Plugin for testing Views
   gem 'capybara', '~> 2.2.1'
 
