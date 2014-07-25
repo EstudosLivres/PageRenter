@@ -1,0 +1,97 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Usuário
+      role: Papel
+      destination: Destino
+      protocol: Protocolo
+      requirement: Requisito
+      requirement_category: Categoria de Requisito
+      inspection_request: Solicitação de vistoria
+      inspection: Vistoria
+      farm: Exploração Pecuária
+      farm_qualification: Adesão
+      rural_property: Estabelecimento Rural
+      audio: Audio
+      inspection_company: Empresa de Vistoria
+
+    attributes:
+
+  # Usuário ------------------------------------------------------------------------------------
+      user:
+        name: Nome
+        last_name: Sobrenome
+        full_name: Nome completo
+        cpf: CPF
+        password: Senha
+        password_confirmation: Confirmação de senha
+        current_password: Senha atual
+        city: Cidade
+        address: Endereço
+        district: Bairro
+        postal_code: CEP
+
+  # Destino -------------------------------------------------------------------------------------
+      destination:
+        name: Nome
+        created_at: Criado em
+
+  # Protocolo -----------------------------------------------------------------------------------
+      protocol:
+        name: Nome
+        created_at: Criado em
+        destinations: Destinos
+        requirements: Requisitos
+
+  # Requisito -----------------------------------------------------------------------------------
+      requirement:
+        title: Título
+        description: Descrição
+        created_at: Criado em
+        answer_type: Tipo de resposta
+        requirement_type: Tipo do Requisito
+        requirement_category_id: Categoria
+
+  # Categoria de Requisito ----------------------------------------------------------------------
+      requirement_category:
+        name: Nome
+
+  # Solicitação de vistoria
+      inspection_request:
+        date: Data
+        farm_id: Exploração Pecuária
+        protocol_id: Protocolo
+        accepted_date: Data de agendamento
+        distance: Deslocamento
+        inspector_id: Vistoriador
+
+  # Vistoria
+
+  # Exploração
+      farm:
+        name: Nome
+        rural_property: Estabelecimento Rural
+
+  # Estabelecimento Rural
+      rural_property:
+        name: Nome
+        owner_name: Proprietário
+
+  # Solicitação de Habilitação
+      farm_qualification:
+        farm: Exploração Pecuária
+        protocol: Protocolo
+
+  #Estabelecimento Rural
+
+      audio:
+        content:
+          spoofed_media_type: DEU MERDA  # Estabelecimento Rural
+
+  # Empresa de Vistoria
+      inspection_company:
+        name: Nome
+        cnpj: CNPJ
+        address: Endereço
+        city: Cidade
+        owner: Responsável
