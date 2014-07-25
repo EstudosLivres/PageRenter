@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20140723050358) do
   create_table "ads", force: true do |t|
     t.string   "name",                limit: 50,  null: false
     t.string   "title",               limit: 50,  null: false
-    t.string   "launch_date",         limit: 10,  null: false
     t.string   "description",         limit: 140, null: false
     t.string   "social_phrase",       limit: 140
     t.string   "redirect_link",       limit: 200, null: false
@@ -46,7 +45,10 @@ ActiveRecord::Schema.define(version: 20140723050358) do
   add_index "ads", ["advertiser_id"], name: "index_ads_on_advertiser_id", using: :btree
 
   create_table "campaigns", force: true do |t|
-    t.string   "name"
+    t.string   "name",        limit: 75, null: false
+    t.string   "launch_date", limit: 10, null: false
+    t.string   "end_date",    limit: 10, null: false
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
