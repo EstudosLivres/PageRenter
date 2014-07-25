@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723050358) do
+ActiveRecord::Schema.define(version: 20140725201026) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "campaign_state_id"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 20140723050358) do
     t.string   "launch_date", limit: 10, null: false
     t.string   "end_date",    limit: 10, null: false
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "currencies", force: true do |t|
+    t.string   "name",       limit: 55, null: false
+    t.string   "acronym",    limit: 5,  null: false
+    t.string   "zone",       limit: 45
     t.datetime "created_at"
     t.datetime "updated_at"
   end
