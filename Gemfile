@@ -38,7 +38,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # Color to the prints on console (PUTS)
 gem 'colorize', '~> 0.7.1'
 
-# Gem for UPLOAD functionalities
+# Gem for UPLOAD files
 gem 'paperclip', '~> 4.1'
 
 # Date picker for bootstrap (easy calendar)
