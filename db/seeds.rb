@@ -8,19 +8,19 @@
 
 # AdStates
 puts 'Inserting AdStates...'.colorize(:green)
-puts "\t #{AdState.find_or_create_by(name: 'stopped')}"
-puts "\t #{AdState.find_or_create_by(name: 'running')}"
-puts "\t #{AdState.find_or_create_by(name: 'pending')}"
-puts "\t #{AdState.find_or_create_by(name: 'checked')}"
-puts "\t #{AdState.find_or_create_by(name: 'suspended')}"
+  puts "\t #{AdState.find_or_create_by(name: 'stopped')}"
+  puts "\t #{AdState.find_or_create_by(name: 'running')}"
+  puts "\t #{AdState.find_or_create_by(name: 'pending')}"
+  puts "\t #{AdState.find_or_create_by(name: 'checked')}"
+  puts "\t #{AdState.find_or_create_by(name: 'suspended')}"
 puts '...AdStates inserted.'.colorize(:light_blue)
 # /AdStates
 
 # Currencies
 puts 'Inserting Currencies...'.colorize(:green)
-puts "\t #{Currency.find_or_create_by(name: 'Real', acronym: 'R$')}"
-puts "\t #{Currency.find_or_create_by(name: 'Euro', acronym: '€')}"
-puts "\t #{Currency.find_or_create_by(name: 'Dólar Americano', acronym: 'US$')}"
+  puts "\t #{Currency.find_or_create_by(name: 'Real', acronym: 'R$')}"
+  puts "\t #{Currency.find_or_create_by(name: 'Euro', acronym: '€')}"
+  puts "\t #{Currency.find_or_create_by(name: 'Dólar Americano', acronym: 'US$')}"
 puts '...Currencies inserted.'.colorize(:light_blue)
 # /Currencies
 
