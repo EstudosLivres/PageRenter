@@ -2,6 +2,7 @@ class Profile < ActiveRecord::Base
   # Relations
   belongs_to :user
   belongs_to :role
+  has_many :campaigns, class_name: 'Campaign', foreign_key: :advertiser_id
   has_attached_file :avatar, :styles => { :medium => '300x75>', :thumb => '100x15>' }, :default_url => '/assets/:style/missing_logo.jpg'
 
   # Validates Associations
