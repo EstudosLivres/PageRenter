@@ -26,7 +26,7 @@ class CampaignsController < ApplicationController
   # POST /campaigns.json
   def create
     @campaign = Campaign.new(campaign_params)
-    @campaign.advertiser_id = @current_user.id
+    @campaign.advertiser_id = @current_user.advertiser.id
 
     respond_to do |format|
       if @campaign.save
@@ -68,7 +68,7 @@ class CampaignsController < ApplicationController
     def set_campaign
       @campaign = Campaign.find(params[:id])
       forbidden = {notice: {type: 'danger', strong: 'acesso negado', msg: 'Você não tem acesso à essa opção'}}
-      redirect_to '/advertisers', :flash => forbidden if @campaign.advertiser.id != @current_user.id
+      redirect_to '/advertisers', :flash => forbidden if @campaign.advertiser.id != @current_user.advertiser.id
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
