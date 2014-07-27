@@ -14,7 +14,7 @@ class Campaign < ActiveRecord::Base
   # Validate the End be greater than Launch
   def validate_end_date_before_launch_date
     if launch_date && end_date
-      if launch_date >= end_date
+      if launch_date >= end_date && launch_date >= Date.today
         self.errors.add(:end_date, 'End date should be greater than launch date')
         raise ActiveRecord::Rollback
       end
