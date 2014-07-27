@@ -55,7 +55,7 @@ puts '...SocialNetworks inserted.'.colorize(:light_blue)
 
 # Users
 puts 'Inserting PageRenter admin...'.colorize(:green)
-  puts "\t #{User.persist_it({'role' => 'admin', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})}"
+  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})}"
 puts '...PageRenter admin inserted.'.colorize(:light_blue)
 
 puts 'Inserting Publishers...'.colorize(:green)
