@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Relations
   has_many :profiles
   has_many :social_sessions
-  has_many :ads, class_name: 'Ad', foreign_key: :advertiser_id
+  has_many :campaigns, class_name: 'Campaign', foreign_key: :advertiser_id
 
   # Custom validations
   validate :solve_locale
