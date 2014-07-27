@@ -26,7 +26,7 @@ class CampaignsController < ApplicationController
   # POST /campaigns.json
   def create
     @campaign = Campaign.new(campaign_params)
-    @campaign.advertiser_id = session[:user_id]
+    @campaign.advertiser_id = @current_user.id
 
     respond_to do |format|
       if @campaign.save
@@ -73,6 +73,6 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:name, :redirect_link, :title, :launch_date, :description, :social_phrase, :avatar)
+      params.require(:campaign).permit(:name, :launch_date, :end_date)
     end
 end
