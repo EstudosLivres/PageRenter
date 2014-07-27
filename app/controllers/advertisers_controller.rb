@@ -1,4 +1,6 @@
 class AdvertisersController < ApplicationController
+  before_action :set_advertiser, only: [:show, :edit, :update, :destroy]
+
   # Prevent spam USER.FIND on DB
   before_action :setup_user
   before_action :set_advertiser
