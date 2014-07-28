@@ -20,10 +20,8 @@ PageRenter::Application.routes.draw do
     get '/edit' => 'advertisers#edit'
     patch '/update' => 'advertisers#update'
     resources :ads, except: [:destroy]
-    resources :campaigns, except: [:destroy]
-
-    namespace :campaigns do
-      # TODO resources :financial_transaction
+    resources :campaigns, except: [:destroy] do
+      resources :budgets, only: [:new, :create]
     end
   end
 

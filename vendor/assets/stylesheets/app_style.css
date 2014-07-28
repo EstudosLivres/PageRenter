@@ -96,9 +96,9 @@ body {
 }
 
 /* BRAND CAMPAIGN STYLE (AUTO PROMO) */
-#brand_campaign .badge.alert-danger {
+.badge.alert-danger {
     color: white;
-    background: red;
+    background: #D34332;
 }
 
 .campaign_link a {
@@ -129,6 +129,16 @@ div.campaign_attr {
 #brand_campaign header .social_invite .btn:visited,
 #brand_campaign header .social_invite .btn:focus {
     color: whitesmoke;
+}
+
+header .social_invite .btn:hover,
+header .social_invite .btn:visited,
+header .social_invite .btn:focus {
+    color: whitesmoke;
+}
+
+.budget_value {
+    color: #33BD63;
 }
 
 /* CAMPAIGN STYLES */
@@ -497,6 +507,12 @@ form#new_campaign_left .form-group .form-control {
 
 center#choose_file_section {
     margin-bottom: 15px;
+}
+
+.panel-default>.panel-heading {
+    color: #333;
+    background-color: #fff;
+    border-color: #ddd;
 }
 
 @media (min-width: 1200px) {

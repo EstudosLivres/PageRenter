@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Activated:</strong>
+  <%= @budget.activated %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @budget.value %>
+</p>
+
+<p>
+  <strong>Close date:</strong>
+  <%= @budget.close_date %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @budget.currency %>
+</p>
+
+<p>
+  <strong>Campaign:</strong>
+  <%= @budget.campaign %>
+</p>
+
+<p>
+  <strong>Recurrence period:</strong>
+  <%= @budget.recurrence_period %>
+</p>
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', budgets_path %>
