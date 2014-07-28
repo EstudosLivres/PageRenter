@@ -5,7 +5,7 @@ class PublishersController < ApplicationController
 
   # Root for Publisher user
   def index
-    @ads = Ad.all
+    @ads = Campaign.where('launch_date <= ? AND end_date >= ?', Date.today, Date.today)
   end
 
   # Configuration for Publisher user
