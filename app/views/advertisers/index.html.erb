@@ -3,22 +3,28 @@
     <%= render 'ads/pagerenter_ad' %>
 
     <div class="panel-group" id="campaigns_accordion">
-      <% @ads.each_with_index do |ad, index| %>
+      <% @campaigns.each_with_index do |campaign, index| %>
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
                 <div class="float_right">
-                  Saldo:
-                  Criada em: <%= ad.created_at.strftime('%d/%m/%Y') %>
+                    <span class="budget_value">
+                        R$ 5.000
+                    </span>
+                    <i class="fa fa-gears"></i>
                 </div>
-                <img src="<%=ad.advertiser.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
+                <img src="<%= campaign.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
                 <a data-toggle="collapse" data-parent="#accordion" href="#campaign_<%=index%>">
-                  <%= ad.name %>
+                  <%= campaign.name %> <span class="badge alert-success"> RUNNING </span>
                 </a>
               </h4>
             </div>
             <div id="campaign_<%=index%>" class="panel-collapse collapse">
               <div class="panel-body">
+                Saldo:
+                Criada em: <%= campaign.created_at.strftime('%d/%m/%Y') %>
+                Launched for: <%= campaign.launch_date.strftime('%d/%m/%Y') %>
+                End at: <%= campaign.end_date.strftime('%d/%m/%Y') %>
                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
               </div>
             </div>
