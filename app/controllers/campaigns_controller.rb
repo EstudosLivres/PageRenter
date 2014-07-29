@@ -10,7 +10,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns/1
   # GET /campaigns/1.json
   def show
-    unless(@current_user.id == @campaign.advertiser.id) then redirect_to root_url end
+    redirect_to root_url if(@campaign.advertiser.id != @current_user.advertiser.id)
   end
 
   # GET /campaigns/new
@@ -30,7 +30,7 @@ class CampaignsController < ApplicationController
 
     respond_to do |format|
       if @campaign.save
-        format.html { redirect_to @campaign, flash: {type: :success, strong: 'Congratulations!', msg: 'Your campaign was successfully created.'} }
+        format.html { redirect_to @campaign, notice: {type: :success, strong: 'Congratulations!', msg: 'Your campaign was successfully created.'} }
         format.json { render action: 'show', status: :created, location: @campaign }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class CampaignsController < ApplicationController
   def update
     respond_to do |format|
       if @campaign.update(campaign_params)
-        format.html { redirect_to @campaign, notice: 'Campaign was successfully updated.' }
+        format.html { redirect_to @campaign, notice: {type: :success, strong: 'Congratulations!', msg: 'Campaign was successfully updated.'} }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
