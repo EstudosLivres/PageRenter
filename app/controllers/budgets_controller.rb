@@ -15,7 +15,7 @@ class BudgetsController < ApplicationController
   # GET /budgets/new
   def new
     @budget = Budget.new
-    @campaign = Campaign.new
+    @campaign = Campaign.find(params[:campaign_id])
   end
 
   # GET /budgets/1/edit
