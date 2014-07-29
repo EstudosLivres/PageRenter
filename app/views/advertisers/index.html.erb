@@ -11,7 +11,9 @@
                     <span class="budget_value">
                         R$ 5.000
                     </span>
-                    <i class="fa fa-gears"></i>
+                    <%= link_to new_campaign_budget_path(campaign.id) do %>
+                        <i class="fa fa-gears"></i>
+                    <% end %>
                 </div>
                 <img src="<%= campaign.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
                 <a data-toggle="collapse" data-parent="#accordion" href="#campaign_<%=index%>">
