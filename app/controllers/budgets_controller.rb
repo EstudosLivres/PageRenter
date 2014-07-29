@@ -16,6 +16,7 @@ class BudgetsController < ApplicationController
   def new
     @budget = Budget.new
     @campaign = Campaign.find(params[:campaign_id])
+    @currencies = Currency.all
   end
 
   # GET /budgets/1/edit
