@@ -46,7 +46,12 @@
                 %>
               </ul>
 
-              <a href="/" class="brand"><span> <span class="r_advertiser_brand">Page</span><span class="r_publisher_brand">Renter</span> </span></a>
+              <%= link_to root_path, class:'brand' do %>
+                <span>
+                  <span class="r_advertiser_brand">Page</span>
+                  <span class="r_publisher_brand">Renter</span>
+                </span>
+              <% end %>
             </div>
 
             <ul id="role_action" class="hidden-xs nav navbar-nav">
