@@ -1,4 +1,6 @@
 PageRenter::Application.routes.draw do
+  resources :budgets
+
   # In a near future put a helper to redirect to the user role session
   root 'redirect#redirect_index'
 
@@ -10,18 +12,18 @@ PageRenter::Application.routes.draw do
 
   # Actions Under/For Publisher
   scope '/publishers' do
-    get '' => 'publishers#index'
+    get '' => 'publishers#index', as: :publishers_root
     get '/edit' => 'publishers#edit'
   end
 
   # Actions Under/For Advertiser
   scope '/advertisers' do
-    get '' => 'advertisers#index'
+    get '' => 'advertisers#index', as: :advertisers_root
     get '/edit' => 'advertisers#edit'
     patch '/update' => 'advertisers#update'
     resources :ads, except: [:destroy]
     resources :campaigns, except: [:destroy] do
-      resources :budgets, only: [:new, :create]
+      resources :budgets #, except: [:update, :destroy]
     end
   end
 
