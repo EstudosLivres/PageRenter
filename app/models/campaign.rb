@@ -5,6 +5,9 @@ class Campaign < ActiveRecord::Base
   belongs_to :user
   belongs_to :advertiser, class_name: 'Profile', foreign_key: :advertiser_id
 
+  # Custom validations
+  validate :setup_campaign
+
   # Rails validations
   validate :validate_end_date_before_launch_date, on: [:create, :update]
   validates :name, presence: true, length: { in: 5..75 }, on: [:create, :update]
@@ -19,5 +22,10 @@ class Campaign < ActiveRecord::Base
         raise ActiveRecord::Rollback
       end
     end
+  end
+
+  # Pre SteUp the campaign to it recent created rules
+  def setup_campaign
+
   end
 end
