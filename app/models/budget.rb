@@ -7,7 +7,7 @@ class Budget < ActiveRecord::Base
 
   # Rails validations
   validates :activated, presence: true, on: [:create, :update]
-  validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, :numericality => {:greater_than => 50, :less_than => 100000000}, on: [:create, :update]
+  validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, :numericality => {:greater_than => 1, :less_than => 100000000}, on: [:create, :update]
   validates :closed_date, presence: true, on: :update
 
   # Validates Associations
