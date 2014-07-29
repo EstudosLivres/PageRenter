@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723050358) do
+ActiveRecord::Schema.define(version: 20140726195402) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "campaign_state_id"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 20140723050358) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "ad_pricings", force: true do |t|
+    t.float    "value_paid_per_visitation", limit: 24, null: false
+    t.integer  "campaign_id",                          null: false
+    t.integer  "currency_id",                          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ad_pricings", ["campaign_id"], name: "index_ad_pricings_on_campaign_id", using: :btree
+  add_index "ad_pricings", ["currency_id"], name: "index_ad_pricings_on_currency_id", using: :btree
 
   create_table "ad_states", force: true do |t|
     t.string   "name",        limit: 40,  null: false
@@ -30,7 +41,6 @@ ActiveRecord::Schema.define(version: 20140723050358) do
   create_table "ads", force: true do |t|
     t.string   "name",                limit: 50,  null: false
     t.string   "title",               limit: 50,  null: false
-    t.string   "launch_date",         limit: 10,  null: false
     t.string   "description",         limit: 140, null: false
     t.string   "social_phrase",       limit: 140
     t.string   "redirect_link",       limit: 200, null: false
@@ -45,8 +55,46 @@ ActiveRecord::Schema.define(version: 20140723050358) do
 
   add_index "ads", ["advertiser_id"], name: "index_ads_on_advertiser_id", using: :btree
 
+  create_table "budget_launches", force: true do |t|
+    t.integer  "budget_id"
+    t.integer  "financial_transaction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "budget_launches", ["budget_id"], name: "index_budget_launches_on_budget_id", using: :btree
+  add_index "budget_launches", ["financial_transaction_id"], name: "index_budget_launches_on_financial_transaction_id", using: :btree
+
+  create_table "budgets", force: true do |t|
+    t.boolean  "activated",                                    null: false
+    t.decimal  "value",                precision: 8, scale: 2, null: false
+    t.string   "closed_date"
+    t.integer  "currency_id",                                  null: false
+    t.integer  "campaign_id",                                  null: false
+    t.integer  "recurrence_period_id",                         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "budgets", ["campaign_id"], name: "index_budgets_on_campaign_id", using: :btree
+  add_index "budgets", ["currency_id"], name: "index_budgets_on_currency_id", using: :btree
+  add_index "budgets", ["recurrence_period_id"], name: "index_budgets_on_recurrence_period_id", using: :btree
+
   create_table "campaigns", force: true do |t|
-    t.string   "name"
+    t.string   "name",          limit: 75, null: false
+    t.datetime "launch_date",              null: false
+    t.datetime "end_date",                 null: false
+    t.integer  "advertiser_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "campaigns", ["advertiser_id"], name: "index_campaigns_on_advertiser_id", using: :btree
+
+  create_table "currencies", force: true do |t|
+    t.string   "name",       limit: 55, null: false
+    t.string   "acronym",    limit: 5,  null: false
+    t.string   "zone",       limit: 45
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -113,6 +161,13 @@ ActiveRecord::Schema.define(version: 20140723050358) do
   end
 
   add_index "receipts", ["financial_transactions_id"], name: "index_receipts_on_financial_transactions_id", using: :btree
+
+  create_table "recurrence_periods", force: true do |t|
+    t.string   "name",        limit: 15, null: false
+    t.string   "description", limit: 20
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", force: true do |t|
     t.string   "name",       limit: 15, null: false

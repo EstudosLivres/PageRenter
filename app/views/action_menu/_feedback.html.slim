@@ -1,0 +1,67 @@
+/! Feedback
+#feedback.modal.fade  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+          | &times;
+        h2#myModalLabel.modal-title>
+          = t(:user_feedback)[:title]
+
+      .modal-body
+        aside.modal_body_left
+          label for="feedback_msg"
+            = t(:user_feedback)[:feedback_msg_label]
+          textarea#feedback_msg.form-control name="feedback_msg" rows="3" placeholder="#{t(:publisher_invite)[:invite_form][:message_placeholder]}"
+
+        aside.modal_body_right
+          center
+            h4
+              = t(:user_feedback)[:title_explanation]
+
+          ul#feedback_types.benefits
+            li
+              strong
+                | ?
+              = " #{t(:user_feedback)[:subtitle_explanation_1]}"
+              |:
+              ul.sub_benefits
+                li.important_text
+                  = t(:user_feedback)[:improve_question_1]
+                li
+                  = t(:user_feedback)[:improve_question_2]
+              li
+                strong
+                  i.fa.fa-bolt
+                = " #{t(:user_feedback)[:subtitle_explanation_2]}"
+                |:
+                ul.sub_benefits
+                  li.important_text
+                    = t(:user_feedback)[:improve_criticism_1]
+                  li
+                    = t(:user_feedback)[:improve_criticism_2]
+              li
+                strong
+                  i.fa.fa-lightbulb-o
+                = " #{t(:user_feedback)[:subtitle_explanation_3]}"
+                |:
+                ul.sub_benefits
+                  li.important_text
+                    = t(:user_feedback)[:improve_criticism_1]
+                  li
+                    = t(:user_feedback)[:improve_criticism_2]
+              li
+                strong
+                  i.fa.fa-lightbulb-o
+                  = t(:user_feedback)[:subtitle_explanation_3]
+                ul.sub_benefits
+                  li.important_text
+                    = t(:user_feedback)[:improve_suggestion_1]
+                  li
+                    = t(:user_feedback)[:improve_suggestion_2]
+      .modal-footer
+        button.btn.btn-default type="button" data-dismiss="modal"
+          = t(:btn_modal_close)
+        button.btn class="#{current_button}" type="button"
+          = t(:btn_modal_okay)
+/! /Feedback

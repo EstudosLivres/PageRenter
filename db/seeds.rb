@@ -6,13 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# Currencies
+puts 'Inserting Currencies...'.colorize(:green)
+  puts "\t #{Currency.find_or_create_by(name: 'real', acronym: 'R$')}"
+  puts "\t #{Currency.find_or_create_by(name: 'euro', acronym: '€')}"
+  puts "\t #{Currency.find_or_create_by(name: 'american_dollar', acronym: 'US$')}"
+puts '...Currencies inserted.'.colorize(:light_blue)
+# /Currencies
+
+# RecurrencePeriods
+puts 'Inserting RecurrencePeriods...'.colorize(:green)
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'daily')}"
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'weekly')}"
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'bimonthly')}"
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'quarterly')}"
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'semiannual')}"
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'annual')}"
+puts '...RecurrencePeriods inserted.'.colorize(:light_blue)
+# /RecurrencePeriods
+
 # AdStates
 puts 'Inserting AdStates...'.colorize(:green)
-puts "\t #{AdState.find_or_create_by(name: 'stopped')}"
-puts "\t #{AdState.find_or_create_by(name: 'running')}"
-puts "\t #{AdState.find_or_create_by(name: 'pending')}"
-puts "\t #{AdState.find_or_create_by(name: 'checked')}"
-puts "\t #{AdState.find_or_create_by(name: 'suspended')}"
+  puts "\t #{AdState.find_or_create_by(name: 'stopped')}"
+  puts "\t #{AdState.find_or_create_by(name: 'running')}"
+  puts "\t #{AdState.find_or_create_by(name: 'pending')}"
+  puts "\t #{AdState.find_or_create_by(name: 'checked')}"
+  puts "\t #{AdState.find_or_create_by(name: 'suspended')}"
 puts '...AdStates inserted.'.colorize(:light_blue)
 # /AdStates
 
@@ -35,6 +54,10 @@ puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # /SocialNetworks
 
 # Users
+puts 'Inserting PageRenter admin...'.colorize(:green)
+  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})}"
+puts '...PageRenter admin inserted.'.colorize(:light_blue)
+
 puts 'Inserting Publishers...'.colorize(:green)
   puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Pub Testador', 'username' => 'tst', 'email' => 'pp@pt.pt', 'password' => '123'})}"
   puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'en', 'name' => 'Pub Tester', 'username' => 'tster', 'email' => 'pp@en.en', 'password' => '123'})}"

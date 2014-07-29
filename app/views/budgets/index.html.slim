@@ -1,0 +1,31 @@
+h1 Listing budgets
+
+table
+  thead
+    tr
+      th Activated
+      th Value
+      th Closed date
+      th Currency
+      th Campaign
+      th Recurrence period
+      th
+      th
+      th
+
+  tbody
+    - @budgets.each do |budget|
+      tr
+        td = budget.activated
+        td = budget.value
+        td = budget.closed_date
+        td = budget.currency
+        td = budget.campaign
+        td = budget.recurrence_period
+        td = link_to 'Show', budget
+        td = link_to 'Edit', edit_budget_path(budget)
+        td = link_to 'Destroy', budget, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Budget', new_budget_path

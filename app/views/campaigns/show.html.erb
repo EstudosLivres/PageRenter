@@ -1,33 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Name:</strong>
   <%= @campaign.name %>
 </p>
 
 <p>
-  <strong>Redirect link:</strong>
-  <%= @campaign.redirect_link %>
+  <strong>Start date (launch):</strong>
+  <%= @campaign.launch_date.strftime('%d/%m/%Y') %>
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @campaign.title %>
+  <strong>End date (finish):</strong>
+  <%= @campaign.end_date.strftime('%d/%m/%Y') %>
 </p>
-
-<p>
-  <strong>Social phrase:</strong>
-  <%= @campaign.social_phrase %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @campaign.description %>
-</p>
-
-<img src="<%= @campaign.avatar.url %>" />
-<%= image_tag @campaign.avatar.url(:medium) %>
-<%= image_tag @campaign.avatar.url(:thumb) %>
 
 <%= link_to 'Edit', edit_campaign_path(@campaign) %> |
 <%= link_to 'Back', campaigns_path %>

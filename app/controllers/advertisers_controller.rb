@@ -1,11 +1,13 @@
 class AdvertisersController < ApplicationController
+  before_action :set_advertiser, only: [:show, :edit, :update, :destroy]
+
   # Prevent spam USER.FIND on DB
   before_action :setup_user
   before_action :set_advertiser
 
   # Root for Advertiser user
   def index
-    @ads = @current_user.ads
+    @campaigns = @current_user.advertiser.campaigns
   end
 
   # Configuration for Advertiser user
