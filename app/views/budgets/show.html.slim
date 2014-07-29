@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Activated:
+  = @budget.activated
+p
+  strong Value:
+  = @budget.value
+p
+  strong Closed date:
+  = @budget.closed_date
+p
+  strong Currency:
+  = @budget.currency
+p
+  strong Campaign:
+  = @budget.campaign
+p
+  strong Recurrence period:
+  = @budget.recurrence_period
+
+= link_to 'Edit', edit_budget_path(@budget)
+'|
+= link_to 'Back', budgets_path
