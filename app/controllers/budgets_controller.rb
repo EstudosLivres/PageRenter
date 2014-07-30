@@ -15,7 +15,6 @@ class BudgetsController < ApplicationController
 
   # GET /budgets/new
   def new
-    @budget = Budget.new
   end
 
   # GET /budgets/1/edit
@@ -41,12 +40,14 @@ class BudgetsController < ApplicationController
   # PATCH/PUT /budgets/1
   # PATCH/PUT /budgets/1.json
   def update
+    @budget = Budget.new(budget_params)
+
     respond_to do |format|
-      if @budget.update(budget_params)
+      if @budget.save
         format.html { redirect_to @budget, notice: 'Budget was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render action: 'show', status: :created, location: @budget }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'new' }
         format.json { render json: @budget.errors, status: :unprocessable_entity }
       end
     end
@@ -71,6 +72,8 @@ class BudgetsController < ApplicationController
     # Create objs to auxiliary on create forms
     def setup_aux_objs
       @campaign = Campaign.find(params[:campaign_id])
+      @budget = @campaign.budgets.last
+      @budget = Budget.new if @budget.nil?
       @currencies = Currency.all
       @recurrence_periods = RecurrencePeriod.all
     end
