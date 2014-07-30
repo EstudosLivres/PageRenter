@@ -187,7 +187,21 @@ a:focus {
     text-decoration: underline;
 }
 
+a.budgeted {
+    color: #336D63;
+}
 
+a.budgeted:hover {
+    color: #409D93;
+}
+
+a.no_budget {
+    color: #a94442;
+}
+
+a.no_budget:hover {
+    color: #E24E3F;
+}
 
 .btn-primary {
     /*
