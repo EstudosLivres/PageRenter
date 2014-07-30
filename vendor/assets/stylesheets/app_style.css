@@ -376,6 +376,11 @@ a.r_advertiser:hover,
     text-transform: uppercase;
 }
 
+.container.box > header > h2 {
+    cursor: default;
+    text-align: center;
+}
+
 .toggle_up_down_rotate {
     /* Safari & Chrome */
     -webkit-transform: rotate(-180deg);
