@@ -1,4 +1,4 @@
-= form_for @budget do |f|
+= form_for @budget, html: {'role'=>'form'} do |f|
   - if @budget.errors.any?
     #error_explanation
       h2 = "#{pluralize(@budget.errors.count, "error")} prohibited this budget from being saved:"
@@ -6,13 +6,16 @@
         - @budget.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :value
-    = f.number_field :value
-  .field
-    = f.label :currency
-    = f.text_field :currency
-  .field
-    = f.label :recurrence_period
-    = f.text_field :recurrence_period
+  .form-group.col-md-4
+    center
+      = f.label :value, translate_it_label('budget', 'value')
+    = f.number_field :value, class:'form-control', placeholder:'Orçamento da campanha & seus Anúncios'
+  .form-group.col-md-4
+    center
+      = f.label :currency, translate_it_label('budget', 'currency')
+    = f.collection_select :currency_id, @currencies, :id, :acronym_with_name, {prompt: 'Escolhe a moeda (a região do público alvo)', default: nil}, {class: 'form-control'}
+  .form-group.col-md-4
+    center
+      = f.label :recurrence_period, translate_it_label('budget', 'recurrence_period')
+    = f.collection_select :recurrence_period_id, @recurrence_periods, :id, :translated_recurrence_name, {prompt: 'Escolhe a recorrência do orçamento', default: nil}, {class: 'form-control'}
   .actions = f.submit 'Save'
