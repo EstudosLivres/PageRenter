@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    models:
+      campaign: Campaign
+      budget: Budget
+    attributes:
+      budget:
+        labels:
+          value: Budget's recurrent value
+          currency: Currency (it even define your target audience)
+          recurrence_period: The budget's renovation  period
