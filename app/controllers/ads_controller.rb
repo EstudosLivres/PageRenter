@@ -1,5 +1,6 @@
 class AdsController < ApplicationController
   before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  before_action :setup_aux_objs, only: [:new, :edit]
 
   # GET /Ads
   # GET /Ads.json
@@ -68,6 +69,11 @@ class AdsController < ApplicationController
       @ad = Ad.find(params[:id])
       forbidden = {notice: {type: 'danger', strong: 'acesso negado', msg: 'Você não tem acesso à essa opção'}}
       redirect_to '/advertisers', :flash => forbidden if @ad.advertiser.id != @current_user.id
+    end
+
+    # Create objs to auxiliary on create forms
+    def setup_aux_objs
+      @campaign = Campaign.find(params[:campaign_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

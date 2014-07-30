@@ -1,5 +1,5 @@
 == javascript_include_tag 'propaganda'
-= form_for @ad, html:{id: 'new_ad_left', class: 'form-horizontal col-md-6'} do |f|
+= form_for [@campaign, @ad], html:{id: 'new_ad_left', class: 'form-horizontal col-md-6'} do |f|
   - if @ad.errors.any?
     #error_explanation
       h2 = "#{pluralize(@ad.errors.count, "error")} prohibited this budget from being saved:"

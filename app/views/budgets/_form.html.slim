@@ -1,4 +1,4 @@
-= form_for @budget, html: {'role'=>'form'} do |f|
+= form_for [@campaign, @budget], html: {'role'=>'form'} do |f|
   - if @budget.errors.any?
     #error_explanation
       h2 = "#{pluralize(@budget.errors.count, "error")} prohibited this budget from being saved:"
