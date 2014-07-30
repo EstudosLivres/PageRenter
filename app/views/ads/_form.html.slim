@@ -1,0 +1,41 @@
+== javascript_include_tag 'propaganda'
+= form_for @ad, html:{id: 'new_ad_left', class: 'form-horizontal col-md-6'} do |f|
+  - if @ad.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@ad.errors.count, "error")} prohibited this budget from being saved:"
+      ul
+        - @ad.errors.full_messages.each do |message|
+          li = message
+
+  center#choose_file_section
+    = f.file_field :avatar, :onchange => 'show_ad_image(this)'
+
+  .field.form-group
+    = f.label :name, translate_it_label('ad', 'name')
+    = f.text_field :name, class: 'form-control', placeholder: 'Nome da campanha'
+
+  .field.form-group
+    = f.label :title, translate_it_label('ad', 'title')
+    = f.text_field :title, class: 'form-control', placeholder: 'Frase curta de impacto'
+
+  .field.form-group
+    = f.label :redirect_link, translate_it_label('ad', 'redirect_link')
+    = f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com   ...   http://ebay.com/produto '
+
+  .field.form-group
+    = f.label :social_phrase, translate_it_label('ad', 'social_phrase')
+    = f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para as Redes Sociais'
+
+  .field.form-group
+    = f.label :description, translate_it_label('ad', 'description')
+    = f.text_field :description, class: 'form-control', placeholder: 'Descrição geral do produto da campanha (faça o publisher entender seu produto)'
+
+  .actions
+    = f.submit :submit, class: "btn #{current_button}"
+
+aside#new_ad_right.col-md-6
+  p
+    | Peça publicitária (Tamanho otimizado: 470 × 245)
+  .row
+    img#new_ad_image.col-md-6
+
