@@ -12,7 +12,7 @@ class Ad < ActiveRecord::Base
   validates :title, presence: true, length: { in: 3..50 }, on: [:create, :update] # which appears to call attention from the publisher
   validates :description, presence: true, length: { in: 5..140 } # which the campaign is about
   validates :social_phrase, presence: false # Social phrase is not required
-  validates :advertiser_id, presence: true
+  validates :campaign_id, presence: true
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Validates Associations
