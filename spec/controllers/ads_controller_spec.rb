@@ -33,7 +33,7 @@ describe AdsController do
   describe "GET index" do
     it "assigns all advertisements as @advertisements" do
       advertisement = Advertisement.create! valid_attributes
-      get :index, {}, valid_session
+      get :'index', {}, valid_session
       assigns(:ads).should eq([advertisement])
     end
   end

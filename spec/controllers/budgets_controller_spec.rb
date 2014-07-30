@@ -33,7 +33,7 @@ describe BudgetsController do
   describe "GET index" do
     it "assigns all budgets as @budgets" do
       budget = Budget.create! valid_attributes
-      get :index, {}, valid_session
+      get :'index', {}, valid_session
       assigns(:budgets).should eq([budget])
     end
   end
