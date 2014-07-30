@@ -1,6 +1,4 @@
 PageRenter::Application.routes.draw do
-  resources :budgets
-
   # In a near future put a helper to redirect to the user role session
   root 'redirect#redirect_index'
 
