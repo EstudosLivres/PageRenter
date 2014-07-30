@@ -6,6 +6,9 @@ class Ad < ActiveRecord::Base
   has_many :ad_states, through: :ad_history_states
   has_attached_file :avatar, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
 
+  # Custom validations
+  after_create :setup
+
   # Rails validations
   validates :name, presence: true, length: { in: 3..50 }, on: [:create, :update] # appears just for the Advertiser (to easy differentiate campaigns)
   validates :redirect_link, presence: true, length: { in: 15..200 }, on: [:create, :update] # where the user gonna be appointed
@@ -18,8 +21,13 @@ class Ad < ActiveRecord::Base
   # Validates Associations
   validates :campaign_id, presence: true, on: [:create, :update]
 
-  # TODO def budget: return the transactions without receiver which means paid to the system
+  # SetUp the Ad base state (the Ad object attr when created)
+  def setup
+    self.ad_states = [AdState.where(name:'pending').take]
+    self.save
+  end
 
+# TODO def budget: return the transactions without receiver which means paid to the system
 =begin
   def update_it
     # current_value_on_bd =
