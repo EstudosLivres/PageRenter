@@ -7,12 +7,22 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <h4 class="panel-title">
-                <div class="float_right">
+                <div class="campaign_actions float_right">
                     <span class="budget_value">
                         R$ 5.000
                     </span>
+
                     <%= link_to new_campaign_budget_path(campaign.id) do %>
-                        <i class="fa fa-gears"></i>
+                        <i class="fa fa-plus"></i>
+                    <% end %>
+
+                    <%= link_to new_campaign_budget_path(campaign.id) do %>
+                        <i class="fa fa-recycle"></i>
+                    <% end %>
+
+                    <!-- , class:'btn btn-default' -->
+                    <%= link_to new_campaign_budget_path(campaign.id) do %>
+                        <i class="fa fa-dollar"></i>
                     <% end %>
                 </div>
                 <img src="<%= campaign.advertiser.avatar.url(:thumb)%>" class="campaign_brand" />
