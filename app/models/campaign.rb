@@ -2,7 +2,7 @@ class Campaign < ActiveRecord::Base
   # Relations
   has_many :ads
   has_many :budgets
-  belongs_to :user
+  belongs_to :campaign_type
   belongs_to :advertiser, class_name: 'Profile', foreign_key: :advertiser_id
 
   # Custom validations
@@ -13,6 +13,11 @@ class Campaign < ActiveRecord::Base
   validates :name, presence: true, length: { in: 5..75 }, on: [:create, :update]
   validates :launch_date, presence: true, on: [:create, :update]
   validates :end_date, presence: true, on: [:create, :update]
+
+  # Validates Associations
+  validates :campaign_type_id, presence: true, on: [:create, :update]
+  validates :advertiser_id, presence: true, on: [:create, :update]
+
 
   # Validate the End be greater than Launch
   def validate_end_date_before_launch_date
