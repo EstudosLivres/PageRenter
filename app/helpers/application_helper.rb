@@ -74,6 +74,11 @@ module ApplicationHelper
     actions
   end
 
+  # Translate hardcoded attrs
+  def translate_attr(model, attr_name)
+    I18n.t("db_enum.#{model}.#{attr_name}")
+  end
+
   # Translate a label passing it name
   def translate_it_label(model_name, label_name)
     I18n.t("activerecord.attributes.#{model_name}.labels.#{label_name}")
