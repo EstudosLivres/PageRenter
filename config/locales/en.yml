@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t hello
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t(hello) %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -22,104 +22,104 @@
 en:
   db_enum:
     currencies:
-      real: 'Real brazilian'
-      euro: 'Euro european trade bloc'
-      american_dollar: 'Dollar USA'
+      real: Real brazilian
+      euro: Euro european trade bloc
+      american_dollar: Dollar USA
     recurrence_periods:
-      daily: 'Daily'
-      weekly: 'Weekly'
-      bimonthly: 'Bimonthly'
-      quarterly: 'Quarterly'
-      semiannual: 'Semiannual'
-      annual: 'Annual'
+      daily: Daily
+      weekly: Weekly
+      bimonthly: Bimonthly
+      quarterly: Quarterly
+      semiannual: Semiannual
+      annual: Annual
     ad_state:
-      stopped: 'Stopped'
-      running: 'Running'
-      pending: 'Pending'
-      checked: 'Checked'
-      suspended: 'Suspended'
+      stopped: Stopped
+      running: Running
+      pending: Pending
+      checked: Checked
+      suspended: Suspended
 
   msgs:
-    welcome: "Welcome!"
-    login_success_strong: "Welcome!"
-    login_success_publisher: "Me (PageRenter), you and your friends are going to make a lot of money together!"
-    login_success_advertiser: "Me (PageRenter) and the publishers will to bring a legion of hungry costumers for your products & services!"
-    login_error: "Invalid E-mail or Password."
+    welcome: Welcome!
+    login_success_strong: Welcome!
+    login_success_publisher: Me (PageRenter), you and your friends are going to make a lot of money together!
+    login_success_advertiser: Me (PageRenter) and the publishers will to bring a legion of hungry costumers for your products & services!
+    login_error: Invalid E-mail or Password.
 
 
 
   # Default messages for actions
-  btn_modal_okay: "Send"
-  btn_modal_close: "Close"
+  btn_modal_okay: Send
+  btn_modal_close: Close
 
 
 
   # Publisher texts
   publisher_action:
-    new_social_session: "NewSocialLogin"
-    invite: "InviteFriends"
+    new_social_session: NewSocialLogin
+    invite: InviteFriends
 
   publisher_invite:
-    title: "InviteFriends & increase your profits!"
+    title: InviteFriends & increase your profits!
     invite_form:
-      fb_btn_text: "Invite using Facebook"
-      email_label: "Friends's E-mails"
-      email_placeholder: "Friends's e-mails"
-      message_label: "Invitation message"
-      message_placeholder: "Message to invite your friends"
-      invitation_code_label: "Invitation code"
+      fb_btn_text: Invite using Facebook
+      email_label: Friendss E-mails
+      email_placeholder: Friendss e-mails
+      message_label: Invitation message
+      message_placeholder: Message to invite your friends
+      invitation_code_label: Invitation code
     invite_explanation:
-      subtitle: "Benefits"
-      benefit_1: "Better pay per click"
-      benefit_2: "Increase your people's range per click (your clicks + friends's clicks)"
-      benefit_3: "Earn per invited friend's click"
-      benefit_4: "Earn just for direct friends (2a2), the more you invite more you earn"
+      subtitle: Benefits
+      benefit_1: Better pay per click
+      benefit_2: Increase your peoples range per click (your clicks + friendss clicks)
+      benefit_3: Earn per invited friends click
+      benefit_4: Earn just for direct friends (2a2), the more you invite more you earn
 
   publisher_add_social_session:
-    title: "Increase the profitability & the range"
+    title: Increase the profitability & the range
 
 
   # Advertiser texts
   advertiser_action:
-    invite: "Recommend"
-    new_campaign: "NewCampaign"
+    invite: Recommend
+    new_campaign: NewCampaign
 
   advertiser_recommend:
-    title: "Recommend & Earn bonus"
+    title: Recommend & Earn bonus
     recommend_form:
-      fb_btn_text: "Recommend using Facebook"
-      email_label: "Partners's E-mails"
-      email_placeholder: "Partners's e-mails"
-      msg_label: "Recommend message"
-      msg_placeholder: "Message to recommend your partners to associate with you"
-      recommendation_code_label: "Recommendation code"
+      fb_btn_text: Recommend using Facebook
+      email_label: Partnerss E-mails
+      email_placeholder: Partnerss e-mails
+      msg_label: Recommend message
+      msg_placeholder: Message to recommend your partners to associate with you
+      recommendation_code_label: Recommendation code
     recommend_explanation:
-      benefit_1: "The Recommender Partner earn an amount about the first Recommended Partner's investment"
-      benefit_2: "Increase your people's range by linked campaign"
+      benefit_1: The Recommender Partner earn an amount about the first Recommended Partners investment
+      benefit_2: Increase your peoples range by linked campaign
 
 
 
   # User texts
   user_action:
-    feedback: "ContactUs"
-    manage_acc: "ManageAccount"
+    feedback: ContactUs
+    manage_acc: ManageAccount
     dropdown:
-      manage_pub: "Manage Publisher"
-      manage_adv: "Manage Company"
+      manage_pub: Manage Publisher
+      manage_adv: Manage Company
 
   user_feedback:
-    title: "TellUs your PageRenter's experience"
-    feedback_msg_label: "TellUs you experience using PageRenter. Questions? Criticisms? Suggestions? Cheers? Just type here!"
-    title_explanation: "How to improve with"
-    subtitle_explanation_1: "Questions"
-    improve_question_1: "Dialoguing we are getting closer"
-    improve_question_2: "Make it easy, more simple & clear"
-    subtitle_explanation_2: "Criticisms"
-    improve_criticism_1: "Fix what is bore you"
-    improve_criticism_2: "We redesign our processes"
-    subtitle_explanation_3: "Suggestions"
-    improve_suggestion_1: "We create partnerships"
-    improve_suggestion_2: "We rethink focusing on you"
-    subtitle_explanation_4: "Cheers"
-    improve_cheer_1: "What you love on the Page experience"
-    improve_cheer_2: "Motivate to always give you our best"
+    title: TellUs your PageRenters experience
+    feedback_msg_label: TellUs you experience using PageRenter. Questions? Criticisms? Suggestions? Cheers? Just type here!
+    title_explanation: How to improve with
+    subtitle_explanation_1: Questions
+    improve_question_1: Dialoguing we are getting closer
+    improve_question_2: Make it easy, more simple & clear
+    subtitle_explanation_2: Criticisms
+    improve_criticism_1: Fix what is bore you
+    improve_criticism_2: We redesign our processes
+    subtitle_explanation_3: Suggestions
+    improve_suggestion_1: We create partnerships
+    improve_suggestion_2: We rethink focusing on you
+    subtitle_explanation_4: Cheers
+    improve_cheer_1: What you love on the Page experience
+    improve_cheer_2: Motivate to always give you our best
