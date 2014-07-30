@@ -1,5 +1,5 @@
 class AdsController < ApplicationController
-  before_action :set_ad, only: [:show, :edit, :update, :destroy]
+  #before_action :set_ad, only: [:show, :edit, :update, :destroy]
   before_action :setup_aux_objs, only: [:new, :create, :edit, :update]
 
   # GET /Ads
@@ -29,7 +29,7 @@ class AdsController < ApplicationController
 
     respond_to do |format|
       if @ad.save
-        format.html { redirect_to @ad, notice: 'Ad was successfully created.' }
+        format.html { redirect_to campaign_ad_url(params[:campaign_id], @ad.id), notice: 'Ad was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ad }
       else
         format.html { render action: 'new' }
@@ -43,7 +43,7 @@ class AdsController < ApplicationController
   def update
     respond_to do |format|
       if @ad.update(ad_params)
-        format.html { redirect_to @ad, notice: 'Ad was successfully updated.' }
+        format.html { redirect_to campaign_ad_url(params[:campaign_id], @ad), notice: 'Ad was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -72,11 +72,14 @@ class AdsController < ApplicationController
 
     # Create objs to auxiliary on create forms
     def setup_aux_objs
+      @ad = Ad.find(params[:id]) unless params[:id].nil?
       @campaign = Campaign.find(params[:campaign_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      params.require(:ad).permit(:name, :redirect_link, :title, :description, :social_phrase, :avatar)
+      ad_hash = params.require(:ad).permit(:name, :redirect_link, :title, :description, :social_phrase, :avatar)
+      ad_hash[:campaign_id] = params[:campaign_id]
+      ad_hash
     end
 end
