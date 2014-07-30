@@ -28,7 +28,7 @@ class BudgetsController < ApplicationController
 
     respond_to do |format|
       if @budget.save
-        format.html { redirect_to @budget, notice: 'Budget was successfully created.' }
+        format.html { redirect_to root_url, notice: {type: :success, strong: 'Congratulations!', msg: 'Budget was successfully updated.'} }
         format.json { render action: 'show', status: :created, location: @budget }
       else
         format.html { render action: 'new' }
@@ -44,7 +44,7 @@ class BudgetsController < ApplicationController
 
     respond_to do |format|
       if @budget.save
-        format.html { redirect_to @budget, notice: 'Budget was successfully updated.' }
+        format.html { redirect_to root_url, notice: {type: :success, strong: 'Congratulations!', msg: 'Budget was successfully updated.'} }
         format.json { render action: 'show', status: :created, location: @budget }
       else
         format.html { render action: 'new' }
