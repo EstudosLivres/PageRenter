@@ -21,7 +21,7 @@ PageRenter::Application.routes.draw do
     patch '/update' => 'advertisers#update'
 
     resources :campaigns, except: [:destroy] do
-      resources :budgets, except: [:update, :edit, :destroy]
+      resources :budgets, except: [:edit, :destroy]
       resources :ads, except: [:destroy]
     end
   end
