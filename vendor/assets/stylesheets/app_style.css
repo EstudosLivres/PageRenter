@@ -163,8 +163,13 @@ header .social_invite .btn:focus {
 }
 
 .campaign_brand {
+    margin-right: 5px;
     width: 100px;
     height: 15px;
+}
+
+a[data-toggle="collapse"] span.badge {
+    margin-left: 7px;
 }
 
 form div.field.form-group span {
