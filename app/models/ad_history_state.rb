@@ -4,6 +4,6 @@ class AdHistoryState < ActiveRecord::Base
   belongs_to :ad_state
 
   # Validates Associations
-  validates :campaign_id, presence: true, on: [:create, :update]
-  validates :campaign_state_id, presence: true, on: [:create, :update]
+  validates :ad_id, presence: true, on: [:create, :update]
+  validates :ad_state_id, presence: true, on: [:create, :update]
 end
