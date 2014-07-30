@@ -26,7 +26,7 @@ pt:
       euro: Euro do bloco econômico europeu
       american_dollar: Dólar americano
     recurrence_periods:
-      daily: Diária
+      daily: Diário
       weekly: Semanal
       bimonthly: Bimestral
       quarterly: Trimestral
