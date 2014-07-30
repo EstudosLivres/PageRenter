@@ -26,7 +26,6 @@ class AdsController < ApplicationController
   # POST /Ads.json
   def create
     @ad = Ad.new(ad_params)
-    @ad.advertiser_id = session[:user_id]
 
     respond_to do |format|
       if @ad.save
@@ -78,6 +77,6 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      params.require(:ad).permit(:name, :redirect_link, :title, :launch_date, :description, :social_phrase, :avatar)
+      params.require(:ad).permit(:name, :redirect_link, :title, :description, :social_phrase, :avatar)
     end
 end
