@@ -78,4 +78,9 @@ module ApplicationHelper
   def translate_it_label(model_name, label_name)
     I18n.t("activerecord.attributes.#{model_name}.labels.#{label_name}")
   end
+
+  # Translate a model name
+  def translate_it_model(model_name)
+    I18n.t("activerecord.models.#{model_name}")
+  end
 end
