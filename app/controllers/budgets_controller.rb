@@ -1,5 +1,6 @@
 class BudgetsController < ApplicationController
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
+  before_action :setup_aux_objs, only: [:new, :edit]
 
   # GET /budgets
   # GET /budgets.json
@@ -15,8 +16,6 @@ class BudgetsController < ApplicationController
   # GET /budgets/new
   def new
     @budget = Budget.new
-    @campaign = Campaign.find(params[:campaign_id])
-    @currencies = Currency.all
   end
 
   # GET /budgets/1/edit
@@ -67,6 +66,13 @@ class BudgetsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_budget
       @budget = Budget.find(params[:id])
+    end
+
+    # Create objs to auxiliary on create forms
+    def setup_aux_objs
+      @campaign = Campaign.find(params[:campaign_id])
+      @currencies = Currency.all
+      @recurrence_periods = RecurrencePeriod.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
