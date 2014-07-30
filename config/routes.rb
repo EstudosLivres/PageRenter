@@ -19,7 +19,7 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index', as: :advertisers_root
     get '/edit' => 'advertisers#edit'
     patch '/update' => 'advertisers#update'
-    
+
     resources :campaigns, except: [:destroy] do
       resources :budgets, except: [:update, :edit, :destroy]
       resources :ads, except: [:destroy]
