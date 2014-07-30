@@ -6,7 +6,7 @@ class CreateAds < ActiveRecord::Migration
       t.string :description, limit: 140, null: false
       t.string :social_phrase, limit: 140, null: true
       t.string :redirect_link, limit: 200, null: false
-      t.references :advertiser, index: true
+      t.belongs_to :campaign
 
       t.timestamps
     end

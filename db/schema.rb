@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140726195402) do
     t.string   "description",         limit: 140, null: false
     t.string   "social_phrase",       limit: 140
     t.string   "redirect_link",       limit: 200, null: false
-    t.integer  "advertiser_id"
+    t.integer  "campaign_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -52,8 +52,6 @@ ActiveRecord::Schema.define(version: 20140726195402) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "ads", ["advertiser_id"], name: "index_ads_on_advertiser_id", using: :btree
 
   create_table "budget_launches", force: true do |t|
     t.integer  "budget_id"

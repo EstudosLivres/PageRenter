@@ -1,6 +1,6 @@
 class Ad < ActiveRecord::Base
   # Relations
-  belongs_to :advertiser, class_name: 'User', foreign_key: :advertiser_id
+  belongs_to :campaign
   has_many :bank_transactions
   has_many :ad_history_states
   has_many :ad_states, through: :ad_history_states
@@ -17,7 +17,7 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Validates Associations
-  validates :advertiser_id, presence: true, on: [:create, :update]
+  validates :campaign_id, presence: true, on: [:create, :update]
 
   # TODO def budget: return the transactions without receiver which means paid to the system
 
