@@ -110,11 +110,11 @@
         </div>
 
         <div class="container box">
-          <!--
             <header>
-                <h1 class="r_<%=role_name%>"> <i class="fa <%=role_icon%>"></i> <%=role_name%> </h1>
+                <h2 class="r_<%=role_name%>">
+                  <%= translate_it_model(params[:controller].singularize) %>
+                </h2>
             </header>
-          -->
 
             <% unless flash[:notice].nil? %>
                 <% if flash[:notice].is_a?(Hash) %>
