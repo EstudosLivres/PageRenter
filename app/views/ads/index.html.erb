@@ -1,4 +1,4 @@
-<h1>Listing advertisements</h1>
+<h1>Listing ads</h1>
 
 <table>
   <thead>
@@ -9,12 +9,9 @@
   </thead>
 
   <tbody>
-    <% @advertisements.each do |advertisement| %>
+    <% @ads.each do |ad| %>
       <tr>
-        <td><%= advertisement.name %></td>
-        <td><%= link_to 'Show', advertisement %></td>
-        <td><%= link_to 'Edit', edit_advertisement_path(advertisement) %></td>
-        <td><%= link_to 'Destroy', advertisement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= ad.name %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +19,4 @@
 
 <br>
 
-<%= link_to 'New Advertisement', new_advertisement_path %>
+<%= link_to 'New Ad', new_campaign_ad_path %>
