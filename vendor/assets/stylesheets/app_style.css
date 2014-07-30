@@ -515,6 +515,10 @@ center#choose_file_section {
     border-color: #ddd;
 }
 
+.container.box > header {
+    margin-bottom: 35px;
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
