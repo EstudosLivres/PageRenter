@@ -6,6 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# CampaignTypes
+puts 'CampaignTypes Roles...'.colorize(:green)
+  puts "\t #{CampaignType.find_or_create_by(name: 'link')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'e-commerce')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'marketplace')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'physical_store')}"
+puts '...CampaignTypes inserted.'.colorize(:light_blue)
+# /CampaignTypes
+
 # Currencies
 puts 'Inserting Currencies...'.colorize(:green)
   puts "\t #{Currency.find_or_create_by(name: 'real', acronym: 'R$')}"
