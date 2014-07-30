@@ -10,8 +10,8 @@ class CreateAdLifeCycle < ActiveRecord::Migration
 
     # The history of when the campaign got the states
     create_table :ad_history_states do |t|
-      t.belongs_to :campaign_state
-      t.belongs_to :campaign
+      t.belongs_to :ad
+      t.belongs_to :ad_state
 
       t.timestamps
     end
