@@ -95,6 +95,14 @@ body {
     float: right;
 }
 
+h2.model_title {
+    margin: 60px 0;
+}
+
+#campaigns_accordion .panel-title .float_right {
+    font-size: 1.5em;
+}
+
 /* BRAND CAMPAIGN STYLE (AUTO PROMO) */
 .badge.alert-danger {
     color: white;
