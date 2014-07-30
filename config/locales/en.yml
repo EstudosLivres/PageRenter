@@ -20,6 +20,25 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  db_enum:
+    currencies:
+      real: 'Real brazilian'
+      euro: 'Euro european trade bloc'
+      american_dollar: 'Dollar USA'
+    recurrence_periods:
+      daily: 'Daily'
+      weekly: 'Weekly'
+      bimonthly: 'Bimonthly'
+      quarterly: 'Quarterly'
+      semiannual: 'Semiannual'
+      annual: 'Annual'
+    ad_state:
+      stopped: 'Stopped'
+      running: 'Running'
+      pending: 'Pending'
+      checked: 'Checked'
+      suspended: 'Suspended'
+
   msgs:
     welcome: "Welcome!"
     login_success_strong: "Welcome!"
