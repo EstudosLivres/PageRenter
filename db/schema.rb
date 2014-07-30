@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140726195402) do
+ActiveRecord::Schema.define(version: 20140730232228) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
@@ -77,6 +77,13 @@ ActiveRecord::Schema.define(version: 20140726195402) do
   add_index "budgets", ["campaign_id"], name: "index_budgets_on_campaign_id", using: :btree
   add_index "budgets", ["currency_id"], name: "index_budgets_on_currency_id", using: :btree
   add_index "budgets", ["recurrence_period_id"], name: "index_budgets_on_recurrence_period_id", using: :btree
+
+  create_table "campaign_types", force: true do |t|
+    t.string   "name",        limit: 35,  null: false
+    t.string   "description", limit: 140
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "campaigns", force: true do |t|
     t.string   "name",          limit: 75, null: false
