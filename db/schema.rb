@@ -65,12 +65,12 @@ ActiveRecord::Schema.define(version: 20140730232228) do
   add_index "budget_launches", ["financial_transaction_id"], name: "index_budget_launches_on_financial_transaction_id", using: :btree
 
   create_table "budgets", force: true do |t|
-    t.boolean  "activated",                                    null: false
-    t.decimal  "value",                precision: 8, scale: 2, null: false
-    t.string   "closed_date"
-    t.integer  "currency_id",                                  null: false
-    t.integer  "campaign_id",                                  null: false
-    t.integer  "recurrence_period_id",                         null: false
+    t.boolean  "activated",                                               null: false
+    t.decimal  "value",                           precision: 8, scale: 2, null: false
+    t.string   "closed_date",          limit: 30
+    t.integer  "currency_id",                                             null: false
+    t.integer  "campaign_id",                                             null: false
+    t.integer  "recurrence_period_id",                                    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(version: 20140730232228) do
 
   create_table "campaigns", force: true do |t|
     t.string   "name",          limit: 75, null: false
-    t.datetime "launch_date",              null: false
-    t.datetime "end_date",                 null: false
+    t.datetime "launch_date"
+    t.datetime "end_date"
     t.integer  "advertiser_id"
     t.datetime "created_at"
     t.datetime "updated_at"
