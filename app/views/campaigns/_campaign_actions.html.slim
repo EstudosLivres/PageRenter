@@ -1,0 +1,19 @@
+.campaign_actions.float_right
+  span.budget_value
+    -budget = @campaign.budgets.last
+    -if !budget.nil?
+      -budget_class = 'budgeted'
+      = "#{number_to_currency(budget.value, unit:"#{budget.currency.acronym} ", separator:',', delimiter:'.') } - "
+      = "#{translate_attr('recurrence_periods',budget.recurrence_period.name)}"
+    -else
+      -budget_class = 'no_budget'
+
+  = link_to new_campaign_budget_path(@campaign.id) do
+    i.fa.fa-recycle
+
+  = link_to new_campaign_ad_path(@campaign.id) do
+    i.fa.fa-plus
+
+
+  = link_to new_campaign_budget_path(@campaign.id), class:budget_class do
+    i.fa.fa-dollar

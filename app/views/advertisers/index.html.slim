@@ -4,39 +4,22 @@
 
     #campaigns_accordion.panel-group
       -@campaigns.each_with_index do |campaign, index|
+        -@campaign = campaign
         .panel.panel-default
           .panel-heading
             h4.panel-title
-              .campaign_actions.float_right
-                span.budget_value
-                  -budget = campaign.budgets.last
-                  -if !budget.nil?
-                    -budget_class = 'budgeted'
-                    = "#{number_to_currency(budget.value, unit:"#{budget.currency.acronym} ", separator:',', delimiter:'.') } - "
-                    = "#{translate_attr('recurrence_periods',budget.recurrence_period.name)}"
-                  -else
-                    -budget_class = 'no_budget'
-
-                = link_to new_campaign_budget_path(campaign.id) do
-                  i.fa.fa-recycle
-
-                = link_to new_campaign_ad_path(campaign.id) do
-                  i.fa.fa-plus
-
-
-                = link_to new_campaign_budget_path(campaign.id), class:budget_class do
-                  i.fa.fa-dollar
+              =render 'campaigns/campaign_actions'
 
               a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{index}"
-                img.campaign_brand src="#{campaign.advertiser.avatar.url(:thumb)}"
-                = campaign.name
-                span class="badge alert-#{campaign.current_state[:alert]}"
-                  = campaign.current_state[:state]
+                img.campaign_brand src="#{@campaign.advertiser.avatar.url(:thumb)}"
+                = @campaign.name
+                span class="badge alert-#{@campaign.current_state[:alert]}"
+                  = @campaign.current_state[:state]
 
           .panel-collapse.collapse id="campaign_#{index}"
             .panel-body
               | Saldo:
-              | Criada em: <%= campaign.created_at.strftime('%d/%m/%Y') %>
-              | Launched for: <%= campaign.launch_date.strftime('%d/%m/%Y') %>
-              | End at: <%= campaign.end_date.strftime('%d/%m/%Y') %>
+              | Criada em: <%= @campaign.created_at.strftime('%d/%m/%Y') %>
+              | Launched for: <%= @campaign.launch_date.strftime('%d/%m/%Y') %>
+              | End at: <%= @campaign.end_date.strftime('%d/%m/%Y') %>
               | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
