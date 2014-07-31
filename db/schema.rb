@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 20140730232228) do
 
   create_table "profiles", force: true do |t|
     t.string   "name",                limit: 55
+    t.string   "username",            limit: 55
     t.boolean  "default_role",                   null: false
     t.integer  "role_id",                        null: false
     t.integer  "user_id"
