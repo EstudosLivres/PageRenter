@@ -32,7 +32,7 @@
 
   .field.form-group
     = f.label :username, translate_it_label('ad', 'username')
-    = f.text_field :username, class: 'form-control', placeholder: 'Frase para as Redes Sociais'
+    = f.text_field :username, class: 'form-control', placeholder: ' pagerenter/pub_username/anuncio_username', 'ng-model'=>'AdUserName'
 
   .actions
     = f.submit :submit, class: "btn #{current_button}"
@@ -41,5 +41,11 @@ aside#new_ad_right.col-md-6
   p
     | Peça publicitária (Tamanho otimizado: 470 × 245)
   .row
-    img#new_ad_image.col-md-6
+    -current_avatar = @ad.avatar.url unless @ad.avatar.nil?
+    img#new_ad_image.col-md-6 src="#{current_avatar}"
 
+  p#share_link
+    | Share link:
+    br
+    a href="#"
+      | http://pagerenter.com.br/pub_username/ad_username
