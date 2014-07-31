@@ -4,5 +4,17 @@ header#campaign_show
   h2
     -if @campaign.name.nil?
       =translate_it_model('campaign')
+
     -else
       =@campaign.name
+
+      span
+        .fa.fa-play
+        = format_date(@campaign.launch_date)
+
+      span
+        | -
+
+      span
+        .fa.fa-power-off
+        = format_date(@campaign.end_date)

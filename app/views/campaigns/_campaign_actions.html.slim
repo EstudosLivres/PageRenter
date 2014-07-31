@@ -9,17 +9,6 @@
       -budget_class = 'no_budget'
 
   -unless @campaign.id.nil?
-    span
-      .fa.fa-play
-      = format_date(@campaign.launch_date)
-
-    span
-      | -
-
-    span
-      .fa.fa-power-off
-      = format_date(@campaign.end_date)
-
     = link_to edit_campaign_path(@campaign.id) do
       i.fa.fa-edit
 
