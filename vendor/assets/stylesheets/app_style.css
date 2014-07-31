@@ -408,6 +408,14 @@ a.r_advertiser:hover,
     text-align: left;
 }
 
+h2 span {
+    font-size: 0.5em;
+}
+
+h2 span:first-child {
+    margin-left: 25px;
+}
+
 .fa-play {
     color: #339D63;
 }
