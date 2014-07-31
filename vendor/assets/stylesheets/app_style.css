@@ -461,6 +461,10 @@ a.r_advertiser:hover,
     color: #f5f5f5;
 }
 
+.social_invite .btn {
+    margin: 0 0 0 5px;
+}
+
 .modal_body_right .explanations {
     margin-top: 17px;
 }
