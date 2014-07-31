@@ -2,6 +2,7 @@ pt:
   activerecord:
     models:
       advertiser: Advertiser
+      publisher: Publisher
       campaign: Campanha
       budget: Configuração do orçamento da campanha
       ad: Novo anúncio publicitário
