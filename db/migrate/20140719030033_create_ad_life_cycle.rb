@@ -12,6 +12,7 @@ class CreateAdLifeCycle < ActiveRecord::Migration
     create_table :ad_history_states do |t|
       t.belongs_to :ad
       t.belongs_to :ad_state
+      t.string :reason, limit: 140, null: true
 
       t.timestamps
     end

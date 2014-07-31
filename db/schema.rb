@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20140730232228) do
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
     t.integer  "ad_state_id"
+    t.string   "reason",      limit: 140
     t.datetime "created_at"
     t.datetime "updated_at"
   end
