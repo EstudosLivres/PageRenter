@@ -14,7 +14,7 @@ class Ad < ActiveRecord::Base
 
   # Rails validations
   validates :name, presence: true, length: { in: 3..50 }, on: [:create, :update] # appears just for the Advertiser (to easy differentiate campaigns)
-  validates :redirect_link, presence: true, length: { in: 15..200 }, on: [:create, :update] # where the user gonna be appointed
+  validates :redirect_link, presence: true, length: { in: 15..1240 }, on: [:create, :update] # where the user gonna be appointed
   validates :title, presence: true, length: { in: 3..50 }, on: [:create, :update] # which appears to call attention from the publisher
   validates :description, presence: true, length: { in: 5..140 } # which the campaign is about
   validates :social_phrase, presence: false # Social phrase is not required
