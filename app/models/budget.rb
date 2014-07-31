@@ -20,7 +20,7 @@ class Budget < ActiveRecord::Base
   def disable_last_budget
     last_budget = self.campaign.budgets.last
     unless last_budget.nil?
-      last_budget.update(activated:false, closed_date:Time.now)
+      last_budget.update(activated:false, closed_date:"#{Time.now()}")
       # TODO prevent to persist if the last budget couldn't be UPDATED
     end
   end
