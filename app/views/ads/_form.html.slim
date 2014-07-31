@@ -30,6 +30,10 @@
     = f.label :description, translate_it_label('ad', 'description')
     = f.text_field :description, class: 'form-control', placeholder: 'Descrição geral do produto da campanha (faça o publisher entender seu produto)'
 
+  .field.form-group
+    = f.label :username, translate_it_label('ad', 'username')
+    = f.text_field :username, class: 'form-control', placeholder: 'Frase para as Redes Sociais'
+
   .actions
     = f.submit :submit, class: "btn #{current_button}"
 
