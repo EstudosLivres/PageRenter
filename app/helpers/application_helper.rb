@@ -74,6 +74,11 @@ module ApplicationHelper
     actions
   end
 
+  def format_date(date)
+    return if nil?
+    date.strftime("%d/%m/%Y")
+  end
+
   # Translate hardcoded attrs
   def translate_attr(model, attr_name)
     I18n.t("db_enum.#{model}.#{attr_name}")
