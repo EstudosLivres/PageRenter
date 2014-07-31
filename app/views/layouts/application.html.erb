@@ -110,11 +110,7 @@
         </div>
 
         <div class="container box">
-            <header>
-                <h2 class="r_<%=role_name%>">
-                  <%= translate_it_model(params[:controller].singularize) %>
-                </h2>
-            </header>
+            <%= render "#{params[:controller]}/header" %>
 
             <% unless flash[:notice].nil? %>
                 <% if flash[:notice].is_a?(Hash) %>
