@@ -36,11 +36,11 @@ puts '...RecurrencePeriods inserted.'.colorize(:light_blue)
 
 # AdStates
 puts 'Inserting AdStates...'.colorize(:green)
-  puts "\t #{AdState.find_or_create_by(name: 'stopped')}"
-  puts "\t #{AdState.find_or_create_by(name: 'running')}"
-  puts "\t #{AdState.find_or_create_by(name: 'pending')}"
-  puts "\t #{AdState.find_or_create_by(name: 'checked')}"
-  puts "\t #{AdState.find_or_create_by(name: 'suspended')}"
+  puts "\t #{AdState.find_or_create_by(name: 'pending', description: 'Waiting for PageRenter team inspection')}"
+  puts "\t #{AdState.find_or_create_by(name: 'checked', description: 'Inspected and it is okay')}"
+  puts "\t #{AdState.find_or_create_by(name: 'suspended', description: 'Inspected & there is some problem checkout AdHistoryState')}"
+  puts "\t #{AdState.find_or_create_by(name: 'running', description: 'It is able to be public to publishers (paid & there is money from the budget yet)')}"
+  puts "\t #{AdState.find_or_create_by(name: 'stopped', description: 'Paused by the advertiser owner (not public anymore & budget friezed)')}"
 puts '...AdStates inserted.'.colorize(:light_blue)
 # /AdStates
 
