@@ -8,12 +8,26 @@
     -else
       -budget_class = 'no_budget'
 
-  = link_to new_campaign_budget_path(@campaign.id) do
-    i.fa.fa-recycle
+  -unless @campaign.id.nil?
+    span
+      .fa.fa-play
+      = format_date(@campaign.launch_date)
 
-  = link_to new_campaign_ad_path(@campaign.id) do
-    i.fa.fa-plus
+    span
+      | -
 
+    span
+      .fa.fa-power-off
+      = format_date(@campaign.end_date)
 
-  = link_to new_campaign_budget_path(@campaign.id), class:budget_class do
-    i.fa.fa-dollar
+    = link_to edit_campaign_path(@campaign.id) do
+      i.fa.fa-edit
+
+    = link_to new_campaign_budget_path(@campaign.id) do
+      i.fa.fa-recycle
+
+    = link_to new_campaign_ad_path(@campaign.id) do
+      i.fa.fa-plus
+
+    = link_to new_campaign_budget_path(@campaign.id), class:budget_class do
+      i.fa.fa-dollar
