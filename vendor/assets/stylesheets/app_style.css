@@ -99,8 +99,12 @@ h2.model_title {
     margin: 0 0 70px 0;
 }
 
-.campaign_actions.float_right {
+.campaign_actions {
     font-size: 1.5em;
+}
+
+header#campaign_show .campaign_actions i.fa {
+    font-size: 1.3em;
 }
 
 .campaign_actions.float_right a {
@@ -398,6 +402,26 @@ a.r_advertiser:hover,
 .container.box > header > h2 {
     cursor: default;
     text-align: center;
+}
+
+.container.box > header#campaign_show > h2 {
+    text-align: left;
+}
+
+header#campaign_show .fa-play {
+    color: #339D63;
+}
+
+header#campaign_show .fa-power-off {
+    color: #D94442;
+}
+
+header#campaign_show span {
+    margin-right: 5px;
+}
+
+header#campaign_show span .fa{
+    margin-right: 5px;
 }
 
 .toggle_up_down_rotate {
