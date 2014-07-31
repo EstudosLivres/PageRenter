@@ -19,3 +19,4 @@ pt:
           redirect_link: Link para onde o usuário vai ser redirecionado (seu site, link em marketplace...)
           social_phrase: Uma frase curta de impacto que seja um exemplo para uso do Publisher
           description: Descrição maior para o Publisher saber o que está compartilhando
+          username: Nome para o Link que o publisher compartilha
