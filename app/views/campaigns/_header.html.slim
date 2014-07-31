@@ -1,0 +1,8 @@
+header#campaign_show
+  =render 'campaigns/campaign_actions'
+
+  h2
+    -if @campaign.name.nil?
+      =translate_it_model('campaign')
+    -else
+      =@campaign.name
