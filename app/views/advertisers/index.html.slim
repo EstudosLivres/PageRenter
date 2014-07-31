@@ -19,7 +19,7 @@
           .panel-collapse.collapse id="campaign_#{index}"
             .panel-body
               | Saldo:
-              | Criada em: <%= @campaign.created_at.strftime('%d/%m/%Y') %>
-              | Launched for: <%= @campaign.launch_date.strftime('%d/%m/%Y') %>
-              | End at: <%= @campaign.end_date.strftime('%d/%m/%Y') %>
+              | Criada em: <%= format_date(@campaign.created_at) %>
+              | Launched for: <%= format_date(@campaign.launch_date) %>
+              | End at: <%= format_date(@campaign.end_date) %>
               | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
