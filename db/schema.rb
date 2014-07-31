@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(version: 20140730232228) do
   create_table "ads", force: true do |t|
     t.string   "name",                limit: 50,  null: false
     t.string   "title",               limit: 50,  null: false
+    t.string   "username",            limit: 140, null: false
     t.string   "description",         limit: 140, null: false
     t.string   "social_phrase",       limit: 140
-    t.string   "redirect_link",       limit: 200, null: false
+    t.text     "redirect_link",                   null: false
     t.integer  "campaign_id"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
