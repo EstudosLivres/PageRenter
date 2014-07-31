@@ -591,6 +591,14 @@ center#choose_file_section {
     margin-bottom: 35px;
 }
 
+#share_link a {
+    color: green;
+}
+
+#share_link a:hover {
+    color: #00CB00;
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
