@@ -57,6 +57,7 @@ puts 'Inserting SocialNetworks...'.colorize(:green)
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face'})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw'})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta'})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumbler', acronym: 'Tb'})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Flicker', acronym: 'Fr'})}"
 puts '...SocialNetworks inserted.'.colorize(:light_blue)
