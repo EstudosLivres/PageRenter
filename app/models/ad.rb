@@ -4,7 +4,10 @@ class Ad < ActiveRecord::Base
   has_many :bank_transactions
   has_many :ad_history_states
   has_many :ad_states, through: :ad_history_states
-  has_attached_file :avatar, :styles => { :medium => '470x300>', :thumb => '117x75>' }, :default_url => '/images/:style/missing.png'
+  has_attached_file :avatar,
+                    url: "/post_images/:style/:filename",
+                    :styles => { :medium => '470x300>', :thumb => '117x75>' },
+                    :default_url => '/images/:style/missing.png'
 
   # Custom validations
   after_create :setup
@@ -23,7 +26,7 @@ class Ad < ActiveRecord::Base
 
   # SetUp the Ad base state (the Ad object attr when created)
   def setup
-    self.ad_states = [AdState.where(name:'pending').take]
+    self.ad_states = [AdState.where(name:'pending').take!]
     self.save
   end
 
