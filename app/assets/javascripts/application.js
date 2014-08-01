@@ -13,5 +13,6 @@
 //= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require zeroclipboard
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
