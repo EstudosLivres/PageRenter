@@ -1,0 +1,34 @@
+<!-- PageRenter campaign -->
+  #brand_campaign.alert.alert-info.campaign_content
+    header
+      .float_right
+        = render 'action_menu/socialbuttons'
+
+      a.brand href="/"
+        span.r_advertiser_brand Page
+        span.r_publisher_brand Renter
+
+      | Ganhe fichas para convidar amigos e montar grupos de compartilhamento
+
+    .body.row
+      .col-md-6
+        img src="/assets/page_campaign_adv.png"
+
+      .col-md-6
+        .campaign_attr
+          strong Recompensa: &nbsp;
+          span.badge.alert-danger +1
+          | &nbsp; fichas de convite
+
+        .campaign_attr.campaign_link
+          strong Slogan: &nbsp;
+          span Repassamos nossos lucros a você e seu amigo
+
+        .campaign_attr.campaign_link
+          strong Social phrase: &nbsp;
+          span Vamos todos ganhar mais se formos mais
+
+        .campaign_attr.campaign_link
+          strong Redirect Link: &nbsp;
+          a href="http://pagerenter.com.br/#{@current_user.username}" ="http://pagerenter.com.br/#{@current_user.username}"
+          i.fa.fa-copy
