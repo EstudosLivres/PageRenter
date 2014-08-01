@@ -7,7 +7,7 @@ class Ad < ActiveRecord::Base
   has_attached_file :avatar,
                     url: "/post_images/:style/:filename",
                     :styles => { :medium => '470x300>', :thumb => '117x75>' },
-                    :default_url => '/images/:style/missing.png'
+                    :default_url => '/assets/:style/missing_ad_avatar.jpg'
 
   # Custom validations
   after_create :setup
@@ -26,7 +26,10 @@ class Ad < ActiveRecord::Base
 
   # SetUp the Ad base state (the Ad object attr when created)
   def setup
+    # It starts as pending
     self.ad_states = [AdState.where(name:'pending').take!]
+
+    # TODO self.username = regex to change special character to normal &
     self.save
   end
 
