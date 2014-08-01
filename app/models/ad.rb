@@ -34,11 +34,4 @@ class Ad < ActiveRecord::Base
   end
 
 # TODO def budget: return the transactions without receiver which means paid to the system
-=begin
-  def update_it
-    # current_value_on_bd =
-    # current_value_on_memory =
-    # if != insert new clickvalue
-  end
-=end
 end
