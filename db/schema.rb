@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140730232228) do
 
   create_table "ad_states", force: true do |t|
     t.string   "name",        limit: 40,  null: false
+    t.string   "msg",         limit: 15,  null: false
     t.string   "description", limit: 140
     t.datetime "created_at"
     t.datetime "updated_at"
