@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
   #before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  before_action :setup_aux_objs, only: [:new, :create, :edit, :update]
+  before_action :setup_aux_objs, only: [:show, :new, :create, :edit, :update]
 
   # GET /Ads
   # GET /Ads.json
@@ -78,7 +78,7 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      ad_hash = params.require(:ad).permit(:name, :redirect_link, :title, :description, :social_phrase, :avatar)
+      ad_hash = params.require(:ad).permit(:name, :redirect_link, :title, :description, :social_phrase, :username, :avatar)
       ad_hash[:campaign_id] = params[:campaign_id]
       ad_hash
     end
