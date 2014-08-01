@@ -6,8 +6,8 @@ class Profile < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => '300x75>', :thumb => '100x15>' }, :default_url => '/assets/:style/missing_logo.jpg'
 
   # Validates Associations
-  validates :user_id, presence: true, on: [:create, :update]
-  validates :role_id, presence: true, on: [:create, :update]
+  validates :user_id, presence: true, on: :update
+  validates :role_id, presence: true, on: :update
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   # Constants
