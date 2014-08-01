@@ -24,6 +24,9 @@ gem 'jquery-rails'
 # Angularjs JavaScript library
 gem 'angularjs-rails', '~> 1.2.20'
 
+# ZeroClipBoard (easy copy to memory - command+c)
+gem 'zeroclipboard-rails', '~> 0.1.0'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
