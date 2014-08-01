@@ -37,6 +37,8 @@ class ApplicationController < ActionController::Base
   end
 
   def setup_user
+    # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
+
     # SetUp the user to prevent finds on BD
     if session['user_id'].nil? || params['action'] == 'sign_out' then return end
     if @current_user.nil? then @current_user = User.find(session['user_id']) end
