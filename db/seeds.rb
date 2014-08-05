@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # CampaignTypes
-puts 'CampaignTypes Roles...'.colorize(:green)
+puts 'Inserting CampaignTypes...'.colorize(:green)
   puts "\t #{CampaignType.find_or_create_by(name: 'link')}"
   puts "\t #{CampaignType.find_or_create_by(name: 'e-commerce')}"
   puts "\t #{CampaignType.find_or_create_by(name: 'marketplace')}"
@@ -17,9 +17,9 @@ puts '...CampaignTypes inserted.'.colorize(:light_blue)
 
 # Currencies
 puts 'Inserting Currencies...'.colorize(:green)
-  puts "\t #{Currency.find_or_create_by(name: 'real', acronym: 'R$')}"
-  puts "\t #{Currency.find_or_create_by(name: 'euro', acronym: '€')}"
-  puts "\t #{Currency.find_or_create_by(name: 'american_dollar', acronym: 'US$')}"
+  puts "\t #{Currency.find_or_create_by(name: 'real', acronym: 'R$', iso_code:986)}"
+  puts "\t #{Currency.find_or_create_by(name: 'euro', acronym: '€', iso_code:978)}"
+  puts "\t #{Currency.find_or_create_by(name: 'american_dollar', acronym: 'US$', iso_code:997)}"
 puts '...Currencies inserted.'.colorize(:light_blue)
 # /Currencies
 
