@@ -101,8 +101,8 @@ ActiveRecord::Schema.define(version: 20140730232228) do
 
   create_table "currencies", force: true do |t|
     t.string   "name",       limit: 55, null: false
-    t.integer  "iso_code",              null: false
     t.string   "acronym",    limit: 5,  null: false
+    t.integer  "iso_code",              null: false
     t.string   "zone",       limit: 45
     t.datetime "created_at"
     t.datetime "updated_at"
