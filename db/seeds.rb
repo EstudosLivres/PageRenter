@@ -54,14 +54,14 @@ puts '...Roles inserted.'.colorize(:light_blue)
 
 # SocialNetworks
 puts 'Inserting SocialNetworks...'.colorize(:green)
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebok'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr'})}"
 puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # /SocialNetworks
 

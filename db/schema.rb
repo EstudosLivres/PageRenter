@@ -188,6 +188,7 @@ ActiveRecord::Schema.define(version: 20140730232228) do
   create_table "social_networks", force: true do |t|
     t.string   "name",        limit: 50, null: false
     t.string   "acronym",     limit: 10
+    t.string   "username",    limit: 25
     t.string   "description", limit: 45
     t.datetime "created_at"
     t.datetime "updated_at"

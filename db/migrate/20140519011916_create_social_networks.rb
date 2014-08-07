@@ -3,6 +3,7 @@ class CreateSocialNetworks < ActiveRecord::Migration
     create_table :social_networks do |t|
       t.string :name, limit: 50, null: false
       t.string :acronym, limit: 10, null: true
+      t.string :username, limit: 25, null: false
       t.string :description, limit: 45, null: true
 
       t.timestamps
