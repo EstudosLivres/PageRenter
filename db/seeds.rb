@@ -54,14 +54,14 @@ puts '...Roles inserted.'.colorize(:light_blue)
 
 # SocialNetworks
 puts 'Inserting SocialNetworks...'.colorize(:green)
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebok'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr'})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr'})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebook', implemented:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr', implemented:false})}"
 puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # /SocialNetworks
 
