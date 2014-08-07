@@ -3,14 +3,14 @@
     = render 'ads/pagerenter_ad'
 
     #campaigns_accordion.panel-group
-      -@campaigns.each_with_index do |campaign, index|
+      -@campaigns.each_with_index do |campaign, campaign_i|
         -@campaign = campaign
         .panel.panel-default
           .panel-heading
             h4.panel-title
               =render 'campaigns/campaign_actions'
 
-              a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{index}"
+              a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{campaign_i}"
                 img.campaign_brand src="#{@campaign.advertiser.avatar.url(:thumb)}"
                 = @campaign.name
                 -current_campaign_state = @campaign.current_state
@@ -18,10 +18,19 @@
                   span class="badge alert-#{current_campaign_state.msg}"
                     = current_campaign_state.name.upcase
 
-          .panel-collapse.collapse id="campaign_#{index}"
+          .panel-collapse.collapse id="campaign_#{campaign_i}"
             .panel-body
-              | Saldo:
-              | Criada em: <%= format_date(@campaign.created_at) %>
-              | Launched for: <%= format_date(@campaign.launch_date) %>
-              | End at: <%= format_date(@campaign.end_date) %>
-              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              .panel-group
+              -@campaign.ads.each_with_index do |ad, ad_i|
+                -@ad = ad
+                .panel.panel-default
+                  .panel-heading
+                    h4.panel-title
+                      =render 'ads/ad_actions'
+                      a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{campaign_i}_ad_#{ad_i}"
+                        = @ad.name
+                        span class="badge alert-#{@ad.ad_history_states.last.ad_state.msg}"
+                          =@ad.ad_history_states.last.ad_state.name.upcase
+                  .panel-collapse.collapse id="campaign_#{campaign_i}_ad_#{ad_i}"
+                    .panel-body
+                      img src="#{@ad.avatar.url(:thumb)}"
