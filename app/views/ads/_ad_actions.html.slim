@@ -1,0 +1,5 @@
+.ad_actions.float_right
+  span.budget_value
+  -unless @ad.id.nil?
+    = link_to edit_campaign_ad_path(@campaign.id, @ad.id) do
+      i.fa.fa-edit
