@@ -607,6 +607,12 @@ center#choose_file_section {
     opacity: 0.5;
 }
 
+#social_sessions .social_session {
+    /** TODO remove this comment when implement the permissions validations
+    min-height: 200px;
+    **/
+}
+
 #social_sessions .alert header {
     border-bottom: 1px solid white;
     margin: 0 0 10px 0;
