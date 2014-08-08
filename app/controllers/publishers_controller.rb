@@ -10,6 +10,8 @@ class PublishersController < ApplicationController
 
   # Configuration for Publisher user
   def edit
+    @social_networks = SocialNetwork.all
+    @user_social_sessions = @current_user.social_sessions
   end
 
   # PATCH/PUT /publisher/1
