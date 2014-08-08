@@ -22,6 +22,11 @@ class SocialSession < ActiveRecord::Base
     user.social_sessions << self
   end
 
+  def self.has_it?(user, social_network)
+    # How to do an association assertive
+    !user.social_sessions.where(social_network_id: social_network.id).take.nil?
+  end
+
   # Convert social_hash into social session instance
   def self.setup(social_hash)
     social_for_instantiation = social_hash[:social_session]
