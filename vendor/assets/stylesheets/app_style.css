@@ -153,6 +153,10 @@ header .social_invite .btn:focus {
     color: whitesmoke;
 }
 
+body .container.box .btn:hover {
+    color: whitesmoke;
+}
+
 .budget_value {
     color: #33BD63;
 }
@@ -597,6 +601,10 @@ center#choose_file_section {
 
 #share_link a:hover {
     color: #00CB00;
+}
+
+.not_implemented {
+    opacity: 0.5;
 }
 
 @media (min-width: 1200px) {
