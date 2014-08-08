@@ -17,3 +17,11 @@
 //= require zeroclipboard
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
+
+$(document).on("page:change", function() {
+    $(".navbar .dropdown").hover((function() {
+        $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
+    }), function() {
+        $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
+    });
+});
