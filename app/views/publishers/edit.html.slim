@@ -9,12 +9,16 @@
             | |&nbsp;
             = social_network.name
 
-          div class="badge float_right"
+          -if SocialSession.has_it?(@current_user, social_network) then connected_class = 'badge'
+          -else disconnected_class = 'badge'
+
+
+          div class="#{disconnected_class} float_right"
             a.disconnect href='#'
               i.fa.fa-times
               | &nbsp; disconnect
 
-          div class=""
+          div class="#{connected_class}"
             a.connected href='#'
               i.fa.fa-exchange
               | &nbsp; connect
