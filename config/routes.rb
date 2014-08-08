@@ -10,14 +10,14 @@ PageRenter::Application.routes.draw do
 
   # Actions Under/For Publisher
   scope '/publishers' do
-    get '' => 'publishers#index', as: :publishers_root
-    get '/edit' => 'publishers#edit'
+    get '' => 'publishers#index', as: :publisher_root
+    get '/edit' => 'publishers#edit', as: :publisher_edit
   end
 
   # Actions Under/For Advertiser
   scope '/advertisers' do
-    get '' => 'advertisers#index', as: :advertisers_root
-    get '/edit' => 'advertisers#edit'
+    get '' => 'advertisers#index', as: :advertiser_root
+    get '/edit' => 'advertisers#edit', as: :advertiser_edit
     patch '/update' => 'advertisers#update'
 
     resources :campaigns, except: [:destroy] do
