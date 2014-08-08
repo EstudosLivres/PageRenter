@@ -607,7 +607,9 @@ center#choose_file_section {
     opacity: 0.5;
 }
 
-#social_sessions h5 {
+#social_sessions .alert header {
+    border-bottom: 1px solid white;
+    margin: 0 0 10px 0;
     font-size: 1.2em;
 }
 
