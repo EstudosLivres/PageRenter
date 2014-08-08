@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Angularjs JavaScript library
-gem 'angularjs-rails', '~> 1.2.20'
+gem 'angularjs-rails', '~> 1.2.21'
 
 # ZeroClipBoard (easy copy to memory - command+c)
 gem 'zeroclipboard-rails', '~> 0.1.0'
@@ -46,9 +46,6 @@ gem 'colorize', '~> 0.7.1'
 
 # Gem for UPLOAD files
 gem 'paperclip', '~> 4.1'
-
-# Bootstrap in a GEM
-gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
