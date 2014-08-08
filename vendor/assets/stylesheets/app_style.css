@@ -607,6 +607,10 @@ center#choose_file_section {
     opacity: 0.5;
 }
 
+#social_sessions h5 {
+    font-size: 1.2em;
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
