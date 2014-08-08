@@ -613,6 +613,35 @@ center#choose_file_section {
     font-size: 1.2em;
 }
 
+#social_sessions a {
+    color: white;
+}
+
+#social_sessions a:hover {
+    text-decoration: none;
+    color: #DCDCDC;
+}
+
+#social_sessions a.connected {
+    color: #B5EEC9;
+}
+
+#social_sessions a.connected:hover {
+    color: #9ADDAB;
+}
+
+#social_sessions a.disconnect {
+    color: #FFE213;
+}
+
+#social_sessions a.disconnect:hover {
+    color: #EDD013;
+}
+
+#social_sessions .badge {
+    background: rgba(255, 255, 255, 0.31);
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
