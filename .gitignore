@@ -81,4 +81,7 @@ prob_novo.rb
 # Aptana project
 .project
 
+# Project Uploads
+public/post_images/*
+
 .settings
