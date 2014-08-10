@@ -67,6 +67,8 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.2)
       i18n (~> 0.5)
+    fql (0.3.1)
+      multi_json
     hike (1.2.3)
     i18n (0.6.11)
     its (0.1.0)
@@ -189,6 +191,7 @@ DEPENDENCIES
   colorize (~> 0.7.1)
   factory_girl_rails (~> 4.4)
   faker (~> 1.4.2)
+  fql (~> 0.3.1)
   its
   jbuilder (~> 1.2)
   jquery-rails

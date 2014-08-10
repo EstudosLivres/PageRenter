@@ -53,6 +53,9 @@ gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
 # Easier & faster then ERB
 gem 'slim-rails', '~> 2.1.5'
 
+# Gem to Query on the Facebook (FQL)
+gem 'fql', '~> 0.3.1'
+
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
