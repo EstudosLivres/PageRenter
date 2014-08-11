@@ -56,6 +56,9 @@ gem 'slim-rails', '~> 2.1.5'
 # Gem to Query on the Facebook (FQL)
 gem 'fql', '~> 0.3.1'
 
+# Full Facebook API (including Graph API)
+gem "koala", "~> 1.10.0rc"
+
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
