@@ -93,7 +93,10 @@ class SocialSession < ActiveRecord::Base
 
   # Auth the user by FQL
   def self.authenticate_facebook(social)
-    options = { access_token: Rails.application.secrets.facebook_key }
+    app_id = Rails.application.secrets.fb_app_id
+    app_secret = Rails.application.secrets.fb_app_secret
+
+    options = { access_token: Koala::Facebook::OAuth.new(app_id, app_secret).get_app_access_token }
     query = "SELECT uid FROM user WHERE email='#{social['email']}' AND uid=#{social['id']} AND username='#{social['username']}' AND locale='#{social['locale']}'"
     fb_resp = Fql.execute(query, options)
     fb_resp.empty? ? false : true
