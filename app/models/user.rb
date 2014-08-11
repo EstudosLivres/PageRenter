@@ -94,9 +94,7 @@ class User < ActiveRecord::Base
     # Prevent to instantiate a new user without valid attrs
     begin
       # Create a specific user_hash for social entries
-      if user_hash_full.has_key?('social_session')
-        user_hash = {name:user_hash[:name], username:user_hash[:username], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
-      end
+      user_hash = {name:user_hash[:name], username:user_hash[:username], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
 
       return_user = User.new(user_hash.except('role', :role, 'gender'))
     rescue Exception => e
