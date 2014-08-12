@@ -7,13 +7,9 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
 
   # Validate the session
-  before_action :validate_session, :except => :mob_login
-  before_action :validate_session, :except => :system_signup_signin
   before_action :validate_session, :except => :redirect_index
 
   # SetUp user
-  before_action :setup_user, :except => :mob_login
-  before_action :setup_user, :except => :system_signup_signin
   before_action :setup_user, :except => :redirect_index
 
   def set_locale
@@ -31,6 +27,7 @@ class ApplicationController < ActionController::Base
 
   def validate_session
     action = params['action']
+    return if is_api_call?
     if session[:user_id].nil? && action != 'system_signup_signin' && action != 'login' && action != 'mob_login' && action !='auth'
       redirect_to ApplicationController.land_url
     end
@@ -38,7 +35,7 @@ class ApplicationController < ActionController::Base
 
   def setup_user
     # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
-
+    return if is_api_call?
     # SetUp the user to prevent finds on BD
     if session['user_id'].nil? || params['action'] == 'sign_out' then return end
     if @current_user.nil? then @current_user = User.find(session['user_id']) end
@@ -46,6 +43,11 @@ class ApplicationController < ActionController::Base
     # SetUp the current/default user profile
     single_role_name = role_name
     @current_user.set_default_profile(single_role_name)
+  end
+
+  # Prevent validate Login if it is an API call
+  def is_api_call?
+    return "#{/^.*?(?=\/)/.match(params[:controller])}" == 'api'
   end
 
   def self.land_url
