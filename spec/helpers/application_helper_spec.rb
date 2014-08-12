@@ -66,7 +66,7 @@ describe ApplicationHelper do
       it "Publisher icon should be #{ pub_icon }" do helper.role_icon.should == pub_icon end
 
       context "RoleActions for #Publisher" do
-        context "Act: #new_social_session -> new social network session to pub" do
+        context "Act: #new_social_session -> new socials network session to pub" do
           it "Should route to publishers#new_social_session" do helper.role_actions[0][:path].should == '#new_social_session' end
         end
         context "Act: #invite -> invite a friend" do

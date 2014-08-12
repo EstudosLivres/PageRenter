@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SocialController do
+describe SocialsController do
 
   describe "GET 'auth'" do
     it "returns http success" do
