@@ -1,7 +1,7 @@
 class API::RemoteUsersController < API::BaseAPIController
-  # Login user By System request (internal dependences)
+  # Login user By System request (internal dependencies)
   def system_sign_up_sign_in
-
+    user_params
   end
 
   # Login by token, without session
@@ -24,5 +24,11 @@ class API::RemoteUsersController < API::BaseAPIController
     # Setting the vars to be used on the View
     @network_login_url = network_obj.sign_up
     render json: {url: @network_login_url}
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    user = RailsFixes::Util.hash_keys_to_sym(JSON.parse(params.require(:user)))
+    return {name:user[:name], username:user[:username], email:user[:email], locale:user[:locale], password:user[:password], role:user[:role]}
   end
 end
