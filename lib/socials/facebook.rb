@@ -23,7 +23,7 @@ module Socials
 
     # Get the user Logged hash & accesses (OAuth)
     def get_current_user
-      @graph.get_object("me")
+      RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
     end
 
     # Get the Multi logins from the user (Pages, in Facebook case)
