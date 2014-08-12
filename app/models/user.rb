@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
   validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
 
   # Validates Associations
-
+  # TODO REFACTOR HOW PERSIST USERS
   # Encrypt the pasword using BCrypt
   def encrypt_password
     if password.present? && !pass_salt.present?
@@ -93,7 +93,7 @@ class User < ActiveRecord::Base
 
     # Prevent to instantiate a new user without valid attrs
     begin
-      # Create a specific user_hash for social entries
+      # Create a specific user_hash for socials entries
       user_hash = RailsFixes::Util.hash_keys_to_sym(user_hash)
       user_hash = {name:user_hash[:name], username:user_hash[:username], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
 
@@ -139,13 +139,13 @@ class User < ActiveRecord::Base
     user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)
     social_hash = User.new_social_user(user_hash)
 
-    # Validate the authentication based if the user is social session
+    # Validate the authentication based if the user is socials session
     if social_hash.nil?
       # Prevent the process if the user is already registered (just return it to the controller log him)
       user = User.authenticate(user_hash['email'], user_hash['password'])
       return user unless user.nil?
     else
-      # Prevent the process if social session registered
+      # Prevent the process if socials session registered
       user = SocialSession.authenticate(user_hash)
       return user unless user.nil?
     end
