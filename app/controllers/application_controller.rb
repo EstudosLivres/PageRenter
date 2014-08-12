@@ -17,7 +17,11 @@ class ApplicationController < ActionController::Base
     if user_params.is_a?(String) && user_params.length >= 2
       user_params = JSON.parse(user_params)
 
-      if user_params.is_a?Hash then if (user_params.has_key?('locale') && (user_params['locale'].length >= 2)) then session[:user_idiom] = user_params['locale'] end end
+      if user_params.is_a?Hash
+        if (user_params.has_key?('locale') && (user_params['locale'].length >= 2))
+          session[:user_idiom] = user_params['locale']
+        end
+      end
     end
 
     # Idiom setted by the session just if necessary to find the user on BD, if the locale cames with the browser, it is scaped
