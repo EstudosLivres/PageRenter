@@ -23,7 +23,17 @@ module Socials
 
     # Get the user Logged hash & accesses (OAuth)
     def get_current_user
-      RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
+      user_hash = RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
+      user_hash[:friend_count] = Fql.execute("SELECT friend_count FROM user WHERE uid=#{user_hash[:id]}")[0]['friend_count']
+
+      # setup pages
+      user_hash[:pages] = []
+      pages = @graph.get_object("me/accounts")
+      pages.each do |page|
+        user_hash[:pages].append(page)
+      end
+
+      return user_hash
     end
 
     # Get the Multi logins from the user (Pages, in Facebook case)
