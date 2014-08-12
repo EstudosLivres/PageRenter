@@ -84,8 +84,7 @@ class SocialSession < ActiveRecord::Base
     # Call the authentication dynamic
     authenticated = SocialSession.send("authenticate_#{social_network.name.downcase}", social_hash['social_session']['login'])
     if authenticated
-      user_hash = SocialSession.to_user(social_hash)
-      return User.where(email: user_hash['email']).take
+      User.persist_it(social_hash)
     else
       return {error:'Invalid social attrs'}
     end
