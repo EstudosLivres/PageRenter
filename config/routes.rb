@@ -2,8 +2,8 @@ PageRenter::Application.routes.draw do
   # In a near future put a helper to redirect to the user role session
   root 'redirect#redirect_index'
 
-  # Post back from the social network after validate user
-  get 'social/auth/:social_network_name' => 'social#auth'
+  # Post back from the socials network after validate user
+  get 'socials/auth/:social_network_name' => 'socials#auth'
 
   scope '/users' do
     post 'login' => 'users#login'
