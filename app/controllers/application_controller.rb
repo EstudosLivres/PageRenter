@@ -35,6 +35,10 @@ class ApplicationController < ActionController::Base
 
   def setup_user
     # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
+
+    # Clear flash to not consume cache space
+    session['flash'].clear
+
     return if is_api_call?
     # SetUp the user to prevent finds on BD
     if session['user_id'].nil? || params['action'] == 'sign_out' then return end
