@@ -1,12 +1,15 @@
 module Socials
   class Facebook < SocialLib
     attr_accessor :access_token
+    attr_accessor :graph
 
     # Config the app for the connection
     def setup()
-      app_id = Rails.application.secrets.fb_app_id
-      app_secret = Rails.application.secrets.fb_app_secret
-      @access_token = Koala::Facebook::OAuth.new(app_id, app_secret).get_app_access_token
+      app_id = Rails.application.secrets.fb.app_id
+      app_secret = Rails.application.secrets.fb.app_secret
+      app_redirect = Rails.application.secrets.fb.redir_url
+      @access_token = Koala::Facebook::OAuth.new(app_id, app_secret, app_redirect)
+      @graph = Koala::Facebook::API.new
     end
 
     # Redirect the user to the SocialNetwork SignUp page
@@ -14,7 +17,7 @@ module Socials
 
     # Get the user Logged hash & accesses (OAuth)
     def get_current_user()
-
+      @graph.get_object("koppel")
     end
 
     # Get the Multi logins from the user (Pages, in Facebook case)
@@ -25,5 +28,8 @@ module Socials
 
     # Share in Facebook OR tweet on Twitter
     def send_msg(msg, link) end
+
+    # The current user avatar link
+    def get_user_avatar() end
   end
 end
