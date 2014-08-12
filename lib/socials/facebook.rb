@@ -14,7 +14,6 @@ module Socials
       app_secret = @fb_config[:app_secret]
       app_redirect = @fb_config[:redir_url]
       @oauth = Koala::Facebook::OAuth.new(app_id, app_secret, app_redirect)
-      @graph = Koala::Facebook::API.new
     end
 
     # Redirect the user to the SocialNetwork SignUp page
@@ -24,7 +23,7 @@ module Socials
 
     # Get the user Logged hash & accesses (OAuth)
     def get_current_user
-      @graph.get_object("koppel")
+      @graph.get_object("me")
     end
 
     # Get the Multi logins from the user (Pages, in Facebook case)
@@ -38,5 +37,12 @@ module Socials
 
     # The current user avatar link
     def get_user_avatar() end
+
+    # Setup the Graph
+    def set_up_graph(code)
+      @access_token = @oauth.get_access_token(code)
+      @graph = Koala::Facebook::API.new(@access_token)
+      return @access_token
+    end
   end
 end
