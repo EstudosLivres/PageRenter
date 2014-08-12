@@ -1,6 +1,6 @@
 module Socials
   class SocialLib
-    # new social lib start setting it up
+    # new socials lib start setting it up
     def initialize
       setup()
     end
@@ -17,5 +17,7 @@ module Socials
     def get_active_permission() end
     # Share in Facebook OR tweet on Twitter
     def send_msg(msg, link) end
+    # The current user avatar link
+    def get_user_avatar() end
   end
 end
