@@ -87,6 +87,9 @@ class User < ActiveRecord::Base
 
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role(user_hash)
+    user_hash = RailsFixes::Util.hash_keys_to_sym(user_hash)
+    return User.authenticate(user_hash[:email], user_hash[:password]) if user_hash[:name].empty? || user_hash[:username].empty?
+
     # Prevent to instantiate a new user without valid attrs
     begin
       # Create a specific user_hash for socials entries
