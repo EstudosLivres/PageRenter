@@ -12,5 +12,14 @@ module RailsFixes
 
       return_hash
     end
+
+    # Convert string keys to symbol keys
+    def self.hash_keys_to_sym(hash_string_keys)
+      hash_string_keys.keys.each do |key|
+        hash_string_keys[(key.to_sym rescue key) || key] = hash_string_keys.delete(key)
+      end
+
+      return hash_string_keys
+    end
   end
 end
