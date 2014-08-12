@@ -7,19 +7,19 @@ module Socials
     # Config the app for the connection
     def setup
       # load fb_config
-      fb_config = RailsFixes::Util.hash_keys_to_sym(Rails.application.secrets.fb)
+      @fb_config = RailsFixes::Util.hash_keys_to_sym(Rails.application.secrets.fb)
       
-      # Using fb config (not Rails.app.secrets direct) 
-      app_id = fb_config[:app_id]
-      app_secret = fb_config[:app_secret]
-      app_redirect = fb_config[:redir_url]
+      # Using fb_config (not Rails.app.secrets direct)
+      app_id = @fb_config[:app_id]
+      app_secret = @fb_config[:app_secret]
+      app_redirect = @fb_config[:redir_url]
       @oauth = Koala::Facebook::OAuth.new(app_id, app_secret, app_redirect)
       @graph = Koala::Facebook::API.new
     end
 
     # Redirect the user to the SocialNetwork SignUp page
     def sign_up
-      @oauth.url_for_oauth_code(permissions: fb_config[:app_permissions])
+      @oauth.url_for_oauth_code(permissions:@fb_config[:app_permissions])
     end
 
     # Get the user Logged hash & accesses (OAuth)
