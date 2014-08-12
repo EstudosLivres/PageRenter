@@ -53,6 +53,6 @@ class API::RemoteUsersController < API::BaseAPIController
 
     # Setting the vars to be used on the View
     @network_login_url = network_obj.sign_up
-    render json: {:"#{network_class.downcase}" => @network_login_url}
+    render json: {url: @network_login_url}
   end
 end
