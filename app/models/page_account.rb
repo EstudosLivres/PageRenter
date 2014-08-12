@@ -7,6 +7,5 @@ class PageAccount < ActiveRecord::Base
   validates :name, presence: true, length: { in: 3..75 }, on: [:create, :update]
   validates :category, presence: true, length: { in: 3..25 }, on: [:create, :update]
 
-
   # Validates Associations
 end
