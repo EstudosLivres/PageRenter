@@ -40,6 +40,7 @@ PageRenter::Application.routes.draw do
     # API for Parent/Nested systems (not third systems)
     scope '/system' do
       post '/signup_signin' => 'remote_users#system_signup_signin'
+      get '/social/login/:social_network_name' => 'remote_users#social_login'
     end
 
     # All the actions for Thrid and System for MobileApp
