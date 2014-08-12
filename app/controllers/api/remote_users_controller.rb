@@ -44,4 +44,15 @@ class API::RemoteUsersController < API::BaseAPIController
       render json: JSON.parse(token_manager.token.to_json)
     end
   end
+
+  # SocialNetwork Logins
+  def social_login
+    # Initializing the env
+    network_class = params[:social_network_name].humanize
+    network_obj = "Socials::#{network_class}".constantize.new
+
+    # Setting the vars to be used on the View
+    @network_login_url = network_obj.sign_up
+    render json: {:"#{network_class.downcase}" => @network_login_url}
+  end
 end
