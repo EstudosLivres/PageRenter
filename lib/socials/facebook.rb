@@ -7,7 +7,7 @@ module Socials
     # Config the app for the connection
     def setup
       # load fb_config
-      @fb_config = RailsFixes::Util.hash_keys_to_sym(Rails.application.secrets.fb)
+      @fb_config = RailsFixes::Util.hash_keys_to_sym(Rails.application.secrets.facebook)
       
       # Using fb_config (not Rails.app.secrets direct)
       app_id = @fb_config[:app_id]
