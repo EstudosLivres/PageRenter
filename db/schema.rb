@@ -202,7 +202,7 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.string   "email",             limit: 55, null: false
     t.string   "gender",            limit: 10
     t.string   "locale",            limit: 5,  null: false
-    t.integer  "count_friends",     limit: 8,  null: false
+    t.integer  "friend_count",      limit: 8,  null: false
     t.integer  "user_id"
     t.integer  "social_network_id"
     t.datetime "created_at"
