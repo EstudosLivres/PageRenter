@@ -87,17 +87,10 @@ class User < ActiveRecord::Base
 
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role(user_hash)
-    user_hash = SocialSession.to_user(user_hash) if user_hash.has_key?('social_session')
-    user_hash_full = user_hash
-    if user_hash_full.has_key?('social_session') then user_hash = SocialSession.to_user(user_hash_full) end
-
     # Prevent to instantiate a new user without valid attrs
     begin
       # Create a specific user_hash for socials entries
-      user_hash = RailsFixes::Util.hash_keys_to_sym(user_hash)
-      user_hash = {name:user_hash[:name], username:user_hash[:username], email:user_hash[:email], locale:user_hash[:locale], role:user_hash[:role]}
-
-      return_user = User.new(user_hash.except('role', :role, 'gender'))
+      return_user = User.new(user_hash.except(:role))
     rescue Exception => e
       if e.to_s == 'ActiveModel::ForbiddenAttributesError'
         new_user_hash = RailsFixes::Util.action_controller_to_hash(user_hash)
