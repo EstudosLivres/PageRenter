@@ -132,45 +132,7 @@ class User < ActiveRecord::Base
 
   # Persist the user by it previous hash
   def self.persist_it(user_hash)
-    user_hash = JSON.parse(user_hash) if user_hash.is_a?(String)
-    social_hash = User.new_social_user(user_hash)
-
-    # Validate the authentication based if the user is socials session
-    if social_hash.nil?
-      # Prevent the process if the user is already registered (just return it to the controller log him)
-      user = User.authenticate(user_hash['email'], user_hash['password'])
-      return user unless user.nil?
-    else
-      # Prevent the process if socials session registered
-      user = SocialSession.authenticate(user_hash)
-      return user unless user.nil?
-    end
-
-    # Prepare the user with it default role for registration
-    user = User.new_user_with_it_role(user_hash) unless user_hash.has_key?('social_session')
-    user = User.new_user_with_it_role(SocialSession.to_user(user_hash)) if user_hash.has_key?('social_session')
-    return User.throw_user_with_error unless user.is_a?(User)
-
-    # Add the SocialSession to the user, if it is needed
-    begin
-      social_hash = RailsFixes::Util.action_controller_to_hash(social_hash)
-      social_session = SocialSession.setup(social_hash) unless social_hash.nil?
-    rescue Exception => e
-      if e.to_s == 'ActiveModel::ForbiddenAttributesError'
-        social_session = SocialSession.setup(social_hash)
-        return User.throw_user_with_error if social_session.nil?
-      else
-        return User.throw_user_with_error
-      end
-    end
-
-    # User save
-    if user.save
-      social_session.add_it_to(user) unless social_session.nil?
-      return user
-    else
-      return user
-    end
+    return self.new_user_with_it_role(user_hash).save
   end
 
   # Throws an user with errors
