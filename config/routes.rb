@@ -3,7 +3,7 @@ PageRenter::Application.routes.draw do
   root 'redirect#redirect_index'
 
   # Post back from the socials network after validate user
-  get 'socials/auth/:social_network_name' => 'socials#auth'
+  get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
 
   scope '/users' do
     post 'login' => 'users#login'
