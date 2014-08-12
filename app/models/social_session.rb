@@ -27,7 +27,7 @@ class SocialSession < ActiveRecord::Base
     !user.social_sessions.where(social_network_id: social_network.id).take.nil?
   end
 
-  # Convert social_hash into social session instance
+  # Convert social_hash into socials session instance
   def self.setup(social_hash)
     social_for_instantiation = social_hash[:social_session]
     social_for_instantiation = RailsFixes::Util.action_controller_to_hash(social_for_instantiation)
@@ -40,7 +40,7 @@ class SocialSession < ActiveRecord::Base
     login = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:login])
     pages = RailsFixes::Util.action_controller_to_hash(social_for_instantiation[:pages])[:data]
 
-    # Prepare social session hash
+    # Prepare socials session hash
     login[:id_on_social] = login[:id]
     login[:social_network_id] = login[:network_id]
     login.delete(:network_id)
@@ -50,7 +50,7 @@ class SocialSession < ActiveRecord::Base
     # Prepare page account hash
     if pages.is_a?(Array)
       pages.each do |page|
-        # Change page attrs social to our DB
+        # Change page attrs socials to our DB
         page = RailsFixes::Util.action_controller_to_hash(page)
         page[:id_on_social] = page[:id]
         page.delete(:id)
@@ -71,14 +71,14 @@ class SocialSession < ActiveRecord::Base
     user_hash.except('count_friends', 'id', 'network_id')
   end
 
-  # Authenticate the social session based on it specific rules
+  # Authenticate the socials session based on it specific rules
   def self.authenticate(social_hash)
     # Prevent the case the network passed doesn't exist
     begin
       user_social_network = social_hash['social_session']['login']['network']
       social_network = SocialNetwork.find(user_social_network.to_i)
     rescue
-      return {error:'Invalid social networking'}
+      return {error:'Invalid socials networking'}
     end
 
     # Call the authentication dynamic
@@ -86,7 +86,7 @@ class SocialSession < ActiveRecord::Base
     if authenticated
       User.persist_it(social_hash)
     else
-      return {error:'Invalid social attrs'}
+      return {error:'Invalid socials attrs'}
     end
   end
 
