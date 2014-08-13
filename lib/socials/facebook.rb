@@ -50,9 +50,13 @@ module Socials
 
     # Setup the Graph
     def set_up_graph(code)
-      @access_token = @oauth.get_access_token(code)
-      @graph = Koala::Facebook::API.new(@access_token)
-      return @access_token
+      begin
+        @access_token = @oauth.get_access_token(code)
+        @graph = Koala::Facebook::API.new(@access_token)
+        return @access_token
+      rescue
+        return sign_up
+      end
     end
   end
 end
