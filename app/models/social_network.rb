@@ -16,6 +16,12 @@ class SocialNetwork < ActiveRecord::Base
     obj_instance = /[^::]*$/.match("#{network_obj.class}")
     obj_instance_str = "#{obj_instance}".downcase
     social_obj = network_obj.get_current_user
+    social_obj[:social_network] = obj_instance_str
+
+    # User already registered, do not persist it (PREVENT)
+    authenticated = SocialSession.authenticate(social_obj)
+    return authenticated if authenticated.is_a?(User)
+
     social_hash = self.send("create_from_#{obj_instance_str}", social_obj)
 
     # Persist the user, just continue if user have been saved
