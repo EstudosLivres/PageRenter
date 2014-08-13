@@ -80,7 +80,7 @@ class SocialSession < ActiveRecord::Base
     if authenticated
       return authenticated
     else
-      return {error:'Invalid socials attrs'}
+      return false
     end
   end
 
@@ -89,7 +89,7 @@ class SocialSession < ActiveRecord::Base
     user = User.where(email:social[:email]).take
     return false if user.nil?
     social_user=user.social_sessions.where(email:social[:email],id_on_social:social[:id],username:social[:username],user_id:user.id).take
-    social_user.nil? ? user : false
+    social_user.nil? ? false : user
   end
 
   # Auth the user by OAuth
