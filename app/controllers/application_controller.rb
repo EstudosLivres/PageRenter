@@ -46,7 +46,14 @@ class ApplicationController < ActionController::Base
     return if is_api_call?
     # SetUp the user to prevent finds on BD
     if session['user_id'].nil? || params['action'] == 'sign_out' then return end
-    if @current_user.nil? then @current_user = User.find(session['user_id']) end
+    if @current_user.nil?
+      begin
+        @current_user = User.find(session['user_id'])
+      rescue
+        session[:user_id] = nil
+        return
+      end
+    end
 
     # SetUp the current/default user profile
     single_role_name = role_name
