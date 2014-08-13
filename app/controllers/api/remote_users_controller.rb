@@ -2,10 +2,10 @@ class API::RemoteUsersController < API::BaseAPIController
   # Login user By System request (internal dependencies)
   def system_sign_up_sign_in
     user = User.new_user_with_it_role(user_params)
-    if user.save
-      return render json: {status: 'ok', msg: 'registered'}
-    else
+    if user.errors.empty? || user.errors.messages.empty?
       return render json: {status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json}
+    else
+      return render json: {status: 'ok', msg: 'registered'}
     end
   end
 
