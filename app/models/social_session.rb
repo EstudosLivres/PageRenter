@@ -11,7 +11,7 @@ class SocialSession < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 55 }, on: [:create, :update]
   validates :gender, presence: false, length: { maximum: 10 }, on: [:create, :update]
   validates :locale, presence: true, length: { maximum: 5 }, on: [:create, :update]
-  validates :count_friends, presence: true, on: [:create, :update]
+  validates :friend_count, presence: true, on: [:create, :update]
 
   # Validates Associations
   validates :user_id, presence: true, on: [:create, :update]
@@ -21,6 +21,8 @@ class SocialSession < ActiveRecord::Base
   def add_it_to(user)
     user.social_sessions << self
   end
+
+  # ----- STATICs AUX METHODs -----
 
   def self.has_it?(user, social_network)
     # How to do an association assertive
