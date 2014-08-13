@@ -65,4 +65,34 @@ class SocialSession < ActiveRecord::Base
 
     social_session
   end
+
+  # Authenticate the socials session based on it specific rules
+  def self.authenticate(social_hash)
+    # Prevent the case the network passed doesn't exist
+    begin
+      social_network = SocialNetwork.where(username: social_hash[:social_network]).take
+    rescue
+      return {error:'Invalid socials networking'}
+    end
+
+    # Call the authentication dynamic
+    authenticated = SocialSession.send("authenticate_#{social_network.name.downcase}", social_hash)
+    if authenticated
+      User.persist_it(social_hash)
+    else
+      return {error:'Invalid socials attrs'}
+    end
+  end
+
+  # Auth the user by FQL
+  def self.authenticate_facebook(social)
+    user = User.where(email:social[:email]).take
+    return false if user.nil?
+    social_user=user.social_sessions.where(email:social[:email],id_on_social:social[:id],username:social[:username],user_id:user.id).take
+    social_user.nil? ? true : false
+  end
+
+  # Auth the user by OAuth
+  def self.authenticate_twitter(social)
+  end
 end
