@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
     # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
 
     # Clear flash to not consume cache space
-    session['flash'].clear
+    session['flash'].clear unless session['flash'].nil?
 
     return if is_api_call?
     # SetUp the user to prevent finds on BD
