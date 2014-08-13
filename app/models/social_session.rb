@@ -65,45 +65,4 @@ class SocialSession < ActiveRecord::Base
 
     social_session
   end
-
-  # Convert social_hash into user_hash
-  def self.to_user(social_hash)
-    user_hash = social_hash['social_session']['login']
-    user_hash['role'] = 'publisher'
-    user_hash.except('count_friends', 'id', 'network_id')
-  end
-
-  # Authenticate the socials session based on it specific rules
-  def self.authenticate(social_hash)
-    # Prevent the case the network passed doesn't exist
-    begin
-      user_social_network = social_hash['social_session']['login']['network']
-      social_network = SocialNetwork.find(user_social_network.to_i)
-    rescue
-      return {error:'Invalid socials networking'}
-    end
-
-    # Call the authentication dynamic
-    authenticated = SocialSession.send("authenticate_#{social_network.name.downcase}", social_hash['social_session']['login'])
-    if authenticated
-      User.persist_it(social_hash)
-    else
-      return {error:'Invalid socials attrs'}
-    end
-  end
-
-  # Auth the user by FQL
-  def self.authenticate_facebook(social)
-    app_id = Rails.application.secrets.fb_app_id
-    app_secret = Rails.application.secrets.fb_app_secret
-
-    options = { access_token: Koala::Facebook::OAuth.new(app_id, app_secret).get_app_access_token }
-    query = "SELECT uid FROM user WHERE email='#{social['email']}' AND uid=#{social['id']} AND username='#{social['username']}' AND locale='#{social['locale']}'"
-    fb_resp = Fql.execute(query, options)
-    fb_resp.empty? ? false : true
-  end
-
-  # Auth the user by OAuth
-  def self.authenticate_twitter(social)
-  end
 end
