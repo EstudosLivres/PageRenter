@@ -18,6 +18,7 @@ class CreateSocialSessionsAndPageAccounts < ActiveRecord::Migration
       t.string :id_on_social, limit: 45, null: false
       t.string :name, limit: 75, null: false
       t.string :category, limit: 25, null: false
+      t.column :range, "BIGINT", null: false
       t.string :access_token, limit: 255, null: true
 
       t.timestamps

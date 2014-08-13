@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.string   "id_on_social", limit: 45, null: false
     t.string   "name",         limit: 75, null: false
     t.string   "category",     limit: 25, null: false
+    t.integer  "range",        limit: 8,  null: false
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
