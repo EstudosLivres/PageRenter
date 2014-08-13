@@ -11,9 +11,10 @@ class SocialsController < ApplicationController
     user = SocialNetwork.persist_social_user(network_obj)
 
     # Verify if there is any error
-    unless user.errors.empty?
-      return render html: {notice: user.errors} if user.errors.messages.is_a?(Hash)
-    end
+    return render html: {notice: user.errors} if user.errors.messages.is_a?(Hash) if !user.errors.empty?
+
+    session[:user_id] = user.id
+    return redirect_to root_url
 
     render :layout => 'blank'
   end
