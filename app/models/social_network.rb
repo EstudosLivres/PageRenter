@@ -46,6 +46,7 @@ class SocialNetwork < ActiveRecord::Base
   def self.create_from_facebook(social_obj)
     return_hash = {}
     user_hash = {
+      role:'publisher',
       name:social_obj[:name],
       username:social_obj[:username],
       email:social_obj[:email],
@@ -74,7 +75,7 @@ class SocialNetwork < ActiveRecord::Base
     end
 
     # user
-    return_hash[:user] = User.new(user_hash)
+    return_hash[:user] = User.new_user_with_it_role(user_hash)
 
     # social
     return_hash[:social_session] = SocialSession.new(social_hash)
