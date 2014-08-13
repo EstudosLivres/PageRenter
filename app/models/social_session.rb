@@ -78,7 +78,7 @@ class SocialSession < ActiveRecord::Base
     # Call the authentication dynamic
     authenticated = SocialSession.send("authenticate_#{social_network.name.downcase}", social_hash)
     if authenticated
-      User.persist_it(social_hash)
+      return authenticated
     else
       return {error:'Invalid socials attrs'}
     end
@@ -89,7 +89,7 @@ class SocialSession < ActiveRecord::Base
     user = User.where(email:social[:email]).take
     return false if user.nil?
     social_user=user.social_sessions.where(email:social[:email],id_on_social:social[:id],username:social[:username],user_id:user.id).take
-    social_user.nil? ? true : false
+    social_user.nil? ? user : false
   end
 
   # Auth the user by OAuth
