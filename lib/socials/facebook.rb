@@ -27,8 +27,8 @@ module Socials
       user_hash[:friend_count] = Fql.execute("SELECT friend_count FROM user WHERE uid=#{user_hash[:id]}").first()['friend_count']
       user_id = user_hash[:id]
 
-      local_interactions = get_likes(user_id)
-      foreign_interactions = get_shares(user_id)
+      local_interactions = user_likes(user_id)
+      foreign_interactions = user_shares(user_id)
       local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
       foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
 
@@ -43,9 +43,9 @@ module Socials
       pages = @graph.get_object("me/accounts")
       pages.each do |page|
         page_id = page['id']
-        local_interactions = get_likes(page_id)
-        foreign_interactions = get_shares(page_id)
-        followers = get_followers(page_id)
+        local_interactions = page_likes(page_id)
+        foreign_interactions = page_shares(page_id)
+        followers = page_followers(page_id)
         local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
         foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
 
@@ -85,8 +85,8 @@ module Socials
 
     # TODO: pensar em uma tela para ficar mostrando pro usuário enquanto os dados são puxados do facebook (tá demorando em média 30 segs)
 
-    # Get the Page or User best liked post
-    def get_likes(source_id)
+    # Get the Page best liked post
+    def page_likes(source_id)
       query =
           "
             SELECT post_id, likes.count
@@ -98,8 +98,8 @@ module Socials
       Fql.execute(query, {access_token:@access_token}).first
     end
 
-    # Get the Page or User best shared post
-    def get_shares(source_id)
+    # Get the Page best shared post
+    def page_shares(source_id)
       query =
           "
             SELECT post_id, share_count
@@ -112,9 +112,35 @@ module Socials
     end
 
     # Get the Page followers
-    def get_followers(source_id)
+    def page_followers(source_id)
       url = "https://graph.facebook.com/#{source_id}?access_token=#{@access_token}"
       return JSON.parse(Net::HTTP.get(URI.parse(url)))
+    end
+
+    # Get the User best liked post
+    def user_likes(source_id)
+      query =
+          "
+            SELECT post_id, likes.count
+            FROM stream
+            WHERE source_id = '#{source_id}'
+            ORDER BY likes.count
+            DESC LIMIT 1
+          "
+      Fql.execute(query, {access_token:@access_token}).first
+    end
+
+    # Get the User best shared post
+    def user_shares(source_id)
+      query =
+          "
+            SELECT post_id, share_count
+            FROM stream
+            WHERE source_id = '#{source_id}'
+            ORDER BY share_count
+            DESC LIMIT 1
+          "
+      Fql.execute(query, {access_token:@access_token}).first
     end
   end
 end
