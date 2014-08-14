@@ -31,15 +31,17 @@ module Socials
       pages = @graph.get_object("me/accounts")
       pages.each do |page|
         page_id = page['id']
-        likes = get_likes(page_id)
-        shares = get_shares(page_id)
+        local_interactions = get_likes(page_id)
+        foreign_interactions = get_shares(page_id)
         followers = get_followers(page_id)
+        local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
+        foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
 
         page[:followers] = followers['likes']
-        page[:local_interactions] = likes['likes']['count']
-        page[:local_interaction_id] = likes['post_id']
-        page[:foreign_interactions] = shares['share_count']
-        page[:foreign_interaction_id] = shares['post_id']
+        page[:local_interactions] = local_interactions['likes']['count']
+        page[:local_interaction_id] = local_interactions['post_id']
+        page[:foreign_interactions] = foreign_interactions['share_count']
+        page[:foreign_interaction_id] = foreign_interactions['post_id']
         user_hash[:pages].append(page)
       end
 
