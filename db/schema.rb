@@ -129,10 +129,10 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.string   "name",                   limit: 75, null: false
     t.string   "category",               limit: 25, null: false
     t.integer  "followers",              limit: 8,  null: false
-    t.integer  "local_interactions",     limit: 8,  null: false
-    t.integer  "local_interaction_id",   limit: 8,  null: false
-    t.integer  "foreign_interactions",   limit: 8,  null: false
-    t.integer  "foreign_interaction_id", limit: 8,  null: false
+    t.integer  "local_interactions",                null: false
+    t.string   "local_interaction_id",   limit: 55, null: false
+    t.integer  "foreign_interactions",              null: false
+    t.string   "foreign_interaction_id", limit: 55, null: false
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -208,10 +208,10 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.string   "gender",                 limit: 10
     t.string   "locale",                 limit: 5,  null: false
     t.integer  "friend_count",           limit: 8,  null: false
-    t.integer  "local_interactions",     limit: 8,  null: false
-    t.integer  "local_interaction_id",   limit: 8,  null: false
-    t.integer  "foreign_interactions",   limit: 8,  null: false
-    t.integer  "foreign_interaction_id", limit: 8,  null: false
+    t.integer  "local_interactions",                null: false
+    t.string   "local_interaction_id",   limit: 55, null: false
+    t.integer  "foreign_interactions",              null: false
+    t.string   "foreign_interaction_id", limit: 55, null: false
     t.integer  "user_id"
     t.integer  "social_network_id"
     t.datetime "created_at"
