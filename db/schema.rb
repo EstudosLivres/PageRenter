@@ -125,10 +125,12 @@ ActiveRecord::Schema.define(version: 20140730232228) do
   add_index "financial_transactions", ["receiver_id"], name: "index_financial_transactions_on_receiver_id", using: :btree
 
   create_table "page_accounts", force: true do |t|
-    t.string   "id_on_social", limit: 45, null: false
-    t.string   "name",         limit: 75, null: false
-    t.string   "category",     limit: 25, null: false
-    t.integer  "range",        limit: 8,  null: false
+    t.string   "id_on_social",        limit: 45, null: false
+    t.string   "name",                limit: 75, null: false
+    t.string   "category",            limit: 25, null: false
+    t.integer  "followers",           limit: 8,  null: false
+    t.integer  "local_interaction",   limit: 8,  null: false
+    t.integer  "foreign_interaction", limit: 8,  null: false
     t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
