@@ -92,6 +92,7 @@ module Socials
             SELECT post_id, likes.count
             FROM stream
             WHERE source_id = '#{source_id}'
+            AND is_hidden != 'true'
             ORDER BY likes.count
             DESC LIMIT 1
           "
@@ -105,6 +106,7 @@ module Socials
             SELECT post_id, share_count
             FROM stream
             WHERE source_id = '#{source_id}'
+            AND is_hidden != 'true'
             ORDER BY share_count
             DESC LIMIT 1
           "
@@ -124,6 +126,7 @@ module Socials
             SELECT post_id, likes.count
             FROM stream
             WHERE source_id = '#{source_id}'
+            AND is_hidden != 'true'
             ORDER BY likes.count
             DESC LIMIT 1
           "
@@ -137,6 +140,7 @@ module Socials
             SELECT post_id, share_count
             FROM stream
             WHERE source_id = '#{source_id}'
+            AND is_hidden != 'true'
             ORDER BY share_count
             DESC LIMIT 1
           "
