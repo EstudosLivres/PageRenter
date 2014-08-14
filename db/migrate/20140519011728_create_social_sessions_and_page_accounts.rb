@@ -8,6 +8,8 @@ class CreateSocialSessionsAndPageAccounts < ActiveRecord::Migration
       t.string :gender, limit: 10, null: true
       t.column :locale, "char(5)", null: false
       t.column :friend_count, "BIGINT", null: false
+      t.column :local_interaction, "BIGINT", null: false # Like, comments...
+      t.column :foreign_interaction, "BIGINT", null: false # Share, retweet....
       t.belongs_to :user
       t.belongs_to :social_network
 
