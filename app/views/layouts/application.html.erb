@@ -8,9 +8,11 @@
       <title>PageRenter</title>
       <%= stylesheet_link_tag 'application' %>
       <%= stylesheet_link_tag 'style' %>
+      <%= stylesheet_link_tag 'application', controller_name %>
 
       <%= javascript_include_tag 'modernizr.min' %>
       <%= javascript_include_tag 'application' %>
+      <%= javascript_include_tag "application", controller_name %>
 
       <!-- Meus scripts -->
       <%= javascript_include_tag 'app_initialize' %>
