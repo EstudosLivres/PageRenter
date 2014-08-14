@@ -126,9 +126,10 @@ module Socials
             SELECT post_id, likes.count
             FROM stream
             WHERE source_id = '#{source_id}'
+            AND actor_id = '#{source_id}'
             AND is_hidden != 'true'
-            ORDER BY likes.count
-            DESC LIMIT 1
+            ORDER BY likes.count DESC
+            LIMIT 100
           "
       Fql.execute(query, {access_token:@access_token}).first
     end
