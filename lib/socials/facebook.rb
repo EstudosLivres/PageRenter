@@ -32,6 +32,7 @@ module Socials
       local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
       foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
 
+      # TODO: essa forma de pegar as interações na sessão não está funcionando... pois uso a mesma da página para User...
       user_hash[:local_interactions] = local_interactions['likes']['count']
       user_hash[:local_interaction_id] = local_interactions['post_id']
       user_hash[:foreign_interactions] = foreign_interactions['share_count']
@@ -81,6 +82,8 @@ module Socials
         return sign_up
       end
     end
+
+    # TODO: pensar em uma tela para ficar mostrando pro usuário enquanto os dados são puxados do facebook (tá demorando em média 30 segs)
 
     # Get the Page or User best liked post
     def get_likes(source_id)
