@@ -80,13 +80,11 @@ class SocialNetwork < ActiveRecord::Base
         id_on_social:page['id'],
         name:page['name'],
         category:page['category'],
-        access_token:page['access_token'],
         followers:page[:followers],
         local_interactions:page[:local_interactions],
         local_interaction_id:page[:local_interaction_id],
         foreign_interactions:page[:foreign_interactions],
-        foreign_interaction_id:page[:foreign_interaction_id],
-        access_token:page['access_token']
+        foreign_interaction_id:page[:foreign_interaction_id]
       }))
     end
 
@@ -106,7 +104,7 @@ class SocialNetwork < ActiveRecord::Base
     return_hash = {}
     return_hash[:user] = User.new({name:'',username:'',email:'',locale:''})
     return_hash[:social_session] = SocialSession.new({id_on_social:'',name:'',username:'',email:'',gender:'',locale:'',count_friends:''})
-    return_hash[:pages] = PageAccount.new({id_on_social:'',name:'',category:'',access_token:''})
+    return_hash[:pages] = PageAccount.new({id_on_social:'',name:'',category:''})
 
     return return_hash
   end

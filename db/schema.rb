@@ -133,7 +133,6 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.string   "local_interaction_id",   limit: 55, null: false
     t.integer  "foreign_interactions",              null: false
     t.string   "foreign_interaction_id", limit: 55, null: false
-    t.string   "access_token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
