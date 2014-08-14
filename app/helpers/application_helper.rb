@@ -93,14 +93,4 @@ module ApplicationHelper
   def translate_it_model(model_name)
     I18n.t("activerecord.models.#{model_name}")
   end
-
-  # Helper to load specific script
-  def javascript(*files)
-    content_for(:head) { javascript_include_tag(*files) }
-  end
-
-  # Helper to load specific stylesheet
-  def stylesheet(*files)
-    content_for(:head) { stylesheet_link_tag(*files) }
-  end
 end
