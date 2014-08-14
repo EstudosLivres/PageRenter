@@ -24,7 +24,18 @@ module Socials
     # Get the user Logged hash & accesses (OAuth)
     def get_current_user
       user_hash = RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
-      user_hash[:friend_count] = Fql.execute("SELECT friend_count FROM user WHERE uid=#{user_hash[:id]}")[0]['friend_count']
+      user_hash[:friend_count] = Fql.execute("SELECT friend_count FROM user WHERE uid=#{user_hash[:id]}").first()['friend_count']
+      user_id = user_hash[:id]
+
+      local_interactions = get_likes(user_id)
+      foreign_interactions = get_shares(user_id)
+      local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
+      foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
+
+      user_hash[:local_interactions] = local_interactions['likes']['count']
+      user_hash[:local_interaction_id] = local_interactions['post_id']
+      user_hash[:foreign_interactions] = foreign_interactions['share_count']
+      user_hash[:foreign_interaction_id] = foreign_interactions['post_id']
 
       # setup pages
       user_hash[:pages] = []
