@@ -25,8 +25,16 @@ class ApplicationController < ActionController::Base
     end
 
     # Idiom setted by the session just if necessary to find the user on BD, if the locale cames with the browser, it is scaped
-    if !session[:user_id].nil? & session[:user_idiom].nil? then session[:user_idiom] = User.find(session[:user_id]).locale[0..1] end
-    I18n.locale = session[:user_idiom] || I18n.default_locale
+    unless session[:user_id].nil?
+      @current_user = User.where(id:session[:user_id]).take
+      if @current_user.nil?
+        session.delete('user_id')
+        return redirect_to ApplicationController.land_url
+      else
+        @current_user.locale[0..1] if !session[:user_id].nil? & session[:user_idiom].nil?
+        I18n.locale = session[:user_idiom] || I18n.default_locale
+      end
+    end
   end
 
   def validate_session
