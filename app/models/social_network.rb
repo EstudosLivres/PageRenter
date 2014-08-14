@@ -76,7 +76,10 @@ class SocialNetwork < ActiveRecord::Base
         id_on_social:page['id'],
         name:page['name'],
         category:page['category'],
-        access_token:page['access_token']
+        access_token:page['access_token'],
+        followers:page[:followers],
+        local_interaction:page[:local_interaction],
+        foreign_interaction:page[:foreign_interaction]
       }))
     end
 
