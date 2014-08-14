@@ -30,6 +30,16 @@ module Socials
       user_hash[:pages] = []
       pages = @graph.get_object("me/accounts")
       pages.each do |page|
+        page_id = page['id']
+        likes = get_likes(page_id)
+        shares = get_shares(page_id)
+        followers = get_followers(page_id)
+
+        page[:followers] = followers['likes']
+        page[:local_interactions] = likes['likes']['count']
+        page[:local_interaction_id] = likes['post_id']
+        page[:foreign_interactions] = shares['share_count']
+        page[:foreign_interaction_id] = shares['post_id']
         user_hash[:pages].append(page)
       end
 
@@ -57,6 +67,38 @@ module Socials
       rescue
         return sign_up
       end
+    end
+
+    # Get the Page or User best liked post
+    def get_likes(source_id)
+      query =
+          "
+            SELECT post_id, likes.count
+            FROM stream
+            WHERE source_id = '#{source_id}'
+            ORDER BY likes.count
+            DESC LIMIT 1
+          "
+      Fql.execute(query, {access_token:@access_token}).first
+    end
+
+    # Get the Page or User best shared post
+    def get_shares(source_id)
+      query =
+          "
+            SELECT post_id, share_count
+            FROM stream
+            WHERE source_id = '#{source_id}'
+            ORDER BY share_count
+            DESC LIMIT 1
+          "
+      Fql.execute(query, {access_token:@access_token}).first
+    end
+
+    # Get the Page followers
+    def get_followers(source_id)
+      url = "https://graph.facebook.com/#{source_id}?access_token=#{@access_token}"
+      return JSON.parse(Net::HTTP.get(URI.parse(url)))
     end
   end
 end
