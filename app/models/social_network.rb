@@ -67,10 +67,10 @@ class SocialNetwork < ActiveRecord::Base
       gender:social_obj[:gender],
       locale:social_obj[:locale],
       friend_count:social_obj[:friend_count],
-      local_interactions:page[:local_interactions],
-      local_interaction_id:page[:local_interaction_id],
-      foreign_interactions:page[:foreign_interactions],
-      foreign_interaction_id:page[:foreign_interaction_id],
+      local_interactions:social_obj[:local_interactions],
+      local_interaction_id:social_obj[:local_interaction_id],
+      foreign_interactions:social_obj[:foreign_interactions],
+      foreign_interaction_id:social_obj[:foreign_interaction_id],
       social_network_id: SocialNetwork.where(name:'Facebook').take.id
     }
 
@@ -86,8 +86,7 @@ class SocialNetwork < ActiveRecord::Base
         local_interaction_id:page[:local_interaction_id],
         foreign_interactions:page[:foreign_interactions],
         foreign_interaction_id:page[:foreign_interaction_id],
-        local_interaction:page[:local_interaction],
-        foreign_interaction:page[:foreign_interaction]
+        access_token:page['access_token']
       }))
     end
 
