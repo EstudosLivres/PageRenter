@@ -1,0 +1,24 @@
+.row
+  #social_sessions.col-md-12
+    -@social_networks.each do |social_network|
+      -implemented = 'not_implemented' unless social_network.implemented?
+      div class="col-md-3 #{implemented}"
+        div.social_session class="alert btn-#{social_network.username}"
+          header
+            i class="fa fa-#{social_network.username}"
+            | |&nbsp;
+            = social_network.name
+
+          -if SocialSession.has_it?(@current_user, social_network) then connected_class = 'badge'
+          -else disconnected_class = 'badge'
+
+
+          div class="#{disconnected_class} float_right"
+            a.disconnect href='#'
+              i.fa.fa-times
+              | &nbsp; disconnected
+
+          div class="#{connected_class}"
+            a.connected href='#'
+              i.fa.fa-exchange
+              | &nbsp; connected
