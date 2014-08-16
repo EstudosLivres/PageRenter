@@ -86,8 +86,9 @@ module Socials
       # Summary able say total count (it is called to likes, shares don't need it)
       url = "https://graph.facebook.com/#{source_id}/posts?fields=shares,likes.summary(true)&limit=250&access_token=#{@access_token}"
       posts = JSON.parse(Net::HTTP.get(URI.parse(url)))['data']
-      initial_counter = {id:'',count:0}
-      greater = {likes:initial_counter, shares:initial_counter}
+      initial_likes = {id:'',count:0}
+      initial_shares = {id:'',count:0}
+      greater = {likes:initial_likes, shares:initial_shares}
 
       # Let's find the best share & best like
       posts.each do |post|
