@@ -26,6 +26,16 @@ class SocialSession < ActiveRecord::Base
     user.social_sessions << self
   end
 
+  # Link to the facebook most liked session post
+  def get_greater_facebook_likes_link
+    return "https://facebook.com/#{self.id_on_social}/posts/#{self.local_interaction_id}"
+  end
+
+  # Link to the facebook most shared session post
+  def get_greater_facebook_shares_link
+    return "https://facebook.com/#{self.id_on_social}/posts/#{self.foreign_interaction_id}"
+  end
+
   # ----- STATICs AUX METHODs -----
 
   def self.has_it?(user, social_network)
