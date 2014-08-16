@@ -31,8 +31,8 @@ class ApplicationController < ActionController::Base
         session.delete('user_id')
         return redirect_to ApplicationController.land_url
       else
-        @current_user.locale[0..1] if !session[:user_id].nil? & session[:user_idiom].nil?
-        I18n.locale = session[:user_idiom] || I18n.default_locale
+        @current_user.locale[0..1] unless session[:user_id].nil?
+        I18n.locale = @current_user.locale[0..1] || I18n.default_locale
       end
     end
   end
