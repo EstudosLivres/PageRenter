@@ -98,7 +98,7 @@ class SocialSession < ActiveRecord::Base
     end
   end
 
-  # Auth the user by FQL
+  # Auth the user by Face attrs
   def self.authenticate_facebook(social)
     user = User.where(email:social[:email]).take
     return false if user.nil?
