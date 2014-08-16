@@ -607,6 +607,10 @@ center#choose_file_section {
     opacity: 0.5;
 }
 
+.not_implemented a:hover {
+    cursor: default;
+}
+
 #social_sessions .social_session {
     /** TODO remove this comment when implement the permissions validations
     min-height: 200px;
