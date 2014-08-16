@@ -9,6 +9,8 @@ module Socials
     def setup() end
     # Redirect the user to the SocialNetwork SignUp page
     def sign_up(sign_up_hash) end
+    # Return a base user to sig in it out of it lib
+    def get_base_user() end
     # Get the user Logged hash & accesses (OAuth)
     def get_current_user() end
     # Get the Multi logins from the user (Pages, in Facebook case)
