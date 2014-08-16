@@ -611,10 +611,15 @@ center#choose_file_section {
     cursor: default;
 }
 
-#social_sessions .social_session {
+#social_sessions .unimplemented {
+    opacity: 0.5;
     /** TODO remove this comment when implement the permissions validations
     min-height: 200px;
     **/
+}
+
+#social_sessions .implemented {
+    opacity: 1;
 }
 
 #social_sessions .alert header {
