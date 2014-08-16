@@ -80,28 +80,39 @@ module Socials
     # A GREAT option to get the user LIKEs & SHARE
     def source_interactions_counter(source_id)
       # Summary able say total count (it is called to likes, shares don't need it)
-      url = "https://graph.facebook.com/#{source_id}/?fields=shares,likes.summary(true)&limit=250&access_token=#{@access_token}"
-      posts = JSON.parse(Net::HTTP.get(URI.parse(url)))
-      greater = {shares:{id:'',count:0}, likes:{id:'',count:0}}
+      url = "https://graph.facebook.com/#{source_id}/posts?fields=shares,likes.summary(true)&limit=250&access_token=#{@access_token}"
+      posts = JSON.parse(Net::HTTP.get(URI.parse(url)))['data']
+      initial_counter = {id:'',count:0}
+      greater = {likes:initial_counter, shares:initial_counter}
 
       # Let's find the best share & best like
       posts.each do |post|
-        shares_count = post['shares']['count']
-        shares_id = post['id']
-        likes_count = post['summary']['total_count']
-        likes_id = post['id']
+        post_likes = post['likes']
+        post_shares = post['shares']
 
-        if shares_count > greater[:shares][:count]
-          greater[:shares][:id] = shares_id
-          greater[:shares][:count] = shares_count
+        unless post_likes.nil?
+          likes_count = post_likes['summary']['total_count']
+          likes_id = get_post_id_on(post['id'], source_id)
+
+          if likes_count > greater[:likes][:count]
+            greater[:likes][:id] = likes_id
+            greater[:likes][:count] = likes_count
+          end
         end
 
-        if likes_count > greater[:likes][:count]
-          greater[:likes][:id] = likes_id
-          greater[:likes][:count] = likes_count
+        unless post_shares.nil?
+          shares_count = post_shares['count']
+          shares_id = get_post_id_on(post['id'], source_id)
+
+          if shares_count > greater[:shares][:count]
+            greater[:shares][:id] = shares_id
+            greater[:shares][:count] = shares_count
+          end
         end
       end
 
+      greater[:likes] = initial_counter if greater[:likes].nil?
+      greater[:shares] = initial_counter if greater[:shares].nil?
       return greater
     end
 
@@ -170,6 +181,11 @@ module Socials
       end
 
       return greater_share
+    end
+
+    # Strip post_id from id came from Facebook
+    def get_post_id_on(facebook_id, source_id)
+      return facebook_id["#{source_id}".length+1..facebook_id.length-1]
     end
   end
 end
