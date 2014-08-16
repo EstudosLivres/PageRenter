@@ -28,33 +28,24 @@ module Socials
       user_id = user_hash[:id]
       user_greater_interactions = source_interactions_counter user_id
 
-      local_interactions = user_greater_interactions[:likes][:count]
-      foreign_interactions = user_greater_interactions[:shares][:count]
-      local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
-      foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
-
-      # TODO: essa forma de pegar as interações na sessão não está funcionando... pois uso a mesma da página para User...
-      user_hash[:local_interactions] = local_interactions['likes']['count']
-      user_hash[:local_interaction_id] = local_interactions['post_id']
-      user_hash[:foreign_interactions] = foreign_interactions['share_count']
-      user_hash[:foreign_interaction_id] = foreign_interactions['post_id']
+      user_hash[:local_interactions] = user_greater_interactions[:likes][:count]
+      user_hash[:local_interaction_id] = user_greater_interactions[:likes][:id]
+      user_hash[:foreign_interactions] = user_greater_interactions[:shares][:count]
+      user_hash[:foreign_interaction_id] = user_greater_interactions[:shares][:id]
 
       # setup pages
       user_hash[:pages] = []
       pages = @graph.get_object("me/accounts")
       pages.each do |page|
         page_id = page['id']
-        local_interactions = page_likes(page_id)
-        foreign_interactions = page_shares(page_id)
-        followers = page_followers(page_id)
-        local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
-        foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
+        followers = page_followers page_id
+        page_greater_interactions = source_interactions_counter page_id
 
         page[:followers] = followers['likes']
-        page[:local_interactions] = local_interactions['likes']['count']
-        page[:local_interaction_id] = local_interactions['post_id']
-        page[:foreign_interactions] = foreign_interactions['share_count']
-        page[:foreign_interaction_id] = foreign_interactions['post_id']
+        page[:local_interactions] = page_greater_interactions[:likes][:count]
+        page[:local_interaction_id] = page_greater_interactions[:likes][:id]
+        page[:foreign_interactions] = page_greater_interactions[:shares][:count]
+        page[:foreign_interaction_id] = page_greater_interactions[:shares][:id]
         user_hash[:pages].append(page)
       end
 
