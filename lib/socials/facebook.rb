@@ -40,12 +40,16 @@ module Socials
         page_id = page['id']
         followers = page_followers page_id
         page_greater_interactions = source_interactions_counter page_id
+        page_likes_count = page_greater_interactions[:likes][:count]
+        page_likes_id = page_greater_interactions[:likes][:id]
+        page_shares_count = page_greater_interactions[:shares][:count]
+        page_shares_id = page_greater_interactions[:shares][:id]
 
         page[:followers] = followers['likes']
-        page[:local_interactions] = page_greater_interactions[:likes][:count]
-        page[:local_interaction_id] = page_greater_interactions[:likes][:id]
-        page[:foreign_interactions] = page_greater_interactions[:shares][:count]
-        page[:foreign_interaction_id] = page_greater_interactions[:shares][:id]
+        page[:local_interactions] = page_likes_count
+        page_likes_id.length==0 || page_likes_id.nil? ? page[:local_interaction_id] = '0' : page[:local_interaction_id] = page_likes_id
+        page[:foreign_interactions] = page_shares_count
+        page_shares_id.length==0 || page_shares_id.nil? ? page[:foreign_interaction_id] = '0' : page[:foreign_interaction_id] = page_shares_id
         user_hash[:pages].append(page)
       end
 
