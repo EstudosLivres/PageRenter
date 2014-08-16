@@ -123,3 +123,13 @@ pt:
     subtitle_explanation_4: Elogios
     improve_cheer_1: O que amas na experiência Page
     improve_cheer_2: Motiva a sempre entregar o melhor
+
+
+
+   # SocialNetworks phrases/words
+  facebook:
+    local_interactions: Curtidas
+    foreign_interactions: Compartilhamentos
+  twitter:
+    local_interactions: Tweets
+    foreign_interactions: Retweets
