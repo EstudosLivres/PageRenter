@@ -26,9 +26,10 @@ module Socials
       user_hash = RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
       user_hash[:friend_count] = Fql.execute("SELECT friend_count FROM user WHERE uid=#{user_hash[:id]}").first()['friend_count']
       user_id = user_hash[:id]
+      user_greater_interactions = source_interactions_counter user_id
 
-      local_interactions = user_likes(user_id)
-      foreign_interactions = user_shares(user_id)
+      local_interactions = user_greater_interactions[:likes][:count]
+      foreign_interactions = user_greater_interactions[:shares][:count]
       local_interactions = {'likes'=>{'count'=>0}, 'post_id'=>0} if local_interactions.nil?
       foreign_interactions = {'share_count'=>0, 'post_id'=>0} if foreign_interactions.nil?
 
@@ -85,6 +86,34 @@ module Socials
 
     # TODO: pensar em uma tela para ficar mostrando pro usuário enquanto os dados são puxados do facebook (tá demorando em média 30 segs)
 
+    # A GREAT option to get the user LIKEs & SHARE
+    def source_interactions_counter(source_id)
+      # Summary able say total count (it is called to likes, shares don't need it)
+      url = "https://graph.facebook.com/#{source_id}/?fields=shares,likes.summary(true)&limit=250&access_token=#{@access_token}"
+      posts = JSON.parse(Net::HTTP.get(URI.parse(url)))
+      greater = {shares:{id:'',count:0}, likes:{id:'',count:0}}
+
+      # Let's find the best share & best like
+      posts.each do |post|
+        shares_count = post['shares']['count']
+        shares_id = post['id']
+        likes_count = post['summary']['total_count']
+        likes_id = post['id']
+
+        if shares_count > greater[:shares][:count]
+          greater[:shares][:id] = shares_id
+          greater[:shares][:count] = shares_count
+        end
+
+        if likes_count > greater[:likes][:count]
+          greater[:likes][:id] = likes_id
+          greater[:likes][:count] = likes_count
+        end
+      end
+
+      return greater
+    end
+
     # Get the Page best liked post
     def page_likes(source_id)
       query =
@@ -136,16 +165,20 @@ module Socials
 
     # Get the User best shared post
     def user_shares(source_id)
-      query =
-          "
-            SELECT post_id, share_count
-            FROM stream
-            WHERE source_id = '#{source_id}'
-            AND is_hidden != 'true'
-            ORDER BY share_count
-            DESC LIMIT 1
-          "
-      Fql.execute(query, {access_token:@access_token}).first
+      url = "https://graph.facebook.com/#{source_id}/posts?fields=shares&limit=250&access_token=#{@access_token}"
+      posts = JSON.parse(Net::HTTP.get(URI.parse(url)))
+      greater_share = {id:'', count:0}
+
+      # Let's find the best share post
+      posts.each do |post|
+        post_count = post['shares']['count']
+        if post_count > greater_share[:count]
+          greater_share[:count] = post_count
+          greater_share[:id] = post['id']
+        end
+      end
+
+      return greater_share
     end
   end
 end
