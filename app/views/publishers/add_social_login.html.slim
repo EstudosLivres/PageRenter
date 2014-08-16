@@ -5,6 +5,11 @@
       div class="col-md-3 #{implemented}"
         div.social_session class="alert btn-#{social_network.username}"
           header
+            - if implemented
+              i.fa.fa-lock.float_right
+            - else
+              i.fa.fa-unlock-alt.float_right
+
             i class="fa fa-#{social_network.username}"
             | |&nbsp;
             = social_network.name
