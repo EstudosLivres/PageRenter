@@ -1,41 +1,42 @@
 .row
   #social_sessions.col-md-12
-    -@social_networks.each do |social_network|
-      -implemented = 'implemented' if social_network.implemented?
-      -implemented = 'unimplemented' if !social_network.implemented?
-      -social_session = social_network.get_social_session(@current_user) || social_session = SocialSession.new
-      div class="col-md-3 social_session #{implemented}"
-        div.social_session class="alert btn-#{social_network.username}"
-          header
-            - if implemented == 'implemented'
-              i.fa.fa-unlock-alt.float_right
-            - else
-              i.fa.fa-lock.float_right
+    .row
+      -@social_networks.each do |social_network|
+        -implemented = 'implemented' if social_network.implemented?
+        -implemented = 'unimplemented' if !social_network.implemented?
+        -social_session = social_network.get_social_session(@current_user) || social_session = SocialSession.new
+        div class="col-md-3 social_session #{implemented}"
+          div.social_session class="alert btn-#{social_network.username}"
+            header
+              - if implemented == 'implemented'
+                i.fa.fa-unlock-alt.float_right
+              - else
+                i.fa.fa-lock.float_right
 
-            i class="fa fa-#{social_network.username}"
-            | |&nbsp;
-            = social_network.name
+              i class="fa fa-#{social_network.username}"
+              | |&nbsp;
+              = social_network.name
 
-          -if SocialSession.has_it?(@current_user, social_network) then connected_class = 'badge'
-          -else disconnected_class = 'badge'
+            -if SocialSession.has_it?(@current_user, social_network) then connected_class = 'badge'
+            -else disconnected_class = 'badge'
 
-          - if implemented && !social_session.nil?
-            div
-              p
-                a href=""
-                  span.float_right = social_session.local_interactions
-                  strong = t("#{social_network.username}.local_interactions")
-              p
-                a
-                  span.float_right = social_session.foreign_interactions
-                  strong = t("#{social_network.username}.foreign_interactions")
+            - if implemented && !social_session.nil?
+              div
+                p
+                  a href=""
+                    span.float_right = social_session.local_interactions
+                    strong = t("#{social_network.username}.local_interactions")
+                p
+                  a
+                    span.float_right = social_session.foreign_interactions
+                    strong = t("#{social_network.username}.foreign_interactions")
 
-          div class="#{disconnected_class} float_right"
-            a.disconnect href='#'
-              i.fa.fa-times
-              | &nbsp; disconnected
+            div class="#{disconnected_class} float_right"
+              a.disconnect href='#'
+                i.fa.fa-times
+                | &nbsp; disconnected
 
-          div class="#{connected_class}"
-            a.connected href='#'
-              i.fa.fa-exchange
-              | &nbsp; connected
+            div class="#{connected_class}"
+              a.connected href='#'
+                i.fa.fa-exchange
+                | &nbsp; connected
