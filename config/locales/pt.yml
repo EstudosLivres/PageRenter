@@ -133,3 +133,21 @@ pt:
   twitter:
     local_interactions: Tweets
     foreign_interactions: Retweets
+  youtube:
+    local_interactions: Inscrições no canal
+    foreign_interactions: Integrações playlist
+  google-plus:
+    local_interactions: Pluses (+1)
+    foreign_interactions: Compartilhamentos
+  instagram:
+    local_interactions: Curtidas
+    foreign_interactions: Embeds
+  foursquare:
+    local_interactions: Favoritados
+    foreign_interactions: Compartilhadas
+  tumblr:
+    local_interactions: Curtidas
+    foreign_interactions: Reblogagens
+  flickr:
+    local_interactions: Favoritadas
+    foreign_interactions: Compartilhadas
