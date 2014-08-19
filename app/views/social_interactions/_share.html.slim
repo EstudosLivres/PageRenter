@@ -1,37 +1,38 @@
-/!Share modal
-.modal.fade#share_action tabindex='-1' role="dialog" aria-labelledby="faceShareModal" aria-hidden="true"
-  .modal-dialog
-    .modal-content
-      .modal-header
-        button.close data-dismiss="modal" aria-hidden="true"
-        h2.modal-title#faceShareLabel
-          | Escolha a Sessão e a mensagem
-      .modal-body
-        aside#share_action_session
-          label
-            input type="radio" name="social_id" value="#{@social_session.id_on_social}"
-            img src="#{@social_session.get_picture}"
-          -@pages.each do |page|
+-unless @social_session.nil?
+  /!Share modal
+  .modal.fade#share_action tabindex='-1' role="dialog" aria-labelledby="faceShareModal" aria-hidden="true"
+    .modal-dialog
+      .modal-content
+        .modal-header
+          button.close data-dismiss="modal" aria-hidden="true"
+          h2.modal-title#faceShareLabel
+            | Escolha a Sessão e a mensagem
+        .modal-body
+          aside#share_action_session
             label
-              input type="radio" name="social_id" value="#{page.id_on_social}"
-              img src="#{page.get_picture}"
-        aside#share_action_form
-          textarea.form-control
-      .modal-footer
-        button.btn.btn-default data-dismiss="modal"
-          = t(:btn_modal_close)
-        button class="btn #{current_button}"
-          = t(:btn_modal_okay)
-/!InviteModal
+              input type="radio" name="social_id" value="#{@social_session.id_on_social}"
+              img src="#{@social_session.get_picture}"
+            -@pages.each do |page|
+              label
+                input type="radio" name="social_id" value="#{page.id_on_social}"
+                img src="#{page.get_picture}"
+          aside#share_action_form
+            textarea.form-control
+        .modal-footer
+          button.btn.btn-default data-dismiss="modal"
+            = t(:btn_modal_close)
+          button class="btn #{current_button}"
+            = t(:btn_modal_okay)
+  /!InviteModal
 
-javascript:
-  $(document).ready(function() {
-    $('#share_action input[type="radio"]').change(function() {
-      radio_checked = $(this);
+  javascript:
+    $(document).ready(function() {
+      $('#share_action input[type="radio"]').change(function() {
+        radio_checked = $(this);
 
-      // Clear all selections
-      $('#share_action label').removeClass('social_session_selected');
-      // Select just the current parent
-      radio_checked.parent().addClass('social_session_selected');
+        // Clear all selections
+        $('#share_action label').removeClass('social_session_selected');
+        // Select just the current parent
+        radio_checked.parent().addClass('social_session_selected');
+      });
     });
-  });
