@@ -657,6 +657,18 @@ center#choose_file_section {
     background: rgba(255, 255, 255, 0.31);
 }
 
+#share_action_session label {
+    margin: 0 15px 10px 0;
+}
+
+#share_action_session input[type="radio"] {
+    display: none;
+}
+
+#share_action_session label {
+    border: 2px solid #81d4ff;
+}
+
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
