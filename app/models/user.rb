@@ -77,6 +77,13 @@ class User < ActiveRecord::Base
     end
   end
 
+  # Return it social_network profile
+  def get_social_network_profile social_network_name
+    self.social_sessions.each do |social_session|
+      return social_session if social_session.social_network.username == social_network_name
+    end
+  end
+
   # ----- STATICs AUX METHODs TO CREATE USERs -----
 
   # Auth user
