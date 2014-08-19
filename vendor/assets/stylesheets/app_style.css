@@ -665,8 +665,9 @@ center#choose_file_section {
     display: none;
 }
 
-#share_action_session label {
+.social_session_selected {
     border: 2px solid #81d4ff;
+    box-shadow: 0 0 20px #81d4ff;
 }
 
 @media (min-width: 1200px) {
