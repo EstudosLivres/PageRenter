@@ -13,4 +13,11 @@ class PageAccount < ActiveRecord::Base
   validates :foreign_interaction_id, presence: true, on: [:create, :update]
 
   # Validates Associations
+
+  # Return the page session picture
+  def get_picture(type='square')
+    if self.social_sessions.first.social_network.username == 'facebook'
+      return "http://graph.facebook.com/#{self.id_on_social}/picture?type=#{type}"
+    end
+  end
 end

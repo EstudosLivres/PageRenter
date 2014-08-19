@@ -36,6 +36,13 @@ class SocialSession < ActiveRecord::Base
     return "https://facebook.com/#{self.id_on_social}/posts/#{self.foreign_interaction_id}"
   end
 
+  # Return the user session picture
+  def get_picture(type='square')
+    if self.social_network.username == 'facebook'
+      return "http://graph.facebook.com/#{self.id_on_social}/picture?type=#{type}"
+    end
+  end
+
   # ----- STATICs AUX METHODs -----
 
   def self.has_it?(user, social_network)
