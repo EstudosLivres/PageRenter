@@ -9,6 +9,11 @@ class SocialNetwork < ActiveRecord::Base
 
   # Validates Associations
 
+  # Get the social session, from it social network from user passed
+  def get_social_session(user)
+    self.social_sessions.where(user_id: user.id).take
+  end
+
   # ----- STATICs AUX METHODs -----
 
   def self.persist_social_user(network_obj)
