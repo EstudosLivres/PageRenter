@@ -45,7 +45,9 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'colorize', '~> 0.7.1'
 
 # Gem for UPLOAD files
-gem 'aws-sdk', '~> 1.51.0'
+gem "paperclip"
+gem 'aws-sdk'
+gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
