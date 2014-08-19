@@ -6,6 +6,8 @@ class PublishersController < ApplicationController
   # Root for Publisher user
   def index
     @ads = Campaign.where('launch_date <= ? AND end_date >= ?', Date.today, Date.today)
+    @social_session = @current_user.get_social_network_profile('facebook')
+    @pages = @social_session.page_accounts
   end
 
   # Configuration for Publisher user
@@ -14,7 +16,7 @@ class PublishersController < ApplicationController
 
   # Publisher config his social logins
   def add_social_login
-    @social_networks = SocialNetwork.all
+    @social_networks = SocialNetwork.where(implemented: true, just_share: false)
     @user_social_sessions = @current_user.social_sessions
   end
 
