@@ -5,6 +5,7 @@ class CreateSocialNetworks < ActiveRecord::Migration
       t.string :acronym, limit: 10, null: true
       t.string :username, limit: 25, null: false
       t.boolean :implemented, null: false
+      t.boolean :just_share, null: false
       t.string :description, limit: 45, null: true
 
       t.timestamps
