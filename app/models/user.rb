@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
 
   # Validates Associations
   # TODO REFACTOR HOW PERSIST USERS
-  # Encrypt the pasword using BCrypt
+  # Encrypt the password using BCrypt
   def encrypt_password
     if password.present? && !pass_salt.present?
       self.pass_salt = BCrypt::Engine.generate_salt
