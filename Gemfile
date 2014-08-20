@@ -68,6 +68,9 @@ group :development, :test do
   # Better Errors for fast debug from the view on the browser
   gem 'better_errors', '~> 1.1.0'
 
+  # Plugin for better errors
+  gem 'binding_of_caller', '~> 0.7.2'
+
   # Option to not use Fixtures (FactoryGirl)
   gem 'factory_girl_rails', '~> 4.4'
 
