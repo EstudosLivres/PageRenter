@@ -1,0 +1,11 @@
+-unless flash[:notice].nil?
+  -if flash[:notice].is_a?(Hash)
+    div class="alert alert-#{flash[:notice][:type]}"
+      button.close type="button" data-dismiss="alert" aria-hidden="true" &times;
+      strong ="#{@current_user.first_name}, #{flash[:notice][:strong]} "
+      =flash[:notice][:msg] if flash[:notice][:msg].is_a?String
+      -if flash[:notice][:msg].is_a?Hash
+        -errors = flash[:notice][:msg]
+        ul
+          -errors.each do |key, value|
+            li ="#{key} - #{value}"
