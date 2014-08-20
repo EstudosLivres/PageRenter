@@ -1,0 +1,82 @@
+/! NavBar
+.navbar.navbar-custom.navbar-fixed-top role="navigation"
+  .container
+    .navbar-header
+      /! Collapse buton
+      button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button"
+        span.icon-bar: i.fa-bars
+      /! /Collapse buton
+      ul#mob_role_action.hidden-md.visible-xs.nav.navbar-nav
+        - role_actions.each do |action|
+          li
+            a class="r_#{role_name}" href="#{action[:path]}" data-toggle="#{action[:toggle]}" data-target="#{action[:path]}"
+              -if action[:path] == '#invite' || action[:path] == '#recommend'
+                span#invitation_counter.badge.alert-danger 0
+              i class="#{action[:icon]}"
+              span.visible-lg
+                = action[:name]
+
+      = link_to root_path, class:'brand' do
+        span.r_advertiser_brand Page
+        span.r_publisher_brand Renter
+
+    ul#role_action.hidden-xs.nav.navbar-nav
+      -role_actions.each do |action|
+        li
+          a
+
+
+    <ul id="" class="hidden-xs nav navbar-nav">
+      <%
+        role_actions.each do |action|
+      %>
+        <li>
+          <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
+            <% if action[:path] == '#invite' || action[:path] == '#recommend' %>
+              <span id="invitation_counter" class="badge alert-danger">0</span>
+            <% end %>
+            <i class="<%= action[:icon] %>"></i>
+              <span class="visible-lg">
+                <%= action[:name] %>
+              </span>
+          </a>
+        </li>
+      <%
+        end
+      %>
+    </ul>
+
+    <div class="collapse navbar-collapse">
+      <ul id="user_action" class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a class="dropdown-toggle r_<%=role_name%>" data-toggle="dropdown" href="#">
+            <i class="fa <%=role_icon%>"></i>
+            <%= @current_user.get_default_profile.name %>
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <%
+              @current_user.profiles.each do |profile|
+            %>
+              <li>
+                <a class="r_<%=profile.role.name%>" href="/<%= profile.role.name.pluralize %>">
+                  <i class="fa <%=role_icon(profile.role.name)%>"></i>
+                  <%= profile.name %>
+                </a>
+              </li>
+            <%
+              end
+            %>
+            <li class="divider"></li>
+              <li><a class="r_publisher manage" href="/publishers/edit"> <i class="fa fa-rocket"></i> <i class="fa fa-gears"></i> <span> <%= t(:user_action)[:dropdown][:manage_pub] %> </span> </a></li>
+
+              <li><a class="r_advertiser manage" href="/advertisers/edit"> <i class="fa fa-bullhorn"></i> <i class="fa fa-gears"></i> <span> <%= t(:user_action)[:dropdown][:manage_adv] %> </span> </a></li>
+            <!-- Global Actions Divider -->
+            <li class="divider"></li>
+              <li><a data-method="delete" href="/users/sign_out" class="error_txt"> <i class="fa fa-power-off"></i> Sair</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
