@@ -23,7 +23,7 @@ FactoryGirl.define do
   end
 
   # Profiles
-  factory :profile do
+  factory :profiles do
     default_role 1
 
     factory :publisher_profile do
