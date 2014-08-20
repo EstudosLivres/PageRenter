@@ -22,7 +22,7 @@ class AdvertisersController < ApplicationController
         format.html { redirect_to '/advertisers/edit', :flash => {notice: {type: 'success', strong: 'operação efetuada', msg: 'Perfil atualizado'}} }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { redirect_to '/advertisers/edit', flash:{notice: {type:'danger', strong:'Erros ao atualizar seu Perfil: ', msg:@advertiser.errors.messages}} }
         format.json { render json: @advertiser.errors, status: :unprocessable_entity }
       end
     end
