@@ -552,6 +552,10 @@ header#campaign_show span .fa{
     margin: -10px 0 0 -14px;
 }
 
+#new_campaign_image {
+    max-width: 96%;
+}
+
 #advertiser_update #new_campaign_right img {
     width: auto;
 }
