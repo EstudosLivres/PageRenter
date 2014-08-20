@@ -7,5 +7,9 @@
       -if flash[:notice][:msg].is_a?Hash
         -errors = flash[:notice][:msg]
         ul
-          -errors.each do |key, value|
-            li ="#{key} - #{value}"
+          -errors.each do |key, values|
+            li
+              ="#{key}:"
+              ul
+                -values.each do |value|
+                  li =value
