@@ -103,6 +103,14 @@ h2.model_title {
     font-size: 1.5em;
 }
 
+#campaigns_accordion .landmark span {
+    margin: 2px;
+}
+
+#campaigns_accordion .landmark .fa {
+    margin: 5px;
+}
+
 header#campaign_show .campaign_actions i.fa {
     font-size: 1.3em;
 }
