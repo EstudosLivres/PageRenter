@@ -30,6 +30,10 @@ db/*.sqlite3
 /config/config.yml
 /config/database.yml
 /config/secrets.yml
+/config/initializers/aws.rb
+config/initializers/aws.rb
+/config/aws.yml
+config/aws.yml
 /coverage.data
 /coverage/
 /db/*.javadb/

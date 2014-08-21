@@ -17,12 +17,24 @@ class ApplicationController < ActionController::Base
     if user_params.is_a?(String) && user_params.length >= 2
       user_params = JSON.parse(user_params)
 
-      if user_params.is_a?Hash then if (user_params.has_key?('locale') && (user_params['locale'].length >= 2)) then session[:user_idiom] = user_params['locale'] end end
+      if user_params.is_a?Hash
+        if (user_params.has_key?('locale') && (user_params['locale'].length >= 2))
+          session[:user_idiom] = user_params['locale']
+        end
+      end
     end
 
     # Idiom setted by the session just if necessary to find the user on BD, if the locale cames with the browser, it is scaped
-    if !session[:user_id].nil? & session[:user_idiom].nil? then session[:user_idiom] = User.find(session[:user_id]).locale[0..1] end
-    I18n.locale = session[:user_idiom] || I18n.default_locale
+    unless session[:user_id].nil?
+      @current_user = User.where(id:session[:user_id]).take
+      if @current_user.nil?
+        session.delete('user_id')
+        return redirect_to ApplicationController.land_url
+      else
+        @current_user.locale[0..1] unless session[:user_id].nil?
+        I18n.locale = @current_user.locale[0..1] || I18n.default_locale
+      end
+    end
   end
 
   def validate_session
@@ -35,10 +47,18 @@ class ApplicationController < ActionController::Base
 
   def setup_user
     # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
+
     return if is_api_call?
     # SetUp the user to prevent finds on BD
     if session['user_id'].nil? || params['action'] == 'sign_out' then return end
-    if @current_user.nil? then @current_user = User.find(session['user_id']) end
+    if @current_user.nil?
+      begin
+        @current_user = User.find(session['user_id'])
+      rescue
+        session[:user_id] = nil
+        return
+      end
+    end
 
     # SetUp the current/default user profile
     single_role_name = role_name

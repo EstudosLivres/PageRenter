@@ -1,20 +1,9 @@
 header#campaign_show
-  =render 'campaigns/campaign_actions'
-
+  =render 'campaigns/actions'
   h2
     -if @campaign.name.nil?
       =translate_it_model('campaign')
 
     -else
       =@campaign.name
-
-      span
-        .fa.fa-play
-        = format_date(@campaign.launch_date)
-
-      span
-        | -
-
-      span
-        .fa.fa-power-off
-        = format_date(@campaign.end_date)
+    =render 'campaigns/landmark'

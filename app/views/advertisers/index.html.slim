@@ -8,10 +8,11 @@
         .panel.panel-default
           .panel-heading
             h4.panel-title
-              =render 'campaigns/campaign_actions'
+              =render 'campaigns/actions'
+              .float_right.landmark =render 'campaigns/landmark'
 
               a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{campaign_i}"
-                img.campaign_brand src="#{@campaign.advertiser.avatar.url(:thumb)}"
+                img.campaign_brand src="#{@campaign.advertiser.avatar.url}"
                 = @campaign.name
                 -current_campaign_state = @campaign.current_state
                 -unless current_campaign_state.nil?
@@ -33,4 +34,4 @@
                           =@ad.ad_history_states.last.ad_state.name.upcase
                   .panel-collapse.collapse id="campaign_#{campaign_i}_ad_#{ad_i}"
                     .panel-body
-                      img src="#{@ad.avatar.url(:thumb)}"
+                      img src="#{@ad.avatar.url}"

@@ -11,7 +11,11 @@ class SocialSession < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 55 }, on: [:create, :update]
   validates :gender, presence: false, length: { maximum: 10 }, on: [:create, :update]
   validates :locale, presence: true, length: { maximum: 5 }, on: [:create, :update]
-  validates :count_friends, presence: true, on: [:create, :update]
+  validates :friend_count, presence: true, on: [:create, :update]
+  validates :local_interactions, presence: true, on: [:create, :update]
+  validates :local_interaction_id, presence: true, on: [:create, :update]
+  validates :foreign_interactions, presence: true, on: [:create, :update]
+  validates :foreign_interaction_id, presence: true, on: [:create, :update]
 
   # Validates Associations
   validates :user_id, presence: true, on: [:create, :update]
@@ -21,6 +25,25 @@ class SocialSession < ActiveRecord::Base
   def add_it_to(user)
     user.social_sessions << self
   end
+
+  # Link to the facebook most liked session post
+  def get_greater_facebook_likes_link
+    return "https://facebook.com/#{self.id_on_social}/posts/#{self.local_interaction_id}"
+  end
+
+  # Link to the facebook most shared session post
+  def get_greater_facebook_shares_link
+    return "https://facebook.com/#{self.id_on_social}/posts/#{self.foreign_interaction_id}"
+  end
+
+  # Return the user session picture
+  def get_picture(type='square')
+    if self.social_network.username == 'facebook'
+      return "http://graph.facebook.com/#{self.id_on_social}/picture?type=#{type}"
+    end
+  end
+
+  # ----- STATICs AUX METHODs -----
 
   def self.has_it?(user, social_network)
     # How to do an association assertive
@@ -64,41 +87,30 @@ class SocialSession < ActiveRecord::Base
     social_session
   end
 
-  # Convert social_hash into user_hash
-  def self.to_user(social_hash)
-    user_hash = social_hash['social_session']['login']
-    user_hash['role'] = 'publisher'
-    user_hash.except('count_friends', 'id', 'network_id')
-  end
-
   # Authenticate the socials session based on it specific rules
   def self.authenticate(social_hash)
     # Prevent the case the network passed doesn't exist
     begin
-      user_social_network = social_hash['social_session']['login']['network']
-      social_network = SocialNetwork.find(user_social_network.to_i)
+      social_network = SocialNetwork.where(username: social_hash[:social_network]).take
     rescue
       return {error:'Invalid socials networking'}
     end
 
     # Call the authentication dynamic
-    authenticated = SocialSession.send("authenticate_#{social_network.name.downcase}", social_hash['social_session']['login'])
+    authenticated = SocialSession.send("authenticate_#{social_network.name.downcase}", social_hash)
     if authenticated
-      User.persist_it(social_hash)
+      return authenticated
     else
-      return {error:'Invalid socials attrs'}
+      return false
     end
   end
 
-  # Auth the user by FQL
+  # Auth the user by Face attrs
   def self.authenticate_facebook(social)
-    app_id = Rails.application.secrets.fb_app_id
-    app_secret = Rails.application.secrets.fb_app_secret
-
-    options = { access_token: Koala::Facebook::OAuth.new(app_id, app_secret).get_app_access_token }
-    query = "SELECT uid FROM user WHERE email='#{social['email']}' AND uid=#{social['id']} AND username='#{social['username']}' AND locale='#{social['locale']}'"
-    fb_resp = Fql.execute(query, options)
-    fb_resp.empty? ? false : true
+    user = User.where(email:social[:email]).take
+    return false if user.nil?
+    social_user=user.social_sessions.where(email:social[:email],id_on_social:social[:id],username:social[:username],user_id:user.id).take
+    social_user.nil? ? false : user
   end
 
   # Auth the user by OAuth

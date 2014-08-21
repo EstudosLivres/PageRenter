@@ -123,3 +123,31 @@ en:
     subtitle_explanation_4: Cheers
     improve_cheer_1: What you love on the Page experience
     improve_cheer_2: Motivate to always give you our best
+
+
+
+   # SocialNetworks phrases/words
+  facebook:
+    local_interactions: Likes
+    foreign_interactions: Shares
+  twitter:
+    local_interactions: Tweets
+    foreign_interactions: Retweets
+  youtube:
+    local_interactions: Chanel sign ups
+    foreign_interactions: Playlist integrations
+  google-plus:
+    local_interactions: Pluses (+1)
+    foreign_interactions: Shares
+  instagram:
+    local_interactions: Likes
+    foreign_interactions: Embeds
+  foursquare:
+    local_interactions: Faveds
+    foreign_interactions: Shares
+  tumblr:
+    local_interactions: Likes
+    foreign_interactions: Reblogs
+  flickr:
+    local_interactions: Faveds
+    foreign_interactions: Shares

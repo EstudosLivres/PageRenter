@@ -45,7 +45,9 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'colorize', '~> 0.7.1'
 
 # Gem for UPLOAD files
-gem 'paperclip', '~> 4.1'
+gem "paperclip"
+gem 'aws-sdk'
+gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
@@ -65,6 +67,9 @@ group :development, :test do
 
   # Better Errors for fast debug from the view on the browser
   gem 'better_errors', '~> 1.1.0'
+
+  # Plugin for better errors
+  gem 'binding_of_caller', '~> 0.7.2'
 
   # Option to not use Fixtures (FactoryGirl)
   gem 'factory_girl_rails', '~> 4.4'

@@ -31,7 +31,7 @@ module ApplicationHelper
 
   def role_actions
     # Publisher action_menu
-    new_social_session = { :name => t(:publisher_action)[:new_social_session], :path => publisher_edit_path, :icon => 'fa fa-plus', :toggle => '' }
+    new_social_session = { :name => t(:publisher_action)[:new_social_session], :path => add_social_login_path, :icon => 'fa fa-plus', :toggle => '' }
     publisher_invite = { :name => t(:publisher_action)[:invite], :path => '#invite', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
 
     # Advertiser action_menu

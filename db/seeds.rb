@@ -54,21 +54,39 @@ puts '...Roles inserted.'.colorize(:light_blue)
 
 # SocialNetworks
 puts 'Inserting SocialNetworks...'.colorize(:green)
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebook', implemented:true})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter', implemented:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube', implemented:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus', implemented:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram', implemented:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare', implemented:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr', implemented:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr', implemented:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebook', implemented:true, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter', implemented:false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube', implemented:false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus', implemented:false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram', implemented:false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare', implemented:false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr', implemented:false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr', implemented:false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Linkedin', acronym: 'in', username: 'linkedin', implemented:false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Delicious', acronym: 'del', username: 'delicious', implemented:false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Yahoo', acronym: 'Y!', username: 'yahoo', implemented:false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Hotmail', acronym: 'Fr', username: 'hotmail', implemented:false, just_share:true})}"
 puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # /SocialNetworks
 
 # Users
-puts 'Inserting PageRenter admin...'.colorize(:green)
-  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})}"
-puts '...PageRenter admin inserted.'.colorize(:light_blue)
+puts 'Inserting PageRenter admins...'.colorize(:green)
+  # Root
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})
+  User.last.profiles.first.role_id=1
+
+  # Ilton
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton', 'username' => 'ilton.admin', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
+  User.last.profiles.first.role_id=1
+
+  # Willian
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian', 'username' => 'willian.admin', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
+  User.last.profiles.first.role_id=1
+
+  puts "\t #{User.where(email:'admin@pagerenter.com.br')}"
+  puts "\t #{User.where(email:'willianccalves@gmail.com')}"
+  puts "\t #{User.where(email:'ton.garcia.jr@gmail.com')}"
+puts '...PageRenter admins inserted.'.colorize(:light_blue)
 
 puts 'Inserting Publishers...'.colorize(:green)
   puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Pub Testador', 'username' => 'tst', 'email' => 'pp@pt.pt', 'password' => '123'})}"
@@ -80,3 +98,23 @@ puts 'Inserting Advertisers...'.colorize(:green)
   puts "\t #{User.persist_it({'role' => 'advertiser', 'locale' => 'en', 'name' => 'Adv Tester', 'username' => 'advr', 'email' => 'aa@en.en', 'password' => '123'})}"
 puts '...Advertisers inserted.'.colorize(:light_blue)
 # /Users
+
+# BaseCampaign
+puts 'Inserting Campaign...'.colorize(:green)
+  advertiser = User.where(email:'aa@pt.pt').take.advertiser
+  advertiser.campaigns << Campaign.create({name:'Dia das mãe', launch_date:Time.now, end_date:(DateTime.now+4)})
+  advertiser.save
+  puts "\t #{advertiser.campaigns}"
+puts '...Campaign inserted.'.colorize(:light_blue)
+# /BaseCampaign
+
+# BaseAds
+puts 'Inserting Ads...'.colorize(:green)
+  campaign = advertiser.campaigns.first
+  campaign.ads << Ad.new({name:'Dia das mães', title:'Faça sua mãe trocar o sapato pelo tênis', username:'dias-das-maes', description:'Lorem ipsum lati amet inother amerium.', social_phrase:'Partiu tênis', redirect_link:'http://pagerenter.com.br'})
+  campaign.ads << Ad.create({name:'Cupom de desconto', title:'Cupom de desconto', username:'cuprom-desconto', description:'Lorem ipsum lati amet inother amerium.', social_phrase:'Partiu cupom', redirect_link:'http://pagerenter.com.br'})
+  campaign.save
+  puts "\t #{campaign.ads.first}"
+  puts "\t #{campaign.ads.second}"
+puts '...Ads inserted.'.colorize(:light_blue)
+# /BaseAds

@@ -15,6 +15,7 @@ PageRenter::Application.routes.draw do
   scope '/publishers' do
     get '' => 'publishers#index', as: :publisher_root
     get '/edit' => 'publishers#edit', as: :publisher_edit
+    get '/add_social_login' => 'publishers#add_social_login', as: :add_social_login
   end
 
   # Actions Under/For Advertiser
@@ -39,7 +40,7 @@ PageRenter::Application.routes.draw do
 
     # API for Parent/Nested systems (not third systems)
     scope '/system' do
-      post '/signup_signin' => 'remote_users#system_signup_signin'
+      post '/sign_up_sign_in' => 'remote_users#system_sign_up_sign_in'
       get '/social/login/:social_network_name' => 'remote_users#social_login'
     end
 

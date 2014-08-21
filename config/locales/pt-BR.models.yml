@@ -20,3 +20,11 @@ pt:
           social_phrase: Uma frase curta de impacto que seja um exemplo para uso do Publisher
           description: Descrição maior para o Publisher saber o que está compartilhando
           username: Nome para o Link que o publisher compartilha
+    errors:
+      models:
+        profile:
+          attributes:
+            avatar_file_size:
+              in_between: É permitido até 15Kb de tamanho para a imagem da Logo
+            avatar:
+              in_between: A logo é otimizada para 100×15, aceitando também 300x75

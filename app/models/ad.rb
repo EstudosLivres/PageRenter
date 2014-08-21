@@ -4,10 +4,13 @@ class Ad < ActiveRecord::Base
   has_many :bank_transactions
   has_many :ad_history_states
   has_many :ad_states, through: :ad_history_states
+  # Using pub_piece instead Ad to avoid AdBlock
   has_attached_file :avatar,
-                    url: "/post_images/:style/:filename",
-                    :styles => { :medium => '470x300>', :thumb => '117x75>' },
-                    :default_url => '/assets/:style/missing_ad_avatar.jpg'
+                    storage: :s3,
+                    s3_credentials: "#{Rails.root}/config/aws.yml",
+                    path: "pub_piece/:attachment/:id/:style/:filename",
+                    url: ':s3_domain_url',
+                    default_url: '/assets/missing/pub_piece/:style/missing_logo.jpg'
 
   # Custom validations
   after_create :setup

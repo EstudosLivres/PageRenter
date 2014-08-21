@@ -125,10 +125,14 @@ ActiveRecord::Schema.define(version: 20140730232228) do
   add_index "financial_transactions", ["receiver_id"], name: "index_financial_transactions_on_receiver_id", using: :btree
 
   create_table "page_accounts", force: true do |t|
-    t.string   "id_on_social", limit: 45, null: false
-    t.string   "name",         limit: 75, null: false
-    t.string   "category",     limit: 25, null: false
-    t.string   "access_token"
+    t.string   "id_on_social",           limit: 45, null: false
+    t.string   "name",                   limit: 75, null: false
+    t.string   "category",               limit: 25, null: false
+    t.integer  "followers",              limit: 8,  null: false
+    t.integer  "local_interactions",                null: false
+    t.string   "local_interaction_id",   limit: 55, null: false
+    t.integer  "foreign_interactions",              null: false
+    t.string   "foreign_interaction_id", limit: 55, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -190,19 +194,24 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.string   "acronym",     limit: 10
     t.string   "username",    limit: 25, null: false
     t.boolean  "implemented",            null: false
+    t.boolean  "just_share",             null: false
     t.string   "description", limit: 45
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "social_sessions", force: true do |t|
-    t.string   "id_on_social",      limit: 45, null: false
-    t.string   "name",              limit: 65, null: false
-    t.string   "username",          limit: 45, null: false
-    t.string   "email",             limit: 55, null: false
-    t.string   "gender",            limit: 10
-    t.string   "locale",            limit: 5,  null: false
-    t.integer  "count_friends",     limit: 8,  null: false
+    t.string   "id_on_social",           limit: 45, null: false
+    t.string   "name",                   limit: 65, null: false
+    t.string   "username",               limit: 45, null: false
+    t.string   "email",                  limit: 55, null: false
+    t.string   "gender",                 limit: 10
+    t.string   "locale",                 limit: 5,  null: false
+    t.integer  "friend_count",           limit: 8,  null: false
+    t.integer  "local_interactions",                null: false
+    t.string   "local_interaction_id",   limit: 55, null: false
+    t.integer  "foreign_interactions",              null: false
+    t.string   "foreign_interaction_id", limit: 55, null: false
     t.integer  "user_id"
     t.integer  "social_network_id"
     t.datetime "created_at"

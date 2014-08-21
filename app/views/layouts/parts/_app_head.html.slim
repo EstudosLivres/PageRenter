@@ -1,0 +1,19 @@
+meta charset='utf-8'
+meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"
+
+title PageRenter
+= stylesheet_link_tag 'application'
+= stylesheet_link_tag 'style'
+= stylesheet_link_tag 'application', controller_name
+
+= javascript_include_tag 'modernizr.min'
+= javascript_include_tag 'application'
+= javascript_include_tag "application", controller_name
+
+/! App scripts
+= javascript_include_tag 'app_initialize'
+/! /App scripts
+
+/! Dynamic meta
+= csrf_meta_tags

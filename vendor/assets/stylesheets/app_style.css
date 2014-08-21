@@ -103,6 +103,14 @@ h2.model_title {
     font-size: 1.5em;
 }
 
+#campaigns_accordion .landmark span {
+    margin: 2px;
+}
+
+#campaigns_accordion .landmark .fa {
+    margin: 5px;
+}
+
 header#campaign_show .campaign_actions i.fa {
     font-size: 1.3em;
 }
@@ -141,16 +149,20 @@ div.campaign_attr {
     border-bottom: 1px solid #C6DBCE;
 }
 
-#brand_campaign header .social_invite .btn:hover,
-#brand_campaign header .social_invite .btn:visited,
-#brand_campaign header .social_invite .btn:focus {
+#brand_campaign header .social_share .btn:hover,
+#brand_campaign header .social_share .btn:visited,
+#brand_campaign header .social_share .btn:focus {
     color: whitesmoke;
 }
 
-header .social_invite .btn:hover,
-header .social_invite .btn:visited,
-header .social_invite .btn:focus {
+header .social_share .btn:hover,
+header .social_share .btn:visited,
+header .social_share .btn:focus {
     color: whitesmoke;
+}
+
+h4.panel-title .social_share {
+    margin-top: -8px;
 }
 
 body .container.box .btn:hover {
@@ -489,15 +501,15 @@ header#campaign_show span .fa{
     width: 22%;
 }
 
-.modal-body .social_invite {
+.modal-body .social_share {
     margin: 0 auto 15px auto;
 }
 
-.modal-body .social_invite .btn:hover {
+.modal-body .social_share .btn:hover {
     color: #f5f5f5;
 }
 
-.social_invite .btn {
+.social_share .btn {
     margin: 0 0 0 5px;
 }
 
@@ -550,6 +562,10 @@ header#campaign_show span .fa{
 #new_campaign_right img {
     width: 110%;
     margin: -10px 0 0 -14px;
+}
+
+#new_campaign_image {
+    max-width: 96%;
 }
 
 #advertiser_update #new_campaign_right img {
@@ -607,10 +623,19 @@ center#choose_file_section {
     opacity: 0.5;
 }
 
-#social_sessions .social_session {
+.not_implemented a:hover {
+    cursor: default;
+}
+
+#social_sessions .unimplemented {
+    opacity: 0.5;
     /** TODO remove this comment when implement the permissions validations
     min-height: 200px;
     **/
+}
+
+#social_sessions .implemented {
+    opacity: 1;
 }
 
 #social_sessions .alert header {
@@ -646,6 +671,19 @@ center#choose_file_section {
 
 #social_sessions .badge {
     background: rgba(255, 255, 255, 0.31);
+}
+
+#share_action_session label {
+    margin: 0 15px 10px 0;
+}
+
+#share_action_session input[type="radio"] {
+    display: none;
+}
+
+.social_session_selected {
+    border: 2px solid #81d4ff;
+    box-shadow: 0 0 20px #81d4ff;
 }
 
 @media (min-width: 1200px) {

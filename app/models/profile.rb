@@ -3,12 +3,18 @@ class Profile < ActiveRecord::Base
   belongs_to :user
   belongs_to :role
   has_many :campaigns, class_name: 'Campaign', foreign_key: :advertiser_id
-  has_attached_file :avatar, :styles => { :medium => '300x75>', :thumb => '100x15>' }, :default_url => '/assets/:style/missing_logo.jpg'
+  has_attached_file :avatar,
+                    storage: :s3,
+                    s3_credentials: "#{Rails.root}/config/aws.yml",
+                    path: ":class/:attachment/:id/:style/:filename",
+                    url: ':s3_domain_url',
+                    default_url: '/assets/missing/:class/:style/missing_logo.jpg'
 
   # Validates Associations
   validates :user_id, presence: true, on: :update
   validates :role_id, presence: true, on: :update
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_size :avatar, :in => 0.kilobytes..10.kilobytes
 
   # Constants
   enum role_name: { publisher: 1, advertiser: 2, admin: 3 }
