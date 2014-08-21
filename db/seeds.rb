@@ -78,13 +78,13 @@ puts 'Inserting PageRenter admins...'.colorize(:green)
   u.save
 
   # Ilton
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton', 'username' => 'ilton.admin', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton', 'username' => 'ilton.garcia', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
   u = User.last
   u.profiles << Profile.new({name: '', default_role: true, role_id:1})
   u.save
 
   # Willian
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian', 'username' => 'willian.admin', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian', 'username' => 'wccalves', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
   u = User.last
   u.profiles << Profile.new({name: '', default_role: true, role_id:1})
   u.save
