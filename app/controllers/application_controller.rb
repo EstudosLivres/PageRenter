@@ -40,8 +40,10 @@ class ApplicationController < ActionController::Base
   def validate_session
     action = params['action']
     return if is_api_call?
-    if session[:user_id].nil? && action != 'system_signup_signin' && action != 'login' && action != 'mob_login' && action !='auth'
-      redirect_to ApplicationController.land_url
+    if session[:user_id].nil?
+      if action!='system_signup_signin' && action!='login' && action!='mob_login' && action!='auth' && action!='login'
+        redirect_to ApplicationController.land_url
+      end
     end
   end
 
