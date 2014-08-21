@@ -70,9 +70,23 @@ puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # /SocialNetworks
 
 # Users
-puts 'Inserting PageRenter admin...'.colorize(:green)
-  puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})}"
-puts '...PageRenter admin inserted.'.colorize(:light_blue)
+puts 'Inserting PageRenter admins...'.colorize(:green)
+  # Root
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})
+  User.last.profiles.first.role_id=1
+
+  # Ilton
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton', 'username' => 'ilton.admin', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
+  User.last.profiles.first.role_id=1
+
+  # Willian
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian', 'username' => 'willian.admin', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
+  User.last.profiles.first.role_id=1
+
+  puts "\t #{User.where(email:'admin@pagerenter.com.br')}"
+  puts "\t #{User.where(email:'willianccalves@gmail.com')}"
+  puts "\t #{User.where(email:'ton.garcia.jr@gmail.com')}"
+puts '...PageRenter admins inserted.'.colorize(:light_blue)
 
 puts 'Inserting Publishers...'.colorize(:green)
   puts "\t #{User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Pub Testador', 'username' => 'tst', 'email' => 'pp@pt.pt', 'password' => '123'})}"
