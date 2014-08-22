@@ -47,6 +47,11 @@ class User < ActiveRecord::Base
     return get_profile('publisher')
   end
 
+  # Return the user admin profile
+  def admin
+    return get_profile('admin')
+  end
+
   def get_profile(profile_name)
     self.profiles.each do |profile|
       return profile if profile.role.name == profile_name
@@ -88,8 +93,16 @@ class User < ActiveRecord::Base
 
   # Auth user
   def self.authenticate(email, password)
-    user = find_by_email(email)
-    if user && user.password == BCrypt::Engine.hash_secret(password, user.pass_salt) then user else nil end
+    if email.index('@').nil?
+      # Auth admin user
+      user = find_by_username(email)
+      return User.throw_user_with_error if user.admin.nil?
+    else
+      # Auth normal user (not admin)
+      user = find_by_email(email)
+    end
+
+    if user && user.password == BCrypt::Engine.hash_secret(password, user.pass_salt) then user else User.throw_user_with_error end
   end
 
   # Method that encapsulate the User creation rule
