@@ -32,8 +32,13 @@ class Ad < ActiveRecord::Base
     # It starts as pending
     self.ad_states = [AdState.where(name:'pending').take!]
 
-    # TODO self.username = regex to change special character to normal &
+    # TODO self.username = regex to change custom character to normal &
     self.save
+  end
+
+  # Return it advertiser based on it Campaign
+  def advertiser
+    self.campaign.advertiser
   end
 
 # TODO def budget: return the transactions without receiver which means paid to the system
