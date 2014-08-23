@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   # SetUp user
   before_action :setup_user, :except => :redirect_index
 
+  # Dynamic layout
+  layout :solve_layout
+
   def set_locale
     user_params = params['user']
     if user_params.is_a?(String) && user_params.length >= 2
@@ -70,6 +73,16 @@ class ApplicationController < ActionController::Base
   # Prevent validate Login if it is an API call
   def is_api_call?
     return "#{/^.*?(?=\/)/.match(params[:controller])}" == 'api'
+  end
+
+  # Dynamic layout based on the route
+  def solve_layout
+    case params[:controller]
+      when 'admins'
+        return 'custom/admin'
+      else
+        return 'application'
+    end
   end
 
   def self.land_url
