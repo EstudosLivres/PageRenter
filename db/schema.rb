@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730232228) do
+ActiveRecord::Schema.define(version: 20140823125506) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ads_segments", id: false, force: true do |t|
+    t.integer "ad_id",      null: false
+    t.integer "segment_id", null: false
   end
 
   create_table "budget_launches", force: true do |t|
@@ -185,6 +190,13 @@ ActiveRecord::Schema.define(version: 20140730232228) do
 
   create_table "roles", force: true do |t|
     t.string   "name",       limit: 15, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "segments", force: true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
