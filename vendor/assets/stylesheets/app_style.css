@@ -53,6 +53,15 @@ body {
     width: 100%; height: 400px;
 }
 
+i.fa.pie_chart {
+    background-image: url("/assets/app/pie_chart.png");
+}
+
+img.action_pie_chart {
+    width: 10%;
+    margin: -5px 0 0 0;
+}
+
 .profile-left {
     padding-right: 25px;
     padding-left: 25px;
