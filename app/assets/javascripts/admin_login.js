@@ -30,7 +30,7 @@ $(function(){
 
                     //change button
                     $('button[type="submit"]').hide();
-                    $('a.btn-default').removeClass('hidden');
+                    $('a.btn').removeClass('hidden');
                 }
             });
         } else {
