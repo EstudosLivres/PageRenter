@@ -9,17 +9,26 @@
         <%
            role_actions.each do |action|
         %>
-            <li>
-              <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
-                <% if action[:path] == '#invite' || action[:path] == '#recommend' %>
-                    <span id="invitation_counter" class="badge alert-danger">0</span>
+            <% if !action.is_a?(Array) %>
+                <li>
+                  <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
+                    <% if action[:path] == '#invite' || action[:path] == '#recommend' %>
+                        <span id="invitation_counter" class="badge alert-danger">0</span>
+                    <% end %>
+                    <i class="<%= action[:icon] %>"></i>
+                            <span class="visible-lg">
+                              <%= action[:name] %>
+                            </span>
+                  </a>
+                </li>
+            <% else %>
+                <% action.each do |action_item| %>
+                    <li>
+
+                    </li>
+
                 <% end %>
-                <i class="<%= action[:icon] %>"></i>
-                        <span class="visible-lg">
-                          <%= action[:name] %>
-                        </span>
-              </a>
-            </li>
+            <% end %>
         <%
            end
         %>
@@ -33,21 +42,36 @@
       <% end %>
     </div>
 
+    <!-- TODO REFACTORAR! Esse mesmo foreach ta rolando 2x.... -->
     <ul id="role_action" class="hidden-xs nav navbar-nav">
       <%
+         # TODO: REFACTORAR! Esse mesmo foreach ta rolando 2x....
          role_actions.each do |action|
+           if action.is_a?(Array)
+             action_array = action
+             action = action_array.first
+           end
       %>
           <li>
             <a class="r_<%= role_name %>" href="<%= action[:path] %>" data-toggle="<%= action[:toggle] %>" data-target="<%= action[:path] %>">
               <% if action[:path] == '#invite' || action[:path] == '#recommend' %>
                   <span id="invitation_counter" class="badge alert-danger">0</span>
               <% end %>
-              <i class="<%= action[:icon] %>"></i>
+              <%if action_array.nil?%>
+                <i class="<%= action[:icon] %>"></i>
+              <%else%>
+                <img src="/assets/app/pie_chart.png" class="action_pie_chart"/>
+              <%end%>
                         <span class="visible-lg">
                           <%= action[:name] %>
                         </span>
             </a>
           </li>
+          <% unless action_array.nil? %>
+              <% action.each do |action_item| %>
+                  <!-- TODO fazer menubar come esses subitens -->
+              <% end %>
+          <% end %>
       <%
          end
       %>
