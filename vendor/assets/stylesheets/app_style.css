@@ -379,6 +379,8 @@ td.disabled {
 }
 
 /* R means Role, because advertiser is reserved */
+
+/* R Publisher */
 .r_publisher_brand,
 .dropdown-menu>li>.r_publisher,
 .r_publisher {
@@ -390,7 +392,9 @@ a.r_publisher:hover,
 .r_publisher:focus {
     color: #339D63;
 }
+/* /R Publisher */
 
+/* R Advertiser */
 .r_advertiser_brand,
 .dropdown-menu>li>.r_advertiser,
 .r_advertiser {
@@ -404,6 +408,21 @@ a.r_advertiser:hover,
     color: #0096FD;
     /*color: #FF5B00;*/ /* New design (Orange + Green) something more BR */
 }
+/* /R Advertiser */
+
+/* R Admin */
+.r_admin_brand,
+.dropdown-menu>li>.r_admin,
+.r_admin {
+    color: lightslategrey;
+}
+
+a.r_admin:hover,
+.dropdown-menu>li>.r_admin:hover,
+.r_admin:focus {
+    color: #5C6574;
+}
+/* /R Admin */
 
 .dropdown-menu>li>.error_txt {
     color: #a94442;
