@@ -34,6 +34,8 @@ PageRenter::Application.routes.draw do
   scope '/admins' do
     get '' => 'admins#index', as: :admin_root
     get 'login' => 'admins#login', as: :admin_login
+    get 'ad_analyse' => 'admins#ad_analyse', as: :admin_ad_analyse # TODO (Criar conceito melhor disso)
+    get 'segmentation' => 'admins#segmentation', as: :admin_segmentation # TODO (Criar nested Resource pra isso)
   end
 
   # Actions Under/For API (external requests)
