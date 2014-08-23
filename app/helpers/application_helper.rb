@@ -11,6 +11,8 @@ module ApplicationHelper
         return 'fa-rocket'
       when 'advertiser'
         return 'fa-bullhorn'
+      when 'admin'
+        return 'fa-user'
     end
 
     case role_name
