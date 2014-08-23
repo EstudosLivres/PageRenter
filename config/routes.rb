@@ -30,6 +30,12 @@ PageRenter::Application.routes.draw do
     end
   end
 
+  # Actions Under/For Admin
+  scope '/admins' do
+    get '' => 'admins#index', as: :admin_root
+    get 'login' => 'admins#login', as: :admin_login
+  end
+
   # Actions Under/For API (external requests)
   namespace :api do
     # Documentation and easy edition for the Developer usage
@@ -48,6 +54,8 @@ PageRenter::Application.routes.draw do
     scope '/users' do
       get 'login' => 'remote_users#mob_login'
       post 'login' => 'remote_users#mob_login'
+      get 'admin_login' => 'remote_users#admin_check_login'
+      post 'admin_login' => 'remote_users#admin_check_login', as: :admin_check_login
     end
   end
 end
