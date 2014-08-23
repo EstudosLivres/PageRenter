@@ -84,6 +84,8 @@ class User < ActiveRecord::Base
 
   # Return it social_network profile
   def get_social_network_profile social_network_name
+    return nil if self.social_sessions.empty?
+
     self.social_sessions.each do |social_session|
       return social_session if social_session.social_network.username == social_network_name
     end
