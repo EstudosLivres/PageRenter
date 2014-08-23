@@ -27,16 +27,10 @@ $(function(){
                         "margin":"0",
                         "opacity":"0"
                     });
-                    //change button text
-                    $('button[type="submit"]').html("continue")
-                        .removeClass("btn-info")
-                        .addClass("btn-default").click(function(){
-                            $("input").css({
-                                "height":"auto",
-                                "padding":"10px",
-                                "opacity":"1"
-                            }).val("");
-                        });
+
+                    //change button
+                    $('button[type="submit"]').hide();
+                    $('a.btn-default').removeClass('hidden');
                 }
             });
         } else {
