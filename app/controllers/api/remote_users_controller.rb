@@ -9,6 +9,15 @@ class API::RemoteUsersController < API::BaseAPIController
     end
   end
 
+  # POST api/admins/login
+  def admin_check_login
+    user = User.authenticate(params[:username], params[:password])
+    session[:user_id] = user.id if !user.nil? && user.is_a?(User)
+
+    if user.errors.messages.empty? then return render json: {status: 'ok', msg: 'loged_in'}
+    else return render json: {status: 'error', type: :invalid_attr_value, msg: user.errors.messages.to_json} end
+  end
+
   # Login by token, without session
   def mob_login
     token_manager = API::Concerns::TokenManager.new(params[:email], params[:password], params[:access_token])
