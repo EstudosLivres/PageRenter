@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @segment.name
+p
+  strong Description:
+  = @segment.description
+
+= link_to 'Edit', edit_segment_path(@segment)
+'|
+= link_to 'Back', segments_path

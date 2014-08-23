@@ -1,0 +1,23 @@
+h1 Listing segments
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th
+      th
+      th
+
+  tbody
+    - @segments.each do |segment|
+      tr
+        td = segment.name
+        td = segment.description
+        td = link_to 'Show', segment
+        td = link_to 'Edit', edit_segment_path(segment)
+        td = link_to 'Destroy', segment, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Segment', new_segment_path
