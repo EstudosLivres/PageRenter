@@ -4,4 +4,19 @@ html
     = stylesheet_link_tag 'admins'
     = render 'layouts/parts/app_head'
   body
-    = yield
+    /! Navbar
+    = render 'layouts/parts/old_navbar'
+
+    .container.box
+      /! Controller header
+      = render "#{params[:controller]}/header"
+
+      /! Flash with app feedback to the user
+      = render 'layouts/parts/flash_alert'
+
+      /! Action body
+      = yield
+
+      footer#includes_js
+      /! Bootstrap
+      = javascript_include_tag 'bootstrap/bootstrap.min'
