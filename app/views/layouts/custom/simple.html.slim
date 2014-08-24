@@ -1,0 +1,12 @@
+-# Template usage: Most simple layout to have just a simple form (like update password or admin login)
+doctype html
+html
+  head
+    = render 'layouts/parts/app_head'
+  body
+    /! Action body
+    = yield
+
+    footer#includes_js
+      /! Bootstrap
+      = javascript_include_tag 'bootstrap/bootstrap.min'
