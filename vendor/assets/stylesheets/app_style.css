@@ -58,7 +58,7 @@ i.fa.pie_chart {
 }
 
 img.action_pie_chart {
-    width: 10%;
+    max-width: 15px;
     margin: -5px 0 0 0;
 }
 
