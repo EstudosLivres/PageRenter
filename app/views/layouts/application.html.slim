@@ -1,24 +1,24 @@
 doctype html
 /! ng-app="PageRenter"
 html
-    head = render 'layouts/parts/app_head'
-    body class="r_#{role_name}"
-      /! Navbar
-      = render 'layouts/parts/old_navbar'
+  head = render 'layouts/parts/app_head'
+  body class="r_#{role_name}"
+    /! Navbar
+    = render 'layouts/parts/old_navbar'
 
-      .container.box
-        /! Controller header
-        = render "#{params[:controller]}/header"
+    .container.box
+      /! Controller header
+      = render "#{params[:controller]}/header"
 
-        /! Flash with app feedback to the user
-        = render 'layouts/parts/flash_alert'
+      /! Flash with app feedback to the user
+      = render 'layouts/parts/flash_alert'
 
-        /! Action body
-        = yield
+      /! Action body
+      = yield
 
-        /! Modals
-        = render 'layouts/parts/modals'
+      /! Modals
+      = render 'layouts/parts/modals'
 
-        footer#includes_js
-          /! Bootstrap
-          = javascript_include_tag 'bootstrap/bootstrap.min'
+    footer#includes_js
+      /! Bootstrap
+      = javascript_include_tag 'bootstrap/bootstrap.min'
