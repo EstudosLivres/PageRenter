@@ -42,9 +42,9 @@ module ApplicationHelper
     recommend = { name:t(:advertiser_action)[:invite], path:'#recommend', icon:'fa fa-paper-plane', toggle:'modal' }
 
     # Admin action_menu
-    new_segmentation = {}
-    edit_segmentation = {}
-    base_segmentation = {name:'GerenciarSegmentos', path:new_segment_path, icon:'fa pie_chart', toggle:''}
+    new_segmentation = {name:'NovoSegmento', path:new_segment_path, icon:'fa fa-plus', toggle:''}
+    edit_segmentation = {name:'GerenciarSegmentos', path:segments_path, icon:'fa fa-sitemap', toggle:''}
+    base_segmentation = {name:'Segmentos', path:'#segments', icon:'fa pie_chart', toggle:'dropdown'}
     segmentation = [base_segmentation, new_segmentation, edit_segmentation]
     analyse_ads = {name:'AnalisarAnúncios', path:admin_ad_analyse_path, icon:'fa fa-check-square-o', toggle:''}
 
