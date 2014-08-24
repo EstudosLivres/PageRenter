@@ -79,6 +79,7 @@ class ApplicationController < ActionController::Base
   def solve_layout
     case params[:controller]
       when 'admins'
+        return 'custom/simple' if params[:action] == 'login'
         return 'custom/admin'
       else
         return 'application'
