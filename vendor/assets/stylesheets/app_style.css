@@ -489,6 +489,10 @@ header#campaign_show span .fa{
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
+.brand {
+    float: left;
+}
+
 #user_action.navbar-nav a {
     text-align: left;
 }
@@ -502,7 +506,7 @@ header#campaign_show span .fa{
 }
 
 .manage i.fa.fa-gears {
-    margin-left: -39px;
+    margin-left: -34px;
 }
 
 .manage span {
