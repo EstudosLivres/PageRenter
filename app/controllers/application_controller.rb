@@ -80,10 +80,12 @@ class ApplicationController < ActionController::Base
     case params[:controller]
       when 'admins'
         return 'custom/simple' if params[:action] == 'login'
-        return 'custom/admin'
       else
         return 'application'
     end
+
+    # If nothing returned return application
+    return 'application'
   end
 
   def self.land_url
