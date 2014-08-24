@@ -44,7 +44,7 @@ module ApplicationHelper
     # Admin action_menu
     new_segmentation = {}
     edit_segmentation = {}
-    base_segmentation = {name:'GerenciarSegmentos', path:admin_segmentation_path, icon:'fa pie_chart', toggle:''}
+    base_segmentation = {name:'GerenciarSegmentos', path:new_segment_path, icon:'fa pie_chart', toggle:''}
     segmentation = [base_segmentation, new_segmentation, edit_segmentation]
     analyse_ads = {name:'AnalisarAnúncios', path:admin_ad_analyse_path, icon:'fa fa-check-square-o', toggle:''}
 
