@@ -84,6 +84,9 @@ img.action_pie_chart {
     border-bottom: #5C8F72 1px solid;
 }
 
+.title {
+    text-align: center;
+}
 
 .navbar-brand {
     padding: 10px;
@@ -711,6 +714,10 @@ center#choose_file_section {
 
 #share_action_session input[type="radio"] {
     display: none;
+}
+
+#new_segment textarea{
+    min-height: 197px;
 }
 
 .social_session_selected {
