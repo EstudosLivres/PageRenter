@@ -717,6 +717,3 @@ center#choose_file_section {
     border: 2px solid #81d4ff;
     box-shadow: 0 0 20px #81d4ff;
 }
-
-/* Import the media queries */
-@import "mob_app.css";

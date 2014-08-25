@@ -22,3 +22,6 @@
 
 /* Meus estilos */
 @import 'app_style.css';
+
+/* Import the media queries */
+@import 'mob_app.css';
