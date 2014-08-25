@@ -718,56 +718,5 @@ center#choose_file_section {
     box-shadow: 0 0 20px #81d4ff;
 }
 
-@media (min-width: 1200px) {
-    #role_action .visible-lg {
-        display: inline!important;
-    }
-}
-
-@media (max-width: 764px) {
-    ul#mob_role_action.nav.navbar-nav {
-        margin: 0 -8px 0 0;
-        float: right;
-        display: inline-block!important;
-    }
-
-    ul#mob_role_action.nav.navbar-nav li {
-        display: inline;
-    }
-
-    ul#mob_role_action.nav.navbar-nav li a {
-        padding: 12px 16px;
-        display: inline-block;
-    }
-
-    ul#mob_role_action.nav.navbar-nav li i.fa {
-        font-size: 1.2em;
-    }
-
-    .navbar .navbar-header .brand span, .brand span {
-        font-size: 1em;
-    }
-
-    form#new_campaign_left .form-group .form-control {
-        width: 100%;
-    }
-
-    #invitation_counter {
-        position: absolute;
-        font-size: 9px;
-        left: 7px;
-        top: 4px;
-    }
-}
-
-@media (max-width: 1000px) {
-    form#new_campaign_left .form-group .form-control {
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    .navbar .navbar-header .brand span {
-        font-size: 0.7em;
-    }
-}
+/* Import the media queries */
+@import "mob_app.css";
