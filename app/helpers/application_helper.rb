@@ -90,7 +90,7 @@ module ApplicationHelper
   end
 
   def format_date(date)
-    return if nil?
+    return if date.nil?
     date.strftime("%d/%m/%Y")
   end
 
