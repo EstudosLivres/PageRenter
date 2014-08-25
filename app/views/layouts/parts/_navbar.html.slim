@@ -34,7 +34,7 @@ nav.navbar.navbar-custom.navbar-fixed-top role="navigation"
               ul.dropdown-menu
                 -action_array.each do |action_item|
                   li.action_item
-                    a class="r_#{role_name}" href="#{action_item[:path]}" data-toggle="#{action[:toggle]}" data-target="#{action[:path]}"
+                    a class="r_#{role_name}" href="#{action_item[:path]}" data-toggle="#{action_item[:toggle]}" data-target="#{action_item[:path]}"
                       i class="#{action_item[:icon]}"
                       =" #{action_item[:name]}"
 
