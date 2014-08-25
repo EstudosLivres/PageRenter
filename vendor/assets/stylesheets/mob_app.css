@@ -1,4 +1,3 @@
-
 @media (min-width: 1200px) {
     #role_action .visible-lg {
         display: inline!important;
@@ -22,7 +21,7 @@
     }
 
     ul#role_action.nav.navbar-nav li i.fa {
-        font-size: 1.2em;
+        font-size: 1.7em;
     }
 
     .navbar .navbar-header .brand span, .brand span {
@@ -45,10 +44,15 @@
     form#new_campaign_left .form-group .form-control {
         width: 100%;
     }
+
+    img.action_pie_chart {
+        max-width: 51px;
+        margin: -15px 0 0 0;
+    }
 }
 
 @media (max-width: 500px) {
     .navbar .navbar-header .brand span {
-        font-size: 0.7em;
+        font-size: 1em;
     }
 }
