@@ -25,6 +25,7 @@ class SegmentsController < ApplicationController
   # POST /segments.json
   def create
     @segment = Segment.new(segment_params)
+    @segment.setup_uids(params[:segment][:uids].split)
 
     respond_to do |format|
       if @segment.save
