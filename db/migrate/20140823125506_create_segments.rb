@@ -7,6 +7,7 @@ class CreateSegments < ActiveRecord::Migration
       t.timestamps
     end
 
+    add_index :segments, :name, unique: true
     create_join_table :ads, :segments
   end
 end
