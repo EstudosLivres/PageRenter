@@ -3,8 +3,8 @@
 html {
     position: relative;
     min-height: 100%;
-
 }
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
@@ -53,6 +53,15 @@ body {
     width: 100%; height: 400px;
 }
 
+i.fa.pie_chart {
+    background-image: url("/assets/app/pie_chart.png");
+}
+
+img.action_pie_chart {
+    max-width: 15px;
+    margin: -5px 0 0 0;
+}
+
 .profile-left {
     padding-right: 25px;
     padding-left: 25px;
@@ -75,6 +84,9 @@ body {
     border-bottom: #5C8F72 1px solid;
 }
 
+.title {
+    text-align: center;
+}
 
 .navbar-brand {
     padding: 10px;
@@ -370,6 +382,8 @@ td.disabled {
 }
 
 /* R means Role, because advertiser is reserved */
+
+/* R Publisher */
 .r_publisher_brand,
 .dropdown-menu>li>.r_publisher,
 .r_publisher {
@@ -381,7 +395,9 @@ a.r_publisher:hover,
 .r_publisher:focus {
     color: #339D63;
 }
+/* /R Publisher */
 
+/* R Advertiser */
 .r_advertiser_brand,
 .dropdown-menu>li>.r_advertiser,
 .r_advertiser {
@@ -395,6 +411,21 @@ a.r_advertiser:hover,
     color: #0096FD;
     /*color: #FF5B00;*/ /* New design (Orange + Green) something more BR */
 }
+/* /R Advertiser */
+
+/* R Admin */
+.r_admin_brand,
+.dropdown-menu>li>.r_admin,
+.r_admin {
+    color: lightslategrey;
+}
+
+a.r_admin:hover,
+.dropdown-menu>li>.r_admin:hover,
+.r_admin:focus {
+    color: #5C6574;
+}
+/* /R Admin */
 
 .dropdown-menu>li>.error_txt {
     color: #a94442;
@@ -461,6 +492,10 @@ header#campaign_show span .fa{
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 
+.brand {
+    float: left;
+}
+
 #user_action.navbar-nav a {
     text-align: left;
 }
@@ -474,7 +509,7 @@ header#campaign_show span .fa{
 }
 
 .manage i.fa.fa-gears {
-    margin-left: -39px;
+    margin-left: -34px;
 }
 
 .manage span {
@@ -681,61 +716,15 @@ center#choose_file_section {
     display: none;
 }
 
+#new_segment textarea{
+    min-height: 125px;
+}
+
 .social_session_selected {
     border: 2px solid #81d4ff;
     box-shadow: 0 0 20px #81d4ff;
 }
 
-@media (min-width: 1200px) {
-    #role_action .visible-lg {
-        display: inline!important;
-    }
-}
-
-@media (max-width: 764px) {
-    ul#mob_role_action.nav.navbar-nav {
-        margin: 0 -8px 0 0;
-        float: right;
-        display: inline-block!important;
-    }
-
-    ul#mob_role_action.nav.navbar-nav li {
-        display: inline;
-    }
-
-    ul#mob_role_action.nav.navbar-nav li a {
-        padding: 12px 16px;
-        display: inline-block;
-    }
-
-    ul#mob_role_action.nav.navbar-nav li i.fa {
-        font-size: 1.2em;
-    }
-
-    .navbar .navbar-header .brand span, .brand span {
-        font-size: 1em;
-    }
-
-    form#new_campaign_left .form-group .form-control {
-        width: 100%;
-    }
-
-    #invitation_counter {
-        position: absolute;
-        font-size: 9px;
-        left: 7px;
-        top: 4px;
-    }
-}
-
-@media (max-width: 1000px) {
-    form#new_campaign_left .form-group .form-control {
-        width: 100%;
-    }
-}
-
-@media (max-width: 500px) {
-    .navbar .navbar-header .brand span {
-        font-size: 0.7em;
-    }
+#role_action {
+    margin-left: 5px;
 }

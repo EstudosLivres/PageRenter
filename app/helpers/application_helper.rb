@@ -11,6 +11,8 @@ module ApplicationHelper
         return 'fa-rocket'
       when 'advertiser'
         return 'fa-bullhorn'
+      when 'admin'
+        return 'fa-user'
     end
 
     case role_name
@@ -18,6 +20,8 @@ module ApplicationHelper
         return 'fa-rocket'
       when 'advertiser'
         return 'fa-bullhorn'
+      when 'admin'
+        return 'fa-user'
       else
         if role_param.length >= 3 then return role_param end
         return 'fa-error'
@@ -29,19 +33,27 @@ module ApplicationHelper
     if role_name == 'publisher' then return 'btn-success' else return 'btn-primary' end
   end
 
+  # Build the arrays of actions for the user menu
   def role_actions
     # Publisher action_menu
-    new_social_session = { :name => t(:publisher_action)[:new_social_session], :path => add_social_login_path, :icon => 'fa fa-plus', :toggle => '' }
-    publisher_invite = { :name => t(:publisher_action)[:invite], :path => '#invite', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
+    new_social_session = { name: t(:publisher_action)[:new_social_session], path:add_social_login_path, icon:'fa fa-plus', toggle:'' }
+    publisher_invite = { name:t(:publisher_action)[:invite], path:'#invite', icon:'fa fa-paper-plane', toggle:'modal' }
 
     # Advertiser action_menu
-    new_campaign = { :name => t(:advertiser_action)[:new_campaign], :path => new_campaign_url, :icon => 'fa fa-plus', :toggle => 'modal' }
-    recommend = { :name => t(:advertiser_action)[:invite], :path => '#recommend', :icon => 'fa fa-paper-plane', :toggle => 'modal' }
+    new_campaign = { name:t(:advertiser_action)[:new_campaign], path:new_campaign_url, icon:'fa fa-plus', toggle:'modal' }
+    recommend = { name:t(:advertiser_action)[:invite], path:'#recommend', icon:'fa fa-paper-plane', toggle:'modal' }
+
+    # Admin action_menu
+    new_segmentation = {name:'NovoSegmento', path:new_segment_path, icon:'fa fa-plus', toggle:''}
+    edit_segmentation = {name:'GerenciarSegmentos', path:segments_path, icon:'fa fa-sitemap', toggle:''}
+    base_segmentation = {name:'Segmentos', path:'#segments', icon:'fa pie_chart', toggle:'dropdown'}
+    segmentation = [base_segmentation, new_segmentation, edit_segmentation]
+    analyse_ads = {name:'AnalisarAnúncios', path:admin_ad_analyse_path, icon:'fa fa-check-square-o', toggle:''}
 
     # Universal User action_menu
-    manage_acc = { :name => t(:user_action)[:manage_acc], :path => "/#{role_name.pluralize}/edit", :icon => 'fa fa-gears' }
-    api = { :name => 'API', :path => '/api/console/docs', :icon => 'fa fa-cubes' }
-    feedback = { :name => t(:user_action)[:feedback], :path => '#feedback', :icon => 'fa fa-comments', :toggle => 'modal' }
+    manage_acc = { name:t(:user_action)[:manage_acc], path:"/#{role_name.pluralize}/edit", icon:'fa fa-gears' }
+    api = { name:'API', path:'/api/console/docs', icon:'fa fa-cubes' }
+    feedback = { name:t(:user_action)[:feedback], path:'#feedback', icon:'fa fa-comments', toggle:'modal' }
 
     case role_name
       when 'publisher'
@@ -54,6 +66,11 @@ module ApplicationHelper
             new_campaign,
             recommend
         ]
+      when 'admin'
+        actions = [
+          segmentation,
+          analyse_ads
+        ]
     else
       actions = []
     end
@@ -65,7 +82,7 @@ module ApplicationHelper
         # api TODO volta quando tiver a parte de Marketplace e Blogs
     ] # Modals first because user can click without redirect if click accidentally
 
-    unless actions.empty?
+    if !actions.empty? && role_name!='admin'
       users_actions.each do |action|
         actions.append(action)
       end
@@ -75,7 +92,7 @@ module ApplicationHelper
   end
 
   def format_date(date)
-    return if nil?
+    return if date.nil?
     date.strftime("%d/%m/%Y")
   end
 

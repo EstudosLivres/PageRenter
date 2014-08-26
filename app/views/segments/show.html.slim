@@ -1,0 +1,15 @@
+p#notice = notice
+
+= link_to 'Edit', edit_segment_path(@segment)
+'|
+= link_to 'Back', segments_path
+
+p
+  strong Name:
+  = " #{@segment.name}"
+p
+  strong Description:
+  = " #{@segment.description}"
+
+-@segment.social_session_segments.each do |social_session|
+  = image_tag SocialSession.new(id_on_social:social_session.id_on_social,social_network_id:1).get_picture

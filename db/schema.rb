@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140730232228) do
+ActiveRecord::Schema.define(version: 20140823131339) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.datetime "avatar_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ads_segments", id: false, force: true do |t|
+    t.integer "ad_id",      null: false
+    t.integer "segment_id", null: false
   end
 
   create_table "budget_launches", force: true do |t|
@@ -189,6 +194,20 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.datetime "updated_at"
   end
 
+  create_table "segments", force: true do |t|
+    t.string   "name",        limit: 140, null: false
+    t.string   "description", limit: 200
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "segments", ["name"], name: "index_segments_on_name", unique: true, using: :btree
+
+  create_table "segments_social_session_segments", id: false, force: true do |t|
+    t.integer "social_session_segment_id", null: false
+    t.integer "segment_id",                null: false
+  end
+
   create_table "social_networks", force: true do |t|
     t.string   "name",        limit: 50, null: false
     t.string   "acronym",     limit: 10
@@ -199,6 +218,16 @@ ActiveRecord::Schema.define(version: 20140730232228) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "social_session_segments", force: true do |t|
+    t.string   "id_on_social",      limit: 45, null: false
+    t.integer  "social_session_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "social_session_segments", ["id_on_social"], name: "index_social_session_segments_on_id_on_social", unique: true, using: :btree
+  add_index "social_session_segments", ["social_session_id"], name: "index_social_session_segments_on_social_session_id", using: :btree
 
   create_table "social_sessions", force: true do |t|
     t.string   "id_on_social",           limit: 45, null: false

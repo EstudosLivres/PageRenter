@@ -4,6 +4,8 @@ class Ad < ActiveRecord::Base
   has_many :bank_transactions
   has_many :ad_history_states
   has_many :ad_states, through: :ad_history_states
+  has_and_belongs_to_many :segments
+
   # Using pub_piece instead Ad to avoid AdBlock
   has_attached_file :avatar,
                     storage: :s3,
@@ -32,8 +34,13 @@ class Ad < ActiveRecord::Base
     # It starts as pending
     self.ad_states = [AdState.where(name:'pending').take!]
 
-    # TODO self.username = regex to change special character to normal &
+    # TODO self.username = regex to change custom character to normal &
     self.save
+  end
+
+  # Return it advertiser based on it Campaign
+  def advertiser
+    self.campaign.advertiser
   end
 
 # TODO def budget: return the transactions without receiver which means paid to the system

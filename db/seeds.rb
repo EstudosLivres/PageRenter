@@ -73,15 +73,21 @@ puts '...SocialNetworks inserted.'.colorize(:light_blue)
 puts 'Inserting PageRenter admins...'.colorize(:green)
   # Root
   User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})
-  User.last.profiles.first.role_id=1
+  u = User.last
+  u.profiles << Profile.new({name: '', default_role: true, role_id:1})
+  u.save
 
   # Ilton
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton', 'username' => 'ilton.admin', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
-  User.last.profiles.first.role_id=1
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton', 'username' => 'ilton.garcia', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
+  u = User.last
+  u.profiles << Profile.new({name: '', default_role: true, role_id:1})
+  u.save
 
   # Willian
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian', 'username' => 'willian.admin', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
-  User.last.profiles.first.role_id=1
+  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian', 'username' => 'wccalves', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
+  u = User.last
+  u.profiles << Profile.new({name: '', default_role: true, role_id:1})
+  u.save
 
   puts "\t #{User.where(email:'admin@pagerenter.com.br')}"
   puts "\t #{User.where(email:'willianccalves@gmail.com')}"

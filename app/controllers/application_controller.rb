@@ -12,6 +12,9 @@ class ApplicationController < ActionController::Base
   # SetUp user
   before_action :setup_user, :except => :redirect_index
 
+  # Dynamic layout
+  layout :solve_layout
+
   def set_locale
     user_params = params['user']
     if user_params.is_a?(String) && user_params.length >= 2
@@ -40,8 +43,10 @@ class ApplicationController < ActionController::Base
   def validate_session
     action = params['action']
     return if is_api_call?
-    if session[:user_id].nil? && action != 'system_signup_signin' && action != 'login' && action != 'mob_login' && action !='auth'
-      redirect_to ApplicationController.land_url
+    if session[:user_id].nil?
+      if action!='system_signup_signin' && action!='login' && action!='mob_login' && action!='auth' && action!='login'
+        redirect_to ApplicationController.land_url
+      end
     end
   end
 
@@ -68,6 +73,19 @@ class ApplicationController < ActionController::Base
   # Prevent validate Login if it is an API call
   def is_api_call?
     return "#{/^.*?(?=\/)/.match(params[:controller])}" == 'api'
+  end
+
+  # Dynamic layout based on the route
+  def solve_layout
+    case params[:controller]
+      when 'admins'
+        return 'custom/simple' if params[:action] == 'login'
+      else
+        return 'application'
+    end
+
+    # If nothing returned return application
+    return 'application'
   end
 
   def self.land_url

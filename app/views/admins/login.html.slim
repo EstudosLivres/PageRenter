@@ -1,0 +1,12 @@
+= stylesheet_link_tag 'admin_login'
+= javascript_include_tag 'admin_login'
+.container
+  .login-container
+    #output
+    .avatar: img#avatar src="/assets/thumb/logo-acronym-spacing.png"
+    .form-box
+      form action="" method=""
+        input name="username" type="text" placeholder="username"
+        input name="password" type="password" placeholder="password"
+        button class="btn btn-info btn-block login" type="submit" Login
+        a.hidden.btn.btn-success href="#{admin_root_url}" Continuar

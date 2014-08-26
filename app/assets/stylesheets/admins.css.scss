@@ -1,0 +1,15 @@
+// Place all the styles related to the Admins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#avatar {
+  width: 70px;
+  margin-top: 25px;
+}
+
+// Fit the img into the circle
+#avatar.user_avatar {
+  border-radius: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
