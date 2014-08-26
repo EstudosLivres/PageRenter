@@ -15,5 +15,7 @@
   .form-group
     label for="uids" UIDs
     textarea#segment_uids.form-control name="segment[uids]" placeholder="Insert the UserIDs separated by whitespace or skip line"
+      -@segment.social_session_segments.each do |session|
+        =" #{session.id_on_social}"
 
   .actions = f.submit 'Salvar', class:'btn btn-success float_right'
