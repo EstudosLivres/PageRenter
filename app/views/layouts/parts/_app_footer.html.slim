@@ -1,2 +1,7 @@
 /! Bootstrap
 = javascript_include_tag 'bootstrap/bootstrap.min'
+javascript:
+  tipers = $('.tooltiper.top');
+  set_up_tiper(tipers, 'top');
+
+  $('.tooltiper').tooltip({trigger:'hover'});

@@ -25,3 +25,14 @@ $(document).on("page:change", function() {
         $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
     });
 });
+
+/*
+ * placement = left,right,top,bottom
+ */
+function set_up_tiper(tipers, placement) {
+    for(i in tipers) {
+        tiper = $(tipers[i]);
+        tiper.attr('data-toggle', 'tooltip');
+        tiper.attr('data-placement', placement);
+    }
+}
