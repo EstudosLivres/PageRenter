@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823131330) do
+ActiveRecord::Schema.define(version: 20140823131336) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
@@ -218,13 +218,14 @@ ActiveRecord::Schema.define(version: 20140823131330) do
   end
 
   create_table "social_session_segments", force: true do |t|
-    t.integer  "social_session_id"
     t.string   "id_on_social",      limit: 45, null: false
+    t.integer  "social_session_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "social_session_segments", ["social_session_id"], name: "index_social_session_segments_on_social_session_id", using: :btree
+  add_index "social_session_segments", ["id_on_social"], name: "index_social_session_segments_on_id_on_social", unique: true, using: :btree
+  add_index "social_session_segments", ["social_session_id"], name: "index_social_session_segments_on_social_session_id", unique: true, using: :btree
 
   create_table "social_sessions", force: true do |t|
     t.string   "id_on_social",           limit: 45, null: false
