@@ -82,7 +82,7 @@ module ApplicationHelper
         # api TODO volta quando tiver a parte de Marketplace e Blogs
     ] # Modals first because user can click without redirect if click accidentally
 
-    unless actions.empty?
+    if !actions.empty? && role_name!='admin'
       users_actions.each do |action|
         actions.append(action)
       end
