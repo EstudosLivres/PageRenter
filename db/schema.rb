@@ -201,6 +201,11 @@ ActiveRecord::Schema.define(version: 20140823131330) do
     t.datetime "updated_at"
   end
 
+  create_table "segments_social_session_segments", id: false, force: true do |t|
+    t.integer "segment_id",                null: false
+    t.integer "social_session_segment_id", null: false
+  end
+
   create_table "social_networks", force: true do |t|
     t.string   "name",        limit: 50, null: false
     t.string   "acronym",     limit: 10
@@ -213,14 +218,12 @@ ActiveRecord::Schema.define(version: 20140823131330) do
   end
 
   create_table "social_session_segments", force: true do |t|
-    t.integer  "segment_id",                   null: false
     t.integer  "social_session_id"
     t.string   "id_on_social",      limit: 45, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "social_session_segments", ["segment_id"], name: "index_social_session_segments_on_segment_id", using: :btree
   add_index "social_session_segments", ["social_session_id"], name: "index_social_session_segments_on_social_session_id", using: :btree
 
   create_table "social_sessions", force: true do |t|
