@@ -6,10 +6,14 @@
         - @segment.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .form-group
     = f.label :name
-    = f.text_field :name
-  .field
+    = f.text_field :name, class:'form-control', placeholder:'Segmentation name'
+  .form-group
     = f.label :description
-    = f.text_field :description
-  .actions = f.submit 'Save'
+    = f.text_area :description, class:'form-control', placeholder:"Describe this segmentation's audience"
+  .form-group
+    label for="uids" UIDs
+    textarea#segment_uids.form-control name="segment[uids]" placeholder="Insert the UserIDs separated by whitespace or skip line"
+
+  .actions = f.submit 'Salvar', class:'btn btn-success float_right'
