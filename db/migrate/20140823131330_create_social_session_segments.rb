@@ -7,6 +7,6 @@ class CreateSocialSessionSegments < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_join_table :segments, :social_session_segments
+    create_join_table :social_session_segments, :segments
   end
 end

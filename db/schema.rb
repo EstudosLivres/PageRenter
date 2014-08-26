@@ -202,8 +202,8 @@ ActiveRecord::Schema.define(version: 20140823131330) do
   end
 
   create_table "segments_social_session_segments", id: false, force: true do |t|
-    t.integer "segment_id",                null: false
     t.integer "social_session_segment_id", null: false
+    t.integer "segment_id",                null: false
   end
 
   create_table "social_networks", force: true do |t|
