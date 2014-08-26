@@ -195,8 +195,8 @@ ActiveRecord::Schema.define(version: 20140823131330) do
   end
 
   create_table "segments", force: true do |t|
-    t.string   "name",        limit: 75,  null: false
-    t.string   "description", limit: 140
+    t.string   "name",        limit: 140, null: false
+    t.string   "description", limit: 200
     t.datetime "created_at"
     t.datetime "updated_at"
   end
