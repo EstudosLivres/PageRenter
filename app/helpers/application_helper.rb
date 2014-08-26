@@ -20,6 +20,8 @@ module ApplicationHelper
         return 'fa-rocket'
       when 'advertiser'
         return 'fa-bullhorn'
+      when 'admin'
+        return 'fa-user'
       else
         if role_param.length >= 3 then return role_param end
         return 'fa-error'
