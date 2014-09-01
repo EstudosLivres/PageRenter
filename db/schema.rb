@@ -236,6 +236,7 @@ ActiveRecord::Schema.define(version: 20140823131339) do
     t.string   "email",                  limit: 55, null: false
     t.string   "gender",                 limit: 10
     t.string   "locale",                 limit: 5,  null: false
+    t.string   "access_token"
     t.integer  "friend_count",           limit: 8,  null: false
     t.integer  "local_interactions",                null: false
     t.string   "local_interaction_id",   limit: 55, null: false
