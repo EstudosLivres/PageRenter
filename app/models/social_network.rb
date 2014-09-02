@@ -29,6 +29,7 @@ class SocialNetwork < ActiveRecord::Base
 
     # Retrieving the user data
     social_obj = network_obj.get_current_user
+    social_obj[:access_token] = network_obj.access_token
     social_obj[:social_network] = obj_instance_str
 
     # User already registered, do not persist it (PREVENT)
@@ -79,6 +80,7 @@ class SocialNetwork < ActiveRecord::Base
       email:social_obj[:email],
       gender:social_obj[:gender],
       locale:social_obj[:locale],
+      access_token:social_obj[:access_token],
       friend_count:social_obj[:friend_count],
       local_interactions:social_obj[:local_interactions],
       local_interaction_id:social_obj[:local_interaction_id],

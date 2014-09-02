@@ -98,7 +98,7 @@ class User < ActiveRecord::Base
     if email.index('@').nil?
       # Auth admin user
       user = find_by_username(email)
-      return User.throw_user_with_error if user.admin.nil?
+      return User.throw_user_with_error if user.nil? || user.admin.nil?
     else
       # Auth normal user (not admin)
       user = find_by_email(email)
