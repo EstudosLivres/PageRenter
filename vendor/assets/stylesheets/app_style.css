@@ -1,5 +1,14 @@
 /* Sticky footer styles
 -------------------------------------------------- */
+/** Colorizing **/
+.danger {
+    color: #a94442;
+}
+
+.danger:hover {
+    color: #CA332E;
+}
+
 html {
     position: relative;
     min-height: 100%;
