@@ -1,9 +1,10 @@
-header#campaign_show
-  =render 'campaigns/actions'
-  h2
-    -if @campaign.name.nil?
-      =translate_it_model('campaign')
+-unless @campaign.nil?
+  header#campaign_show
+    =render 'campaigns/actions'
+    h2
+      -if @campaign.name.nil?
+        =translate_it_model('campaign')
 
-    -else
-      =@campaign.name
-    =render 'campaigns/landmark'
+      -else
+        =@campaign.name
+      =render 'campaigns/landmark'

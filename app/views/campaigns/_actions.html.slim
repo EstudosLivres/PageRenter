@@ -1,22 +1,23 @@
-.campaign_actions.float_right
-  span.budget_value
-    -budget = @campaign.budgets.last
-    -if !budget.nil?
-      -budget_class = 'budgeted'
-      = "#{number_to_currency(budget.value, unit:"#{budget.currency.acronym} ", separator:',', delimiter:'.') } - "
-      = "#{translate_attr('recurrence_periods',budget.recurrence_period.name)}"
-    -else
-      -budget_class = 'no_budget'
+-unless @campaign.nil?
+  .campaign_actions.float_right
+    span.budget_value
+      -budget = @campaign.budgets.last
+      -if !budget.nil?
+        -budget_class = 'budgeted'
+        = "#{number_to_currency(budget.value, unit:"#{budget.currency.acronym} ", separator:',', delimiter:'.') } - "
+        = "#{translate_attr('recurrence_periods',budget.recurrence_period.name)}"
+      -else
+        -budget_class = 'no_budget'
 
-  -unless @campaign.id.nil?
-    a.tooltiper.top href="#{edit_campaign_path(@campaign.id)}" title="Edit"
-      i.fa.fa-edit
+    -unless @campaign.id.nil?
+      a.tooltiper.top href="#{edit_campaign_path(@campaign.id)}" title="Edit"
+        i.fa.fa-edit
 
-    a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="LifeCycle"
-      i.fa.fa-recycle
+      a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="LifeCycle"
+        i.fa.fa-recycle
 
-    a.tooltiper.top href="#{new_campaign_ad_path(@campaign.id)}" title="NewAd"
-      i.fa.fa-plus
+      a.tooltiper.top href="#{new_campaign_ad_path(@campaign.id)}" title="NewAd"
+        i.fa.fa-plus
 
-    a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="ConfigBudget"
-      i.fa.fa-dollar
+      a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="ConfigBudget"
+        i.fa.fa-dollar

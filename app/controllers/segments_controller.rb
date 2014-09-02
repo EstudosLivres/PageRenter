@@ -1,5 +1,5 @@
 class SegmentsController < ApplicationController
-  before_action :set_segment, except: [:new, :index]
+  before_action :set_segment, except: [:new, :create, :index]
 
   # GET /segments/:id/add_range
   def add_range
