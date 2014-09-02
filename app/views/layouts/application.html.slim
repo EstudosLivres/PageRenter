@@ -3,6 +3,9 @@ doctype html
 html
   head = render 'layouts/parts/app_head'
   body class="r_#{role_name}"
+    /! Analytics
+    =render 'layouts/parts/analytics_script'
+
     /! Navbar
     = render 'layouts/parts/navbar'
 
