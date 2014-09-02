@@ -35,7 +35,10 @@ PageRenter::Application.routes.draw do
     get '' => 'admins#index', as: :admin_root
     get 'login' => 'admins#login', as: :admin_login
     get 'ad_analyse' => 'admins#ad_analyse', as: :admin_ad_analyse # TODO (Criar conceito melhor disso)
-    resources :segments
+    resources :segments do
+      get 'add_range' => 'segments#add_range', as: :add_range
+      post 'improve_range' => 'segments#improve_range', as: :improve_range
+    end
   end
 
   # Actions Under/For API (external requests)

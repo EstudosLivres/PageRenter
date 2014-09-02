@@ -728,3 +728,19 @@ center#choose_file_section {
 #role_action {
     margin-left: 5px;
 }
+
+#add_segment_range textarea {
+    margin-top: 25px;
+    min-height: 250px;
+}
+
+input.btn.btn-default:hover,
+input.btn.btn-default:visited,
+input.btn.btn-default:focus {
+    color: black !important;
+}
+
+a.float_right.normal_link {
+    margin-top: 10px;
+    margin-right: 20px;
+}

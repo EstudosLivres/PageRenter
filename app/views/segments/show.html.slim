@@ -1,15 +1,18 @@
-p#notice = notice
-
-= link_to 'Edit', edit_segment_path(@segment)
-'|
-= link_to 'Back', segments_path
+h2.float_right
+  a.tooltiper.top href="#{edit_segment_path(@segment)}" title="Editar": i.glyphicon.glyphicon-edit
+  | &nbsp; | &nbsp;
+  a.tooltiper.top href="#{segment_add_range_path(@segment)}" title="Aumentar o alcance": i.fa.fa-plus
 
 p
-  strong Name:
+  strong Nome:
   = " #{@segment.name}"
 p
-  strong Description:
+  strong Descrição:
   = " #{@segment.description}"
 
--@segment.social_session_segments.each do |social_session|
-  = image_tag SocialSession.new(id_on_social:social_session.id_on_social,social_network_id:1).get_picture
+p
+  strong Total de alcance atual:
+  = " #{@segment.social_session_segments.count} pessoas"
+
+/!@segment.social_session_segments.each do |social_session|
+/! image_tag SocialSession.new(id_on_social:social_session.id_on_social,social_network_id:1).get_picture

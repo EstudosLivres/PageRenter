@@ -1,0 +1,12 @@
+-if !notice.nil?
+  .alert.alert-success
+    strong Sucesso.&nbsp;
+    span = notice
+-elsif !alert.nil?
+  .alert.alert-warning
+    strong Alerta.&nbsp;
+    span = alert
+-elsif !flash[:flashes].nil?
+  .alert.alert-danger
+    strong Erro.&nbsp;
+    span = error
