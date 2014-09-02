@@ -213,7 +213,7 @@ DEPENDENCIES
   capybara (~> 2.2.1)
   coffee-rails (~> 4.0.0)
   colorize (~> 0.7.1)
-  factory_girl_rails (~> 4.4)
+  factory_girl_rails
   faker (~> 1.4.2)
   fql (~> 0.3.1)
   its

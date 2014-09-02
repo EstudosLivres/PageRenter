@@ -72,7 +72,7 @@ group :development, :test do
   gem 'binding_of_caller', '~> 0.7.2'
 
   # Option to not use Fixtures (FactoryGirl)
-  gem 'factory_girl_rails', '~> 4.4'
+  gem 'factory_girl_rails', require:false
 
   # Create readable attrs values
   gem 'faker', '~> 1.4.2'
