@@ -61,6 +61,11 @@ gem 'fql', '~> 0.3.1'
 # Full Facebook API (including Graph API)
 gem "koala", "~> 1.10.0rc"
 
+# Deploy
+group :development do
+  gem 'capistrano', '~> 3.2.0'
+end
+
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
