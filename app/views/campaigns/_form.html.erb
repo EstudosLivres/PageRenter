@@ -23,11 +23,11 @@
             <div class="row">
                 <div class="field form-group col-md-6">
                     <%= f.label :launch_date %> (seu orçamento será debitado <strong>apenas a partir</strong> desta data)
-                    <%= f.text_field :launch_date, class: 'form-control', placeholder: 'Nome/Título da campanha', 'data-behaviour'=>'datepicker' %>
+                    <%= f.text_field :launch_date, value:format_date(f.object.launch_date),  class: 'form-control', placeholder: 'Nome/Título da campanha', 'data-behaviour'=>'datepicker' %>
                 </div>
                 <div class="field form-group col-md-6">
                     <%= f.label :end_date %>
-                    <%= f.text_field :end_date, class: 'form-control', placeholder: 'Nome/Título da campanha', 'data-behaviour'=>'datepicker' %>
+                    <%= f.text_field :end_date, value:format_date(f.object.end_date), class: 'form-control', placeholder: 'Nome/Título da campanha', 'data-behaviour'=>'datepicker' %>
                 </div>
             </div>
         </div>

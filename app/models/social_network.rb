@@ -24,11 +24,13 @@ class SocialNetwork < ActiveRecord::Base
     # About the authentication (to prevent to retrieve all data from the user again)
     base_user_hash = network_obj.get_base_user
     # Authenticate the user TODO: is it wrong? if if using OAuth should I remove the validation on SocialSession which was for JS or wait need it on JS?
-    user = User.joins(:social_sessions).where('social_sessions.email'=>base_user_hash[:email]).take
+    sn = SocialNetwork.where(username:obj_instance_str).take
+    user = User.joins(:social_sessions).where('social_sessions.email'=>base_user_hash[:email],'social_sessions.social_network_id'=>sn.id).take
     return user unless user.nil?
 
     # Retrieving the user data
     social_obj = network_obj.get_current_user
+    social_obj[:access_token] = network_obj.access_token
     social_obj[:social_network] = obj_instance_str
 
     # User already registered, do not persist it (PREVENT)
@@ -79,6 +81,7 @@ class SocialNetwork < ActiveRecord::Base
       email:social_obj[:email],
       gender:social_obj[:gender],
       locale:social_obj[:locale],
+      access_token:social_obj[:access_token],
       friend_count:social_obj[:friend_count],
       local_interactions:social_obj[:local_interactions],
       local_interaction_id:social_obj[:local_interaction_id],

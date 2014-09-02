@@ -173,7 +173,7 @@ header .social_share .btn:focus {
     color: whitesmoke;
 }
 
-h4.panel-title .social_share {
+.social_share {
     margin-top: -8px;
 }
 

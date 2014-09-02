@@ -58,7 +58,8 @@ module Socials
 
     # Return a base user to sig in it out of it lib
     def get_base_user
-      return RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
+      u = RailsFixes::Util.hash_keys_to_sym(@graph.get_object("me"))
+      return {name:u[:name],username:u[:username],email:u[:email],locale:u[:locale]}
     end
 
     # Get the Multi logins from the user (Pages, in Facebook case)

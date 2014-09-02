@@ -9,14 +9,14 @@
       -budget_class = 'no_budget'
 
   -unless @campaign.id.nil?
-    = link_to edit_campaign_path(@campaign.id) do
+    a.tooltiper.top href="#{edit_campaign_path(@campaign.id)}" title="Edit"
       i.fa.fa-edit
 
-    = link_to new_campaign_budget_path(@campaign.id) do
+    a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="LifeCycle"
       i.fa.fa-recycle
 
-    = link_to new_campaign_ad_path(@campaign.id) do
+    a.tooltiper.top href="#{new_campaign_ad_path(@campaign.id)}" title="NewAd"
       i.fa.fa-plus
 
-    = link_to new_campaign_budget_path(@campaign.id), class:budget_class do
+    a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="ConfigBudget"
       i.fa.fa-dollar

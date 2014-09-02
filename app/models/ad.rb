@@ -12,7 +12,7 @@ class Ad < ActiveRecord::Base
                     s3_credentials: "#{Rails.root}/config/aws.yml",
                     path: "pub_piece/:attachment/:id/:style/:filename",
                     url: ':s3_domain_url',
-                    default_url: '/assets/missing/pub_piece/:style/missing_logo.jpg'
+                    default_url: '/assets/missing/pub_piece/:style/missing_logo.png'
 
   # Custom validations
   after_create :setup

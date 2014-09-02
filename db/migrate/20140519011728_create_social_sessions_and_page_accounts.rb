@@ -7,6 +7,7 @@ class CreateSocialSessionsAndPageAccounts < ActiveRecord::Migration
       t.string :email, limit: 55, null: false
       t.string :gender, limit: 10, null: true
       t.column :locale, "char(5)", null: false
+      t.string :access_token, null: true
       t.column :friend_count, "BIGINT", null: false
       t.integer :local_interactions, null: false # Like, comments...
       t.string :local_interaction_id, limit:55, null: false # Like, comments...

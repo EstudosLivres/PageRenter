@@ -56,6 +56,6 @@ class Campaign < ActiveRecord::Base
 
   private
     def count_ad_state state_name
-      AdState.joins(:ad_history_states).joins(:ads).where('ad_states.name'=>state_name, 'ads.campaign_id'=>self.id).count
+      AdState.joins(:ad_history_states).joins(:pub_piece).where('ad_states.name'=>state_name, 'ads.campaign_id'=>self.id).count
     end
 end
