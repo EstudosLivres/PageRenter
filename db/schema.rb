@@ -147,14 +147,6 @@ ActiveRecord::Schema.define(version: 20140823131339) do
     t.integer "page_account_id"
   end
 
-  create_table "payment_methods", force: true do |t|
-    t.string   "name",        limit: 50,  null: false
-    t.string   "method_type", limit: 50
-    t.string   "description", limit: 140
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "profiles", force: true do |t|
     t.string   "name",                limit: 55
     t.string   "username",            limit: 55
@@ -168,18 +160,6 @@ ActiveRecord::Schema.define(version: 20140823131339) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "receipts", force: true do |t|
-    t.string   "token",                     limit: 50,  null: false
-    t.string   "id_on_operator",            limit: 45,  null: false
-    t.string   "url_access",                limit: 140, null: false
-    t.string   "tid",                       limit: 45
-    t.integer  "financial_transactions_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "receipts", ["financial_transactions_id"], name: "index_receipts_on_financial_transactions_id", using: :btree
 
   create_table "recurrence_periods", force: true do |t|
     t.string   "name",        limit: 15, null: false
