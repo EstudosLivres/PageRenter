@@ -51,6 +51,7 @@ gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
+gem 'bootstrap-sass'
 
 # Easier & faster then ERB
 gem 'slim-rails', '~> 2.1.5'
