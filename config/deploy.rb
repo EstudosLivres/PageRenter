@@ -13,7 +13,7 @@ set :application, 'PageRenter'
 set :repo_url, 'git@github.com:TonGarcia/PageRenter.git'
 set :scm, "git"
 
-set :deploy_to, "/home/deploy/pgs"
+set :deploy_to, "/home/deploy/pagerenter"
 set :user, "deploy"
 set :use_sudo, false
 
