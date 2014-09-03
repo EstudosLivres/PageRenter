@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def login
     user_params = params['user']
     user = User.authenticate(user_params['email'], user_params['password'])
-    if user
+    if user.errors.messages.empty?
       # Set the locale (API skiping AppController before actions)
       session[:user_id] = user.id
       set_locale
