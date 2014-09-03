@@ -33,10 +33,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+# For easy user session management
+# TODO gem 'devise', '~> 3.3.0'
 
 # Gem for encrypt Password
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -61,6 +59,12 @@ gem 'fql', '~> 0.3.1'
 
 # Full Facebook API (including Graph API)
 gem "koala", "~> 1.10.0rc"
+
+# Generate documentation
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
 
 # Deploy
 group :development do
