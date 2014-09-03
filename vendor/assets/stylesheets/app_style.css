@@ -743,6 +743,10 @@ center#choose_file_section {
     min-height: 250px;
 }
 
+textarea {
+    min-height: 125px;
+}
+
 input.btn.btn-default:hover,
 input.btn.btn-default:visited,
 input.btn.btn-default:focus {

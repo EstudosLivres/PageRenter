@@ -1,5 +1,5 @@
 class Currency < ActiveRecord::Base
-  has_many :ad_pricings
+  has_many :bids
   has_many :financial_transactions
 
   # Aux methods to return better understandable

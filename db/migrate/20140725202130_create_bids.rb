@@ -1,7 +1,8 @@
-class CreateAdPricings < ActiveRecord::Migration
+class CreateBids < ActiveRecord::Migration
   def change
-    create_table :ad_pricings do |t|
-      t.float :value_paid_per_visitation, null: false
+    create_table :bids do |t|
+      t.float :visitation, null: false
+      t.float :impressions, null: false
       t.belongs_to :campaign, index: true, null: false
       t.belongs_to :currency, index: true, null: false
 
