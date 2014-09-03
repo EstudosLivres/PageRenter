@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { in: 3..55 }, on: [:create, :update]
   validates :username, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]
   validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: [:create, :update]
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
 
   # Validates Associations
@@ -75,7 +76,7 @@ class User < ActiveRecord::Base
     end
 
     # If passed here is because there is no default role, so setup based on user app usage
-    amount_campaigns = self.campaigns.length
+    if self.advertiser.nil? then amount_campaigns = 0 else amount_campaigns = self.advertiser.campaigns.length end
     self.profiles.each do |profile|
       return profile if profile.role.name == 'advertiser' && amount_campaigns >= 1
       return profile if profile.role.name == 'publisher' && amount_campaigns == 0
