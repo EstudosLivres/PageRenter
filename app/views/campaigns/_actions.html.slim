@@ -20,4 +20,7 @@
         i.fa.fa-plus
 
       a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="ConfigBudget"
-        i.fa.fa-dollar
+        -if @campaign.budgets.count == 0
+          i.fa.fa-dollar.danger
+        -else
+          i.fa.fa-dollar.success
