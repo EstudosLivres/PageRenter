@@ -61,6 +61,9 @@ gem 'fql', '~> 0.3.1'
 # Full Facebook API (including Graph API)
 gem "koala", "~> 1.10.0rc"
 
+# GoogleMaps GEM TODO check usage
+gem 'gmaps4rails'
+
 # Generate documentation
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
