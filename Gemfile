@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
+#gem 'jquery-ui-rails' TODO install
 
 # Angularjs JavaScript library
 gem 'angularjs-rails', '~> 1.2.21'
@@ -50,7 +50,7 @@ gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-sass'
-gem 'bootstrap-datepicker-rails','1.3.0.1'
+#gem 'bootstrap-datepicker-rails','1.3.0.1' TODO install
 
 # Easier & faster then ERB
 gem 'slim-rails', '~> 2.1.5'
@@ -62,7 +62,7 @@ gem 'fql', '~> 0.3.1'
 gem "koala", "~> 1.10.0rc"
 
 # GoogleMaps GEM TODO check usage
-gem 'gmaps4rails'
+#gem 'gmaps4rails'  TODO install
 
 # Generate documentation
 group :doc do
