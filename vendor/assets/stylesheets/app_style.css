@@ -744,7 +744,7 @@ center#choose_file_section {
 }
 
 textarea {
-    min-height: 125px;
+    min-height: 70px;
 }
 
 input.btn.btn-default:hover,
