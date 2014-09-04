@@ -1,0 +1,31 @@
+h1 Listing bids
+
+table
+  thead
+    tr
+      th Visitation
+      th Impression
+      th Foreign interactions
+      th Local interactions
+      th Campaign
+      th Currency
+      th
+      th
+      th
+
+  tbody
+    - @bids.each do |bid|
+      tr
+        td = bid.visitation
+        td = bid.impression
+        td = bid.foreign_interactions
+        td = bid.local_interactions
+        td = bid.campaign
+        td = bid.currency
+        td = link_to 'Show', bid
+        td = link_to 'Edit', edit_bid_path(bid)
+        td = link_to 'Destroy', bid, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Bid', new_bid_path

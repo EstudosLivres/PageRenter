@@ -47,5 +47,10 @@ class Ad < ActiveRecord::Base
     self.campaign.advertiser
   end
 
+  # Return it current activated Bid
+  def bid
+    return self.bids.last
+  end
+
 # TODO def budget: return the transactions without receiver which means paid to the system
 end

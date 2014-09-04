@@ -1,7 +1,4 @@
 PageRenter::Application.routes.draw do
-  # In a near future put a helper to redirect to the user role session
-  root 'redirect#redirect_index'
-
   # Post back from the socials network after validate user
   get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
 
@@ -27,7 +24,9 @@ PageRenter::Application.routes.draw do
     get '/briefing' => 'advertisers#index', as: :create_briefing
     resources :campaigns, except: [:destroy] do
       resources :budgets, except: [:edit, :destroy]
-      resources :ads, except: [:destroy]
+      resources :ads, except: [:destroy] do
+        resources :bids, except: [:destroy]
+      end
     end
   end
 
@@ -64,4 +63,6 @@ PageRenter::Application.routes.draw do
       post 'admin_login' => 'remote_users#admin_check_login', as: :admin_check_login
     end
   end
+
+  root 'redirect#redirect_index'
 end

@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Visitation:
+  = @bid.visitation
+p
+  strong Impression:
+  = @bid.impression
+p
+  strong Foreign interactions:
+  = @bid.foreign_interactions
+p
+  strong Local interactions:
+  = @bid.local_interactions
+p
+  strong Campaign:
+  = @bid.campaign
+p
+  strong Currency:
+  = @bid.currency
+
+= link_to 'Edit', edit_bid_path(@bid)
+'|
+= link_to 'Back', bids_path

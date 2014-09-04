@@ -1,0 +1,1 @@
+json.extract! @bid, :id, :visitation, :impression, :foreign_interactions, :local_interactions, :campaign_id, :currency_id, :created_at, :updated_at
