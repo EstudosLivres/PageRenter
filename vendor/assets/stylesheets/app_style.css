@@ -6,7 +6,25 @@
 }
 
 .danger:hover {
-    color: #CA332E;
+    color: #DB3816;
+}
+
+.success {
+    color: #5C8F72;
+}
+
+.success:hover {
+    color: #26BB5E;
+}
+
+.alert.alert-warning a {
+    color: #924320;
+}
+
+.alert.alert-warning a:hover,
+.alert.alert-warning a:focus {
+    color: #d57114;
+    text-decoration: underline;
 }
 
 html {
