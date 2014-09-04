@@ -23,7 +23,8 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index', as: :advertiser_root
     get '/edit' => 'advertisers#edit', as: :advertiser_edit
     patch '/update' => 'advertisers#update'
-
+    # TODO create Briefing resource
+    get '/briefing' => 'advertisers#index', as: :create_briefing
     resources :campaigns, except: [:destroy] do
       resources :budgets, except: [:edit, :destroy]
       resources :ads, except: [:destroy]
