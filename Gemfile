@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Angularjs JavaScript library
 gem 'angularjs-rails', '~> 1.2.21'
@@ -48,8 +49,8 @@ gem 'aws-sdk'
 gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
-gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
 gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails','1.3.0.1'
 
 # Easier & faster then ERB
 gem 'slim-rails', '~> 2.1.5'
