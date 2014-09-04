@@ -17,6 +17,7 @@
 //= require zeroclipboard
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
+//= require app.js
 
 $(document).on("page:change", function() {
     $(".navbar .dropdown").hover((function() {
