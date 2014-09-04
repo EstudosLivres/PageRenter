@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
+// require bootstrap TODO add GoogleMaps GEM (UPDATE)
+// require gmaps/google TODO add GoogleMaps GEM
 //= require angular
 //= require zeroclipboard
 //= require bootstrap-datepicker/core
