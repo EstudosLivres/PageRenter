@@ -20,7 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-#gem 'jquery-ui-rails' TODO install
+gem 'jquery-ui-rails'
 
 # Angularjs JavaScript library
 gem 'angularjs-rails', '~> 1.2.21'
@@ -35,7 +35,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # For easy user session management
-# TODO gem 'devise', '~> 3.3.0'
+gem 'devise', '~> 3.3.0'
 
 # Gem for encrypt Password
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -50,7 +50,7 @@ gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
 gem 'bootstrap-sass'
-#gem 'bootstrap-datepicker-rails','1.3.0.1' TODO install
+gem 'bootstrap-datepicker-rails','1.3.0.1'
 
 # Easier & faster then ERB
 gem 'slim-rails', '~> 2.1.5'
@@ -61,8 +61,8 @@ gem 'fql', '~> 0.3.1'
 # Full Facebook API (including Graph API)
 gem "koala", "~> 1.10.0rc"
 
-# GoogleMaps GEM TODO check usage
-#gem 'gmaps4rails'  TODO install
+# GoogleMaps GEM
+gem 'gmaps4rails'
 
 # Generate documentation
 group :doc do
