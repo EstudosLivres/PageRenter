@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823131339) do
+ActiveRecord::Schema.define(version: 20140904134551) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
@@ -53,15 +53,17 @@ ActiveRecord::Schema.define(version: 20140823131339) do
   end
 
   create_table "bids", force: true do |t|
-    t.float    "visitation",  limit: 24, null: false
-    t.float    "impressions", limit: 24, null: false
-    t.integer  "campaign_id",            null: false
-    t.integer  "currency_id",            null: false
+    t.float    "visitation",           limit: 24
+    t.float    "impression",           limit: 24
+    t.decimal  "foreign_interactions",            precision: 10, scale: 0
+    t.decimal  "local_interactions",              precision: 10, scale: 0
+    t.integer  "ad_id"
+    t.integer  "currency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "bids", ["campaign_id"], name: "index_bids_on_campaign_id", using: :btree
+  add_index "bids", ["ad_id"], name: "index_bids_on_ad_id", using: :btree
   add_index "bids", ["currency_id"], name: "index_bids_on_currency_id", using: :btree
 
   create_table "budget_launches", force: true do |t|

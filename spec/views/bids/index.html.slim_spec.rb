@@ -8,7 +8,7 @@ describe "bids/index" do
         :impression => 1.5,
         :foreign_interactions => "9.99",
         :local_interactions => "9.99",
-        :campaign => nil,
+        :ad => nil,
         :currency => nil
       ),
       stub_model(Bid,
@@ -16,7 +16,7 @@ describe "bids/index" do
         :impression => 1.5,
         :foreign_interactions => "9.99",
         :local_interactions => "9.99",
-        :campaign => nil,
+        :ad => nil,
         :currency => nil
       )
     ])

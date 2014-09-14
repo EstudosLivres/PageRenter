@@ -10,9 +10,6 @@
         -budget_class = 'no_budget'
 
     -unless @campaign.id.nil?
-      a.tooltiper.top href="#{edit_campaign_path(@campaign.id)}" title="Edit"
-        i.fa.fa-edit
-
       a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="LifeCycle"
         i.fa.fa-recycle
 
@@ -24,3 +21,6 @@
           i.fa.fa-dollar.danger
         -else
           i.fa.fa-dollar.success
+
+      a.tooltiper.top href="#{edit_campaign_path(@campaign.id)}" title="EditCampaign"
+        i.fa.fa-edit

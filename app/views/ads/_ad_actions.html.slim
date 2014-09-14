@@ -1,5 +1,11 @@
 .ad_actions.float_right
   span.budget_value
   -unless @ad.id.nil?
-    = link_to edit_campaign_ad_path(@campaign.id, @ad.id) do
+    a.tooltiper.top href="#{new_campaign_ad_bid_path(@campaign.id, @ad.id)}" title="ConfigBid"
+      -if @ad.bids.count == 0
+        i.fa.fa-tags.danger
+      -else
+        i.fa.fa-tags.success
+
+    a.tooltiper.top href="#{edit_campaign_ad_path(@campaign.id, @ad.id)}" title="EditAd"
       i.fa.fa-edit

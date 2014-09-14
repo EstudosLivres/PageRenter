@@ -1,5 +1,6 @@
 class BidsController < ApplicationController
-  before_action :set_bid, only: [:show, :edit, :update, :destroy]
+  #before_action :set_bid, only: [:show, :edit, :update, :destroy]
+  before_action :set_aux_objs, only: [:show, :new, :create, :edit, :update]
 
   # GET /bids
   # GET /bids.json
@@ -67,8 +68,15 @@ class BidsController < ApplicationController
       @bid = Bid.find(params[:id])
     end
 
+    # Create objs to auxiliary on create forms
+    def set_aux_objs
+      @ad = Ad.find(params[:ad_id]) unless params[:ad_id].nil?
+      @campaign = Campaign.find(params[:campaign_id]) unless params[:campaign_id].nil?
+      return if !valid_user_permission?
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params
-      params.require(:bid).permit(:visitation, :impression, :foreign_interactions, :local_interactions, :campaign_id, :currency_id)
+      params.require(:bid).permit(:visitation, :impression, :foreign_interactions, :local_interactions, :ad_id, :currency_id)
     end
 end

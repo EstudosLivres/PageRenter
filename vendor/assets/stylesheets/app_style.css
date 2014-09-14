@@ -154,7 +154,8 @@ header#campaign_show .campaign_actions i.fa {
     font-size: 1.3em;
 }
 
-.campaign_actions.float_right a {
+.campaign_actions.float_right a,
+.ad_actions.float_right a {
     margin: 0 0 0 20px;
 }
 

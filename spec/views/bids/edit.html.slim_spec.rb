@@ -7,7 +7,7 @@ describe "bids/edit" do
       :impression => 1.5,
       :foreign_interactions => "9.99",
       :local_interactions => "9.99",
-      :campaign => nil,
+      :ad => nil,
       :currency => nil
     ))
   end
@@ -21,7 +21,7 @@ describe "bids/edit" do
       assert_select "input#bid_impression[name=?]", "bid[impression]"
       assert_select "input#bid_foreign_interactions[name=?]", "bid[foreign_interactions]"
       assert_select "input#bid_local_interactions[name=?]", "bid[local_interactions]"
-      assert_select "input#bid_campaign[name=?]", "bid[campaign]"
+      assert_select "input#bid_ad[name=?]", "bid[ad]"
       assert_select "input#bid_currency[name=?]", "bid[currency]"
     end
   end

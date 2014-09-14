@@ -2,6 +2,7 @@ PageRenter::Application.routes.draw do
   # Post back from the socials network after validate user
   get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
 
+  # User session management
   scope '/users' do
     post 'login' => 'users#login'
     get 'sign_out' => 'users#sign_out'
