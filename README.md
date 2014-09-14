@@ -6,6 +6,10 @@ __Pitch curto__: _Aluguel Social de Marketing Bilateral_
 <br>
 __Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazendo tudo que o Facebook faz, mas com o diferencial de que nosso público não é nosso produto, mas sim parceiros._
 
+## Validação da ideia
+
+[Veja no YouTube um exemplo disso (22min até 23:15)](https://www.youtube.com/watch?v=GDm9xL7Q_k8&t=21m40s)
+
 ## Observações sobre o Projeto
 
 ###### Landing VS App
