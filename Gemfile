@@ -61,6 +61,9 @@ gem 'fql', '~> 0.3.1'
 # Full Facebook API (including Graph API)
 gem "koala", "~> 1.10.0rc"
 
+# PaymentMethod
+gem 'rents', '~> 0.1.5'
+
 # GoogleMaps GEM
 gem 'gmaps4rails'
 
@@ -68,11 +71,6 @@ gem 'gmaps4rails'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
-end
-
-# Deploy
-group :development do
-  gem 'capistrano', '~> 3.2.0'
 end
 
 group :development, :test do
