@@ -1,5 +1,32 @@
 /* Sticky footer styles
 -------------------------------------------------- */
+/** Colorizing **/
+.danger {
+    color: #a94442;
+}
+
+.danger:hover {
+    color: #DB3816;
+}
+
+.success {
+    color: #5C8F72;
+}
+
+.success:hover {
+    color: #26BB5E;
+}
+
+.alert.alert-warning a {
+    color: #924320;
+}
+
+.alert.alert-warning a:hover,
+.alert.alert-warning a:focus {
+    color: #d57114;
+    text-decoration: underline;
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -127,7 +154,8 @@ header#campaign_show .campaign_actions i.fa {
     font-size: 1.3em;
 }
 
-.campaign_actions.float_right a {
+.campaign_actions.float_right a,
+.ad_actions.float_right a {
     margin: 0 0 0 20px;
 }
 
@@ -727,4 +755,24 @@ center#choose_file_section {
 
 #role_action {
     margin-left: 5px;
+}
+
+#add_segment_range textarea {
+    margin-top: 25px;
+    min-height: 250px;
+}
+
+textarea {
+    min-height: 70px;
+}
+
+input.btn.btn-default:hover,
+input.btn.btn-default:visited,
+input.btn.btn-default:focus {
+    color: black !important;
+}
+
+a.float_right.normal_link {
+    margin-top: 10px;
+    margin-right: 20px;
 }

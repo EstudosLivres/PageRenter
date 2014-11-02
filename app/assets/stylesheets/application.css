@@ -11,5 +11,5 @@
  *= require_self
  *= require_tree .
  *= stub scaffolds
- *= require bootstrap-datepicker3
+//require bootstrap-datepicker3 TODO readd
  */

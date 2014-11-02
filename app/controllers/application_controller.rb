@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
     end
 
     # Idiom setted by the session just if necessary to find the user on BD, if the locale cames with the browser, it is scaped
-    unless session[:user_id].nil?
-      @current_user = User.where(id:session[:user_id]).take
+    unless @current_user.nil?
+      @current_user = User.where(id:session[:user_id]).take # TODO @current_user = current_user DEVISE
       if @current_user.nil?
         session.delete('user_id')
         return redirect_to ApplicationController.land_url
@@ -52,7 +52,7 @@ class ApplicationController < ActionController::Base
 
   def setup_user
     # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
-
+    # TODO @current_user = current_user DEVISE
     return if is_api_call?
     # SetUp the user to prevent finds on BD
     if session['user_id'].nil? || params['action'] == 'sign_out' then return end
@@ -88,6 +88,23 @@ class ApplicationController < ActionController::Base
     return 'application'
   end
 
+  # Add objs which user must be permitted to access because is individual
+  def valid_user_permission?
+    user_permitted = true
+
+    # Check it campaign permission
+    unless @campaign.nil?
+      user_permitted = !Campaign.joins(:advertiser).where('profiles.user_id'=>@current_user.id, 'campaigns.id'=>@campaign.id).take.nil?
+      if !user_permitted
+        render 'advertisers/index'
+      end
+    end
+
+
+    return user_permitted
+  end
+
+  # ----- STATIC METHODs -------
   def self.land_url
     # 'http://pagerenter.com.br'
     'http://localhost/LandPageRenter/LandPageRenter/'

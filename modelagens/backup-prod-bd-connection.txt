@@ -1,8 +1,0 @@
-production:
-  adapter: mysql2
-  encoding: utf8
-  database: heroku_afad7bcf77c7ed1
-  pool: 5
-  username: b5e977c0f13c3d
-  password: 9c6c01c5
-  host: us-cdbr-east-06.cleardb.net

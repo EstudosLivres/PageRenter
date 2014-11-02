@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823131339) do
+ActiveRecord::Schema.define(version: 20140904134551) do
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id"
@@ -20,17 +20,6 @@ ActiveRecord::Schema.define(version: 20140823131339) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "ad_pricings", force: true do |t|
-    t.float    "value_paid_per_visitation", limit: 24, null: false
-    t.integer  "campaign_id",                          null: false
-    t.integer  "currency_id",                          null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "ad_pricings", ["campaign_id"], name: "index_ad_pricings_on_campaign_id", using: :btree
-  add_index "ad_pricings", ["currency_id"], name: "index_ad_pricings_on_currency_id", using: :btree
 
   create_table "ad_states", force: true do |t|
     t.string   "name",        limit: 40,  null: false
@@ -42,9 +31,11 @@ ActiveRecord::Schema.define(version: 20140823131339) do
 
   create_table "ads", force: true do |t|
     t.string   "name",                limit: 50,  null: false
-    t.string   "title",               limit: 50,  null: false
+    t.string   "headline",            limit: 25,  null: false
+    t.string   "title",               limit: 90,  null: false
+    t.string   "description",         limit: 200
+    t.string   "audience"
     t.string   "username",            limit: 140, null: false
-    t.string   "description",         limit: 140, null: false
     t.string   "social_phrase",       limit: 140
     t.text     "redirect_link",                   null: false
     t.integer  "campaign_id"
@@ -60,6 +51,20 @@ ActiveRecord::Schema.define(version: 20140823131339) do
     t.integer "ad_id",      null: false
     t.integer "segment_id", null: false
   end
+
+  create_table "bids", force: true do |t|
+    t.float    "visitation",           limit: 24
+    t.float    "impression",           limit: 24
+    t.decimal  "foreign_interactions",            precision: 10, scale: 0
+    t.decimal  "local_interactions",              precision: 10, scale: 0
+    t.integer  "ad_id"
+    t.integer  "currency_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bids", ["ad_id"], name: "index_bids_on_ad_id", using: :btree
+  add_index "bids", ["currency_id"], name: "index_bids_on_currency_id", using: :btree
 
   create_table "budget_launches", force: true do |t|
     t.integer  "budget_id"

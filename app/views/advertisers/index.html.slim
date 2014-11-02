@@ -1,8 +1,10 @@
 .row
   #campaigns.col-md-12
     = render 'ads/pagerenter_ad'
+    = render 'layouts/parts/alerts/brieffing'
 
     #campaigns_accordion.panel-group
+      -unless @campaigns.nil?
       -@campaigns.each_with_index do |campaign, campaign_i|
         -@campaign = campaign
         .panel.panel-default

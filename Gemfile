@@ -20,6 +20,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # Angularjs JavaScript library
 gem 'angularjs-rails', '~> 1.2.21'
@@ -33,10 +34,8 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+# For easy user session management
+gem 'devise', '~> 3.3.0'
 
 # Gem for encrypt Password
 gem 'bcrypt-ruby', :require => 'bcrypt'
@@ -50,7 +49,8 @@ gem 'aws-sdk'
 gem 's3_direct_upload'
 
 # Date picker for bootstrap (easy calendar)
-gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
+gem 'bootstrap-sass'
+gem 'bootstrap-datepicker-rails','1.3.0.1'
 
 # Easier & faster then ERB
 gem 'slim-rails', '~> 2.1.5'
@@ -60,6 +60,18 @@ gem 'fql', '~> 0.3.1'
 
 # Full Facebook API (including Graph API)
 gem "koala", "~> 1.10.0rc"
+
+# PaymentMethod
+gem 'rents', '~> 0.1.6'
+
+# GoogleMaps GEM
+gem 'gmaps4rails'
+
+# Generate documentation
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
 
 group :development, :test do
   # RSPec for BDD pratices
@@ -72,7 +84,7 @@ group :development, :test do
   gem 'binding_of_caller', '~> 0.7.2'
 
   # Option to not use Fixtures (FactoryGirl)
-  gem 'factory_girl_rails', '~> 4.4'
+  gem 'factory_girl_rails', require:false
 
   # Create readable attrs values
   gem 'faker', '~> 1.4.2'

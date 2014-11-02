@@ -11,35 +11,60 @@
     = f.file_field :avatar, :onchange => 'show_ad_image(this)'
 
   .field.form-group
-    = f.label :name, translate_it_label('ad', 'name')
-    = f.text_field :name, class: 'form-control', placeholder: 'Nome da campanha'
+    = f.label :name do
+      ="#{translate_it_label('ad', 'name')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'name_tiper')}"
+    = f.text_field :name, class: 'form-control', placeholder: 'Nome do anúncio'
 
   .field.form-group
-    = f.label :title, translate_it_label('ad', 'title')
+    = f.label :headline do
+      ="#{translate_it_label('ad', 'headline')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'headline_tiper')}"
+    = f.text_field :headline, class: 'form-control', placeholder: 'Frase curta de impacto'
+
+  .field.form-group
+    = f.label :title do
+      ="#{translate_it_label('ad', 'title')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'title_tiper')}"
     = f.text_field :title, class: 'form-control', placeholder: 'Frase curta de impacto'
 
   .field.form-group
-    = f.label :redirect_link, translate_it_label('ad', 'redirect_link')
-    = f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meusite.com   ...   http://ebay.com/produto '
+    = f.label :redirect_link do
+      ="#{translate_it_label('ad', 'redirect_link')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'redirect_link_tiper')}"
+    = f.text_field :redirect_link, class: 'form-control', placeholder: 'http://meu_site.com.br/id_produto'
 
   .field.form-group
-    = f.label :social_phrase, translate_it_label('ad', 'social_phrase')
-    = f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para as Redes Sociais'
+    = f.label :username do
+      ="#{translate_it_label('ad', 'username')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'username_tiper')}"
+    = f.text_field :username, class: 'form-control', placeholder: 'nome-produto-tipo-produto'
 
   .field.form-group
-    = f.label :description, translate_it_label('ad', 'description')
-    = f.text_field :description, class: 'form-control', placeholder: 'Descrição geral do produto da campanha (faça o publisher entender seu produto)'
+    = f.label :social_phrase do
+      ="#{translate_it_label('ad', 'social_phrase')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'social_phrase_tiper')}"
+    = f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para mídias sociais'
 
   .field.form-group
-    = f.label :username, translate_it_label('ad', 'username')
-    = f.text_field :username, class: 'form-control', placeholder: ' pagerenter/pub_username/anuncio_username', 'ng-model'=>'AdUserName'
+    = f.label :description do
+      ="#{translate_it_label('ad', 'description')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'description_tiper')}"
+    = f.text_area :description, class: 'form-control', placeholder: 'Sobre que é esse Anúncio'
 
-  .actions
+  .field.form-group
+    = f.label :audience do
+      ="#{translate_it_label('ad', 'audience')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'audience_tiper')}"
+    = f.text_area :audience, class: 'form-control', placeholder: 'People who like Pizza and live in Brasília, Brazil'
+    = link_to 'Learn how to write/build your Audience', 'https://www.facebook.com/about/graphsearch'
+
+  .row.actions
     = f.submit :submit, class: "btn #{current_button}"
 
 aside#new_ad_right.col-md-6
   p
-    | Peça publicitária (Tamanho otimizado: 470 × 245)
+    | Peça publicitária (Tamanho otimizado: 1200 × 628)
   .row
     -current_avatar = @ad.avatar.url unless @ad.avatar.nil?
     img#new_ad_image.col-md-6 src="#{current_avatar}"
@@ -48,4 +73,4 @@ aside#new_ad_right.col-md-6
     | Share link:
     br
     a href="#"
-      | http://pagerenter.com.br/pub_username/ad_username
+      | http://app.pagerenter.com.br/pub_username/ad_username

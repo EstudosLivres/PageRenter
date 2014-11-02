@@ -1,11 +1,32 @@
 en:
   activerecord:
     models:
+      advertiser: Advertiser
+      publisher: Publisher
       campaign: Campaign
-      budget: Budget
+      budget: Budget config for the campaign
+      ad: New pubslish Ad
     attributes:
       budget:
         labels:
           value: Budget's recurrent value
           currency: Currency (it even define your target audience)
           recurrence_period: The budget's renovation  period
+      ad:
+        labels:
+          name: Ad name
+          name_tiper: internal control
+          headline: Showy headline
+          headline_tiper: Shown to the user, call the Publisher attention
+          title: Text
+          title_tiper: Upside the image
+          redirect_link: RedirectLink
+          redirect_link_tiper: Where the user go after clicked on the link
+          social_phrase: Short sentence
+          social_phrase_tiper: Used on social medias by the Publisher
+          description: Long description
+          description_tiper: Explaining the Ad's product
+          username: Name for the PageRenter Link
+          username_tiper: Optimized for SEO too
+          audience: Specify which audience do you want
+          audience_tiper: People who might like your Ad

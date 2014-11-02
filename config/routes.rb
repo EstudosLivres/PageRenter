@@ -1,10 +1,8 @@
 PageRenter::Application.routes.draw do
-  # In a near future put a helper to redirect to the user role session
-  root 'redirect#redirect_index'
-
   # Post back from the socials network after validate user
   get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
 
+  # User session management
   scope '/users' do
     post 'login' => 'users#login'
     get 'sign_out' => 'users#sign_out'
@@ -23,10 +21,13 @@ PageRenter::Application.routes.draw do
     get '' => 'advertisers#index', as: :advertiser_root
     get '/edit' => 'advertisers#edit', as: :advertiser_edit
     patch '/update' => 'advertisers#update'
-
+    # TODO create Briefing resource
+    get '/briefing' => 'advertisers#index', as: :create_briefing
     resources :campaigns, except: [:destroy] do
       resources :budgets, except: [:edit, :destroy]
-      resources :ads, except: [:destroy]
+      resources :ads, except: [:destroy] do
+        resources :bids, except: [:destroy]
+      end
     end
   end
 
@@ -35,7 +36,10 @@ PageRenter::Application.routes.draw do
     get '' => 'admins#index', as: :admin_root
     get 'login' => 'admins#login', as: :admin_login
     get 'ad_analyse' => 'admins#ad_analyse', as: :admin_ad_analyse # TODO (Criar conceito melhor disso)
-    resources :segments
+    resources :segments do
+      get 'add_range' => 'segments#add_range', as: :add_range
+      post 'improve_range' => 'segments#improve_range', as: :improve_range
+    end
   end
 
   # Actions Under/For API (external requests)
@@ -60,4 +64,6 @@ PageRenter::Application.routes.draw do
       post 'admin_login' => 'remote_users#admin_check_login', as: :admin_check_login
     end
   end
+
+  root 'redirect#redirect_index'
 end

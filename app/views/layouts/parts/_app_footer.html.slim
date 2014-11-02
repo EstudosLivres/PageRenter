@@ -1,7 +1,16 @@
-/! Bootstrap
+/! Bootstrap TODO remove it bootstrap call use GEM
 = javascript_include_tag 'bootstrap/bootstrap.min'
 javascript:
   tipers = $('.tooltiper.top');
   set_up_tiper(tipers, 'top');
+
+  tipers = $('.tooltiper.bottom');
+  set_up_tiper(tipers, 'bottom');
+
+  tipers = $('.tooltiper.left');
+  set_up_tiper(tipers, 'left');
+
+  tipers = $('.tooltiper.right');
+  set_up_tiper(tipers, 'right');
 
   $('.tooltiper').tooltip({trigger:'hover'});

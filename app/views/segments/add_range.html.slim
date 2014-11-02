@@ -1,0 +1,6 @@
+=form_tag segment_improve_range_path(@segment), id:'add_segment_range' do
+  .actions: input.float_right.btn.btn-default type="submit" name="commit" value="Salvar"
+  = link_to 'Back', segment_path(@segment), class:'float_right normal_link'
+  h2 =@segment.name
+  .form-group
+    textarea#segment_uids.form-control name="segment[uids]" placeholder="Insert the UserIDs separated by whitespace or skip line"

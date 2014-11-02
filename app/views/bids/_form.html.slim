@@ -1,0 +1,23 @@
+= form_for [@campaign, @ad, @bid], html:{id:'new_bid', class:'form-horizontal'} do |f|
+  - if @bid.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@bid.errors.count, "error")} prohibited this bid from being saved:"
+      ul
+        - @bid.errors.full_messages.each do |message|
+          li = message
+
+  .field.form-group.col-md-6
+    = f.label :visitation
+    = f.text_field :visitation, class: 'form-control', placeholder:'Price per user clicked on the link'
+  .field.form-group.col-md-6
+    = f.label :impression
+    = f.text_field :impression, class: 'form-control', placeholder:'Price per Ad visualization'
+  .field.form-group.col-md-6
+    = f.label :foreign_interactions
+    = f.text_field :foreign_interactions, class: 'form-control', placeholder:'Price per foreign interactions (Retweet, Shares...)'
+  .field.form-group.col-md-6
+    = f.label :local_interactions
+    = f.text_field :local_interactions, class: 'form-control', placeholder:'Price per foreign interactions (Likes, Comments, Starred...)'
+
+  .field.form-group.col-md-6
+    .actions = f.submit 'Save'

@@ -13,7 +13,8 @@ $(function(){
                     $("#output").addClass("alert alert-danger animated fadeInUp").html("Username or Password incorrect or you are not ADMIN");
                 }else if(data.status == 'ok') {
                     //show avatar
-                    avatar_url = "https://graph.facebook.com/"+textfield.val()+"/picture?type=large";
+                    username = textfield.val().replace('_','');
+                    avatar_url = "https://graph.facebook.com/"+username+"/picture?type=large";
                     avatar_img = $('#avatar');
                     avatar_img.attr('src', avatar_url);
                     avatar_img.addClass('user_avatar');

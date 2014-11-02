@@ -10,13 +10,16 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
+// require bootstrap TODO add GoogleMaps GEM (UPDATE)
+// require gmaps/google TODO add GoogleMaps GEM
 //= require angular
 //= require zeroclipboard
-//= require bootstrap-datepicker/core
-//= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
+// require bootstrap-datepicker/core TODO readd
+// require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js TODO readd
+//= require app.js
 
 $(document).on("page:change", function() {
     $(".navbar .dropdown").hover((function() {
