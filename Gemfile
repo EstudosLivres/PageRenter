@@ -62,7 +62,7 @@ gem 'fql', '~> 0.3.1'
 gem "koala", "~> 1.10.0rc"
 
 # PaymentMethod
-gem 'rents', '~> 0.1.5'
+gem 'rents', '~> 0.1.6'
 
 # GoogleMaps GEM
 gem 'gmaps4rails'
