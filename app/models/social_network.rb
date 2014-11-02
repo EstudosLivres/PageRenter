@@ -4,10 +4,14 @@ class SocialNetwork < ActiveRecord::Base
 
   # Attrs validations
   validates :name, presence: true, length: { in: 3..50 }, on: [:create, :update]
-  validates :acronym, length: { in: 2..10 }, on: [:create, :update]
-  validates :username, length: { in: 2..25 }, on: [:create, :update]
+  validates :username, presence: true, length: { in: 2..30 }, on: [:create, :update]
+  validates :acronym, presence: true, length: { in: 2..10 }, on: [:create, :update]
+  validates :implemented, presence: true, on: [:create, :update]
 
   # Validates Associations
+
+  # Custom validations
+  before_validation :set_nil_to_default_value
 
   # Get the social session, from it social network from user passed
   def get_social_session(user)
@@ -124,4 +128,9 @@ class SocialNetwork < ActiveRecord::Base
 
     return return_hash
   end
+
+  private
+    def set_nil_to_default_value
+      self.implemented = false if self.implemented.nil?
+    end
 end

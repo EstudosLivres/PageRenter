@@ -12,11 +12,16 @@ class SocialSession < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 55 }, on: [:create, :update]
   validates :gender, presence: false, length: { maximum: 10 }, on: [:create, :update]
   validates :locale, presence: true, length: { maximum: 5 }, on: [:create, :update]
-  validates :friend_count, presence: true, on: [:create, :update]
-  validates :local_interactions, presence: true, on: [:create, :update]
-  validates :local_interaction_id, presence: true, on: [:create, :update]
-  validates :foreign_interactions, presence: true, on: [:create, :update]
-  validates :foreign_interaction_id, presence: true, on: [:create, :update]
+
+  # non mandatory attrs
+  validates :access_token, presence: false, on: [:create]
+  validates :friends_counter, presence: false, on: [:create]
+  validates :local_interactions, presence: false, on: [:create]
+  validates :local_interaction_id, presence: false, on: [:create]
+  validates :local_interaction_id, length: { in: 1..55 }, on: [:update]
+  validates :foreign_interactions, presence: false, on: [:create]
+  validates :foreign_interaction_id, presence: false, on: [:create]
+  validates :foreign_interaction_id, length: { in: 1..55 }, on: [:update]
 
   # Validates Associations
   validates :user_id, presence: true, on: [:create, :update]

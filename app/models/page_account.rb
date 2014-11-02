@@ -3,14 +3,19 @@ class PageAccount < ActiveRecord::Base
   has_and_belongs_to_many :social_sessions
 
   # Attrs Validations
-  validates :id_on_social, presence: true, length: { in: 3..45 }, on: [:create, :update]
+  validates :id_on_social, presence: true, length: { in: 1..45 }, on: [:create, :update]
   validates :name, presence: true, length: { in: 3..75 }, on: [:create, :update]
-  validates :category, presence: true, length: { in: 3..25 }, on: [:create, :update]
-  validates :followers, presence: true, on: [:create, :update]
-  validates :local_interactions, presence: true, on: [:create, :update]
-  validates :local_interaction_id, presence: true, on: [:create, :update]
-  validates :foreign_interactions, presence: true, on: [:create, :update]
-  validates :foreign_interaction_id, presence: true, on: [:create, :update]
+
+  # Non mandatory attrs
+  validates :category, presence: false, on: [:create]
+  validates :category, length: { in: 3..25 }, on: [:update]
+  validates :followers, presence: false, on: [:create]
+  validates :local_interactions, presence: false, on: [:create]
+  validates :local_interaction_id, presence: false, on: [:create]
+  validates :local_interaction_id, length: { in: 3..55 }, on: [:update]
+  validates :foreign_interactions, presence: false, on: [:create]
+  validates :foreign_interaction_id, presence: false, on: [:create]
+  validates :foreign_interaction_id, length: { in: 3..55 }, on: [:update]
 
   # Validates Associations
 
