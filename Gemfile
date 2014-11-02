@@ -63,6 +63,7 @@ gem "koala", "~> 1.10.0rc"
 
 # PaymentMethod
 gem 'rents', '~> 0.1.6'
+gem 'spring', '~> 1.1.3'
 
 # GoogleMaps GEM
 gem 'gmaps4rails'
