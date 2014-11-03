@@ -1,0 +1,2 @@
+module BannedAdHistoriesHelper
+end

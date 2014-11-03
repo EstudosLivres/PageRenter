@@ -1,0 +1,27 @@
+h1 Listing banned_ad_histories
+
+table
+  thead
+    tr
+      th Reason
+      th Description
+      th User
+      th Ad
+      th
+      th
+      th
+
+  tbody
+    - @banned_ad_histories.each do |banned_ad_history|
+      tr
+        td = banned_ad_history.reason
+        td = banned_ad_history.description
+        td = banned_ad_history.user
+        td = banned_ad_history.ad
+        td = link_to 'Show', banned_ad_history
+        td = link_to 'Edit', edit_banned_ad_history_path(banned_ad_history)
+        td = link_to 'Destroy', banned_ad_history, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Banned ad history', new_banned_ad_history_path

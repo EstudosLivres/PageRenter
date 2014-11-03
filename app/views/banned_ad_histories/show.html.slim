@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Reason:
+  = @banned_ad_history.reason
+p
+  strong Description:
+  = @banned_ad_history.description
+p
+  strong User:
+  = @banned_ad_history.user
+p
+  strong Ad:
+  = @banned_ad_history.ad
+
+= link_to 'Edit', edit_banned_ad_history_path(@banned_ad_history)
+'|
+= link_to 'Back', banned_ad_histories_path

@@ -1,0 +1,21 @@
+= form_for @banned_ad_history do |f|
+  - if @banned_ad_history.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@banned_ad_history.errors.count, "error")} prohibited this banned_ad_history from being saved:"
+      ul
+        - @banned_ad_history.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :reason
+    = f.text_field :reason
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :ad
+    = f.text_field :ad
+  .actions = f.submit 'Save'
