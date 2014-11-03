@@ -8,7 +8,7 @@ class CreateAds < ActiveRecord::Migration
       t.string :headline, limit: 25, null: false
       t.string :title, limit: 90, null: false
       t.string :description, limit: 200, null: true
-      t.string :audience, null: true
+      t.string :audience, limit: 140, null: true
 
       # PageRenter purpose
       t.string :username, limit: 140, null: false # Goes on the Ad link (for Google SEO)
