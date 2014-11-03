@@ -6,7 +6,9 @@ class CreateFinancialTransactions < ActiveRecord::Migration
       # Default is false = user_payment, true = user_receipt
       t.boolean :withdraw, null: false
       # Sent to the Gateway, but is saved just it string name
-      t.string :payment_method, limit: 50, index: true, null: false
+      t.string :payment_method, limit: 50, null: false
+      # It reference on the Gateway
+      t.integer :remote_id, null: false
 
       # Associations
       t.belongs_to :user, index: true, null: false
