@@ -2,7 +2,8 @@ class CreateAdLifeCycle < ActiveRecord::Migration
   def change
     # The states of the campaign life cycle
     create_table :ad_states do |t|
-      t.string :name, limit: 40, null: false
+      t.string :name, limit: 40, unique: true, null: false
+      t.string :msg, limit: 40, null: false
       t.string :description, limit: 140, null: true
 
       t.timestamps

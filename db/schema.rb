@@ -11,19 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904134551) do
+ActiveRecord::Schema.define(version: 20141102133023) do
 
   create_table "ad_history_states", force: true do |t|
-    t.integer  "ad_id"
-    t.integer  "ad_state_id"
-    t.string   "reason",      limit: 140
+    t.integer  "ad_id",       null: false
+    t.integer  "ad_state_id", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "ad_states", force: true do |t|
     t.string   "name",        limit: 40,  null: false
-    t.string   "msg",         limit: 15,  null: false
+    t.string   "msg",         limit: 40,  null: false
     t.string   "description", limit: 140
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,7 +33,7 @@ ActiveRecord::Schema.define(version: 20140904134551) do
     t.string   "headline",            limit: 25,  null: false
     t.string   "title",               limit: 90,  null: false
     t.string   "description",         limit: 200
-    t.string   "audience"
+    t.string   "audience",            limit: 140
     t.string   "username",            limit: 140, null: false
     t.string   "social_phrase",       limit: 140
     t.text     "redirect_link",                   null: false
@@ -52,13 +51,25 @@ ActiveRecord::Schema.define(version: 20140904134551) do
     t.integer "segment_id", null: false
   end
 
+  create_table "banned_ad_histories", force: true do |t|
+    t.string   "reason",      limit: 75,  null: false
+    t.string   "description", limit: 140, null: false
+    t.integer  "user_id",                 null: false
+    t.integer  "ad_id",                   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "banned_ad_histories", ["ad_id"], name: "index_banned_ad_histories_on_ad_id", using: :btree
+  add_index "banned_ad_histories", ["user_id"], name: "index_banned_ad_histories_on_user_id", using: :btree
+
   create_table "bids", force: true do |t|
-    t.float    "visitation",           limit: 24
-    t.float    "impression",           limit: 24
-    t.decimal  "foreign_interactions",            precision: 10, scale: 0
-    t.decimal  "local_interactions",              precision: 10, scale: 0
-    t.integer  "ad_id"
-    t.integer  "currency_id"
+    t.decimal  "visitation",           precision: 4, scale: 2, null: false
+    t.decimal  "impression",           precision: 4, scale: 2
+    t.decimal  "foreign_interactions", precision: 4, scale: 2, null: false
+    t.decimal  "local_interactions",   precision: 4, scale: 2, null: false
+    t.integer  "ad_id",                                        null: false
+    t.integer  "currency_id",                                  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -77,12 +88,12 @@ ActiveRecord::Schema.define(version: 20140904134551) do
   add_index "budget_launches", ["financial_transaction_id"], name: "index_budget_launches_on_financial_transaction_id", using: :btree
 
   create_table "budgets", force: true do |t|
-    t.boolean  "activated",                                               null: false
-    t.decimal  "value",                           precision: 8, scale: 2, null: false
-    t.string   "closed_date",          limit: 30
-    t.integer  "currency_id",                                             null: false
-    t.integer  "campaign_id",                                             null: false
-    t.integer  "recurrence_period_id",                                    null: false
+    t.boolean  "activated",                                    null: false
+    t.decimal  "value",                precision: 8, scale: 2, null: false
+    t.datetime "closed_date"
+    t.integer  "currency_id",                                  null: false
+    t.integer  "campaign_id",                                  null: false
+    t.integer  "recurrence_period_id",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -119,30 +130,28 @@ ActiveRecord::Schema.define(version: 20140904134551) do
   end
 
   create_table "financial_transactions", force: true do |t|
-    t.decimal  "value",                        precision: 9, scale: 2, null: false
-    t.decimal  "decimal",                      precision: 9, scale: 2, null: false
-    t.string   "currency",          limit: 30,                         null: false
-    t.boolean  "banking",                                              null: false
-    t.integer  "payment_method_id"
-    t.integer  "payer_id"
-    t.integer  "receiver_id"
+    t.string   "value",          limit: 10, null: false
+    t.boolean  "withdraw",                  null: false
+    t.string   "payment_method", limit: 50, null: false
+    t.integer  "remote_id",                 null: false
+    t.integer  "user_id",                   null: false
+    t.integer  "currency_id",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "financial_transactions", ["payer_id"], name: "index_financial_transactions_on_payer_id", using: :btree
-  add_index "financial_transactions", ["payment_method_id"], name: "index_financial_transactions_on_payment_method_id", using: :btree
-  add_index "financial_transactions", ["receiver_id"], name: "index_financial_transactions_on_receiver_id", using: :btree
+  add_index "financial_transactions", ["currency_id"], name: "index_financial_transactions_on_currency_id", using: :btree
+  add_index "financial_transactions", ["user_id"], name: "index_financial_transactions_on_user_id", using: :btree
 
   create_table "page_accounts", force: true do |t|
     t.string   "id_on_social",           limit: 45, null: false
     t.string   "name",                   limit: 75, null: false
-    t.string   "category",               limit: 25, null: false
-    t.integer  "followers",              limit: 8,  null: false
-    t.integer  "local_interactions",                null: false
-    t.string   "local_interaction_id",   limit: 55, null: false
-    t.integer  "foreign_interactions",              null: false
-    t.string   "foreign_interaction_id", limit: 55, null: false
+    t.string   "category",               limit: 25
+    t.integer  "followers_counter",      limit: 8
+    t.integer  "local_interactions"
+    t.string   "local_interaction_id",   limit: 55
+    t.integer  "foreign_interactions"
+    t.string   "foreign_interaction_id", limit: 55
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -157,7 +166,7 @@ ActiveRecord::Schema.define(version: 20140904134551) do
     t.string   "username",            limit: 55
     t.boolean  "default_role",                   null: false
     t.integer  "role_id",                        null: false
-    t.integer  "user_id"
+    t.integer  "user_id",                        null: false
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -174,14 +183,15 @@ ActiveRecord::Schema.define(version: 20140904134551) do
   end
 
   create_table "roles", force: true do |t|
-    t.string   "name",       limit: 15, null: false
+    t.string   "name",       limit: 55, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "segments", force: true do |t|
-    t.string   "name",        limit: 140, null: false
+    t.string   "name",        limit: 100, null: false
     t.string   "description", limit: 200
+    t.integer  "user_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -193,13 +203,23 @@ ActiveRecord::Schema.define(version: 20140904134551) do
     t.integer "segment_id",                null: false
   end
 
+  create_table "social_interactions", force: true do |t|
+    t.string   "external_id",       limit: 45, null: false
+    t.string   "type",              limit: 45, null: false
+    t.integer  "social_session_id",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "social_interactions", ["social_session_id"], name: "index_social_interactions_on_social_session_id", using: :btree
+
   create_table "social_networks", force: true do |t|
     t.string   "name",        limit: 50, null: false
-    t.string   "acronym",     limit: 10
-    t.string   "username",    limit: 25, null: false
+    t.string   "username",    limit: 30, null: false
+    t.string   "acronym",     limit: 10, null: false
     t.boolean  "implemented",            null: false
     t.boolean  "just_share",             null: false
-    t.string   "description", limit: 45
+    t.string   "description", limit: 50
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -222,20 +242,20 @@ ActiveRecord::Schema.define(version: 20140904134551) do
     t.string   "gender",                 limit: 10
     t.string   "locale",                 limit: 5,  null: false
     t.string   "access_token"
-    t.integer  "friend_count",           limit: 8,  null: false
-    t.integer  "local_interactions",                null: false
-    t.string   "local_interaction_id",   limit: 55, null: false
-    t.integer  "foreign_interactions",              null: false
-    t.string   "foreign_interaction_id", limit: 55, null: false
-    t.integer  "user_id"
-    t.integer  "social_network_id"
+    t.integer  "friends_counter",        limit: 8
+    t.integer  "local_interactions"
+    t.string   "local_interaction_id",   limit: 55
+    t.integer  "foreign_interactions"
+    t.string   "foreign_interaction_id", limit: 55
+    t.integer  "user_id",                           null: false
+    t.integer  "social_network_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
     t.string   "name",         limit: 55, null: false
-    t.string   "username",     limit: 30, null: false
+    t.string   "username",     limit: 45, null: false
     t.string   "email",        limit: 55, null: false
     t.string   "locale",       limit: 5,  null: false
     t.string   "pass_salt",    limit: 29
