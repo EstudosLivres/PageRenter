@@ -1,12 +1,12 @@
 class CreateBids < ActiveRecord::Migration
   def change
     create_table :bids do |t|
-      t.float :visitation
-      t.float :impression
-      t.decimal :foreign_interactions
-      t.decimal :local_interactions
-      t.belongs_to :ad, index: true
-      t.belongs_to :currency, index: true
+      t.decimal :visitation, precision: 4, scale: 2, null: false
+      t.decimal :impression, precision: 4, scale: 2, null: true
+      t.decimal :foreign_interactions, precision: 4, scale: 2, null: false
+      t.decimal :local_interactions, precision: 4, scale: 2, null: false
+      t.belongs_to :ad, index: true, null: false
+      t.belongs_to :currency, index: true, null: false
 
       t.timestamps
     end
