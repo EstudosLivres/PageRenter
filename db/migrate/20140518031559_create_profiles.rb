@@ -5,7 +5,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :username, limit: 55, null: true
       t.boolean :default_role, null: false
       t.belongs_to :role, null: false
-      t.belongs_to :user
+      t.belongs_to :user, null: false
 
       t.timestamps
     end
