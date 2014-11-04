@@ -9,12 +9,12 @@ class PageAccount < ActiveRecord::Base
   # Non mandatory attrs
   validates :category, presence: false, on: [:create]
   validates :category, length: { in: 3..25 }, on: [:update]
-  validates :followers, presence: false, on: [:create]
-  validates :local_interactions, presence: false, on: [:create]
-  validates :local_interaction_id, presence: false, on: [:create]
+  validates :followers_counter, numericality: { only_integer: true, greater_than: 0 }, presence: false, on: [:create, :update]
+  validates :local_interactions, numericality: { only_integer: true, greater_than: 0 }, presence: false, on: [:create, :update]
+  validates :local_interaction_id, presence: false, on: [:create, :update]
   validates :local_interaction_id, length: { in: 3..55 }, on: [:update]
-  validates :foreign_interactions, presence: false, on: [:create]
-  validates :foreign_interaction_id, presence: false, on: [:create]
+  validates :foreign_interactions, numericality: { only_integer: true, greater_than: 0 }, presence: false, on: [:create, :update]
+  validates :foreign_interaction_id, presence: false, on: [:create, :update]
   validates :foreign_interaction_id, length: { in: 3..55 }, on: [:update]
 
   # Validates Associations

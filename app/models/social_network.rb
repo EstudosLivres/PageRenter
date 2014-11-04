@@ -7,6 +7,7 @@ class SocialNetwork < ActiveRecord::Base
   validates :username, presence: true, length: { in: 2..30 }, on: [:create, :update]
   validates :acronym, presence: true, length: { in: 2..10 }, on: [:create, :update]
   validates :implemented, presence: true, on: [:create, :update]
+  validates :just_share, presence: true, on: [:create, :update]
 
   # Validates Associations
 
@@ -132,5 +133,6 @@ class SocialNetwork < ActiveRecord::Base
   private
     def set_nil_to_default_value
       self.implemented = false if self.implemented.nil?
+      self.just_share = true if self.just_share.nil?
     end
 end

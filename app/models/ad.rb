@@ -22,7 +22,7 @@ class Ad < ActiveRecord::Base
   validates :name, presence: true, length: { in: 5..50 }, on: [:create, :update] # appears just for the Advertiser (Internal control)
   validates :headline, presence: true, length: { in: 5..25 }, on: [:create, :update] # calls the publisher attention
   validates :title, presence: true, length: { in: 5..90 }, on: [:create, :update] # which appears upside the image
-  validates :redirect_link, presence: true, length: { in: 12..90 }, on: [:create, :update] # which appears upside the image
+  validates :redirect_link, presence: true, length: { in: 12..1240 }, on: [:create, :update] # which appears upside the image
   validates :username, presence: true, length: { in: 5..140 }, on: [:create, :update] # appears on the link (for Google SEO)
   validates :social_phrase, length: { in: 5..140 }, on: [:create, :update] # appears on the link (for Google SEO)
   validates :description, length: { in: 5..200 }, on: [:create, :update] # which explain what this Ad is about
