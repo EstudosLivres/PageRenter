@@ -35,7 +35,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # For easy user session management
-gem 'devise', '~> 3.3.0'
+gem 'devise', '~> 3.4.1'
 
 # Gem for encrypt Password
 gem 'bcrypt-ruby', :require => 'bcrypt'
