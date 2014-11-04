@@ -1,112 +1,22 @@
 class ApplicationController < ActionController::Base
-  include ApplicationHelper
-
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_action :set_locale
+  before_filter :authenticate_or_token, except: [:home]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_nested # All controller must have the set_nested, if do not depend it is an empty method
+  before_action :validate_permission # All controller must have validate_permission, if is a global object it is an empty method
 
-  # Validate the session
-  before_action :validate_session, :except => :redirect_index
-
-  # SetUp user
-  before_action :setup_user, :except => :redirect_index
-
-  # Dynamic layout
-  layout :solve_layout
-
-  def set_locale
-    user_params = params['user']
-    if user_params.is_a?(String) && user_params.length >= 2
-      user_params = JSON.parse(user_params)
-
-      if user_params.is_a?Hash
-        if (user_params.has_key?('locale') && (user_params['locale'].length >= 2))
-          session[:user_idiom] = user_params['locale']
-        end
-      end
-    end
-
-    # Idiom setted by the session just if necessary to find the user on BD, if the locale cames with the browser, it is scaped
-    unless @current_user.nil?
-      @current_user = User.where(id:session[:user_id]).take # TODO @current_user = current_user DEVISE
-      if @current_user.nil?
-        session.delete('user_id')
-        return redirect_to ApplicationController.land_url
-      else
-        @current_user.locale[0..1] unless session[:user_id].nil?
-        I18n.locale = @current_user.locale[0..1] || I18n.default_locale
-      end
-    end
+  protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:locale, :name, :username, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password) }
+    I18n.locale = @current_user.locale || I18n.default_locale
   end
 
-  def validate_session
-    action = params['action']
-    return if is_api_call?
-    if session[:user_id].nil?
-      if action!='system_signup_signin' && action!='login' && action!='mob_login' && action!='auth' && action!='login'
-        redirect_to ApplicationController.land_url
-      end
-    end
-  end
-
-  def setup_user
-    # TODO if Publisher agree to use auto pub register the user using Cookies, not Sessions
-    # TODO @current_user = current_user DEVISE
-    return if is_api_call?
-    # SetUp the user to prevent finds on BD
-    if session['user_id'].nil? || params['action'] == 'sign_out' then return end
-    if @current_user.nil?
-      begin
-        @current_user = User.find(session['user_id'])
-      rescue
-        session[:user_id] = nil
-        return
-      end
-    end
-
-    # SetUp the current/default user profile
-    single_role_name = role_name
-    @current_user.set_default_profile(single_role_name)
-  end
-
-  # Prevent validate Login if it is an API call
-  def is_api_call?
-    return "#{/^.*?(?=\/)/.match(params[:controller])}" == 'api'
-  end
-
-  # Dynamic layout based on the route
-  def solve_layout
-    case params[:controller]
-      when 'admins'
-        return 'custom/simple' if params[:action] == 'login'
-      else
-        return 'application'
-    end
-
-    # If nothing returned return application
-    return 'application'
-  end
-
-  # Add objs which user must be permitted to access because is individual
-  def valid_user_permission?
-    user_permitted = true
-
-    # Check it campaign permission
-    unless @campaign.nil?
-      user_permitted = !Campaign.joins(:advertiser).where('profiles.user_id'=>@current_user.id, 'campaigns.id'=>@campaign.id).take.nil?
-      if !user_permitted
-        render 'advertisers/index'
-      end
-    end
-
-
-    return user_permitted
-  end
-
-  # ----- STATIC METHODs -------
-  def self.land_url
-    # 'http://pagerenter.com.br'
-    'http://localhost/LandPageRenter/LandPageRenter/'
+  # Validate user session if is not API call
+  def authenticate_or_token
+    authenticate_user! if params[:controller].index('api').nil?
   end
 end

@@ -1,13 +1,12 @@
 PageRenter::Application.routes.draw do
+  # Devise root
+  root to: 'home#index'
+
+  # DeviseUser sessions
+  devise_for :users, controllers: {registrations:'users/registrations', sessions:'users/sessions'}
+
   # Post back from the socials network after validate user
   get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
-
-  # User session management
-  scope '/users' do
-    post 'login' => 'users#login'
-    get 'sign_out' => 'users#sign_out'
-    delete 'sign_out' => 'users#sign_out'
-  end
 
   # Actions Under/For Publisher
   scope '/publishers' do
@@ -65,6 +64,4 @@ PageRenter::Application.routes.draw do
       post 'admin_login' => 'remote_users#admin_check_login', as: :admin_check_login
     end
   end
-
-  root 'redirect#redirect_index'
 end
