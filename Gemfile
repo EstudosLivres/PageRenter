@@ -1,72 +1,99 @@
 source 'https://rubygems.org'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+# 'util' Useful in some context like better print/puts or legal_id like CPF
+group :useful do
+  # Gem for encrypt Password
+  gem 'bcrypt-ruby', :require => 'bcrypt'
 
-# Use mysql as the database for Active Record
-gem 'mysql2'
+  # Color to the prints on console (PUTS)
+  gem 'colorize', '~> 0.7.1'
+end
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+# PaymentMethods
+group :payment do
+  # PaymentMethod
+  gem 'rents', '~> 0.1.8'
+  gem 'spring', '~> 1.1.3'
+end
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# GEMs for default rails apps
+group :rails do
+  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+  gem 'rails', '4.1.4'
 
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+  # Use mysql as the database for Active Record
+  gem 'mysql2'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+  # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+  gem 'turbolinks'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+  # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+  gem 'jbuilder', '~> 1.2'
 
-# Angularjs JavaScript library
-gem 'angularjs-rails', '~> 1.2.21'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer', platforms: :ruby
+end
 
-# ZeroClipBoard (easy copy to memory - command+c)
-gem 'zeroclipboard-rails', '~> 0.1.0'
+# GEMs for user infos
+group :user do
+  # For easy user session management
+  gem 'devise', '~> 3.4.1'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+  # Gem to Query on the Facebook (FQL)
+  gem 'fql', '~> 0.3.1'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+  # Full Facebook API (including Graph API)
+  gem "koala", "~> 1.10.0rc"
+end
 
-# For easy user session management
-gem 'devise', '~> 3.4.1'
+# GEMs with we use as client of it services
+group :services do
+  # Gem for UPLOAD files
+  gem "paperclip"
+  gem 'aws-sdk'
+  gem 's3_direct_upload'
+end
 
-# Gem for encrypt Password
-gem 'bcrypt-ruby', :require => 'bcrypt'
+# GEMs for build the view
+group :build_front_end do
+  # Easier & faster then ERB
+  gem 'slim-rails', '~> 2.1.5'
 
-# Color to the prints on console (PUTS)
-gem 'colorize', '~> 0.7.1'
+  # GoogleMaps GEM
+  gem 'gmaps4rails'
 
-# Gem for UPLOAD files
-gem "paperclip"
-gem 'aws-sdk'
-gem 's3_direct_upload'
+  # Use SCSS for stylesheets
+  gem 'sass-rails', '~> 4.0.0'
 
-# Date picker for bootstrap (easy calendar)
-gem 'bootstrap-sass'
-gem 'bootstrap-datepicker-rails','1.3.0.1'
+  # Use Uglifier as compressor for JavaScript assets
+  gem 'uglifier', '>= 1.3.0'
 
-# Easier & faster then ERB
-gem 'slim-rails', '~> 2.1.5'
+  # Use CoffeeScript for .js.coffee assets and views
+  gem 'coffee-rails', '~> 4.0.0'
+end
 
-# Gem to Query on the Facebook (FQL)
-gem 'fql', '~> 0.3.1'
+# Style & Interactions view frameworks
+group :style_and_interactions do
+  # ZeroClipBoard (easy copy to memory - command+c)
+  gem 'zeroclipboard-rails', '~> 0.1.0'
 
-# Full Facebook API (including Graph API)
-gem "koala", "~> 1.10.0rc"
+  # jQuery for Rails & it UI
+  gem 'jquery-rails'
+  gem 'jquery-ui-rails'
 
-# PaymentMethod
-gem 'rents', '~> 0.1.8'
-gem 'spring', '~> 1.1.3'
+  # Date picker for bootstrap (easy calendar)
+  gem 'bootstrap-sass'
+  gem 'bootstrap-datepicker-rails','1.3.0.1'
 
-# GoogleMaps GEM
-gem 'gmaps4rails'
+  # IconFonts - FontAwesome
+  gem 'font-awesome-rails', '~> 4.2.0.0'
+
+  # IconFonts - Zurb
+  gem 'zurb-foundation', '~> 4.3.2'
+
+  # IconFonts with it Buttons layout
+  gem 'social-buttons', '~> 0.3.9'
+end
 
 # Generate documentation
 group :doc do
@@ -74,6 +101,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# GEMs to work only on test & development environments
 group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
