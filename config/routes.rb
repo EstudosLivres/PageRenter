@@ -1,6 +1,5 @@
 PageRenter::Application.routes.draw do
-  # Devise root
-  root to: 'home#index'
+  root to: 'home#index' # it must be just a redirect (like a facade)
 
   # DeviseUser sessions
   devise_for :users, controllers: {registrations:'users/registrations', sessions:'users/sessions'}
