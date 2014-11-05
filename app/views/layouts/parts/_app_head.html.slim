@@ -4,15 +4,18 @@ meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-sca
 
 title PageRenter
 = stylesheet_link_tag 'application'
-= stylesheet_link_tag 'style'
-= stylesheet_link_tag 'application', controller_name
 
-= javascript_include_tag 'modernizr.min'
+= stylesheet_link_tag 'app_style'
+-# stylesheet_link_tag 'mob_app'
+-# stylesheet_link_tag 'style'
+-# stylesheet_link_tag 'application', controller_name
+
+-# javascript_include_tag 'modernizr.min'
 = javascript_include_tag 'application'
-= javascript_include_tag "application", controller_name
+-# javascript_include_tag "application", controller_name
 
 /! App scripts
-= javascript_include_tag 'app_initialize'
+-# javascript_include_tag 'app_initialize'
 /! /App scripts
 
 /! Dynamic meta
