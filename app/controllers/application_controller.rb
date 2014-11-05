@@ -17,7 +17,15 @@ class ApplicationController < ActionController::Base
 
   # Validate user session if is not API call
   def authenticate_or_token
+    return unless params[:action].index('login').nil?
     authenticate_user! if params[:controller].index('api').nil?
     @current_user = current_user
+  end
+
+  # TODO those methods must be on the controllers which it is need
+  def set_nested
+  end
+
+  def validate_permission
   end
 end
