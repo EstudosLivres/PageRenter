@@ -1,11 +1,14 @@
 class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   # Relations
   has_many :profiles
   has_many :social_sessions
 
   # Custom validations
-  validate :solve_locale
-  validate :encrypt_password
+  before_validation :solve_locale
 
   # Rails validations
   validates :name, presence: true, length: { in: 3..55 }, on: [:create, :update]
@@ -14,22 +17,12 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
 
-  # Validates Associations
-  # TODO REFACTOR HOW PERSIST USERS
-  # Encrypt the password using BCrypt
-  def encrypt_password
-    if password.present? && !pass_salt.present?
-      self.pass_salt = BCrypt::Engine.generate_salt
-      self.password = BCrypt::Engine.hash_secret(password, pass_salt)
-    end
-  end
-
   # Solve the idiom issues
   def solve_locale
     # Refect locale for optimized Locale (pt_PT != pt_BR)
     if self.locale == 'pt' then self.locale = 'pt'+'_BR'
     elsif self.locale == 'en' then self.locale = 'en'+'_US'
-    elsif self.locale.length != 5 then self.locale = 'en'+'_US' end
+    elsif self.locale.nil? then self.locale = 'pt'+'_BR' end
   end
 
   # Return it first name
@@ -93,21 +86,6 @@ class User < ActiveRecord::Base
   end
 
   # ----- STATICs AUX METHODs TO CREATE USERs -----
-
-  # Auth user
-  def self.authenticate(email, password)
-    if email.index('@').nil?
-      # Auth admin user
-      user = find_by_username(email)
-      return User.throw_user_with_error if user.nil? || user.admin.nil?
-    else
-      # Auth normal user (not admin)
-      user = find_by_email(email)
-    end
-
-    if user && user.password == BCrypt::Engine.hash_secret(password, user.pass_salt) then user else User.throw_user_with_error end
-  end
-
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role(user_hash)
     user_hash = RailsFixes::Util.hash_keys_to_sym(user_hash)
@@ -155,7 +133,10 @@ class User < ActiveRecord::Base
 
   # Persist the user by it previous hash
   def self.persist_it(user_hash)
-    return self.new_user_with_it_role(user_hash).save
+    # TODO refactor with devise
+    it = self.new_user_with_it_role(user_hash)
+    it.save
+    return it
   end
 
   # Throws an user with errors
