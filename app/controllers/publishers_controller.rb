@@ -1,6 +1,5 @@
 class PublishersController < ApplicationController
   # Prevent spam USER.FIND on DB
-  before_action :setup_user
   before_action :set_publisher
 
   # Root for Publisher user
