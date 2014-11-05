@@ -72,22 +72,31 @@ puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # Users
 puts 'Inserting PageRenter admins...'.colorize(:green)
   # Root
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'admin@pagerenter.com.br', 'password' => 'pager'})
-  u = User.last
-  u.profiles << Profile.new({name: '', default_role: true, role_id:1})
-  u.save
+  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'aa@aa.aa', 'password' => '123'}
+  u = User.persist_it(u_params)
+  if u.errors.empty?
+    # Add as Admin
+    u.profiles << Profile.new({name: '', default_role: true, role_id:1})
+    u.save
+  end
 
   # Ilton
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton Garcia', 'username' => 'ilton_.garcia', 'email' => 'ton.garcia.jr@gmail.com', 'password' => 'pager'})
-  u = User.last
-  u.profiles << Profile.new({name: '', default_role: true, role_id:1})
-  u.save
+  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton Garcia', 'username' => 'ton.garcia', 'email' => 'ii@ii.ii', 'password' => '123'}
+  u = User.persist_it(u_params)
+  if u.errors.empty?
+    # Add as Admin
+    u.profiles << Profile.new({name: '', default_role: true, role_id:1})
+    u.save
+  end
 
   # Willian
-  User.persist_it({'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian Alves', 'username' => 'wc_calves', 'email' => 'willianccalves@gmail.com', 'password' => 'pager'})
-  u = User.last
-  u.profiles << Profile.new({name: '', default_role: true, role_id:1})
-  u.save
+  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'Willian Alves', 'username' => 'wc_calves', 'email' => 'willianccalves@gmail.com', 'password' => '123'}
+  u = User.persist_it(u_params)
+  if u.errors.empty?
+    # Add as Admin
+    u.profiles << Profile.new({name: '', default_role: true, role_id:1})
+    u.save
+  end
 
   puts "\t #{User.where(email:'admin@pagerenter.com.br')}"
   puts "\t #{User.where(email:'willianccalves@gmail.com')}"
