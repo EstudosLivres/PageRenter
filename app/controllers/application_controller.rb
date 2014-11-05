@@ -2,8 +2,8 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_filter :authenticate_or_token, except: [:home]
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_or_token # SetUp user devise if
   before_action :set_nested # All controller must have the set_nested, if do not depend it is an empty method
   before_action :validate_permission # All controller must have validate_permission, if is a global object it is an empty method
 
@@ -18,5 +18,6 @@ class ApplicationController < ActionController::Base
   # Validate user session if is not API call
   def authenticate_or_token
     authenticate_user! if params[:controller].index('api').nil?
+    @current_user = current_user
   end
 end
