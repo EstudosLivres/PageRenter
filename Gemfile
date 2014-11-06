@@ -82,7 +82,7 @@ group :style_and_interactions do
   gem 'jquery-ui-rails'
 
   # Date picker for bootstrap (easy calendar)
-  gem 'bootstrap-sass'
+  gem 'twitter-bootstrap-rails'
   gem 'bootstrap-datepicker-rails','1.3.0.1'
 
   # IconFonts - FontAwesome
