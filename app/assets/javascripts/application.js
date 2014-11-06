@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 // require bootstrap TODO add GoogleMaps GEM (UPDATE)
 // require gmaps/google TODO add GoogleMaps GEM
-//= require angular
 //= require zeroclipboard
 // require bootstrap-datepicker/core TODO readd
 // require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js TODO readd
