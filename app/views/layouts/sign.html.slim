@@ -2,4 +2,9 @@ doctype html
 html
   head =render 'layouts/parts/app_head'
   body
-    =yield
+    #admin_sign_form
+      .login-container
+        #output
+        .avatar: img#avatar src="/assets/thumb/logo-acronym-spacing.png"
+        .form-box
+          =yield
