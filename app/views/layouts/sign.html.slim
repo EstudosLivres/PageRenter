@@ -2,17 +2,4 @@ doctype html
 html
   head =render 'layouts/parts/app_head'
   body
-    /! Navbar
-    -#render 'layouts/parts/navbar'
-
-    .container
-      .row
-        .box.col-md-offset-4.col-xs-4
-          /! Flash with app feedback to the user
-          =render 'layouts/parts/flash_alert'
-
-          /! Action body
-          =yield
-
-      footer#includes_js
-        =render 'layouts/parts/app_footer'
+    =yield
