@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # Extra attrs
+  attr_accessor :login
+
   # Relations
   has_many :profiles
   has_many :social_sessions
@@ -12,7 +16,7 @@ class User < ActiveRecord::Base
 
   # Rails validations
   validates :name, presence: true, length: { in: 3..55 }, on: [:create, :update]
-  validates :username, presence: true, length: { in: 2..30 }, uniqueness: true, on: [:create, :update]
+  validates :username, presence: true, length: { in: 2..30 }, uniqueness: {case_sensitive: false}, on: [:create, :update]
   validates :email, presence: true, length: { in: 5..55 }, uniqueness: true, on: [:create, :update]
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
@@ -144,5 +148,15 @@ class User < ActiveRecord::Base
     simple_user = User.new
     simple_user.errors.messages[:invalid_user_attrs] = 'Invalid attrs to instantiate an User'
     return simple_user
+  end
+
+  # Override Devise Auth to use USERNAME not EMAIL
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", {value: login.downcase}]).first
+    else
+      where(conditions).first
+    end
   end
 end
