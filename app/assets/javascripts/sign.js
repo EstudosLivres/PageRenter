@@ -5,7 +5,7 @@ var avatar;
 
 $(function(){
     avatar = $('#avatar');
-    var login_input = $('input[name="user[login]"]');
+    var login_input = $('.username_avatar');
     login_input.keyup(function(){
         // Vars
         login_value = this.value;
