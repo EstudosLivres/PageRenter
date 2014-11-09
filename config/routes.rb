@@ -2,7 +2,7 @@ PageRenter::Application.routes.draw do
   root to: 'home#index' # it must be just a redirect (like a facade)
 
   # DeviseUser sessions
-  devise_for :users, controllers: {registrations:'users/registrations', sessions:'users/sessions'}
+  devise_for :users, controllers: {registrations:'users/registrations', sessions:'users/sessions', passwords:'users/passwords'}
 
   # Post back from the socials network after validate user
   get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
@@ -32,7 +32,7 @@ PageRenter::Application.routes.draw do
   # Actions Under/For Admin
   scope '/admins' do
     get '' => 'admins#index', as: :admin_root
-    get 'login' => 'admins#login', as: :admin_login
+    get 'sign_in' => 'admins#login', as: :admin_login
     get 'ad_analyse' => 'admins#ad_analyse', as: :admin_ad_analyse # TODO (Criar conceito melhor disso)
     resources :banned_ad_histories
     resources :segments do
