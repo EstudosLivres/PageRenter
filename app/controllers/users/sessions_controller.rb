@@ -1,4 +1,5 @@
 class Users::SessionsController < Devise::SessionsController
+  # Custom layout
   layout 'sign'
 
   private
