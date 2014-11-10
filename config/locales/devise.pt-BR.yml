@@ -56,6 +56,11 @@ pt-BR:
       no_confirmation_received: "Reenviar confirmação"
       no_unlock_instructions_received: "Reenviar instruções de desbloqueo"
 
+    placeholders:
+      username: "username (ex: google, ilton.garcia)"
+      password: "senha min de caracteres: "
+      password: "confirme a senha"
+
   errors:
     messages:
       already_confirmed: "já foi confirmado"
