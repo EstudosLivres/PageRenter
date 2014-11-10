@@ -72,7 +72,7 @@ puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # Users
 puts 'Inserting PageRenter admins...'.colorize(:green)
   # Root
-  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'page.admin', 'email' => 'aa@aa.aa', 'password' => '123'}
+  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'PageRenter Admin', 'username' => 'admin', 'email' => 'aa@aa.aa', 'password' => '123'}
   u = User.persist_it(u_params)
   if u.errors.empty?
     # Add as Admin
@@ -81,7 +81,7 @@ puts 'Inserting PageRenter admins...'.colorize(:green)
   end
 
   # Ilton
-  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton Garcia', 'username' => 'ton.garcia', 'email' => 'ii@ii.ii', 'password' => '123'}
+  u_params = {'role' => 'publisher', 'locale' => 'pt', 'name' => 'Ilton Garcia', 'username' => 'ilton.garcia', 'email' => 'ii@ii.ii', 'password' => '123'}
   u = User.persist_it(u_params)
   if u.errors.empty?
     # Add as Admin
