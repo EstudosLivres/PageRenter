@@ -41,6 +41,10 @@ class PublishersController < ApplicationController
     end
   end
 
+  # GET '/:publisher_id/:ad_id' -> register it access brought through it publisher
+  def brought_access
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_publisher
