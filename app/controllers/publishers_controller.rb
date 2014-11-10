@@ -1,6 +1,9 @@
 class PublishersController < ApplicationController
+  # Custom layouts for specific actions
+  layout 'blank', only: [:brought_access]
+
   # Prevent spam USER.FIND on DB
-  before_action :set_publisher
+  before_action :set_publisher, except: [:brought_access]
 
   # Root for Publisher user
   def index
