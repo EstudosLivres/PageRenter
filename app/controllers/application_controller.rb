@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   # Validate user session if is not API call
   def authenticate_or_token
-    return unless params[:action].index('login').nil?
+    return if params[:action].index('login') || request.fullpath == publisher_brought_access_path
     authenticate_user! if params[:controller].index('api').nil?
     @current_user = current_user
   end
