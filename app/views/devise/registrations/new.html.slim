@@ -2,7 +2,10 @@
   = devise_error_messages!
 
   .field
-    = f.email_field :email, class:'username_avatar', placeholder:'E-mail', autofocus: true
+    = f.email_field :username, class:'username_avatar', placeholder:t('devise.placeholders.username'), autofocus: true
+
+  .field
+    = f.email_field :email, class:'username_avatar', placeholder:t('devise.placeholders.email'), autofocus: true
 
   .field
     = f.password_field :password, placeholder: "Password min: #{@minimum_password_length} caracteres", autocomplete: "off"

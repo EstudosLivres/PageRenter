@@ -58,8 +58,9 @@ pt-BR:
 
     placeholders:
       username: "username (ex: google, ilton.garcia)"
+      email: "e-mail, preferencialmente, institucional"
       password: "senha min de caracteres: "
-      password: "confirme a senha"
+      confirm_password: "confirme a senha"
 
   errors:
     messages:
