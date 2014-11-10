@@ -1,0 +1,29 @@
+h1 Listing accesses
+
+table
+  thead
+    tr
+      th Converted
+      th Remote
+      th Social network
+      th Profile
+      th Ad
+      th
+      th
+      th
+
+  tbody
+    - @accesses.each do |access|
+      tr
+        td = access.converted
+        td = access.remote_id
+        td = access.social_network_id
+        td = access.profile
+        td = access.ad
+        td = link_to 'Show', access
+        td = link_to 'Edit', edit_access_path(access)
+        td = link_to 'Destroy', access, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Access', new_access_path

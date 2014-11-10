@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Converted:
+  = @access.converted
+p
+  strong Remote:
+  = @access.remote_id
+p
+  strong Social network:
+  = @access.social_network_id
+p
+  strong Profile:
+  = @access.profile
+p
+  strong Ad:
+  = @access.ad
+
+= link_to 'Edit', edit_access_path(@access)
+'|
+= link_to 'Back', accesses_path

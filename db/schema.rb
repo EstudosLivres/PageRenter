@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102133023) do
+ActiveRecord::Schema.define(version: 20141110173921) do
+
+  create_table "accesses", force: true do |t|
+    t.boolean  "converted",                    default: false, null: false
+    t.string   "remote_id",         limit: 45
+    t.integer  "ad_id",                                        null: false
+    t.integer  "profile_id",                                   null: false
+    t.integer  "social_network_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accesses", ["ad_id"], name: "index_accesses_on_ad_id", using: :btree
+  add_index "accesses", ["profile_id"], name: "index_accesses_on_profile_id", using: :btree
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id",       null: false

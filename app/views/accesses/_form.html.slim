@@ -1,0 +1,24 @@
+= form_for @access do |f|
+  - if @access.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@access.errors.count, "error")} prohibited this access from being saved:"
+      ul
+        - @access.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :converted
+    = f.check_box :converted
+  .field
+    = f.label :remote_id
+    = f.text_field :remote_id
+  .field
+    = f.label :social_network_id
+    = f.text_field :social_network_id
+  .field
+    = f.label :profile
+    = f.text_field :profile
+  .field
+    = f.label :ad
+    = f.text_field :ad
+  .actions = f.submit 'Save'
