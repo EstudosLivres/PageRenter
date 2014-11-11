@@ -1,11 +1,16 @@
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
+  -unless resource.errors.empty?
+    .alert.alert-danger
+      = devise_error_messages!
 
   .field
-    = f.text_field :username, class:'username_avatar', placeholder:t('devise.placeholders.username'), autofocus: true
+    = f.text_field :name, placeholder:t('devise.placeholders.name'), autofocus: true
 
   .field
-    = f.email_field :email, class:'username_avatar', placeholder:t('devise.placeholders.email'), autofocus: true
+    = f.text_field :username, class:'username_avatar', placeholder:t('devise.placeholders.username')
+
+  .field
+    = f.email_field :email, placeholder:t('devise.placeholders.email')
 
   .field
     = f.password_field :password, placeholder: "Password min: #{@minimum_password_length} caracteres", autocomplete: "off"
@@ -13,7 +18,17 @@
   .field
     = f.password_field :password_confirmation, placeholder: 'Password Confirmation', autocomplete: "off"
 
-  .actions
-    = f.submit "Sign up", class:'btn btn-primary btn-block'
+  .field.roles.btn-group
+    label.radio-inline.btn.btn-primary type="button" for="advertiser"
+      input#advertiser type="radio" name="users[role]" value="advertiser"
+      | Advertiser
 
-= render 'devise/shared/links'
+    label.radio-inline.btn.btn-success type="button" for="publisher"
+      input#publisher type="radio" name="users[role]" value="publisher"
+      | Publisher
+
+
+  .actions
+    = f.submit "Sign up", class:'btn btn-info btn-block'
+
+  = render 'devise/shared/links'
