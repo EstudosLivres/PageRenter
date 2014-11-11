@@ -6,5 +6,8 @@ html
       .login-container
         #output
         .avatar: img#avatar src="/assets/thumb/logo-acronym-spacing.png"
+        -unless flash[:alert].nil?
+          .alert.alert-danger
+            =flash[:alert]
         .form-box
           =yield
