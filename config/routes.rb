@@ -3,6 +3,9 @@ PageRenter::Application.routes.draw do
 
   # DeviseUser sessions
   devise_for :users, controllers: {registrations:'users/registrations', sessions:'users/sessions', passwords:'users/passwords'}
+  devise_scope :users do
+    resource :registrations, only: [:new, :create, :edit, :update]
+  end
 
   # Post back from the socials network after validate user
   get 'socials/auth/:social_network_name' => 'socials#auth', as: :social_auth
