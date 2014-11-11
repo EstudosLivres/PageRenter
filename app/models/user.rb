@@ -22,14 +22,6 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :locale, presence: true, length: { is: 5 }, on: [:create, :update]
 
-  # Solve the idiom issues
-  def solve_locale
-    # Refect locale for optimized Locale (pt_PT != pt_BR)
-    if self.locale == 'pt' then self.locale = 'pt'+'_BR'
-    elsif self.locale == 'en' then self.locale = 'en'+'_US'
-    elsif self.locale.nil? then self.locale = 'pt'+'_BR' end
-  end
-
   # Return it first name
   def first_name
     # Regex, return the first word (split the name based on the spaces)
@@ -90,7 +82,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  # ----- STATICs AUX METHODs TO CREATE USERs -----
+  # =============================== STATICs AUX METHODs TO CREATE USERs ============================
   # Method that encapsulate the User creation rule
   def self.new_user_with_it_role(user_hash)
     user_hash = RailsFixes::Util.hash_keys_to_sym(user_hash)
@@ -160,4 +152,14 @@ class User < ActiveRecord::Base
       where(conditions).first
     end
   end
+
+  # =============================== Private methods for callbakcs ============================
+  private
+    # Solve the idiom issues
+    def solve_locale
+      # Refect locale for optimized Locale (pt_PT != pt_BR)
+      if self.locale == 'pt' then self.locale = 'pt'+'_BR'
+      elsif self.locale == 'en' then self.locale = 'en'+'_US'
+      elsif self.locale.nil? then self.locale = 'pt'+'_BR' end
+    end
 end
