@@ -1,4 +1,7 @@
 pt-BR:
+  # Global translations
+  coming_soon: em breve
+
   db_enum:
     currencies:
       real: Real brasileiro
@@ -12,11 +15,11 @@ pt-BR:
       semiannual: Semestral
       annual: Anual
     ad_state:
-      stopped: Parada
+      stopped: Parado
       running: Correndo
       pending: Pendente
-      checked: Checada
-      suspended: Suspença
+      checked: Checado
+      suspended: Suspenço
 
   msgs:
     welcome: Bem-vindo!
