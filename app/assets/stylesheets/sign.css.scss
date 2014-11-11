@@ -62,7 +62,7 @@ html,body{
     background-size: cover;
   }
 
-  .form-box input[type="email"], .form-box input[type="password"]{
+  .form-box input[class*="username"], .form-box input[type="email"], .form-box input[type="password"]{
     width: 100%;
     padding: 10px;
     text-align: center;
