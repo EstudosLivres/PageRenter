@@ -32,6 +32,11 @@ pt-BR:
           audience_tiper: Tipo de pessoas que deve gostar do seu anúncio
     errors:
       models:
+        user:
+          attributes:
+            name:
+              blank: em branco
+              too_short: muito curto
         profile:
           attributes:
             avatar_file_size:
