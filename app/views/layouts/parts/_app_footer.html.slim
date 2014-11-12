@@ -1,15 +1,2 @@
-= javascript_include_tag 'application'
-javascript:
-  tipers = $('.tooltiper.top');
-  set_up_tiper(tipers, 'top');
-
-  tipers = $('.tooltiper.bottom');
-  set_up_tiper(tipers, 'bottom');
-
-  tipers = $('.tooltiper.left');
-  set_up_tiper(tipers, 'left');
-
-  tipers = $('.tooltiper.right');
-  set_up_tiper(tipers, 'right');
-
-  $('.tooltiper').tooltip({trigger:'hover'});
+= javascript_include_tag 'application', "data-turbolinks-track" => true
+= yield :footer
