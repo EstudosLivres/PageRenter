@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # 'util' Useful in some context like better print/puts or legal_id like CPF
 group :useful do
   # Gem for encrypt Password
-  gem 'bcrypt-ruby', :require => 'bcrypt'
+  gem 'bcrypt', :require => 'bcrypt'
 
   # Color to the prints on console (PUTS)
   gem 'colorize', '~> 0.7.1'
@@ -31,7 +31,7 @@ group :rails do
   gem 'jbuilder', '~> 1.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
+  gem 'therubyracer', platforms: :ruby
 end
 
 # GEMs for user infos
@@ -81,8 +81,9 @@ group :style_and_interactions do
   gem 'jquery-rails'
   gem 'jquery-ui-rails'
 
-  # Date picker for bootstrap (easy calendar)
-  gem 'bootstrap-sass'
+  # Bootstrap & it dependencies Date picker for bootstrap (easy calendar)
+  gem 'less-rails', '~> 2.6.0'
+  gem 'less-rails-bootstrap', '~> 3.3.0.1'
   gem 'bootstrap-datepicker-rails','1.3.0.1'
 
   # IconFonts - FontAwesome
