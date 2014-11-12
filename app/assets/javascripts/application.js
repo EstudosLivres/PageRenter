@@ -16,8 +16,10 @@
 // require gmaps/google TODO add GoogleMaps GEM
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require turbolinks
+//= require twitter/bootstrap
+//= require bootstrap-datepicker/core
+//= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
 //= require zeroclipboard
-//= require app.js
+//= require app
 //= require sign
