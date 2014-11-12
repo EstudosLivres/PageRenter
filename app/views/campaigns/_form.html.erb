@@ -37,14 +37,3 @@
         <%= f.submit :submit, class: "btn #{current_button}" %>
     </div>
 <% end %>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('[data-behaviour~="datepicker"]').datepicker({
-            autoclose: true,
-            format: 'dd/mm/yyyy',
-            language: 'pt-BR',
-            startDate: 'today'
-        });
-    })
-</script>
