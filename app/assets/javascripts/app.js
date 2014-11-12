@@ -1,11 +1,7 @@
 // SetUp datepicker for all data-behaviour
 $(document).ready(function(){
-    $('[data-behaviour~="datepicker"]').datepicker({
-        autoclose: true,
-        format: 'dd/mm/yyyy',
-        language: 'pt-BR',
-        startDate: 'today'
-    });
+    setup_date_picker();
+    setup_tooltips_types();
 });
 
 // Re-add it dropdown-menu event for every page:change
@@ -26,4 +22,34 @@ function set_up_tiper(tipers, placement) {
         tiper.attr('data-toggle', 'tooltip');
         tiper.attr('data-placement', placement);
     }
+}
+
+// SetUp DatePicker listener event
+function setup_date_picker() {
+    var datepicker_input = $('[data-behaviour~="datepicker"]');
+    if(datepicker_input == undefined || datepicker_input === undefined) return;
+
+    datepicker_input.datepicker({
+        autoclose: true,
+        format: 'dd/mm/yyyy',
+        language: 'pt-BR',
+        startDate: 'today'
+    });
+}
+
+// Tooltips types setup
+function setup_tooltips_types() {
+    tipers = $('.tooltiper.top');
+    set_up_tiper(tipers, 'top');
+
+    tipers = $('.tooltiper.bottom');
+    set_up_tiper(tipers, 'bottom');
+
+    tipers = $('.tooltiper.left');
+    set_up_tiper(tipers, 'left');
+
+    tipers = $('.tooltiper.right');
+    set_up_tiper(tipers, 'right');
+
+    $('.tooltiper').tooltip({trigger:'hover'});
 }
