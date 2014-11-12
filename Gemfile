@@ -19,7 +19,7 @@ end
 # GEMs for default rails apps
 group :rails do
   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-  gem 'rails', '4.1.4'
+  gem 'rails', '4.1.7'
 
   # Use mysql as the database for Active Record
   gem 'mysql2'
@@ -82,7 +82,7 @@ group :style_and_interactions do
   gem 'jquery-ui-rails'
 
   # Date picker for bootstrap (easy calendar)
-  gem 'twitter-bootstrap-rails'
+  gem 'bootstrap-sass'
   gem 'bootstrap-datepicker-rails','1.3.0.1'
 
   # IconFonts - FontAwesome
