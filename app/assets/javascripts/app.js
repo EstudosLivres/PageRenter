@@ -2,6 +2,7 @@
 $(document).ready(function(){
     setup_date_picker();
     setup_tooltips_types();
+    add_alert_to_form_error();
 });
 
 // Re-add it dropdown-menu event for every page:change
@@ -52,4 +53,9 @@ function setup_tooltips_types() {
     set_up_tiper(tipers, 'right');
 
     $('.tooltiper').tooltip({trigger:'hover'});
+}
+
+// Dynamic class alert added
+function add_alert_to_form_error() {
+    $('#error_explanation').addClass('alert alert-danger');
 }
