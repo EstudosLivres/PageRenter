@@ -49,9 +49,9 @@ end
 # GEMs with we use as client of it services
 group :services do
   # Gem for UPLOAD files
-  gem "paperclip"
-  gem 'aws-sdk'
-  gem 's3_direct_upload'
+  gem 'paperclip', '~> 4.2.'
+  gem 'aws-sdk', '~> 1.58.0'
+  gem 's3_direct_upload', '~> 0.1.7'
 end
 
 # GEMs for build the view
