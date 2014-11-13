@@ -1,0 +1,23 @@
+#advertiser_update
+    form accept-charset="UTF-8" action="/advertisers/update" class="form-horizontal col-md-6" enctype="multipart/form-data" id="" method="post"
+        div style="display:none"
+          input name="utf8" type="hidden" value="✓"
+          input name="_method" type="hidden" value="patch"
+          input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>"
+        #choose_file_section
+            input id="advertiser_avatar" name="advertiser[avatar]" onchange="show_campaign_image(this)" type="file" value="<%=@advertiser.name%>"
+
+        .field.form-group
+            label for="advertiser_name" Name
+            input#advertiser_name.form-control name="advertiser[name]" placeholder="Nome fantasia para esta sessão (empresa)" type="text" value="#{@advertiser.name_if_updated}"
+
+        .actions
+          input class="btn btn-primary" name="commit" type="submit" value="update"
+
+    aside#new_campaign_right.col-md-6
+      p Logo (Tamanhos permitidos: 100×15 ou 300x75.
+      strong Otimizado para: 100x15
+
+      #adv_image_content
+        center
+            img id="new_campaign_image" src="#{@advertiser.avatar.url}"
