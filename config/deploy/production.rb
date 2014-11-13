@@ -43,3 +43,12 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #     auth_methods: %w(publickey password)
 #     # password: 'please use keys'
 #   }
+
+# PaperClip appointing to amazon
+config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_host_name => 'REMOVE_THIS_LINE_IF_UNNECESSARY',
+    :s3_credentials => {
+        :bucket => 'S3_BUCKET_NAME'
+    }
+}
