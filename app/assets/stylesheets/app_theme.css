@@ -335,7 +335,8 @@ fieldset[disabled] .btn-primary.active {
 
 /* Margin added to navbar fixed */
 .container.box {
-    margin-top: 80px;
+    /* IT WAS BUGGING THE DATE PICKER */
+    /*margin-top: 80px;*/
 }
 
 .destaque {
