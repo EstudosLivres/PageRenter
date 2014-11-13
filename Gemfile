@@ -49,7 +49,7 @@ end
 # GEMs with we use as client of it services
 group :services do
   # Gem for UPLOAD files
-  gem 'paperclip', '~> 4.2.'
+  gem 'paperclip', '~> 4.2.0'
   gem 'aws-sdk', '~> 1.58.0'
   gem 's3_direct_upload', '~> 0.1.7'
 end
