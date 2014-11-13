@@ -10,14 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// require bootstrap-datepicker/core TODO readd
-// require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js TODO readd
-// require bootstrap TODO add GoogleMaps GEM (UPDATE)
 // require gmaps/google TODO add GoogleMaps GEM
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require twitter/bootstrap
+//= require bootstrap-datepicker
 //= require bootstrap-datepicker/core
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
 //= require zeroclipboard
