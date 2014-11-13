@@ -57,6 +57,7 @@ pt-BR:
       no_unlock_instructions_received: "Reenviar instruções de desbloqueo"
 
     placeholders:
+      name: "nome completo"
       username: "username (ex: google, ilton.garcia)"
       email: "e-mail, preferencialmente, institucional"
       password: "senha min de caracteres: "
