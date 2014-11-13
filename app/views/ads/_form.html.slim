@@ -1,4 +1,3 @@
-== javascript_include_tag 'propaganda'
 = form_for [@campaign, @ad], html:{id: 'new_ad_left', class: 'form-horizontal col-md-6'} do |f|
   - if @ad.errors.any?
     #error_explanation
@@ -14,7 +13,7 @@
     = f.label :name do
       ="#{translate_it_label('ad', 'name')} "
       i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'name_tiper')}"
-    = f.text_field :name, class: 'form-control', placeholder: 'Nome do anúncio'
+    = f.text_field :name, class: 'form-control', placeholder: 'Nome do anúncio (ex: EAD-001, Concurso-001)'
 
   .field.form-group
     = f.label :headline do
