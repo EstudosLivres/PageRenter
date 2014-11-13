@@ -59,3 +59,15 @@ function setup_tooltips_types() {
 function add_alert_to_form_error() {
     $('#error_explanation').addClass('alert alert-danger');
 }
+
+// show the Ad dynamic after it "upload_intent"
+function show_ad_image(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e){
+            $('#new_ad_image')
+                .attr('src',e.target.result);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
