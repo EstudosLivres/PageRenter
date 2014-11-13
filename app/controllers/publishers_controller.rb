@@ -44,18 +44,36 @@ class PublishersController < ApplicationController
     end
   end
 
-  # GET '/:publisher_id/:ad_id' -> register it access brought through it publisher
+  # GET '/accesses/:publisher_id/:ad_id' -> register it access brought through it publisher
   def brought_access
+    begin
+      # Register it access
+      Access.new(ad_id:ad,profile_id:publisher)
+    rescue => e
+      render file: "#{Rails.root}/public/404_accesses"
+      puts "MethodError on: #{__method__}. \nError: "
+      puts e
+    end
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_publisher
-    @publisher = @current_user.publisher
-  end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_publisher
+      @publisher = @current_user.publisher
+    end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def publisher_params
-    params.require(:publisher).permit(:name)
-  end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def publisher_params
+      params.require(:publisher).permit(:name)
+    end
+
+    # SetUp all the validations to guarantee it uniqueness
+    def register_access_to_be_unique
+      # :acid = access_ids (expression to register it access)
+      session[:acid] = [] if session[:acid].nil?
+      # That expression is compressed because the session isn't so big to contain a lot of characters
+      aid_expression = "#{params[:publisher_id]}-#{params[:ad_id]}"
+      # Using unshift (push in the begging of the array because if the user is recurrent it is more probably to be the last access)
+      session[:acid].unshift aid_expression
+    end
 end
