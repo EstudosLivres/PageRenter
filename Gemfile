@@ -84,7 +84,7 @@ group :style_and_interactions do
   # Bootstrap & it dependencies Date picker for bootstrap (easy calendar)
   gem 'less-rails', '~> 2.6.0'
   gem 'less-rails-bootstrap', '~> 3.3.0.1'
-  gem 'bootstrap-datepicker-rails','1.3.0.1'
+  gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
 
   # IconFonts - FontAwesome
   gem 'font-awesome-rails', '~> 4.2.0.0'
