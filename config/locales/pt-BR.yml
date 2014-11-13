@@ -1,6 +1,7 @@
 pt-BR:
   # Global translations
   coming_soon: em breve
+  submit: enviar
 
   db_enum:
     currencies:
@@ -29,11 +30,9 @@ pt-BR:
     login_error: E-mail ou Senha inválido.
 
 
-
   # Default messages for actions
   btn_modal_okay: Enviar
   btn_modal_close: Fechar
-
 
 
   # Publisher texts
