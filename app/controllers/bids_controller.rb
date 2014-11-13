@@ -72,7 +72,7 @@ class BidsController < ApplicationController
     def set_aux_objs
       @ad = Ad.find(params[:ad_id]) unless params[:ad_id].nil?
       @campaign = Campaign.find(params[:campaign_id]) unless params[:campaign_id].nil?
-      return if !valid_user_permission?
+      # TODO return if !valid_user_permission?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
