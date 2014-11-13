@@ -32,6 +32,7 @@ db/*.sqlite3
 /config/secrets.yml
 /config/initializers/aws.rb
 config/initializers/aws.rb
+config/deploy/production.rb
 /config/aws.yml
 config/aws.yml
 /coverage.data
