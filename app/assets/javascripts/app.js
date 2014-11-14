@@ -3,6 +3,7 @@ $(document).ready(function(){
     setup_date_picker();
     setup_tooltips_types();
     add_alert_to_form_error();
+    prevent_click_on_disabled();
 });
 
 // Re-add it dropdown-menu event for every page:change
@@ -58,6 +59,12 @@ function setup_tooltips_types() {
 // Dynamic class alert added
 function add_alert_to_form_error() {
     $('#error_explanation').addClass('alert alert-danger');
+}
+
+function prevent_click_on_disabled() {
+    $('.disabled').click(function(e){
+        e.preventDefault();
+    });
 }
 
 // show the Ad dynamic after it "upload_intent"
