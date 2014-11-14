@@ -6,8 +6,8 @@ class SocialNetwork < ActiveRecord::Base
   validates :name, presence: true, length: { in: 3..50 }, on: [:create, :update]
   validates :username, presence: true, length: { in: 2..30 }, on: [:create, :update]
   validates :acronym, presence: true, length: { in: 2..10 }, on: [:create, :update]
-  validates :implemented, presence: true, on: [:create, :update]
-  validates :just_share, presence: true, on: [:create, :update]
+  validates_inclusion_of :implemented, in: [true, false], on: [:create, :update]
+  validates_inclusion_of :just_share, in: [true, false], on: [:create, :update]
 
   # Validates Associations
 
