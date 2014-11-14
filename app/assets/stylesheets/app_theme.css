@@ -683,14 +683,14 @@ center#choose_file_section {
 }
 
 .not_implemented {
-    opacity: 0.5;
+    opacity: 0.35;
 }
 
 .not_implemented a:hover {
     cursor: default;
 }
 
-#social_sessions .unimplemented {
+#social_sessions .not_implemented {
     opacity: 0.5;
     /** TODO remove this comment when implement the permissions validations
     min-height: 200px;
