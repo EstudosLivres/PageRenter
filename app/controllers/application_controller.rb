@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :email, :password, :password_confirmation, :current_password, :role) }
       I18n.locale = @current_user.locale || I18n.default_locale unless @current_user.nil?
     end
-  
+
     # Validate user session if is not API call
     def authenticate_or_token
       return if params[:action].index('login') || params[:action] == 'brought_access'
