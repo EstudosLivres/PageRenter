@@ -3,7 +3,7 @@
     .row
       -@social_networks.each do |social_network|
         -implemented = 'implemented' if social_network.implemented?
-        -implemented = 'unimplemented' if !social_network.implemented?
+        -implemented = 'not_implemented' if !social_network.implemented?
         -social_session = social_network.get_social_session(@current_user) || social_session = SocialSession.new
         div class="col-md-3 social_session #{implemented}"
           div.social_session class="alert btn-#{social_network.username}"
