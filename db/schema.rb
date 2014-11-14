@@ -231,6 +231,7 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.string   "username",    limit: 30, null: false
     t.string   "acronym",     limit: 10, null: false
     t.boolean  "implemented",            null: false
+    t.boolean  "monitoring",             null: false
     t.boolean  "just_share",             null: false
     t.string   "description", limit: 50
     t.datetime "created_at"

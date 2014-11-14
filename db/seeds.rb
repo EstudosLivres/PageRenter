@@ -54,18 +54,18 @@ puts '...Roles inserted.'.colorize(:light_blue)
 
 # SocialNetworks
 puts 'Inserting SocialNetworks...'.colorize(:green)
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebook', implemented:true, just_share:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter', implemented:false, just_share:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube', implemented:false, just_share:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus', implemented:false, just_share:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram', implemented:false, just_share:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare', implemented:false, just_share:false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr', implemented:false, just_share:true})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr', implemented:false, just_share:true})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Linkedin', acronym: 'in', username: 'linkedin', implemented:false, just_share:true})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Delicious', acronym: 'del', username: 'delicious', implemented:false, just_share:true})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Yahoo', acronym: 'Y!', username: 'yahoo', implemented:false, just_share:true})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'Hotmail', acronym: 'Fr', username: 'hotmail', implemented:false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebook', implemented:true, monitoring: true, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter', implemented:false, monitoring: false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'YouTube', acronym: 'YT', username: 'youtube', implemented:false, monitoring: false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus', implemented:false, monitoring: false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram', implemented:false, monitoring: false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'FourSquare', acronym: 'FS', username: 'foursquare', implemented:false, monitoring: false, just_share:false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr', implemented:false, monitoring: false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Flickr', acronym: 'Fr', username: 'flickr', implemented:false, monitoring: false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Linkedin', acronym: 'in', username: 'linkedin', implemented:false, monitoring: false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Delicious', acronym: 'del', username: 'delicious', implemented:false, monitoring: false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Yahoo', acronym: 'Y!', username: 'yahoo', implemented:false, monitoring: false, just_share:true})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'Hotmail', acronym: 'Fr', username: 'hotmail', implemented:false, monitoring: false, just_share:true})}"
 puts '...SocialNetworks inserted.'.colorize(:light_blue)
 # /SocialNetworks
 
