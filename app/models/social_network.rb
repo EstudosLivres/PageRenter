@@ -8,6 +8,8 @@ class SocialNetwork < ActiveRecord::Base
   validates :acronym, presence: true, length: { in: 2..10 }, on: [:create, :update]
   validates_inclusion_of :implemented, in: [true, false], on: [:create, :update]
   validates_inclusion_of :just_share, in: [true, false], on: [:create, :update]
+  # it means if the share is just sharing & not earning for the likes, shares & comments)
+  validates_inclusion_of :monitoring, in: [true, false], on: [:create, :update]
 
   # Validates Associations
 
