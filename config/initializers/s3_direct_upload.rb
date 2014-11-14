@@ -6,9 +6,9 @@ S3DirectUpload.config do |c|
   # TODO substituir quando for pra produção
   aws = aws_dev
 
-  c.access_key_id     =
-  c.secret_access_key =
-  c.bucket            =
-  c.region            = 's3'
+  c.access_key_id     = aws[:access_key_id]
+  c.secret_access_key = aws[:secret_access_key]
+  c.bucket            = aws[:bucket]
+  c.region            = aws[:region]
   c.url = "https://s3.amazonaws.com/#{aws['bucket']}/"
 end
