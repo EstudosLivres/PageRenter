@@ -1,17 +1,6 @@
 .social_share
-  a#face_share.btn.btn-facebook href="#share_action" data-toggle="modal" data-target="#share_action"
-    i.fa.fa-facebook
-  button.btn.btn-twitter
-    i.fa.fa-twitter
-  button.btn.btn-youtube
-    i.fa.fa-youtube
-  button.btn.btn-google-plus
-    i.fa.fa-google-plus
-  button.btn.btn-instagram
-    i.fa.fa-instagram
-  button.btn.btn-foursquare
-    i.fa.fa-foursquare
-  button.btn.btn-tumblr
-    i.fa.fa-tumblr
-  button.btn.btn-flickr
-    i.fa.fa-flickr
+  -@social_networks = SocialNetwork.all
+  -@social_networks.each do |s|
+    - s.implemented? ? status = 'implemented' : status = 'disabled unimplemented'
+    a id="#{s.acronym.downcase}_share" class="#{status} btn btn-#{s.username}" data-toggle="modal" data-target="#share_action"
+      i class="fa fa-#{s.username}"
