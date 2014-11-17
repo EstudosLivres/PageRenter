@@ -4,7 +4,7 @@ class AdsController < ApplicationController
   # GET /Ads
   # GET /Ads.json
   def index
-    @ads = Ad.all
+    @ads = @campaign.ads
   end
 
   # GET /Ads/1
@@ -78,7 +78,7 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      ad_hash = params.require(:ad).permit(:name, :headline, :title, :redirect_link, :username, :social_phrase, :description, :audience, :avatar)
+      ad_hash = params.require(:ad).permit(:name, :title, :description, :username, :social_phrase, :redirect_link, :avatar)
       ad_hash[:campaign_id] = params[:campaign_id]
       ad_hash
     end
