@@ -13,6 +13,7 @@ class Ad < ActiveRecord::Base
                     s3_credentials: "#{Rails.root}/config/aws.yml",
                     path: "pub_piece/:attachment/:id/:style/:filename",
                     url: ':s3_domain_url',
+                    styles: { thumb:'470x240' },
                     default_url: '/assets/missing/pub_piece/:style/missing_logo.png'
 
   # Custom validations
@@ -26,9 +27,12 @@ class Ad < ActiveRecord::Base
   validates :username, presence: true, length: { in: 5..140 }, on: [:create, :update] # appears on the link (for Google SEO)
   validates :social_phrase, length: { in: 5..140 }, on: [:create, :update] # appears on the link (for Google SEO)
   validates :description, length: { in: 5..200 }, on: [:create, :update] # which explain what this Ad is about
+  validates :avatar, presence: true, on: [:create, :update]
 
   validates :campaign_id, presence: true
+  validates :avatar, dimensions: { width: 470, height: 240 }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_size :avatar, less_than: 150.kilobyte
 
   # Validates Associations
   validates :campaign_id, presence: true, on: [:create, :update]
