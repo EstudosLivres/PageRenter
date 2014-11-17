@@ -9,7 +9,7 @@
   .form-group.col-md-4
     center
       = f.label :value, translate_it_label('budget', 'value')
-    = f.number_field :value, class:'form-control', placeholder:'Orçamento da campanha & seus Anúncios'
+    = f.text_field :value, class:'form-control currency_mask', placeholder:'Orçamento da campanha & seus Anúncios'
   .form-group.col-md-4
     center
       = f.label :currency, translate_it_label('budget', 'currency')
@@ -18,4 +18,4 @@
     center
       = f.label :recurrence_period, translate_it_label('budget', 'recurrence_period')
     = f.collection_select :recurrence_period_id, @recurrence_periods, :id, :translated_recurrence_name, {prompt: 'Escolhe a recorrência do orçamento', default: nil}, {class: 'form-control'}
-  .actions = f.submit 'Save'
+  .actions = f.submit 'Save', class:'btn btn-primary float_right'
