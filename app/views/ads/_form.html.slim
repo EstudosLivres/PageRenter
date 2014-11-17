@@ -16,12 +16,6 @@
     = f.text_field :name, class: 'form-control', placeholder: 'Nome do anúncio (ex: EAD-001, Concurso-001)'
 
   .field.form-group
-    = f.label :headline do
-      ="#{translate_it_label('ad', 'headline')} "
-      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'headline_tiper')}"
-    = f.text_field :headline, class: 'form-control', placeholder: 'Frase curta de impacto'
-
-  .field.form-group
     = f.label :title do
       ="#{translate_it_label('ad', 'title')} "
       i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'title_tiper')}"
@@ -50,13 +44,6 @@
       ="#{translate_it_label('ad', 'description')} "
       i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'description_tiper')}"
     = f.text_area :description, class: 'form-control', placeholder: 'Sobre que é esse Anúncio'
-
-  .field.form-group
-    = f.label :audience do
-      ="#{translate_it_label('ad', 'audience')} "
-      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'audience_tiper')}"
-    = f.text_area :audience, class: 'form-control', placeholder: 'People who like Pizza and live in Brasília, Brazil'
-    = link_to 'Learn how to write/build your Audience', 'https://www.facebook.com/about/graphsearch'
 
   .row.actions
     = f.submit :submit, class: "btn #{current_button}"
