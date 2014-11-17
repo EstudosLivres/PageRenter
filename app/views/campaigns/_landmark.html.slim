@@ -8,3 +8,16 @@ span
 span
   .fa.fa-power-off
   = format_date(@campaign.end_date)
+
+span
+  | |
+
+
+span.budget_value
+  -budget = @campaign.budgets.last
+  -if !budget.nil?
+    -budget_class = 'budgeted'
+    = "#{number_to_currency(budget.value, unit:"#{budget.currency.acronym} ", separator:',', delimiter:'.') } - "
+    = "#{translate_attr('recurrence_periods',budget.recurrence_period.name)}"
+  -else
+    -budget_class = 'no_budget'

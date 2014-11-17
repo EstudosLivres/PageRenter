@@ -1,14 +1,5 @@
 -unless @campaign.nil?
   .campaign_actions.float_right
-    span.budget_value
-      -budget = @campaign.budgets.last
-      -if !budget.nil?
-        -budget_class = 'budgeted'
-        = "#{number_to_currency(budget.value, unit:"#{budget.currency.acronym} ", separator:',', delimiter:'.') } - "
-        = "#{translate_attr('recurrence_periods',budget.recurrence_period.name)}"
-      -else
-        -budget_class = 'no_budget'
-
     -unless @campaign.id.nil?
       a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="#{t('campaign_action.life_cycle')}"
         i.fa.fa-recycle
