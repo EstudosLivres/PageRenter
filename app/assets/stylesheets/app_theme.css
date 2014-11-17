@@ -21,7 +21,15 @@ i.fa.fa-remove.danger:hover {
     color: #5C8F72;
 }
 
+i.fa.success {
+    color: #5C8F72;
+}
+
 .success:hover {
+    color: #26BB5E;
+}
+
+i.fa.success:hover {
     color: #26BB5E;
 }
 
