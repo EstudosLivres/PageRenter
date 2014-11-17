@@ -1,6 +1,6 @@
 class BidsController < ApplicationController
   #before_action :set_bid, only: [:show, :edit, :update, :destroy]
-  before_action :set_aux_objs, only: [:show, :new, :create, :edit, :update]
+  before_action :set_aux_objs
 
   # GET /bids
   # GET /bids.json
