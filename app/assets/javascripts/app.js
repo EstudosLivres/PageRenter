@@ -4,6 +4,7 @@ $(document).ready(function(){
     setup_tooltips_types();
     add_alert_to_form_error();
     prevent_click_on_disabled();
+    // TODO metodo que joga fixed on top MENU se tiver datepicker? Achar uma forma paleativa de por o fixed top e margin top se quebrar o Datepicker
 });
 
 // Re-add it dropdown-menu event for every page:change
