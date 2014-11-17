@@ -16,22 +16,19 @@ pt-BR:
         labels:
           name: Nome
           name_tiper: Para seu controle interno
-          headline: Manchete chamativa
-          headline_tiper: Texto que atraia o Publisher/Público
-          title: Texto a cima da imagem
-          title_tiper: logo acima da imagem
+          title: Título
+          title_tiper: texto logo a baixo da imagem
           redirect_link: Link para onde o seu público vai ser redirecionado
           redirect_link_tiper: Seu site, link em marketplace...
-          social_phrase: Uma frase curta de impacto
-          social_phrase_tiper: Deve ser um exemplo para o Publisher
+          social_phrase: Frase social curta
+          social_phrase_tiper: Serve de exemplo para a postagem do Publisher
           description: Descrição longa
-          description_tiper: Explica o produto do anúncio
+          description_tiper: Aparecerá como complemento da postagem como notícia
           username: Nome para o Link do PageRenter
           username_tiper: Link no PageRenter a ser Otimizado para SEO
           audience: Especifique qual o seu público alvo
           audience_tiper: Tipo de pessoas que devem gostar do seu anúncio
         placeholders:
-          audience: People who like Pizza and live in Brasília, Brazil
     errors:
       models:
         user:
