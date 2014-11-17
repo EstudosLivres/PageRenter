@@ -1,5 +1,6 @@
 // SetUp datepicker for all data-behaviour
 $(document).ready(function(){
+    setup_currency();
     setup_date_picker();
     setup_tooltips_types();
     add_alert_to_form_error();
@@ -78,4 +79,9 @@ function show_ad_image(input) {
         };
         reader.readAsDataURL(input.files[0]);
     }
+}
+
+// SetUp mask for currency inputs
+function setup_currency() {
+    $('.currency_mask').maskMoney();
 }
