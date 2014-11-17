@@ -13,6 +13,9 @@
       a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="#{t('campaign_action.life_cycle')}"
         i.fa.fa-recycle
 
+      a.tooltiper.top href="#{campaign_ads_path(@campaign.id)}" title="#{t('campaign_action.ads')}"
+        i.fa.fa-list
+
       a.tooltiper.top href="#{new_campaign_ad_path(@campaign.id)}" title="#{t('campaign_action.new_ad')}"
         i.fa.fa-plus
 
