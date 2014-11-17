@@ -5,10 +5,8 @@ class CreateAds < ActiveRecord::Migration
       t.string :name, limit: 50, null: false
 
       # Based on facebook
-      t.string :headline, limit: 25, null: false
-      t.string :title, limit: 90, null: false
-      t.string :description, limit: 200, null: true
-      t.string :audience, limit: 140, null: true
+      t.string :title, limit: 90, null: false #On the head title TAG
+      t.string :description, limit: 200, null: true #The text on the POST
 
       # PageRenter purpose
       t.string :username, limit: 140, null: false # Goes on the Ad link (for Google SEO)
