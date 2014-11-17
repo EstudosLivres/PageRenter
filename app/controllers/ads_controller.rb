@@ -1,6 +1,5 @@
 class AdsController < ApplicationController
-  #before_action :set_ad, only: [:show, :edit, :update, :destroy]
-  before_action :setup_aux_objs, only: [:show, :new, :create, :edit, :update]
+  before_action :setup_aux_objs
 
   # GET /Ads
   # GET /Ads.json
