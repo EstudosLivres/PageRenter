@@ -5,7 +5,15 @@
     color: #a94442;
 }
 
+i.fa.fa-remove.danger {
+    color: #a94442;
+}
+
 .danger:hover {
+    color: #DB3816;
+}
+
+i.fa.fa-remove.danger:hover {
     color: #DB3816;
 }
 
@@ -795,4 +803,8 @@ a.float_right.normal_link {
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.justified {
+    text-align: justify;
 }
