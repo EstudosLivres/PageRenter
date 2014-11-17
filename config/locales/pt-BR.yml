@@ -113,6 +113,7 @@ pt-BR:
   # Campaign Actions name
   campaign_action:
     life_cycle: Ciclo de Vida
+    ads: Listar anúncios
     new_ad: Novo Anúncio
     config_budget: Configurar Orçamento
     edit: Editar Campanha
