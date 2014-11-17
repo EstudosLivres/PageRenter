@@ -1,9 +1,24 @@
-p
-  strong Name:
-  =@ad.name
+.row
+  .col-xs-6
+    p
+      strong =t('activerecord.attributes.ad.labels.name')
+      =": #{@ad.name}"
 
-p
-  strong Redirect link:
-  =@ad.redirect_link
+    p
+      strong =t('activerecord.attributes.ad.labels.redirect_link')
+      |:&nbsp;
+      a href="#{@ad.redirect_link}" target="_blank"
+        =@ad.redirect_link
 
-im src="#{@ad.avatar.url}"
+    img src="#{@ad.avatar.url}"
+
+  .col-xs-6
+    p
+      strong =t('activerecord.attributes.ad.labels.username')
+      =" (#{t('activerecord.attributes.ad.labels.username_tiper')}): #{@ad.username}"
+    p
+      strong =t('activerecord.attributes.ad.labels.social_phrase')
+      =": #{@ad.social_phrase}"
+    p
+      strong =t('activerecord.attributes.ad.labels.description')
+    p.justified =@ad.description
