@@ -25,7 +25,7 @@ pt-BR:
           description: Descrição longa
           description_tiper: Aparecerá como complemento da postagem como notícia
           username: Nome para o Link do PageRenter
-          username_tiper: Link no PageRenter a ser Otimizado para SEO
+          username_tiper: Link Otimizado para SEO
           audience: Especifique qual o seu público alvo
           audience_tiper: Tipo de pessoas que devem gostar do seu anúncio
         placeholders:
@@ -48,3 +48,13 @@ pt-BR:
               less_than: Arquivo muito pesado
             avatar:
               less_than: Arquivo muito pesado
+        budget:
+          attributes:
+            value:
+              blank: não pode ficar em branco
+              not_a_number: deve ser um número
+              invalid: deve conter os centavos
+            currency_id:
+              blank: selecione uma moeda
+            recurrence_period_id:
+              blank: selecione o período de recorrência do orçamento
