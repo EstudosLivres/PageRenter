@@ -1,0 +1,33 @@
+table.table.table-striped
+  tr
+    th
+      center Nome
+    th
+      center Título
+    th
+      center Visualizar
+    th
+      center Editar
+    /!
+      th
+        center Deletar
+
+  -@ads.each do |ad|
+    tr
+      td
+        =ad.name
+      td
+        =ad.title
+      td
+        center
+          =link_to campaign_ad_path(@campaign, ad) do
+            i.fa.fa-eye
+      td
+        center
+          =link_to edit_campaign_ad_path(@campaign, ad) do
+            i.fa.fa-edit
+      /!
+        td
+          center
+            =link_to campaign_ad_path(@campaign, ad), data: {:confirm => 'Are you sure?'}, :method => :delete do
+              i.fa.fa-remove.danger
