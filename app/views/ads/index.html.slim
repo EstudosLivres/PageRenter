@@ -5,6 +5,8 @@ table.table.table-striped
     th
       center Título
     th
+      center CostPerClick
+    th
       center Visualizar
     th
       center Editar
@@ -20,12 +22,17 @@ table.table.table-striped
         =ad.title
       td
         center
+          =link_to new_campaign_ad_bid_path(@campaign, ad) do
+            i.fa.fa-database.success
+      td
+        center
           =link_to campaign_ad_path(@campaign, ad) do
             i.fa.fa-eye
       td
         center
           =link_to edit_campaign_ad_path(@campaign, ad) do
             i.fa.fa-edit
+
       /!
         td
           center
