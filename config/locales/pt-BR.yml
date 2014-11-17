@@ -3,6 +3,10 @@ pt-BR:
   coming_soon: em breve
   submit: enviar
 
+  file_errors:
+    min_width: largura deve ser de pelo menos
+    min_height: altura deve ser de pelo menos
+
   db_enum:
     currencies:
       real: Real brasileiro
@@ -105,6 +109,13 @@ pt-BR:
     improve_cheer_1: O que amas na experiência Page
     improve_cheer_2: Motiva a sempre entregar o melhor
 
+
+  # Campaign Actions name
+  campaign_action:
+    life_cycle: Ciclo de Vida
+    new_ad: Novo Anúncio
+    config_budget: Configurar Orçamento
+    edit: Editar Campanha
 
 
    # SocialNetworks phrases/words

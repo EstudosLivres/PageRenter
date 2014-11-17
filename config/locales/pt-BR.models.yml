@@ -45,3 +45,9 @@ pt-BR:
               in_between: É permitido até 15Kb de tamanho para a imagem da Logo
             avatar:
               in_between: A logo é otimizada para 100×15, aceitando também 300x75
+        ad:
+          attributes:
+            avatar_file_size:
+              less_than: Arquivo muito pesado
+            avatar:
+              less_than: Arquivo muito pesado

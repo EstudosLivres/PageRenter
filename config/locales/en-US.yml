@@ -19,7 +19,15 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+en-US:
+  # Global translations
+  coming_soon: coming soon
+  submit: submit
+
+  file_errors:
+    min_width: Width must be at least
+    min_height: Height must be at least
+
   db_enum:
     currencies:
       real: Real brazilian
