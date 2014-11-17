@@ -672,6 +672,8 @@ center#choose_file_section {
 
 .container.box > header {
     margin-bottom: 35px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
 #share_link a {
