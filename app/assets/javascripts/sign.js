@@ -34,5 +34,5 @@ function profile_success(resp) {
 
 function profile_error(resp) {
     avatar.removeClass('custom_avatar');
-    avatar.attr('src', '/assets/thumb/logo-acronym-spacing.png');
+    avatar.attr('src', $('#aux_logo_spacing').attr('src'));
 }
