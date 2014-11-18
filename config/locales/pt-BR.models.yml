@@ -5,7 +5,7 @@ pt-BR:
       publisher: Publisher
       campaign: Campanha
       budget: Configuração do orçamento da campanha
-      ad: Novo anúncio publicitário
+      ad: Anúncio publicitário
     attributes:
       budget:
         labels:
@@ -29,6 +29,16 @@ pt-BR:
           audience: Especifique qual o seu público alvo
           audience_tiper: Tipo de pessoas que devem gostar do seu anúncio
         placeholders:
+      bid:
+        labels:
+          visitation: Por visitas
+          visitation_tiper: Click no link
+          impression: Por visualização
+          impression_tiper: Cada vez que o anúncio é exibido
+          foreign_interactions: Por compartilhamentos/retweets...
+          foreign_interactions_tiper: Propagação do link por terceiros
+          local_interactions: Por curtidas/+1...
+          local_interactions_tiper: Impacto positivo da marca
     errors:
       models:
         user:
