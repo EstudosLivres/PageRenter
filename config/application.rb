@@ -12,7 +12,8 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 # ALL THOSE REQUIRES ARE NEEDED BECAUSE I'VE GROUPED EVERY GEM
-Bundler.require(*Rails.groups, :useful, :payment, :rails, :user, :services, :build_front_end, :style_and_interactions, :doc)
+# backup: , :useful, :payment, :rails, :user, :services, :build_front_end, :style_and_interactions, :doc
+Bundler.require(*Rails.groups)
 
 module PageRenter
   class Application < Rails::Application
@@ -24,6 +25,7 @@ module PageRenter
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
     config.autoload_paths += %W(#{config.root}/lib)
+    config.serve_static_assets = true
     config.to_prepare do
       Devise::SessionsController.layout proc{ |controller| action_name == 'new' ? "sign"   : "application" }
     end
