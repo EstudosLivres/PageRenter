@@ -820,3 +820,7 @@ input:-webkit-autofill {
 i.fa.icon_as_button {
     font-size: 1.3em;
 }
+
+.box legend {
+    color: #2A3AAA;
+}
