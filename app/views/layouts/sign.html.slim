@@ -5,7 +5,8 @@ html
     #admin_sign_form
       .login-container
         #output
-        .avatar: img#avatar src="/assets/thumb/logo-acronym-spacing.png"
+        .avatar
+          =image_tag('logo-acronym-bit-spacing.png', id:'avatar')
         -unless flash[:alert].nil?
           .alert.alert-danger
             =flash[:alert]
