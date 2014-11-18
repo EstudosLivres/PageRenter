@@ -35,10 +35,14 @@ pt-BR:
           visitation_tiper: Click no link
           impression: Por visualização
           impression_tiper: Cada vez que o anúncio é exibido
-          foreign_interactions: Por compartilhamentos/retweets...
+          foreign_interactions: Por compartilhar
           foreign_interactions_tiper: Propagação do link por terceiros
-          local_interactions: Por curtidas/+1...
+          local_interactions: Por curtidas
           local_interactions_tiper: Impacto positivo da marca
+          conversion: Por Conversão
+          conversion_tiper: Valor pago por cada compra/cadastro
+          currency: Moeda
+          currency_tiper: Moeda de cobraça/pagamento
     errors:
       models:
         user:
