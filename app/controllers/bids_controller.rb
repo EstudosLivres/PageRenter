@@ -1,5 +1,6 @@
 class BidsController < ApplicationController
   #before_action :set_bid, only: [:show, :edit, :update, :destroy]
+  before_action :set_bid, except: [:new, :create]
   before_action :set_aux_objs
 
   # GET /bids
@@ -29,7 +30,7 @@ class BidsController < ApplicationController
 
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to @bid, notice: 'Bid was successfully created.' }
+        format.html { redirect_to campaign_ad_bid_path(params[:campaign_id], params[:ad_id], @bid), notice: 'Bid was successfully created.' }
         format.json { render action: 'show', status: :created, location: @bid }
       else
         format.html { render action: 'new' }
@@ -78,6 +79,8 @@ class BidsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bid_params
-      params.require(:bid).permit(:visitation, :impression, :foreign_interactions, :local_interactions, :ad_id, :currency_id)
+      aux_bid_params = params.require(:bid).permit(:per_visitation, :per_impression, :per_foreign_interaction, :per_local_interaction, :per_conversion, :currency_id)
+      aux_bid_params[:ad_id] = params[:ad_id]
+      return aux_bid_params
     end
 end
