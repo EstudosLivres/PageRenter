@@ -5,7 +5,7 @@
     color: #a94442;
 }
 
-i.fa.fa-remove.danger {
+i.fa.danger {
     color: #a94442;
 }
 
@@ -13,7 +13,7 @@ i.fa.fa-remove.danger {
     color: #DB3816;
 }
 
-i.fa.fa-remove.danger:hover {
+i.fa.danger:hover {
     color: #DB3816;
 }
 
@@ -815,4 +815,8 @@ input:-webkit-autofill {
 
 .justified {
     text-align: justify;
+}
+
+i.fa.icon_as_button {
+    font-size: 1.3em;
 }
