@@ -52,7 +52,7 @@ class Ad < ActiveRecord::Base
 
   # Return it current activated Bid
   def bid
-    return self.bids.last
+    self.bids.last.nil? ? Bid.new : self.bids.last
   end
 
 # TODO def budget: return the transactions without receiver which means paid to the system
