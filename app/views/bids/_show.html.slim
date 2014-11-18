@@ -1,0 +1,19 @@
+.row
+  .col-md-6
+    strong =t('activerecord.attributes.bid.labels.visitation')
+    =": #{@bid.per_visitation}"
+  .col-md-6
+    strong =t('activerecord.attributes.bid.labels.impression')
+    =": #{@bid.per_impression}"
+  .col-md-6
+    strong =t('activerecord.attributes.bid.labels.foreign_interactions')
+    =": #{@bid.per_foreign_interaction}"
+  .col-md-6
+    strong =t('activerecord.attributes.bid.labels.local_interactions')
+    =": #{@bid.per_local_interaction}"
+  .col-md-6
+    strong =t('activerecord.attributes.bid.labels.conversion')
+    =": #{@bid.per_conversion}"
+  .col-md-6
+    strong =t('activerecord.attributes.bid.labels.currency')
+    =": #{@bid.it_currency}"
