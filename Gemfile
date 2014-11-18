@@ -7,6 +7,9 @@ source 'https://rubygems.org'
   # Color to the prints on console (PUTS)
   gem 'colorize', '~> 0.7.1'
 
+  # RESTClient
+  gem  'rest-client', '~> 1.7.2'
+
 # PaymentMethods
   # PaymentMethod
   gem 'rents', '~> 0.1.8'
