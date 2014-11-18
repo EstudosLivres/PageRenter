@@ -75,12 +75,13 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   add_index "banned_ad_histories", ["user_id"], name: "index_banned_ad_histories_on_user_id", using: :btree
 
   create_table "bids", force: true do |t|
-    t.decimal  "visitation",           precision: 4, scale: 2, null: false
-    t.decimal  "impression",           precision: 4, scale: 2
-    t.decimal  "foreign_interactions", precision: 4, scale: 2, null: false
-    t.decimal  "local_interactions",   precision: 4, scale: 2, null: false
-    t.integer  "ad_id",                                        null: false
-    t.integer  "currency_id",                                  null: false
+    t.decimal  "per_visitation",          precision: 4, scale: 2, null: false
+    t.decimal  "per_foreign_interaction", precision: 4, scale: 2, null: false
+    t.decimal  "per_local_interaction",   precision: 4, scale: 2, null: false
+    t.decimal  "per_conversion",          precision: 4, scale: 2, null: false
+    t.decimal  "per_impression",          precision: 4, scale: 2
+    t.integer  "ad_id",                                           null: false
+    t.integer  "currency_id",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
