@@ -20,5 +20,14 @@
       strong =t('activerecord.attributes.ad.labels.social_phrase')
       =": #{@ad.social_phrase}"
     p
-      strong =t('activerecord.attributes.ad.labels.description')
+      strong ="#{t('activerecord.attributes.ad.labels.description')}: "
     p.justified =@ad.description
+
+    fieldset#ad_cpc
+      legend CPC
+
+    -@bid = @ad.bid
+    =render 'bids/show'
+
+    #ad_actions
+      =render 'ads/ad_actions'
