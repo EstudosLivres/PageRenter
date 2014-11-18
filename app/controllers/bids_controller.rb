@@ -72,6 +72,7 @@ class BidsController < ApplicationController
     def set_aux_objs
       @ad = Ad.find(params[:ad_id]) unless params[:ad_id].nil?
       @campaign = Campaign.find(params[:campaign_id]) unless params[:campaign_id].nil?
+      @currencies = Currency.all
       # TODO return if !valid_user_permission?
     end
 
