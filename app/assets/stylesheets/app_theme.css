@@ -483,6 +483,10 @@ a.r_admin:hover,
     margin-right: 10px;
 }
 
+.container.box a:hover {
+    text-decoration: none;
+}
+
 .container.box > header > h1 {
     cursor: default;
     font-weight: bold;
