@@ -7,17 +7,23 @@
           li = message
 
   .field.form-group.col-md-6
-    = f.label :visitation
-    = f.text_field :visitation, class: 'form-control', placeholder:'Price per user clicked on the link'
+    = f.label :per_visitation
+    = f.text_field :per_visitation, class: 'form-control', placeholder:'Price per user clicked on the link'
   .field.form-group.col-md-6
-    = f.label :impression
-    = f.text_field :impression, class: 'form-control', placeholder:'Price per Ad visualization'
+    = f.label :per_impression
+    = f.text_field :per_impression, class: 'form-control', placeholder:'Price per Ad visualization'
   .field.form-group.col-md-6
-    = f.label :foreign_interactions
-    = f.text_field :foreign_interactions, class: 'form-control', placeholder:'Price per foreign interactions (Retweet, Shares...)'
+    = f.label :per_foreign_interaction
+    = f.text_field :per_foreign_interaction, class: 'form-control', placeholder:'Price per foreign interactions (Retweet, Shares...)'
   .field.form-group.col-md-6
-    = f.label :local_interactions
-    = f.text_field :local_interactions, class: 'form-control', placeholder:'Price per foreign interactions (Likes, Comments, Starred...)'
+    = f.label :per_local_interaction
+    = f.text_field :per_local_interaction, class: 'form-control', placeholder:'Price per foreign interactions (Likes, Comments, Starred...)'
+  .field.form-group.col-md-6
+    = f.label :per_conversion
+    = f.text_field :per_conversion, class: 'form-control', placeholder:'Price per conversion (sign ups, purchases...)'
+  .field.form-group.col-md-6
+    = f.label :currency, translate_it_label('budget', 'currency')
+    = f.collection_select :currency_id, @currencies, :id, :acronym_with_name, {prompt: 'Escolhe a moeda (a região do público alvo)', default: nil}, {class: 'form-control'}
 
   .field.form-group.col-md-6
     .actions = f.submit 'Save'
