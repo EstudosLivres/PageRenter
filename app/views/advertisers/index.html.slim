@@ -29,7 +29,7 @@
                 .panel.panel-default
                   .panel-heading
                     h4.panel-title
-                      =render 'ads/ad_actions'
+                      =render 'ads/actions'
                       a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{campaign_i}_ad_#{ad_i}"
                         = @ad.name
                         span class="badge alert-#{@ad.ad_history_states.last.ad_state.msg}"
