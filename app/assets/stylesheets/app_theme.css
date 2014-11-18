@@ -170,6 +170,10 @@ header#campaign_show .campaign_actions i.fa {
     margin: 0 0 0 20px;
 }
 
+#ad_actions {
+    margin-top: 32px;
+}
+
 /* BRAND CAMPAIGN STYLE (AUTO PROMO) */
 .badge.alert-danger {
     color: white;
