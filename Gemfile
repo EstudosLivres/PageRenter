@@ -83,13 +83,10 @@ source 'https://rubygems.org'
   gem 'social-buttons', '~> 0.3.9'
 
 # Generate documentation
-group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
-end
 
 # GEMs to work only on test & development environments
-group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
 
@@ -113,4 +110,5 @@ group :development, :test do
 
   # RSPec Plugin for params on its
   gem 'its'
-end
+
+gem 'rails_12factor', group: :production
