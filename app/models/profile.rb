@@ -8,7 +8,7 @@ class Profile < ActiveRecord::Base
                     s3_credentials: "#{Rails.root}/config/aws.yml",
                     path: ":class/:attachment/:id/:style/:filename",
                     url: ':s3_domain_url',
-                    default_url: '/assets/missing/:class/:style/missing_logo.jpg'
+                    default_url: '/assets/missing_logo.jpg'
 
   # Validates Associations
   validates :user_id, presence: true, on: :update

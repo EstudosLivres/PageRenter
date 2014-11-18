@@ -14,7 +14,7 @@ class Ad < ActiveRecord::Base
                     path: "pub_piece/:attachment/:id/:style/:filename",
                     url: ':s3_domain_url',
                     styles: { thumb:'470x240' },
-                    default_url: '/assets/missing/pub_piece/:style/missing_logo.png'
+                    default_url: '/assets/large_missing_logo.png'
 
   # Custom validations
   after_create :setup
