@@ -3,7 +3,7 @@
     =render 'campaigns/actions'
     h2
       -if @campaign.name.nil?
-        =translate_it_model('campaign')
+        =t('activerecord.models.campaign')
 
       -else
         =@campaign.name
