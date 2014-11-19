@@ -4,8 +4,8 @@ pt-BR:
   submit: enviar
 
   file_errors:
-    min_width: largura deve ser de pelo menos
-    min_height: altura deve ser de pelo menos
+    min_width: largura deve ter pelo menos
+    min_height: altura deve ter pelo menos
 
   db_enum:
     currencies:
