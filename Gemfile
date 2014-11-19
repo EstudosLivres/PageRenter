@@ -1,21 +1,23 @@
 source 'https://rubygems.org'
 
 # 'util' Useful in some context like better print/puts or legal_id like CPF
+group :useful do
   # Gem for encrypt Password
   gem 'bcrypt', :require => 'bcrypt'
 
   # Color to the prints on console (PUTS)
   gem 'colorize', '~> 0.7.1'
-
-  # RESTClient
-  gem  'rest-client', '~> 1.7.2'
+end
 
 # PaymentMethods
+group :payment do
   # PaymentMethod
   gem 'rents', '~> 0.1.8'
   gem 'spring', '~> 1.1.3'
+end
 
 # GEMs for default rails apps
+group :rails do
   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
   gem 'rails', '4.1.7'
 
@@ -30,8 +32,10 @@ source 'https://rubygems.org'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', platforms: :ruby
+end
 
 # GEMs for user infos
+group :user do
   # For easy user session management
   gem 'devise', '~> 3.4.1'
 
@@ -40,14 +44,18 @@ source 'https://rubygems.org'
 
   # Full Facebook API (including Graph API)
   gem "koala", "~> 1.10.0rc"
+end
 
 # GEMs with we use as client of it services
+group :services do
   # Gem for UPLOAD files
   gem 'paperclip', '~> 4.2.0'
   gem 'aws-sdk', '~> 1.58.0'
   gem 's3_direct_upload', '~> 0.1.7'
+end
 
 # GEMs for build the view
+group :build_front_end do
   # Easier & faster then ERB
   gem 'slim-rails', '~> 2.1.5'
 
@@ -62,8 +70,10 @@ source 'https://rubygems.org'
 
   # Use CoffeeScript for .js.coffee assets and views
   gem 'coffee-rails', '~> 4.0.0'
+end
 
 # Style & Interactions view frameworks
+group :style_and_interactions do
   # ZeroClipBoard (easy copy to memory - command+c)
   gem 'zeroclipboard-rails', '~> 0.1.0'
 
@@ -84,12 +94,16 @@ source 'https://rubygems.org'
 
   # IconFonts with it Buttons layout
   gem 'social-buttons', '~> 0.3.9'
+end
 
 # Generate documentation
+group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
 
 # GEMs to work only on test & development environments
+group :development, :test do
   # RSPec for BDD pratices
   gem 'rspec-rails', '~> 2.14.1'
 
@@ -113,5 +127,4 @@ source 'https://rubygems.org'
 
   # RSPec Plugin for params on its
   gem 'its'
-
-gem 'rails_12factor', group: :production
+end
