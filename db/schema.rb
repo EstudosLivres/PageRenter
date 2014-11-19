@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20141110173921) do
 
   create_table "accesses", force: true do |t|
-    t.boolean  "converted",                    default: false, null: false
-    t.string   "remote_id",         limit: 45
-    t.integer  "ad_id",                                        null: false
-    t.integer  "profile_id",                                   null: false
+    t.boolean  "converted",         default: false, null: false
+    t.boolean  "recurrent",         default: false, null: false
+    t.integer  "ad_id",                             null: false
+    t.integer  "profile_id",                        null: false
     t.integer  "social_network_id"
     t.datetime "created_at"
     t.datetime "updated_at"
