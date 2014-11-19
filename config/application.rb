@@ -12,8 +12,7 @@ require "sprockets/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 # ALL THOSE REQUIRES ARE NEEDED BECAUSE I'VE GROUPED EVERY GEM
-# backup: , :useful, :payment, :rails, :user, :services, :build_front_end, :style_and_interactions, :doc
-Bundler.require(*Rails.groups)
+Bundler.require(*Rails.groups, :useful, :payment, :rails, :user, :services, :build_front_end, :style_and_interactions, :doc)
 
 module PageRenter
   class Application < Rails::Application
