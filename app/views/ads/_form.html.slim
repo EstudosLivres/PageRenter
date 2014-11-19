@@ -53,7 +53,7 @@ aside#new_ad_right.col-md-6
     | Peça publicitária (Tamanho otimizado: 1200 × 628)
   .row
     -current_avatar = @ad.avatar.url unless @ad.avatar.nil?
-    img#new_ad_image.col-md-6 src="#{current_avatar}"
+    =image_tag(current_avatar, id:'new_ad_image', class:'col-md-6')
 
   p#share_link
     | Share link:
