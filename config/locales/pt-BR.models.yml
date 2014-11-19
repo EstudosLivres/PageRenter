@@ -13,6 +13,7 @@ pt-BR:
           currency: Moeda (esta define também o público alvo)
           recurrence_period: Período de renovação do orçamento
       ad:
+        avatar: Peça Publicitária
         labels:
           name: Nome
           name_tiper: Para seu controle interno
@@ -61,6 +62,7 @@ pt-BR:
             avatar_file_size:
               less_than: Arquivo muito pesado
             avatar:
+              blank: em branco, por favor faça o upload
               less_than: Arquivo muito pesado
         budget:
           attributes:
