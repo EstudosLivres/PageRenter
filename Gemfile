@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
 
 # 'util' Useful in some context like better print/puts or legal_id like CPF
 group :useful do
@@ -101,6 +102,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+# Just for production like on Heroku
+gem 'rails_12factor', group: :production
 
 # GEMs to work only on test & development environments
 group :development, :test do
