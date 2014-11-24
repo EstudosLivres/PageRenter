@@ -799,8 +799,9 @@ a.float_right.normal_link {
     margin-right: 20px;
 }
 
-.alert a {
+.alert a.charm {
     text-decoration: underline;
+    transition: all .20s ease-in-out;
 }
 
 .btn.btn-youtube {
