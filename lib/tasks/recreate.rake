@@ -1,6 +1,4 @@
 require 'colorize'
-require 'factory_girl'
-Dir['/spec/factories/*'].each {|file| require file }
 
 namespace :db do
   desc 'Populate the Database'
