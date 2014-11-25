@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.2'
 
 # 'util' Useful in some context like better print/puts or legal_id like CPF
 group :useful do
