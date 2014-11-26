@@ -5,6 +5,7 @@ S3DirectUpload.config do |c|
 
   # TODO substituir quando for pra produção
   aws = aws_dev
+  aws = aws.symbolize_keys!
 
   c.access_key_id     = aws[:access_key_id]
   c.secret_access_key = aws[:secret_access_key]
