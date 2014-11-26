@@ -1,14 +1,14 @@
 development:
-  access_key_id:
-  secret_access_key:
-  region:
-  bucket:
+  access_key_id: # TODO access the AWS & get yours
+  secret_access_key: # TODO access the AWS & get yours
+  region: sa-east-1
+  bucket: pagerenter-test-YOUR_NAME # TODO: create it on the Amazon AWS
 
 test:
-  access_key_id:
-  secret_access_key:
-  region:
-  bucket:
+  access_key_id: # TODO access the AWS & get yours
+  secret_access_key: # TODO access the AWS & get yours
+  region: sa-east-1
+  bucket: pagerenter-test-YOUR_NAME # TODO: create it on the Amazon AWS
 
 production:
   access_key_id:
