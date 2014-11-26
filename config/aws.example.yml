@@ -1,14 +1,17 @@
 development:
   access_key_id:
   secret_access_key:
+  region:
   bucket:
 
 test:
   access_key_id:
   secret_access_key:
+  region:
   bucket:
 
 production:
   access_key_id:
   secret_access_key:
+  region:
   bucket:
