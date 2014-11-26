@@ -800,6 +800,7 @@ a.float_right.normal_link {
 }
 
 .alert a.charm {
+    font-weight: bold;
     text-decoration: underline;
     transition: all .20s ease-in-out;
 }
