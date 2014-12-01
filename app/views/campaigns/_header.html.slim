@@ -14,8 +14,8 @@
 
   -if launch_date < Date.today
     -@alert_type = 'danger'
-    -@strong_msg = 'Estado crítico. '
-    -@msg = 'Atenção a sua campanha data de início incoerente.'
+    -@strong_msg = 'Estado crítico de Congelamento. '
+    -@msg = 'A data de início já fechou e sua campanha já deve está em execução ou encerrada.'
     =render "layouts/parts/alerts/dynamic_alert"
   -elsif launch_date < Date.today+date_range
     -@alert_type = 'warning'
