@@ -81,6 +81,14 @@ class BidsController < ApplicationController
     def bid_params
       aux_bid_params = params.require(:bid).permit(:per_visitation, :per_impression, :per_foreign_interaction, :per_local_interaction, :per_conversion, :currency_id)
       aux_bid_params[:ad_id] = params[:ad_id]
+
+      # Removing formatations
+      aux_bid_params[:per_visitation] = aux_bid_params[:per_visitation].remove('.').remove(',')
+      aux_bid_params[:per_impression] = aux_bid_params[:per_impression].remove('.').remove(',')
+      aux_bid_params[:per_foreign_interaction] = aux_bid_params[:per_foreign_interaction].remove('.').remove(',')
+      aux_bid_params[:per_local_interaction] = aux_bid_params[:per_local_interaction].remove('.').remove(',')
+      aux_bid_params[:per_conversion] = aux_bid_params[:per_conversion].remove('.').remove(',')
+
       return aux_bid_params
     end
 end
