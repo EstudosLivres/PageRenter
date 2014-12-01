@@ -84,6 +84,7 @@ class BudgetsController < ApplicationController
       budget_params_hash[:activated] = true
       budget_params_hash[:closed_date] = nil
       budget_params_hash[:campaign_id] = params[:campaign_id]
+      budget_params_hash[:value] = budget_params_hash[:value].remove('.').remove(',')
       return budget_params_hash
     end
 end
