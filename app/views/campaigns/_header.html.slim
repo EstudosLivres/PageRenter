@@ -8,3 +8,17 @@
       -else
         =@campaign.name
       =render 'campaigns/landmark'
+
+  -launch_date = @campaign.launch_date.to_date
+  -date_range = 2
+
+  -if launch_date < Date.today
+    -@alert_type = 'danger'
+    -@strong_msg = 'Estado crítico. '
+    -@msg = 'Atenção a sua campanha data de início incoerente.'
+    =render "layouts/parts/alerts/dynamic_alert"
+  -elsif launch_date < Date.today+date_range
+    -@alert_type = 'warning'
+    -@strong_msg = 'Atenção. '
+    -@msg = 'Sua campanha está prestes a ir ao ar. Verifique o orçamento e o CPC.'
+    =render "layouts/parts/alerts/dynamic_alert"
