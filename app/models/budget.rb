@@ -1,7 +1,9 @@
 class Budget < ActiveRecord::Base
+  # Associations
   belongs_to :currency
   belongs_to :campaign
   belongs_to :recurrence_period
+  has_many :financial_transactions
   # TODO has_many financial_transaction trough BudgetLaunches
 
   # Custom validations

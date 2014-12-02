@@ -89,16 +89,6 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   add_index "bids", ["ad_id"], name: "index_bids_on_ad_id", using: :btree
   add_index "bids", ["currency_id"], name: "index_bids_on_currency_id", using: :btree
 
-  create_table "budget_launches", force: true do |t|
-    t.integer  "budget_id"
-    t.integer  "financial_transaction_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "budget_launches", ["budget_id"], name: "index_budget_launches_on_budget_id", using: :btree
-  add_index "budget_launches", ["financial_transaction_id"], name: "index_budget_launches_on_financial_transaction_id", using: :btree
-
   create_table "budgets", force: true do |t|
     t.boolean  "activated",                                    null: false
     t.decimal  "value",                precision: 8, scale: 2, null: false
@@ -147,11 +137,13 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.string   "payment_method", limit: 50, null: false
     t.integer  "remote_id",                 null: false
     t.integer  "user_id",                   null: false
+    t.integer  "budget_id",                 null: false
     t.integer  "currency_id",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "financial_transactions", ["budget_id"], name: "index_financial_transactions_on_budget_id", using: :btree
   add_index "financial_transactions", ["currency_id"], name: "index_financial_transactions_on_currency_id", using: :btree
   add_index "financial_transactions", ["user_id"], name: "index_financial_transactions_on_user_id", using: :btree
 

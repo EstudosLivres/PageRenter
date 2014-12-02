@@ -12,6 +12,7 @@ class CreateFinancialTransactions < ActiveRecord::Migration
 
       # Associations
       t.belongs_to :user, index: true, null: false
+      t.belongs_to :budget, index: true, null: false
       t.belongs_to :currency, index: true, null: false
 
       t.timestamps
