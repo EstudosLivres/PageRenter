@@ -13,6 +13,8 @@
       a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="#{t('campaign_action.config_budget')}"
         -if @campaign.budgets.count == 0
           i.fa.fa-dollar.danger
+        -elsif !@campaign.current_budget.current_transaction.paid?
+          i.fa.fa-dollar.warning
         -else
           i.fa.fa-dollar.success
 
