@@ -3,6 +3,7 @@ $(document).ready(function(){
     setup_currency();
     setup_date_picker();
     setup_tooltips_types();
+    focus_the_first_input();
     add_alert_to_form_error();
     prevent_click_on_disabled();
     // TODO metodo que joga fixed on top MENU se tiver datepicker? Achar uma forma paleativa de por o fixed top e margin top se quebrar o Datepicker
@@ -84,4 +85,11 @@ function show_ad_image(input) {
 // SetUp mask for currency inputs
 function setup_currency() {
     $('.currency_mask').maskMoney();
+}
+
+// Focus the first input on the form
+function focus_the_first_input() {
+    setTimeout(function(){
+        $($('form input')[3]).focus();
+    }, 300);
 }
