@@ -43,6 +43,18 @@ i.fa.success:hover {
     text-decoration: underline;
 }
 
+.currency.success {
+    color: #33BD63;
+}
+
+.currency.warning {
+    color: #F2B50F;
+}
+
+.currency.danger {
+    color: #DB3816;
+}
+
 html {
     position: relative;
     min-height: 100%;
