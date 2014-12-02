@@ -9,16 +9,19 @@
         =@campaign.name
       =render 'campaigns/landmark'
 
-  -launch_date = @campaign.launch_date.to_date
-  -date_range = 2
+  -unless @campaign.launch_date.nil?
+    -launch_date = @campaign.launch_date.to_date
+    -date_range = 2
 
-  -if launch_date < Date.today
-    -@alert_type = 'danger'
-    -@strong_msg = 'Estado crítico de Congelamento. '
-    -@msg = 'A data de início já fechou e sua campanha já deve está em execução ou encerrada.'
-    =render "layouts/parts/alerts/dynamic_alert"
-  -elsif launch_date < Date.today+date_range
-    -@alert_type = 'warning'
-    -@strong_msg = 'Atenção. '
-    -@msg = 'Sua campanha está prestes a ir ao ar. Verifique o orçamento e o CPC.'
-    =render "layouts/parts/alerts/dynamic_alert"
+    -if launch_date < Date.today
+      -@alert_type = 'danger'
+      -@strong_msg = 'Estado crítico de Congelamento. '
+      -@msg = 'A data de início já fechou e sua campanha já deve está em execução ou encerrada.'
+      =render "layouts/parts/alerts/dynamic_alert"
+    -elsif launch_date < Date.today+date_range
+      -@alert_type = 'warning'
+      -@strong_msg = 'Atenção. '
+      -cpc_tiper = translate_it_label('ad', 'cpc')
+      -icon = "<i class='fa fa-question-circle tooltiper top' title='#{cpc_tiper}'></i>"
+      -@msg = 'Sua campanha está prestes a ir ao ar. Verifique o orçamento e o CPC '+icon
+      =render "layouts/parts/alerts/dynamic_alert"
