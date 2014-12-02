@@ -43,16 +43,28 @@ i.fa.success:hover {
     text-decoration: underline;
 }
 
-.currency.success {
+.currency.success, i.fa.success {
     color: #33BD63;
 }
 
-.currency.warning {
-    color: #F2B50F;
+a .currency.success:hover, a i.fa.success:hover {
+    color: #26BB5E;
 }
 
-.currency.danger {
-    color: #DB3816;
+.currency.warning, i.fa.warning {
+    color: #D4B600;
+}
+
+a .currency.warning:hover, a i.fa.warning:hover {
+    color: #C2A700;
+}
+
+.currency.danger, i.fa.danger {
+    color: #E93A16;
+}
+
+a .currency.danger:hover, a i.fa.danger:hover {
+    color: #BC2200;
 }
 
 html {
@@ -234,10 +246,6 @@ header .social_share .btn:focus {
 
 body .container.box .btn:hover {
     color: whitesmoke;
-}
-
-.budget_value {
-    color: #33BD63;
 }
 
 /* CAMPAIGN STYLES */
