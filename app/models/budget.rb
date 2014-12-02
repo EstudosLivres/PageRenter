@@ -20,6 +20,11 @@ class Budget < ActiveRecord::Base
   validates :campaign_id, presence: true, on: [:create]
   validates :recurrence_period_id, presence: true, on: [:create]
 
+  # Return the "active" transaction
+  def current_transaction
+    self.financial_transactions.last
+  end
+
   # =============================== Private methods for callbakcs ============================
   private
     # SetUp it attrs to it correct values_format
