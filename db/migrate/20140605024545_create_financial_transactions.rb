@@ -14,9 +14,12 @@ class CreateFinancialTransactions < ActiveRecord::Migration
       # It status_code on the Gateway
       t.integer :status_code, null: false
 
-      # Associations
-      t.belongs_to :user, index: true, null: false
-      t.belongs_to :budget, index: true, null: false
+      # CustomAssociations
+      t.integer :payer, index: true, null: true
+      t.integer :receiver, index: true, null: true
+
+      # StandardAssociations
+      t.belongs_to :budget, index: true, null: true
       t.belongs_to :currency, index: true, null: false
 
       t.timestamps

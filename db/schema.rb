@@ -138,8 +138,9 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.integer  "remote_id",                 null: false
     t.string   "status_name",    limit: 25, null: false
     t.integer  "status_code",               null: false
-    t.integer  "user_id",                   null: false
-    t.integer  "budget_id",                 null: false
+    t.integer  "payer"
+    t.integer  "receiver"
+    t.integer  "budget_id"
     t.integer  "currency_id",               null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -147,7 +148,6 @@ ActiveRecord::Schema.define(version: 20141110173921) do
 
   add_index "financial_transactions", ["budget_id"], name: "index_financial_transactions_on_budget_id", using: :btree
   add_index "financial_transactions", ["currency_id"], name: "index_financial_transactions_on_currency_id", using: :btree
-  add_index "financial_transactions", ["user_id"], name: "index_financial_transactions_on_user_id", using: :btree
 
   create_table "page_accounts", force: true do |t|
     t.string   "id_on_social",           limit: 45, null: false
