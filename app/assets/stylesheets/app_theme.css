@@ -21,10 +21,6 @@ i.fa.danger:hover {
     color: #5C8F72;
 }
 
-i.fa.success {
-    color: #5C8F72;
-}
-
 .success:hover {
     color: #26BB5E;
 }
@@ -44,7 +40,7 @@ i.fa.success:hover {
 }
 
 .currency.success, i.fa.success {
-    color: #33BD63;
+    color: #339D63;
 }
 
 a .currency.success:hover, a i.fa.success:hover {
