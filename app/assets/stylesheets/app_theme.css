@@ -67,6 +67,10 @@ a .currency.danger:hover, a i.fa.danger:hover {
     color: #BC2200;
 }
 
+.panel-title a:hover, .panel-title a:focus {
+    text-decoration: none;
+}
+
 html {
     position: relative;
     min-height: 100%;
