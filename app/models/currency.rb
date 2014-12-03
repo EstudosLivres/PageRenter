@@ -21,4 +21,18 @@ class Currency < ActiveRecord::Base
     dot_index = amount_str.index('.')
     return amount_str[0..dot_index-the_dot_char]
   end
+
+  # Receive it amount in Integer String and convert to Decimal value
+  def self.decimal_from_operator_str amount
+    # Base vars
+    aux_amount = amount
+    cents_chars_counter = 2
+
+    # Building the currency str like BigDecimal understands
+    cents_str = aux_amount[aux_amount.length-cents_chars_counter..aux_amount.length]
+    currency_integer_str = aux_amount[0, aux_amount.length-cents_chars_counter]
+    new_amount = "#{currency_integer_str}.#{cents_str}"
+
+    BigDecimal.new new_amount
+  end
 end
