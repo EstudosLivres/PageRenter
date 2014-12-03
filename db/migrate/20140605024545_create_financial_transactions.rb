@@ -9,6 +9,10 @@ class CreateFinancialTransactions < ActiveRecord::Migration
       t.string :payment_method, limit: 50, null: false
       # It reference on the Gateway
       t.integer :remote_id, null: false
+      # It status_name on the Gateway
+      t.string :status_name, limit: 25, null: false
+      # It status_code on the Gateway
+      t.integer :status_code, null: false
 
       # Associations
       t.belongs_to :user, index: true, null: false

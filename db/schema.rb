@@ -136,6 +136,8 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.boolean  "withdraw",                  null: false
     t.string   "payment_method", limit: 50, null: false
     t.integer  "remote_id",                 null: false
+    t.string   "status_name",    limit: 25, null: false
+    t.integer  "status_code",               null: false
     t.integer  "user_id",                   null: false
     t.integer  "budget_id",                 null: false
     t.integer  "currency_id",               null: false
