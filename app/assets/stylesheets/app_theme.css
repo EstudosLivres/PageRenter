@@ -67,6 +67,11 @@ a .currency.danger:hover, a i.fa.danger:hover {
     text-decoration: none;
 }
 
+/* for icons before text */
+i.prefix {
+    margin-right: 10px;
+}
+
 html {
     position: relative;
     min-height: 100%;
