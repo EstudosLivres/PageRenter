@@ -22,7 +22,8 @@ class Budget < ActiveRecord::Base
 
   # Return the "active" transaction
   def current_transaction
-    self.financial_transactions.last
+    transaction = self.financial_transactions.last
+    if transaction.nil? then FinancialTransaction.new else transaction end
   end
 
   # =============================== Private methods for callbakcs ============================
