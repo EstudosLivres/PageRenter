@@ -22,6 +22,13 @@ class FinancialTransaction < ActiveRecord::Base
 
   # TODO enum banking_or_online (TRUE is banking & FALSE if online/system)
 
+  # Return true if it is paid & false if it is not paid yet
+  def paid?
+    false if self.remote_id.nil?
+    # TODO RentS request here!?
+    true unless self.remote_id.nil?
+  end
+
   private
     # Default values, preventing bugs/inconsistency
     def set_nil_to_default_value
