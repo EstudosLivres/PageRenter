@@ -5,11 +5,8 @@ class Campaign < ActiveRecord::Base
   belongs_to :campaign_type
   belongs_to :advertiser, class_name: 'Profile', foreign_key: :advertiser_id
 
-  # Custom validations
-  validate :setup_campaign
-
   # Rails validations
-  validate :validate_end_date_before_launch_date, on: [:create, :update]
+  before_validation :end_greater_than_launch_date, on: [:create, :update]
   validates :name, presence: true, length: { in: 5..75 }, on: [:create, :update]
   validates :launch_date, presence: true, on: [:create, :update]
   validates :end_date, presence: true, on: [:create, :update]
@@ -17,17 +14,6 @@ class Campaign < ActiveRecord::Base
   # Validates Associations
   #validates :campaign_type_id, presence: true, on: [:create, :update]
   validates :advertiser_id, presence: true, on: [:create, :update]
-
-
-  # Validate the End be greater than Launch
-  def validate_end_date_before_launch_date
-    if launch_date && end_date
-      if launch_date >= end_date && launch_date >= Date.today
-        self.errors.add(:end_date, 'End date should be greater than launch date')
-        raise ActiveRecord::Rollback
-      end
-    end
-  end
 
   # Return it state based on the Ads (if there is at least 1 Ad RUNNING it is RUNNING, else is all in same state (pending, check...))
   def current_state
@@ -49,13 +35,27 @@ class Campaign < ActiveRecord::Base
     return AdState.where(name:'pending').take if pending_count >= 1
   end
 
-  # Pre SteUp the campaign to it recent created rules
-  def setup_campaign
-
+  # Current Budget activated
+  def current_budget
+    budget = self.budgets.last
+    if budget.nil? then Budget.new else budget end
   end
 
   private
     def count_ad_state state_name
       AdState.joins(:ad_history_states).joins(:ads).where('ad_states.name'=>state_name, 'ads.campaign_id'=>self.id).count
+    end
+
+    # Validate the End be greater than Launch
+    def end_greater_than_launch_date
+      if launch_date && end_date
+        if launch_date >= end_date
+          self.errors.add(:end_date, 'should be greater than launch date')
+          raise ActiveRecord::Rollback
+        elsif launch_date < Date.today
+          self.errors.add(:launch_date, 'should be today or greater')
+          raise ActiveRecord::Rollback
+        end
+      end
     end
 end
