@@ -4,6 +4,7 @@ $(document).ready(function(){
     setup_date_picker();
     setup_tooltips_types();
     focus_the_first_input();
+    toggle_icon_orientation();
     add_alert_to_form_error();
     prevent_click_on_disabled();
     // TODO metodo que joga fixed on top MENU se tiver datepicker? Achar uma forma paleativa de por o fixed top e margin top se quebrar o Datepicker
@@ -93,3 +94,46 @@ function focus_the_first_input() {
         $($('form input')[3]).focus();
     }, 300);
 }
+
+// Toggle the icons bottom to up & up to bottom
+function toggle_icon_orientation(){
+    $('.toggle').click(function(){
+        element_toggle(this);
+    });
+
+    $('a').click(function(){
+        element_toggle(this);
+    });
+
+    function element_toggle(interacted_element) {
+        // Element references
+        var down_icon = $($(interacted_element).find('i[class*="-down"]')[0]);
+        var up_icon = $($(interacted_element).find('i[class*="-up"]')[0]);
+
+        // Classes as String
+        if(down_icon != undefined) if(down_icon.length > 0) var down_icon_classes = down_icon.attr('class').split(' ');
+        if(up_icon != undefined) if(up_icon.length > 0) var up_icon_classes = up_icon.attr('class').split(' ');
+
+        // Classes names
+        var down_class_name = '';
+        var up_class_name = '';
+
+        // Getting those names
+        if(down_icon != undefined) if(down_icon.length != 0) for(i=0; i<down_icon_classes.length; i++) if(down_icon_classes[i].indexOf('down') >= 0) down_class_name = down_icon_classes[i];
+        if(up_icon != undefined) if(up_icon.length != 0) for(i=0; i<up_icon_classes.length; i++) if(up_icon_classes[i].indexOf('up') >= 0) up_class_name = up_icon_classes[i];
+
+        var new_down_class = down_class_name.substring(0, down_class_name.indexOf('down'))+'up';
+        var new_up_class = up_class_name.substring(0, up_class_name.indexOf('up'))+'down';
+
+        if(down_icon != undefined) {
+            down_icon.removeClass(down_class_name);
+            down_icon.addClass(new_down_class);
+        }
+
+        if(up_icon != undefined) {
+            up_icon.removeClass(up_class_name);
+            up_icon.addClass(new_up_class);
+        }
+    }
+}
+
