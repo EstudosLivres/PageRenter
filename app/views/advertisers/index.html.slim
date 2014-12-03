@@ -14,8 +14,9 @@
               .float_right.landmark =render 'campaigns/landmark'
 
               a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{campaign_i}"
-                img.campaign_brand src="#{@campaign.advertiser.avatar.url}"
-                = @campaign.name
+                i.prefix.success.fa.fa-caret-square-o-down
+                =image_tag(@campaign.advertiser.avatar.url, class:'campaign_brand')
+                =@campaign.name
                 -current_campaign_state = @campaign.current_state
                 -unless current_campaign_state.nil?
                   span class="badge alert-#{current_campaign_state.msg}"
