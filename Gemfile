@@ -8,6 +8,9 @@ group :useful do
 
   # Color to the prints on console (PUTS)
   gem 'colorize', '~> 0.7.1'
+
+  # To easy consume REST API
+  gem 'rest-client', '~> 1.7.2'
 end
 
 # PaymentMethods
@@ -47,7 +50,7 @@ group :user do
   gem "koala", "~> 1.10.0rc"
 
   # For global usage of Google API services, like Google+ & the URLShorter (Goo.gl)
-  gem "google-api-client", "~> 0.7.1"
+  gem 'google-api-client', '~> 0.7.1'
 end
 
 # GEMs with we use as client of it services
