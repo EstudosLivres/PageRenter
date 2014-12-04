@@ -18,7 +18,7 @@ class Profile < ActiveRecord::Base
   validates_attachment_size :avatar, less_than: 45.kilobyte
 
   # Constants
-  enum role_name: { publisher: 1, advertiser: 2, admin: 3 }
+  enum role_name: { admin: 1, publisher: 2, advertiser: 3 }
 
   # Return its name if exists, else return the user owner name
   def name
