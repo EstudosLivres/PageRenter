@@ -45,6 +45,9 @@ group :user do
 
   # Full Facebook API (including Graph API)
   gem "koala", "~> 1.10.0rc"
+
+  # For global usage of Google API services, like Google+ & the URLShorter (Goo.gl)
+  gem "google-api-client", "~> 0.7.1"
 end
 
 # GEMs with we use as client of it services
