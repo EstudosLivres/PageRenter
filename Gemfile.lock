@@ -286,7 +286,7 @@ DEPENDENCIES
   faker (~> 1.4.2)
   font-awesome-rails (~> 4.2.0.0)
   fql (~> 0.3.1)
-  gmaps4rails
+  gmaps4rails (~> 2.1.2)
   google-api-client (~> 0.7.1)
   its
   jbuilder (~> 1.2)

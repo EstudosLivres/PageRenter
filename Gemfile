@@ -66,8 +66,8 @@ group :build_front_end do
   # Easier & faster then ERB
   gem 'slim-rails', '~> 2.1.5'
 
-  # GoogleMaps GEM
-  gem 'gmaps4rails'
+  # GoogleMaps GEM (using Google maps API V3)
+  gem 'gmaps4rails', '~> 2.1.2'
 
   # Use SCSS for stylesheets
   gem 'sass-rails', '~> 4.0.0'
