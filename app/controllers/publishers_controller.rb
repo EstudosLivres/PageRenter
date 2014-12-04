@@ -44,7 +44,7 @@ class PublishersController < ApplicationController
     end
   end
 
-  # GET '/accesses/:publisher_username/:ad_id' -> register it access brought through it publisher
+  # GET '/accesses/:publisher_username/:ad_username' -> register it access brought through it publisher
   def brought_access
     begin
       # Register it access
