@@ -72,6 +72,7 @@ class BudgetsController < ApplicationController
     # Create objs to auxiliary on create forms
     def setup_aux_objs
       @campaign = Campaign.find(params[:campaign_id])
+      @card_flags = CardFlag.all
       @budget = @campaign.budgets.last
       @budget = Budget.new if @budget.nil?
       @currencies = Currency.all
@@ -80,7 +81,7 @@ class BudgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
-      budget_params_hash = params.require(:budget).permit(:value, :currency_id, :recurrence_period_id)
+      budget_params_hash = params.require(:budget).permit(:value, :currency_id, :recurrence_period_id, :card_flag_id)
       budget_params_hash[:activated] = true
       budget_params_hash[:closed_date] = nil
       budget_params_hash[:campaign_id] = params[:campaign_id]
