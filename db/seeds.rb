@@ -6,6 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+# CardFlags
+puts 'Inserting CardFlags...'.colorize(:green)
+  puts "\t #{CampaignType.find_or_create_by(name: 'visa')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'mastercard')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'elo')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'amex')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'diners')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'jcb')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'aura')}"
+puts "\t #{CampaignType.find_or_create_by(name: 'discover')}"
+puts '...CardFlags inserted.'.colorize(:light_blue)
+# /CardFlags
+
 # CampaignTypes
 puts 'Inserting CampaignTypes...'.colorize(:green)
   puts "\t #{CampaignType.find_or_create_by(name: 'link')}"
