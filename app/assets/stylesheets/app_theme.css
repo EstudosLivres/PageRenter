@@ -864,3 +864,15 @@ i.fa.icon_as_button {
 .box legend {
     color: #2A3AAA;
 }
+
+.form-group.flags {
+    margin-bottom: 55px;
+}
+
+.form-group.flags #card_label {
+    margin-top: 15px;
+}
+
+.flags img {
+    width: 100%;
+}
