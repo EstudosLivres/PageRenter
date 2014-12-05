@@ -6,5 +6,8 @@ class CreateCardFlags < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :card_flags, :name, unique: true
+    add_index :card_flags, :acronym, unique: true
   end
 end

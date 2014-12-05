@@ -132,6 +132,9 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.datetime "updated_at"
   end
 
+  add_index "card_flags", ["acronym"], name: "index_card_flags_on_acronym", unique: true, using: :btree
+  add_index "card_flags", ["name"], name: "index_card_flags_on_name", unique: true, using: :btree
+
   create_table "currencies", force: true do |t|
     t.string   "name",       limit: 55, null: false
     t.string   "acronym",    limit: 5,  null: false
