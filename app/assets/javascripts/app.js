@@ -1,6 +1,7 @@
 // SetUp datepicker for all data-behaviour
 $(document).ready(function(){
     setup_currency();
+    radio_img_select();
     setup_date_picker();
     setup_tooltips_types();
     focus_the_first_input();
@@ -135,5 +136,13 @@ function toggle_icon_orientation(){
             up_icon.addClass(new_up_class);
         }
     }
+}
+
+// Toggle between well & alert, when alert is success & same Height x Width of the Well
+function radio_img_select(element){
+    interacted_element = $(element);
+    img = interacted_element.find('img');
+    interacted_element.parent().parent().find('label').removeClass('alert alert-success');
+    interacted_element.addClass('alert alert-success');
 }
 
