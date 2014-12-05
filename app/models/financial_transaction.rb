@@ -24,9 +24,7 @@ class FinancialTransaction < ActiveRecord::Base
 
   # Return true if it is paid & false if it is not paid yet
   def paid?
-    false if self.remote_id.nil?
-    # TODO RentS request here!?
-    true unless self.remote_id.nil?
+    self.remote_id.nil? ? false : true
   end
 
   private
