@@ -13,8 +13,7 @@ span
 -if !budget.nil?
   span
     | |
-  -@transaction = budget.current_transaction
-  -if @transaction.paid?
+  -if @campaign.paid?
     -budget_class = 'currency success'
   -else
     -budget_class = 'currency warning'
