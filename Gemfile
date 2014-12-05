@@ -16,7 +16,7 @@ end
 # PaymentMethods
 group :payment do
   # PaymentMethod
-  gem 'rents', '~> 0.1.8'
+  gem 'rents', '~> 0.1.9'
   gem 'spring', '~> 1.1.3'
 end
 
