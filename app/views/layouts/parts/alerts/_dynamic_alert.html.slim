@@ -1,3 +1,7 @@
+-unless @alert_hash.nil?
+  -@alert_type = @alert_hash[:alert_type]
+  -@strong_msg = @alert_hash[:strong_msg]
+  -@msg = @alert_hash[:msg]
 div class="alert alert-#{@alert_type}"
   strong
     =@strong_msg
