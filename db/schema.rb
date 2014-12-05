@@ -90,12 +90,13 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   add_index "bids", ["currency_id"], name: "index_bids_on_currency_id", using: :btree
 
   create_table "budgets", force: true do |t|
-    t.boolean  "activated",                                    null: false
-    t.decimal  "value",                precision: 8, scale: 2, null: false
+    t.boolean  "activated",                                                null: false
+    t.decimal  "value",                            precision: 8, scale: 2, null: false
     t.datetime "closed_date"
-    t.integer  "currency_id",                                  null: false
-    t.integer  "campaign_id",                                  null: false
-    t.integer  "recurrence_period_id",                         null: false
+    t.string   "operator_url",         limit: 140
+    t.integer  "currency_id",                                              null: false
+    t.integer  "campaign_id",                                              null: false
+    t.integer  "recurrence_period_id",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
