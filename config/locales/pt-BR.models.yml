@@ -12,6 +12,8 @@ pt-BR:
           value: Valor do orçamento recorrente
           currency: Moeda (esta define também o público alvo)
           recurrence_period: Período de renovação do orçamento
+          card_flag_id: Bandeira do Cartão
+        card_flag_id: Bandeira do Cartão
       ad:
         avatar: Peça Publicitária
         labels:
@@ -75,3 +77,5 @@ pt-BR:
               blank: selecione uma moeda
             recurrence_period_id:
               blank: selecione o período de recorrência do orçamento
+            card_flag_id:
+              blank: não pode ficar em branco
