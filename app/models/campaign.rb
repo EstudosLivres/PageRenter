@@ -41,6 +41,11 @@ class Campaign < ActiveRecord::Base
     if budget.nil? then Budget.new else budget end
   end
 
+  # Check if the campaign is up to date with it payment
+  def paid?
+    current_budget.current_transaction.paid?
+  end
+
   private
     def count_ad_state state_name
       AdState.joins(:ad_history_states).joins(:ads).where('ad_states.name'=>state_name, 'ads.campaign_id'=>self.id).count
