@@ -18,9 +18,10 @@ class Budget < ActiveRecord::Base
   validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, :numericality => {:greater_than => 100, :less_than => 1000000000}, on: [:create, :update]
 
   # Validates Associations
-  validates :currency_id, presence: true, on: [:create]
-  validates :campaign_id, presence: true, on: [:create]
-  validates :recurrence_period_id, presence: true, on: [:create]
+  validates :currency_id, presence: true, on: [:create, :update]
+  validates :campaign_id, presence: true, on: [:create, :update]
+  validates :card_flag_id, presence: true, on: [:create, :update]
+  validates :recurrence_period_id, presence: true, on: [:create, :update]
 
   # Return the "active" transaction
   def current_transaction
