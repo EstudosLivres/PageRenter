@@ -8,14 +8,14 @@
 
 # CardFlags
 puts 'Inserting CardFlags...'.colorize(:green)
-  puts "\t #{CardFlag.find_or_create_by(name: 'visa')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'mastercard')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'elo')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'amex')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'diners')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'jcb')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'aura')}"
-  puts "\t #{CardFlag.find_or_create_by(name: 'discover')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'visa', acronym:'visa')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'MasterCard', acronym:'mastercard')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'Elo', acronym:'elo')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'American Express', acronym:'amex')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'Diners Club', acronym:'diners')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'JCB', acronym:'jcb')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'Aura', acronym:'aura')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'Discover', acronym:'discover')}"
 puts '...CardFlags inserted.'.colorize(:light_blue)
 # /CardFlags
 
