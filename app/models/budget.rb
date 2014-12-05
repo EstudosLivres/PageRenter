@@ -3,10 +3,12 @@ class Budget < ActiveRecord::Base
   belongs_to :currency
   belongs_to :campaign
   belongs_to :recurrence_period
+  belongs_to :card_flag
   has_many :financial_transactions
   # TODO has_many financial_transaction trough BudgetLaunches
 
   # Custom validations
+  before_validation :get_operator_url
   before_validation :correct_format_for_values
   before_validation :disable_last_budget, on: [:create]
 
@@ -44,6 +46,12 @@ class Budget < ActiveRecord::Base
         end
       end
     end
+
+    # SetUp it OperatorURL to be persisted
+    def get_operator_url
+
+    end
+
   # TODO activated significa que é o orçamento corrente este que o usuário está usando
   # TODO lembrar que os orçamentos nunca são editados, sempre são criados novos
 end

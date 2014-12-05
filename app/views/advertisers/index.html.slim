@@ -26,14 +26,14 @@
             .panel-body
               .panel-group
                 -if @campaign.budgets.last.nil?
-                  -@alert_hash = {type: 'danger', strong_msg: 'Error. ', msg: 'test'}
+                  -@alert_hash = {type: 'danger', strong_msg: 'Campanha inativa. ', msg: "Por favor configure seu <a class='charm' href='#{new_campaign_budget_path(@campaign.id)}'>orçamento</a> para que a campanha possa ser iniciada"}
                   =render 'layouts/parts/alerts/dynamic_alert'
                 -else
                   -if @campaign.paid?
                     -@alert_hash = {type: 'success', strong_msg: 'Ok. ', msg: 'test'}
                     =render 'layouts/parts/alerts/dynamic_alert'
                   -else
-                    -@alert_hash = {type: 'warning', strong_msg: 'NotOk. ', msg: 'test'}
+                    -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Para completar a configuração de seu orçamento acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
                     =render 'layouts/parts/alerts/dynamic_alert'
 
               -@campaign.ads.each_with_index do |ad, ad_i|
