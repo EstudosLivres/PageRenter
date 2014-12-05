@@ -39,6 +39,15 @@ i.fa.success:hover {
     text-decoration: underline;
 }
 
+.alert.alert-danger a {
+    color: #A94442;
+}
+
+.alert.alert-danger a:hover,
+.alert.alert-danger a:focus {
+    color: #CB1B19;
+}
+
 .currency.success, i.fa.success {
     color: #339D63;
 }
