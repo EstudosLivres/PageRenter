@@ -8,14 +8,14 @@
 
 # CardFlags
 puts 'Inserting CardFlags...'.colorize(:green)
-  puts "\t #{CampaignType.find_or_create_by(name: 'visa')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'mastercard')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'elo')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'amex')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'diners')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'jcb')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'aura')}"
-puts "\t #{CampaignType.find_or_create_by(name: 'discover')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'visa')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'mastercard')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'elo')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'amex')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'diners')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'jcb')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'aura')}"
+  puts "\t #{CardFlag.find_or_create_by(name: 'discover')}"
 puts '...CardFlags inserted.'.colorize(:light_blue)
 # /CardFlags
 
