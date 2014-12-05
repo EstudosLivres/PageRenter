@@ -4,7 +4,7 @@ $(document).ready(function(){
     radio_img_select();
     setup_date_picker();
     setup_tooltips_types();
-    focus_the_first_input();
+    focus_all_currency_mask();
     toggle_icon_orientation();
     add_alert_to_form_error();
     prevent_click_on_disabled();
@@ -90,10 +90,14 @@ function setup_currency() {
 }
 
 // Focus the first input on the form
-function focus_the_first_input() {
+function focus_all_currency_mask() {
     setTimeout(function(){
-        $($('form input')[3]).focus();
-    }, 300);
+        masks = $('.currency_mask');
+        masks.focus();
+
+        // Focus all masks
+        for(var i=0; i<masks.length; i++) $(masks[i]).focus();
+    }, 500);
 }
 
 // Toggle the icons bottom to up & up to bottom
