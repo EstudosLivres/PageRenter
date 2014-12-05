@@ -110,4 +110,9 @@ module ApplicationHelper
   def translate_it_model(model_name)
     I18n.t("activerecord.models.#{model_name}")
   end
+
+  # Generate the URL that retrieve it CreditCardFlag based on it acronym, like on the operator
+  def generate_card_flag acronym
+    "https://qasecommerce.cielo.com.br/web/imgs/#{acronym}_logo.gif"
+  end
 end
