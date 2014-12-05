@@ -6,6 +6,17 @@
         - @budget.errors.full_messages.each do |message|
           li = message
 
+  .form-group.row.flags
+    #card_label.col-md-3
+      Strong= "Selecione a bandeira do Cartão:"
+    -@card_flags.each do |card_flag|
+      .col-md-1
+        =f.radio_button :card_flag_id, card_flag.id, class:'hide'
+        -card_class = ''
+        -card_class = 'alert alert-success' if @budget.card_flag_id == card_flag.id
+        label class="#{card_class}" for="budget_card_flag_id_#{card_flag.id}" onclick="radio_img_select(this)"
+          =image_tag("cards/#{card_flag.acronym}.png")
+
   .form-group.col-md-4
     center
       = f.label :value, translate_it_label('budget', 'value')
