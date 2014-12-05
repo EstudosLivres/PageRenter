@@ -92,16 +92,18 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   create_table "budgets", force: true do |t|
     t.boolean  "activated",                                                null: false
     t.decimal  "value",                            precision: 8, scale: 2, null: false
-    t.datetime "closed_date"
     t.string   "operator_url",         limit: 140
+    t.datetime "closed_date"
     t.integer  "currency_id",                                              null: false
     t.integer  "campaign_id",                                              null: false
+    t.integer  "card_flag_id",                                             null: false
     t.integer  "recurrence_period_id",                                     null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "budgets", ["campaign_id"], name: "index_budgets_on_campaign_id", using: :btree
+  add_index "budgets", ["card_flag_id"], name: "index_budgets_on_card_flag_id", using: :btree
   add_index "budgets", ["currency_id"], name: "index_budgets_on_currency_id", using: :btree
   add_index "budgets", ["recurrence_period_id"], name: "index_budgets_on_recurrence_period_id", using: :btree
 
@@ -122,6 +124,13 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   end
 
   add_index "campaigns", ["advertiser_id"], name: "index_campaigns_on_advertiser_id", using: :btree
+
+  create_table "card_flags", force: true do |t|
+    t.string   "name",       limit: 30, null: false
+    t.string   "acronym",    limit: 30, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "currencies", force: true do |t|
     t.string   "name",       limit: 55, null: false
