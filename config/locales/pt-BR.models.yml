@@ -73,6 +73,8 @@ pt-BR:
               blank: não pode ficar em branco
               not_a_number: deve ser um número
               invalid: deve conter os centavos
+              less_than: muito alto
+              greater_than: muito baixo
             currency_id:
               blank: selecione uma moeda
             recurrence_period_id:
