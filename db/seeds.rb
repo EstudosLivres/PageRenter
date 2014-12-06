@@ -8,7 +8,7 @@
 
 # CardFlags
 puts 'Inserting CardFlags...'.colorize(:green)
-  puts "\t #{CardFlag.find_or_create_by(name:'visa', acronym:'visa')}"
+  puts "\t #{CardFlag.find_or_create_by(name:'VISA', acronym:'visa')}"
   puts "\t #{CardFlag.find_or_create_by(name:'MasterCard', acronym:'mastercard')}"
   puts "\t #{CardFlag.find_or_create_by(name:'Elo', acronym:'elo')}"
   puts "\t #{CardFlag.find_or_create_by(name:'American Express', acronym:'amex')}"
