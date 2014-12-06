@@ -5,7 +5,6 @@ class Budget < ActiveRecord::Base
   belongs_to :recurrence_period
   belongs_to :card_flag
   has_many :financial_transactions
-  # TODO has_many financial_transaction trough BudgetLaunches
 
   # Custom validations
   before_validation :get_operator_url
@@ -15,7 +14,7 @@ class Budget < ActiveRecord::Base
   # Rails validations
   validates :closed_date, presence: true, on: :update
   # The 100 means 1,00 or 1.00 on the Operator, it means 1 currency unity
-  validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, :numericality => {:greater_than => 100, :less_than => 1000000000}, on: [:create, :update]
+  validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 10, less_than: 100000}, on: [:create, :update]
 
   # Validates Associations
   validates :currency_id, presence: true, on: [:create, :update]
@@ -29,11 +28,15 @@ class Budget < ActiveRecord::Base
     if transaction.nil? then FinancialTransaction.new else transaction end
   end
 
+  def operator_value_str
+    Currency.to_operator_str self.value
+  end
+
   # =============================== Private methods for callbakcs ============================
   private
     # SetUp it attrs to it correct values_format
     def correct_format_for_values
-      self.value = Currency.to_operator_str self.value
+      self.value = Currency.to_decimal self.value
     end
 
     # The budget have a history, so can't be UPDATED neither be DESTROYED
