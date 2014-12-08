@@ -20,7 +20,7 @@
   .form-group.col-md-4
     center
       = f.label :value, translate_it_label('budget', 'value')
-    = f.text_field :value, class:'form-control currency_mask', placeholder:'Orçamento da campanha & seus Anúncios', 'data-thousands'=>'.', 'data-decimal'=>','
+    = f.text_field :value, value: @budget.operator_value_str, class:'form-control currency_mask', placeholder:'Orçamento da campanha & seus Anúncios', 'data-thousands'=>'.', 'data-decimal'=>','
   .form-group.col-md-4
     center
       = f.label :currency, translate_it_label('budget', 'currency')
