@@ -21,7 +21,7 @@ elsif Rails.env.production?
   Rents.app_id = ''
   Rents.secret_key = ''
 
-  # For production remember to keep it false
+  # For production remember to keep it false or just remove it
   Rents.test_env = false
   Rents.debugger = false
 end
