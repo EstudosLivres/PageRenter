@@ -4,14 +4,14 @@ describe "budgets/index" do
   before(:each) do
     assign(:budgets, [
       stub_model(Budget,
-        :activated => false,
+        :active => false,
         :value => 1,
         :currency => nil,
         :campaign => nil,
         :recurrence_period => nil
       ),
       stub_model(Budget,
-        :activated => false,
+        :active => false,
         :value => 1,
         :currency => nil,
         :campaign => nil,

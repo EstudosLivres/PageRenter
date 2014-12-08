@@ -4,7 +4,7 @@ describe "budgets/index" do
   before(:each) do
     assign(:budgets, [
       stub_model(Budget,
-        :activated => false,
+        :active => false,
         :value => false,
         :close_date => "Close Date",
         :currency => nil,
@@ -12,7 +12,7 @@ describe "budgets/index" do
         :recurrence_period => nil
       ),
       stub_model(Budget,
-        :activated => false,
+        :active => false,
         :value => false,
         :close_date => "Close Date",
         :currency => nil,

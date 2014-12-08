@@ -3,7 +3,7 @@ require 'spec_helper'
 describe "budgets/edit" do
   before(:each) do
     @budget = assign(:budget, stub_model(Budget,
-      :activated => false,
+      :active => false,
       :value => false,
       :close_date => "MyString",
       :currency => nil,
