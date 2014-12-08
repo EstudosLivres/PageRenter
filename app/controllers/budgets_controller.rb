@@ -31,7 +31,7 @@ class BudgetsController < ApplicationController
         format.html { redirect_to root_url, notice: {type: :success, strong: 'Congratulations!', msg: 'Budget was successfully updated.'} }
         format.json { render action: 'show', status: :created, location: @budget }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', notice: {type: :danger, strong: 'Oops!', msg: 'Something went wrong.'} }
         format.json { render json: @budget.errors, status: :unprocessable_entity }
       end
     end
@@ -47,7 +47,7 @@ class BudgetsController < ApplicationController
         format.html { redirect_to root_url, notice: {type: :success, strong: 'Congratulations!', msg: 'Budget was successfully updated.'} }
         format.json { render action: 'show', status: :created, location: @budget }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', notice: {type: :danger, strong: 'Oops!', msg: 'Something went wrong.'} }
         format.json { render json: @budget.errors, status: :unprocessable_entity }
       end
     end
