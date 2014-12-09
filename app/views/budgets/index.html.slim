@@ -16,7 +16,7 @@ table
   tbody
     - @budgets.each do |budget|
       tr
-        td = budget.activated
+        td = budget.active
         td = budget.value
         td = budget.closed_date
         td = budget.currency
