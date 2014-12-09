@@ -35,7 +35,7 @@ class Campaign < ActiveRecord::Base
     return AdState.where(name:'pending').take if pending_count >= 1
   end
 
-  # Current Budget activated
+  # Current Budget active
   def current_budget
     budget = self.budgets.last
     if budget.nil? then Budget.new else budget end
