@@ -1,8 +1,8 @@
 class CreateFinancialTransactions < ActiveRecord::Migration
   def change
     create_table :financial_transactions do |t|
-      # It value must be in integer syntax, like the operator requires (int and last 2 characters are the cents)
-      t.string :value, limit: 10, null: false
+      # It value is an integer, but it real value is it /100, like 100 means R$ 1,00
+      t.integer :value, limit: 8, null: false
       # Default is false = user_payment, true = user_receipt
       t.boolean :withdraw, null: false
       # Sent to the Gateway, but is saved just it string name

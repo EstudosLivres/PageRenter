@@ -1,8 +1,8 @@
 class CreateBudgets < ActiveRecord::Migration
   def change
     create_table :budgets do |t|
-      t.boolean :activated, null: false
-      t.decimal :value, precision: 8, scale: 2, null: false
+      t.boolean :active, null: false
+      t.integer :value, limit: 8, null: false
       t.string :operator_url, limit: 140, null: true
       t.datetime :closed_date, null: true
       t.belongs_to :currency, index: true, null: false

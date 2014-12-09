@@ -75,13 +75,13 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   add_index "banned_ad_histories", ["user_id"], name: "index_banned_ad_histories_on_user_id", using: :btree
 
   create_table "bids", force: true do |t|
-    t.decimal  "per_visitation",          precision: 4, scale: 2, null: false
-    t.decimal  "per_foreign_interaction", precision: 4, scale: 2, null: false
-    t.decimal  "per_local_interaction",   precision: 4, scale: 2, null: false
-    t.decimal  "per_conversion",          precision: 4, scale: 2, null: false
-    t.decimal  "per_impression",          precision: 4, scale: 2
-    t.integer  "ad_id",                                           null: false
-    t.integer  "currency_id",                                     null: false
+    t.integer  "per_visitation",          null: false
+    t.integer  "per_foreign_interaction", null: false
+    t.integer  "per_local_interaction",   null: false
+    t.integer  "per_conversion",          null: false
+    t.integer  "per_impression"
+    t.integer  "ad_id",                   null: false
+    t.integer  "currency_id",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -90,14 +90,14 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   add_index "bids", ["currency_id"], name: "index_bids_on_currency_id", using: :btree
 
   create_table "budgets", force: true do |t|
-    t.boolean  "activated",                                                null: false
-    t.decimal  "value",                            precision: 8, scale: 2, null: false
+    t.boolean  "active",                           null: false
+    t.integer  "value",                limit: 8,   null: false
     t.string   "operator_url",         limit: 140
     t.datetime "closed_date"
-    t.integer  "currency_id",                                              null: false
-    t.integer  "campaign_id",                                              null: false
-    t.integer  "card_flag_id",                                             null: false
-    t.integer  "recurrence_period_id",                                     null: false
+    t.integer  "currency_id",                      null: false
+    t.integer  "campaign_id",                      null: false
+    t.integer  "card_flag_id",                     null: false
+    t.integer  "recurrence_period_id",             null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -145,7 +145,7 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   end
 
   create_table "financial_transactions", force: true do |t|
-    t.string   "value",          limit: 10, null: false
+    t.integer  "value",          limit: 8,  null: false
     t.boolean  "withdraw",                  null: false
     t.string   "payment_method", limit: 50, null: false
     t.integer  "remote_id",                 null: false
