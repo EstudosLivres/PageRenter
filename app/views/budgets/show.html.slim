@@ -1,7 +1,7 @@
 p#notice = notice
 
 p
-  strong Activated:
+  strong Active:
   = @budget.active
 p
   strong Value:
@@ -18,7 +18,3 @@ p
 p
   strong Recurrence period:
   = @budget.recurrence_period
-
-= link_to 'Edit', edit_budget_path(@budget)
-'|
-= link_to 'Back', budgets_path
