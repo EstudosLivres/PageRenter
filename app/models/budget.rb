@@ -7,12 +7,10 @@ class Budget < ActiveRecord::Base
   has_many :financial_transactions
 
   # Custom validations
-  before_validation :get_operator_url
   before_validation :correct_format_for_values
   before_validation :disable_last_budget, on: [:create]
 
   # Rails validations
-  validates :closed_date, presence: true, on: :update
   # The 100 means 1,00 or 1.00 on the Operator, it means 1 currency unity (it is mult 100 because the 100 are the cents, so 10*100 is just 10 R$/US$...)
   validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 50*100, less_than: 100000*100}, on: [:create, :update]
 
@@ -21,6 +19,9 @@ class Budget < ActiveRecord::Base
   validates :campaign_id, presence: true, on: [:create, :update]
   validates :card_flag_id, presence: true, on: [:create, :update]
   validates :recurrence_period_id, presence: true, on: [:create, :update]
+
+  # Callbacks after persistence events
+  after_save :get_operator_url
 
   # Return the "active" transaction
   def current_transaction
@@ -38,6 +39,14 @@ class Budget < ActiveRecord::Base
   def value
     # it is the real value, like 100, means R$1,00
     read_attribute(:value).to_f/100 if read_attribute(:value)
+  end
+
+  # Validate the payment of the Budget, based on it RID.
+  # RID is the PaymentID on the RentS
+  def validate_payment_of
+    rid = self.id_on_operator
+    transaction = Rents::Transaction.new(rid:rid)
+    transaction.verify
   end
 
   # =============================== Private methods for callbakcs ============================
@@ -61,7 +70,41 @@ class Budget < ActiveRecord::Base
 
     # SetUp it OperatorURL to be persisted
     def get_operator_url
+      # Prevent update in loop
+      return if self.operator_url && self.id_on_operator
 
+      # Setup vars
+      amount = self.value
+      card_flag_name = self.card_flag.acronym
+      redirect_validate_url = Rails.application.routes.url_helpers.campaign_budget_payment_validation_path(1, 1)
+
+      # Operator params
+      operator_params = {
+          # Card obj
+          card:{
+              flag:card_flag_name
+          },
+
+          # Transaction attrs
+          amount:amount,
+          redirect_link:redirect_validate_url
+      }
+
+      # Charge the transaction
+      transaction = Rents::Transaction.new(operator_params)
+      transaction.charge_page
+
+      # Save those information retrieved
+      self.id_on_operator = transaction.rid
+      self.operator_url = transaction.purchase_url
+
+      # persist it
+      saved = self.save
+
+      unless saved
+        self.errors.add('Operator attrs', 'impossible to be saved')
+        raise ActiveRecord::Rollback
+      end
     end
 
   # TODO active significa que é o orçamento corrente este que o usuário está usando
