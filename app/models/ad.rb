@@ -50,7 +50,7 @@ class Ad < ActiveRecord::Base
     self.campaign.advertiser
   end
 
-  # Return it current activated Bid
+  # Return it current active Bid
   def bid
     self.bids.last.nil? ? Bid.new : self.bids.last
   end
