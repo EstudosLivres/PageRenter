@@ -22,9 +22,9 @@ table
         td = budget.currency
         td = budget.campaign
         td = budget.recurrence_period
-        td = link_to 'Show', budget
-        td = link_to 'Edit', edit_budget_path(budget)
-        td = link_to 'Destroy', budget, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Show', campaign_budget_path(@campaign.id, budget.id)
+        td = link_to 'Edit', new_campaign_budget_path(@campaign.id)
+        td = link_to 'Destroy', campaign_budget_path(@campaign.id, budget.id), data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
