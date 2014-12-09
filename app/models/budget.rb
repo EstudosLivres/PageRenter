@@ -21,7 +21,7 @@ class Budget < ActiveRecord::Base
   validates :recurrence_period_id, presence: true, on: [:create, :update]
 
   # Callbacks after persistence events
-  after_save :get_operator_url
+  after_save :setup_first_transaction
 
   # Return the "active" transaction
   def current_transaction
@@ -49,6 +49,11 @@ class Budget < ActiveRecord::Base
     transaction.verify
   end
 
+  # Return it last transaction with a purchase url
+  def operator_url
+    self.financial_transactions.where.not(operator_url:nil).last.operator_url
+  end
+
   # =============================== Private methods for callbakcs ============================
   private
     # SetUp it attrs to it correct values_format
@@ -69,9 +74,9 @@ class Budget < ActiveRecord::Base
     end
 
     # SetUp it OperatorURL to be persisted
-    def get_operator_url
-      # Prevent update in loop
-      return if self.operator_url && self.id_on_operator
+    def setup_first_transaction
+      # Prevent it method in loop
+      return unless self.financial_transactions.empty?
 
       # Setup vars
       amount = self.value
@@ -93,10 +98,23 @@ class Budget < ActiveRecord::Base
       # Charge the transaction
       transaction = Rents::Transaction.new(operator_params)
       transaction.charge_page
+      resp = transaction.resp
+      status_name = resp[:status][:name]
+      status_code = transaction.resp[:status][:code]
+
+      # Params to create it financial
+      financial_params = {
+        value: amount,
+        payment_method: 'credit_card',
+        remote_id: transaction.rid,
+        status_name: status_name,
+        status_code: status_code,
+        operator_url: transaction.purchase_url,
+        currency_id: self.currency_id
+      }
 
       # Save those information retrieved
-      self.id_on_operator = transaction.rid
-      self.operator_url = transaction.purchase_url
+      self.financial_transactions << FinancialTransaction.new(financial_params)
 
       # persist it
       saved = self.save
