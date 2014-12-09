@@ -33,7 +33,7 @@
                     -@alert_hash = {type: 'success', strong_msg: 'Ok. ', msg: 'test'}
                     =render 'layouts/parts/alerts/dynamic_alert'
                   -else
-                    -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Para completar a configuração de seu orçamento acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
+                    -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Sua campanha só estará disponível após completar a configuração de seu orçamento, para isso acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
                     =render 'layouts/parts/alerts/dynamic_alert'
 
               -@campaign.ads.each_with_index do |ad, ad_i|
