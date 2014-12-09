@@ -151,7 +151,6 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.string   "status_name",    limit: 25,  null: false
     t.integer  "status_code",                null: false
     t.string   "operator_url",   limit: 140
-    t.integer  "id_on_gateway"
     t.integer  "payer"
     t.integer  "receiver"
     t.integer  "budget_id"

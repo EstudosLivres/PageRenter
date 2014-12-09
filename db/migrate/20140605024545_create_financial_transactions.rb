@@ -7,7 +7,7 @@ class CreateFinancialTransactions < ActiveRecord::Migration
       t.boolean :withdraw, null: false
       # Sent to the Gateway, but is saved just it string name
       t.string :payment_method, limit: 50, null: false
-      # It reference on the Gateway
+      # ID on the Gateway, on the RentS it is the RID
       t.integer :remote_id, null: false
       # It status_name on the Gateway
       t.string :status_name, limit: 25, null: false
@@ -15,8 +15,6 @@ class CreateFinancialTransactions < ActiveRecord::Migration
       t.integer :status_code, null: false
       # The URL to be charged on the operator
       t.string :operator_url, limit: 140, null: true
-      # ID on the Gateway, on the RentS it is the RID
-      t.integer :id_on_gateway, null: true
 
       # CustomAssociations
       t.integer :payer, index: true, null: true
