@@ -16,7 +16,10 @@ span
   -if @campaign.paid?
     -budget_class = 'currency success'
   -else
-    -budget_class = 'currency warning'
+    -if @campaign.current_budget.current_transaction.status_name != 'error'
+      -budget_class = 'currency warning'
+    -elsif @campaign.current_budget.current_transaction.status_name == 'error'
+      -budget_class = 'currency danger'
 
   span class="#{budget_class}"
     = "#{number_to_currency(budget.value, unit: "#{budget.currency.acronym} ", separator: ',', delimiter: '.') } - "

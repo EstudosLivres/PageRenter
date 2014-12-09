@@ -33,9 +33,12 @@
                     -@alert_hash = {type: 'success', strong_msg: 'Ok. ', msg: 'test'}
                     =render 'layouts/parts/alerts/dynamic_alert'
                   -else
-                    -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Sua campanha só estará disponível após completar a configuração de seu orçamento, para isso acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
-                    =render 'layouts/parts/alerts/dynamic_alert'
-
+                    -if @campaign.current_budget.current_transaction.status_name != 'pending'
+                      -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Sua campanha só estará disponível após completar a configuração de seu orçamento, para isso acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
+                      =render 'layouts/parts/alerts/dynamic_alert'
+                    -elsif @campaign.current_budget.current_transaction.status_name == 'error'
+                      -@alert_hash = {type: 'danger', strong_msg: 'Wow went something wrong!', msg: "Seu pagamento não pode ser efetuado com o meio de pagamento atual, atualize-o: <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
+                      =render 'layouts/parts/alerts/dynamic_alert'
               -@campaign.ads.each_with_index do |ad, ad_i|
                 -@ad = ad
                 .panel.panel-default
