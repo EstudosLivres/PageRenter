@@ -26,7 +26,12 @@ PageRenter::Application.routes.draw do
     # TODO create Briefing resource
     get '/briefing' => 'advertisers#index', as: :create_briefing
     resources :campaigns, except: [:destroy] do
-      resources :budgets, except: [:edit, :destroy]
+      # Budget scope
+      resources :budgets, except: [:edit, :destroy] do
+        get 'payment_validation' => 'budgets#payment_validation', as: :payment_validation
+      end
+
+      # Ad scope
       resources :ads, except: [:destroy] do
         resources :accesses, only: [:index, :show]
         resources :bids, except: [:destroy]
