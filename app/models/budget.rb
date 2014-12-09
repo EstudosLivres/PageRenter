@@ -31,7 +31,7 @@ class Budget < ActiveRecord::Base
   # Method to print the value on the masked form
   def operator_value_str
     return self.value if Rents::Currency.have_cents? self.value if self.value
-    self.value*10 # it is to convert the int float, like 1.0 to 1.00
+    self.value*10 if self.value  # it is to convert the int float, like 1.0 to 1.00
   end
 
   # ActiveRecord Get Method overwrite to print the real value, not the operator value
