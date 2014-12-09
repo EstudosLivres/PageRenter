@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.integer  "value",                limit: 8,   null: false
     t.string   "operator_url",         limit: 140
     t.datetime "closed_date"
+    t.integer  "id_on_operator"
     t.integer  "currency_id",                      null: false
     t.integer  "campaign_id",                      null: false
     t.integer  "card_flag_id",                     null: false
