@@ -1,6 +1,6 @@
 class BudgetsController < ApplicationController
   before_action :set_budget, only: [:show, :edit, :update, :destroy]
-  before_action :setup_aux_objs, only: [:new, :create, :edit, :update]
+  before_action :setup_aux_objs
 
   # GET /budgets
   # GET /budgets.json
@@ -15,6 +15,10 @@ class BudgetsController < ApplicationController
 
   # GET /budgets/new
   def new
+    # Check if it is on security URL
+    if request.url.index('https://').nil? && Rails.env.production?
+      redirect_to request.url.gsub! 'http://', 'https://'
+    end
   end
 
   # GET /budgets/1/edit
@@ -61,6 +65,12 @@ class BudgetsController < ApplicationController
       format.html { redirect_to budgets_url }
       format.json { head :no_content }
     end
+  end
+
+  # GET /budgets/1/payment_validation/:rid
+  def payment_validation
+    # RID is the PaymentID on the RentS
+    @budget.validate_payment
   end
 
   private
