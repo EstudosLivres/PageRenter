@@ -13,6 +13,10 @@ class CreateFinancialTransactions < ActiveRecord::Migration
       t.string :status_name, limit: 25, null: false
       # It status_code on the Gateway
       t.integer :status_code, null: false
+      # The URL to be charged on the operator
+      t.string :operator_url, limit: 140, null: true
+      # ID on the Gateway, on the RentS it is the RID
+      t.integer :id_on_gateway, null: true
 
       # CustomAssociations
       t.integer :payer, index: true, null: true

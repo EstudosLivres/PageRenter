@@ -90,15 +90,13 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   add_index "bids", ["currency_id"], name: "index_bids_on_currency_id", using: :btree
 
   create_table "budgets", force: true do |t|
-    t.boolean  "active",                           null: false
-    t.integer  "value",                limit: 8,   null: false
-    t.string   "operator_url",         limit: 140
-    t.integer  "id_on_operator"
+    t.boolean  "active",                         null: false
+    t.integer  "value",                limit: 8, null: false
     t.datetime "closed_date"
-    t.integer  "currency_id",                      null: false
-    t.integer  "campaign_id",                      null: false
-    t.integer  "card_flag_id",                     null: false
-    t.integer  "recurrence_period_id",             null: false
+    t.integer  "currency_id",                    null: false
+    t.integer  "campaign_id",                    null: false
+    t.integer  "card_flag_id",                   null: false
+    t.integer  "recurrence_period_id",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -146,16 +144,18 @@ ActiveRecord::Schema.define(version: 20141110173921) do
   end
 
   create_table "financial_transactions", force: true do |t|
-    t.integer  "value",          limit: 8,  null: false
-    t.boolean  "withdraw",                  null: false
-    t.string   "payment_method", limit: 50, null: false
-    t.integer  "remote_id",                 null: false
-    t.string   "status_name",    limit: 25, null: false
-    t.integer  "status_code",               null: false
+    t.integer  "value",          limit: 8,   null: false
+    t.boolean  "withdraw",                   null: false
+    t.string   "payment_method", limit: 50,  null: false
+    t.integer  "remote_id",                  null: false
+    t.string   "status_name",    limit: 25,  null: false
+    t.integer  "status_code",                null: false
+    t.string   "operator_url",   limit: 140
+    t.integer  "id_on_gateway"
     t.integer  "payer"
     t.integer  "receiver"
     t.integer  "budget_id"
-    t.integer  "currency_id",               null: false
+    t.integer  "currency_id",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
