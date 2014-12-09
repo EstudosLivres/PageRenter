@@ -82,10 +82,10 @@ class BudgetsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
       budget_params_hash = params.require(:budget).permit(:value, :currency_id, :recurrence_period_id, :card_flag_id)
-      budget_params_hash[:activated] = true
+      budget_params_hash[:active] = true
       budget_params_hash[:closed_date] = nil
       budget_params_hash[:campaign_id] = params[:campaign_id]
-      budget_params_hash[:value] = budget_params_hash[:value].remove('.').remove(',')
+      budget_params_hash[:value] = Rents::Currency.to_operator_str budget_params_hash[:value]
       return budget_params_hash
     end
 end
