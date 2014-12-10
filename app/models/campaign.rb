@@ -46,6 +46,12 @@ class Campaign < ActiveRecord::Base
     current_budget.current_transaction.paid?
   end
 
+  # =============================== STATICs AUX METHODs ============================
+  def self.actives
+    self.where('launch_date <= now() AND end_date >= now()')
+  end
+
+  # =============================== Useful callbacks ---============================
   private
     def count_ad_state state_name
       AdState.joins(:ad_history_states).joins(:ads).where('ad_states.name'=>state_name, 'ads.campaign_id'=>self.id).count
