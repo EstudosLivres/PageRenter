@@ -13,7 +13,7 @@ class FinancialTransaction < ActiveRecord::Base
   validates :value, length: { in: 2..10 }, presence: true, on: [:create, :update] # 2 chars means it cents
   validates_inclusion_of :withdraw, in: [true, false], on: [:create, :update] # means if it is Page earn or User earn
   validates :payment_method, length: { in: 5..50 }, presence: true, on: [:create, :update]
-  validates :remote_id, presence: true, on: [:update]
+  validates :remote_id, presence: true, on: [:create, :update]
 
   # Validates Associations
   validates :currency_id, presence: true, on: [:create, :update]
