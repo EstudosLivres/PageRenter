@@ -27,9 +27,7 @@ PageRenter::Application.routes.draw do
     get '/briefing' => 'advertisers#index', as: :create_briefing
     resources :campaigns, except: [:destroy] do
       # Budget scope
-      resources :budgets, except: [:edit, :destroy] do
-        get 'payment_validation' => 'budgets#payment_validation', as: :payment_validation
-      end
+      resources :budgets, except: [:edit, :destroy]
 
       # Ad scope
       resources :ads, except: [:destroy] do

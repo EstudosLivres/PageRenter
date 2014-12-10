@@ -83,7 +83,7 @@ class Budget < ActiveRecord::Base
       # Setup vars
       amount = self.value
       card_flag_name = self.card_flag.acronym
-      redirect_validate_url = "http://#{ApplicationController.host}#{Rails.application.routes.url_helpers.campaign_budget_payment_validation_path(1, 1)}"
+      redirect_validate_url = "http://#{ApplicationController.host}#{Rails.application.routes.advertiser_root}?paid=true&campaign=#{self.campaign.name}"
 
       # Operator params
       operator_params = {

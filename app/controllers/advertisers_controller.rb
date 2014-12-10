@@ -6,6 +6,7 @@ class AdvertisersController < ApplicationController
   # Root for Advertiser user
   def index
     @campaigns = @current_user.advertiser.campaigns
+    flash[:notice] = {type: :success, strong: 'Congratulations!', msg: "Budget charged. Check if your Campaign <strong>#{params[:campaign]}</strong> was updated."} if params[:paid] == 'true'
   end
 
   # Configuration for Advertiser user

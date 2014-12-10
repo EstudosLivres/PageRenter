@@ -67,12 +67,6 @@ class BudgetsController < ApplicationController
     end
   end
 
-  # GET /budgets/1/payment_validation/:rid
-  def payment_validation
-    # RID is the PaymentID on the RentS
-    @budget.validate_payment
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_budget
