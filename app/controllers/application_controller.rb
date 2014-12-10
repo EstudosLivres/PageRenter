@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  @@host # Static var to be able to access what is it host from models
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_or_token # SetUp user devise if
@@ -17,9 +18,15 @@ class ApplicationController < ActionController::Base
 
     # Validate user session if is not API call
     def authenticate_or_token
+      @@host = request.host_with_port
       return if params[:action].index('login') || params[:action] == 'brought_access'
       authenticate_user! if params[:controller].index('api').nil? && request.fullpath != root_path
       @current_user = current_user
+    end
+
+    # return it static host (it is to have the host on the model)
+    def self.host
+      @@host
     end
 
     # TODO those methods must be on the controllers which it is need
