@@ -41,17 +41,14 @@ class Budget < ActiveRecord::Base
     read_attribute(:value).to_f/100 if read_attribute(:value)
   end
 
-  # Validate the payment of the Budget, based on it RID.
-  # RID is the PaymentID on the RentS
-  def validate_payment_of
-    rid = self.id_on_operator
-    transaction = Rents::Transaction.new(rid:rid)
-    transaction.verify
+  # Check if it last financial transaction was charged
+  def paid?
+    current_transaction
   end
 
   # Return it last transaction with a purchase url
   def operator_url
-    self.financial_transactions.where.not(operator_url:nil).last.operator_url
+    current_operator_transaction.operator_url
   end
 
   # =============================== Private methods for callbakcs ============================
@@ -73,6 +70,11 @@ class Budget < ActiveRecord::Base
       end
     end
 
+    # Current active transaction with it
+    def current_operator_transaction
+      self.financial_transactions.where.not(operator_url:nil).last
+    end
+
     # SetUp it OperatorURL to be persisted
     def setup_first_transaction
       # Prevent it method in loop
@@ -81,7 +83,7 @@ class Budget < ActiveRecord::Base
       # Setup vars
       amount = self.value
       card_flag_name = self.card_flag.acronym
-      redirect_validate_url = Rails.application.routes.url_helpers.campaign_budget_payment_validation_path(1, 1)
+      redirect_validate_url = "#{ApplicationController.host}#{Rails.application.routes.url_helpers.campaign_budget_payment_validation_path(1, 1)}"
 
       # Operator params
       operator_params = {
