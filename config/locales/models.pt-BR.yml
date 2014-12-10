@@ -2,11 +2,17 @@ pt-BR:
   activerecord:
     models:
       campaign: Campanha
+      budget: Orçamento
+      financial_transaction: Transação Financeira
     attributes:
       campaign:
         name: Nome
         launch_date: Data de início
         end_date: Data de término
+      financial_transaction:
+        remote_id: RID
+      budget:
+        financial_transactions: Transações financeiras
     advertiser: Advertiser
     publisher: Publisher
     campaign: Campanha
