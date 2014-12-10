@@ -60,6 +60,8 @@ class Budget < ActiveRecord::Base
 
     # The budget have a history, so can't be UPDATED neither be DESTROYED
     def disable_last_budget
+      # Only on the creation it receive active as true
+      self.active = true if self.id.nil?
       last_budget = self.campaign.budgets.last
       unless last_budget.nil?
         begin
