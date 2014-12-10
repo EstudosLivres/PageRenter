@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.integer  "per_local_interaction",   null: false
     t.integer  "per_conversion",          null: false
     t.integer  "per_impression"
+    t.boolean  "active",                  null: false
+    t.datetime "closed_date"
     t.integer  "ad_id",                   null: false
     t.integer  "currency_id",             null: false
     t.datetime "created_at"

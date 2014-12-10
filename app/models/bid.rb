@@ -4,6 +4,7 @@ class Bid < ActiveRecord::Base
   belongs_to :currency
 
   # Custom validations
+  before_validation :disable_last_bid, on: [:create]
 
   # Rails validations TODO: validate the min paid
   # The *100 means the cents. The 1*100 is a R$/US$ 1,00, to only 1 cents it need to be 0.01*100
@@ -28,9 +29,24 @@ class Bid < ActiveRecord::Base
     read_attribute(attr_symbol).to_f/100 if read_attribute(attr_symbol)
   end
 
-
   # Return currency full name if there is a currency associated
   def it_currency
     currency.nil? ? nil : currency.acronym_with_name
   end
+
+  # =============================== Callbacks ============================
+  private
+    # The bid cannot be UPDATED, always save a new one
+    def disable_last_bid
+      # Only on the creation it receive active as true
+      self.active = true if self.id.nil?
+      last_bid = self.ad.bids.last
+      unless last_bid.nil?
+        begin
+          last_bid.update(active:false, closed_date:"#{Time.now()}")
+        rescue => e
+          self.errors.messages.add(e.message)
+        end
+      end
+    end
 end
