@@ -29,7 +29,7 @@
                   -@alert_hash = {type: 'danger', strong_msg: 'Campanha inativa. ', msg: "Por favor configure seu <a class='charm' href='#{new_campaign_budget_path(@campaign.id)}'>orçamento</a> para que a campanha possa ser iniciada"}
                   =render 'layouts/parts/alerts/dynamic_alert'
                 -else
-                  -if @campaign.paid?
+                  -if @campaign.paid? || @campaign.current_budget.current_transaction.status_name == 'charged'
                     -@alert_hash = {type: 'success', strong_msg: 'Ok. ', msg: 'test'}
                     =render 'layouts/parts/alerts/dynamic_alert'
                   -else

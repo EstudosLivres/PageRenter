@@ -13,7 +13,7 @@ span
 -if !budget.nil?
   span
     | |
-  -if @campaign.paid?
+  -if @campaign.paid? || @campaign.current_budget.current_transaction.status_name == 'charged'
     -budget_class = 'currency success'
   -else
     -if @campaign.current_budget.current_transaction.status_name != 'error'
