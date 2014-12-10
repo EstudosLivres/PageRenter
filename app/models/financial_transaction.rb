@@ -33,6 +33,9 @@ class FinancialTransaction < ActiveRecord::Base
     transaction = Rents::Transaction.new(rid:remote_id)
     transaction_verified = transaction.verify
 
+    # If there is any error it just return not paid (TODO: refactor it!)
+    return false if transaction_verified[:error]
+
     # Update it attrs
     self.status_code=transaction_verified[:status][:code]
     self.status_name=transaction_verified[:status][:name]
