@@ -101,6 +101,12 @@ class Budget < ActiveRecord::Base
       transaction = Rents::Transaction.new(operator_params)
       transaction.charge_page
       resp = transaction.resp
+
+      # Transaction attrs
+      transaction_rid = transaction.rid
+      transaction_purchase_url = transaction.purchase_url
+
+      # Status Attrs
       status_name = resp[:status][:name]
       status_code = transaction.resp[:status][:code]
 
@@ -108,10 +114,10 @@ class Budget < ActiveRecord::Base
       financial_params = {
         value: amount,
         payment_method: 'credit_card',
-        remote_id: transaction.rid,
         status_name: status_name,
         status_code: status_code,
-        operator_url: transaction.purchase_url,
+        remote_id: transaction_rid,
+        operator_url: transaction_purchase_url,
         currency_id: self.currency_id
       }
 
