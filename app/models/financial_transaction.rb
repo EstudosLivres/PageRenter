@@ -20,12 +20,14 @@ class FinancialTransaction < ActiveRecord::Base
 
   # TODO enum banking_or_online (TRUE is banking & FALSE if online/system)
 
-  # Return true if it is paid & false if it is not paid yet
+  # true if it is paid & false if it is not paid yet
   def paid?
     initial_status = 0
-    return false if self.status_code == initial_status
-    self.status_name == 'error' ? true : false if self.status_code != initial_status
-    self.status_name == 'charged' ? true : false if self.status_code != initial_status
+    false if self.status_code == initial_status
+    abort_method = nil
+    self.status_name == 'error' ? abort_method=true : abort_method=false if self.status_code != initial_status
+    self.status_name == 'charged' ? abort_method=true : abort_method=false if self.status_code != initial_status
+    return abort_method unless abort_method.nil?
 
     # Verifying transaction
     transaction = Rents::Transaction.new(rid:remote_id)
