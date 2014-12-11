@@ -1,8 +1,15 @@
 p :strong
-  | Link:
-  br
+  | Link original:
+p
   a href="#{@ad.redirect_link}" target="_blank"
     =@ad.redirect_link
+
+p :strong
+  | Link Patrocinado:
+p
+  -ad_share_url = publisher_brought_access_url(publisher_username:@current_user.username, ad_username:@ad.username)
+  a href="#{ad_share_url}" target="_blank"
+    =ad_share_url
 
 p :strong ="#{t('activerecord.attributes.ad.labels.social_phrase')}:"
 p =@ad.social_phrase
