@@ -9,9 +9,10 @@ pt-BR:
 
   db_enum:
     currencies:
-      real: Real brasileiro
-      euro: Euro do bloco econômico europeu
-      american_dollar: Dólar americano
+      real: Real - Brasil
+      euro: Euro - Europa
+      american_dollar: Dólar - Estados Unidos
+      canadian_dollar: Dólar - Canadá
     recurrence_periods:
       daily: Diário
       weekly: Semanal
