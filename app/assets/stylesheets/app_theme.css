@@ -876,3 +876,68 @@ i.fa.icon_as_button {
 .flags img {
     width: 100%;
 }
+
+#pub_index .social_share {
+    margin-right: -32px;
+}
+
+.pub_post {
+    padding: 16px;
+    min-height: 50px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 6px rgba(0, 0 ,0, .12), 0 1px 6px rgba(0,0,0, .12);
+}
+
+.pub_post .post_brand img {
+    float: left;
+    width: 15%;
+    margin-right: 15px;
+}
+
+.pub_brand_post_name .weak {
+    font-size: .9em;
+    margin-top: -10px;
+}
+
+.pub_post_name {
+    font-size: 1.1em;
+    margin-top: -5px;
+}
+
+.pub_post .pub_content {
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px solid whitesmoke;
+}
+
+.pub_content .row div {
+    height: 100%;
+    min-height: 265px;
+    max-height: 265px;
+    border-right: 2px solid #C7C7C7;
+}
+
+.pub_content .row img {
+    width: 100%;
+    margin-top: 46px;
+}
+
+.pub_content .row div:last-child {
+    border-right: none;
+}
+
+fieldset legend.r_publisher {
+    color: #336D63;
+}
+
+fieldset .infos {
+    margin-top: -15px;
+}
+
+fieldset .infos p:nth-child(odd) {
+    margin: 0 0 15px 0;
+}
+
+fieldset .infos p:nth-child(even) {
+    margin: 0 0 0 0;
+}
