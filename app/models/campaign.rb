@@ -46,6 +46,16 @@ class Campaign < ActiveRecord::Base
     current_budget.current_transaction.paid?
   end
 
+  # Check if there is an Ad without Bid property configured
+  def has_pending_bid_ad?
+    ads.joins(:bids).where('bids.active = 1').count == ads.count
+  end
+
+  # It campaign Ads with Bid configured
+  def ads_active
+    self.ads.joins(:bids).where('ads.id = bids.ad_id AND bids.active = 1')
+  end
+
   # =============================== STATICs AUX METHODs ============================
   def self.actives
     self.where('launch_date <= now() AND end_date >= now()')
