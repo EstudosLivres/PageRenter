@@ -1,3 +1,9 @@
+-unless params[:success].nil?
+  .alert.alert-success=params[:success]
+
+-unless params[:error].nil?
+  .alert.alert-danger=params[:error]
+
 -unless flash[:notice].nil?
   -if flash[:notice].is_a?(Hash)
     div class="alert alert-#{flash[:notice][:type]}"
