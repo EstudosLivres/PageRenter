@@ -1,16 +1,35 @@
-.row
+#pub_index.row
   #pub_pieces.col-md-12
     = render 'ads/pagerenter_ad'
 
-    #pub_ads_accordion.panel-group
-      -@ads.each_with_index do |ad, index|
-        .panel.panel-default
-          .panel-heading
-            h4.panel-title
-              .float_right
-                = render 'layouts/parts/action_menu/social_buttons'
-                =image_tag(ad.advertiser.avatar.url)
-                a data-toggle="collapse" data-parent="#accordion" href="#ad_#{index}" = ad.name
-          .panel-collapse.collapse id="ad_#{index}"
-            .panel-body
-              | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+  #pub_ads.col-md-12
+    -@ads.each_with_index do |ad, index|
+      -@ad = ad
+      -@bid = ad.bid
+      .pub_post
+        .float_right
+          =render 'layouts/parts/action_menu/social_buttons'
+        .post_brand
+          =image_tag(ad.advertiser.avatar.url)
+        .post_header_infos
+          .pub_brand_post_name
+            .weak
+              =ad.advertiser.name
+          .pub_post_name
+            strong
+              =ad.name
+        .pub_content
+          .row
+            .col-md-4
+              =image_tag(ad.avatar.url)
+            .col-md-5
+              fieldset
+                legend.r_publisher
+                  | Anúncio
+                .infos
+                  =render 'ads/infos'
+            .col-md-3
+              fieldset
+                legend.r_publisher
+                  | Pago Por Interação
+                =render 'bids/infos'
