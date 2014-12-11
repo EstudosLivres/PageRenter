@@ -48,7 +48,7 @@ class Campaign < ActiveRecord::Base
 
   # Check if there is an Ad without Bid property configured
   def has_pending_bid_ad?
-    ads.joins(:bids).where('bids.active = 1').count == ads.count
+    ads.joins(:bids).where('bids.active = 1').count != ads.count
   end
 
   # It campaign Ads with Bid configured
