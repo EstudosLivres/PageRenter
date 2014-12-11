@@ -1,19 +1,19 @@
 .row
   .col-md-6
     strong =t('activerecord.attributes.bid.labels.visitation')
-    =": #{number_to_currency(@bid.real_value(:per_visitation), unit:@bid.currency.acronym, separator:',', delimiter:'.')}"
+    =": #{number_to_currency(@bid.real_value(:per_visitation), unit:@bid.safe_currency.safe_acronym, separator:',', delimiter:'.')}"
   .col-md-6
     strong =t('activerecord.attributes.bid.labels.impression')
-    =": #{number_to_currency(@bid.real_value(:per_impression), unit:@bid.currency.acronym, separator:',', delimiter:'.')}"
+    =": #{number_to_currency(@bid.real_value(:per_impression), unit:@bid.safe_currency.safe_acronym, separator:',', delimiter:'.')}"
   .col-md-6
     strong =t('activerecord.attributes.bid.labels.foreign_interactions')
-    =": #{number_to_currency(@bid.real_value(:per_foreign_interaction), unit:@bid.currency.acronym, separator:',', delimiter:'.')}"
+    =": #{number_to_currency(@bid.real_value(:per_foreign_interaction), unit:@bid.safe_currency.safe_acronym, separator:',', delimiter:'.')}"
   .col-md-6
     strong =t('activerecord.attributes.bid.labels.local_interactions')
-    =": #{number_to_currency(@bid.real_value(:per_local_interaction), unit:@bid.currency.acronym, separator:',', delimiter:'.')}"
+    =": #{number_to_currency(@bid.real_value(:per_local_interaction), unit:@bid.safe_currency.safe_acronym, separator:',', delimiter:'.')}"
   .col-md-6
     strong =t('activerecord.attributes.bid.labels.conversion')
-    =": #{number_to_currency(@bid.real_value(:per_conversion), unit:@bid.currency.acronym, separator:',', delimiter:'.')}"
+    =": #{number_to_currency(@bid.real_value(:per_conversion), unit:@bid.safe_currency.safe_acronym, separator:',', delimiter:'.')}"
   .col-md-6
     strong =t('activerecord.attributes.bid.labels.currency')
     =": #{@bid.it_currency}"
