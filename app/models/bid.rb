@@ -24,6 +24,11 @@ class Bid < ActiveRecord::Base
     real_value(attr_symbol)*10 if real_value(attr_symbol) # it is to convert the int float, like 1.0 to 1.00
   end
 
+  # DesignPattern, if there is a place where it must be print & is possible to have no relation, call the safe
+  def safe_currency
+    self.currency.nil? ? Currency.new : self.currency
+  end
+
   # ActiveRecord Get Method overwrite to print the real value, not the operator value
   def real_value attr_symbol
     read_attribute(attr_symbol).to_f/100 if read_attribute(attr_symbol)
