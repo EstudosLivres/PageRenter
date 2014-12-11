@@ -7,11 +7,12 @@ class PublishersController < ApplicationController
 
   # Root for Publisher user
   def index
-    @active_campaigns = Campaign.where('launch_date <= now() AND end_date >= now()')
+    @active_campaigns = Campaign.actives
 
     @ads = [] # Populate pub_piece
     @active_campaigns.each do |campaign|
       campaign.ads.each do |ad|
+        ad.bid
         @ads.append(ad)
       end
     end

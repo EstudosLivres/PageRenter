@@ -1,4 +1,5 @@
 class AccessesController < ApplicationController
+  before_action :check_the_cookies
   before_action :set_access, only: [:show, :edit, :update, :destroy]
 
   def index

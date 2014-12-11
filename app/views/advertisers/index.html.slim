@@ -25,20 +25,20 @@
           .panel-collapse.collapse id="campaign_#{campaign_i}"
             .panel-body
               .panel-group
+                -# Checking Campaign Budget states
                 -if @campaign.budgets.last.nil?
                   -@alert_hash = {type: 'danger', strong_msg: 'Campanha inativa. ', msg: "Por favor configure seu <a class='charm' href='#{new_campaign_budget_path(@campaign.id)}'>orçamento</a> para que a campanha possa ser iniciada"}
                   =render 'layouts/parts/alerts/dynamic_alert'
                 -else
-                  -if @campaign.paid? || @campaign.current_budget.current_transaction.status_name == 'charged'
-                    -@alert_hash = {type: 'success', strong_msg: 'Ok. ', msg: 'test'}
+                  -if @campaign.current_budget.current_transaction.status_name == 'error'
+                    -@alert_hash = {type: 'danger', strong_msg: 'Wow went something wrong!', msg: "Seu pagamento não pode ser efetuado com o meio de pagamento atual, atualize-o: <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
                     =render 'layouts/parts/alerts/dynamic_alert'
-                  -else
-                    -if @campaign.current_budget.current_transaction.status_name != 'pending'
-                      -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Sua campanha só estará disponível após completar a configuração de seu orçamento, para isso acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
-                      =render 'layouts/parts/alerts/dynamic_alert'
-                    -elsif @campaign.current_budget.current_transaction.status_name == 'error'
-                      -@alert_hash = {type: 'danger', strong_msg: 'Wow went something wrong!', msg: "Seu pagamento não pode ser efetuado com o meio de pagamento atual, atualize-o: <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
-                      =render 'layouts/parts/alerts/dynamic_alert'
+                  -elsif @campaign.current_budget.current_transaction.status_name != 'charged'
+                    -@alert_hash = {type: 'warning', strong_msg: 'Orçamento incompleto.', msg: "Sua campanha só estará disponível após completar a configuração de seu orçamento, para isso acesse a <a class='charm' href='#{@campaign.current_budget.operator_url}'>Cielo</a>"}
+                    =render 'layouts/parts/alerts/dynamic_alert'
+
+                -# Checking Campaign Ad Bids states
+                -if @campaign
               -@campaign.ads.each_with_index do |ad, ad_i|
                 -@ad = ad
                 .panel.panel-default
@@ -47,8 +47,8 @@
                       =render 'ads/actions'
                       a data-toggle="collapse" data-parent="#accordion" href="#campaign_#{campaign_i}_ad_#{ad_i}"
                         = @ad.name
-                        span class="badge alert-#{@ad.ad_history_states.last.ad_state.msg}"
-                          =@ad.ad_history_states.last.ad_state.name.upcase
+                        span class="badge alert-#{@ad.current_state.msg}"
+                          =@ad.current_state.name.upcase
                   .panel-collapse.collapse id="campaign_#{campaign_i}_ad_#{ad_i}"
                     .panel-body
                       img src="#{@ad.avatar.url}"

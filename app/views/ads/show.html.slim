@@ -14,11 +14,18 @@
 
   .col-xs-6
     p
-      strong =t('activerecord.attributes.ad.labels.username')
-      =" (#{t('activerecord.attributes.ad.labels.username_tiper')}): #{@ad.username}"
+      strong ="#{t('activerecord.attributes.ad.labels.username')} (#{t('activerecord.attributes.ad.labels.username_tiper')}):"
     p
-      strong =t('activerecord.attributes.ad.labels.social_phrase')
-      =": #{@ad.social_phrase}"
+      center
+        a href="http://pagerenter.com.br/#{@ad.username}"
+          ="http://pagerenter.com.br/#{@ad.username}"
+
+    p
+      strong ="#{t('activerecord.attributes.ad.labels.social_phrase')}:"
+    p
+      center
+        =@ad.social_phrase
+
     p
       strong ="#{t('activerecord.attributes.ad.labels.description')}: "
     p.justified =@ad.description

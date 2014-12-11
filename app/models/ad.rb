@@ -22,7 +22,7 @@ class Ad < ActiveRecord::Base
   # Rails validations
   validates :name, presence: true, length: { in: 5..50 }, on: [:create, :update] # appears just for the Advertiser (Internal control)
   validates :title, presence: true, length: { in: 5..90 }, on: [:create, :update] # which appears upside the image
-  validates :redirect_link, presence: true, length: { in: 12..1240 }, on: [:create, :update] # which appears upside the image
+  validates :redirect_link, presence: true, length: { in: 10..1240 }, on: [:create, :update] # which appears upside the image
   validates :username, presence: true, length: { in: 5..140 }, on: [:create, :update] # appears on the link (for Google SEO)
   validates :social_phrase, length: { in: 5..140 }, on: [:create, :update] # appears on the link (for Google SEO)
   validates :description, length: { in: 5..200 }, on: [:create, :update] # which explain what this Ad is about
@@ -53,6 +53,14 @@ class Ad < ActiveRecord::Base
   # Return it current active Bid
   def bid
     self.bids.last.nil? ? Bid.new : self.bids.last
+  end
+
+  # Return it current state
+  def current_state
+    last_state_on_history = self.ad_history_states.last
+    last_state_on_history = AdHistoryState.new if last_state_on_history.nil?
+    last_state_on_history.ad_state = AdState.first if last_state_on_history.ad_state.nil?
+    last_state_on_history.ad_state
   end
 
 # TODO def budget: return the transactions without receiver which means paid to the system

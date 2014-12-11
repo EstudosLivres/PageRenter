@@ -30,7 +30,7 @@ class BidsController < ApplicationController
 
     respond_to do |format|
       if @bid.save
-        format.html { redirect_to campaign_ad_bid_path(params[:campaign_id], params[:ad_id], @bid), notice: 'Bid was successfully created.' }
+        format.html { redirect_to campaign_ad_path(params[:campaign_id], params[:ad_id]), notice: 'Bid was successfully created.' }
         format.json { render action: 'show', status: :created, location: @bid }
       else
         format.html { render action: 'new' }
@@ -42,12 +42,14 @@ class BidsController < ApplicationController
   # PATCH/PUT /bids/1
   # PATCH/PUT /bids/1.json
   def update
+    @bid = Bid.new(bid_params)
+
     respond_to do |format|
-      if @bid.update(bid_params)
-        format.html { redirect_to @bid, notice: 'Bid was successfully updated.' }
-        format.json { head :no_content }
+      if @bid.save
+        format.html { redirect_to campaign_ad_path(params[:campaign_id], params[:ad_id]), notice: 'Bid was successfully updated.' }
+        format.json { render action: 'show', status: :created, location: @bid }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'new', notice: {type: :danger, strong: 'Oops!', msg: 'Something went wrong.'} }
         format.json { render json: @bid.errors, status: :unprocessable_entity }
       end
     end
