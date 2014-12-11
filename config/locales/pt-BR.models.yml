@@ -35,13 +35,13 @@ pt-BR:
         placeholders:
       bid:
         labels:
-          visitation: Por visitas
+          visitation: Por visita
           visitation_tiper: Click no link
           impression: Por visualização
           impression_tiper: Cada vez que o anúncio é exibido
-          foreign_interactions: Por compartilhar
+          foreign_interactions: Por compartilhamento
           foreign_interactions_tiper: Propagação do link por terceiros
-          local_interactions: Por curtidas
+          local_interactions: Por curtida
           local_interactions_tiper: Impacto positivo da marca
           conversion: Por Conversão
           conversion_tiper: Valor pago por cada compra/cadastro
