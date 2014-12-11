@@ -3,6 +3,7 @@ $(document).ready(function(){
     setup_currency();
     radio_img_select();
     setup_date_picker();
+    create_shorter_links();
     setup_tooltips_types();
     focus_all_currency_mask();
     toggle_icon_orientation();
@@ -150,3 +151,36 @@ function radio_img_select(element){
     interacted_element.addClass('alert alert-success');
 }
 
+// Find links to be shorter
+function create_shorter_links() {
+    // Aux vars
+    var links_str = [];
+    var current_url_counter = 0;
+    var links_element = $('.original_link');
+
+    // Get all Links
+    for(i=0; i<links_element.length; i++) links_str.push($(links_element[i]).html());
+    easy_shorter(links_str, current_url_counter);
+}
+
+// *Recursive
+function easy_shorter(links, current_url_counter) {
+    if (links.length == current_url_counter) return;
+    console.log(links[current_url_counter]);
+
+    // Foreach it links array
+    jQuery.urlShortener({
+        longUrl:links[current_url_counter],
+        success: function(shortUrl){
+            // SetUp pre-conditions;
+            var anchor_tag = $('a[data-rel="'+links[current_url_counter]+'"]');
+
+            // Setting the attrs values
+            anchor_tag.html(shortUrl);
+            anchor_tag.attr('href', shortUrl);
+
+            // Init the recursive
+            easy_shorter(links, current_url_counter+1);
+        }
+    });
+}
