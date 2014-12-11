@@ -70,5 +70,10 @@ PageRenter::Application.routes.draw do
       get 'admin_login' => 'remote_users#admin_check_login'
       post 'admin_login' => 'remote_users#admin_check_login', as: :admin_check_login
     end
+
+    # All the actions that generate data
+    scope '/generators' do
+      get 'shorter' => 'generator#shorter', as: :shorter_generator
+    end
   end
 end
