@@ -7,27 +7,21 @@
       -@ad = ad
       -@bid = ad.bid
       .pub_post
-        .float_right
-          =render 'layouts/parts/action_menu/social_buttons'
-        .post_brand
-          =image_tag(ad.advertiser.avatar.url)
+        .float_right =render 'layouts/parts/action_menu/social_buttons'
+        .post_brand =image_tag(ad.advertiser.avatar.url)
         .post_header_infos
           .pub_brand_post_name
-            .weak
-              =ad.advertiser.name
+            .weak =ad.advertiser.name
           .pub_post_name
-            strong
-              =ad.name
+            strong =ad.name
         .pub_content
           .row
-            .col-md-4
-              =image_tag(ad.avatar.url)
+            .col-md-4 =image_tag(ad.avatar.url)
             .col-md-5
               fieldset
                 legend.r_publisher
                   | Anúncio
-                .infos
-                  =render 'ads/infos'
+                .infos =render 'ads/infos'
             .col-md-3
               fieldset
                 legend.r_publisher
