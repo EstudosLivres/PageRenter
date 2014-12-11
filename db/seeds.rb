@@ -33,6 +33,7 @@ puts 'Inserting Currencies...'.colorize(:green)
   puts "\t #{Currency.find_or_create_by(name: 'real', acronym: 'R$', iso_code:986)}"
   puts "\t #{Currency.find_or_create_by(name: 'euro', acronym: '€', iso_code:978)}"
   puts "\t #{Currency.find_or_create_by(name: 'american_dollar', acronym: 'US$', iso_code:997)}"
+  puts "\t #{Currency.find_or_create_by(name: 'canadian_dollar', acronym: 'CAD$', iso_code:124)}"
 puts '...Currencies inserted.'.colorize(:light_blue)
 # /Currencies
 
