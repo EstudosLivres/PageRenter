@@ -3,8 +3,8 @@ $(document).ready(function(){
     setup_currency();
     radio_img_select();
     setup_date_picker();
-    create_shorter_links();
     setup_tooltips_types();
+    //create_shorter_links();
     focus_all_currency_mask();
     toggle_icon_orientation();
     add_alert_to_form_error();
@@ -166,7 +166,6 @@ function create_shorter_links() {
 // *Recursive
 function easy_shorter(links, current_url_counter) {
     if (links.length == current_url_counter) return;
-    console.log(links[current_url_counter]);
 
     // Foreach it links array
     jQuery.urlShortener({
