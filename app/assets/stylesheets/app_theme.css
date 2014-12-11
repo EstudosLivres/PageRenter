@@ -917,7 +917,7 @@ i.fa.icon_as_button {
 .pub_content .row > div {
     height: 100%;
     min-height: 265px;
-    max-height: 265px;
+    max-height: 290px;
     border-right: 2px solid #C7C7C7;
 }
 
@@ -938,10 +938,10 @@ fieldset .infos {
     margin-top: -15px;
 }
 
-fieldset .infos p:nth-child(odd) {
+fieldset .infos p:nth-child(even) {
     margin: 0 0 15px 0;
 }
 
-fieldset .infos p:nth-child(even) {
+fieldset .infos p:nth-child(odd) {
     margin: 0 0 0 0;
 }
