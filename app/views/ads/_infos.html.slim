@@ -1,0 +1,11 @@
+p :strong
+  | Link:
+  br
+  a href="#{@ad.redirect_link}" target="_blank"
+    =@ad.redirect_link
+
+p :strong ="#{t('activerecord.attributes.ad.labels.social_phrase')}:"
+p =@ad.social_phrase
+
+p :strong ="#{t('activerecord.attributes.ad.labels.description')}: "
+p.justified =@ad.description
