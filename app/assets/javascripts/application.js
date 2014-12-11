@@ -26,4 +26,4 @@
 //= require sign
 
 // SetUp the sortener API_KEY
-jQuery.urlShortener.settings.apiKey = '';
+jQuery.urlShortener.settings.apiKey = 'AIzaSyCJOefXdhTtFIX9Y-G2IAFNJrAlZ2PkQhg';
