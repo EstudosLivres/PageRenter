@@ -61,6 +61,13 @@ class Campaign < ActiveRecord::Base
     self.where('launch_date <= now() AND end_date >= now()')
   end
 
+  def self.all_actives_ads
+    ads = []
+    campaigns = self.actives
+    campaigns.each {|campaign| campaign.ads_active.each {|ad| ads << ad } }
+    return ads
+  end
+
   # =============================== Useful callbacks ---============================
   private
     def count_ad_state state_name
