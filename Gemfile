@@ -93,6 +93,9 @@ group :style_and_interactions do
   gem 'less-rails-bootstrap', '~> 3.3.0.1'
   gem 'bootstrap-datepicker-rails', '~> 1.3.0.2'
 
+  # Gem for Bootstrap with material design
+  # TODO gem 'bootstrap-material-design', '~> 0.1.4'
+
   # IconFonts - FontAwesome
   gem 'font-awesome-rails', '~> 4.2.0.0'
 
