@@ -21,9 +21,5 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
 //= require zeroclipboard
 //= require mask_money
-//= require jquery.urlshortener.min
 //= require app
 //= require sign
-
-// SetUp the sortener API_KEY
-jQuery.urlShortener.settings.apiKey = 'AIzaSyCJOefXdhTtFIX9Y-G2IAFNJrAlZ2PkQhg';
