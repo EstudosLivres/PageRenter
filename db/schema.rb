@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110173921) do
+ActiveRecord::Schema.define(version: 20141211182214) do
 
   create_table "accesses", force: true do |t|
     t.boolean  "converted",         default: false, null: false
@@ -223,6 +223,17 @@ ActiveRecord::Schema.define(version: 20141110173921) do
     t.integer "social_session_segment_id", null: false
     t.integer "segment_id",                null: false
   end
+
+  create_table "shorter_links", force: true do |t|
+    t.string   "link",       limit: 60, null: false
+    t.integer  "ad_id",                 null: false
+    t.integer  "user_id",               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "shorter_links", ["ad_id"], name: "index_shorter_links_on_ad_id", using: :btree
+  add_index "shorter_links", ["user_id"], name: "index_shorter_links_on_user_id", using: :btree
 
   create_table "social_interactions", force: true do |t|
     t.string   "external_id",       limit: 45, null: false
