@@ -13,12 +13,13 @@
     -launch_date = @campaign.launch_date.to_date
     -date_range = 2
 
-    -if launch_date < Date.today
+    -launch_period = launch_date < Date.today+date_range
+    -if launch_date < Date.today && @campaign.has_pending_bid_ad?
       -@alert_type = 'danger'
       -@strong_msg = 'Estado crítico de Congelamento. '
       -@msg = 'A data de início já fechou e sua campanha já deve está em execução ou encerrada.'
       =render "layouts/parts/alerts/dynamic_alert"
-    -elsif launch_date < Date.today+date_range
+    -elsif (launch_period && @campaign.has_pending_bid_ad?) || (launch_period && !@campaign.paid?)
       -@alert_type = 'warning'
       -@strong_msg = 'Atenção. '
       -cpc_tiper = translate_it_label('ad', 'cpc')
