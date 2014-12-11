@@ -7,16 +7,7 @@ class PublishersController < ApplicationController
 
   # Root for Publisher user
   def index
-    @active_campaigns = Campaign.actives
-
-    @ads = [] # Populate pub_piece
-    @active_campaigns.each do |campaign|
-      campaign.ads.each do |ad|
-        ad.bid
-        @ads.append(ad)
-      end
-    end
-
+    @ads = Campaign.all_actives_ads
     @social_session = @current_user.get_social_network_profile('facebook')
     @pages = @social_session.page_accounts unless @social_session.nil?
   end
