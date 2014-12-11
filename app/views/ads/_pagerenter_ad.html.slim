@@ -1,33 +1,34 @@
-#brand_campaign.alert.alert-info.campaign_content
-  header
-    .float_right
-      = render 'layouts/parts/action_menu/social_buttons'
+/!
+  #brand_campaign.alert.alert-info.campaign_content
+    header
+      .float_right
+        = render 'layouts/parts/action_menu/social_buttons'
 
-    a.brand href="/"
-      span.r_advertiser_brand Page
-      span.r_publisher_brand Renter
+      a.brand href="/"
+        span.r_advertiser_brand Page
+        span.r_publisher_brand Renter
 
-    | Ganhe fichas para convidar amigos e montar grupos de compartilhamento
+      | Ganhe fichas para convidar amigos e montar grupos de compartilhamento
 
-  .body.row
-    .col-md-6
-      =image_tag('page_campaign_adv.png')
+    .body.row
+      .col-md-6
+        =image_tag('page_campaign_adv.png')
 
-    .col-md-6
-      .campaign_attr
-        strong Recompensa: &nbsp;
-        span.badge.alert-danger +1
-        | &nbsp; fichas de convite
+      .col-md-6
+        .campaign_attr
+          strong Recompensa: &nbsp;
+          span.badge.alert-danger +1
+          | &nbsp; fichas de convite
 
-      .campaign_attr.campaign_link
-        strong Slogan: &nbsp;
-        span Repassamos nossos lucros a você e seu amigo
+        .campaign_attr.campaign_link
+          strong Slogan: &nbsp;
+          span Repassamos nossos lucros a você e seu amigo
 
-      .campaign_attr.campaign_link
-        strong Social phrase: &nbsp;
-        span Vamos todos ganhar mais se formos mais
+        .campaign_attr.campaign_link
+          strong Social phrase: &nbsp;
+          span Vamos todos ganhar mais se formos mais
 
-      .campaign_attr.campaign_link
-        strong Redirect Link: &nbsp;
-        a href="#" ="http://pagerenter.com.br/#{@current_user.username}"
-        i#pagerenter_campaign.fa.fa-copy data-clipboard-target="fe_text" data-clipboard-text="http://pagerenter.com.br/#{@current_user.username}"
+        .campaign_attr.campaign_link
+          strong Redirect Link: &nbsp;
+          a href="#" ="http://pagerenter.com.br/#{@current_user.username}"
+          i#pagerenter_campaign.fa.fa-copy data-clipboard-target="fe_text" data-clipboard-text="http://pagerenter.com.br/#{@current_user.username}"
