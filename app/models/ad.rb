@@ -3,6 +3,7 @@ class Ad < ActiveRecord::Base
   belongs_to :campaign
   has_many :bank_transactions
   has_many :bids
+  has_many :shorter_links
   has_many :ad_history_states
   has_many :ad_states, through: :ad_history_states
   has_and_belongs_to_many :segments
@@ -53,6 +54,16 @@ class Ad < ActiveRecord::Base
   # Return it current active Bid
   def bid
     self.bids.last.nil? ? Bid.new : self.bids.last
+  end
+
+  # Return it link to be shared on the social networks
+  def brought_access_link uid
+    user = User.find(uid)
+    shorter_link = self.shorter_links.where(user_id:uid).take
+
+    host = ApplicationController.host
+    path = Rails.application.routes.url_helpers.publisher_brought_access_path(publisher_username:user.username, ad_username:self.username)
+    shorter_link.nil? ? "http://#{host}#{path}" : shorter_link.link
   end
 
   # Return it current state
