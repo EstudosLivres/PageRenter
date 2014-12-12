@@ -43,8 +43,9 @@ pt-BR:
 
   # Publisher texts
   publisher_action:
-    new_social_session: NovoLoginSocial
     invite: ConvidarAmigos
+    report_record: RelatórioDesempanho
+    new_social_session: NovoLoginSocial
 
   publisher_invite:
     title: ConvideAmigos & aumente os ganhos!
@@ -70,6 +71,7 @@ pt-BR:
   advertiser_action:
     invite: Recomendar
     new_campaign: NovaCampanha
+    report_record: RelatórioDesempanho
 
   advertiser_recommend:
     title: Recomende & Ganhe bônus
