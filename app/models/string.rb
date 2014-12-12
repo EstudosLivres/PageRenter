@@ -6,4 +6,8 @@ class String
   def equals? str
     self == str
   end
+
+  def to_get_param
+    self.gsub(' ', '%20')
+  end
 end
