@@ -1,5 +1,8 @@
-p :strong
-  | Link original:
+-ad_share_url = @ad.brought_access_link @current_user.id
+p
+  -if ad_share_url.index('goo.gl').nil?
+    a.btn.btn-info.float_right href="#{api_shorter_generator_path}?url=#{ad_share_url}&ad_username=#{@ad.username}&pub_username=#{@current_user.username}" Generate short
+  strong Link original:
 p
   a href="#{@ad.redirect_link}" target="_blank"
     =@ad.redirect_link
@@ -7,7 +10,6 @@ p
 p :strong
   | Link Patrocinado:
 p
-  -ad_share_url = publisher_brought_access_url(publisher_username:@current_user.username, ad_username:@ad.username)
   a href="#{ad_share_url}" target="_blank"
     =ad_share_url
 
