@@ -60,6 +60,7 @@ class Ad < ActiveRecord::Base
   def brought_access_link uid
     user = User.find(uid)
     shorter_link = self.shorter_links.where(user_id:uid).take
+    return shorter_link.link unless shorter_link.nil?
 
     host = ApplicationController.host
     path = Rails.application.routes.url_helpers.publisher_brought_access_path(publisher_username:user.username, ad_username:self.username)
