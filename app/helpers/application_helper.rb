@@ -38,10 +38,12 @@ module ApplicationHelper
     # Publisher action_menu
     new_social_session = { name: t(:publisher_action)[:new_social_session], path:add_social_login_path, icon:'fa fa-plus', toggle:'' }
     publisher_invite = { name:t(:publisher_action)[:invite], path:'#invite', icon:'fa fa-paper-plane', toggle:'modal' }
+    publisher_report_record = { name:t(:publisher_action)[:report_record], path:publisher_report_record_path, icon:'fa fa-line-chart', toggle:'' }
 
     # Advertiser action_menu
     new_campaign = { name:t(:advertiser_action)[:new_campaign], path:new_campaign_url, icon:'fa fa-plus', toggle:'modal' }
     recommend = { name:t(:advertiser_action)[:invite], path:'#recommend', icon:'fa fa-paper-plane', toggle:'modal' }
+    advertiser_report_record = { name:t(:advertiser_action)[:report_record], path:advertiser_report_record_path, icon:'fa fa-line-chart', toggle:'' }
 
     # Admin action_menu
     new_segmentation = {name:'NovoSegmento', path:new_segment_path, icon:'fa fa-plus', toggle:''}
@@ -59,12 +61,14 @@ module ApplicationHelper
       when 'publisher'
         actions = [
             new_social_session,
-            publisher_invite
+            publisher_report_record
+            #publisher_invite
         ]
       when 'advertiser'
         actions = [
             new_campaign,
-            recommend
+            advertiser_report_record
+            #recommend
         ]
       when 'admin'
         actions = [
