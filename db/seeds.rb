@@ -41,6 +41,7 @@ puts '...Currencies inserted.'.colorize(:light_blue)
 puts 'Inserting RecurrencePeriods...'.colorize(:green)
   puts "\t #{RecurrencePeriod.find_or_create_by(name: 'daily')}"
   puts "\t #{RecurrencePeriod.find_or_create_by(name: 'weekly')}"
+  puts "\t #{RecurrencePeriod.find_or_create_by(name: 'monthly')}"
   puts "\t #{RecurrencePeriod.find_or_create_by(name: 'bimonthly')}"
   puts "\t #{RecurrencePeriod.find_or_create_by(name: 'quarterly')}"
   puts "\t #{RecurrencePeriod.find_or_create_by(name: 'semiannual')}"
