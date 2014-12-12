@@ -2,6 +2,7 @@
 $(document).ready(function(){
     setup_currency();
     radio_img_select();
+    start_base_chart();
     setup_date_picker();
     setup_tooltips_types();
     //create_shorter_links();
@@ -182,4 +183,24 @@ function easy_shorter(links, current_url_counter) {
             easy_shorter(links, current_url_counter+1);
         }
     });
+}
+
+function start_base_chart() {
+    Chart.defaults.global.responsive = true;
+    var buyers = document.getElementById('myChart').getContext('2d');
+
+    var buyerData = {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+            {
+                fillColor: "rgba(172,194,132,0.4)",
+                strokeColor: "#ACC26D",
+                pointColor: "#fff",
+                pointStrokeColor: "#9DB86D",
+                data: [203, 156, 99, 251, 305, 247]
+            }
+        ]
+    }
+
+    new Chart(buyers).Line(buyerData);
 }
