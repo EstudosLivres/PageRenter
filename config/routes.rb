@@ -1,4 +1,8 @@
 PageRenter::Application.routes.draw do
+  get 'report_records/brought_accesses'
+
+  get 'report_records/campaigns'
+
   root to: 'home#index' # it must be just a redirect (like a facade)
 
   # DeviseUser sessions
@@ -16,12 +20,14 @@ PageRenter::Application.routes.draw do
     get '/edit' => 'publishers#edit', as: :publisher_edit
     get '/add_social_login' => 'publishers#add_social_login', as: :add_social_login
     get '/accesses/:publisher_username/:ad_username' => 'accesses#brought', as: :publisher_brought_access
+    get '/report_record' => 'report_records#brought_accesses', as: :publisher_report_record
   end
 
   # Actions Under/For Advertiser
   scope '/advertisers' do
     get '' => 'advertisers#index', as: :advertiser_root
     get '/edit' => 'advertisers#edit', as: :advertiser_edit
+    get '/report_record' => 'report_records#campaigns', as: :advertiser_report_record
     patch '/update' => 'advertisers#update'
     # TODO create Briefing resource
     get '/briefing' => 'advertisers#index', as: :create_briefing
