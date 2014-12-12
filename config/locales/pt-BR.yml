@@ -16,6 +16,7 @@ pt-BR:
     recurrence_periods:
       daily: Diário
       weekly: Semanal
+      monthly: Mensal
       bimonthly: Bimestral
       quarterly: Trimestral
       semiannual: Semestral
