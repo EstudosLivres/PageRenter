@@ -25,6 +25,9 @@ class AccessesController < ApplicationController
       error_msg = ''
       redirect_to "#{root_url}?danger=#{error_msg}" if @ad.nil? || @user.nil?
 
+      # Register on the user Cookie
+      register_cookie_access
+
       # Base Access instantiated & after setup it attrs
       access = Access.new(ad_id:@ad.id, profile_id:@publisher.id)
       recurrent? ? access.recurrent = true : access.recurrent = false
@@ -50,42 +53,66 @@ class AccessesController < ApplicationController
       @ad = Ad.where(username: params[:ad_username]).take
       @user = User.where(username: params[:publisher_username]).take
       @publisher = @user.publisher unless @user.nil?
+      register_cookie_access
     end
 
     # It return true if the user already access it
     def recurrent?
       # if there is no cookies access it is the user first time here
-      return false if cookies[:accesses].nil?
-
-      # Retrieve the access, based on it expression
-      access_data = cookies[:accesses][access_expression]
+      return false if get_accesses_cookie.nil?
 
       # The user accessed some URL, but not this one
-      return false if access_data.nil?
-
-      # Check if the date is today, if not, clear his cookie
-      access_date = Date.parse(access_data+"#{Time.now.year}")
-      clear_cookie if access_date < Date.today
+      return false if @access_data.nil?
 
       # If there is no access expression on the cookie
-      cookies[:accesses][access_expression].nil? ? false : true
+      get_accesses_cookie[access_expression].nil? ? false : true
     end
 
     # SetUp all the validations to guarantee it uniqueness
-  def register_access_to_be_unique
-    # :accesses = {} each access gone be an attr for it hash
-    cookies[:accesses] = {} if cookies[:accesses].nil?
-    # Using unshift (push in the begging of the array because if the user is recurrent it is more probably to be the last access)
-    cookies[:accesses][access_expression] = Time.now.strftime('%d/%m')
+    def register_cookie_access
+      # setup accesses attr on the cookie if it is not created, else check if is it to clear the cookie
+      if cookies[:accesses].nil? || !get_accesses_cookie.is_a?(Hash)
+        create_accesses_cookie
+      else
+        # Retrieve the access, based on it expression
+        @access_data = get_accesses_cookie[access_expression]
+
+        # Check if the date is today, if not, clear his cookie
+        unless @access_data.nil?
+          access_date = Date.parse(@access_data+"#{Time.now.year}")
+          clear_cookie if access_date < Date.today
+        end
+      end
+
+      # Using unshift (push in the begging of the array because if the user is recurrent it is more probably to be the last access)
+      add_to_cookie(access_expression, Time.now.strftime('%d/%m'))
     end
 
     # Recreate the empty hash accesses
     def clear_cookie
-      cookies[:accesses] = {}
+      create_accesses_cookie
+    end
+
+    # The cookie doesn't support Hash, so use JSON String
+    def create_accesses_cookie
+      cookies[:accesses] = {}.to_json
+    end
+
+    # The cookie doesn't support Hash, so use JSON String
+    def get_accesses_cookie
+      JSON.parse(cookies[:accesses])
+    end
+
+    # The cookie doesn't support Hash, so use JSON String
+    def add_to_cookie key, value
+      cookie_hash = get_accesses_cookie
+      cookie_hash[key] = value
+      cookies[:accesses] = cookie_hash.to_json
     end
 
     # Method to reuse it expressions
     def access_expression
-      :"#{@user.id}-#{@pubsliher.id}-#{@ad.id}"
+      setup_register_objs if @user.nil? || @publisher.nil? || @ad.nil?
+      "#{@user.id}-#{@publisher.id}-#{@ad.id}"
     end
 end
