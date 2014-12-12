@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     # Validate user session if is not API call
     def authenticate_or_token
       @@host = request.host_with_port
-      return if params[:action].index('login') || params[:action] == 'brought_access'
+      return if params[:action].index('login') || params[:controller] == "accesses"
       authenticate_user! if params[:controller].index('api').nil? && request.fullpath != root_path
       @current_user = current_user
     end
