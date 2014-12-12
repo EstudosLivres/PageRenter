@@ -202,5 +202,7 @@ function start_base_chart() {
         ]
     }
 
-    new Chart(buyers).Line(buyerData);
+    // TODO remove options to be curved
+    var options = {bezierCurve:false, bezierCurveTension:0};
+    new Chart(buyers).Line(buyerData, options);
 }
