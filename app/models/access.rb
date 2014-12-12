@@ -1,18 +1,18 @@
 class Access < ActiveRecord::Base
   # Relations
-  belongs_to :profile
   belongs_to :ad
+  belongs_to :profile
 
   # Custom validations/setup
   before_validation :setup
 
   # Rails validations
-  validates :converted, presence: true, on: [:create, :update]
-  validates :recurrent, presence: true, on: [:create, :update]
+  validates_inclusion_of :converted, in: [true, false], on: [:create, :update]
+  validates_inclusion_of :recurrent, in: [true, false], on: [:create, :update]
 
   # Validates Associations
-  validates_inclusion_of :profile_id, in: [true, false], on: [:create, :update]
-  validates_inclusion_of :ad_id, in: [true, false], on: [:create, :update]
+  validates :ad_id, presence: true, on: [:create, :update]
+  validates :profile_id, presence: true, on: [:create, :update]
 
   # Callbacks
   private
