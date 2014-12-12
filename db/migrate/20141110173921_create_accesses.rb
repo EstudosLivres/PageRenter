@@ -5,7 +5,6 @@ class CreateAccesses < ActiveRecord::Migration
       t.boolean :recurrent, default: false, null: false
       t.belongs_to :ad, index: true, null: false
       t.belongs_to :profile, index: true, null: false
-      t.belongs_to :social_network, null: true
 
       t.timestamps
     end
