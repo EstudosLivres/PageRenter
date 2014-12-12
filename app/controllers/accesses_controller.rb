@@ -53,13 +53,14 @@ class AccessesController < ApplicationController
       @ad = Ad.where(username: params[:ad_username]).take
       @user = User.where(username: params[:publisher_username]).take
       @publisher = @user.publisher unless @user.nil?
-      register_cookie_access
+      create_accesses_cookie if cookies[:accesses].nil?
+      @access_data = get_accesses_cookie[access_expression]
     end
 
     # It return true if the user already access it
     def recurrent?
       # if there is no cookies access it is the user first time here
-      return false if get_accesses_cookie.nil?
+      return false if get_accesses_cookie.empty?
 
       # The user accessed some URL, but not this one
       return false if @access_data.nil?
