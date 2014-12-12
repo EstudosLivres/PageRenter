@@ -21,5 +21,6 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.js
 //= require zeroclipboard
 //= require mask_money
+//= require chart.min
 //= require app
 //= require sign
