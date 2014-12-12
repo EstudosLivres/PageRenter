@@ -57,10 +57,10 @@ class Ad < ActiveRecord::Base
   end
 
   # Return it link to be shared on the social networks
-  def brought_access_link uid
+  def brought_access_link uid, get_shorter_obj=false
     user = User.find(uid)
     shorter_link = self.shorter_links.where(user_id:uid).take
-    return shorter_link.link unless shorter_link.nil?
+    if !shorter_link.nil? && get_shorter_obj then return shorter_link elsif !shorter_link.nil? && !get_shorter_obj then return shorter_link.link end
 
     host = ApplicationController.host
     path = Rails.application.routes.url_helpers.publisher_brought_access_path(publisher_username:user.username, ad_username:self.username)
