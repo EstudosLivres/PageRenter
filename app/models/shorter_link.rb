@@ -19,7 +19,14 @@ class ShorterLink < ActiveRecord::Base
     shorter = ShorterLink.new
 
     # Return an empty instance
-    return shorter if ad.nil? || publisher.nil?
+    if ad.nil? || publisher.nil?
+      shorter.save
+      return shorter
+    end
+
+    # Check if it shorter already exists, prevent loop GoogleAPI calls
+    brought_link = ad.brought_access_link publisher.id, get_shorter_obj=true
+    return brought_link if brought_link.is_a?ShorterLink
 
     # Add it associations if there isn't any problem
     shorter.ad = ad
