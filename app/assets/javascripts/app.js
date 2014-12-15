@@ -187,7 +187,9 @@ function easy_shorter(links, current_url_counter) {
 
 function start_base_chart() {
     Chart.defaults.global.responsive = true;
-    var buyers = document.getElementById('myChart').getContext('2d');
+    var buyers_element = document.getElementById('myChart');
+    if(buyers_element == null) return;
+    var buyers = buyers_element.getContext('2d');
 
     var buyerData = {
         labels: ["January", "February", "March", "April", "May", "June"],
