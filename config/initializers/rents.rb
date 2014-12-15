@@ -29,7 +29,7 @@ end
 # Get your App config if your not using TEST_ENV nor DEBUGGER
 if (Rents.test_env.nil? && Rents.debugger.nil?) || (Rents.test_env == false && Rents.debugger == false)
   if Rails.version[0].to_i >= 4
-    Rents.app_id = Rails.application.secrets.rents.app_id
-    Rents.secret_key = Rails.application.secrets.rents.app_secret_key
+    Rents.app_id = Rails.application.secrets.rents['app_id']
+    Rents.secret_key = Rails.application.secrets.rents['app_secret_key']
   end
 end
