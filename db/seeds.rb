@@ -61,9 +61,12 @@ puts '...AdStates inserted.'.colorize(:light_blue)
 
 # Roles
 puts 'Inserting Roles...'.colorize(:green)
-  puts "\t #{Role.find_or_create_by(name: 'admin')}"
-  puts "\t #{Role.find_or_create_by(name: 'publisher')}"
-  puts "\t #{Role.find_or_create_by(name: 'advertiser')}"
+  puts "\t Admin: #{Role.find_or_create_by(name: 'admin')}"
+  puts "\t Publisher: #{Role.find_or_create_by(name: 'publisher')}"
+  puts "\t Advertiser (anunciante): #{Role.find_or_create_by(name: 'advertiser')}"
+  puts "\t AdMan (publicitário de digital/social, GoogleAds, FaceAds...): #{Role.find_or_create_by(name: 'adman')}"
+  puts "\t PubPieceDesigner (designer, PubPieces): #{Role.find_or_create_by(name: 'pub_piece_designer')}"
+  puts "\t ContentCreator SocialContent (cria conteúdos para pub e adv): #{Role.find_or_create_by(name: 'content_creator')}"
 puts '...Roles inserted.'.colorize(:light_blue)
 # /Roles
 
