@@ -105,7 +105,7 @@ class Budget < ActiveRecord::Base
       resp = transaction.resp
 
       # Transaction attrs
-      transaction_rid = transaction.rid
+      transaction_rid = transaction.resp[:rid]
       transaction_purchase_url = transaction.purchase_url
 
       # Status Attrs
