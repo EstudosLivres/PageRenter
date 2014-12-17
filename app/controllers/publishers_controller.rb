@@ -14,7 +14,7 @@ class PublishersController < ApplicationController
   end
 
   # Publisher config his social logins
-  def add_social_login
+  def add_social_auth
     @social_networks = SocialNetwork.where(implemented: true, just_share: false)
     @user_social_sessions = @current_user.social_sessions
   end
