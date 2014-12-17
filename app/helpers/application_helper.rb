@@ -36,7 +36,7 @@ module ApplicationHelper
   # Build the arrays of actions for the user menu
   def role_actions
     # Publisher action_menu
-    new_social_session = { name: t(:publisher_action)[:new_social_session], path:add_social_login_path, icon:'fa fa-plus', toggle:'' }
+    new_social_session = { name: t(:publisher_action)[:new_social_session], path:add_social_auth_path, icon:'fa fa-plus', toggle:'' }
     publisher_invite = { name:t(:publisher_action)[:invite], path:'#invite', icon:'fa fa-paper-plane', toggle:'modal' }
     publisher_report_record = { name:t(:publisher_action)[:report_record], path:publisher_report_record_path, icon:'fa fa-line-chart', toggle:'' }
 

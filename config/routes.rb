@@ -18,7 +18,7 @@ PageRenter::Application.routes.draw do
   scope '/publishers' do
     get '' => 'publishers#index', as: :publisher_root
     get '/edit' => 'publishers#edit', as: :publisher_edit
-    get '/add_social_login' => 'publishers#add_social_login', as: :add_social_login
+    get '/add_social_auth' => 'publishers#add_social_login', as: :add_social_auth
     get '/accesses/:publisher_username/:ad_username' => 'accesses#brought', as: :publisher_brought_access
     get '/report_record' => 'report_records#brought_accesses', as: :publisher_report_record
   end
