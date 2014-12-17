@@ -14,11 +14,10 @@
 ActiveRecord::Schema.define(version: 20141211182214) do
 
   create_table "accesses", force: true do |t|
-    t.boolean  "converted",         default: false, null: false
-    t.boolean  "recurrent",         default: false, null: false
-    t.integer  "ad_id",                             null: false
-    t.integer  "profile_id",                        null: false
-    t.integer  "social_network_id"
+    t.boolean  "converted",  default: false, null: false
+    t.boolean  "recurrent",  default: false, null: false
+    t.integer  "ad_id",                      null: false
+    t.integer  "profile_id",                 null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -233,6 +232,7 @@ ActiveRecord::Schema.define(version: 20141211182214) do
   end
 
   add_index "shorter_links", ["ad_id"], name: "index_shorter_links_on_ad_id", using: :btree
+  add_index "shorter_links", ["link"], name: "index_shorter_links_on_link", unique: true, using: :btree
   add_index "shorter_links", ["user_id"], name: "index_shorter_links_on_user_id", using: :btree
 
   create_table "social_interactions", force: true do |t|
