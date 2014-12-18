@@ -32,6 +32,11 @@ class Profile < ActiveRecord::Base
     return ''
   end
 
+  # Turn it as the default to the user
+  def set_it_as_default
+    self.user.set_default_profile self.role.name
+  end
+
   def self.get_default_role profiles
     profiles.each do |profile|
       if profile.default_role then return profile.role.name end
