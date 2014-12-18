@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   @@host # Static var to be able to access what is it host from models
   protect_from_forgery with: :exception
+  before_filter :setup_default_role
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_or_token # SetUp user devise if
   before_action :set_nested # All controller must have the set_nested, if do not depend it is an empty method
@@ -21,7 +22,18 @@ class ApplicationController < ActionController::Base
       @@host = request.host_with_port
       return if params[:action].index('login') || params[:controller] == 'accesses'
       authenticate_user! if params[:controller].index('api').nil? && request.fullpath != root_path
-      @current_user = current_user
+      @current_user = current_user if @current_user.nil?
+    end
+
+    # SetUp it user default role
+    def setup_default_role
+      @current_user = current_user if @current_user.nil?
+
+      # Check/setup default role only for index calls
+      if params[:action] == 'index'
+        it_user_profile = @current_user.send(params[:controller].singularize)
+        it_user_profile.set_it_as_default unless it_user_profile.nil?
+      end
     end
 
     # return it static host (it is to have the host on the model)
