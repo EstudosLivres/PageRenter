@@ -1,5 +1,8 @@
 PageRenter
 ==========
+
+As redes sociais com just_share são as que temos o link para o cara compartilhar porém não temos o monitoramento, vai servir só para visitas e conversão
+
 Que tal lucrar com qualquer página na Web? Alugue seu Perfil com PageRenter!!
 <br><br>
 __Pitch curto__: _Aluguel Social de Marketing Bilateral_ 
