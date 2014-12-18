@@ -1,7 +1,4 @@
 class PublishersController < ApplicationController
-  # Prevent spam USER.FIND on DB
-  before_action :set_publisher, except: [:brought_access]
-
   # Root for Publisher user
   def index
     @ads = Campaign.all_actives_ads
@@ -15,7 +12,7 @@ class PublishersController < ApplicationController
 
   # Publisher config his social logins
   def add_social_auth
-    @social_networks = SocialNetwork.where(implemented: true, just_share: false)
+    @social_networks = SocialNetwork.all
     @user_social_sessions = @current_user.social_sessions
   end
 
