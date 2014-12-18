@@ -14,7 +14,8 @@
                 i.fa.fa-lock.float_right
 
               i class="fa fa-#{social_network.username}"
-              | |&nbsp;
+              span.divider
+                = '|'
               = social_network.name
 
             -if SocialSession.has_it?(@current_user, social_network) then connected_class = 'badge'
