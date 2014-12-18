@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
+#ruby=2.1.2@page
 
 # 'util' Useful in some context like better print/puts or legal_id like CPF
 group :useful do
@@ -79,7 +79,7 @@ group :build_front_end do
   gem 'coffee-rails', '~> 4.0.0'
 
   # for the social-buttons
-  gem 'jasny_bundle', git: 'https://github.com/PageRenter/jasny-bundle.git', branch: 'master'
+  gem 'jasny_bundle', git: 'https://github.com/TonFw/jasny-bundle.git', branch: 'master'
 end
 
 # Style & Interactions view frameworks
