@@ -51,12 +51,13 @@ class User < ActiveRecord::Base
     return nil
   end
 
-  # Set the current actived (rendered) profile as default
+  # Set the current active (rendered) profile as default
   def set_default_profile(role_name)
-    profiles.each do |profile|
-      if profile.role.name != role_name then default = false else default = true end
-      profile.update(default_role: default)
-    end
+    # Set as not default for all roles
+    profiles.where(default_role:true).update_all(default_role:false)
+
+    # Set it profile call as default
+    profiles.joins(:role).where("roles.name = '#{role_name}'").update_all(default_role:true)
   end
 
   # Return the User default Account
