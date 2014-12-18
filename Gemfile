@@ -79,7 +79,7 @@ group :build_front_end do
   gem 'coffee-rails', '~> 4.0.0'
 
   # for the social-buttons
-  gem 'jasny_bundle', '~> 2.1.0'
+  gem 'jasny_bundle', git: 'https://github.com/PageRenter/jasny-bundle.git', branch: 'master'
 end
 
 # Style & Interactions view frameworks
@@ -104,9 +104,6 @@ group :style_and_interactions do
 
   # IconFonts - Zurb
   gem 'zurb-foundation', '~> 4.3.2'
-
-  # IconFonts with it Buttons layout
-  gem 'social-buttons', '~> 0.3.9'
 end
 
 # Generate documentation
