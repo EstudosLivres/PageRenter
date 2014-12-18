@@ -27,7 +27,8 @@ class ApplicationController < ActionController::Base
 
     # SetUp it user default role
     def setup_default_role
-      @current_user = current_user if @current_user.nil?
+      # Prevent to continuous if the is no user, like on the Login or for API
+      @current_user.nil? ? return : @current_user = current_user
 
       # Check/setup default role only for index calls
       if params[:action] == 'index'
