@@ -23,13 +23,11 @@
             - if implemented && !social_session.nil?
               div
                 p
-                  a href=""
-                    span.float_right = social_session.local_interactions
-                    strong = t("#{social_network.username}.local_interactions")
+                  span.float_right = social_session.local_interactions
+                  strong = t("#{social_network.username}.local_interactions")
                 p
-                  a
-                    span.float_right = social_session.foreign_interactions
-                    strong = t("#{social_network.username}.foreign_interactions")
+                  span.float_right = social_session.foreign_interactions
+                  strong = t("#{social_network.username}.foreign_interactions")
 
             div class="#{disconnected_class} float_right"
               a.disconnect href='#'
