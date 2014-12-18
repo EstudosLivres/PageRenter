@@ -1,5 +1,5 @@
 GIT
-  remote: https://github.com/PageRenter/jasny-bundle.git
+  remote: https://github.com/TonFw/jasny-bundle.git
   revision: f787cb6b2273ebc78320b2003e9f293845acb01a
   branch: master
   specs:
