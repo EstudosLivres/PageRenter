@@ -110,6 +110,7 @@ GEM
     i18n (0.6.11)
     its (0.2.0)
       rspec-core
+    jasny_bundle (2.1.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -292,6 +293,7 @@ DEPENDENCIES
   gmaps4rails (~> 2.1.2)
   google-api-client (~> 0.7.1)
   its
+  jasny_bundle (~> 2.1.0)
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails

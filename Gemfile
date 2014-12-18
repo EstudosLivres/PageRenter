@@ -77,6 +77,9 @@ group :build_front_end do
 
   # Use CoffeeScript for .js.coffee assets and views
   gem 'coffee-rails', '~> 4.0.0'
+
+  # for the social-buttons
+  gem 'jasny_bundle', '~> 2.1.0'
 end
 
 # Style & Interactions view frameworks
