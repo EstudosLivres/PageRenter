@@ -1,5 +1,5 @@
 module Socials
-  class Twitter < SocialLib
+  class GooglePlus < SocialLib
     # Config the app for the connection
     def setup()
       puts 'SetUp TWITTER!'

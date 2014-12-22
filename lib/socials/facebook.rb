@@ -74,6 +74,9 @@ module Socials
     # The current user avatar link
     def get_user_avatar() end
 
+    # Post on the social
+    def post(message, link, img) end
+
     # Setup the Graph
     def set_up_graph(code)
       begin

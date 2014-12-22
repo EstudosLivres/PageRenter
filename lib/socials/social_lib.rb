@@ -21,5 +21,7 @@ module Socials
     def send_msg(msg, link) end
     # The current user avatar link
     def get_user_avatar() end
+    # Post on the social
+    def post(message, link, img) end
   end
 end
