@@ -115,10 +115,11 @@ ActiveRecord::Schema.define(version: 20141211182214) do
   end
 
   create_table "campaigns", force: true do |t|
-    t.string   "name",          limit: 75, null: false
+    t.string   "name",             limit: 75, null: false
     t.datetime "launch_date"
     t.datetime "end_date"
     t.integer  "advertiser_id"
+    t.integer  "campaign_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
