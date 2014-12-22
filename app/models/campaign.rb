@@ -12,7 +12,7 @@ class Campaign < ActiveRecord::Base
   validates :end_date, presence: true, on: [:create, :update]
 
   # Validates Associations
-  #validates :campaign_type_id, presence: true, on: [:create, :update]
+  validates :campaign_type_id, presence: true, on: [:create, :update]
   validates :advertiser_id, presence: true, on: [:create, :update]
 
   # Return it state based on the Ads (if there is at least 1 Ad RUNNING it is RUNNING, else is all in same state (pending, check...))
