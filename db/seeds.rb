@@ -21,10 +21,11 @@ puts '...CardFlags inserted.'.colorize(:light_blue)
 
 # CampaignTypes
 puts 'Inserting CampaignTypes...'.colorize(:green)
-  puts "\t #{CampaignType.find_or_create_by(name: 'link')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'e-commerce')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'marketplace')}"
-  puts "\t #{CampaignType.find_or_create_by(name: 'physical_store')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'simple_link', description: 'Optimized for simple link campaigns')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'startup', description: 'Optimized for StartUp links campaigns')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'e-commerce', description: 'Optimized for e-commerce, implementing re-marketing like netshoes does')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'marketplace', description: 'Optimized for marketplace, implementing affiliate for it users')}"
+  puts "\t #{CampaignType.find_or_create_by(name: 'physical_store', description: 'Optimized for physical stores, implementing MapApp & purchase on it')}"
 puts '...CampaignTypes inserted.'.colorize(:light_blue)
 # /CampaignTypes
 
