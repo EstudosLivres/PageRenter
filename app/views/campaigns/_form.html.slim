@@ -9,6 +9,14 @@
           li =message
 
   .form-group.col-md-12
+    .row#campaign_type_select
+      center.col-lg-offset-1
+        -@campaign_types.each do |type|
+          .radio-inline.col-md-2
+            label
+              =f.radio_button :campaign_type_id, type.id
+              =type.name
+
     .row
       .field.form-group
         =f.label :name
