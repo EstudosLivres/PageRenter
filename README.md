@@ -9,6 +9,24 @@ __Pitch curto__: _Aluguel Social de Marketing Bilateral_
 <br>
 __Pitch longo__: _Rede Social com foco no Consumismo e Compras Coletivas, fazendo tudo que o Facebook faz, mas com o diferencial de que nosso público não é nosso produto, mas sim parceiros._
 
+__Diferenciais perante o BooBox__
+1- O BooBox é focado em pessoas que possuem blogs e também só oferece essa opção.
+2- Nós temos uma abordagem p/ lojas fisicas entrarem na internet (mapapp) q tá lá no roadmap;
+3- nós oferecemos parte dos profissionais
+twp qro criar uma campanha e n sei cmo fzr uma peça publicitaria
+no boobox vc n tem nenhuma forma d fzr isso, no pagerenter vc vai ter como contratar algm p fzr
+saca?
+outra coisa tb é a interagração com o meio de pagamento (esse eu ainda n coloquei no roadmap)
+q é o seguint, qnt mais vc investir em marketing e qnt mais tiver conversões maior é a chance d vc ganhar um "premio" q é o rents pagar as taxas da transação por vc
+qlqr compra na internet tem um custo de X% do operador do cartão (Cielo), variando de 3 a 6%
+e o valor do gateway q geralmente é 1% mais 50centavos
+ai vc invesitu mt em marketing e converteu mtu
+um usuario aleatório seu n vai pagar isso
+ou seja se ele vai comprar um macbook de 4mil
+ele vai ter ai 7% de desconto, por exemplo, q já é R$280
+saca?
+outra coisa, uma pagina de redes sociais não pode ganhar dinheiro com o boobox
+
 ## Validação da ideia
 
 [Veja no YouTube um exemplo disso (22min até 23:15)](https://www.youtube.com/watch?v=GDm9xL7Q_k8&t=21m40s)
