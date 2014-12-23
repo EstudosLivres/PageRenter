@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   @@host # Static var to be able to access what is it host from models
   protect_from_forgery with: :exception
-  before_filter :setup_default_role
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_or_token # SetUp user devise if
   before_action :set_nested # All controller must have the set_nested, if do not depend it is an empty method
   before_action :validate_permission # All controller must have validate_permission, if is a global object it is an empty method
+  before_filter :setup_default_role # SetUp the user default role
 
   protected
     def configure_permitted_parameters
@@ -32,8 +32,12 @@ class ApplicationController < ActionController::Base
 
       # Check/setup default role only for index calls
       if params[:action] == 'index'
-        it_user_profile = @current_user.send(params[:controller].singularize)
-        it_user_profile.set_it_as_default unless it_user_profile.nil?
+        begin
+          it_user_profile = @current_user.send(params[:controller].singularize)
+          it_user_profile.set_it_as_default unless it_user_profile.nil?
+        rescue
+          return
+        end
       end
     end
 
