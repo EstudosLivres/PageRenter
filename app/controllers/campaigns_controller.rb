@@ -74,7 +74,7 @@ class CampaignsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def campaign_params
-      params.require(:campaign).permit(:name, :launch_date, :end_date)
+      params.require(:campaign).permit(:name, :campaign_type_id, :launch_date, :end_date)
     end
 
     # Create objs to auxiliary on create forms
