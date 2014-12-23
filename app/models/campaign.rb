@@ -6,6 +6,7 @@ class Campaign < ActiveRecord::Base
   belongs_to :advertiser, class_name: 'Profile', foreign_key: :advertiser_id
 
   # Rails validations
+  before_validation :setup_default_values, on: [:create, :update]
   before_validation :end_greater_than_launch_date, on: [:create, :update]
   validates :name, presence: true, length: { in: 5..75 }, on: [:create, :update]
   validates :launch_date, presence: true, on: [:create, :update]
@@ -70,6 +71,10 @@ class Campaign < ActiveRecord::Base
 
   # =============================== Useful callbacks ---============================
   private
+    def setup_default_values
+      self.campaign_type_id = 1 if self.campaign_type.nil?
+    end
+
     def count_ad_state state_name
       AdState.joins(:ad_history_states).joins(:ads).where('ad_states.name'=>state_name, 'ads.campaign_id'=>self.id).count
     end
