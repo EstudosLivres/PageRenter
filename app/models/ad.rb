@@ -32,7 +32,7 @@ class Ad < ActiveRecord::Base
   validates :campaign_id, presence: true
   validates :avatar, dimensions: { width: 470, height: 240 }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-  validates_attachment_size :avatar, less_than: 150.kilobyte
+  validates_attachment_size :avatar, less_than: 200.kilobyte
 
   # Validates Associations
   validates :campaign_id, presence: true, on: [:create, :update]
