@@ -1,4 +1,18 @@
 PageRenter::Application.routes.draw do
+  get 'ad_history_states/index'
+
+  get 'ad_history_states/show'
+
+  get 'ad_history_states/new'
+
+  get 'ad_history_states/edit'
+
+  get 'ad_history_states/create'
+
+  get 'ad_history_states/update'
+
+  get 'ad_history_states/destroy'
+
   get 'report_records/brought_accesses'
 
   get 'report_records/campaigns'
@@ -34,9 +48,11 @@ PageRenter::Application.routes.draw do
     resources :campaigns, except: [:destroy] do
       # Budget scope
       resources :budgets, except: [:edit, :destroy]
+      resources :ad_history_states, only: [:show, :index, :restart, :pause]
 
       # Ad scope
       resources :ads, except: [:destroy] do
+        resources :ad_history_states, only: [:show]
         resources :accesses, only: [:index, :show]
         resources :bids, except: [:destroy]
       end
