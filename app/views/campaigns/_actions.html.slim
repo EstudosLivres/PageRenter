@@ -1,7 +1,7 @@
 -unless @campaign.nil?
   .campaign_actions.float_right
     -unless @campaign.id.nil?
-      a.tooltiper.top href="#{new_campaign_budget_path(@campaign.id)}" title="#{t('campaign_action.life_cycle')}"
+      a.tooltiper.top href="#{campaign_ad_history_states_path(@campaign.id)}" title="#{t('campaign_action.life_cycle')}"
         i.fa.fa-recycle
 
       a.tooltiper.top href="#{campaign_ads_path(@campaign.id)}" title="#{t('campaign_action.ads')}"
