@@ -203,7 +203,7 @@ function start_base_chart() {
                 data: [203, 156, 99, 251, 305, 247]
             }
         ]
-    }
+    };
 
     // TODO remove options to be curved
     var options = {bezierCurve:false, bezierCurveTension:0};
