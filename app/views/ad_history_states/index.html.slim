@@ -1,0 +1,39 @@
+table.table.table-striped
+  tr
+    th
+      center Nome
+    th
+      center Estado
+    th
+      center Entrada
+    th
+      center Saída
+
+  -@ads.each do |ad|
+    tr
+      td
+        =ad.name
+      td
+        =ad.title
+      td
+        center
+          -if ad.bids.last.nil?
+            -valid_bid = 'danger'
+          -else
+            -valid_bid = 'success'
+          =link_to new_campaign_ad_bid_path(@campaign, ad) do
+            i class="fa fa-database #{valid_bid}"
+      td
+        center
+          =link_to campaign_ad_path(@campaign, ad) do
+            i.fa.fa-eye
+      td
+        center
+          =link_to edit_campaign_ad_path(@campaign, ad) do
+            i.fa.fa-edit
+
+              /!
+        td
+          center
+            =link_to campaign_ad_path(@campaign, ad), data: {:confirm => 'Are you sure?'}, :method => :delete do
+              i.fa.fa-remove.danger
