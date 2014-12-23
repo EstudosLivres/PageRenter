@@ -1,21 +1,6 @@
 PageRenter::Application.routes.draw do
-  get 'ad_history_states/index'
-
-  get 'ad_history_states/show'
-
-  get 'ad_history_states/new'
-
-  get 'ad_history_states/edit'
-
-  get 'ad_history_states/create'
-
-  get 'ad_history_states/update'
-
-  get 'ad_history_states/destroy'
-
-  get 'report_records/brought_accesses'
-
   get 'report_records/campaigns'
+  get 'report_records/brought_accesses'
 
   root to: 'home#index' # it must be just a redirect (like a facade)
 
