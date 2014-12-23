@@ -9,16 +9,18 @@
           li =message
 
   .form-group.col-md-12
-    .row
-      center.col-lg-offset-1
-        -@campaign_types.each do |type|
-          .radio-inline.col-md-2
-            label
-              =f.radio_button :campaign_type_id, type.id
-              =type.name
+    /!
+      .row
+        center.col-lg-offset-1
+          -@campaign_types.each do |type|
+            .radio-inline.col-md-2
+              label
+                -type.id == 1 ? checked=true : checked=false
+                =f.radio_button :campaign_type_id, type.id, checked:checked
+                =type.name
 
-      #campaign_type_select.alert.alert-info.arrow_box.col-md-12 style="display:none"
-        | Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns
+        #campaign_type_select.alert.alert-info.arrow_box.col-md-12 style="display:none"
+          | Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns Lorem ipsum amet alorem e mais loremns
 
     .row
       .field.form-group
