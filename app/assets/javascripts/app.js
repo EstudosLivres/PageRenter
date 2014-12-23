@@ -10,6 +10,7 @@ $(document).ready(function(){
     toggle_icon_orientation();
     add_alert_to_form_error();
     prevent_click_on_disabled();
+    show_campaign_type_description();
     // TODO metodo que joga fixed on top MENU se tiver datepicker? Achar uma forma paleativa de por o fixed top e margin top se quebrar o Datepicker
 });
 
@@ -207,4 +208,23 @@ function start_base_chart() {
     // TODO remove options to be curved
     var options = {bezierCurve:false, bezierCurveTension:0};
     new Chart(buyers).Line(buyerData, options);
+}
+
+function show_campaign_type_description() {
+    $('input[type="radio"]').change(function(){
+        // Base vars
+        var campaign_type_selector = $('#campaign_type_select');
+        var id = $(this).attr('value');
+
+        // Remove all arrows & add it selected arrow
+        campaign_type_selector.removeClass(function(index, css){
+            return (css.match (/(^|\s)arrow-\S+/g) || []).join(' ');
+        });
+
+        // Add it arrow
+        campaign_type_selector.addClass('arrow-'+id);
+
+        // Show if it is not visible yet
+        if(!campaign_type_selector.is(":visible")) campaign_type_selector.slideToggle();
+    });
 }
