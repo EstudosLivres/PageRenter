@@ -1,7 +1,7 @@
 class PublishersController < ApplicationController
   # Root for Publisher user
   def index
-    @ads = Campaign.all_actives_ads
+    @ads = Campaign.all_actives_ads @current_user.advertiser.id
     @social_session = @current_user.get_social_network_profile('facebook')
     @pages = @social_session.page_accounts unless @social_session.nil?
   end
