@@ -64,7 +64,7 @@ group :services do
   gem 'newrelic_rpm'
 
   # Gem to generate SocialShareURLs
-  gem 'just_share', '~> 1.0.0'
+  gem 'just_share', '~> 1.0.2'
 end
 
 # GEMs for build the view

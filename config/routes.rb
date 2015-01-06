@@ -81,6 +81,8 @@ PageRenter::Application.routes.draw do
     # All the actions that generate data
     scope '/generators' do
       get 'shorter' => 'generator#shorter', as: :shorter_generator
+      # TODO if not passed social_network retrieve all links generated? Check login for those actions?
+      get 'social/share(/:social_network)' => 'generator#social', as: :social_generator
     end
   end
 end
