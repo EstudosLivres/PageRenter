@@ -35,6 +35,8 @@ config/initializers/aws.rb
 config/deploy/production.rb
 /config/aws.yml
 config/aws.yml
+/config/newrelic.yml
+config/newrelic.yml
 /coverage.data
 /coverage/
 coverage
