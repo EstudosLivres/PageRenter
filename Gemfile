@@ -60,6 +60,9 @@ group :services do
   gem 'aws-sdk', '~> 1.58.0'
   gem 's3_direct_upload', '~> 0.1.7'
 
+  # Monitoring
+  gem 'newrelic_rpm'
+
   # Gem to generate SocialShareURLs
   gem 'just_share', '~> 1.0.0'
 end
