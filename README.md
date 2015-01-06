@@ -1,6 +1,11 @@
 PageRenter
 ==========
 
+__ISSUES__
+Usar TODO Lists para mostrar barra de progresso das issues, exemplo se uso:
+- [x] done;
+- [ ] todo.
+
 As redes sociais com just_share são as que temos o link para o cara compartilhar porém não temos o monitoramento, vai servir só para visitas e conversão
 
 Que tal lucrar com qualquer página na Web? Alugue seu Perfil com PageRenter!!
