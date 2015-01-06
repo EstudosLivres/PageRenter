@@ -58,13 +58,13 @@ class Campaign < ActiveRecord::Base
   end
 
   # =============================== STATICs AUX METHODs ============================
-  def self.actives
-    self.where('launch_date <= now() AND end_date >= now()')
+  def self.actives advertiser_id=nil
+    self.where("launch_date <= now() AND end_date >= now() AND advertiser_id != '#{advertiser_id}'")
   end
 
-  def self.all_actives_ads
+  def self.all_actives_ads advertiser_id=nil
     ads = []
-    campaigns = self.actives
+    campaigns = self.actives advertiser_id
     campaigns.each {|campaign| campaign.ads_active.each {|ad| ads << ad } }
     return ads
   end
