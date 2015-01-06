@@ -29,6 +29,12 @@ class Bid < ActiveRecord::Base
     self.currency.nil? ? Currency.new : self.currency
   end
 
+  # Return it transfer value to the Publisher
+  def publisher_transfer_value attr_symbol
+    publisher_participation = 0.4
+    self.real_value(attr_symbol)*publisher_participation
+  end
+
   # ActiveRecord Get Method overwrite to print the real value, not the operator value
   def real_value attr_symbol
     read_attribute(attr_symbol).to_f/100 if read_attribute(attr_symbol)
