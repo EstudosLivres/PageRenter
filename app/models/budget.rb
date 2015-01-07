@@ -13,6 +13,7 @@ class Budget < ActiveRecord::Base
   # Rails validations
   # The 100 means 1,00 or 1.00 on the Operator, it means 1 currency unity (it is mult 100 because the 100 are the cents, so 10*100 is just 10 R$/US$...)
   validates :value, presence: true, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 50*100, less_than: 100000*100}, on: [:create, :update]
+  validates_inclusion_of :taxes_paid, in: [true, false], on: [:create, :update]
 
   # Validates Associations
   validates :currency_id, presence: true, on: [:create, :update]
@@ -49,6 +50,11 @@ class Budget < ActiveRecord::Base
   # Return it last transaction with a purchase url
   def operator_url
     current_operator_transaction.operator_url
+  end
+
+  # Static Methods
+  def self.gov_taxes
+    0.2 # TODO It value must be on the config YML or on the DB!?
   end
 
   # =============================== Private methods for callbakcs ============================

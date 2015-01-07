@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20141211182214) do
     t.boolean  "active",                         null: false
     t.integer  "value",                limit: 8, null: false
     t.datetime "closed_date"
+    t.boolean  "taxes_paid",                     null: false
     t.integer  "currency_id",                    null: false
     t.integer  "campaign_id",                    null: false
     t.integer  "card_flag_id",                   null: false
