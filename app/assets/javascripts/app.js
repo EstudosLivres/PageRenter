@@ -286,7 +286,7 @@ function pay_it_tax(element) {
     budget_element.val(new_budget);
     budget_element.focus();
 
-    if(current_element.is(':checked')) budget_element.attr('disabled', '');
+    if(current_element.is(':checked')) budget_element.attr('readonly', '');
 }
 
 // Update the Budget value
