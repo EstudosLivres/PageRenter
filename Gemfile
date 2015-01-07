@@ -85,7 +85,7 @@ group :build_front_end do
   gem 'coffee-rails', '~> 4.0.0'
 
   # for the social-buttons
-  gem 'jasny_bundle', '~> 2.1.1', git: 'https://github.com/TonFw/jasny-bundle.git', branch: 'master'
+  gem 'jasny_bundle', '~> 2.1.2', git: 'https://github.com/TonFw/jasny-bundle.git', branch: 'master'
 end
 
 # Style & Interactions view frameworks
