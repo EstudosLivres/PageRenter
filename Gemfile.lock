@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/TonFw/jasny-bundle.git
-  revision: f787cb6b2273ebc78320b2003e9f293845acb01a
+  revision: a73f6f43d06b276e1bf142241c29b9215cf16364
   branch: master
   specs:
-    jasny_bundle (2.1.0)
+    jasny_bundle (2.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -303,7 +303,7 @@ DEPENDENCIES
   gmaps4rails (~> 2.1.2)
   google-api-client (~> 0.7.1)
   its
-  jasny_bundle!
+  jasny_bundle (~> 2.1.1)!
   jbuilder (~> 1.2)
   jquery-rails
   jquery-ui-rails
