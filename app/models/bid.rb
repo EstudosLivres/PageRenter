@@ -31,8 +31,7 @@ class Bid < ActiveRecord::Base
 
   # Return it transfer value to the Publisher
   def publisher_transfer_value attr_symbol
-    publisher_participation = 0.4
-    self.real_value(attr_symbol)*publisher_participation
+    self.real_value(attr_symbol)*Bid.publisher_participation
   end
 
   # ActiveRecord Get Method overwrite to print the real value, not the operator value
@@ -43,6 +42,12 @@ class Bid < ActiveRecord::Base
   # Return currency full name if there is a currency associated
   def it_currency
     currency.nil? ? nil : currency.acronym_with_name
+  end
+
+  # Static Methods
+  def self.publisher_participation
+    # 25% is tax, so we have 75/2 (between PageRenter & the publisher)
+    0.75/2 # TODO It value must be on the config YML or on the DB!?
   end
 
   # =============================== Callbacks ============================
