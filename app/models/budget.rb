@@ -39,7 +39,7 @@ class Budget < ActiveRecord::Base
   # ActiveRecord Get Method overwrite to print the real value, not the operator value
   def value
     # it is the real value, like 100, means R$1,00
-    read_attribute(:value).to_f/100 if read_attribute(:value)
+    self.real_budget if read_attribute(:value)
   end
 
   # Check if it last financial transaction was charged
@@ -50,6 +50,18 @@ class Budget < ActiveRecord::Base
   # Return it last transaction with a purchase url
   def operator_url
     current_operator_transaction.operator_url
+  end
+
+  # Check it real budget
+  def real_budget
+    # Continue only if is possible to read it attr
+    if read_attribute(:value)
+      # operator value to decimal (readable value)
+      operator_in_decimal = read_attribute(:value).to_f/100
+
+      # Return it real budget
+      operator_in_decimal - (operator_in_decimal*0.25) # TODO call here the taxes implementation
+    end
   end
 
   # Static Methods
@@ -89,7 +101,7 @@ class Budget < ActiveRecord::Base
       return unless self.financial_transactions.empty?
 
       # Setup vars
-      amount = self.value
+      amount = read_attribute(:value)
       card_flag_name = self.card_flag.acronym
       redirect_validate_url = "http://#{ApplicationController.host}#{Rails.application.routes.url_helpers.advertiser_root_path}?paid=true&campaign=#{self.campaign.name}"
 
