@@ -20,7 +20,7 @@
   .form-group.col-md-4
     center
       = f.label :value, translate_it_label('budget', 'value')
-    = f.text_field :value, value: @budget.operator_value_str, class:'form-control currency_mask', placeholder:'Orçamento da campanha & seus Anúncios', 'data-thousands'=>'.', 'data-decimal'=>','
+    = f.text_field :value, value: @budget.operator_value_str, class:'form-control budget_value currency_mask', placeholder:'Orçamento da campanha & seus Anúncios', 'data-thousands'=>'.', 'data-decimal'=>',', 'onchange'=>'calcBudget()'
   .form-group.col-md-4
     center
       = f.label :currency, translate_it_label('budget', 'currency')
@@ -29,4 +29,15 @@
     center
       = f.label :recurrence_period, translate_it_label('budget', 'recurrence_period')
     = f.collection_select :recurrence_period_id, @recurrence_periods, :id, :translated_recurrence_name, {prompt: 'Escolhe a recorrência do orçamento', default: nil}, {class: 'form-control'}
+
+  #budget_explain
+    .form-group.col-md-3
+      | Total orçamento:&nbsp;
+      strong#budgeted
+
+    .form-group.col-md-8
+      label
+        =f.check_box :taxes_paid, 'onchange'=>'pay_it_tax(this)'
+        | &nbsp;Aceito pagar as taxas para ter o orçamento completo (20% impostos + 5% taxa do cartão)
+
   .actions = f.submit 'Save', class:'btn btn-primary float_right'

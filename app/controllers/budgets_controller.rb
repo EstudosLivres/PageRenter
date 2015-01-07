@@ -85,7 +85,7 @@ class BudgetsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def budget_params
-      budget_params_hash = params.require(:budget).permit(:value, :currency_id, :recurrence_period_id, :card_flag_id)
+      budget_params_hash = params.require(:budget).permit(:value, :currency_id, :recurrence_period_id, :card_flag_id, :taxes_paid)
       budget_params_hash[:active] = true
       budget_params_hash[:closed_date] = nil
       budget_params_hash[:campaign_id] = params[:campaign_id]

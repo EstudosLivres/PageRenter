@@ -6,6 +6,7 @@ $(document).ready(function(){
     setup_date_picker();
     setup_tooltips_types();
     //create_shorter_links();
+    budget_value_behaviour();
     focus_all_currency_mask();
     toggle_icon_orientation();
     add_alert_to_form_error();
@@ -227,4 +228,102 @@ function show_campaign_type_description() {
         // Show if it is not visible yet
         if(!campaign_type_selector.is(":visible")) campaign_type_selector.slideToggle();
     });
+}
+
+// Behaviours for the budget amount input
+function budget_value_behaviour() {
+    $('.budget_value').keyup(function(){
+        update_budget();
+    });
+}
+
+// Return a float based on the passed number
+function currency_to_float(currency_str) {
+    var cents = currency_str.slice(-2);
+
+    //remove the dots like 1.000 to 1000
+    var without_dots = currency_str.replace(/[^0-9\,]+/g, '');
+    var amount = without_dots.substr(0, without_dots.indexOf(','));
+
+    return parseFloat(amount+'.'+cents);
+}
+
+// Return a float based on the passed number
+function float_to_currency(float_num, thousands, decimal) {
+    if(thousands==null) thousands_separator = '.';
+    else thousands_separator = thousands;
+    if(decimal==null) decimal_separator = ',';
+    else decimal_separator = decimal;
+
+    var float_separator = '.';
+    var cents;
+
+    // Force to be a String
+    if(typeof float_num == 'number') float_str = ''+float_num;
+    else float_str = float_num;
+
+    // SetUp vars
+    if(float_str.indexOf(float_separator) >= 0) cents = float_str.substr(float_str.indexOf(float_separator)+1, float_str.length-1);
+    else cents = '00';
+
+    if(cents.length == 1) cents=cents+'0';
+    if(float_str.indexOf(float_separator) < 0) amount = float_str;
+    else amount = float_str.substr(0, float_str.indexOf('.'));
+
+    // Add separators for each thousand
+    amount = amount.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1'+thousands_separator);
+
+    return amount+decimal_separator+cents;
+}
+
+function pay_it_tax(element) {
+    var current_element = $(element);
+    var budget_element = $('#budget_value');
+    var float_budget = currency_to_float(budget_element.val());
+
+    var new_budget = calc_budget(float_budget);
+    update_budget();
+    budget_element.val(new_budget);
+    budget_element.focus();
+
+    if(current_element.is(':checked')) budget_element.attr('disabled', '');
+}
+
+// Update the Budget value
+function update_budget() {
+    // SetUp selectors
+    var current_element = $('.budget_value');
+    var expected_budget = current_element.val();
+    var taxes_paid = $('#budget_taxes_paid');
+    var budget_result = $('#budgeted');
+
+    // TODO Those taxes values must be on the DB in the future
+    var gov_tax = 0.2;
+    var card_tax = 0.05;
+    var taxes = gov_tax+card_tax;
+    var real_budget_amount;
+
+    // Calculate the new budget
+    if(taxes_paid.is(':checked')) real_budget_amount = expected_budget;
+    else if(!taxes_paid.is(':checked')) {
+        var currency_float = currency_to_float(expected_budget);
+        var budget_without_pay_taxes = currency_float-(currency_float*taxes);
+        real_budget_amount = float_to_currency(budget_without_pay_taxes);
+    }
+
+    // EndEvent
+    budget_result.html(real_budget_amount);
+}
+
+function calc_budget(expected_value) {
+    var gov_tax = 0.2;
+    var card_tax = 0.05;
+    var full_tax = gov_tax+card_tax;
+    var full_val_const = 1;
+
+    budget_calculated = expected_value/(full_val_const-full_tax);
+    budget_calculated_str = ''+budget_calculated.toFixed(2);
+    budget_calculated_without_dots = budget_calculated_str.split('.').join('');
+
+    return budget_calculated_without_dots;
 }
