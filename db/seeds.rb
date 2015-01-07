@@ -76,7 +76,7 @@ puts 'Inserting SocialNetworks...'.colorize(:green)
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Facebook', acronym: 'Face', username: 'facebook', monitoring: true})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Twitter', acronym: 'Tw', username: 'twitter', monitoring: false})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'GooglePlus', acronym: 'G+', username: 'google-plus', monitoring: false})}"
-  puts "\t #{SocialNetwork.find_or_create_by({name: 'LinkedIn', acronym: 'in', username: 'linkedin', monitoring: false})}"
+  puts "\t #{SocialNetwork.find_or_create_by({name: 'LinkedIn', acronym: 'in', username: 'linked-in', monitoring: false})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Instagram', acronym: 'Insta', username: 'instagram', monitoring: false})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Vk', acronym: 'Vk', username: 'vk', monitoring: false})}"
   puts "\t #{SocialNetwork.find_or_create_by({name: 'Tumblr', acronym: 'Tb', username: 'tumblr', monitoring: false})}"

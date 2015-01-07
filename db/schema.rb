@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20141211182214) do
     t.string   "description",         limit: 200
     t.string   "username",            limit: 140, null: false
     t.string   "social_phrase",       limit: 140
+    t.string   "hash_tags",           limit: 140
     t.text     "redirect_link",                   null: false
     t.integer  "campaign_id"
     t.string   "avatar_file_name"

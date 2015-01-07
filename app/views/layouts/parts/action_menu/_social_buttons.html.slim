@@ -1,6 +1,12 @@
 .social_share
-  -@social_networks = SocialNetwork.all
+  -# is expected a JustShare generated link named: @share_hash!!
+  -@share_hash={} if @share_hash.nil?
+  -@social_networks=[] if @social_networks.nil?
   -@social_networks.each do |s|
-    - s.implemented? ? status = 'implemented' : status = 'disabled unimplemented'
-    a id="#{s.acronym.downcase}_share" class="#{status} btn btn-#{s.username}" data-toggle="modal" data-target="#share_action"
+    -@share_hash[:social] = s.username
+    -begin
+      -@share_link = JustShare.on(@share_hash)
+    -rescue
+      -next
+    a href="#{@share_link}" target="_blank" class="btn btn-#{s.username}"
       i class="fa fa-#{s.username}"

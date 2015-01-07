@@ -24,6 +24,8 @@ en-US:
           redirect_link_tiper: Where the user go after clicked on the link
           social_phrase: Short sentence
           social_phrase_tiper: Used on social medias by the Publisher
+          hash_tags: Associated 'HashTags' to your Ad, without sharp & using commons
+          hash_tags_tiper: add just the hash_tag using commons
           description: Long description
           description_tiper: Explaining the Ad's product
           username: Name for the PageRenter Link

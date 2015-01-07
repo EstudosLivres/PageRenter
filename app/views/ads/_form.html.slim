@@ -40,6 +40,12 @@
     = f.text_field :social_phrase, class: 'form-control', placeholder: 'Frase para mídias sociais'
 
   .field.form-group
+    = f.label :hash_tags do
+      ="#{translate_it_label('ad', 'hash_tags')} "
+      i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'hash_tags_tiper')}"
+    = f.text_field :hash_tags, class: 'form-control', placeholder: 'Hash tags separadas por vírgulas'
+
+  .field.form-group
     = f.label :description do
       ="#{translate_it_label('ad', 'description')} "
       i.fa.fa-question-circle.tooltiper.top title="#{translate_it_label('ad', 'description_tiper')}"

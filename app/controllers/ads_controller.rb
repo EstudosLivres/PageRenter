@@ -78,7 +78,7 @@ class AdsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ad_params
-      ad_hash = params.require(:ad).permit(:name, :title, :description, :username, :social_phrase, :redirect_link, :avatar)
+      ad_hash = params.require(:ad).permit(:name, :title, :description, :username, :social_phrase, :hash_tags, :redirect_link, :avatar)
       ad_hash[:campaign_id] = params[:campaign_id]
       ad_hash
     end

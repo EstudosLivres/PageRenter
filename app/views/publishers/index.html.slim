@@ -6,6 +6,7 @@
     -@ads.each_with_index do |ad, index|
       -@ad = ad
       -@bid = ad.bid
+      -@share_hash = {via:'PageRenter', link:ad.redirect_link, title:ad.title, message:ad.social_phrase, hash_tags:ad.hash_tags, image_url:ad.avatar.url}
       .pub_post
         .float_right =render 'layouts/parts/action_menu/social_buttons'
         .post_brand =image_tag(ad.advertiser.avatar.url)

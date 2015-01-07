@@ -11,6 +11,7 @@ class CreateAds < ActiveRecord::Migration
       # PageRenter purpose
       t.string :username, limit: 140, null: false # Goes on the Ad link (for Google SEO)
       t.string :social_phrase, limit: 140, null: true # example phrase to be used on social medias
+      t.string :hash_tags, limit: 140, null: true # hash_tags separated by commons
 
       # Any Ad uses
       t.text :redirect_link, limit: 1240, null: false

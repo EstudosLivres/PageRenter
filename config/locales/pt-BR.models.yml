@@ -25,6 +25,8 @@ pt-BR:
           redirect_link_tiper: Seu site, link em marketplace...
           social_phrase: Frase social curta
           social_phrase_tiper: Serve de exemplo para a postagem do Publisher
+          hash_tags: HashTags associadas ao seu anúncio, somente nomes e separando com vírgulas
+          hash_tags_tiper: Adicione suas hash_tags separadas com vírgulas e somente nomes
           description: Descrição longa
           description_tiper: Aparecerá como complemento da postagem como notícia
           username: Nome para o Link do PageRenter
