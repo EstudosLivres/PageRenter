@@ -3,12 +3,13 @@ class SocialNetwork < ActiveRecord::Base
   has_many :social_sessions
 
   # Attrs validations
+  # Is how the network is presented to the user
   validates :name, presence: true, length: { in: 3..50 }, on: [:create, :update]
+  # Alias, presented to user more friendly
   validates :username, presence: true, length: { in: 2..30 }, on: [:create, :update]
+  # Alias, is how the Application knows it SocialNetwork, like frameworks...
   validates :acronym, presence: true, length: { in: 2..10 }, on: [:create, :update]
-  validates_inclusion_of :implemented, in: [true, false], on: [:create, :update]
-  validates_inclusion_of :just_share, in: [true, false], on: [:create, :update]
-  # it means if the share is just sharing & not earning for the likes, shares & comments)
+  # it means OAuth for monitoring local_interactions, foreign_interactions...
   validates_inclusion_of :monitoring, in: [true, false], on: [:create, :update]
 
   # Validates Associations
@@ -134,7 +135,6 @@ class SocialNetwork < ActiveRecord::Base
 
   private
     def set_nil_to_default_value
-      self.implemented = false if self.implemented.nil?
-      self.just_share = true if self.just_share.nil?
+      self.monitoring = true if self.monitoring.nil?
     end
 end
