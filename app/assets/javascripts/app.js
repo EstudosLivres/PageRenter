@@ -96,7 +96,7 @@ function setup_currency() {
 // Focus the first input on the form
 function focus_all_currency_mask() {
     setTimeout(function(){
-        masks = $('.currency_mask');
+        masks = $($('.currency_mask')[0]);
         masks.focus();
 
         // Focus all masks

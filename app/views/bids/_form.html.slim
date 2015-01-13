@@ -1,3 +1,5 @@
+=render 'alert_conversion'
+
 = form_for [@campaign, @ad, @bid] do |f|
   - if @bid.errors.any?
     #error_explanation
@@ -23,6 +25,6 @@
     = f.text_field :per_conversion, class: 'form-control currency_mask', placeholder:'Price per conversion (sign ups, purchases...)'
   .form-group.col-md-6
     = f.label :currency, translate_it_label('budget', 'currency')
-    = f.collection_select :currency_id, @currencies, :id, :acronym_with_name, {prompt: 'Escolhe a moeda (a região do público alvo)', default: nil}, {class: 'form-control currency_mask'}
+    = f.collection_select :currency_id, @currencies, :id, :acronym_with_name, {prompt: 'Escolhe a moeda (a região do público alvo)', default: nil}, {class: 'form-control'}
 
   .actions = f.submit 'Save', class:'btn btn-primary float_right'

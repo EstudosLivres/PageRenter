@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ReportRecordsController do
+describe ReportsController do
 
   describe "GET 'brought_accesses'" do
     it "returns http success" do

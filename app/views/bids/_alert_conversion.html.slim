@@ -1,0 +1,14 @@
+.alert.alert-warning
+  | A instalação corretamente do ConversionTracking permite que o&nbsp;
+  =render 'layouts/parts/brand'
+  | &nbsp;em pareceria com o RentS
+  strong &nbsp;paguem pelas suas taxas de operadora de cartão.&nbsp;
+  a href="#" Saiba mais
+
+/!
+  | Lembre de adicionar o script de monitoramento de conversão em seu WebSite:
+  div
+    code
+      = "<script src=\"#{request.protocol+ApplicationController.host}/assets/conversion_tracking.js\"></script>"
+  div
+    | Se quiser
