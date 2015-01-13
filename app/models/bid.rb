@@ -8,10 +8,10 @@ class Bid < ActiveRecord::Base
 
   # Rails validations TODO: validate the min paid
   # The *100 means the cents. The 1*100 is a R$/US$ 1,00, to only 1 cents it need to be 0.01*100
-  validates :per_local_interaction, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 0.02*100}, on: [:create, :update]
-  validates :per_foreign_interaction, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 0.04*100}, on: [:create, :update]
-  validates :per_visitation, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 0.50*100}, on: [:create, :update]
-  validates :per_conversion, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than: 5.00*100}, on: [:create, :update]
+  validates :per_local_interaction, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than_or_equal_to: 0.02*100}, on: [:create, :update]
+  validates :per_foreign_interaction, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than_or_equal_to: 0.04*100}, on: [:create, :update]
+  validates :per_visitation, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than_or_equal_to: 0.50*100}, on: [:create, :update]
+  validates :per_conversion, presence: true, format: { :with => /\A\d+(?:\.\d{0,2})?\z/ }, numericality: {greater_than_or_equal_to: 5.00*100}, on: [:create, :update]
 
   # Validates Associations
   validates :ad_id, presence: true, on: [:create, :update]

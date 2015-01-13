@@ -50,7 +50,7 @@ class AccessesController < ApplicationController
 
     # Create on the memory all objs which it depends on
     def setup_register_objs
-      @ad = Ad.where(username: params[:ad_username]).take
+      @ad = Ad.where(username: params[:ad_username], campaign_id: params[:campaign_id]).take
       @user = User.where(username: params[:publisher_username]).take
       @publisher = @user.publisher unless @user.nil?
       create_accesses_cookie if cookies[:accesses].nil?

@@ -39,6 +39,7 @@ class FinancialTransaction < ActiveRecord::Base
     # Update it attrs
     self.status_code=transaction_verified[:status][:code]
     self.status_name=transaction_verified[:status][:name]
+    self.save
 
     # Prepare it returning
     self.status_name == 'error' ? true : false if self.status_code != initial_status

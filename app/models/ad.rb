@@ -30,7 +30,7 @@ class Ad < ActiveRecord::Base
   validates :avatar, presence: true, on: [:create, :update]
 
   validates :campaign_id, presence: true
-  validates :avatar, dimensions: { width: 470, height: 240 }
+  # validates :avatar, dimensions: { width: 470, height: 240 }
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_attachment_size :avatar, less_than: 200.kilobyte
 
@@ -63,7 +63,7 @@ class Ad < ActiveRecord::Base
     if !shorter_link.nil? && get_shorter_obj then return shorter_link elsif !shorter_link.nil? && !get_shorter_obj then return shorter_link.link end
 
     host = ApplicationController.host
-    path = Rails.application.routes.url_helpers.publisher_brought_access_path(publisher_username:user.username, ad_username:self.username)
+    path = Rails.application.routes.url_helpers.publisher_brought_access_path(campaign_id:self.campaign_id, publisher_username:user.username, ad_username:self.username)
     shorter_link.nil? ? "http://#{host}#{path}" : shorter_link.link
   end
 
