@@ -46,7 +46,8 @@ PageRenter::Application.routes.draw do
     get '' => 'publishers#index', as: :publisher_root
     get '/edit' => 'publishers#edit', as: :publisher_edit
     get '/add_social_auth' => 'publishers#add_social_auth', as: :add_social_auth
-    get '/accesses/:campaign_id/:publisher_username/:ad_username' => 'accesses#brought', as: :publisher_brought_access
+    # Constraints added to allow usernames with . like ilton.garcia, or the Rails will try to find a file ilton with format extension called garcia
+    get '/accesses/:campaign_id/:publisher_username/:ad_username' => 'accesses#brought', constraints: {publisher_username: /[^\/]+/, ad_username: /[^\/]+/}, as: :publisher_brought_access
     get '/report_record' => 'reports#brought_accesses', as: :publisher_report_record
   end
 
@@ -77,11 +78,17 @@ PageRenter::Application.routes.draw do
 
     # API for PageRenter Parent/Nested systems/apps, it isn't for third systems
     scope '/system' do
-      # All the actions that generate data
+      # All the actions that generate data via GET
       scope '/generators' do
-        get 'shorter' => 'generator#shorter', as: :shorter_generator
-        get 'social/share(/:social_network)' => 'generator#social', as: :social_generator # TODO if not passed social_network retrieve all links generated? Check login for those actions?
-        get 'tracker' => 'generator#conversion_tracker', as: :conversion_tracker
+        get 'shorter' => 'generators#shorter', as: :shorter_generator
+        get 'social/share(/:social_network)' => 'generators#social', as: :social_generator # TODO if not passed social_network retrieve all links generated? Check login for those actions?
+        get 'tracker' => 'generators#conversion_tracker', as: :conversion_tracker
+      end
+
+      # All the actions that UPDATE or CREATE records, Register via POST for insertions & PUT for updates
+      scope '/registers' do
+        # TODO, ADD IT TO PUT, BUT HOW JS CAN SEND PUT REQUEST?
+        post 'conversion' => 'registers#conversion', as: :conversion_register
       end
     end
 

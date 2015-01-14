@@ -1,4 +1,5 @@
-class API::GeneratorController < API::BaseAPIController
+# All the actions that generate data via GET
+class API::GeneratorsController < API::BaseAPIController
   # Custom layouts for specific actions
   layout 'blank', only: [:conversion_tracker]
 
@@ -35,12 +36,43 @@ class API::GeneratorController < API::BaseAPIController
 
   # Generate the JSON to help the ConversionTracker
   def conversion_tracker
-    @conversion_hash = {
-        secret:'new_secret',
-        ad_username:'new_ad',
-        publisher_username:'new_pub'
-    }
+    # Run it to find the user last access to it URL
+    last_access
+
+    # Retrieve it access_hash based on it time_str
+    @i = nil
+    @most_recent_time_str = @most_recent_time.strftime('%H:%M:%S')
+    @accesses_array.each_with_index { |access, i| @i = i unless access.index(@most_recent_time_str).nil? }
+    @conversion_hash={}
+
+    unless @i.nil?
+      current_access_as_array = @accesses_hash.keys[@i].split('-')
+
+      @conversion_hash = {
+          secret:current_access_as_array.last,
+          ad_username:current_access_as_array.second,
+          publisher_username:current_access_as_array.first
+      }
+    end
 
     render 'accesses/conversion_tracker'
   end
+
+  private
+    def last_access
+      @cookie_accesses = cookies[:accesses]
+      return if cookies.nil?
+      @accesses_hash = JSON.parse(@cookie_accesses)
+      @accesses_array = @accesses_hash.values
+      @most_recent_time = Time.strptime('00:00:00', '%H:%M:%S')
+
+      @accesses_array.each do |access|
+        current_time_str = access.split('-').last
+        next if current_time_str.nil?
+        current_time = Time.strptime(current_time_str, '%H:%M:%S')
+        @most_recent_time = current_time if current_time > @most_recent_time
+      end
+
+      @most_recent_time
+    end
 end

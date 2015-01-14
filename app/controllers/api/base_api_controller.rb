@@ -6,8 +6,8 @@ class API::BaseAPIController < ApplicationController
   def set_access_control_headers
     headers['X-Frame-Options'] = 'ALLOWALL'
     headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Headers'] = '*'
     headers['Access-Control-Request-Method'] = '*'
-    headers['Access-Control-Allow-Headers'] = 'Content-Type'
     headers['content-type: application/json; charset=utf-8']
   end
 end

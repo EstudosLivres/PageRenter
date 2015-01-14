@@ -1,23 +1,25 @@
+var protocol = 'http://';
+var domain = "localhost:4000";
+
 // Function that encapsulate all the logic
 function start_tracking() {
     // Create the iFrame
     var iframe = document.createElement('iframe');
 
     // Aux vars to create the Iframe
-    var protocol = 'http://';
-    var domain = "localhost:4000";
-    var path = "<%= "#{Rails.application.routes.url_helpers.api_conversion_tracker_path}" %>";
+    var path = "<%= Rails.application.routes.url_helpers.api_conversion_tracker_path %>";
+    var get_params = '?url='+document.URL;
 
     //setting up the iframe properties
     iframe.id = 'pagerenter';
-    iframe.src = protocol + domain + path;
+    iframe.src = protocol + domain + path + get_params;
     // Full iFrame permissions
     iframe.sandbox = 'allow-same-origin allow-top-navigation allow-forms allow-popups allow-pointer-lock allow-scripts';
 
     // Hidden the iframe
-    iframe.style.width = '100px';
-    iframe.style.height = '100px';
-    iframe.style.opacity = 1;
+    iframe.style.width = 0;
+    iframe.style.height = 0;
+    iframe.style.opacity = 0;
 
     // Append the iFrame to the beginning of the body
     document.getElementsByTagName('body')[0].appendChild(iframe);
@@ -28,7 +30,7 @@ function start_tracking() {
     // Interact with it child iframe
     window.addEventListener('message', function(event) {
         window.PageRenter = {};
-        window.PageRenter.user = event.data;
+        window.PageRenter.access_data = event.data;
     });
 
     for(var e in elements) {
@@ -61,8 +63,59 @@ function add_behaviour(element) {
 // It is how the tracking work, every rule added here
 function behaviour() {
     var iframe = document.querySelector('iframe#pagerenter');
-    console.log(iframe.contentWindow.document.body.innerHTML);
-    alert('oi');
+    var path = "<%= Rails.application.routes.url_helpers.api_conversion_register_path %>";
+    var url = protocol + domain + path;
+
+    // If the jQuery was added
+    try {
+        $.post(url,window.PageRenter.access_data, function(resp){
+            console.log(resp);
+        });
+    }catch(error) {
+        console.log(error);
+        console.log('jQuery not added');
+
+        access = window.PageRenter.access_data;
+        var get_params = '?ad_id='+access.ad_id+'&publisher_id='+access.publisher_id+'&secret='+access.secret;
+
+        ajax({
+            url: protocol + domain + path + get_params,
+            method: 'POST',
+            data: window.PageRenter.access_data
+        });
+
+    }
+}
+
+// Encapsulate JS ajax
+function ajax(options) {
+    var http_request;
+
+    // instantiate the http_request, if there is no window.XMLHttpRequest, so it is IE...
+    if(window.XMLHttpRequest) http_request = new window.XMLHttpRequest();
+    else http_request = new ActiveXObject('Microsoft.XMLHTTP');
+
+    if ("withCredentials" in http_request) {
+        // Check if the XMLHttpRequest object has a "withCredentials" property.
+        // "withCredentials" only exists on XMLHTTPRequest2 objects.
+        http_request.open(options.method, options.url, true);
+    }else if (typeof XDomainRequest != "undefined") {
+        // Otherwise, check if XDomainRequest.
+        // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
+        http_request = new XDomainRequest();
+        http_request.open(options.method, options.url);
+    } else {
+        // Otherwise, CORS is not supported by the browser.
+        xhr = null;
+    }
+
+    // The real ajax method implementation
+    http_request.onreadystatechange = function() {
+        if(http_request.readyState == 4 && http_request.status == 200) console.log(http_request.responseText);
+    };
+
+    // Send/Perform the Ajax
+    http_request.send();
 }
 
 // Fire the tracking after everything is loaded

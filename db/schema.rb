@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20141211182214) do
   create_table "accesses", force: true do |t|
     t.boolean  "converted",  default: false, null: false
     t.boolean  "recurrent",  default: false, null: false
+    t.string   "token",                      null: false
     t.integer  "ad_id",                      null: false
     t.integer  "profile_id",                 null: false
     t.datetime "created_at"
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20141211182214) do
 
   add_index "accesses", ["ad_id"], name: "index_accesses_on_ad_id", using: :btree
   add_index "accesses", ["profile_id"], name: "index_accesses_on_profile_id", using: :btree
+  add_index "accesses", ["token"], name: "index_accesses_on_token", unique: true, using: :btree
 
   create_table "ad_history_states", force: true do |t|
     t.integer  "ad_id",       null: false

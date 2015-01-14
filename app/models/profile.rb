@@ -12,6 +12,7 @@ class Profile < ActiveRecord::Base
                     default_url: 'missing_logo.png'
 
   # Validates Associations
+  before_validation :prevent_duplicated_username, on: :update
   validates :user_id, presence: true, on: :update
   validates :role_id, presence: true, on: :update
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
@@ -42,4 +43,15 @@ class Profile < ActiveRecord::Base
       if profile.default_role then return profile.role.name end
     end
   end
+
+  private
+    # It prevent the Profile use an username already taken by an User
+    def prevent_duplicated_username
+      user_with_it_username = User.where(username: self.username).take
+
+      unless user_with_it_username.nil?
+        self.errors.add('username', 'already taken')
+        raise ActiveRecord::Rollback
+      end
+    end
 end

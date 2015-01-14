@@ -25,15 +25,18 @@ class AccessesController < ApplicationController
       error_msg = ''
       redirect_to "#{root_url}?danger=#{error_msg}" if @ad.nil? || @user.nil?
 
-      # Register on the user Cookie
-      register_cookie_access
+      # Check if it is necessary to clear the cookies based on: there is any access for any day before today?
+      get_accesses_cookie.values.each {|access|  Date.strptime(access[0, access.index('-')], '%d/%m') < Date.today ? clear_cookie : next }
 
       # Base Access instantiated & after setup it attrs
-      access = Access.new(ad_id:@ad.id, profile_id:@publisher.id)
-      recurrent? ? access.recurrent = true : access.recurrent = false
+      @access = Access.new(ad_id:@ad.id, profile_id:@publisher.id)
+      recurrent? ? @access.recurrent = true : @access.recurrent = false
 
       # Finish it access registration
-      access.save
+      access_saved = @access.save
+
+      # Register on the user Cookie
+      register_cookie_access if access_saved
     rescue => e
       render file: "#{Rails.root}/public/404_accesses"
       puts "MethodError on: #{__method__}. \nError: "
@@ -53,8 +56,6 @@ class AccessesController < ApplicationController
       @ad = Ad.where(username: params[:ad_username], campaign_id: params[:campaign_id]).take
       @user = User.where(username: params[:publisher_username]).take
       @publisher = @user.publisher unless @user.nil?
-      create_accesses_cookie if cookies[:accesses].nil?
-      @access_data = get_accesses_cookie[access_expression]
     end
 
     # It return true if the user already access it
@@ -80,13 +81,13 @@ class AccessesController < ApplicationController
 
         # Check if the date is today, if not, clear his cookie
         unless @access_data.nil?
-          access_date = Date.parse(@access_data+"#{Time.now.year}")
+          access_date = Date.parse(@access_data+"/#{Time.now.year}")
           clear_cookie if access_date < Date.today
         end
       end
 
       # The cookie[:accesses] is a Hash, retriUsing unshift (push in the begging of the array because if the user is recurrent it is more probably to be the last access)
-      add_to_cookie(access_expression, Time.now.strftime('%d/%m'))
+      add_to_cookie(access_expression, "#{Time.now.strftime('%d/%m')}-#{Time.now.strftime('%H:%M:%S')}")
     end
 
     # Recreate the empty hash accesses
@@ -101,6 +102,7 @@ class AccessesController < ApplicationController
 
     # The cookie doesn't support Hash, so use JSON String
     def get_accesses_cookie
+      create_accesses_cookie if cookies[:accesses].nil
       JSON.parse(cookies[:accesses])
     end
 
@@ -114,6 +116,6 @@ class AccessesController < ApplicationController
     # Method to reuse it expressions
     def access_expression
       setup_register_objs if @user.nil? || @publisher.nil? || @ad.nil?
-      "#{@user.id}-#{@publisher.id}-#{@ad.id}"
+      "#{@publisher.id}-#{@ad.id}-#{@access.token}"
     end
 end

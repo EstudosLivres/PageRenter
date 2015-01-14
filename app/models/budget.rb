@@ -123,8 +123,10 @@ class Budget < ActiveRecord::Base
       resp = transaction.resp
 
       # Transaction attrs
+      #resp={rid:FinancialTransaction.count+1, status:{name:'charged', code:6}}
       transaction_rid = transaction.resp[:rid]
       transaction_purchase_url = transaction.purchase_url
+      #transaction_purchase_url='https://qasecommerce.cielo.com.br/web/index.cbmp?id=a9754405d5a35967c05172bd3db56b86'
 
       # Status Attrs
       status_name = resp[:status][:name]
