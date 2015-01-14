@@ -77,13 +77,11 @@ PageRenter::Application.routes.draw do
 
     # API for PageRenter Parent/Nested systems/apps, it isn't for third systems
     scope '/system' do
-      post '/sign_up_sign_in' => 'remote_users#system_sign_up_sign_in'
-      get '/social/login/:social_network_name' => 'remote_users#social_login'
-
       # All the actions that generate data
       scope '/generators' do
         get 'shorter' => 'generator#shorter', as: :shorter_generator
         get 'social/share(/:social_network)' => 'generator#social', as: :social_generator # TODO if not passed social_network retrieve all links generated? Check login for those actions?
+        get 'tracker' => 'generator#conversion_tracker', as: :conversion_tracker
       end
     end
 

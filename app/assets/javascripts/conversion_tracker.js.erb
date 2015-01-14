@@ -1,0 +1,69 @@
+// Function that encapsulate all the logic
+function start_tracking() {
+    // Create the iFrame
+    var iframe = document.createElement('iframe');
+
+    // Aux vars to create the Iframe
+    var protocol = 'http://';
+    var domain = "localhost:4000";
+    var path = "<%= "#{Rails.application.routes.url_helpers.api_conversion_tracker_path}" %>";
+
+    //setting up the iframe properties
+    iframe.id = 'pagerenter';
+    iframe.src = protocol + domain + path;
+    // Full iFrame permissions
+    iframe.sandbox = 'allow-same-origin allow-top-navigation allow-forms allow-popups allow-pointer-lock allow-scripts';
+
+    // Hidden the iframe
+    iframe.style.width = '100px';
+    iframe.style.height = '100px';
+    iframe.style.opacity = 1;
+
+    // Append the iFrame to the beginning of the body
+    document.getElementsByTagName('body')[0].appendChild(iframe);
+
+    // Adding the events & listeners to the elements
+    elements = document.querySelectorAll('[data-role^="pagerenter"]');
+
+    // Interact with it child iframe
+    window.addEventListener('message', function(event) {
+        window.PageRenter = {};
+        window.PageRenter.user = event.data;
+    });
+
+    for(var e in elements) {
+        // SetUp vars
+        var element = elements[e];
+        add_behaviour(element);
+    }
+}
+
+// Behaviour for any element, based on it tagName
+function add_behaviour(element) {
+    if(typeof element !== 'object') return;
+    var event_str = '';
+
+    // Add the listeners filtered by the tagName
+    switch(element.tagName.toLowerCase()) {
+        case 'form':
+            event_str = 'submit';
+            break;
+        case 'input':
+            if(element.type.toLowerCase() != 'submit') break;
+        default:
+            event_str = 'click';
+            break;
+    }
+
+    element.addEventListener(event_str, behaviour);
+}
+
+// It is how the tracking work, every rule added here
+function behaviour() {
+    var iframe = document.querySelector('iframe#pagerenter');
+    console.log(iframe.contentWindow.document.body.innerHTML);
+    alert('oi');
+}
+
+// Fire the tracking after everything is loaded
+document.addEventListener('DOMContentLoaded', start_tracking);

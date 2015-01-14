@@ -85,7 +85,7 @@ class AccessesController < ApplicationController
         end
       end
 
-      # Using unshift (push in the begging of the array because if the user is recurrent it is more probably to be the last access)
+      # The cookie[:accesses] is a Hash, retriUsing unshift (push in the begging of the array because if the user is recurrent it is more probably to be the last access)
       add_to_cookie(access_expression, Time.now.strftime('%d/%m'))
     end
 

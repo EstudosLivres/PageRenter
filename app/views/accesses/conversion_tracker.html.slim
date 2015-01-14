@@ -1,0 +1,8 @@
+javascript:
+  var objResp = {
+    ad: "#{@conversion_hash[:ad_username]}",
+    pub: "#{@conversion_hash[:publisher_username]}",
+    secret: "#{@conversion_hash[:secret]}"
+  };
+
+  parent.postMessage(objResp, '*');

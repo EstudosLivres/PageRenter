@@ -1,4 +1,7 @@
 class API::GeneratorController < API::BaseAPIController
+  # Custom layouts for specific actions
+  layout 'blank', only: [:conversion_tracker]
+
   # Generate shorter link from the link passed as param & persist it
   def shorter
     # Fabricate a shorter
@@ -28,5 +31,16 @@ class API::GeneratorController < API::BaseAPIController
     # add it social
     link_params[:social] = params[:social_network]
     render json:  {url_generated: JustShare.on(link_params)}
+  end
+
+  # Generate the JSON to help the ConversionTracker
+  def conversion_tracker
+    @conversion_hash = {
+        secret:'new_secret',
+        ad_username:'new_ad',
+        publisher_username:'new_pub'
+    }
+
+    render 'accesses/conversion_tracker'
   end
 end
