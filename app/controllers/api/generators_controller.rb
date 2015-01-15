@@ -60,11 +60,17 @@ class API::GeneratorsController < API::BaseAPIController
 
   private
     def last_access
+      # Base vars
+      @accesses_hash = {}
+      @accesses_array = []
+      @most_recent_time = Time.strptime('00:00:00', '%H:%M:%S')
       @cookie_accesses = cookies[:accesses]
-      return if cookies.nil?
+
+      # Prevent to continue if the access on the cookies are nil
+      return if @cookie_accesses.nil?
+
       @accesses_hash = JSON.parse(@cookie_accesses)
       @accesses_array = @accesses_hash.values
-      @most_recent_time = Time.strptime('00:00:00', '%H:%M:%S')
 
       @accesses_array.each do |access|
         current_time_str = access.split('-').last

@@ -1,5 +1,7 @@
 var protocol = 'http://';
 var domain = "localhost:4000";
+var conversion_checked = false;
+var current_element_interacted = null;
 
 // Function that encapsulate all the logic
 function start_tracking() {
@@ -61,7 +63,10 @@ function add_behaviour(element) {
 }
 
 // It is how the tracking work, every rule added here
-function behaviour() {
+function behaviour(event) {
+    current_element_interacted = this;
+    if(!conversion_checked) event.preventDefault();
+    else return;
     var iframe = document.querySelector('iframe#pagerenter');
     var path = "<%= Rails.application.routes.url_helpers.api_conversion_register_path %>";
     var url = protocol + domain + path;
@@ -112,6 +117,12 @@ function ajax(options) {
     // The real ajax method implementation
     http_request.onreadystatechange = function() {
         if(http_request.readyState == 4 && http_request.status == 200) console.log(http_request.responseText);
+        conversion_checked = true;
+
+        // Re-trigger it event
+        element_name = current_element_interacted.localName;
+        if(element_name.toUpperCase() == 'FORM') current_element_interacted.submit();
+        else current_element_interacted.click();
     };
 
     // Send/Perform the Ajax
