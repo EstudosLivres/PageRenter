@@ -32,8 +32,8 @@ class Budget < ActiveRecord::Base
 
   # Method to print the value on the masked form
   def operator_value_str
-    return self.value if Rents::Currency.have_cents? self.value if self.value
-    self.value*10 if self.value  # it is to convert the int float, like 1.0 to 1.00
+    # return it real persisted value, it is just for the Budget form, for other calculations use the value method
+    read_attribute(:value)
   end
 
   # ActiveRecord Get Method overwrite to print the real value, not the operator value
@@ -123,14 +123,12 @@ class Budget < ActiveRecord::Base
       resp = transaction.resp
 
       # Transaction attrs
-      #resp={rid:FinancialTransaction.count+1, status:{name:'charged', code:6}}
       transaction_rid = transaction.resp[:rid]
       transaction_purchase_url = transaction.purchase_url
-      #transaction_purchase_url='https://qasecommerce.cielo.com.br/web/index.cbmp?id=a9754405d5a35967c05172bd3db56b86'
 
       # Status Attrs
       status_name = resp[:status][:name]
-      status_code = transaction.resp[:status][:code]
+      status_code = resp[:status][:code]
 
       # Params to create it financial
       financial_params = {
