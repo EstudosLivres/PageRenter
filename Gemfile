@@ -1,5 +1,6 @@
-source 'https://rubygems.org'
+ruby '2.1.2'
 #ruby=2.1.2@page
+source 'https://rubygems.org'
 
 # 'util' Useful in some context like better print/puts or legal_id like CPF
 group :useful do
@@ -16,8 +17,7 @@ end
 # PaymentMethods
 group :payment do
   # PaymentMethod
-  gem 'rents', '~> 0.1.10'
-  gem 'spring', '~> 1.1.3'
+  gem 'rents', '~> 1.0.0'
 end
 
 # GEMs for default rails apps
@@ -32,7 +32,7 @@ group :rails do
   gem 'turbolinks'
 
   # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-  gem 'jbuilder', '~> 1.2'
+  gem 'jbuilder', '~> 2.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', platforms: :ruby
@@ -84,6 +84,9 @@ group :build_front_end do
   # Use CoffeeScript for .js.coffee assets and views
   gem 'coffee-rails', '~> 4.0.0'
 
+  # Autoprefixer with Bootstrap to add browser vendor prefixes (IT CREATE THE CSS3 PREFIXES LIKE: -webkit-, -firefox-, -ms-)
+  gem 'autoprefixer-rails'
+
   # for the social-buttons
   gem 'jasny_bundle', '~> 2.1.2', git: 'https://github.com/TonFw/jasny-bundle.git', branch: 'master'
 end
@@ -107,9 +110,6 @@ group :style_and_interactions do
 
   # IconFonts - FontAwesome
   gem 'font-awesome-rails', '~> 4.2.0.0'
-
-  # IconFonts - Zurb
-  gem 'zurb-foundation', '~> 4.3.2'
 end
 
 # Generate documentation
@@ -117,9 +117,6 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-# Just for production like on Heroku
-gem 'rails_12factor', group: :production
 
 # GEMs to work only on test & development environments
 group :development, :test do
@@ -138,12 +135,9 @@ group :development, :test do
   # Create readable attrs values
   gem 'faker', '~> 1.4.2'
 
-  # RSPec Plugin for testing Views
-  gem 'capybara', '~> 2.2.1'
-
   # RSPec Plugin for code-coverage
   gem 'simplecov', '~> 0.7.1'
-
-  # RSPec Plugin for params on its
-  gem 'its'
 end
+
+# Just for production like on Heroku
+gem 'rails_12factor', group: :production

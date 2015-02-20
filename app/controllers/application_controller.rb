@@ -2,12 +2,12 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   @@host # Static var to be able to access what is it host from models
-  protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_or_token # SetUp user devise if
   before_action :set_nested # All controller must have the set_nested, if do not depend it is an empty method
   before_action :validate_permission # All controller must have validate_permission, if is a global object it is an empty method
   before_filter :setup_default_role # SetUp the user default role
+  protect_from_forgery with: :exception
 
   protected
     def configure_permitted_parameters

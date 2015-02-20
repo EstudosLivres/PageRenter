@@ -1,6 +1,10 @@
 PageRenter
 ==========
 
+__ESQUEMA PARA FRANEQUIAS SEREM IMPOSIONADAS__
+
+__ACRESCENTAR NEUROMARKETING__
+
 __ISSUES__
 Usar TODO Lists para mostrar barra de progresso das issues, exemplo se uso:
 - [x] done;

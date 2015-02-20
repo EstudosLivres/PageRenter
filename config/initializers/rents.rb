@@ -13,9 +13,9 @@ if Rails.env.development? || Rails.env.test?
   Rents.secret_key = ''
 
   # TODO: Uncomment test_env if you want to test using RentS default & global app
-  Rents.test_env = true
+  # Rents.test_env = true
   # TODO: Uncomment debugger if you have an RentS instance on your machine
-  Rents.debugger = true
+  # Rents.debugger = true
 elsif Rails.env.production?
   # TODO if using Rails 3 or older, put here your PRODUCTION app_id & your secret_key
   Rents.app_id = ''

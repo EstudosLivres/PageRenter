@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   # Relations
   has_many :profiles
   has_many :social_sessions
+  has_many :campaigns, through: :profiles
+  has_many :budgets, through: :campaigns
 
   # Custom validations
   before_validation :solve_locale
