@@ -69,8 +69,8 @@ end
 
 # GEMs for build the view
 group :build_front_end do
-  # Easier & faster then ERB
-  gem 'slim-rails', '~> 2.1.5'
+  # Faster & easier HTML
+  gem 'slim-rails', '~> 3.0.1'
 
   # GoogleMaps GEM (using Google maps API V3)
   gem 'gmaps4rails', '~> 2.1.2'
@@ -141,3 +141,6 @@ end
 
 # Just for production like on Heroku
 gem 'rails_12factor', group: :production
+
+# Tracking production events
+gem 'newrelic_rpm'
