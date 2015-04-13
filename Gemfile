@@ -61,7 +61,7 @@ group :services do
   gem 's3_direct_upload', '~> 0.1.7'
 
   # Monitoring
-  gem 'newrelic_rpm'
+  # gem 'newrelic_rpm'
 
   # Gem to generate SocialShareURLs
   gem 'just_share', '~> 1.0.2'
@@ -141,6 +141,3 @@ end
 
 # Just for production like on Heroku
 gem 'rails_12factor', group: :production
-
-# Tracking production events
-gem 'newrelic_rpm'
