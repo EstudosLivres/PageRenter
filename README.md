@@ -1,6 +1,10 @@
 PageRenter
 ==========
 
+```shell script
+    $ gem install bundler -v 1.17.3 && bundle update rails
+```
+
 __ESQUEMA PARA FRANEQUIAS SEREM IMPOSIONADAS__
 
 __ACRESCENTAR NEUROMARKETING__

@@ -1,5 +1,5 @@
-ruby '2.1.2'
-#ruby=2.1.2@page
+ruby '2.6.5'
+#ruby=2.6.5@page
 source 'https://rubygems.org'
 
 # 'util' Useful in some context like better print/puts or legal_id like CPF
@@ -17,16 +17,16 @@ end
 # PaymentMethods
 group :payment do
   # PaymentMethod
-  gem 'rents', '~> 1.0.0'
+  # gem 'rents', '~> 1.0.0'
 end
 
 # GEMs for default rails apps
 group :rails do
   # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-  gem 'rails', '4.1.7'
+  gem 'rails', '4.1.7.1'
 
   # Use mysql as the database for Active Record
-  gem 'mysql2'
+  gem 'mysql2', '~> 0.5.3'
 
   # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
   gem 'turbolinks'
@@ -35,7 +35,7 @@ group :rails do
   gem 'jbuilder', '~> 2.0'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', platforms: :ruby
+  # gem 'therubyracer', platforms: :ruby
 end
 
 # GEMs for user infos
@@ -57,7 +57,7 @@ end
 group :services do
   # Gem for UPLOAD files
   gem 'paperclip', '~> 4.2.0'
-  gem 'aws-sdk', '~> 1.58.0'
+  # gem 'aws-sdk', '~> 1.58.0'
   gem 's3_direct_upload', '~> 0.1.7'
 
   # Monitoring
