@@ -11,7 +11,7 @@ group :useful do
   gem 'colorize', '~> 0.7.1'
 
   # To easy consume REST API
-  gem 'rest-client', '~> 1.7.2'
+  gem 'rest-client', '~> 1.8.0'
 end
 
 # PaymentMethods
