@@ -41,7 +41,7 @@ end
 # GEMs for user infos
 group :user do
   # For easy user session management
-  gem 'devise', '~> 3.4.1'
+  gem 'devise', '~> 4.7.1'
 
   # Gem to Query on the Facebook (FQL)
   gem 'fql', '~> 0.3.1'
